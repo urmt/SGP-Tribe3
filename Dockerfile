@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Install CPU-only torch first to avoid nvidia resolver backtracking
+# Install torch first at version TRIBE v2 requires (>=2.5.1)
 RUN pip install --no-cache-dir \
-    torch==2.3.1+cpu \
-    torchaudio==2.3.1+cpu \
-    torchvision==0.18.1+cpu \
+    torch==2.5.1+cpu \
+    torchaudio==2.5.1+cpu \
+    torchvision==0.20.1+cpu \
     --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY requirements.txt .
