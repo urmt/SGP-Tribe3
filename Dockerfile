@@ -30,8 +30,25 @@ RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 # Create shared HF cache directories
 RUN mkdir -p /tmp/hf_hub_cache /tmp/whisper_cache && chown -R appuser:appuser /tmp/hf_hub_cache /tmp/whisper_cache
 # Make uvx available to appuser too
-RUN cp /root/.local/bin/uvx /usr/local/bin/uvx 2>/dev/null || true
+RUN cp /root/.local/bin/uvx /usr/local/bin/uvx.real 2>/dev/null || true
 RUN cp /root/.local/bin/uv /usr/local/bin/uv 2>/dev/null || true
+
+# Create wrapper script to force int8 compute_type for whisperx on CPU
+RUN cat > /usr/local/bin/uvx << 'WRAPPER'
+#!/bin/bash
+# Wrapper to force int8 compute type for whisperx on CPU
+args=("$@")
+for i in "${!args[@]}"; do
+    if [[ "${args[$i]}" == "--compute_type" ]]; then
+        args[$((i+1))]="int8"
+    fi
+done
+if [[ ! " $* " =~ "--compute_type" ]]; then
+    args+=("--compute_type" "int8")
+fi
+exec /usr/local/bin/uvx.real whisperx "${args[@]}"
+WRAPPER
+RUN chmod +x /usr/local/bin/uvx
 
 USER appuser
 

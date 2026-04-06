@@ -96,65 +96,32 @@ def _load_model():
             print(f"[SGP-Tribe3] CPU patch warning: {e}", flush=True)
 
         # Patch tribev2 whisperx to use int8 on CPU (float16 not supported on CPU)
+        # We create a wrapper script that intercepts uvx whisperx calls
         try:
-            import tribev2.eventstransforms as et
-            orig_get_transcript = et.ExtractWordsFromAudio._get_transcript_from_audio
-
-            @staticmethod
-            def patched_get_transcript_from_audio(wav_filename, language):
-                import json
-                import subprocess
-                import tempfile
-                from pathlib import Path
-
-                language_codes = dict(
-                    english="en", french="fr", spanish="es", dutch="nl", chinese="zh"
-                )
-                if language not in language_codes:
-                    raise ValueError(f"Language {language} not supported")
-
-                device = "cpu"
-                compute_type = "int8"
-
-                with tempfile.TemporaryDirectory() as output_dir:
-                    cmd = [
-                        "uvx", "whisperx",
-                        str(wav_filename),
-                        "--model", "large-v3",
-                        "--language", language_codes[language],
-                        "--device", device,
-                        "--compute_type", compute_type,
-                        "--batch_size", "16",
-                        "--output_dir", output_dir,
-                        "--output_format", "json",
-                    ]
-                    env = {k: v for k, v in os.environ.items() if k != "MPLBACKEND"}
-                    print(f"[SGP-Tribe3] Running whisperx with compute_type={compute_type} on {device}", flush=True)
-                    result = subprocess.run(cmd, capture_output=True, text=True, env=env)
-                    if result.returncode != 0:
-                        raise RuntimeError(f"whisperx failed:\n{result.stderr}")
-                    json_path = Path(output_dir) / f"{wav_filename.stem}.json"
-                    transcript = json.loads(json_path.read_text())
-
-                words = []
-                for i, segment in enumerate(transcript["segments"]):
-                    sentence = segment["text"].replace('"', "")
-                    for word in segment["words"]:
-                        if "start" not in word:
-                            continue
-                        words.append({
-                            "text": word["word"].replace('"', ""),
-                            "start": word["start"],
-                            "duration": word["end"] - word["start"],
-                            "sequence_id": i,
-                            "sentence": sentence,
-                        })
-                return pd.DataFrame(words)
-
-            et.ExtractWordsFromAudio._get_transcript_from_audio = patched_get_transcript
-            print("[SGP-Tribe3] Whisperx CPU compute_type patch applied (int8)", flush=True)
+            whisper_wrapper = """#!/bin/bash
+# Wrapper to force int8 compute type for whisperx on CPU
+args=("$@")
+# Find and replace compute_type if present
+for i in "${!args[@]}"; do
+    if [[ "${args[$i]}" == "--compute_type" ]]; then
+        args[$((i+1))]="int8"
+    fi
+done
+# If no compute_type specified, add it
+if [[ ! " $* " =~ "--compute_type" ]]; then
+    args+=("--compute_type" "int8")
+fi
+exec /usr/local/bin/uvx.real whisperx "${args[@]}"
+"""
+            # Rename real uvx and create wrapper
+            if not os.path.exists("/usr/local/bin/uvx.real"):
+                os.rename("/usr/local/bin/uvx", "/usr/local/bin/uvx.real")
+            with open("/usr/local/bin/uvx", "w") as f:
+                f.write(whisper_wrapper)
+            os.chmod("/usr/local/bin/uvx", 0o755)
+            print("[SGP-Tribe3] Whisperx wrapper script created (force int8)", flush=True)
         except Exception as e:
-            print(f"[SGP-Tribe3] Whisperx patch warning: {e}", flush=True)
+            print(f"[SGP-Tribe3] Whisperx wrapper warning: {e}", flush=True)
 
         from tribev2 import TribeModel
         print("[SGP-Tribe3] Loading TribeModel...", flush=True)
