@@ -73,7 +73,7 @@ SGP_NODE_DEFINITIONS = {
         "stream": "ventral",
         "hemisphere": "left_dominant",
         # Posterior superior temporal gyrus (BA22), planum temporale
-        "yeo_networks": ["Default", "SalVentAttn"],
+        "yeo_networks": ["SalVentAttn"],
         "anatomical_keywords": ["ParOper", "Wernicke"],
         "mni_center": [-54, -36, 12],
     },
@@ -91,7 +91,7 @@ SGP_NODE_DEFINITIONS = {
         "stream": "dorsal",
         "hemisphere": "bilateral",
         # DLPFC, anterior cingulate, orbitofrontal
-        "yeo_networks": ["Cont", "SalVentAttn"],
+        "yeo_networks": ["Cont"],
         "anatomical_keywords": ["PFCl", "PFC", "Frontal", "ACC", "Cing"],
         "mni_center": [-36, 48, 18],
     },
@@ -289,7 +289,7 @@ class SGPParcellator:
             "VIS": "G7_sensory",
             "SOMMOT": "G9_premotor",
             "DORSATTN": "G3_tpj",
-            "SALVENTATT": "G4_pfc",
+            "SALVENTATT": "G2_wernicke",
             "LIMBIC": "G6_limbic",
             "CONT": "G4_pfc",
             "DEFAULT": "G5_dmn",
