@@ -95,33 +95,26 @@ def _load_model():
         except Exception as e:
             print(f"[SGP-Tribe3] CPU patch warning: {e}", flush=True)
 
-        # Patch tribev2 whisperx source file to use int8 on CPU
-        # Also bypass audio transcription which has environment issues
+        # Completely bypass whisperx audio transcription 
+        # Replace the _run method to skip audio extraction entirely
         try:
-            import tribev2
-            eventstransforms_path = Path(tribev2.__file__).parent / "eventstransforms.py"
-            original_code = eventstransforms_path.read_text()
+            import tribev2.eventstransforms as et
             
-            # Patch compute_type from float16 to int8
-            patched_code = original_code.replace(
-                'compute_type = "float16"',
-                'compute_type = "int8"'
-            )
+            # Store original _run method
+            orig_run = et.ExtractWordsFromAudio._run
             
-            # Patch to skip audio extraction entirely (whisperx has environment issues in container)
-            # This allows video-only encoding to work
-            patched_code = patched_code.replace(
-                'if "Word" in events.type.unique():',
-                'if "Word" in events.type.unique() or True:'  # Force skip always
-            )
+            def bypass_run(self, events):
+                # Just return events unchanged - skip whisperx entirely
+                if "Word" in events.type.unique():
+                    print("[SGP-Tribe3] Words already present, skipping extraction", flush=True)
+                else:
+                    print("[SGP-Tribe3] Bypassing audio transcription (whisperx environment issue)", flush=True)
+                return events
             
-            if patched_code != original_code:
-                eventstransforms_path.write_text(patched_code)
-                print(f"[SGP-Tribe3] Patched tribev2: int8 + skip audio extraction", flush=True)
-            else:
-                print("[SGP-Tribe3] tribev2 patch warning: pattern not found", flush=True)
+            et.ExtractWordsFromAudio._run = bypass_run
+            print("[SGP-Tribe3] Audio transcription bypass applied", flush=True)
         except Exception as e:
-            print(f"[SGP-Tribe3] Whisperx patch warning: {e}", flush=True)
+            print(f"[SGP-Tribe3] Audio bypass warning: {e}", flush=True)
 
         from tribev2 import TribeModel
         print("[SGP-Tribe3] Loading TribeModel...", flush=True)
