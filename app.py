@@ -173,15 +173,33 @@ def _preprocess_video(video_path: str, max_duration: int = MAX_VIDEO_DURATION) -
 def _run_inference(video_path: str) -> dict:
     """
     Run TRIBE v2 inference on a video file and return SGP parcellation.
+    Bypasses audio transcription (whisperx) which has environment issues.
     """
     import pandas as pd
 
-    # Get video duration and events dataframe from TribeModel
+    # Get video duration and create events dataframe directly (bypass whisperx)
     processed_path = _preprocess_video(video_path)
 
     try:
-        events_df = _model.get_events_dataframe(video_path=processed_path)
-        print(f"[SGP-Tribe3] Events extracted: {len(events_df)} rows", flush=True)
+        # Get video duration using ffprobe
+        import subprocess
+        cmd = ["ffprobe", "-v", "error", "-show_entries", "format=duration", 
+               "-of", "default=noprint_wrappers=1:nokey=1", processed_path]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        duration = float(result.stdout.strip()) if result.returncode == 0 else 30.0
+        
+        # Create minimal events dataframe for video-only inference
+        # This bypasses the entire whisperx audio transcription pipeline
+        events_df = pd.DataFrame([{
+            "type": "Video",
+            "filepath": processed_path,
+            "start": 0.0,
+            "duration": min(duration, MAX_VIDEO_DURATION),
+            "frequency": 1.0,  # 1 Hz for video frames
+            "offset": 0.0
+        }])
+        
+        print(f"[SGP-Tribe3] Events created: {len(events_df)} rows (video-only, no audio)", flush=True)
 
         preds, segments = _model.predict(events=events_df, verbose=False)
 
