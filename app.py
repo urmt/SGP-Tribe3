@@ -96,21 +96,32 @@ def _load_model():
             print(f"[SGP-Tribe3] CPU patch warning: {e}", flush=True)
 
         # Patch tribev2 whisperx source file to use int8 on CPU
+        # Also bypass audio transcription which has environment issues
         try:
             import tribev2
             eventstransforms_path = Path(tribev2.__file__).parent / "eventstransforms.py"
             original_code = eventstransforms_path.read_text()
+            
+            # Patch compute_type from float16 to int8
             patched_code = original_code.replace(
                 'compute_type = "float16"',
                 'compute_type = "int8"'
             )
+            
+            # Patch to skip audio extraction entirely (whisperx has environment issues in container)
+            # This allows video-only encoding to work
+            patched_code = patched_code.replace(
+                'if "Word" in events.type.unique():',
+                'if "Word" in events.type.unique() or True:'  # Force skip always
+            )
+            
             if patched_code != original_code:
                 eventstransforms_path.write_text(patched_code)
-                print(f"[SGP-Tribe3] Patched tribev2/eventstransforms.py: float16 -> int8", flush=True)
+                print(f"[SGP-Tribe3] Patched tribev2: int8 + skip audio extraction", flush=True)
             else:
-                print("[SGP-Tribe3] tribev2 whisperx already patched or pattern not found", flush=True)
+                print("[SGP-Tribe3] tribev2 patch warning: pattern not found", flush=True)
         except Exception as e:
-            print(f"[SGP-Tribe3] Whisperx source patch warning: {e}", flush=True)
+            print(f"[SGP-Tribe3] Whisperx patch warning: {e}", flush=True)
 
         from tribev2 import TribeModel
         print("[SGP-Tribe3] Loading TribeModel...", flush=True)
