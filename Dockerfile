@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y \
     ffmpeg git git-lfs libsndfile1 libgl1 \
@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Install torch first at version TRIBE v2 requires (>=2.5.1)
 RUN pip install --no-cache-dir \
     torch==2.5.1+cpu \
     torchaudio==2.5.1+cpu \
