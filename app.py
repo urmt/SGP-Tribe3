@@ -95,33 +95,22 @@ def _load_model():
         except Exception as e:
             print(f"[SGP-Tribe3] CPU patch warning: {e}", flush=True)
 
-        # Patch tribev2 whisperx to use int8 on CPU (float16 not supported on CPU)
-        # We create a wrapper script that intercepts uvx whisperx calls
+        # Patch tribev2 whisperx source file to use int8 on CPU
         try:
-            whisper_wrapper = """#!/bin/bash
-# Wrapper to force int8 compute type for whisperx on CPU
-args=("$@")
-# Find and replace compute_type if present
-for i in "${!args[@]}"; do
-    if [[ "${args[$i]}" == "--compute_type" ]]; then
-        args[$((i+1))]="int8"
-    fi
-done
-# If no compute_type specified, add it
-if [[ ! " $* " =~ "--compute_type" ]]; then
-    args+=("--compute_type" "int8")
-fi
-exec /usr/local/bin/uvx.real whisperx "${args[@]}"
-"""
-            # Rename real uvx and create wrapper
-            if not os.path.exists("/usr/local/bin/uvx.real"):
-                os.rename("/usr/local/bin/uvx", "/usr/local/bin/uvx.real")
-            with open("/usr/local/bin/uvx", "w") as f:
-                f.write(whisper_wrapper)
-            os.chmod("/usr/local/bin/uvx", 0o755)
-            print("[SGP-Tribe3] Whisperx wrapper script created (force int8)", flush=True)
+            import tribev2
+            eventstransforms_path = Path(tribev2.__file__).parent / "eventstransforms.py"
+            original_code = eventstransforms_path.read_text()
+            patched_code = original_code.replace(
+                'compute_type = "float16"',
+                'compute_type = "int8"'
+            )
+            if patched_code != original_code:
+                eventstransforms_path.write_text(patched_code)
+                print(f"[SGP-Tribe3] Patched tribev2/eventstransforms.py: float16 -> int8", flush=True)
+            else:
+                print("[SGP-Tribe3] tribev2 whisperx already patched or pattern not found", flush=True)
         except Exception as e:
-            print(f"[SGP-Tribe3] Whisperx wrapper warning: {e}", flush=True)
+            print(f"[SGP-Tribe3] Whisperx source patch warning: {e}", flush=True)
 
         from tribev2 import TribeModel
         print("[SGP-Tribe3] Loading TribeModel...", flush=True)
