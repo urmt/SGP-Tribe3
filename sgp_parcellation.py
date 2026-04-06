@@ -110,7 +110,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Amygdala, hippocampus, insula, parahippocampal
         "yeo_networks": ["Limbic", "SalVentAttn"],
-        "anatomical_keywords": ["Amyg", "Hipp", "Insula", "ParaHipp", "Limbic"],
+        "anatomical_keywords": ["Limbic", "OFC", "Insula", "ParaHipp", "Hipp", "Amyg"],
         "mni_center": [-24, -18, -18],
     },
     "G7_sensory": {
@@ -128,7 +128,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Temporal pole, anterior MTG, anterior ITG
         "yeo_networks": ["Default", "Limbic"],
-        "anatomical_keywords": ["TempPole", "ATL", "FrontTemp"],
+        "anatomical_keywords": ["TempPole", "Temp", "TemporalPole", "ATL"],
         "mni_center": [-42, 6, -30],
     },
     "G9_premotor": {
