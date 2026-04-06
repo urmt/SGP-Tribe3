@@ -74,7 +74,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "left_dominant",
         # Posterior superior temporal gyrus (BA22), planum temporale
         "yeo_networks": ["Default", "SalVentAttn"],
-        "anatomical_keywords": ["STG", "STS", "Temp", "Wernicke"],
+        "anatomical_keywords": ["STG", "STS", "Wernicke"],
         "mni_center": [-54, -36, 12],
     },
     "G3_tpj": {
@@ -110,7 +110,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Amygdala, hippocampus, insula, parahippocampal
         "yeo_networks": ["Limbic", "SalVentAttn"],
-        "anatomical_keywords": ["Limbic", "OFC", "Insula", "ParaHipp", "Hipp", "Amyg"],
+        "anatomical_keywords": ["Limbic", "TempPole", "OFC", "Insula", "ParaHipp", "Hipp", "Amyg"],
         "mni_center": [-24, -18, -18],
     },
     "G7_sensory": {
@@ -128,7 +128,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Temporal pole, anterior MTG, anterior ITG
         "yeo_networks": ["Default", "Limbic"],
-        "anatomical_keywords": ["TempPole", "Temp", "TemporalPole", "ATL"],
+        "anatomical_keywords": ["Default_Temp", "Cont_Temp", "ATL", "TemporalPole"],
         "mni_center": [-42, 6, -30],
     },
     "G9_premotor": {
