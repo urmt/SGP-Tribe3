@@ -23,11 +23,16 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+# Create shared HF cache directories
+RUN mkdir -p /tmp/hf_hub_cache /tmp/whisper_cache && chown -R appuser:appuser /tmp/hf_hub_cache /tmp/whisper_cache
 # Make uvx available to appuser too
 RUN cp /root/.local/bin/uvx /usr/local/bin/uvx 2>/dev/null || true
 RUN cp /root/.local/bin/uv /usr/local/bin/uv 2>/dev/null || true
 
 USER appuser
+
+ENV HF_HUB_CACHE=/tmp/hf_hub_cache
+ENV WHISPER_CACHE_DIR=/tmp/whisper_cache
 
 EXPOSE 7860
 CMD ["python", "app.py"]

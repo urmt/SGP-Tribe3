@@ -40,6 +40,10 @@ HF_TOKEN = os.environ.get("HF_TOKEN", "")
 CKPT = os.environ.get("TRIBE_CKPT", "facebook/tribev2")
 MAX_VIDEO_DURATION = int(os.environ.get("MAX_VIDEO_DURATION", "120"))  # seconds
 CACHE_DIR = os.environ.get("SGP_CACHE_DIR", "/tmp/sgp_atlas")
+HF_HUB_CACHE = os.environ.get("HF_HUB_CACHE", "/tmp/hf_hub_cache")
+os.environ["HF_HUB_CACHE"] = HF_HUB_CACHE
+os.environ["WHISPER_CACHE_DIR"] = os.environ.get("WHISPER_CACHE_DIR", "/tmp/whisper_cache")
+os.makedirs(HF_HUB_CACHE, exist_ok=True)
 
 # ─── Result storage (in-memory for now; extend to file/DB for persistence) ───
 _stimulus_results = {}
@@ -62,12 +66,27 @@ def _load_model():
         if HF_TOKEN:
             os.environ["HUGGING_FACE_HUB_TOKEN"] = HF_TOKEN
             os.environ["HF_TOKEN"] = HF_TOKEN
+            os.environ["HF_HUB_CACHE"] = "/tmp/hf_hub_cache"
+            os.makedirs("/tmp/hf_hub_cache", exist_ok=True)
             try:
                 from huggingface_hub import login
                 login(token=HF_TOKEN, add_to_git_credential=False)
                 print(f"[SGP-Tribe3] HF login OK", flush=True)
             except Exception as e:
                 print(f"[SGP-Tribe3] HF login warning: {e}", flush=True)
+
+            # Pre-download whisperx model to avoid rate limits in uvx subprocess
+            try:
+                from huggingface_hub import snapshot_download
+                print("[SGP-Tribe3] Pre-downloading faster-whisper-large-v3...", flush=True)
+                snapshot_download(
+                    repo_id="Systran/faster-whisper-large-v3",
+                    cache_dir="/tmp/hf_hub_cache",
+                    token=HF_TOKEN
+                )
+                print("[SGP-Tribe3] Whisper model cached successfully", flush=True)
+            except Exception as e:
+                print(f"[SGP-Tribe3] Whisper model download warning: {e}", flush=True)
         else:
             print("[SGP-Tribe3] WARNING: No HF_TOKEN set — LLaMA encoder may fail", flush=True)
 
