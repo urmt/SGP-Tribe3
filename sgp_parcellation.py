@@ -65,7 +65,7 @@ SGP_NODE_DEFINITIONS = {
         # IFG pars opercularis (BA44) and triangularis (BA45)
         # Schaefer-200 Cont network, inferior frontal
         "yeo_networks": ["Cont"],
-        "anatomical_keywords": ["IFG", "Oper", "Tri", "Broca"],
+        "anatomical_keywords": ["FrOperIns", "Broca", "Tri", "Oper"],
         "mni_center": [-51, 12, 18],  # approximate MNI center
     },
     "G2_wernicke": {
@@ -74,7 +74,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "left_dominant",
         # Posterior superior temporal gyrus (BA22), planum temporale
         "yeo_networks": ["Default", "SalVentAttn"],
-        "anatomical_keywords": ["STG", "STS", "Wernicke"],
+        "anatomical_keywords": ["ParOper", "Wernicke"],
         "mni_center": [-54, -36, 12],
     },
     "G3_tpj": {
@@ -83,7 +83,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Supramarginal gyrus + angular gyrus
         "yeo_networks": ["DorsAttn", "SalVentAttn"],
-        "anatomical_keywords": ["TPJ", "SupraMarginal", "Angular", "ParieTempOcc"],
+        "anatomical_keywords": ["DorsAttn_Post", "ParieTempOcc", "Angular"],
         "mni_center": [-54, -42, 24],
     },
     "G4_pfc": {
@@ -92,7 +92,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # DLPFC, anterior cingulate, orbitofrontal
         "yeo_networks": ["Cont", "SalVentAttn"],
-        "anatomical_keywords": ["PFC", "Frontal", "ACC", "OFC", "DLPFC"],
+        "anatomical_keywords": ["PFCl", "PFC", "Frontal", "ACC", "Cing"],
         "mni_center": [-36, 48, 18],
     },
     "G5_dmn": {
@@ -101,7 +101,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Medial PFC, posterior cingulate, angular gyrus
         "yeo_networks": ["Default"],
-        "anatomical_keywords": ["PCC", "mPFC", "Precuneus", "Default"],
+        "anatomical_keywords": ["pCunPCC", "Default_Par", "PHC"],
         "mni_center": [0, -52, 26],
     },
     "G6_limbic": {
@@ -119,7 +119,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # V1/V2 (occipital), A1 (Heschl's gyrus), S1 (postcentral gyrus)
         "yeo_networks": ["Vis", "SomMot"],
-        "anatomical_keywords": ["Calc", "Cuneus", "Lingual", "Occip", "Heschl", "PostCentral"],
+        "anatomical_keywords": ["Vis", "SomMot", "Medial"],
         "mni_center": [0, -84, 6],
     },
     "G8_atl": {
@@ -128,7 +128,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "bilateral",
         # Temporal pole, anterior MTG, anterior ITG
         "yeo_networks": ["Default", "Limbic"],
-        "anatomical_keywords": ["Default_Temp", "Cont_Temp", "ATL", "TemporalPole"],
+        "anatomical_keywords": ["Default_Temp", "Cont_Temp"],
         "mni_center": [-42, 6, -30],
     },
     "G9_premotor": {
@@ -137,7 +137,7 @@ SGP_NODE_DEFINITIONS = {
         "hemisphere": "left_dominant",
         # Premotor cortex, SMA, precentral gyrus inferior
         "yeo_networks": ["SomMot", "Cont"],
-        "anatomical_keywords": ["Precentral", "Premotor", "SMA", "Motor"],
+        "anatomical_keywords": ["FEF", "PrCv", "Precentral", "Motor"],
         "mni_center": [-42, 0, 48],
     },
 }
