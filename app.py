@@ -205,6 +205,8 @@ def _run_inference_from_events(events_df: pd.DataFrame) -> dict:
 
     try:
         # Run TRIBE v2 prediction
+        # Note: standardize_events is called inside get_loaders, so we need to ensure
+        # our events have the right schema BEFORE calling predict
         preds, segments = _model.predict(events=events_df, verbose=False)
 
         # Convert to numpy
@@ -252,7 +254,6 @@ def _run_video_inference(video_path: str) -> dict:
     Uses TRIBE v2's get_audio_and_text_events with audio_only=True.
     """
     from tribev2.demo_utils import get_audio_and_text_events
-    from neuralset.events.utils import standardize_events
 
     processed_path = _preprocess_video(video_path)
 
@@ -273,8 +274,31 @@ def _run_video_inference(video_path: str) -> dict:
         # Use TRIBE v2 pipeline: extracts audio, chunks, but SKIPS whisperx
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # Post-process: standardize events to ensure all required fields
-        events_df = standardize_events(events_df)
+        # FIX: The get_audio_and_text_events may not preserve all required fields
+        # We need to ensure every event has the required columns before calling predict
+        required_base_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        
+        for idx, row in events_df.iterrows():
+            event_type = row.get("type", "")
+            for col in required_base_cols:
+                if col not in events_df.columns or pd.isna(events_df.at[idx, col]):
+                    if col == "timeline":
+                        events_df.at[idx, col] = "default"
+                    elif col == "subject":
+                        events_df.at[idx, col] = "default"
+                    elif col == "duration":
+                        events_df.at[idx, col] = MAX_VIDEO_DURATION
+                    elif col == "offset":
+                        events_df.at[idx, col] = 0.0
+                    elif col == "frequency":
+                        events_df.at[idx, col] = 1.0
+                    elif col == "extra":
+                        events_df.at[idx, col] = {}
+                    elif col == "filepath":
+                        if event_type in ["Video", "Audio"]:
+                            events_df.at[idx, col] = row.get("filepath", processed_path)
+                        else:
+                            events_df.at[idx, col] = None
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Video inference: {len(events_df)} events, types: {event_types}", flush=True)
@@ -293,7 +317,6 @@ def _run_audio_inference(audio_path: str) -> dict:
     Uses TRIBE v2's get_audio_and_text_events with audio_only=True.
     """
     from tribev2.demo_utils import get_audio_and_text_events
-    from neuralset.events.utils import standardize_events
 
     processed_path = _preprocess_audio(audio_path)
 
@@ -314,8 +337,30 @@ def _run_audio_inference(audio_path: str) -> dict:
         # Use TRIBE v2 pipeline with audio_only=True
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # Standardize events to ensure all required fields
-        events_df = standardize_events(events_df)
+        # Ensure all events have required columns
+        required_base_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        
+        for idx, row in events_df.iterrows():
+            event_type = row.get("type", "")
+            for col in required_base_cols:
+                if col not in events_df.columns or pd.isna(events_df.at[idx, col]):
+                    if col == "timeline":
+                        events_df.at[idx, col] = "default"
+                    elif col == "subject":
+                        events_df.at[idx, col] = "default"
+                    elif col == "duration":
+                        events_df.at[idx, col] = MAX_AUDIO_DURATION
+                    elif col == "offset":
+                        events_df.at[idx, col] = 0.0
+                    elif col == "frequency":
+                        events_df.at[idx, col] = 1.0
+                    elif col == "extra":
+                        events_df.at[idx, col] = {}
+                    elif col == "filepath":
+                        if event_type in ["Video", "Audio"]:
+                            events_df.at[idx, col] = row.get("filepath", processed_path)
+                        else:
+                            events_df.at[idx, col] = None
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Audio inference: {len(events_df)} events, types: {event_types}", flush=True)
@@ -333,8 +378,6 @@ def _run_text_inference(text: str) -> dict:
     Run inference on text input (text-only modality).
     Creates Word events manually with accumulating context.
     """
-    from neuralset.events.utils import standardize_events
-    
     words = text.split()
     if not words:
         raise ValueError("Empty text provided")
@@ -361,9 +404,6 @@ def _run_text_inference(text: str) -> dict:
         })
 
     events_df = pd.DataFrame(word_events)
-    
-    # Standardize events to ensure all required fields
-    events_df = standardize_events(events_df)
     
     print(f"[SGP-Tribe3] Text inference: {len(words)} words", flush=True)
 
