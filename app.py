@@ -1,8 +1,8 @@
 """
 SGP-Tribe3 — Main API Application
-==================================
+=================================
 Multimodal brain encoding API with SGP 9-node parcellation.
-Supports video+audio, audio-only, and text-only inputs via TRIBE v2.
+Supports video+audio, audio-only, and text-only inputs via TRIBE v2. 
 
 Endpoints:
     GET  /              - Service info
@@ -20,7 +20,6 @@ Reference: Harvard MLSysBook - Machine Learning Systems
 https://github.com/harvard-edge/cs249r_book
 """
 
-# CRITICAL: Set CPU-only mode BEFORE any torch imports
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 os.environ['TRANSFORMERS_DEVICE'] = 'cpu'
@@ -38,151 +37,19 @@ import os
 import numpy as np
 import pandas as pd
 
-# CRITICAL: Patch torch.cuda BEFORE any ML libraries are imported
-# This must be at the very top to prevent CUDA lazy initialization
-_original_cuda = sys.modules.get('torch.cuda')
-import torch
-
-class _CPUOnlyCUDA:
-    """Dummy CUDA module that always reports CPU-only mode."""
-    
-    @staticmethod
-    def is_available():
-        return False
-    
-    @staticmethod
-    def device_count():
-        return 0
-    
-    @staticmethod
-    def current_device():
-        return 0
-    
-    @staticmethod
-    def device(idx=0):
-        # Return a device with type 'cuda' but mapped to CPU internally
-        # This allows transformers to check device.type without crashing
-        d = torch.device('cpu')
-        # Patch the type to appear as cuda (trick the library)
-        object.__setattr__(d, 'type', 'cuda')
-        return d
-    
-    @staticmethod
-    def set_device(idx):
-        pass
-    
-    @staticmethod
-    def synchronize(device=None):
-        pass
-    
-    @staticmethod
-    def empty_cache():
-        pass
-    
-    @staticmethod
-    def memory_allocated(device=None):
-        return 0
-    
-    @staticmethod
-    def memory_reserved(device=None):
-        return 0
-    
-    @staticmethod
-    def reset_peak_memory_stats(device=None):
-        pass
-    
-    # Prevent any actual CUDA operations
-    def __getattr__(self, name):
-        return lambda *args, **kwargs: None
-    
-    def __repr__(self):
-        return "<CPU-only CUDA mock>"
-
-# Replace torch.cuda completely
-sys.modules['torch.cuda'] = _CPUOnlyCUDA()
-
-# Force the torch.cuda module to be "initialized" before any code runs
-import torch
-
-# Most importantly: patch _lazy_init to be a no-op
-# This is the function that throws the assertion error when CUDA is not compiled
-try:
-    # Try to patch at the C level
-    torch._C._lazy_init = lambda: None
-except:
-    pass
-
-# Patch cuda module's lazy init
-import torch.cuda
-if hasattr(torch.cuda, '_lazy_init'):
-    torch.cuda._lazy_init = lambda: None
-
-# Prevent the assertion error by making is_initialized return True
-torch.cuda.is_initialized = lambda: True
-torch.cuda._is_initialized = lambda: True
-torch.cuda._initialized = lambda: True
-
-# The key: patch _is_compiled to say YES it was compiled
-# This is checked in the lazy init
-if hasattr(torch, '_C'):
-    torch._C._is_compiled = lambda: True
-    if hasattr(torch._C, '_CudaBase__is_compiled'):
-        torch._C._CudaBase__is_compiled = lambda: True
-
-print("[SGP-Tribe3] Patched torch._lazy_init extensively", flush=True)
-
 warnings.filterwarnings("ignore")
-
-# CRITICAL: Patch transformers at the VERY TOP before importing TRIBE
-# This must happen before tribev2 is imported
-# PATCHING AT HIGHEST PRIORITY - MUST WORK
-try:
-    import transformers.modeling_utils
-    import torch
-    import torch.nn as nn
-    
-    # CRITICAL: Replace .to() on torch.nn.Module FIRST
-    # This is the base class that everything inherits from
-    def noop_to(self, *args, **kwargs):
-        return self
-    
-    nn.Module.to = noop_to
-    
-    # Save original __init__ FIRST
-    orig_init = transformers.modeling_utils.PreTrainedModel.__init__
-    
-    # Replace .to() completely on ALL PreTrainedModel classes
-    def patched_to(self, *args, **kwargs):
-        return self  # No-op - don't move model anywhere
-    
-    def patched_init(self, *args, **kwargs):
-        import torch
-        if 'device' not in kwargs or kwargs['device'] is None:
-            kwargs['device'] = torch.device('cpu')
-        elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
-            kwargs['device'] = torch.device('cpu')
-        return orig_init(self, *args, **kwargs)
-    
-    transformers.modeling_utils.PreTrainedModel.__init__ = patched_init
-    transformers.modeling_utils.PreTrainedModel.to = patched_to
-    
-    print("[SGP-Tribe3] Patched nn.Module.to and transformers PreTrainedModel", flush=True)
-except Exception as e:
-    print(f"[SGP-Tribe3] Early patch error (non-fatal): {e}", flush=True)
 
 from flask import Flask, request, jsonify
 from sgp_parcellation import get_parcellator, SGP_NODE_DEFINITIONS, SGP_TRACT_DEFINITIONS
 
 app = Flask(__name__)
 
-# ─── Global model state ───────────────────────────────────────────────────────
 _model = None
 _model_loaded = False
 _model_loading = False
 _model_error = None
 _model_lock = threading.Lock()
 
-# ─── Configuration ────────────────────────────────────────────────────────────
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
 CKPT = os.environ.get("TRIBE_CKPT", "facebook/tribev2")
 MAX_VIDEO_DURATION = int(os.environ.get("MAX_VIDEO_DURATION", "120"))
@@ -195,10 +62,8 @@ os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
 os.makedirs(os.environ["HF_HUB_CACHE"], exist_ok=True)
 os.makedirs(os.environ["WHISPER_CACHE_DIR"], exist_ok=True)
 
-# ─── Result storage (in-memory for now; extend to HF dataset for persistence) ───
 _stimulus_results = {}
 
-# ─── Metrics tracking (MLOps best practice) ──────────────────────────────────
 _metrics = {
     "start_time": None,
     "total_predictions": 0,
@@ -206,8 +71,6 @@ _metrics = {
     "inference_times": [],
 }
 
-
-# ─── Model loading ────────────────────────────────────────────────────────────
 
 def _load_model():
     global _model, _model_loaded, _model_loading, _model_error, _metrics
@@ -236,114 +99,13 @@ def _load_model():
 
         import torch
         print(f"[SGP-Tribe3] PyTorch {torch.__version__}", flush=True)
-        
-        # CRITICAL: Patch torch.cuda._lazy_init to not throw assertion error
-        # The error happens in _lazy_init checking if torch was compiled with CUDA
-        import torch.cuda
-        if hasattr(torch.cuda, '_lazy_init'):
-            _orig_lazy_init = torch.cuda._lazy_init
-            def _safe_lazy_init():
-                try:
-                    return _orig_lazy_init()
-                except AssertionError:
-                    # Swallow the "Torch not compiled with CUDA enabled" error
-                    pass
-            torch.cuda._lazy_init = _safe_lazy_init
-            print("[SGP-Tribe3] Patched torch.cuda._lazy_init to be safe", flush=True)
+        print(f"[SGP-Tribe3] CUDA available: {torch.cuda.is_available()}", flush=True)
 
-        # Force CPU mode via environment
-        os.environ['CUDA_VISIBLE_DEVICES'] = ''
-        
-        # Patch neuralset/transformers AFTER torch is imported but BEFORE model loads
-        try:
-            # Import first
-            import neuralset.extractors.base
-            # Patch the device property on all extractors to return CPU
-            neuralset.extractors.base.BaseExtractor.device = property(lambda self: 'cpu')
-            print("[SGP-Tribe3] Patched BaseExtractor.device to CPU", flush=True)
-            
-            # Patch ALL extractor subclasses
-            from neuralset.extractors import audio, video, text
-            for module in [audio, video, text]:
-                for name in dir(module):
-                    cls = getattr(module, name, None)
-                    if cls and isinstance(cls, type) and hasattr(cls, 'device'):
-                        try:
-                            cls.device = property(lambda self: 'cpu')
-                        except:
-                            pass
-            print("[SGP-Tribe3] Patched all extractor device properties", flush=True)
-        except Exception as e:
-            print(f"[SGP-Tribe3] Extractor patch warning: {e}", flush=True)
-
-        # Also patch transformers' PreTrainedModel.to() method and __init__
-        try:
-            import transformers.modeling_utils
-            
-            # Patch PreTrainedModel.__init__ to default to cpu
-            # Note: Don't use orig_init here - use the one from top of file
-            orig_init = transformers.modeling_utils.PreTrainedModel.__init__
-            
-            def patched_init(self, *args, **kwargs):
-                # Force device to cpu in kwargs
-                import torch
-                if 'device' not in kwargs or kwargs['device'] is None:
-                    kwargs['device'] = torch.device('cpu')
-                elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
-                    kwargs['device'] = torch.device('cpu')
-                return orig_init(self, *args, **kwargs)
-            
-            # Also patch torch.nn.Module._apply at the base level
-            import torch.nn as nn
-            orig_apply = nn.Module._apply
-            
-            def cpu_apply(self, fn):
-                # This intercepts _apply which is called by .to()
-                def wrapped_fn(t):
-                    return t  # Skip the conversion - keep on CPU
-                return orig_apply(self, wrapped_fn)
-            
-            nn.Module._apply = cpu_apply
-            
-            # Also patch PreTrainedModel.to - use the top-level patch we already defined
-            # Don't re-patch - just make sure it's using our no-op version
-            
-            # Also patch the device property to always return cpu
-            try:
-                import torch
-                # Get the original device property
-                orig_device = transformers.modeling_utils.PreTrainedModel.device
-                
-                def patched_device(self):
-                    return torch.device('cpu')
-                
-                # Replace the property
-                transformers.modeling_utils.PreTrainedModel.device = property(patched_device)
-            except Exception as e:
-                print(f"[SGP-Tribe3] device property patch warning: {e}", flush=True)
-            
-            # Also patch all subclasses of PreTrainedModel
-            import torch
-            for cls_name in dir(transformers.modeling_utils):
-                cls = getattr(transformers.modeling_utils, cls_name, None)
-                if cls and isinstance(cls, type) and issubclass(cls, transformers.modeling_utils.PreTrainedModel):
-                    try:
-                        cls.device = property(lambda self: torch.device('cpu'))
-                    except:
-                        pass
-            
-            transformers.modeling_utils.PreTrainedModel.__init__ = patched_init
-            print("[SGP-Tribe3] Patched transformers PreTrainedModel __init__ and device", flush=True)
-        except Exception as e:
-            print(f"[SGP-Tribe3] transformers patch warning: {e}", flush=True)
-
-        # Load TRIBE v2 model
-        from tribev2 import TribeModel
         print("[SGP-Tribe3] Loading TribeModel...", flush=True)
+        from tribev2 import TribeModel
         model = TribeModel.from_pretrained(CKPT, device='cpu')
         print("[SGP-Tribe3] TribeModel loaded!", flush=True)
 
-        # Pre-warm the parcellator (downloads Schaefer atlas if needed)
         print("[SGP-Tribe3] Initializing SGP parcellator...", flush=True)
         parcellator = get_parcellator(CACHE_DIR)
         _ = parcellator.get_vertex_map()
@@ -363,8 +125,6 @@ def _load_model():
             _model_error = str(e)
 
 
-# ─── Video/Audio preprocessing ────────────────────────────────────────────────
-
 def _get_video_duration(video_path: str) -> float:
     """Get video duration in seconds using ffprobe."""
     import json
@@ -380,10 +140,7 @@ def _get_video_duration(video_path: str) -> float:
 
 
 def _preprocess_video(video_path: str, max_duration: int = MAX_VIDEO_DURATION) -> str:
-    """
-    Trim video to max_duration and normalize to TRIBE v2 expected format.
-    Returns path to processed video file.
-    """
+    """Trim video to max_duration and normalize to TRIBE v2 expected format."""
     actual_duration = _get_video_duration(video_path)
     clip_duration = min(max_duration, actual_duration) if actual_duration > 0 else max_duration
     
@@ -421,10 +178,7 @@ def _get_audio_duration(audio_path: str) -> float:
 
 
 def _preprocess_audio(audio_path: str, max_duration: int = MAX_AUDIO_DURATION) -> str:
-    """
-    Convert audio to wav format and normalize for TRIBE v2.
-    Returns path to processed audio file.
-    """
+    """Convert audio to wav format and normalize for TRIBE v2."""
     actual_duration = _get_audio_duration(audio_path)
     clip_duration = min(max_duration, actual_duration) if actual_duration > 0 else max_duration
     
@@ -449,23 +203,14 @@ def _preprocess_audio(audio_path: str, max_duration: int = MAX_AUDIO_DURATION) -
     return output_path
 
 
-# ─── Core inference ──────────────────────────────────────────────────────────
-
 def _run_inference_from_events(events_df: pd.DataFrame) -> dict:
-    """
-    Run TRIBE v2 inference from an events DataFrame and return SGP parcellation.
-    This is the core function used by all three modality endpoints.
-    """
+    """Run TRIBE v2 inference from an events DataFrame and return SGP parcellation."""
     import time
     start_time = time.time()
 
     try:
-        # Run TRIBE v2 prediction
-        # Note: standardize_events is called inside get_loaders, so we need to ensure
-        # our events have the right schema BEFORE calling predict
         preds, segments = _model.predict(events=events_df, verbose=False)
 
-        # Convert to numpy
         if hasattr(preds, "numpy"):
             pred_array = preds.numpy()
         else:
@@ -477,22 +222,18 @@ def _run_inference_from_events(events_df: pd.DataFrame) -> dict:
         inference_time = time.time() - start_time
         print(f"[SGP-Tribe3] Prediction shape: {pred_array.shape}, time: {inference_time:.1f}s", flush=True)
 
-        # Apply SGP parcellation
         parcellator = get_parcellator(CACHE_DIR)
         result = parcellator.parcellate(pred_array)
 
-        # Add activation timeline (mean activation per timestep)
         result["activation_timeline"] = [
             round(float(np.abs(pred_array[t]).mean()), 4)
             for t in range(pred_array.shape[0])
         ]
 
-        # Add inference metadata
         result["inference_time_seconds"] = round(inference_time, 2)
         result["n_segments"] = pred_array.shape[0]
         result["n_vertices"] = pred_array.shape[1]
 
-        # Update metrics
         _metrics["total_predictions"] += 1
         _metrics["inference_times"].append(inference_time)
         if len(_metrics["inference_times"]) > 100:
@@ -505,10 +246,7 @@ def _run_inference_from_events(events_df: pd.DataFrame) -> dict:
 
 
 def _run_video_inference(video_path: str) -> dict:
-    """
-    Run inference on video file (video + audio modalities).
-    Uses TRIBE v2's get_audio_and_text_events with audio_only=True.
-    """
+    """Run inference on video file (video + audio modalities)."""
     from tribev2.demo_utils import get_audio_and_text_events
 
     processed_path = _preprocess_video(video_path)
@@ -516,7 +254,6 @@ def _run_video_inference(video_path: str) -> dict:
     clip_duration = int(actual_duration) if actual_duration > 0 else MAX_VIDEO_DURATION
     
     try:
-        # Create initial video event with ALL required columns for TRIBE v2 schema
         event = pd.DataFrame([{
             "type": "Video",
             "filepath": processed_path,
@@ -529,11 +266,8 @@ def _run_video_inference(video_path: str) -> dict:
             "extra": {}
         }])
         
-        # Use TRIBE v2 pipeline: extracts audio, chunks, but SKIPS whisperx
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # FIX: Ensure every single row has timeline and other required fields
-        # Replace any missing/None values with defaults
         if "timeline" not in events_df.columns:
             events_df["timeline"] = "default"
         events_df["timeline"] = events_df["timeline"].fillna("default")
@@ -570,10 +304,7 @@ def _run_video_inference(video_path: str) -> dict:
 
 
 def _run_audio_inference(audio_path: str) -> dict:
-    """
-    Run inference on audio file (audio-only modality).
-    Uses TRIBE v2's get_audio_and_text_events with audio_only=True.
-    """
+    """Run inference on audio file (audio-only modality)."""
     from tribev2.demo_utils import get_audio_and_text_events
 
     processed_path = _preprocess_audio(audio_path)
@@ -581,7 +312,6 @@ def _run_audio_inference(audio_path: str) -> dict:
     clip_duration = int(actual_duration) if actual_duration > 0 else MAX_AUDIO_DURATION
     
     try:
-        # Create initial audio event with ALL required columns
         event = pd.DataFrame([{
             "type": "Audio",
             "filepath": processed_path,
@@ -594,10 +324,8 @@ def _run_audio_inference(audio_path: str) -> dict:
             "extra": {}
         }])
 
-        # Use TRIBE v2 pipeline with audio_only=True
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # FIX: Ensure every single row has timeline and other required fields
         if "timeline" not in events_df.columns:
             events_df["timeline"] = "default"
         events_df["timeline"] = events_df["timeline"].fillna("default")
@@ -634,14 +362,7 @@ def _run_audio_inference(audio_path: str) -> dict:
 
 
 def _run_text_inference(text: str) -> dict:
-    """
-    Run inference on text input (text-only modality).
-    Creates Word events manually with accumulating context.
-    
-    CRITICAL: Patches all neuralset extractors to use CPU before TRIBE v2 predict().
-    This prevents the CUDA assertion error that occurs when audio/video extractors
-    try to move to GPU during text-only inference.
-    """
+    """Run inference on text input (text-only modality)."""
     words = text.split()
     if not words:
         raise ValueError("Empty text provided")
@@ -671,38 +392,6 @@ def _run_text_inference(text: str) -> dict:
     
     print(f"[SGP-Tribe3] Text inference: {len(words)} words", flush=True)
 
-    # CRITICAL: Patch ALL extractors to use CPU BEFORE calling predict()
-    # This prevents Wav2Vec-BERT and other audio/video extractors from
-    # trying to move to CUDA (which fails on CPU-only PyTorch build)
-    try:
-        from neuralset.extractors import base, audio, video, text
-        
-        # Patch BaseExtractor
-        base.BaseExtractor.device = property(lambda self: 'cpu')
-        base.BaseExtractor._device = 'cpu'
-        
-        # Patch audio extractors
-        for name in dir(audio):
-            cls = getattr(audio, name, None)
-            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
-                cls.device = property(lambda self: 'cpu')
-        
-        # Patch video extractors  
-        for name in dir(video):
-            cls = getattr(video, name, None)
-            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
-                cls.device = property(lambda self: 'cpu')
-        
-        # Patch text extractors
-        for name in dir(text):
-            cls = getattr(text, name, None)
-            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
-                cls.device = property(lambda self: 'cpu')
-        
-        print("[SGP-Tribe3] Patched all extractors to CPU for text inference", flush=True)
-    except Exception as e:
-        print(f"[SGP-Tribe3] Extractor patch warning: {e}", flush=True)
-
     _metrics["predictions_by_modality"]["text"] += 1
     result = _run_inference_from_events(events_df)
     result["text_length"] = len(text)
@@ -711,13 +400,11 @@ def _run_text_inference(text: str) -> dict:
     return result
 
 
-# ─── Routes ───────────────────────────────────────────────────────────────────
-
 @app.route("/", methods=["GET"])
 def index():
     return jsonify({
         "service": "SGP-Tribe3",
-        "version": "1.1.0",
+        "version": "1.2.0",
         "description": "Sentient Generative Principal — Brain Encoding Calibration System",
         "status": "ok",
         "modality_support": {
@@ -979,9 +666,7 @@ def metrics():
     })
 
 
-# ─── Entry point ──────────────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     threading.Thread(target=_load_model, daemon=True).start()
-    port = int(os.environ.get("PORT", 7860))
+    port = int(os.environ.get("PORT", "7860"))
     app.run(host="0.0.0.0", port=port, debug=False)
