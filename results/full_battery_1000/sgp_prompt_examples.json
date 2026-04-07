@@ -1,0 +1,172 @@
+[
+  {
+    "text": "The cat sat on the mat.",
+    "category": "simple",
+    "sgp_nodes": {
+      "G1_broca": 0.9329467289719625,
+      "G2_wernicke": 0.879947663551402,
+      "G3_tpj": 0.9194719626168224,
+      "G4_pfc": 0.9473747663551402,
+      "G5_dmn": 0.9998,
+      "G6_limbic": 0.9038588785046728,
+      "G7_sensory": 0.9290794392523364,
+      "G8_atl": 0.9068383177570092,
+      "G9_premotor": 0.8907794392523366
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"The cat sat on the mat.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.95\n    Broca's Area: 0.93\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"The cat sat on the mat.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "If P implies Q, and Q implies R, then P implies R.",
+    "category": "logical",
+    "sgp_nodes": {
+      "G1_broca": 0.9397970873786406,
+      "G2_wernicke": 0.9139864077669902,
+      "G3_tpj": 0.9266757281553396,
+      "G4_pfc": 0.9527932038834951,
+      "G5_dmn": 0.9999417475728155,
+      "G6_limbic": 0.9368873786407766,
+      "G7_sensory": 0.9407466019417478,
+      "G8_atl": 0.9026873786407769,
+      "G9_premotor": 0.9442805825242719
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"If P implies Q, and Q implies R, then P implies R.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.95\n    Premotor: 0.94\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"If P implies Q, and Q implies R, then P implies R.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "She felt the warmth of the sun on her skin as memories of childhood flooded back.",
+    "category": "emotional",
+    "sgp_nodes": {
+      "G1_broca": 0.9438461538461538,
+      "G2_wernicke": 0.8818423076923078,
+      "G3_tpj": 0.9185374999999999,
+      "G4_pfc": 0.9473913461538461,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9049403846153846,
+      "G7_sensory": 0.9293778846153847,
+      "G8_atl": 0.9063355769230769,
+      "G9_premotor": 0.8882480769230768
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"She felt the warmth of the sun on her skin as memories of childhood flooded back.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.95\n    Broca's Area: 0.94\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"She felt the warmth of the sun on her skin as memories of childhood flooded back.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "The mitochondria is the powerhouse of the cell.",
+    "category": "factual",
+    "sgp_nodes": {
+      "G1_broca": 0.9620953271028037,
+      "G2_wernicke": 0.9096598130841121,
+      "G3_tpj": 0.9367420560747665,
+      "G4_pfc": 0.957747663551402,
+      "G5_dmn": 0.999711214953271,
+      "G6_limbic": 0.9258682242990655,
+      "G7_sensory": 0.942188785046729,
+      "G8_atl": 0.9128224299065422,
+      "G9_premotor": 0.9183869158878506
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"The mitochondria is the powerhouse of the cell.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    Broca's Area: 0.96\n    PFC: 0.96\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"The mitochondria is the powerhouse of the cell.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "What if the universe is a simulation and we're just characters in someone else's dream?",
+    "category": "abstract",
+    "sgp_nodes": {
+      "G1_broca": 0.9552761904761905,
+      "G2_wernicke": 0.8936209523809523,
+      "G3_tpj": 0.9298752380952381,
+      "G4_pfc": 0.9547123809523811,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9209819047619047,
+      "G7_sensory": 0.9347533333333332,
+      "G8_atl": 0.9128914285714287,
+      "G9_premotor": 0.9051571428571429
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"What if the universe is a simulation and we're just characters in someone else's dream?\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    Broca's Area: 0.96\n    PFC: 0.95\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"What if the universe is a simulation and we're just characters in someone else's dream?\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "The mountain peak rose sharply above the clouds, casting a long shadow over the valley.",
+    "category": "spatial",
+    "sgp_nodes": {
+      "G1_broca": 0.9552158415841583,
+      "G2_wernicke": 0.8917891089108909,
+      "G3_tpj": 0.9331514851485149,
+      "G4_pfc": 0.9527376237623763,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9150079207920793,
+      "G7_sensory": 0.942919801980198,
+      "G8_atl": 0.9211811881188119,
+      "G9_premotor": 0.8892247524752477
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"The mountain peak rose sharply above the clouds, casting a long shadow over the valley.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    Broca's Area: 0.96\n    PFC: 0.95\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"The mountain peak rose sharply above the clouds, casting a long shadow over the valley.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "She knew he was lying, but chose to pretend she believed him.",
+    "category": "social",
+    "sgp_nodes": {
+      "G1_broca": 0.9527111111111111,
+      "G2_wernicke": 0.8825505050505053,
+      "G3_tpj": 0.9143020202020201,
+      "G4_pfc": 0.9440525252525251,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9080020202020203,
+      "G7_sensory": 0.9274161616161616,
+      "G8_atl": 0.8965454545454546,
+      "G9_premotor": 0.8984737373737375
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"She knew he was lying, but chose to pretend she believed him.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    Broca's Area: 0.95\n    PFC: 0.94\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"She knew he was lying, but chose to pretend she believed him.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "She grasped the heavy stone and hurled it across the river.",
+    "category": "motor",
+    "sgp_nodes": {
+      "G1_broca": 0.9366572815533981,
+      "G2_wernicke": 0.8799970873786408,
+      "G3_tpj": 0.9107514563106798,
+      "G4_pfc": 0.9404941747572814,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9007873786407767,
+      "G7_sensory": 0.9274485436893202,
+      "G8_atl": 0.8988456310679612,
+      "G9_premotor": 0.9027242718446603
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"She grasped the heavy stone and hurled it across the river.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.94\n    Broca's Area: 0.94\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"She grasped the heavy stone and hurled it across the river.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "She remembered the day they first met as if it were yesterday.",
+    "category": "memory",
+    "sgp_nodes": {
+      "G1_broca": 0.9489901960784317,
+      "G2_wernicke": 0.8834421568627453,
+      "G3_tpj": 0.9183833333333332,
+      "G4_pfc": 0.9501970588235298,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.9001950980392156,
+      "G7_sensory": 0.9285117647058826,
+      "G8_atl": 0.9009843137254903,
+      "G9_premotor": 0.8803147058823532
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"She remembered the day they first met as if it were yesterday.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.95\n    Broca's Area: 0.95\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"She remembered the day they first met as if it were yesterday.\"\n\nGuidance: Respond thoughtfully to the input."
+  },
+  {
+    "text": "The melody drifted through the air like a gentle stream of sound.",
+    "category": "auditory",
+    "sgp_nodes": {
+      "G1_broca": 0.9393362637362638,
+      "G2_wernicke": 0.8798714285714286,
+      "G3_tpj": 0.9183978021978024,
+      "G4_pfc": 0.9467582417582416,
+      "G5_dmn": 1.0,
+      "G6_limbic": 0.8997307692307692,
+      "G7_sensory": 0.9308087912087911,
+      "G8_atl": 0.9043417582417583,
+      "G9_premotor": 0.8775956043956045
+    },
+    "sgp_prompt": "SGP-Guided Response\n==================\nInput: \"The melody drifted through the air like a gentle stream of sound.\"\n\nBrain Activation Profile (SGP Model):\n    DMN: 1.00\n    PFC: 0.95\n    Broca's Area: 0.94\n\nGuidance: Respond emphasizing the cognitive functions\nindicated by the most activated brain regions above.",
+    "standard_prompt": "Standard Response\n===============\nInput: \"The melody drifted through the air like a gentle stream of sound.\"\n\nGuidance: Respond thoughtfully to the input."
+  }
+]
