@@ -26,6 +26,15 @@ os.environ['CUDA_VISIBLE_DEVICES'] = ''
 os.environ['TRANSFORMERS_DEVICE'] = 'cpu'
 
 import sys
+import warnings
+import threading
+import traceback
+import tempfile
+import subprocess
+import uuid
+import math
+import json
+import os
 import numpy as np
 import pandas as pd
 
@@ -123,6 +132,43 @@ if hasattr(torch, '_C'):
 print("[SGP-Tribe3] Patched torch._lazy_init extensively", flush=True)
 
 warnings.filterwarnings("ignore")
+
+# CRITICAL: Patch transformers at the VERY TOP before importing TRIBE
+# This must happen before tribev2 is imported
+# PATCHING AT HIGHEST PRIORITY - MUST WORK
+try:
+    import transformers.modeling_utils
+    import torch
+    import torch.nn as nn
+    
+    # CRITICAL: Replace .to() on torch.nn.Module FIRST
+    # This is the base class that everything inherits from
+    def noop_to(self, *args, **kwargs):
+        return self
+    
+    nn.Module.to = noop_to
+    
+    # Save original __init__ FIRST
+    orig_init = transformers.modeling_utils.PreTrainedModel.__init__
+    
+    # Replace .to() completely on ALL PreTrainedModel classes
+    def patched_to(self, *args, **kwargs):
+        return self  # No-op - don't move model anywhere
+    
+    def patched_init(self, *args, **kwargs):
+        import torch
+        if 'device' not in kwargs or kwargs['device'] is None:
+            kwargs['device'] = torch.device('cpu')
+        elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
+            kwargs['device'] = torch.device('cpu')
+        return orig_init(self, *args, **kwargs)
+    
+    transformers.modeling_utils.PreTrainedModel.__init__ = patched_init
+    transformers.modeling_utils.PreTrainedModel.to = patched_to
+    
+    print("[SGP-Tribe3] Patched nn.Module.to and transformers PreTrainedModel", flush=True)
+except Exception as e:
+    print(f"[SGP-Tribe3] Early patch error (non-fatal): {e}", flush=True)
 
 from flask import Flask, request, jsonify
 from sgp_parcellation import get_parcellator, SGP_NODE_DEFINITIONS, SGP_TRACT_DEFINITIONS
@@ -235,14 +281,16 @@ def _load_model():
             import transformers.modeling_utils
             
             # Patch PreTrainedModel.__init__ to default to cpu
+            # Note: Don't use orig_init here - use the one from top of file
             orig_init = transformers.modeling_utils.PreTrainedModel.__init__
             
             def patched_init(self, *args, **kwargs):
                 # Force device to cpu in kwargs
+                import torch
                 if 'device' not in kwargs or kwargs['device'] is None:
-                    kwargs['device'] = 'cpu'
+                    kwargs['device'] = torch.device('cpu')
                 elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
-                    kwargs['device'] = 'cpu'
+                    kwargs['device'] = torch.device('cpu')
                 return orig_init(self, *args, **kwargs)
             
             # Also patch torch.nn.Module._apply at the base level
@@ -257,35 +305,35 @@ def _load_model():
             
             nn.Module._apply = cpu_apply
             
-            # Also patch PreTrainedModel.to specifically
-            orig_to = transformers.modeling_utils.PreTrainedModel.to
+            # Also patch PreTrainedModel.to - use the top-level patch we already defined
+            # Don't re-patch - just make sure it's using our no-op version
             
-            def patched_to(self, *args, **kwargs):
-                # Force cpu device
-                new_args = []
-                for arg in args:
-                    if isinstance(arg, str) and arg.startswith('cuda'):
-                        new_args.append('cpu')
-                    elif hasattr(arg, 'type') and arg.type == 'cuda':
-                        import torch
-                        new_args.append(torch.device('cpu'))
-                    else:
-                        new_args.append(arg)
-                args = tuple(new_args)
+            # Also patch the device property to always return cpu
+            try:
+                import torch
+                # Get the original device property
+                orig_device = transformers.modeling_utils.PreTrainedModel.device
                 
-                if 'device' not in kwargs or kwargs['device'] is None:
-                    kwargs['device'] = 'cpu'
-                elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
-                    kwargs['device'] = 'cpu'
-                elif hasattr(kwargs['device'], 'type') and kwargs['device'].type == 'cuda':
-                    import torch
-                    kwargs['device'] = torch.device('cpu')
+                def patched_device(self):
+                    return torch.device('cpu')
                 
-                return orig_to(self, *args, **kwargs)
+                # Replace the property
+                transformers.modeling_utils.PreTrainedModel.device = property(patched_device)
+            except Exception as e:
+                print(f"[SGP-Tribe3] device property patch warning: {e}", flush=True)
+            
+            # Also patch all subclasses of PreTrainedModel
+            import torch
+            for cls_name in dir(transformers.modeling_utils):
+                cls = getattr(transformers.modeling_utils, cls_name, None)
+                if cls and isinstance(cls, type) and issubclass(cls, transformers.modeling_utils.PreTrainedModel):
+                    try:
+                        cls.device = property(lambda self: torch.device('cpu'))
+                    except:
+                        pass
             
             transformers.modeling_utils.PreTrainedModel.__init__ = patched_init
-            transformers.modeling_utils.PreTrainedModel.to = patched_to
-            print("[SGP-Tribe3] Patched transformers PreTrainedModel.__init__ and .to", flush=True)
+            print("[SGP-Tribe3] Patched transformers PreTrainedModel __init__ and device", flush=True)
         except Exception as e:
             print(f"[SGP-Tribe3] transformers patch warning: {e}", flush=True)
 
@@ -589,6 +637,10 @@ def _run_text_inference(text: str) -> dict:
     """
     Run inference on text input (text-only modality).
     Creates Word events manually with accumulating context.
+    
+    CRITICAL: Patches all neuralset extractors to use CPU before TRIBE v2 predict().
+    This prevents the CUDA assertion error that occurs when audio/video extractors
+    try to move to GPU during text-only inference.
     """
     words = text.split()
     if not words:
@@ -618,6 +670,38 @@ def _run_text_inference(text: str) -> dict:
     events_df = pd.DataFrame(word_events)
     
     print(f"[SGP-Tribe3] Text inference: {len(words)} words", flush=True)
+
+    # CRITICAL: Patch ALL extractors to use CPU BEFORE calling predict()
+    # This prevents Wav2Vec-BERT and other audio/video extractors from
+    # trying to move to CUDA (which fails on CPU-only PyTorch build)
+    try:
+        from neuralset.extractors import base, audio, video, text
+        
+        # Patch BaseExtractor
+        base.BaseExtractor.device = property(lambda self: 'cpu')
+        base.BaseExtractor._device = 'cpu'
+        
+        # Patch audio extractors
+        for name in dir(audio):
+            cls = getattr(audio, name, None)
+            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
+                cls.device = property(lambda self: 'cpu')
+        
+        # Patch video extractors  
+        for name in dir(video):
+            cls = getattr(video, name, None)
+            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
+                cls.device = property(lambda self: 'cpu')
+        
+        # Patch text extractors
+        for name in dir(text):
+            cls = getattr(text, name, None)
+            if cls and isinstance(cls, type) and hasattr(cls, 'device'):
+                cls.device = property(lambda self: 'cpu')
+        
+        print("[SGP-Tribe3] Patched all extractors to CPU for text inference", flush=True)
+    except Exception as e:
+        print(f"[SGP-Tribe3] Extractor patch warning: {e}", flush=True)
 
     _metrics["predictions_by_modality"]["text"] += 1
     result = _run_inference_from_events(events_df)
