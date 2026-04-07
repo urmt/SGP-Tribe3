@@ -1,0 +1,140 @@
+
+SGP-Tribe3 Research Battery — Statistical Summary
+===================================================
+Date: 2026-04-06 22:10:20
+Results File: results/research_battery_20260406_220744.json
+Text Encoder: ollama
+Total Stimuli: 30
+Successful: 30
+Failed: 0
+Total Time: 10.56 minutes
+Average Time per Stimulus: 21.1 seconds
+
+HYPOTHESIS SUPPORT
+==================
+Overall Support Rate: 11/30 (37%)
+
+By Category:
+  Simple      : 1/3 (33%)
+  Logical     : 1/3 (33%)
+  Emotional   : 0/3 (0%)
+  Factual     : 0/3 (0%)
+  Abstract    : 1/3 (33%)
+  Spatial     : 2/3 (67%)
+  Social      : 0/3 (0%)
+  Motor       : 3/3 (100%)
+  Memory      : 2/3 (67%)
+  Auditory    : 1/3 (33%)
+
+NODE ACTIVATION SUMMARY (Mean ± SD)
+====================================
+
+SIMPLE:
+  G1_broca       : 0.9589 ± 0.0241
+  G2_wernicke    : 0.9605 ± 0.0280
+  G3_tpj         : 0.9554 ± 0.0281
+  G4_pfc         : 0.9842 ± 0.0155
+  G5_dmn         : 0.9641 ± 0.0246
+  G6_limbic      : 0.9562 ± 0.0092
+  G7_sensory     : 0.9804 ± 0.0277
+  G8_atl         : 0.9632 ± 0.0192
+  G9_premotor    : 0.9961 ± 0.0068
+
+LOGICAL:
+  G1_broca       : 0.9508 ± 0.0108
+  G2_wernicke    : 0.9552 ± 0.0118
+  G3_tpj         : 0.9970 ± 0.0053
+  G4_pfc         : 0.9951 ± 0.0071
+  G5_dmn         : 0.9774 ± 0.0054
+  G6_limbic      : 0.9777 ± 0.0133
+  G7_sensory     : 0.9836 ± 0.0114
+  G8_atl         : 0.9773 ± 0.0177
+  G9_premotor    : 0.9919 ± 0.0134
+
+EMOTIONAL:
+  G1_broca       : 0.9933 ± 0.0058
+  G2_wernicke    : 0.9364 ± 0.0151
+  G3_tpj         : 0.9459 ± 0.0160
+  G4_pfc         : 0.9583 ± 0.0095
+  G5_dmn         : 0.9426 ± 0.0141
+  G6_limbic      : 0.9647 ± 0.0087
+  G7_sensory     : 0.9665 ± 0.0019
+  G8_atl         : 0.9610 ± 0.0129
+  G9_premotor    : 0.9921 ± 0.0137
+
+FACTUAL:
+  G1_broca       : 0.9527 ± 0.0087
+  G2_wernicke    : 0.9245 ± 0.0225
+  G3_tpj         : 0.9736 ± 0.0086
+  G4_pfc         : 0.9741 ± 0.0145
+  G5_dmn         : 0.9717 ± 0.0181
+  G6_limbic      : 0.9599 ± 0.0364
+  G7_sensory     : 0.9574 ± 0.0093
+  G8_atl         : 0.9912 ± 0.0153
+  G9_premotor    : 0.9899 ± 0.0166
+
+ABSTRACT:
+  G1_broca       : 0.9828 ± 0.0266
+  G2_wernicke    : 0.9228 ± 0.0286
+  G3_tpj         : 0.9797 ± 0.0254
+  G4_pfc         : 0.9794 ± 0.0270
+  G5_dmn         : 0.9581 ± 0.0225
+  G6_limbic      : 0.9625 ± 0.0269
+  G7_sensory     : 0.9730 ± 0.0189
+  G8_atl         : 0.9896 ± 0.0180
+  G9_premotor    : 0.9365 ± 0.0278
+
+SPATIAL:
+  G1_broca       : 0.9790 ± 0.0213
+  G2_wernicke    : 0.9619 ± 0.0315
+  G3_tpj         : 0.9462 ± 0.0206
+  G4_pfc         : 0.9769 ± 0.0030
+  G5_dmn         : 0.9705 ± 0.0241
+  G6_limbic      : 0.9728 ± 0.0111
+  G7_sensory     : 0.9692 ± 0.0128
+  G8_atl         : 0.9681 ± 0.0245
+  G9_premotor    : 0.9874 ± 0.0218
+
+SOCIAL:
+  G1_broca       : 0.9876 ± 0.0214
+  G2_wernicke    : 0.9700 ± 0.0142
+  G3_tpj         : 0.9682 ± 0.0215
+  G4_pfc         : 0.9654 ± 0.0139
+  G5_dmn         : 0.9555 ± 0.0080
+  G6_limbic      : 0.9510 ± 0.0072
+  G7_sensory     : 0.9739 ± 0.0110
+  G8_atl         : 0.9673 ± 0.0275
+  G9_premotor    : 0.9822 ± 0.0253
+
+MOTOR:
+  G1_broca       : 0.9860 ± 0.0133
+  G2_wernicke    : 0.9862 ± 0.0154
+  G3_tpj         : 0.9543 ± 0.0128
+  G4_pfc         : 0.9642 ± 0.0109
+  G5_dmn         : 0.9712 ± 0.0148
+  G6_limbic      : 0.9684 ± 0.0420
+  G7_sensory     : 0.9835 ± 0.0093
+  G8_atl         : 0.9451 ± 0.0085
+  G9_premotor    : 0.9989 ± 0.0010
+
+MEMORY:
+  G1_broca       : 1.0000 ± 0.0000
+  G2_wernicke    : 0.9538 ± 0.0238
+  G3_tpj         : 0.9700 ± 0.0189
+  G4_pfc         : 0.9681 ± 0.0109
+  G5_dmn         : 0.9717 ± 0.0018
+  G6_limbic      : 0.9720 ± 0.0209
+  G7_sensory     : 0.9691 ± 0.0163
+  G8_atl         : 0.9815 ± 0.0151
+  G9_premotor    : 0.9793 ± 0.0114
+
+AUDITORY:
+  G1_broca       : 0.9799 ± 0.0161
+  G2_wernicke    : 0.9656 ± 0.0131
+  G3_tpj         : 0.9539 ± 0.0158
+  G4_pfc         : 0.9633 ± 0.0116
+  G5_dmn         : 0.9550 ± 0.0219
+  G6_limbic      : 0.9637 ± 0.0081
+  G7_sensory     : 0.9703 ± 0.0075
+  G8_atl         : 0.9287 ± 0.0250
+  G9_premotor    : 1.0000 ± 0.0000
