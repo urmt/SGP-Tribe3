@@ -257,24 +257,48 @@ def _run_video_inference(video_path: str) -> dict:
     processed_path = _preprocess_video(video_path)
 
     try:
-        # Create initial video event with explicit column order matching TRIBE v2 schema
+        # Create initial video event with ALL required columns for TRIBE v2 schema
         event = pd.DataFrame([{
             "type": "Video",
             "filepath": processed_path,
             "start": 0.0,
             "timeline": "default",
             "subject": "default",
-            "duration": None,
+            "duration": MAX_VIDEO_DURATION,
             "offset": 0.0,
             "frequency": 1.0,
             "extra": {}
         }])
         
-        # Ensure columns are in correct order for validation
+        # Ensure columns match expected order exactly
         event = event[["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]]
 
         # Use TRIBE v2 pipeline: extracts audio, chunks, but SKIPS whisperx
         events_df = get_audio_and_text_events(event, audio_only=True)
+
+        # Post-process: ensure all events have required columns with proper values
+        required_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        for col in required_cols:
+            if col not in events_df.columns:
+                if col == "filepath":
+                    events_df[col] = events_df.get("filepath", None)
+                elif col == "duration":
+                    events_df[col] = MAX_VIDEO_DURATION
+                elif col == "offset":
+                    events_df[col] = 0.0
+                elif col == "frequency":
+                    events_df[col] = 1.0
+                elif col == "timeline":
+                    events_df[col] = "default"
+                elif col == "subject":
+                    events_df[col] = "default"
+                elif col == "extra":
+                    events_df[col] = {}
+                else:
+                    events_df[col] = None
+
+        # Reorder columns to match expected order
+        events_df = events_df[required_cols]
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Video inference: {len(events_df)} events, types: {event_types}", flush=True)
@@ -297,24 +321,47 @@ def _run_audio_inference(audio_path: str) -> dict:
     processed_path = _preprocess_audio(audio_path)
 
     try:
-        # Create initial audio event with explicit columns matching TRIBE v2 schema
+        # Create initial audio event with ALL required columns
         event = pd.DataFrame([{
             "type": "Audio",
             "filepath": processed_path,
             "start": 0.0,
             "timeline": "default",
             "subject": "default",
-            "duration": None,
+            "duration": MAX_AUDIO_DURATION,
             "offset": 0.0,
             "frequency": 1.0,
             "extra": {}
         }])
         
-        # Ensure columns are in correct order
+        # Ensure columns match expected order
         event = event[["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]]
 
         # Use TRIBE v2 pipeline with audio_only=True
         events_df = get_audio_and_text_events(event, audio_only=True)
+
+        # Post-process: ensure all events have required columns
+        required_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        for col in required_cols:
+            if col not in events_df.columns:
+                if col == "filepath":
+                    events_df[col] = events_df.get("filepath", None)
+                elif col == "duration":
+                    events_df[col] = MAX_AUDIO_DURATION
+                elif col == "offset":
+                    events_df[col] = 0.0
+                elif col == "frequency":
+                    events_df[col] = 1.0
+                elif col == "timeline":
+                    events_df[col] = "default"
+                elif col == "subject":
+                    events_df[col] = "default"
+                elif col == "extra":
+                    events_df[col] = {}
+                else:
+                    events_df[col] = None
+
+        events_df = events_df[required_cols]
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Audio inference: {len(events_df)} events, types: {event_types}", flush=True)
@@ -358,6 +405,15 @@ def _run_text_inference(text: str) -> dict:
         })
 
     events_df = pd.DataFrame(word_events)
+    
+    # Ensure columns are in correct order
+    required_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra",
+                     "text", "context", "sequence_id", "sentence", "language"]
+    for col in required_cols:
+        if col not in events_df.columns:
+            events_df[col] = None
+    events_df = events_df[required_cols]
+    
     print(f"[SGP-Tribe3] Text inference: {len(words)} words", flush=True)
 
     _metrics["predictions_by_modality"]["text"] += 1
