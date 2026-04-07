@@ -1,5 +1,5 @@
 {
-  "date": "2026-04-07T08:39:49.207784",
+  "date": "2026-04-07T13:09:33.877065",
   "last_stimulus_id": 50,
   "n_completed": 50,
   "results": [
@@ -12,41 +12,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.956,
-        "G2_wernicke": 0.9908,
-        "G3_tpj": 0.9214,
-        "G4_pfc": 0.9537,
-        "G5_dmn": 0.9423,
-        "G6_limbic": 0.9515,
-        "G7_sensory": 0.9624,
-        "G8_atl": 0.9434,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9412,
+        "G2_wernicke": 0.8867,
+        "G3_tpj": 0.9258,
+        "G4_pfc": 0.9515,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9022,
+        "G7_sensory": 0.9376,
+        "G8_atl": 0.9182,
+        "G9_premotor": 0.8971
       },
       "streams": {
-        "dorsal": 0.9578,
-        "ventral": 0.9655,
-        "generative": 0.9423,
-        "modulatory": 0.9515,
-        "convergence": 0.9214
+        "dorsal": 0.9289,
+        "ventral": 0.9142,
+        "generative": 1.0,
+        "modulatory": 0.9022,
+        "convergence": 0.9258
       },
       "edge_weights": {
-        "AF": 0.9733,
-        "SLF": 0.9374,
-        "IFOF": 0.9485,
-        "ILF": 0.9765,
-        "UF": 0.9474,
-        "CG_exec": 0.9526,
-        "CG_dmn": 0.948,
-        "CC": 0.994,
-        "MdLF": 0.9765
+        "AF": 0.9136,
+        "SLF": 0.9385,
+        "IFOF": 0.9347,
+        "ILF": 0.9118,
+        "UF": 0.9102,
+        "CG_exec": 0.9265,
+        "CG_dmn": 0.9754,
+        "CC": 0.9144,
+        "MdLF": 0.9118
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 34.17,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.24,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -60,41 +60,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9919,
-        "G2_wernicke": 0.9909,
-        "G3_tpj": 0.9649,
-        "G4_pfc": 0.9865,
-        "G5_dmn": 0.9801,
-        "G6_limbic": 0.9609,
-        "G7_sensory": 0.9809,
-        "G8_atl": 0.955,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9003,
+        "G2_wernicke": 0.8816,
+        "G3_tpj": 0.9185,
+        "G4_pfc": 0.9463,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9075,
+        "G7_sensory": 0.9214,
+        "G8_atl": 0.8976,
+        "G9_premotor": 0.8882
       },
       "streams": {
-        "dorsal": 0.9858,
-        "ventral": 0.9756,
-        "generative": 0.9801,
-        "modulatory": 0.9609,
-        "convergence": 0.9649
+        "dorsal": 0.9133,
+        "ventral": 0.9002,
+        "generative": 1.0,
+        "modulatory": 0.9075,
+        "convergence": 0.9185
       },
       "edge_weights": {
-        "AF": 0.9914,
-        "SLF": 0.9756,
-        "IFOF": 0.9706,
-        "ILF": 0.9859,
-        "UF": 0.958,
-        "CG_exec": 0.9736,
-        "CG_dmn": 0.9833,
-        "CC": 0.9958,
-        "MdLF": 0.9859
+        "AF": 0.8909,
+        "SLF": 0.9323,
+        "IFOF": 0.9216,
+        "ILF": 0.9013,
+        "UF": 0.9025,
+        "CG_exec": 0.9267,
+        "CG_dmn": 0.9728,
+        "CC": 0.9042,
+        "MdLF": 0.9013
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.13,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.84,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 40
@@ -108,41 +108,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9824,
-        "G2_wernicke": 0.9737,
-        "G3_tpj": 0.9434,
-        "G4_pfc": 0.9765,
-        "G5_dmn": 0.9613,
-        "G6_limbic": 0.9483,
-        "G7_sensory": 0.9579,
-        "G8_atl": 0.9402,
-        "G9_premotor": 1.0
+        "G1_broca": 0.919,
+        "G2_wernicke": 0.8876,
+        "G3_tpj": 0.9107,
+        "G4_pfc": 0.9454,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.903,
+        "G7_sensory": 0.9262,
+        "G8_atl": 0.9136,
+        "G9_premotor": 0.8796
       },
       "streams": {
-        "dorsal": 0.9756,
-        "ventral": 0.9573,
-        "generative": 0.9613,
-        "modulatory": 0.9483,
-        "convergence": 0.9434
+        "dorsal": 0.9137,
+        "ventral": 0.9091,
+        "generative": 1.0,
+        "modulatory": 0.903,
+        "convergence": 0.9107
       },
       "edge_weights": {
-        "AF": 0.9781,
-        "SLF": 0.9598,
-        "IFOF": 0.9581,
-        "ILF": 0.9658,
-        "UF": 0.9442,
-        "CG_exec": 0.9623,
-        "CG_dmn": 0.9689,
-        "CC": 0.9987,
-        "MdLF": 0.9658
+        "AF": 0.9032,
+        "SLF": 0.9279,
+        "IFOF": 0.9294,
+        "ILF": 0.9067,
+        "UF": 0.9083,
+        "CG_exec": 0.924,
+        "CG_dmn": 0.9723,
+        "CC": 0.9042,
+        "MdLF": 0.9067
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.49,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.7,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 39
@@ -156,41 +156,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9793,
-        "G3_tpj": 0.9307,
-        "G4_pfc": 0.9642,
-        "G5_dmn": 0.9578,
-        "G6_limbic": 0.9438,
-        "G7_sensory": 0.9609,
-        "G8_atl": 0.9421,
-        "G9_premotor": 0.9857
+        "G1_broca": 0.9445,
+        "G2_wernicke": 0.8676,
+        "G3_tpj": 0.9213,
+        "G4_pfc": 0.9533,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9071,
+        "G7_sensory": 0.9277,
+        "G8_atl": 0.9135,
+        "G9_premotor": 0.8899
       },
       "streams": {
-        "dorsal": 0.9701,
-        "ventral": 0.9608,
-        "generative": 0.9578,
-        "modulatory": 0.9438,
-        "convergence": 0.9307
+        "dorsal": 0.9273,
+        "ventral": 0.9029,
+        "generative": 1.0,
+        "modulatory": 0.9071,
+        "convergence": 0.9213
       },
       "edge_weights": {
-        "AF": 0.9896,
-        "SLF": 0.9473,
-        "IFOF": 0.9531,
-        "ILF": 0.9701,
-        "UF": 0.943,
-        "CG_exec": 0.9539,
-        "CG_dmn": 0.961,
-        "CC": 0.9978,
-        "MdLF": 0.9701
+        "AF": 0.9052,
+        "SLF": 0.9371,
+        "IFOF": 0.9332,
+        "ILF": 0.8971,
+        "UF": 0.9103,
+        "CG_exec": 0.9299,
+        "CG_dmn": 0.9764,
+        "CC": 0.9013,
+        "MdLF": 0.8971
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.29,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.75,
       "text_encoder": "ollama",
       "word_count": 9,
       "text_length": 46
@@ -204,41 +204,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G8_atl"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9752,
-        "G2_wernicke": 0.9613,
-        "G3_tpj": 0.9426,
-        "G4_pfc": 0.948,
-        "G5_dmn": 0.9648,
-        "G6_limbic": 0.967,
-        "G7_sensory": 0.9584,
-        "G8_atl": 0.9854,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9247,
+        "G2_wernicke": 0.8743,
+        "G3_tpj": 0.9116,
+        "G4_pfc": 0.9438,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9008,
+        "G7_sensory": 0.9215,
+        "G8_atl": 0.9037,
+        "G9_premotor": 0.9017
       },
       "streams": {
-        "dorsal": 0.9665,
-        "ventral": 0.9684,
-        "generative": 0.9648,
-        "modulatory": 0.967,
-        "convergence": 0.9426
+        "dorsal": 0.9204,
+        "ventral": 0.8998,
+        "generative": 1.0,
+        "modulatory": 0.9008,
+        "convergence": 0.9116
       },
       "edge_weights": {
-        "AF": 0.9682,
-        "SLF": 0.9453,
-        "IFOF": 0.9665,
-        "ILF": 0.9599,
-        "UF": 0.9761,
-        "CG_exec": 0.9575,
-        "CG_dmn": 0.9564,
-        "CC": 0.9977,
-        "MdLF": 0.9599
+        "AF": 0.8991,
+        "SLF": 0.9276,
+        "IFOF": 0.9235,
+        "ILF": 0.8976,
+        "UF": 0.9023,
+        "CG_exec": 0.9221,
+        "CG_dmn": 0.9715,
+        "CC": 0.9088,
+        "MdLF": 0.8976
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.89,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.27,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 39
@@ -252,41 +252,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9821,
-        "G3_tpj": 0.9769,
-        "G4_pfc": 0.9776,
-        "G5_dmn": 0.9736,
-        "G6_limbic": 0.9624,
-        "G7_sensory": 0.976,
-        "G8_atl": 0.9627,
-        "G9_premotor": 0.981
+        "G1_broca": 0.941,
+        "G2_wernicke": 0.892,
+        "G3_tpj": 0.9301,
+        "G4_pfc": 0.9507,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9079,
+        "G7_sensory": 0.9411,
+        "G8_atl": 0.9182,
+        "G9_premotor": 0.8682
       },
       "streams": {
-        "dorsal": 0.9839,
-        "ventral": 0.9736,
-        "generative": 0.9736,
-        "modulatory": 0.9624,
-        "convergence": 0.9769
+        "dorsal": 0.9225,
+        "ventral": 0.9171,
+        "generative": 1.0,
+        "modulatory": 0.9079,
+        "convergence": 0.9301
       },
       "edge_weights": {
-        "AF": 0.991,
-        "SLF": 0.9773,
-        "IFOF": 0.9701,
-        "ILF": 0.9791,
-        "UF": 0.9625,
-        "CG_exec": 0.9699,
-        "CG_dmn": 0.9756,
-        "CC": 0.9923,
-        "MdLF": 0.9791
+        "AF": 0.9162,
+        "SLF": 0.9403,
+        "IFOF": 0.9343,
+        "ILF": 0.9162,
+        "UF": 0.913,
+        "CG_exec": 0.929,
+        "CG_dmn": 0.975,
+        "CC": 0.9065,
+        "MdLF": 0.9162
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.62,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.9,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 43
@@ -300,41 +300,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9996,
-        "G2_wernicke": 0.9472,
-        "G3_tpj": 0.9819,
-        "G4_pfc": 0.9797,
-        "G5_dmn": 0.9675,
-        "G6_limbic": 0.9441,
-        "G7_sensory": 0.9981,
-        "G8_atl": 0.9581,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9034,
+        "G2_wernicke": 0.8803,
+        "G3_tpj": 0.8832,
+        "G4_pfc": 0.9329,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8911,
+        "G7_sensory": 0.9119,
+        "G8_atl": 0.8995,
+        "G9_premotor": 0.8993
       },
       "streams": {
-        "dorsal": 0.9903,
-        "ventral": 0.9678,
-        "generative": 0.9675,
-        "modulatory": 0.9441,
-        "convergence": 0.9819
+        "dorsal": 0.9047,
+        "ventral": 0.8972,
+        "generative": 1.0,
+        "modulatory": 0.8911,
+        "convergence": 0.8832
       },
       "edge_weights": {
-        "AF": 0.973,
-        "SLF": 0.9808,
-        "IFOF": 0.9688,
-        "ILF": 0.9723,
-        "UF": 0.9511,
-        "CG_exec": 0.9617,
-        "CG_dmn": 0.9736,
-        "CC": 0.9941,
-        "MdLF": 0.9723
+        "AF": 0.8918,
+        "SLF": 0.9077,
+        "IFOF": 0.9161,
+        "ILF": 0.896,
+        "UF": 0.8953,
+        "CG_exec": 0.9118,
+        "CG_dmn": 0.9659,
+        "CC": 0.9243,
+        "MdLF": 0.896
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.81,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.11,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 41
@@ -348,41 +348,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9804,
-        "G3_tpj": 0.9499,
-        "G4_pfc": 0.9669,
-        "G5_dmn": 0.9573,
-        "G6_limbic": 0.9633,
-        "G7_sensory": 0.9798,
-        "G8_atl": 0.9158,
-        "G9_premotor": 0.9932
+        "G1_broca": 0.9372,
+        "G2_wernicke": 0.8735,
+        "G3_tpj": 0.9157,
+        "G4_pfc": 0.9438,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8861,
+        "G7_sensory": 0.9141,
+        "G8_atl": 0.8945,
+        "G9_premotor": 0.8594
       },
       "streams": {
-        "dorsal": 0.9775,
-        "ventral": 0.9587,
-        "generative": 0.9573,
-        "modulatory": 0.9633,
-        "convergence": 0.9499
+        "dorsal": 0.914,
+        "ventral": 0.894,
+        "generative": 1.0,
+        "modulatory": 0.8861,
+        "convergence": 0.9157
       },
       "edge_weights": {
-        "AF": 0.9902,
-        "SLF": 0.9583,
-        "IFOF": 0.941,
-        "ILF": 0.9801,
-        "UF": 0.9393,
-        "CG_exec": 0.9651,
-        "CG_dmn": 0.9621,
-        "CC": 0.9973,
-        "MdLF": 0.9801
+        "AF": 0.9048,
+        "SLF": 0.9296,
+        "IFOF": 0.9188,
+        "ILF": 0.8936,
+        "UF": 0.8903,
+        "CG_exec": 0.9145,
+        "CG_dmn": 0.9715,
+        "CC": 0.8928,
+        "MdLF": 0.8936
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.66,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.64,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 45
@@ -396,41 +396,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9833,
-        "G3_tpj": 0.9592,
-        "G4_pfc": 0.9955,
-        "G5_dmn": 0.9864,
-        "G6_limbic": 0.9846,
-        "G7_sensory": 0.9858,
-        "G8_atl": 0.9714,
-        "G9_premotor": 0.9798
+        "G1_broca": 0.9423,
+        "G2_wernicke": 0.8835,
+        "G3_tpj": 0.9213,
+        "G4_pfc": 0.9574,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9111,
+        "G7_sensory": 0.928,
+        "G8_atl": 0.9018,
+        "G9_premotor": 0.8844
       },
       "streams": {
-        "dorsal": 0.9836,
-        "ventral": 0.9802,
-        "generative": 0.9864,
-        "modulatory": 0.9846,
-        "convergence": 0.9592
+        "dorsal": 0.9263,
+        "ventral": 0.9044,
+        "generative": 1.0,
+        "modulatory": 0.9111,
+        "convergence": 0.9213
       },
       "edge_weights": {
-        "AF": 0.9916,
-        "SLF": 0.9772,
-        "IFOF": 0.9834,
-        "ILF": 0.9845,
-        "UF": 0.978,
-        "CG_exec": 0.99,
-        "CG_dmn": 0.9909,
-        "CC": 0.9969,
-        "MdLF": 0.9845
+        "AF": 0.9124,
+        "SLF": 0.9392,
+        "IFOF": 0.9292,
+        "ILF": 0.9055,
+        "UF": 0.9065,
+        "CG_exec": 0.934,
+        "CG_dmn": 0.9785,
+        "CC": 0.8926,
+        "MdLF": 0.9055
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.39,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.94,
       "text_encoder": "ollama",
       "word_count": 6,
       "text_length": 41
@@ -444,41 +444,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9752,
-        "G2_wernicke": 0.952,
-        "G3_tpj": 0.9496,
-        "G4_pfc": 0.9626,
-        "G5_dmn": 0.9619,
-        "G6_limbic": 0.9351,
-        "G7_sensory": 0.9743,
-        "G8_atl": 0.9441,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9362,
+        "G2_wernicke": 0.8818,
+        "G3_tpj": 0.9351,
+        "G4_pfc": 0.9502,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9068,
+        "G7_sensory": 0.9363,
+        "G8_atl": 0.9154,
+        "G9_premotor": 0.8875
       },
       "streams": {
-        "dorsal": 0.9718,
-        "ventral": 0.9568,
-        "generative": 0.9619,
-        "modulatory": 0.9351,
-        "convergence": 0.9496
+        "dorsal": 0.9273,
+        "ventral": 0.9112,
+        "generative": 1.0,
+        "modulatory": 0.9068,
+        "convergence": 0.9351
       },
       "edge_weights": {
-        "AF": 0.9635,
-        "SLF": 0.9561,
-        "IFOF": 0.9533,
-        "ILF": 0.9631,
-        "UF": 0.9396,
-        "CG_exec": 0.9487,
-        "CG_dmn": 0.9622,
-        "CC": 0.9975,
-        "MdLF": 0.9631
+        "AF": 0.9086,
+        "SLF": 0.9426,
+        "IFOF": 0.9327,
+        "ILF": 0.9087,
+        "UF": 0.9111,
+        "CG_exec": 0.9282,
+        "CG_dmn": 0.9748,
+        "CC": 0.9111,
+        "MdLF": 0.9087
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.33,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.54,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 36
@@ -492,41 +492,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9887,
-        "G3_tpj": 0.9556,
-        "G4_pfc": 0.9767,
-        "G5_dmn": 0.9727,
-        "G6_limbic": 0.9505,
-        "G7_sensory": 0.9853,
-        "G8_atl": 0.9356,
-        "G9_premotor": 0.9784
+        "G1_broca": 0.9115,
+        "G2_wernicke": 0.8907,
+        "G3_tpj": 0.9219,
+        "G4_pfc": 0.9442,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9043,
+        "G7_sensory": 0.9257,
+        "G8_atl": 0.9098,
+        "G9_premotor": 0.895
       },
       "streams": {
-        "dorsal": 0.9777,
-        "ventral": 0.9699,
-        "generative": 0.9727,
-        "modulatory": 0.9505,
-        "convergence": 0.9556
+        "dorsal": 0.9182,
+        "ventral": 0.9087,
+        "generative": 1.0,
+        "modulatory": 0.9043,
+        "convergence": 0.9219
       },
       "edge_weights": {
-        "AF": 0.9943,
-        "SLF": 0.9661,
-        "IFOF": 0.956,
-        "ILF": 0.987,
-        "UF": 0.943,
-        "CG_exec": 0.9635,
-        "CG_dmn": 0.9747,
-        "CC": 0.9956,
-        "MdLF": 0.987
+        "AF": 0.901,
+        "SLF": 0.933,
+        "IFOF": 0.9269,
+        "ILF": 0.908,
+        "UF": 0.9071,
+        "CG_exec": 0.9241,
+        "CG_dmn": 0.9717,
+        "CC": 0.9088,
+        "MdLF": 0.908
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.29,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.99,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 35
@@ -540,41 +540,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9912,
-        "G2_wernicke": 0.9647,
-        "G3_tpj": 0.9495,
-        "G4_pfc": 0.9866,
-        "G5_dmn": 0.9872,
-        "G6_limbic": 0.953,
-        "G7_sensory": 0.9724,
-        "G8_atl": 0.9485,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9443,
+        "G2_wernicke": 0.8899,
+        "G3_tpj": 0.9291,
+        "G4_pfc": 0.9568,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9147,
+        "G7_sensory": 0.9402,
+        "G8_atl": 0.9254,
+        "G9_premotor": 0.8796
       },
       "streams": {
-        "dorsal": 0.9818,
-        "ventral": 0.9619,
-        "generative": 0.9872,
-        "modulatory": 0.953,
-        "convergence": 0.9495
+        "dorsal": 0.9274,
+        "ventral": 0.9185,
+        "generative": 1.0,
+        "modulatory": 0.9147,
+        "convergence": 0.9291
       },
       "edge_weights": {
-        "AF": 0.9778,
-        "SLF": 0.9679,
-        "IFOF": 0.9674,
-        "ILF": 0.9685,
-        "UF": 0.9507,
-        "CG_exec": 0.9696,
-        "CG_dmn": 0.9869,
-        "CC": 0.9939,
-        "MdLF": 0.9685
+        "AF": 0.9167,
+        "SLF": 0.9428,
+        "IFOF": 0.941,
+        "ILF": 0.9147,
+        "UF": 0.9201,
+        "CG_exec": 0.9355,
+        "CG_dmn": 0.9781,
+        "CC": 0.9018,
+        "MdLF": 0.9147
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.23,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.31,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 43
@@ -588,41 +588,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.987,
-        "G2_wernicke": 0.941,
-        "G3_tpj": 0.9725,
-        "G4_pfc": 0.9603,
-        "G5_dmn": 0.969,
-        "G6_limbic": 0.9674,
-        "G7_sensory": 0.9791,
-        "G8_atl": 0.9523,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9325,
+        "G2_wernicke": 0.8835,
+        "G3_tpj": 0.9111,
+        "G4_pfc": 0.938,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9053,
+        "G7_sensory": 0.9194,
+        "G8_atl": 0.9042,
+        "G9_premotor": 0.9112
       },
       "streams": {
-        "dorsal": 0.9799,
-        "ventral": 0.9575,
-        "generative": 0.969,
-        "modulatory": 0.9674,
-        "convergence": 0.9725
+        "dorsal": 0.9232,
+        "ventral": 0.9024,
+        "generative": 1.0,
+        "modulatory": 0.9053,
+        "convergence": 0.9111
       },
       "edge_weights": {
-        "AF": 0.9637,
-        "SLF": 0.9663,
-        "IFOF": 0.9563,
-        "ILF": 0.9598,
-        "UF": 0.9598,
-        "CG_exec": 0.9638,
-        "CG_dmn": 0.9646,
-        "CC": 0.9924,
-        "MdLF": 0.9598
+        "AF": 0.9076,
+        "SLF": 0.9244,
+        "IFOF": 0.921,
+        "ILF": 0.9012,
+        "UF": 0.9048,
+        "CG_exec": 0.9215,
+        "CG_dmn": 0.9685,
+        "CC": 0.9234,
+        "MdLF": 0.9012
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.86,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.25,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -636,41 +636,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G5_dmn"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9835,
-        "G2_wernicke": 0.9782,
-        "G3_tpj": 0.9564,
-        "G4_pfc": 0.984,
-        "G5_dmn": 0.9894,
-        "G6_limbic": 0.9565,
-        "G7_sensory": 0.9752,
-        "G8_atl": 0.9738,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9326,
+        "G2_wernicke": 0.8821,
+        "G3_tpj": 0.9186,
+        "G4_pfc": 0.9495,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9032,
+        "G7_sensory": 0.928,
+        "G8_atl": 0.9093,
+        "G9_premotor": 0.8719
       },
       "streams": {
-        "dorsal": 0.981,
-        "ventral": 0.9757,
-        "generative": 0.9894,
-        "modulatory": 0.9565,
-        "convergence": 0.9564
+        "dorsal": 0.9182,
+        "ventral": 0.9065,
+        "generative": 1.0,
+        "modulatory": 0.9032,
+        "convergence": 0.9186
       },
       "edge_weights": {
-        "AF": 0.9808,
-        "SLF": 0.9701,
-        "IFOF": 0.9789,
-        "ILF": 0.9767,
-        "UF": 0.9651,
-        "CG_exec": 0.9702,
-        "CG_dmn": 0.9867,
-        "CC": 0.9946,
-        "MdLF": 0.9767
+        "AF": 0.907,
+        "SLF": 0.9339,
+        "IFOF": 0.9292,
+        "ILF": 0.9048,
+        "UF": 0.9062,
+        "CG_exec": 0.9261,
+        "CG_dmn": 0.9744,
+        "CC": 0.8984,
+        "MdLF": 0.9048
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.42,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.35,
       "text_encoder": "ollama",
       "word_count": 6,
       "text_length": 35
@@ -684,41 +684,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9846,
-        "G2_wernicke": 0.9705,
-        "G3_tpj": 0.9289,
-        "G4_pfc": 0.9594,
-        "G5_dmn": 0.9661,
-        "G6_limbic": 0.94,
-        "G7_sensory": 0.9548,
-        "G8_atl": 0.9146,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9196,
+        "G2_wernicke": 0.8691,
+        "G3_tpj": 0.9101,
+        "G4_pfc": 0.9415,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8982,
+        "G7_sensory": 0.9242,
+        "G8_atl": 0.9068,
+        "G9_premotor": 0.8825
       },
       "streams": {
-        "dorsal": 0.9682,
-        "ventral": 0.9466,
-        "generative": 0.9661,
-        "modulatory": 0.94,
-        "convergence": 0.9289
+        "dorsal": 0.9134,
+        "ventral": 0.9,
+        "generative": 1.0,
+        "modulatory": 0.8982,
+        "convergence": 0.9101
       },
       "edge_weights": {
-        "AF": 0.9775,
-        "SLF": 0.944,
-        "IFOF": 0.9367,
-        "ILF": 0.9626,
-        "UF": 0.9272,
-        "CG_exec": 0.9496,
-        "CG_dmn": 0.9627,
-        "CC": 0.9914,
-        "MdLF": 0.9626
+        "AF": 0.894,
+        "SLF": 0.9257,
+        "IFOF": 0.924,
+        "ILF": 0.8963,
+        "UF": 0.9025,
+        "CG_exec": 0.9196,
+        "CG_dmn": 0.9703,
+        "CC": 0.8986,
+        "MdLF": 0.8963
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.41,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.6,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 39
@@ -732,41 +732,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G7_sensory"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9606,
-        "G3_tpj": 0.95,
-        "G4_pfc": 0.9575,
-        "G5_dmn": 0.9509,
-        "G6_limbic": 0.9223,
-        "G7_sensory": 0.9664,
-        "G8_atl": 0.9205,
-        "G9_premotor": 0.9594
+        "G1_broca": 0.9461,
+        "G2_wernicke": 0.8915,
+        "G3_tpj": 0.9197,
+        "G4_pfc": 0.9504,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8951,
+        "G7_sensory": 0.9351,
+        "G8_atl": 0.9111,
+        "G9_premotor": 0.8921
       },
       "streams": {
-        "dorsal": 0.9667,
-        "ventral": 0.9492,
-        "generative": 0.9509,
-        "modulatory": 0.9223,
-        "convergence": 0.95
+        "dorsal": 0.9271,
+        "ventral": 0.9126,
+        "generative": 1.0,
+        "modulatory": 0.8951,
+        "convergence": 0.9197
       },
       "edge_weights": {
-        "AF": 0.9801,
-        "SLF": 0.9537,
-        "IFOF": 0.9388,
-        "ILF": 0.9635,
-        "UF": 0.9214,
-        "CG_exec": 0.9397,
-        "CG_dmn": 0.9542,
-        "CC": 0.9976,
-        "MdLF": 0.9635
+        "AF": 0.9184,
+        "SLF": 0.9349,
+        "IFOF": 0.9305,
+        "ILF": 0.913,
+        "UF": 0.9031,
+        "CG_exec": 0.9223,
+        "CG_dmn": 0.9749,
+        "CC": 0.9176,
+        "MdLF": 0.913
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.18,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.55,
       "text_encoder": "ollama",
       "word_count": 6,
       "text_length": 33
@@ -780,41 +780,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9915,
-        "G2_wernicke": 0.962,
-        "G3_tpj": 0.9655,
-        "G4_pfc": 0.9839,
-        "G5_dmn": 0.9681,
-        "G6_limbic": 0.9559,
-        "G7_sensory": 0.981,
-        "G8_atl": 0.9688,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9383,
+        "G2_wernicke": 0.8692,
+        "G3_tpj": 0.919,
+        "G4_pfc": 0.9532,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9025,
+        "G7_sensory": 0.9218,
+        "G8_atl": 0.8983,
+        "G9_premotor": 0.8621
       },
       "streams": {
-        "dorsal": 0.9852,
-        "ventral": 0.9706,
-        "generative": 0.9681,
-        "modulatory": 0.9559,
-        "convergence": 0.9655
+        "dorsal": 0.9182,
+        "ventral": 0.8964,
+        "generative": 1.0,
+        "modulatory": 0.9025,
+        "convergence": 0.919
       },
       "edge_weights": {
-        "AF": 0.9767,
-        "SLF": 0.9746,
-        "IFOF": 0.9763,
-        "ILF": 0.9715,
-        "UF": 0.9623,
-        "CG_exec": 0.9698,
-        "CG_dmn": 0.9759,
-        "CC": 0.9949,
-        "MdLF": 0.9715
+        "AF": 0.9031,
+        "SLF": 0.9359,
+        "IFOF": 0.9254,
+        "ILF": 0.8951,
+        "UF": 0.9004,
+        "CG_exec": 0.9275,
+        "CG_dmn": 0.9763,
+        "CC": 0.8888,
+        "MdLF": 0.8951
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.24,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.21,
       "text_encoder": "ollama",
       "word_count": 6,
       "text_length": 35
@@ -828,41 +828,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9974,
-        "G2_wernicke": 0.9606,
-        "G3_tpj": 0.9445,
-        "G4_pfc": 0.9602,
-        "G5_dmn": 0.9502,
-        "G6_limbic": 0.9484,
-        "G7_sensory": 0.9652,
-        "G8_atl": 0.928,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9425,
+        "G2_wernicke": 0.8809,
+        "G3_tpj": 0.9299,
+        "G4_pfc": 0.9476,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9033,
+        "G7_sensory": 0.94,
+        "G8_atl": 0.9144,
+        "G9_premotor": 0.8884
       },
       "streams": {
-        "dorsal": 0.9755,
-        "ventral": 0.9513,
-        "generative": 0.9502,
-        "modulatory": 0.9484,
-        "convergence": 0.9445
+        "dorsal": 0.9271,
+        "ventral": 0.9118,
+        "generative": 1.0,
+        "modulatory": 0.9033,
+        "convergence": 0.9299
       },
       "edge_weights": {
-        "AF": 0.9788,
-        "SLF": 0.9523,
-        "IFOF": 0.944,
-        "ILF": 0.9629,
-        "UF": 0.9382,
-        "CG_exec": 0.9543,
-        "CG_dmn": 0.9552,
-        "CC": 0.9967,
-        "MdLF": 0.9629
+        "AF": 0.9112,
+        "SLF": 0.9387,
+        "IFOF": 0.9309,
+        "ILF": 0.91,
+        "UF": 0.9089,
+        "CG_exec": 0.9252,
+        "CG_dmn": 0.9734,
+        "CC": 0.9171,
+        "MdLF": 0.91
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.51,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.84,
       "text_encoder": "ollama",
       "word_count": 9,
       "text_length": 38
@@ -876,41 +876,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G8_atl",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9983,
-        "G2_wernicke": 0.9454,
-        "G3_tpj": 0.9726,
-        "G4_pfc": 0.9929,
-        "G5_dmn": 0.9798,
-        "G6_limbic": 0.9882,
-        "G7_sensory": 0.9882,
-        "G8_atl": 1.0,
-        "G9_premotor": 0.9801
+        "G1_broca": 0.93,
+        "G2_wernicke": 0.8922,
+        "G3_tpj": 0.9267,
+        "G4_pfc": 0.9591,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9155,
+        "G7_sensory": 0.9345,
+        "G8_atl": 0.9093,
+        "G9_premotor": 0.9097
       },
       "streams": {
-        "dorsal": 0.986,
-        "ventral": 0.9779,
-        "generative": 0.9798,
-        "modulatory": 0.9882,
-        "convergence": 0.9726
+        "dorsal": 0.9314,
+        "ventral": 0.912,
+        "generative": 1.0,
+        "modulatory": 0.9155,
+        "convergence": 0.9267
       },
       "edge_weights": {
-        "AF": 0.9715,
-        "SLF": 0.9827,
-        "IFOF": 0.9965,
-        "ILF": 0.9666,
-        "UF": 0.9941,
-        "CG_exec": 0.9906,
-        "CG_dmn": 0.9863,
-        "CC": 0.9994,
-        "MdLF": 0.9666
+        "AF": 0.9109,
+        "SLF": 0.9428,
+        "IFOF": 0.9339,
+        "ILF": 0.9131,
+        "UF": 0.9124,
+        "CG_exec": 0.9371,
+        "CG_dmn": 0.9793,
+        "CC": 0.9167,
+        "MdLF": 0.9131
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.37,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.51,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 39
@@ -924,41 +924,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9786,
-        "G2_wernicke": 0.9513,
-        "G3_tpj": 0.9649,
-        "G4_pfc": 0.9748,
-        "G5_dmn": 0.9638,
-        "G6_limbic": 0.9741,
-        "G7_sensory": 0.968,
-        "G8_atl": 0.9286,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9431,
+        "G2_wernicke": 0.8748,
+        "G3_tpj": 0.9366,
+        "G4_pfc": 0.945,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9013,
+        "G7_sensory": 0.9284,
+        "G8_atl": 0.911,
+        "G9_premotor": 0.8889
       },
       "streams": {
-        "dorsal": 0.9796,
-        "ventral": 0.9493,
-        "generative": 0.9638,
-        "modulatory": 0.9741,
-        "convergence": 0.9649
+        "dorsal": 0.9284,
+        "ventral": 0.9047,
+        "generative": 1.0,
+        "modulatory": 0.9013,
+        "convergence": 0.9366
       },
       "edge_weights": {
-        "AF": 0.9648,
-        "SLF": 0.9698,
-        "IFOF": 0.9514,
-        "ILF": 0.9596,
-        "UF": 0.9511,
-        "CG_exec": 0.9745,
-        "CG_dmn": 0.9693,
-        "CC": 0.9992,
-        "MdLF": 0.9596
+        "AF": 0.9084,
+        "SLF": 0.9408,
+        "IFOF": 0.9278,
+        "ILF": 0.9012,
+        "UF": 0.9062,
+        "CG_exec": 0.9229,
+        "CG_dmn": 0.9721,
+        "CC": 0.9122,
+        "MdLF": 0.9012
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.88,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.62,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 41
@@ -972,41 +972,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9586,
-        "G3_tpj": 0.9498,
-        "G4_pfc": 0.974,
-        "G5_dmn": 0.9729,
-        "G6_limbic": 0.9585,
-        "G7_sensory": 0.966,
-        "G8_atl": 0.9488,
-        "G9_premotor": 0.9656
+        "G1_broca": 0.9204,
+        "G2_wernicke": 0.8607,
+        "G3_tpj": 0.9096,
+        "G4_pfc": 0.9389,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8976,
+        "G7_sensory": 0.9179,
+        "G8_atl": 0.894,
+        "G9_premotor": 0.8795
       },
       "streams": {
-        "dorsal": 0.9724,
-        "ventral": 0.9578,
-        "generative": 0.9729,
-        "modulatory": 0.9585,
-        "convergence": 0.9498
+        "dorsal": 0.9121,
+        "ventral": 0.8909,
+        "generative": 1.0,
+        "modulatory": 0.8976,
+        "convergence": 0.9096
       },
       "edge_weights": {
-        "AF": 0.9791,
-        "SLF": 0.9618,
-        "IFOF": 0.9613,
-        "ILF": 0.9623,
-        "UF": 0.9536,
-        "CG_exec": 0.9662,
-        "CG_dmn": 0.9735,
-        "CC": 0.9996,
-        "MdLF": 0.9623
+        "AF": 0.89,
+        "SLF": 0.9242,
+        "IFOF": 0.9162,
+        "ILF": 0.8888,
+        "UF": 0.8958,
+        "CG_exec": 0.918,
+        "CG_dmn": 0.969,
+        "CC": 0.9009,
+        "MdLF": 0.8888
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.96,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.47,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -1020,41 +1020,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9894,
-        "G3_tpj": 0.959,
-        "G4_pfc": 0.9677,
-        "G5_dmn": 0.9835,
-        "G6_limbic": 0.9712,
-        "G7_sensory": 0.9818,
-        "G8_atl": 0.949,
-        "G9_premotor": 0.9855
+        "G1_broca": 0.9457,
+        "G2_wernicke": 0.8886,
+        "G3_tpj": 0.9275,
+        "G4_pfc": 0.96,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9029,
+        "G7_sensory": 0.9314,
+        "G8_atl": 0.9136,
+        "G9_premotor": 0.8878
       },
       "streams": {
-        "dorsal": 0.9781,
-        "ventral": 0.9734,
-        "generative": 0.9835,
-        "modulatory": 0.9712,
-        "convergence": 0.959
+        "dorsal": 0.9302,
+        "ventral": 0.9112,
+        "generative": 1.0,
+        "modulatory": 0.9029,
+        "convergence": 0.9275
       },
       "edge_weights": {
-        "AF": 0.9947,
-        "SLF": 0.9633,
-        "IFOF": 0.9583,
-        "ILF": 0.9856,
-        "UF": 0.96,
-        "CG_exec": 0.9695,
-        "CG_dmn": 0.9756,
-        "CC": 0.9997,
-        "MdLF": 0.9856
+        "AF": 0.9167,
+        "SLF": 0.9436,
+        "IFOF": 0.9365,
+        "ILF": 0.9098,
+        "UF": 0.9082,
+        "CG_exec": 0.931,
+        "CG_dmn": 0.9798,
+        "CC": 0.9008,
+        "MdLF": 0.9098
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.25,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.15,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 37
@@ -1068,41 +1068,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9532,
-        "G3_tpj": 0.938,
-        "G4_pfc": 0.9553,
-        "G5_dmn": 0.9406,
-        "G6_limbic": 0.9527,
-        "G7_sensory": 0.9671,
-        "G8_atl": 0.9718,
-        "G9_premotor": 0.9944
+        "G1_broca": 0.933,
+        "G2_wernicke": 0.8613,
+        "G3_tpj": 0.9148,
+        "G4_pfc": 0.9416,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8969,
+        "G7_sensory": 0.9159,
+        "G8_atl": 0.8882,
+        "G9_premotor": 0.8857
       },
       "streams": {
-        "dorsal": 0.9719,
-        "ventral": 0.964,
-        "generative": 0.9406,
-        "modulatory": 0.9527,
-        "convergence": 0.938
+        "dorsal": 0.9188,
+        "ventral": 0.8885,
+        "generative": 1.0,
+        "modulatory": 0.8969,
+        "convergence": 0.9148
       },
       "edge_weights": {
-        "AF": 0.9763,
-        "SLF": 0.9466,
-        "IFOF": 0.9635,
-        "ILF": 0.9601,
-        "UF": 0.9622,
-        "CG_exec": 0.954,
-        "CG_dmn": 0.9479,
-        "CC": 0.9956,
-        "MdLF": 0.9601
+        "AF": 0.8964,
+        "SLF": 0.9281,
+        "IFOF": 0.9145,
+        "ILF": 0.8882,
+        "UF": 0.8926,
+        "CG_exec": 0.919,
+        "CG_dmn": 0.9704,
+        "CC": 0.899,
+        "MdLF": 0.8882
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.27,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.99,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 41
@@ -1116,41 +1116,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9986,
-        "G2_wernicke": 0.9895,
-        "G3_tpj": 0.9379,
-        "G4_pfc": 0.9662,
-        "G5_dmn": 0.979,
-        "G6_limbic": 0.9637,
-        "G7_sensory": 0.975,
-        "G8_atl": 0.9413,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9204,
+        "G2_wernicke": 0.8874,
+        "G3_tpj": 0.9001,
+        "G4_pfc": 0.9419,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8902,
+        "G7_sensory": 0.923,
+        "G8_atl": 0.8968,
+        "G9_premotor": 0.9087
       },
       "streams": {
-        "dorsal": 0.9757,
-        "ventral": 0.9686,
-        "generative": 0.979,
-        "modulatory": 0.9637,
-        "convergence": 0.9379
+        "dorsal": 0.9178,
+        "ventral": 0.9024,
+        "generative": 1.0,
+        "modulatory": 0.8902,
+        "convergence": 0.9001
       },
       "edge_weights": {
-        "AF": 0.9941,
-        "SLF": 0.9519,
-        "IFOF": 0.9537,
-        "ILF": 0.9822,
-        "UF": 0.9524,
-        "CG_exec": 0.9649,
-        "CG_dmn": 0.9726,
-        "CC": 0.9944,
-        "MdLF": 0.9822
+        "AF": 0.9038,
+        "SLF": 0.9208,
+        "IFOF": 0.9191,
+        "ILF": 0.905,
+        "UF": 0.8935,
+        "CG_exec": 0.9157,
+        "CG_dmn": 0.9705,
+        "CC": 0.9224,
+        "MdLF": 0.905
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.52,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 5.15,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 41
@@ -1164,41 +1164,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9892,
-        "G2_wernicke": 0.9987,
-        "G3_tpj": 0.9565,
-        "G4_pfc": 0.9781,
-        "G5_dmn": 0.9591,
-        "G6_limbic": 0.9582,
-        "G7_sensory": 0.9697,
-        "G8_atl": 0.9503,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9086,
+        "G2_wernicke": 0.8859,
+        "G3_tpj": 0.8852,
+        "G4_pfc": 0.9426,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9043,
+        "G7_sensory": 0.9156,
+        "G8_atl": 0.8954,
+        "G9_premotor": 0.8976
       },
       "streams": {
-        "dorsal": 0.9809,
-        "ventral": 0.9729,
-        "generative": 0.9591,
-        "modulatory": 0.9582,
-        "convergence": 0.9565
+        "dorsal": 0.9085,
+        "ventral": 0.899,
+        "generative": 1.0,
+        "modulatory": 0.9043,
+        "convergence": 0.8852
       },
       "edge_weights": {
-        "AF": 0.9939,
-        "SLF": 0.9672,
-        "IFOF": 0.9641,
-        "ILF": 0.9841,
-        "UF": 0.9542,
-        "CG_exec": 0.9681,
-        "CG_dmn": 0.9686,
-        "CC": 0.9959,
-        "MdLF": 0.9841
+        "AF": 0.8972,
+        "SLF": 0.9135,
+        "IFOF": 0.9187,
+        "ILF": 0.9007,
+        "UF": 0.8998,
+        "CG_exec": 0.9232,
+        "CG_dmn": 0.9709,
+        "CC": 0.9061,
+        "MdLF": 0.9007
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 8.03,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.57,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 42
@@ -1212,41 +1212,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G7_sensory"
+        "G5_dmn",
+        "G1_broca"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9693,
-        "G3_tpj": 0.9817,
-        "G4_pfc": 0.9795,
-        "G5_dmn": 0.9671,
-        "G6_limbic": 0.9679,
-        "G7_sensory": 0.9926,
-        "G8_atl": 0.9599,
-        "G9_premotor": 0.9535
+        "G1_broca": 0.9391,
+        "G2_wernicke": 0.8676,
+        "G3_tpj": 0.9141,
+        "G4_pfc": 0.9368,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.886,
+        "G7_sensory": 0.93,
+        "G8_atl": 0.9001,
+        "G9_premotor": 0.8778
       },
       "streams": {
-        "dorsal": 0.9787,
-        "ventral": 0.9739,
-        "generative": 0.9671,
-        "modulatory": 0.9679,
-        "convergence": 0.9817
+        "dorsal": 0.917,
+        "ventral": 0.8992,
+        "generative": 1.0,
+        "modulatory": 0.886,
+        "convergence": 0.9141
       },
       "edge_weights": {
-        "AF": 0.9846,
-        "SLF": 0.9806,
-        "IFOF": 0.9697,
-        "ILF": 0.9809,
-        "UF": 0.9639,
-        "CG_exec": 0.9737,
-        "CG_dmn": 0.9733,
-        "CC": 0.9938,
-        "MdLF": 0.9809
+        "AF": 0.9026,
+        "SLF": 0.9254,
+        "IFOF": 0.9183,
+        "ILF": 0.8982,
+        "UF": 0.893,
+        "CG_exec": 0.9111,
+        "CG_dmn": 0.9679,
+        "CC": 0.917,
+        "MdLF": 0.8982
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.54,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.69,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 46
@@ -1260,41 +1260,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9828,
-        "G2_wernicke": 0.9932,
-        "G3_tpj": 0.9378,
-        "G4_pfc": 0.9827,
-        "G5_dmn": 0.9439,
-        "G6_limbic": 0.9743,
-        "G7_sensory": 0.9729,
-        "G8_atl": 0.9646,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9322,
+        "G2_wernicke": 0.8686,
+        "G3_tpj": 0.9047,
+        "G4_pfc": 0.9446,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.903,
+        "G7_sensory": 0.9234,
+        "G8_atl": 0.8979,
+        "G9_premotor": 0.9013
       },
       "streams": {
-        "dorsal": 0.9758,
-        "ventral": 0.9769,
-        "generative": 0.9439,
-        "modulatory": 0.9743,
-        "convergence": 0.9378
+        "dorsal": 0.9207,
+        "ventral": 0.8966,
+        "generative": 1.0,
+        "modulatory": 0.903,
+        "convergence": 0.9047
       },
       "edge_weights": {
-        "AF": 0.988,
-        "SLF": 0.96,
-        "IFOF": 0.9736,
-        "ILF": 0.983,
-        "UF": 0.9694,
-        "CG_exec": 0.9785,
-        "CG_dmn": 0.9631,
-        "CC": 0.9989,
-        "MdLF": 0.983
+        "AF": 0.8999,
+        "SLF": 0.9244,
+        "IFOF": 0.921,
+        "ILF": 0.8956,
+        "UF": 0.9005,
+        "CG_exec": 0.9235,
+        "CG_dmn": 0.9719,
+        "CC": 0.9036,
+        "MdLF": 0.8956
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.86,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.44,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 42
@@ -1308,41 +1308,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
+        "G5_dmn",
         "G1_broca"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9992,
-        "G2_wernicke": 0.9606,
-        "G3_tpj": 0.9639,
-        "G4_pfc": 0.9759,
-        "G5_dmn": 0.9677,
-        "G6_limbic": 0.9578,
-        "G7_sensory": 0.9577,
-        "G8_atl": 0.9595,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9541,
+        "G2_wernicke": 0.8934,
+        "G3_tpj": 0.9212,
+        "G4_pfc": 0.949,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9067,
+        "G7_sensory": 0.9384,
+        "G8_atl": 0.9182,
+        "G9_premotor": 0.8862
       },
       "streams": {
-        "dorsal": 0.9848,
-        "ventral": 0.9593,
-        "generative": 0.9677,
-        "modulatory": 0.9578,
-        "convergence": 0.9639
+        "dorsal": 0.9276,
+        "ventral": 0.9167,
+        "generative": 1.0,
+        "modulatory": 0.9067,
+        "convergence": 0.9212
       },
       "edge_weights": {
-        "AF": 0.9797,
-        "SLF": 0.9699,
-        "IFOF": 0.9677,
-        "ILF": 0.9591,
-        "UF": 0.9586,
-        "CG_exec": 0.9668,
-        "CG_dmn": 0.9718,
-        "CC": 0.9966,
-        "MdLF": 0.9591
+        "AF": 0.9233,
+        "SLF": 0.935,
+        "IFOF": 0.9335,
+        "ILF": 0.9156,
+        "UF": 0.9124,
+        "CG_exec": 0.9276,
+        "CG_dmn": 0.9742,
+        "CC": 0.9172,
+        "MdLF": 0.9156
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.27,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.93,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -1356,41 +1356,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.965,
-        "G3_tpj": 0.9719,
-        "G4_pfc": 0.9925,
-        "G5_dmn": 0.9743,
-        "G6_limbic": 0.9894,
-        "G7_sensory": 0.9915,
-        "G8_atl": 0.9893,
-        "G9_premotor": 0.9938
+        "G1_broca": 0.9296,
+        "G2_wernicke": 0.8791,
+        "G3_tpj": 0.912,
+        "G4_pfc": 0.9488,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8994,
+        "G7_sensory": 0.9224,
+        "G8_atl": 0.9039,
+        "G9_premotor": 0.8961
       },
       "streams": {
-        "dorsal": 0.9895,
-        "ventral": 0.9819,
-        "generative": 0.9743,
-        "modulatory": 0.9894,
-        "convergence": 0.9719
+        "dorsal": 0.9216,
+        "ventral": 0.9018,
+        "generative": 1.0,
+        "modulatory": 0.8994,
+        "convergence": 0.912
       },
       "edge_weights": {
-        "AF": 0.9824,
-        "SLF": 0.9822,
-        "IFOF": 0.9909,
-        "ILF": 0.9782,
-        "UF": 0.9894,
-        "CG_exec": 0.9909,
-        "CG_dmn": 0.9833,
-        "CC": 0.9935,
-        "MdLF": 0.9782
+        "AF": 0.904,
+        "SLF": 0.9302,
+        "IFOF": 0.9261,
+        "ILF": 0.9005,
+        "UF": 0.9017,
+        "CG_exec": 0.9238,
+        "CG_dmn": 0.9741,
+        "CC": 0.9097,
+        "MdLF": 0.9005
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.91,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.91,
       "text_encoder": "ollama",
       "word_count": 10,
       "text_length": 45
@@ -1404,41 +1404,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G1_broca"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9896,
-        "G2_wernicke": 0.9839,
-        "G3_tpj": 0.9506,
-        "G4_pfc": 0.9806,
-        "G5_dmn": 0.979,
-        "G6_limbic": 0.9426,
-        "G7_sensory": 0.9848,
-        "G8_atl": 0.9576,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9424,
+        "G2_wernicke": 0.8786,
+        "G3_tpj": 0.9281,
+        "G4_pfc": 0.9562,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.898,
+        "G7_sensory": 0.93,
+        "G8_atl": 0.9094,
+        "G9_premotor": 0.8808
       },
       "streams": {
-        "dorsal": 0.9802,
-        "ventral": 0.9754,
-        "generative": 0.979,
-        "modulatory": 0.9426,
-        "convergence": 0.9506
+        "dorsal": 0.9269,
+        "ventral": 0.906,
+        "generative": 1.0,
+        "modulatory": 0.898,
+        "convergence": 0.9281
       },
       "edge_weights": {
-        "AF": 0.9867,
-        "SLF": 0.9655,
-        "IFOF": 0.969,
-        "ILF": 0.9843,
-        "UF": 0.9501,
-        "CG_exec": 0.9614,
-        "CG_dmn": 0.9798,
-        "CC": 0.996,
-        "MdLF": 0.9843
+        "AF": 0.9099,
+        "SLF": 0.9421,
+        "IFOF": 0.9326,
+        "ILF": 0.904,
+        "UF": 0.9037,
+        "CG_exec": 0.9267,
+        "CG_dmn": 0.9779,
+        "CC": 0.8991,
+        "MdLF": 0.904
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.57,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.41,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 36
@@ -1452,41 +1452,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9741,
-        "G2_wernicke": 0.9294,
-        "G3_tpj": 0.952,
-        "G4_pfc": 0.9864,
-        "G5_dmn": 0.9463,
-        "G6_limbic": 0.9711,
-        "G7_sensory": 0.9682,
-        "G8_atl": 0.9655,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9203,
+        "G2_wernicke": 0.8812,
+        "G3_tpj": 0.9241,
+        "G4_pfc": 0.9434,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9157,
+        "G7_sensory": 0.9253,
+        "G8_atl": 0.9062,
+        "G9_premotor": 0.8988
       },
       "streams": {
-        "dorsal": 0.9781,
-        "ventral": 0.9544,
-        "generative": 0.9463,
-        "modulatory": 0.9711,
-        "convergence": 0.952
+        "dorsal": 0.9216,
+        "ventral": 0.9042,
+        "generative": 1.0,
+        "modulatory": 0.9157,
+        "convergence": 0.9241
       },
       "edge_weights": {
-        "AF": 0.9515,
-        "SLF": 0.9691,
-        "IFOF": 0.9759,
-        "ILF": 0.9486,
-        "UF": 0.9683,
-        "CG_exec": 0.9787,
-        "CG_dmn": 0.9662,
-        "CC": 0.9911,
-        "MdLF": 0.9486
+        "AF": 0.9005,
+        "SLF": 0.9337,
+        "IFOF": 0.9246,
+        "ILF": 0.903,
+        "UF": 0.9109,
+        "CG_exec": 0.9294,
+        "CG_dmn": 0.9713,
+        "CC": 0.9126,
+        "MdLF": 0.903
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 8.17,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.26,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 43
@@ -1500,41 +1500,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G7_sensory"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9689,
-        "G3_tpj": 0.9539,
-        "G4_pfc": 0.9664,
-        "G5_dmn": 0.9488,
-        "G6_limbic": 0.9555,
-        "G7_sensory": 0.9721,
-        "G8_atl": 0.9463,
-        "G9_premotor": 0.9596
+        "G1_broca": 0.9235,
+        "G2_wernicke": 0.8593,
+        "G3_tpj": 0.9106,
+        "G4_pfc": 0.9321,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8865,
+        "G7_sensory": 0.9223,
+        "G8_atl": 0.905,
+        "G9_premotor": 0.8579
       },
       "streams": {
-        "dorsal": 0.97,
-        "ventral": 0.9624,
-        "generative": 0.9488,
-        "modulatory": 0.9555,
-        "convergence": 0.9539
+        "dorsal": 0.906,
+        "ventral": 0.8955,
+        "generative": 1.0,
+        "modulatory": 0.8865,
+        "convergence": 0.9106
       },
       "edge_weights": {
-        "AF": 0.9843,
-        "SLF": 0.9601,
-        "IFOF": 0.9563,
-        "ILF": 0.9705,
-        "UF": 0.9509,
-        "CG_exec": 0.9609,
-        "CG_dmn": 0.9575,
-        "CC": 0.9984,
-        "MdLF": 0.9705
+        "AF": 0.8908,
+        "SLF": 0.9213,
+        "IFOF": 0.9185,
+        "ILF": 0.8902,
+        "UF": 0.8957,
+        "CG_exec": 0.909,
+        "CG_dmn": 0.9654,
+        "CC": 0.9058,
+        "MdLF": 0.8902
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.8,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.79,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 40
@@ -1548,41 +1548,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9702,
-        "G3_tpj": 0.9355,
-        "G4_pfc": 0.964,
-        "G5_dmn": 0.9664,
-        "G6_limbic": 0.9659,
-        "G7_sensory": 0.9872,
-        "G8_atl": 0.9277,
-        "G9_premotor": 0.9983
+        "G1_broca": 0.9149,
+        "G2_wernicke": 0.8728,
+        "G3_tpj": 0.9046,
+        "G4_pfc": 0.9352,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8951,
+        "G7_sensory": 0.9197,
+        "G8_atl": 0.8976,
+        "G9_premotor": 0.9054
       },
       "streams": {
-        "dorsal": 0.9744,
-        "ventral": 0.9617,
-        "generative": 0.9664,
-        "modulatory": 0.9659,
-        "convergence": 0.9355
+        "dorsal": 0.915,
+        "ventral": 0.8967,
+        "generative": 1.0,
+        "modulatory": 0.8951,
+        "convergence": 0.9046
       },
       "edge_weights": {
-        "AF": 0.985,
-        "SLF": 0.9497,
-        "IFOF": 0.9457,
-        "ILF": 0.9787,
-        "UF": 0.9466,
-        "CG_exec": 0.9649,
-        "CG_dmn": 0.9652,
-        "CC": 0.9927,
-        "MdLF": 0.9787
+        "AF": 0.8936,
+        "SLF": 0.9198,
+        "IFOF": 0.9162,
+        "ILF": 0.896,
+        "UF": 0.8963,
+        "CG_exec": 0.9149,
+        "CG_dmn": 0.9671,
+        "CC": 0.9173,
+        "MdLF": 0.896
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.3,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.59,
       "text_encoder": "ollama",
       "word_count": 9,
       "text_length": 44
@@ -1596,41 +1596,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9573,
-        "G2_wernicke": 0.9586,
-        "G3_tpj": 0.9585,
-        "G4_pfc": 0.9754,
-        "G5_dmn": 0.9575,
-        "G6_limbic": 0.9484,
-        "G7_sensory": 0.9653,
-        "G8_atl": 0.9515,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9544,
+        "G2_wernicke": 0.8731,
+        "G3_tpj": 0.9493,
+        "G4_pfc": 0.9562,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9099,
+        "G7_sensory": 0.9466,
+        "G8_atl": 0.919,
+        "G9_premotor": 0.8726
       },
       "streams": {
-        "dorsal": 0.9728,
-        "ventral": 0.9585,
-        "generative": 0.9575,
-        "modulatory": 0.9484,
-        "convergence": 0.9585
+        "dorsal": 0.9331,
+        "ventral": 0.9129,
+        "generative": 1.0,
+        "modulatory": 0.9099,
+        "convergence": 0.9493
       },
       "edge_weights": {
-        "AF": 0.9579,
-        "SLF": 0.9669,
-        "IFOF": 0.9634,
-        "ILF": 0.9619,
-        "UF": 0.95,
-        "CG_exec": 0.9618,
-        "CG_dmn": 0.9665,
-        "CC": 0.9999,
-        "MdLF": 0.9619
+        "AF": 0.9129,
+        "SLF": 0.9528,
+        "IFOF": 0.9375,
+        "ILF": 0.9091,
+        "UF": 0.9144,
+        "CG_exec": 0.9328,
+        "CG_dmn": 0.9779,
+        "CC": 0.9103,
+        "MdLF": 0.9091
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 6.96,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.62,
       "text_encoder": "ollama",
       "word_count": 6,
       "text_length": 40
@@ -1644,41 +1644,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G9_premotor"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9509,
-        "G3_tpj": 0.9548,
-        "G4_pfc": 0.9719,
-        "G5_dmn": 0.9863,
-        "G6_limbic": 0.9451,
-        "G7_sensory": 0.9719,
-        "G8_atl": 0.9449,
-        "G9_premotor": 0.9893
+        "G1_broca": 0.9165,
+        "G2_wernicke": 0.8682,
+        "G3_tpj": 0.9026,
+        "G4_pfc": 0.942,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8927,
+        "G7_sensory": 0.9121,
+        "G8_atl": 0.8906,
+        "G9_premotor": 0.8829
       },
       "streams": {
-        "dorsal": 0.979,
-        "ventral": 0.9559,
-        "generative": 0.9863,
-        "modulatory": 0.9451,
-        "convergence": 0.9548
+        "dorsal": 0.911,
+        "ventral": 0.8903,
+        "generative": 1.0,
+        "modulatory": 0.8927,
+        "convergence": 0.9026
       },
       "edge_weights": {
-        "AF": 0.9751,
-        "SLF": 0.9633,
-        "IFOF": 0.9583,
-        "ILF": 0.9614,
-        "UF": 0.945,
-        "CG_exec": 0.9584,
-        "CG_dmn": 0.9791,
-        "CC": 0.9978,
-        "MdLF": 0.9614
+        "AF": 0.892,
+        "SLF": 0.9221,
+        "IFOF": 0.9159,
+        "ILF": 0.8899,
+        "UF": 0.8916,
+        "CG_exec": 0.917,
+        "CG_dmn": 0.9706,
+        "CC": 0.8951,
+        "MdLF": 0.8899
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.26,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.5,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 41
@@ -1692,41 +1692,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G7_sensory"
+        "G5_dmn",
+        "G1_broca"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9309,
-        "G2_wernicke": 0.9346,
-        "G3_tpj": 0.9136,
-        "G4_pfc": 0.9381,
-        "G5_dmn": 0.9394,
-        "G6_limbic": 0.9333,
-        "G7_sensory": 0.9438,
-        "G8_atl": 0.9195,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9521,
+        "G2_wernicke": 0.8791,
+        "G3_tpj": 0.9433,
+        "G4_pfc": 0.9491,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9033,
+        "G7_sensory": 0.9343,
+        "G8_atl": 0.9084,
+        "G9_premotor": 0.8837
       },
       "streams": {
-        "dorsal": 0.9456,
-        "ventral": 0.9326,
-        "generative": 0.9394,
-        "modulatory": 0.9333,
-        "convergence": 0.9136
+        "dorsal": 0.9321,
+        "ventral": 0.9073,
+        "generative": 1.0,
+        "modulatory": 0.9033,
+        "convergence": 0.9433
       },
       "edge_weights": {
-        "AF": 0.9327,
-        "SLF": 0.9258,
-        "IFOF": 0.9288,
-        "ILF": 0.9392,
-        "UF": 0.9264,
-        "CG_exec": 0.9357,
-        "CG_dmn": 0.9388,
-        "CC": 0.9971,
-        "MdLF": 0.9392
+        "AF": 0.9149,
+        "SLF": 0.9462,
+        "IFOF": 0.9285,
+        "ILF": 0.9063,
+        "UF": 0.9058,
+        "CG_exec": 0.9259,
+        "CG_dmn": 0.9742,
+        "CC": 0.91,
+        "MdLF": 0.9063
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.77,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.32,
       "text_encoder": "ollama",
       "word_count": 9,
       "text_length": 45
@@ -1740,41 +1740,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G8_atl",
-        "G6_limbic"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9806,
-        "G2_wernicke": 0.9596,
-        "G3_tpj": 0.9794,
-        "G4_pfc": 0.9913,
-        "G5_dmn": 0.9961,
-        "G6_limbic": 0.9972,
-        "G7_sensory": 0.9797,
-        "G8_atl": 1.0,
-        "G9_premotor": 0.996
+        "G1_broca": 0.9123,
+        "G2_wernicke": 0.8754,
+        "G3_tpj": 0.9093,
+        "G4_pfc": 0.9376,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8973,
+        "G7_sensory": 0.9203,
+        "G8_atl": 0.8913,
+        "G9_premotor": 0.8969
       },
       "streams": {
-        "dorsal": 0.9868,
-        "ventral": 0.9798,
-        "generative": 0.9961,
-        "modulatory": 0.9972,
-        "convergence": 0.9794
+        "dorsal": 0.914,
+        "ventral": 0.8957,
+        "generative": 1.0,
+        "modulatory": 0.8973,
+        "convergence": 0.9093
       },
       "edge_weights": {
-        "AF": 0.9701,
-        "SLF": 0.9853,
-        "IFOF": 0.9956,
-        "ILF": 0.9696,
-        "UF": 0.9986,
-        "CG_exec": 0.9942,
-        "CG_dmn": 0.9937,
-        "CC": 0.9997,
-        "MdLF": 0.9696
+        "AF": 0.8937,
+        "SLF": 0.9233,
+        "IFOF": 0.9142,
+        "ILF": 0.8975,
+        "UF": 0.8943,
+        "CG_exec": 0.9172,
+        "CG_dmn": 0.9683,
+        "CC": 0.9066,
+        "MdLF": 0.8975
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.36,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.74,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -1788,41 +1788,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G7_sensory"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9786,
-        "G3_tpj": 0.9388,
-        "G4_pfc": 0.9798,
-        "G5_dmn": 0.9831,
-        "G6_limbic": 0.9638,
-        "G7_sensory": 0.9835,
-        "G8_atl": 0.9555,
-        "G9_premotor": 0.9665
+        "G1_broca": 0.9292,
+        "G2_wernicke": 0.8753,
+        "G3_tpj": 0.9154,
+        "G4_pfc": 0.9447,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9031,
+        "G7_sensory": 0.9325,
+        "G8_atl": 0.9124,
+        "G9_premotor": 0.9114
       },
       "streams": {
-        "dorsal": 0.9713,
-        "ventral": 0.9725,
-        "generative": 0.9831,
-        "modulatory": 0.9638,
-        "convergence": 0.9388
+        "dorsal": 0.9252,
+        "ventral": 0.9067,
+        "generative": 1.0,
+        "modulatory": 0.9031,
+        "convergence": 0.9154
       },
       "edge_weights": {
-        "AF": 0.9892,
-        "SLF": 0.9591,
-        "IFOF": 0.9676,
-        "ILF": 0.981,
-        "UF": 0.9597,
-        "CG_exec": 0.9718,
-        "CG_dmn": 0.9815,
-        "CC": 0.9971,
-        "MdLF": 0.981
+        "AF": 0.9018,
+        "SLF": 0.9299,
+        "IFOF": 0.9284,
+        "ILF": 0.9034,
+        "UF": 0.9077,
+        "CG_exec": 0.9237,
+        "CG_dmn": 0.972,
+        "CC": 0.9106,
+        "MdLF": 0.9034
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.43,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.0,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 42
@@ -1837,40 +1837,40 @@
       ],
       "actual_dominant": [
         "G5_dmn",
-        "G8_atl"
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9874,
-        "G2_wernicke": 0.9764,
-        "G3_tpj": 0.9785,
-        "G4_pfc": 0.9846,
+        "G1_broca": 0.9308,
+        "G2_wernicke": 0.886,
+        "G3_tpj": 0.9073,
+        "G4_pfc": 0.9474,
         "G5_dmn": 1.0,
-        "G6_limbic": 0.9702,
-        "G7_sensory": 0.9769,
-        "G8_atl": 0.9905,
-        "G9_premotor": 0.9818
+        "G6_limbic": 0.9163,
+        "G7_sensory": 0.9246,
+        "G8_atl": 0.9065,
+        "G9_premotor": 0.8994
       },
       "streams": {
-        "dorsal": 0.9831,
-        "ventral": 0.9813,
+        "dorsal": 0.9212,
+        "ventral": 0.9057,
         "generative": 1.0,
-        "modulatory": 0.9702,
-        "convergence": 0.9785
+        "modulatory": 0.9163,
+        "convergence": 0.9073
       },
       "edge_weights": {
-        "AF": 0.9819,
-        "SLF": 0.9815,
-        "IFOF": 0.9876,
-        "ILF": 0.9767,
-        "UF": 0.9803,
-        "CG_exec": 0.9774,
-        "CG_dmn": 0.9923,
-        "CC": 0.9929,
-        "MdLF": 0.9767
+        "AF": 0.9082,
+        "SLF": 0.9272,
+        "IFOF": 0.9268,
+        "ILF": 0.9051,
+        "UF": 0.9114,
+        "CG_exec": 0.9317,
+        "CG_dmn": 0.9734,
+        "CC": 0.9104,
+        "MdLF": 0.9051
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.62,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.75,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 39
@@ -1884,41 +1884,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G2_wernicke"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9929,
-        "G2_wernicke": 0.9988,
-        "G3_tpj": 0.9437,
-        "G4_pfc": 0.9816,
-        "G5_dmn": 0.9583,
-        "G6_limbic": 0.966,
-        "G7_sensory": 0.9704,
-        "G8_atl": 0.9379,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9554,
+        "G2_wernicke": 0.8808,
+        "G3_tpj": 0.9391,
+        "G4_pfc": 0.9648,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9114,
+        "G7_sensory": 0.9438,
+        "G8_atl": 0.9197,
+        "G9_premotor": 0.8813
       },
       "streams": {
-        "dorsal": 0.9795,
-        "ventral": 0.969,
-        "generative": 0.9583,
-        "modulatory": 0.966,
-        "convergence": 0.9437
+        "dorsal": 0.9352,
+        "ventral": 0.9148,
+        "generative": 1.0,
+        "modulatory": 0.9114,
+        "convergence": 0.9391
       },
       "edge_weights": {
-        "AF": 0.9958,
-        "SLF": 0.9625,
-        "IFOF": 0.9595,
-        "ILF": 0.9845,
-        "UF": 0.9519,
-        "CG_exec": 0.9738,
-        "CG_dmn": 0.9699,
-        "CC": 0.9993,
-        "MdLF": 0.9845
+        "AF": 0.9173,
+        "SLF": 0.9519,
+        "IFOF": 0.942,
+        "ILF": 0.9117,
+        "UF": 0.9155,
+        "CG_exec": 0.9377,
+        "CG_dmn": 0.9823,
+        "CC": 0.8997,
+        "MdLF": 0.9117
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.35,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.2,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -1932,41 +1932,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9247,
-        "G3_tpj": 0.9601,
-        "G4_pfc": 0.9849,
-        "G5_dmn": 0.9797,
-        "G6_limbic": 0.9718,
-        "G7_sensory": 0.9767,
-        "G8_atl": 0.9822,
-        "G9_premotor": 0.9635
+        "G1_broca": 0.9174,
+        "G2_wernicke": 0.8617,
+        "G3_tpj": 0.9006,
+        "G4_pfc": 0.9352,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8963,
+        "G7_sensory": 0.9113,
+        "G8_atl": 0.8999,
+        "G9_premotor": 0.8985
       },
       "streams": {
-        "dorsal": 0.9771,
-        "ventral": 0.9612,
-        "generative": 0.9797,
-        "modulatory": 0.9718,
-        "convergence": 0.9601
+        "dorsal": 0.9129,
+        "ventral": 0.891,
+        "generative": 1.0,
+        "modulatory": 0.8963,
+        "convergence": 0.9006
       },
       "edge_weights": {
-        "AF": 0.9616,
-        "SLF": 0.9724,
-        "IFOF": 0.9835,
-        "ILF": 0.9504,
-        "UF": 0.977,
-        "CG_exec": 0.9783,
-        "CG_dmn": 0.9823,
-        "CC": 0.995,
-        "MdLF": 0.9504
+        "AF": 0.8891,
+        "SLF": 0.9177,
+        "IFOF": 0.9173,
+        "ILF": 0.8862,
+        "UF": 0.8981,
+        "CG_exec": 0.9155,
+        "CG_dmn": 0.967,
+        "CC": 0.9061,
+        "MdLF": 0.8862
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.39,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.55,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 44
@@ -1980,41 +1980,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9698,
-        "G2_wernicke": 0.9303,
-        "G3_tpj": 0.9533,
-        "G4_pfc": 0.9862,
-        "G5_dmn": 0.9609,
-        "G6_limbic": 0.9577,
-        "G7_sensory": 0.972,
-        "G8_atl": 0.9496,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9237,
+        "G2_wernicke": 0.872,
+        "G3_tpj": 0.9176,
+        "G4_pfc": 0.9442,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9,
+        "G7_sensory": 0.9262,
+        "G8_atl": 0.9028,
+        "G9_premotor": 0.878
       },
       "streams": {
-        "dorsal": 0.9773,
-        "ventral": 0.9506,
-        "generative": 0.9609,
-        "modulatory": 0.9577,
-        "convergence": 0.9533
+        "dorsal": 0.9159,
+        "ventral": 0.9003,
+        "generative": 1.0,
+        "modulatory": 0.9,
+        "convergence": 0.9176
       },
       "edge_weights": {
-        "AF": 0.9498,
-        "SLF": 0.9696,
-        "IFOF": 0.9677,
-        "ILF": 0.951,
-        "UF": 0.9536,
-        "CG_exec": 0.9718,
-        "CG_dmn": 0.9735,
-        "CC": 0.9968,
-        "MdLF": 0.951
+        "AF": 0.8975,
+        "SLF": 0.9308,
+        "IFOF": 0.9233,
+        "ILF": 0.8987,
+        "UF": 0.9014,
+        "CG_exec": 0.9218,
+        "CG_dmn": 0.9717,
+        "CC": 0.9009,
+        "MdLF": 0.8987
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.9,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.81,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 40
@@ -2028,41 +2028,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
-        "G8_atl"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9787,
-        "G2_wernicke": 0.9539,
-        "G3_tpj": 0.961,
-        "G4_pfc": 0.971,
-        "G5_dmn": 0.9498,
-        "G6_limbic": 0.9412,
-        "G7_sensory": 0.9695,
-        "G8_atl": 0.9825,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9228,
+        "G2_wernicke": 0.8725,
+        "G3_tpj": 0.9299,
+        "G4_pfc": 0.9529,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.924,
+        "G7_sensory": 0.9334,
+        "G8_atl": 0.9075,
+        "G9_premotor": 0.8891
       },
       "streams": {
-        "dorsal": 0.9777,
-        "ventral": 0.9686,
-        "generative": 0.9498,
-        "modulatory": 0.9412,
-        "convergence": 0.961
+        "dorsal": 0.9237,
+        "ventral": 0.9045,
+        "generative": 1.0,
+        "modulatory": 0.924,
+        "convergence": 0.9299
       },
       "edge_weights": {
-        "AF": 0.9662,
-        "SLF": 0.966,
-        "IFOF": 0.9768,
-        "ILF": 0.9617,
-        "UF": 0.9616,
-        "CG_exec": 0.956,
-        "CG_dmn": 0.9603,
-        "CC": 0.9992,
-        "MdLF": 0.9617
+        "AF": 0.8973,
+        "SLF": 0.9414,
+        "IFOF": 0.9299,
+        "ILF": 0.9024,
+        "UF": 0.9157,
+        "CG_exec": 0.9383,
+        "CG_dmn": 0.9762,
+        "CC": 0.9126,
+        "MdLF": 0.9024
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.8,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.64,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 45
@@ -2076,41 +2076,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
+        "G5_dmn",
         "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.973,
-        "G3_tpj": 0.9588,
-        "G4_pfc": 0.9935,
-        "G5_dmn": 0.985,
-        "G6_limbic": 0.9581,
-        "G7_sensory": 0.973,
-        "G8_atl": 0.9752,
-        "G9_premotor": 0.9551
+        "G1_broca": 0.9494,
+        "G2_wernicke": 0.8932,
+        "G3_tpj": 0.9138,
+        "G4_pfc": 0.9504,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8953,
+        "G7_sensory": 0.9369,
+        "G8_atl": 0.9034,
+        "G9_premotor": 0.9029
       },
       "streams": {
-        "dorsal": 0.9768,
-        "ventral": 0.9737,
-        "generative": 0.985,
-        "modulatory": 0.9581,
-        "convergence": 0.9588
+        "dorsal": 0.9291,
+        "ventral": 0.9112,
+        "generative": 1.0,
+        "modulatory": 0.8953,
+        "convergence": 0.9138
       },
       "edge_weights": {
-        "AF": 0.9864,
-        "SLF": 0.976,
-        "IFOF": 0.9843,
-        "ILF": 0.973,
-        "UF": 0.9666,
-        "CG_exec": 0.9756,
-        "CG_dmn": 0.9892,
-        "CC": 0.9965,
-        "MdLF": 0.973
+        "AF": 0.9209,
+        "SLF": 0.9319,
+        "IFOF": 0.9266,
+        "ILF": 0.9148,
+        "UF": 0.8993,
+        "CG_exec": 0.9224,
+        "CG_dmn": 0.9749,
+        "CC": 0.9136,
+        "MdLF": 0.9148
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.36,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.41,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 42
@@ -2124,41 +2124,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G5_dmn"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.9576,
-        "G3_tpj": 0.9575,
-        "G4_pfc": 0.9723,
-        "G5_dmn": 0.9892,
-        "G6_limbic": 0.9493,
-        "G7_sensory": 0.9755,
-        "G8_atl": 0.9445,
-        "G9_premotor": 0.9574
+        "G1_broca": 0.9463,
+        "G2_wernicke": 0.8783,
+        "G3_tpj": 0.9223,
+        "G4_pfc": 0.9477,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9092,
+        "G7_sensory": 0.9283,
+        "G8_atl": 0.896,
+        "G9_premotor": 0.9007
       },
       "streams": {
-        "dorsal": 0.9718,
-        "ventral": 0.9592,
-        "generative": 0.9892,
-        "modulatory": 0.9493,
-        "convergence": 0.9575
+        "dorsal": 0.9293,
+        "ventral": 0.9009,
+        "generative": 1.0,
+        "modulatory": 0.9092,
+        "convergence": 0.9223
       },
       "edge_weights": {
-        "AF": 0.9786,
-        "SLF": 0.9649,
-        "IFOF": 0.9583,
-        "ILF": 0.9665,
-        "UF": 0.9469,
-        "CG_exec": 0.9607,
-        "CG_dmn": 0.9807,
-        "CC": 0.9989,
-        "MdLF": 0.9665
+        "AF": 0.9117,
+        "SLF": 0.9349,
+        "IFOF": 0.9215,
+        "ILF": 0.903,
+        "UF": 0.9026,
+        "CG_exec": 0.9283,
+        "CG_dmn": 0.9735,
+        "CC": 0.907,
+        "MdLF": 0.903
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.11,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 2.77,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 42
@@ -2172,41 +2172,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G9_premotor",
+        "G5_dmn",
         "G1_broca"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9889,
-        "G2_wernicke": 0.9834,
-        "G3_tpj": 0.955,
-        "G4_pfc": 0.9822,
-        "G5_dmn": 0.9394,
-        "G6_limbic": 0.9392,
-        "G7_sensory": 0.9632,
-        "G8_atl": 0.949,
-        "G9_premotor": 1.0
+        "G1_broca": 0.9537,
+        "G2_wernicke": 0.8834,
+        "G3_tpj": 0.942,
+        "G4_pfc": 0.9536,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9232,
+        "G7_sensory": 0.9506,
+        "G8_atl": 0.9247,
+        "G9_premotor": 0.8887
       },
       "streams": {
-        "dorsal": 0.9815,
-        "ventral": 0.9652,
-        "generative": 0.9394,
-        "modulatory": 0.9392,
-        "convergence": 0.955
+        "dorsal": 0.9345,
+        "ventral": 0.9196,
+        "generative": 1.0,
+        "modulatory": 0.9232,
+        "convergence": 0.942
       },
       "edge_weights": {
-        "AF": 0.9861,
-        "SLF": 0.9685,
-        "IFOF": 0.9654,
-        "ILF": 0.9732,
-        "UF": 0.9441,
-        "CG_exec": 0.9604,
-        "CG_dmn": 0.9605,
-        "CC": 0.995,
-        "MdLF": 0.9732
+        "AF": 0.9179,
+        "SLF": 0.9478,
+        "IFOF": 0.939,
+        "ILF": 0.9164,
+        "UF": 0.9239,
+        "CG_exec": 0.9383,
+        "CG_dmn": 0.9765,
+        "CC": 0.9112,
+        "MdLF": 0.9164
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.51,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.23,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 42
@@ -2220,41 +2220,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G4_pfc",
-        "G5_dmn"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9931,
-        "G2_wernicke": 0.9599,
-        "G3_tpj": 0.9716,
-        "G4_pfc": 1.0,
-        "G5_dmn": 0.9995,
-        "G6_limbic": 0.9466,
-        "G7_sensory": 0.9878,
-        "G8_atl": 0.9728,
-        "G9_premotor": 0.9908
+        "G1_broca": 0.9097,
+        "G2_wernicke": 0.8605,
+        "G3_tpj": 0.9007,
+        "G4_pfc": 0.936,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8995,
+        "G7_sensory": 0.9139,
+        "G8_atl": 0.8937,
+        "G9_premotor": 0.8957
       },
       "streams": {
-        "dorsal": 0.9889,
-        "ventral": 0.9735,
-        "generative": 0.9995,
-        "modulatory": 0.9466,
-        "convergence": 0.9716
+        "dorsal": 0.9105,
+        "ventral": 0.8894,
+        "generative": 1.0,
+        "modulatory": 0.8995,
+        "convergence": 0.9007
       },
       "edge_weights": {
-        "AF": 0.9763,
-        "SLF": 0.9857,
-        "IFOF": 0.9863,
-        "ILF": 0.9737,
-        "UF": 0.9596,
-        "CG_exec": 0.9729,
-        "CG_dmn": 0.9997,
-        "CC": 0.993,
-        "MdLF": 0.9737
+        "AF": 0.8848,
+        "SLF": 0.9182,
+        "IFOF": 0.9146,
+        "ILF": 0.8868,
+        "UF": 0.8966,
+        "CG_exec": 0.9175,
+        "CG_dmn": 0.9675,
+        "CC": 0.9059,
+        "MdLF": 0.8868
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 8.32,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.29,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 41
@@ -2268,41 +2268,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G7_sensory",
-        "G8_atl"
+        "G5_dmn",
+        "G4_pfc"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 0.9829,
-        "G2_wernicke": 0.9418,
-        "G3_tpj": 0.9815,
-        "G4_pfc": 0.991,
-        "G5_dmn": 0.9716,
-        "G6_limbic": 0.9827,
-        "G7_sensory": 1.0,
-        "G8_atl": 0.9973,
-        "G9_premotor": 0.9508
+        "G1_broca": 0.9459,
+        "G2_wernicke": 0.894,
+        "G3_tpj": 0.9316,
+        "G4_pfc": 0.9567,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.9145,
+        "G7_sensory": 0.9437,
+        "G8_atl": 0.9289,
+        "G9_premotor": 0.8891
       },
       "streams": {
-        "dorsal": 0.9766,
-        "ventral": 0.9797,
-        "generative": 0.9716,
-        "modulatory": 0.9827,
-        "convergence": 0.9815
+        "dorsal": 0.9308,
+        "ventral": 0.9222,
+        "generative": 1.0,
+        "modulatory": 0.9145,
+        "convergence": 0.9316
       },
       "edge_weights": {
-        "AF": 0.9621,
-        "SLF": 0.9862,
-        "IFOF": 0.9942,
-        "ILF": 0.9705,
-        "UF": 0.99,
-        "CG_exec": 0.9869,
-        "CG_dmn": 0.9813,
-        "CC": 0.9973,
-        "MdLF": 0.9705
+        "AF": 0.9196,
+        "SLF": 0.9441,
+        "IFOF": 0.9427,
+        "ILF": 0.9186,
+        "UF": 0.9216,
+        "CG_exec": 0.9353,
+        "CG_dmn": 0.9781,
+        "CC": 0.9198,
+        "MdLF": 0.9186
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.57,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.05,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 37
@@ -2316,41 +2316,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G5_dmn"
+        "G5_dmn",
+        "G4_pfc"
       ],
       "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.97,
-        "G3_tpj": 0.9637,
-        "G4_pfc": 0.9778,
-        "G5_dmn": 0.9902,
-        "G6_limbic": 0.9743,
-        "G7_sensory": 0.981,
-        "G8_atl": 0.9564,
-        "G9_premotor": 0.9667
+        "G1_broca": 0.912,
+        "G2_wernicke": 0.8811,
+        "G3_tpj": 0.9103,
+        "G4_pfc": 0.9419,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.907,
+        "G7_sensory": 0.9186,
+        "G8_atl": 0.9012,
+        "G9_premotor": 0.8978
       },
       "streams": {
-        "dorsal": 0.977,
-        "ventral": 0.9691,
-        "generative": 0.9902,
-        "modulatory": 0.9743,
-        "convergence": 0.9637
+        "dorsal": 0.9155,
+        "ventral": 0.9003,
+        "generative": 1.0,
+        "modulatory": 0.907,
+        "convergence": 0.9103
       },
       "edge_weights": {
-        "AF": 0.9849,
-        "SLF": 0.9708,
-        "IFOF": 0.967,
-        "ILF": 0.9755,
-        "UF": 0.9653,
-        "CG_exec": 0.9761,
-        "CG_dmn": 0.984,
-        "CC": 0.9982,
-        "MdLF": 0.9755
+        "AF": 0.8964,
+        "SLF": 0.926,
+        "IFOF": 0.9213,
+        "ILF": 0.8997,
+        "UF": 0.9041,
+        "CG_exec": 0.9243,
+        "CG_dmn": 0.9705,
+        "CC": 0.9071,
+        "MdLF": 0.8997
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.84,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 4.18,
       "text_encoder": "ollama",
       "word_count": 7,
       "text_length": 38
@@ -2364,41 +2364,41 @@
         "G7_sensory"
       ],
       "actual_dominant": [
-        "G1_broca",
-        "G2_wernicke"
+        "G5_dmn",
+        "G1_broca"
       ],
-      "hypothesis_support": true,
+      "hypothesis_support": false,
       "sgp_nodes": {
-        "G1_broca": 1.0,
-        "G2_wernicke": 0.977,
-        "G3_tpj": 0.9281,
-        "G4_pfc": 0.9434,
-        "G5_dmn": 0.9554,
-        "G6_limbic": 0.9497,
-        "G7_sensory": 0.9579,
-        "G8_atl": 0.9277,
-        "G9_premotor": 0.952
+        "G1_broca": 0.9539,
+        "G2_wernicke": 0.8715,
+        "G3_tpj": 0.9247,
+        "G4_pfc": 0.9463,
+        "G5_dmn": 1.0,
+        "G6_limbic": 0.8891,
+        "G7_sensory": 0.9288,
+        "G8_atl": 0.9008,
+        "G9_premotor": 0.8788
       },
       "streams": {
-        "dorsal": 0.9559,
-        "ventral": 0.9542,
-        "generative": 0.9554,
-        "modulatory": 0.9497,
-        "convergence": 0.9281
+        "dorsal": 0.9259,
+        "ventral": 0.9004,
+        "generative": 1.0,
+        "modulatory": 0.8891,
+        "convergence": 0.9247
       },
       "edge_weights": {
-        "AF": 0.9884,
-        "SLF": 0.9357,
-        "IFOF": 0.9355,
-        "ILF": 0.9674,
-        "UF": 0.9386,
-        "CG_exec": 0.9465,
-        "CG_dmn": 0.9494,
-        "CC": 0.9969,
-        "MdLF": 0.9674
+        "AF": 0.9118,
+        "SLF": 0.9354,
+        "IFOF": 0.9233,
+        "ILF": 0.8997,
+        "UF": 0.8949,
+        "CG_exec": 0.9173,
+        "CG_dmn": 0.9728,
+        "CC": 0.8989,
+        "MdLF": 0.8997
       },
-      "dominant_hemisphere": "bilateral",
-      "inference_time_seconds": 7.6,
+      "dominant_hemisphere": "left",
+      "inference_time_seconds": 3.83,
       "text_encoder": "ollama",
       "word_count": 8,
       "text_length": 41

@@ -1,0 +1,11 @@
+Category,N_Stimuli,Hypothesis_Support_%,Mean_Inference_Time_s,Std_Inference_Time_s,Mean_Word_Count,Mean_Text_Length,Top_Node_1,Top_Node_1_Activation,Top_Node_2,Top_Node_2_Activation
+Simple,107,0.0,2.86,1.21,7.4,41.1,G5_dmn,0.9998,G4_pfc,0.9474
+Logical,103,65.0,1.5,0.37,15.9,94.2,G5_dmn,0.9999,G4_pfc,0.9528
+Emotional,104,100.0,1.08,0.16,10.4,58.9,G5_dmn,1.0,G4_pfc,0.9474
+Factual,107,36.4,1.42,0.52,11.8,74.0,G5_dmn,0.9997,G1_broca,0.9621
+Abstract,105,100.0,1.21,0.19,12.8,76.7,G5_dmn,1.0,G1_broca,0.9553
+Spatial,101,1.0,1.65,0.63,11.9,70.2,G5_dmn,1.0,G1_broca,0.9552
+Social,99,10.1,1.22,0.17,10.7,71.2,G5_dmn,1.0,G1_broca,0.9527
+Motor,103,29.1,1.3,0.46,10.7,65.1,G5_dmn,1.0,G4_pfc,0.9405
+Memory,102,100.0,1.35,0.3,12.7,72.2,G5_dmn,1.0,G4_pfc,0.9502
+Auditory,91,2.2,1.99,1.16,11.1,66.2,G5_dmn,1.0,G4_pfc,0.9468
