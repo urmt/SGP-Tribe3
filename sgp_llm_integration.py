@@ -167,7 +167,7 @@ def run_sgp_llm_integration():
     
     # Initialize Ollama client
     client = ollama.Client()
-    model = "mistral:7b-instruct-q4_K_M"
+    model = "tinyllama"
     
     # Run comparison
     comparison_results = []
