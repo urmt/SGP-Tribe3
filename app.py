@@ -252,18 +252,26 @@ def _run_video_inference(video_path: str) -> dict:
     Uses TRIBE v2's get_audio_and_text_events with audio_only=True.
     """
     from tribev2.demo_utils import get_audio_and_text_events
+    from neuralset.events.utils import standardize_events
 
     processed_path = _preprocess_video(video_path)
 
     try:
-        # Create initial video event
+        # Create initial video event with explicit column order matching TRIBE v2 schema
         event = pd.DataFrame([{
             "type": "Video",
             "filepath": processed_path,
             "start": 0.0,
             "timeline": "default",
-            "subject": "default"
+            "subject": "default",
+            "duration": None,
+            "offset": 0.0,
+            "frequency": 1.0,
+            "extra": {}
         }])
+        
+        # Ensure columns are in correct order for validation
+        event = event[["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]]
 
         # Use TRIBE v2 pipeline: extracts audio, chunks, but SKIPS whisperx
         events_df = get_audio_and_text_events(event, audio_only=True)
@@ -289,14 +297,21 @@ def _run_audio_inference(audio_path: str) -> dict:
     processed_path = _preprocess_audio(audio_path)
 
     try:
-        # Create initial audio event
+        # Create initial audio event with explicit columns matching TRIBE v2 schema
         event = pd.DataFrame([{
             "type": "Audio",
             "filepath": processed_path,
             "start": 0.0,
             "timeline": "default",
-            "subject": "default"
+            "subject": "default",
+            "duration": None,
+            "offset": 0.0,
+            "frequency": 1.0,
+            "extra": {}
         }])
+        
+        # Ensure columns are in correct order
+        event = event[["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]]
 
         # Use TRIBE v2 pipeline with audio_only=True
         events_df = get_audio_and_text_events(event, audio_only=True)
@@ -335,7 +350,11 @@ def _run_text_inference(text: str) -> dict:
             "subject": "default",
             "sequence_id": 0,
             "sentence": text,
-            "language": "english"
+            "language": "english",
+            "offset": 0.0,
+            "frequency": 1.0,
+            "filepath": None,
+            "extra": {}
         })
 
     events_df = pd.DataFrame(word_events)
