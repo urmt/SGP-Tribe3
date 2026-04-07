@@ -12,10 +12,9 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:$PATH"
 
 RUN pip install --no-cache-dir \
-    torch==2.5.1+cpu \
-    torchaudio==2.5.1+cpu \
-    torchvision==0.20.1+cpu \
-    --extra-index-url https://download.pytorch.org/whl/cpu
+    torch==2.5.1 \
+    torchaudio==2.5.1 \
+    torchvision==0.20.1
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -35,9 +34,11 @@ RUN cp /root/.local/bin/uv /usr/local/bin/uv 2>/dev/null || true
 
 USER appuser
 
-ENV HF_HUB_CACHE=/tmp/hf_hub_cache
-ENV WHISPER_CACHE_DIR=/tmp/whisper_cache
-ENV HF_HUB_DISABLE_TELEMETRY=1
+ENV CUDA_VISIBLE_DEVICES=""
+ENV HF_TOKEN=${HF_TOKEN}
+ENV TRIBE_CKPT=facebook/tribev2
+ENV MAX_VIDEO_DURATION=120
+ENV MAX_AUDIO_DURATION=120
 
 EXPOSE 7860
 CMD ["python", "app.py"]

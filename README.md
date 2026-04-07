@@ -1,8 +1,8 @@
 ---
 title: SGP-Tribe3
 emoji: 🧠
-colorFrom: indigo
-colorTo: purple
+colorFrom: green
+colorTo: yellow
 sdk: docker
 pinned: false
 license: cc-by-nc-4.0

@@ -20,17 +20,107 @@ Reference: Harvard MLSysBook - Machine Learning Systems
 https://github.com/harvard-edge/cs249r_book
 """
 
+# CRITICAL: Set CPU-only mode BEFORE any torch imports
 import os
-import uuid
-import math
-import json
-import warnings
-import threading
-import traceback
-import tempfile
-import subprocess
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['TRANSFORMERS_DEVICE'] = 'cpu'
+
+import sys
 import numpy as np
 import pandas as pd
+
+# CRITICAL: Patch torch.cuda BEFORE any ML libraries are imported
+# This must be at the very top to prevent CUDA lazy initialization
+_original_cuda = sys.modules.get('torch.cuda')
+import torch
+
+class _CPUOnlyCUDA:
+    """Dummy CUDA module that always reports CPU-only mode."""
+    
+    @staticmethod
+    def is_available():
+        return False
+    
+    @staticmethod
+    def device_count():
+        return 0
+    
+    @staticmethod
+    def current_device():
+        return 0
+    
+    @staticmethod
+    def device(idx=0):
+        # Return a device with type 'cuda' but mapped to CPU internally
+        # This allows transformers to check device.type without crashing
+        d = torch.device('cpu')
+        # Patch the type to appear as cuda (trick the library)
+        object.__setattr__(d, 'type', 'cuda')
+        return d
+    
+    @staticmethod
+    def set_device(idx):
+        pass
+    
+    @staticmethod
+    def synchronize(device=None):
+        pass
+    
+    @staticmethod
+    def empty_cache():
+        pass
+    
+    @staticmethod
+    def memory_allocated(device=None):
+        return 0
+    
+    @staticmethod
+    def memory_reserved(device=None):
+        return 0
+    
+    @staticmethod
+    def reset_peak_memory_stats(device=None):
+        pass
+    
+    # Prevent any actual CUDA operations
+    def __getattr__(self, name):
+        return lambda *args, **kwargs: None
+    
+    def __repr__(self):
+        return "<CPU-only CUDA mock>"
+
+# Replace torch.cuda completely
+sys.modules['torch.cuda'] = _CPUOnlyCUDA()
+
+# Force the torch.cuda module to be "initialized" before any code runs
+import torch
+
+# Most importantly: patch _lazy_init to be a no-op
+# This is the function that throws the assertion error when CUDA is not compiled
+try:
+    # Try to patch at the C level
+    torch._C._lazy_init = lambda: None
+except:
+    pass
+
+# Patch cuda module's lazy init
+import torch.cuda
+if hasattr(torch.cuda, '_lazy_init'):
+    torch.cuda._lazy_init = lambda: None
+
+# Prevent the assertion error by making is_initialized return True
+torch.cuda.is_initialized = lambda: True
+torch.cuda._is_initialized = lambda: True
+torch.cuda._initialized = lambda: True
+
+# The key: patch _is_compiled to say YES it was compiled
+# This is checked in the lazy init
+if hasattr(torch, '_C'):
+    torch._C._is_compiled = lambda: True
+    if hasattr(torch._C, '_CudaBase__is_compiled'):
+        torch._C._CudaBase__is_compiled = lambda: True
+
+print("[SGP-Tribe3] Patched torch._lazy_init extensively", flush=True)
 
 warnings.filterwarnings("ignore")
 
@@ -100,20 +190,104 @@ def _load_model():
 
         import torch
         print(f"[SGP-Tribe3] PyTorch {torch.__version__}", flush=True)
+        
+        # CRITICAL: Patch torch.cuda._lazy_init to not throw assertion error
+        # The error happens in _lazy_init checking if torch was compiled with CUDA
+        import torch.cuda
+        if hasattr(torch.cuda, '_lazy_init'):
+            _orig_lazy_init = torch.cuda._lazy_init
+            def _safe_lazy_init():
+                try:
+                    return _orig_lazy_init()
+                except AssertionError:
+                    # Swallow the "Torch not compiled with CUDA enabled" error
+                    pass
+            torch.cuda._lazy_init = _safe_lazy_init
+            print("[SGP-Tribe3] Patched torch.cuda._lazy_init to be safe", flush=True)
 
-        # CPU patch for HuggingFace text extractor (required for CPU-only inference)
+        # Force CPU mode via environment
+        os.environ['CUDA_VISIBLE_DEVICES'] = ''
+        
+        # Patch neuralset/transformers AFTER torch is imported but BEFORE model loads
         try:
-            from neuralset.extractors.text import HuggingFaceText
-            orig_load = HuggingFaceText._load_model
-
-            def cpu_patched_load(self):
-                object.__setattr__(self, 'device', 'cpu')
-                return orig_load(self)
-
-            HuggingFaceText._load_model = cpu_patched_load
-            print("[SGP-Tribe3] CPU patch applied to HuggingFaceText", flush=True)
+            # Import first
+            import neuralset.extractors.base
+            # Patch the device property on all extractors to return CPU
+            neuralset.extractors.base.BaseExtractor.device = property(lambda self: 'cpu')
+            print("[SGP-Tribe3] Patched BaseExtractor.device to CPU", flush=True)
+            
+            # Patch ALL extractor subclasses
+            from neuralset.extractors import audio, video, text
+            for module in [audio, video, text]:
+                for name in dir(module):
+                    cls = getattr(module, name, None)
+                    if cls and isinstance(cls, type) and hasattr(cls, 'device'):
+                        try:
+                            cls.device = property(lambda self: 'cpu')
+                        except:
+                            pass
+            print("[SGP-Tribe3] Patched all extractor device properties", flush=True)
         except Exception as e:
-            print(f"[SGP-Tribe3] CPU patch warning: {e}", flush=True)
+            print(f"[SGP-Tribe3] Extractor patch warning: {e}", flush=True)
+
+        # Also patch transformers' PreTrainedModel.to() method and __init__
+        try:
+            import transformers.modeling_utils
+            
+            # Patch PreTrainedModel.__init__ to default to cpu
+            orig_init = transformers.modeling_utils.PreTrainedModel.__init__
+            
+            def patched_init(self, *args, **kwargs):
+                # Force device to cpu in kwargs
+                if 'device' not in kwargs or kwargs['device'] is None:
+                    kwargs['device'] = 'cpu'
+                elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
+                    kwargs['device'] = 'cpu'
+                return orig_init(self, *args, **kwargs)
+            
+            # Also patch torch.nn.Module._apply at the base level
+            import torch.nn as nn
+            orig_apply = nn.Module._apply
+            
+            def cpu_apply(self, fn):
+                # This intercepts _apply which is called by .to()
+                def wrapped_fn(t):
+                    return t  # Skip the conversion - keep on CPU
+                return orig_apply(self, wrapped_fn)
+            
+            nn.Module._apply = cpu_apply
+            
+            # Also patch PreTrainedModel.to specifically
+            orig_to = transformers.modeling_utils.PreTrainedModel.to
+            
+            def patched_to(self, *args, **kwargs):
+                # Force cpu device
+                new_args = []
+                for arg in args:
+                    if isinstance(arg, str) and arg.startswith('cuda'):
+                        new_args.append('cpu')
+                    elif hasattr(arg, 'type') and arg.type == 'cuda':
+                        import torch
+                        new_args.append(torch.device('cpu'))
+                    else:
+                        new_args.append(arg)
+                args = tuple(new_args)
+                
+                if 'device' not in kwargs or kwargs['device'] is None:
+                    kwargs['device'] = 'cpu'
+                elif isinstance(kwargs['device'], str) and kwargs['device'].startswith('cuda'):
+                    kwargs['device'] = 'cpu'
+                elif hasattr(kwargs['device'], 'type') and kwargs['device'].type == 'cuda':
+                    import torch
+                    kwargs['device'] = torch.device('cpu')
+                
+                return orig_to(self, *args, **kwargs)
+            
+            transformers.modeling_utils.PreTrainedModel.__init__ = patched_init
+            transformers.modeling_utils.PreTrainedModel.to = patched_to
+            print("[SGP-Tribe3] Patched transformers PreTrainedModel.__init__ and .to", flush=True)
+        except Exception as e:
+            print(f"[SGP-Tribe3] transformers patch warning: {e}", flush=True)
 
         # Load TRIBE v2 model
         from tribev2 import TribeModel
@@ -143,17 +317,34 @@ def _load_model():
 
 # ─── Video/Audio preprocessing ────────────────────────────────────────────────
 
+def _get_video_duration(video_path: str) -> float:
+    """Get video duration in seconds using ffprobe."""
+    import json
+    cmd = ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "json", video_path]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode == 0:
+        try:
+            data = json.loads(result.stdout)
+            return float(data.get("format", {}).get("duration", 0))
+        except:
+            pass
+    return 0.0
+
+
 def _preprocess_video(video_path: str, max_duration: int = MAX_VIDEO_DURATION) -> str:
     """
     Trim video to max_duration and normalize to TRIBE v2 expected format.
     Returns path to processed video file.
     """
+    actual_duration = _get_video_duration(video_path)
+    clip_duration = min(max_duration, actual_duration) if actual_duration > 0 else max_duration
+    
     output_path = video_path.replace(".mp4", "_processed.mp4")
 
     cmd = [
         "ffmpeg", "-y",
         "-i", video_path,
-        "-t", str(max_duration),
+        "-t", str(clip_duration),
         "-c:v", "libx264", "-preset", "fast",
         "-c:a", "aac", "-ar", "16000", "-ac", "1",
         "-vf", "scale=320:240",
@@ -167,11 +358,28 @@ def _preprocess_video(video_path: str, max_duration: int = MAX_VIDEO_DURATION) -
     return output_path
 
 
+def _get_audio_duration(audio_path: str) -> float:
+    """Get audio duration in seconds using ffprobe."""
+    import json
+    cmd = ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "json", audio_path]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode == 0:
+        try:
+            data = json.loads(result.stdout)
+            return float(data.get("format", {}).get("duration", 0))
+        except:
+            pass
+    return 0.0
+
+
 def _preprocess_audio(audio_path: str, max_duration: int = MAX_AUDIO_DURATION) -> str:
     """
     Convert audio to wav format and normalize for TRIBE v2.
     Returns path to processed audio file.
     """
+    actual_duration = _get_audio_duration(audio_path)
+    clip_duration = min(max_duration, actual_duration) if actual_duration > 0 else max_duration
+    
     output_path = audio_path.replace(audio_path.split(".")[-1], "wav")
     if output_path == audio_path:
         output_path = audio_path.rsplit(".", 1)[0] + "_processed.wav"
@@ -179,7 +387,7 @@ def _preprocess_audio(audio_path: str, max_duration: int = MAX_AUDIO_DURATION) -
     cmd = [
         "ffmpeg", "-y",
         "-i", audio_path,
-        "-t", str(max_duration),
+        "-t", str(clip_duration),
         "-ar", "16000",
         "-ac", "1",
         "-acodec", "pcm_s16le",
@@ -256,7 +464,9 @@ def _run_video_inference(video_path: str) -> dict:
     from tribev2.demo_utils import get_audio_and_text_events
 
     processed_path = _preprocess_video(video_path)
-
+    actual_duration = _get_video_duration(processed_path)
+    clip_duration = int(actual_duration) if actual_duration > 0 else MAX_VIDEO_DURATION
+    
     try:
         # Create initial video event with ALL required columns for TRIBE v2 schema
         event = pd.DataFrame([{
@@ -265,7 +475,7 @@ def _run_video_inference(video_path: str) -> dict:
             "start": 0.0,
             "timeline": "default",
             "subject": "default",
-            "duration": MAX_VIDEO_DURATION,
+            "duration": clip_duration,
             "offset": 0.0,
             "frequency": 1.0,
             "extra": {}
@@ -274,31 +484,31 @@ def _run_video_inference(video_path: str) -> dict:
         # Use TRIBE v2 pipeline: extracts audio, chunks, but SKIPS whisperx
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # FIX: The get_audio_and_text_events may not preserve all required fields
-        # We need to ensure every event has the required columns before calling predict
-        required_base_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        # FIX: Ensure every single row has timeline and other required fields
+        # Replace any missing/None values with defaults
+        if "timeline" not in events_df.columns:
+            events_df["timeline"] = "default"
+        events_df["timeline"] = events_df["timeline"].fillna("default")
         
-        for idx, row in events_df.iterrows():
-            event_type = row.get("type", "")
-            for col in required_base_cols:
-                if col not in events_df.columns or pd.isna(events_df.at[idx, col]):
-                    if col == "timeline":
-                        events_df.at[idx, col] = "default"
-                    elif col == "subject":
-                        events_df.at[idx, col] = "default"
-                    elif col == "duration":
-                        events_df.at[idx, col] = MAX_VIDEO_DURATION
-                    elif col == "offset":
-                        events_df.at[idx, col] = 0.0
-                    elif col == "frequency":
-                        events_df.at[idx, col] = 1.0
-                    elif col == "extra":
-                        events_df.at[idx, col] = {}
-                    elif col == "filepath":
-                        if event_type in ["Video", "Audio"]:
-                            events_df.at[idx, col] = row.get("filepath", processed_path)
-                        else:
-                            events_df.at[idx, col] = None
+        if "subject" not in events_df.columns:
+            events_df["subject"] = "default"
+        events_df["subject"] = events_df["subject"].fillna("default")
+        
+        if "duration" not in events_df.columns:
+            events_df["duration"] = MAX_VIDEO_DURATION
+        events_df["duration"] = events_df["duration"].fillna(MAX_VIDEO_DURATION)
+        
+        if "offset" not in events_df.columns:
+            events_df["offset"] = 0.0
+        events_df["offset"] = events_df["offset"].fillna(0.0)
+        
+        if "frequency" not in events_df.columns:
+            events_df["frequency"] = 1.0
+        events_df["frequency"] = events_df["frequency"].fillna(1.0)
+        
+        if "extra" not in events_df.columns:
+            events_df["extra"] = {}
+        events_df["extra"] = events_df["extra"].apply(lambda x: x if x is not None else {})
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Video inference: {len(events_df)} events, types: {event_types}", flush=True)
@@ -319,7 +529,9 @@ def _run_audio_inference(audio_path: str) -> dict:
     from tribev2.demo_utils import get_audio_and_text_events
 
     processed_path = _preprocess_audio(audio_path)
-
+    actual_duration = _get_audio_duration(processed_path)
+    clip_duration = int(actual_duration) if actual_duration > 0 else MAX_AUDIO_DURATION
+    
     try:
         # Create initial audio event with ALL required columns
         event = pd.DataFrame([{
@@ -328,7 +540,7 @@ def _run_audio_inference(audio_path: str) -> dict:
             "start": 0.0,
             "timeline": "default",
             "subject": "default",
-            "duration": MAX_AUDIO_DURATION,
+            "duration": clip_duration,
             "offset": 0.0,
             "frequency": 1.0,
             "extra": {}
@@ -337,30 +549,30 @@ def _run_audio_inference(audio_path: str) -> dict:
         # Use TRIBE v2 pipeline with audio_only=True
         events_df = get_audio_and_text_events(event, audio_only=True)
 
-        # Ensure all events have required columns
-        required_base_cols = ["type", "filepath", "start", "timeline", "subject", "duration", "offset", "frequency", "extra"]
+        # FIX: Ensure every single row has timeline and other required fields
+        if "timeline" not in events_df.columns:
+            events_df["timeline"] = "default"
+        events_df["timeline"] = events_df["timeline"].fillna("default")
         
-        for idx, row in events_df.iterrows():
-            event_type = row.get("type", "")
-            for col in required_base_cols:
-                if col not in events_df.columns or pd.isna(events_df.at[idx, col]):
-                    if col == "timeline":
-                        events_df.at[idx, col] = "default"
-                    elif col == "subject":
-                        events_df.at[idx, col] = "default"
-                    elif col == "duration":
-                        events_df.at[idx, col] = MAX_AUDIO_DURATION
-                    elif col == "offset":
-                        events_df.at[idx, col] = 0.0
-                    elif col == "frequency":
-                        events_df.at[idx, col] = 1.0
-                    elif col == "extra":
-                        events_df.at[idx, col] = {}
-                    elif col == "filepath":
-                        if event_type in ["Video", "Audio"]:
-                            events_df.at[idx, col] = row.get("filepath", processed_path)
-                        else:
-                            events_df.at[idx, col] = None
+        if "subject" not in events_df.columns:
+            events_df["subject"] = "default"
+        events_df["subject"] = events_df["subject"].fillna("default")
+        
+        if "duration" not in events_df.columns:
+            events_df["duration"] = MAX_AUDIO_DURATION
+        events_df["duration"] = events_df["duration"].fillna(MAX_AUDIO_DURATION)
+        
+        if "offset" not in events_df.columns:
+            events_df["offset"] = 0.0
+        events_df["offset"] = events_df["offset"].fillna(0.0)
+        
+        if "frequency" not in events_df.columns:
+            events_df["frequency"] = 1.0
+        events_df["frequency"] = events_df["frequency"].fillna(1.0)
+        
+        if "extra" not in events_df.columns:
+            events_df["extra"] = {}
+        events_df["extra"] = events_df["extra"].apply(lambda x: x if x is not None else {})
 
         event_types = events_df['type'].unique().tolist()
         print(f"[SGP-Tribe3] Audio inference: {len(events_df)} events, types: {event_types}", flush=True)
