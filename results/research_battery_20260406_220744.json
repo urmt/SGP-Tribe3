@@ -1,0 +1,1507 @@
+{
+  "metadata": {
+    "phase": "research_battery",
+    "date": "2026-04-06T22:07:44.164226",
+    "text_encoder": "ollama",
+    "adapter_loaded": false,
+    "total_stimuli": 30,
+    "successful": 30,
+    "failed": 0,
+    "total_time_minutes": 10.56
+  },
+  "results": [
+    {
+      "stimulus_id": 1,
+      "category": "simple",
+      "text": "The cat sat on the mat.",
+      "expected_dominant": [
+        "G2_wernicke",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G4_pfc"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9329,
+        "G2_wernicke": 0.9336,
+        "G3_tpj": 0.9243,
+        "G4_pfc": 0.9685,
+        "G5_dmn": 0.947,
+        "G6_limbic": 0.9486,
+        "G7_sensory": 0.9487,
+        "G8_atl": 0.9454,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9564,
+        "ventral": 0.9426,
+        "generative": 0.947,
+        "modulatory": 0.9486,
+        "convergence": 0.9243
+      },
+      "edge_weights": {
+        "AF": 0.9333,
+        "SLF": 0.9462,
+        "IFOF": 0.9569,
+        "ILF": 0.9411,
+        "UF": 0.947,
+        "CG_exec": 0.9585,
+        "CG_dmn": 0.9577,
+        "CC": 0.9934,
+        "MdLF": 0.9411
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 9.12,
+      "text_encoder": "ollama",
+      "word_count": 6,
+      "text_length": 23
+    },
+    {
+      "stimulus_id": 2,
+      "category": "simple",
+      "text": "The dog ran across the yard.",
+      "expected_dominant": [
+        "G2_wernicke",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G7_sensory",
+        "G9_premotor"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G7_sensory"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9634,
+        "G2_wernicke": 0.9585,
+        "G3_tpj": 0.9789,
+        "G4_pfc": 0.9847,
+        "G5_dmn": 0.9531,
+        "G6_limbic": 0.9536,
+        "G7_sensory": 1.0,
+        "G8_atl": 0.9835,
+        "G9_premotor": 0.9882
+      },
+      "streams": {
+        "dorsal": 0.9788,
+        "ventral": 0.9807,
+        "generative": 0.9531,
+        "modulatory": 0.9536,
+        "convergence": 0.9789
+      },
+      "edge_weights": {
+        "AF": 0.9609,
+        "SLF": 0.9818,
+        "IFOF": 0.9841,
+        "ILF": 0.979,
+        "UF": 0.9684,
+        "CG_exec": 0.969,
+        "CG_dmn": 0.9688,
+        "CC": 0.9962,
+        "MdLF": 0.979
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 8.55,
+      "text_encoder": "ollama",
+      "word_count": 6,
+      "text_length": 28
+    },
+    {
+      "stimulus_id": 3,
+      "category": "simple",
+      "text": "Rain falls on the green grass.",
+      "expected_dominant": [
+        "G2_wernicke",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G4_pfc"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9805,
+        "G2_wernicke": 0.9895,
+        "G3_tpj": 0.9629,
+        "G4_pfc": 0.9994,
+        "G5_dmn": 0.9923,
+        "G6_limbic": 0.9664,
+        "G7_sensory": 0.9925,
+        "G8_atl": 0.9608,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9857,
+        "ventral": 0.9809,
+        "generative": 0.9923,
+        "modulatory": 0.9664,
+        "convergence": 0.9629
+      },
+      "edge_weights": {
+        "AF": 0.985,
+        "SLF": 0.981,
+        "IFOF": 0.9799,
+        "ILF": 0.991,
+        "UF": 0.9636,
+        "CG_exec": 0.9828,
+        "CG_dmn": 0.9958,
+        "CC": 0.995,
+        "MdLF": 0.991
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 8.5,
+      "text_encoder": "ollama",
+      "word_count": 6,
+      "text_length": 30
+    },
+    {
+      "stimulus_id": 4,
+      "category": "logical",
+      "text": "If P implies Q, and Q implies R, then P implies R.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G3_tpj",
+        "G6_limbic"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9384,
+        "G2_wernicke": 0.9576,
+        "G3_tpj": 1.0,
+        "G4_pfc": 0.987,
+        "G5_dmn": 0.9715,
+        "G6_limbic": 0.9919,
+        "G7_sensory": 0.9739,
+        "G8_atl": 0.9678,
+        "G9_premotor": 0.9765
+      },
+      "streams": {
+        "dorsal": 0.9755,
+        "ventral": 0.9664,
+        "generative": 0.9715,
+        "modulatory": 0.9919,
+        "convergence": 1.0
+      },
+      "edge_weights": {
+        "AF": 0.948,
+        "SLF": 0.9935,
+        "IFOF": 0.9774,
+        "ILF": 0.9657,
+        "UF": 0.9798,
+        "CG_exec": 0.9894,
+        "CG_dmn": 0.9792,
+        "CC": 0.9991,
+        "MdLF": 0.9657
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.39,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 50
+    },
+    {
+      "stimulus_id": 5,
+      "category": "logical",
+      "text": "All humans are mortal. Socrates is human. Therefore Socrates is mortal.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G3_tpj",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9581,
+        "G2_wernicke": 0.9657,
+        "G3_tpj": 1.0,
+        "G4_pfc": 0.9983,
+        "G5_dmn": 0.982,
+        "G6_limbic": 0.9655,
+        "G7_sensory": 0.9807,
+        "G8_atl": 0.9664,
+        "G9_premotor": 0.9993
+      },
+      "streams": {
+        "dorsal": 0.9889,
+        "ventral": 0.9709,
+        "generative": 0.982,
+        "modulatory": 0.9655,
+        "convergence": 1.0
+      },
+      "edge_weights": {
+        "AF": 0.9619,
+        "SLF": 0.9991,
+        "IFOF": 0.9822,
+        "ILF": 0.9732,
+        "UF": 0.9659,
+        "CG_exec": 0.9817,
+        "CG_dmn": 0.9901,
+        "CC": 0.9965,
+        "MdLF": 0.9732
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.21,
+      "text_encoder": "ollama",
+      "word_count": 11,
+      "text_length": 71
+    },
+    {
+      "stimulus_id": 6,
+      "category": "logical",
+      "text": "If it rains, the ground gets wet. It is raining. Therefore the ground is wet.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G4_pfc",
+        "G9_premotor"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G4_pfc"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9558,
+        "G2_wernicke": 0.9424,
+        "G3_tpj": 0.9909,
+        "G4_pfc": 1.0,
+        "G5_dmn": 0.9786,
+        "G6_limbic": 0.9757,
+        "G7_sensory": 0.9961,
+        "G8_atl": 0.9977,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9867,
+        "ventral": 0.9787,
+        "generative": 0.9786,
+        "modulatory": 0.9757,
+        "convergence": 0.9909
+      },
+      "edge_weights": {
+        "AF": 0.9491,
+        "SLF": 0.9954,
+        "IFOF": 0.9988,
+        "ILF": 0.9689,
+        "UF": 0.9867,
+        "CG_exec": 0.9878,
+        "CG_dmn": 0.9893,
+        "CC": 0.9971,
+        "MdLF": 0.9689
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.67,
+      "text_encoder": "ollama",
+      "word_count": 15,
+      "text_length": 77
+    },
+    {
+      "stimulus_id": 7,
+      "category": "emotional",
+      "text": "She felt the warmth of the sun on her skin as memories of childhood flooded back.",
+      "expected_dominant": [
+        "G6_limbic",
+        "G5_dmn"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9908,
+        "G2_wernicke": 0.9225,
+        "G3_tpj": 0.9278,
+        "G4_pfc": 0.9659,
+        "G5_dmn": 0.9263,
+        "G6_limbic": 0.9567,
+        "G7_sensory": 0.9662,
+        "G8_atl": 0.9673,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9711,
+        "ventral": 0.952,
+        "generative": 0.9263,
+        "modulatory": 0.9567,
+        "convergence": 0.9278
+      },
+      "edge_weights": {
+        "AF": 0.956,
+        "SLF": 0.9467,
+        "IFOF": 0.9666,
+        "ILF": 0.9441,
+        "UF": 0.962,
+        "CG_exec": 0.9613,
+        "CG_dmn": 0.9459,
+        "CC": 0.9952,
+        "MdLF": 0.9441
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.45,
+      "text_encoder": "ollama",
+      "word_count": 16,
+      "text_length": 81
+    },
+    {
+      "stimulus_id": 8,
+      "category": "emotional",
+      "text": "Tears of joy streamed down her face when she saw her family again.",
+      "expected_dominant": [
+        "G6_limbic",
+        "G5_dmn"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9344,
+        "G3_tpj": 0.9514,
+        "G4_pfc": 0.9613,
+        "G5_dmn": 0.9496,
+        "G6_limbic": 0.9636,
+        "G7_sensory": 0.9685,
+        "G8_atl": 0.9695,
+        "G9_premotor": 0.9762
+      },
+      "streams": {
+        "dorsal": 0.9722,
+        "ventral": 0.9575,
+        "generative": 0.9496,
+        "modulatory": 0.9636,
+        "convergence": 0.9514
+      },
+      "edge_weights": {
+        "AF": 0.9667,
+        "SLF": 0.9563,
+        "IFOF": 0.9654,
+        "ILF": 0.9513,
+        "UF": 0.9665,
+        "CG_exec": 0.9624,
+        "CG_dmn": 0.9554,
+        "CC": 0.9933,
+        "MdLF": 0.9513
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.87,
+      "text_encoder": "ollama",
+      "word_count": 13,
+      "text_length": 66
+    },
+    {
+      "stimulus_id": 9,
+      "category": "emotional",
+      "text": "The grief hit him like a wave when he heard the devastating news.",
+      "expected_dominant": [
+        "G6_limbic",
+        "G5_dmn"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9892,
+        "G2_wernicke": 0.9524,
+        "G3_tpj": 0.9584,
+        "G4_pfc": 0.9476,
+        "G5_dmn": 0.9518,
+        "G6_limbic": 0.9739,
+        "G7_sensory": 0.9648,
+        "G8_atl": 0.9461,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9738,
+        "ventral": 0.9544,
+        "generative": 0.9518,
+        "modulatory": 0.9739,
+        "convergence": 0.9584
+      },
+      "edge_weights": {
+        "AF": 0.9707,
+        "SLF": 0.953,
+        "IFOF": 0.9469,
+        "ILF": 0.9586,
+        "UF": 0.9599,
+        "CG_exec": 0.9606,
+        "CG_dmn": 0.9497,
+        "CC": 0.998,
+        "MdLF": 0.9586
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 13.29,
+      "text_encoder": "ollama",
+      "word_count": 13,
+      "text_length": 65
+    },
+    {
+      "stimulus_id": 10,
+      "category": "factual",
+      "text": "The mitochondria is the powerhouse of the cell.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9519,
+        "G2_wernicke": 0.9011,
+        "G3_tpj": 0.9704,
+        "G4_pfc": 0.9682,
+        "G5_dmn": 0.9642,
+        "G6_limbic": 0.958,
+        "G7_sensory": 0.962,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9989
+      },
+      "streams": {
+        "dorsal": 0.9723,
+        "ventral": 0.9544,
+        "generative": 0.9642,
+        "modulatory": 0.958,
+        "convergence": 0.9704
+      },
+      "edge_weights": {
+        "AF": 0.9261,
+        "SLF": 0.9693,
+        "IFOF": 0.984,
+        "ILF": 0.931,
+        "UF": 0.9788,
+        "CG_exec": 0.9631,
+        "CG_dmn": 0.9662,
+        "CC": 0.9974,
+        "MdLF": 0.931
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 14.09,
+      "text_encoder": "ollama",
+      "word_count": 8,
+      "text_length": 47
+    },
+    {
+      "stimulus_id": 11,
+      "category": "factual",
+      "text": "DNA contains the genetic instructions for the development of all living organisms.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9445,
+        "G2_wernicke": 0.9265,
+        "G3_tpj": 0.967,
+        "G4_pfc": 0.9635,
+        "G5_dmn": 0.9585,
+        "G6_limbic": 0.9244,
+        "G7_sensory": 0.9467,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9707
+      },
+      "streams": {
+        "dorsal": 0.9614,
+        "ventral": 0.9577,
+        "generative": 0.9585,
+        "modulatory": 0.9244,
+        "convergence": 0.967
+      },
+      "edge_weights": {
+        "AF": 0.9354,
+        "SLF": 0.9652,
+        "IFOF": 0.9816,
+        "ILF": 0.9365,
+        "UF": 0.9615,
+        "CG_exec": 0.9437,
+        "CG_dmn": 0.961,
+        "CC": 0.9939,
+        "MdLF": 0.9365
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 14.74,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 82
+    },
+    {
+      "stimulus_id": 12,
+      "category": "factual",
+      "text": "The human brain contains approximately eighty-six billion neurons.",
+      "expected_dominant": [
+        "G4_pfc",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G6_limbic"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9618,
+        "G2_wernicke": 0.9459,
+        "G3_tpj": 0.9833,
+        "G4_pfc": 0.9906,
+        "G5_dmn": 0.9923,
+        "G6_limbic": 0.9972,
+        "G7_sensory": 0.9635,
+        "G8_atl": 0.9735,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9839,
+        "ventral": 0.961,
+        "generative": 0.9923,
+        "modulatory": 0.9972,
+        "convergence": 0.9833
+      },
+      "edge_weights": {
+        "AF": 0.9538,
+        "SLF": 0.987,
+        "IFOF": 0.982,
+        "ILF": 0.9546,
+        "UF": 0.9853,
+        "CG_exec": 0.9939,
+        "CG_dmn": 0.9915,
+        "CC": 0.9975,
+        "MdLF": 0.9546
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 15.91,
+      "text_encoder": "ollama",
+      "word_count": 8,
+      "text_length": 66
+    },
+    {
+      "stimulus_id": 13,
+      "category": "abstract",
+      "text": "What if the universe is a simulation and we're just characters in someone else's dream?",
+      "expected_dominant": [
+        "G5_dmn",
+        "G3_tpj"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G4_pfc"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9962,
+        "G2_wernicke": 0.9462,
+        "G3_tpj": 0.9977,
+        "G4_pfc": 0.9997,
+        "G5_dmn": 0.9778,
+        "G6_limbic": 0.986,
+        "G7_sensory": 0.9895,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9673
+      },
+      "streams": {
+        "dorsal": 0.9902,
+        "ventral": 0.9786,
+        "generative": 0.9778,
+        "modulatory": 0.986,
+        "convergence": 0.9977
+      },
+      "edge_weights": {
+        "AF": 0.9709,
+        "SLF": 0.9987,
+        "IFOF": 0.9999,
+        "ILF": 0.9676,
+        "UF": 0.993,
+        "CG_exec": 0.9928,
+        "CG_dmn": 0.9887,
+        "CC": 0.9952,
+        "MdLF": 0.9676
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 13.68,
+      "text_encoder": "ollama",
+      "word_count": 15,
+      "text_length": 87
+    },
+    {
+      "stimulus_id": 14,
+      "category": "abstract",
+      "text": "If consciousness emerges from complexity, at what point does a system become aware?",
+      "expected_dominant": [
+        "G5_dmn",
+        "G3_tpj"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G3_tpj"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G3_tpj"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9522,
+        "G2_wernicke": 0.9314,
+        "G3_tpj": 0.9907,
+        "G4_pfc": 0.9898,
+        "G5_dmn": 0.9629,
+        "G6_limbic": 0.9684,
+        "G7_sensory": 0.9771,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9287
+      },
+      "streams": {
+        "dorsal": 0.9654,
+        "ventral": 0.9695,
+        "generative": 0.9629,
+        "modulatory": 0.9684,
+        "convergence": 0.9907
+      },
+      "edge_weights": {
+        "AF": 0.9417,
+        "SLF": 0.9903,
+        "IFOF": 0.9949,
+        "ILF": 0.954,
+        "UF": 0.9841,
+        "CG_exec": 0.979,
+        "CG_dmn": 0.9763,
+        "CC": 0.9942,
+        "MdLF": 0.954
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.45,
+      "text_encoder": "ollama",
+      "word_count": 13,
+      "text_length": 83
+    },
+    {
+      "stimulus_id": 15,
+      "category": "abstract",
+      "text": "Perhaps free will is an illusion created by the brain's predictive mechanisms.",
+      "expected_dominant": [
+        "G5_dmn",
+        "G3_tpj"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G8_atl"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.8909,
+        "G3_tpj": 0.9507,
+        "G4_pfc": 0.9488,
+        "G5_dmn": 0.9335,
+        "G6_limbic": 0.9332,
+        "G7_sensory": 0.9524,
+        "G8_atl": 0.9688,
+        "G9_premotor": 0.9134
+      },
+      "streams": {
+        "dorsal": 0.9532,
+        "ventral": 0.9374,
+        "generative": 0.9335,
+        "modulatory": 0.9332,
+        "convergence": 0.9507
+      },
+      "edge_weights": {
+        "AF": 0.9439,
+        "SLF": 0.9498,
+        "IFOF": 0.9588,
+        "ILF": 0.9211,
+        "UF": 0.9509,
+        "CG_exec": 0.941,
+        "CG_dmn": 0.9412,
+        "CC": 0.9887,
+        "MdLF": 0.9211
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.02,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 78
+    },
+    {
+      "stimulus_id": 16,
+      "category": "spatial",
+      "text": "The mountain peak rose sharply above the clouds, casting a long shadow over the valley.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G9_premotor"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G9_premotor"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9797,
+        "G2_wernicke": 0.9261,
+        "G3_tpj": 0.9241,
+        "G4_pfc": 0.9739,
+        "G5_dmn": 0.9434,
+        "G6_limbic": 0.9601,
+        "G7_sensory": 0.9552,
+        "G8_atl": 0.9449,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9694,
+        "ventral": 0.9421,
+        "generative": 0.9434,
+        "modulatory": 0.9601,
+        "convergence": 0.9241
+      },
+      "edge_weights": {
+        "AF": 0.9525,
+        "SLF": 0.9487,
+        "IFOF": 0.9593,
+        "ILF": 0.9405,
+        "UF": 0.9525,
+        "CG_exec": 0.967,
+        "CG_dmn": 0.9585,
+        "CC": 0.9967,
+        "MdLF": 0.9405
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.15,
+      "text_encoder": "ollama",
+      "word_count": 15,
+      "text_length": 87
+    },
+    {
+      "stimulus_id": 17,
+      "category": "spatial",
+      "text": "The spiral staircase wound upward in a perfect golden ratio.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G9_premotor"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G5_dmn"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G9_premotor"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9574,
+        "G2_wernicke": 0.9851,
+        "G3_tpj": 0.9497,
+        "G4_pfc": 0.9798,
+        "G5_dmn": 0.9893,
+        "G6_limbic": 0.9801,
+        "G7_sensory": 0.9802,
+        "G8_atl": 0.9657,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9717,
+        "ventral": 0.977,
+        "generative": 0.9893,
+        "modulatory": 0.9801,
+        "convergence": 0.9497
+      },
+      "edge_weights": {
+        "AF": 0.9712,
+        "SLF": 0.9646,
+        "IFOF": 0.9727,
+        "ILF": 0.9827,
+        "UF": 0.9729,
+        "CG_exec": 0.9799,
+        "CG_dmn": 0.9845,
+        "CC": 0.9987,
+        "MdLF": 0.9827
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 9.57,
+      "text_encoder": "ollama",
+      "word_count": 10,
+      "text_length": 60
+    },
+    {
+      "stimulus_id": 18,
+      "category": "spatial",
+      "text": "Stars scattered across the night sky like diamonds on black velvet.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G9_premotor"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G8_atl"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9745,
+        "G3_tpj": 0.9649,
+        "G4_pfc": 0.9771,
+        "G5_dmn": 0.9789,
+        "G6_limbic": 0.9783,
+        "G7_sensory": 0.9723,
+        "G8_atl": 0.9938,
+        "G9_premotor": 0.9622
+      },
+      "streams": {
+        "dorsal": 0.9761,
+        "ventral": 0.9802,
+        "generative": 0.9789,
+        "modulatory": 0.9783,
+        "convergence": 0.9649
+      },
+      "edge_weights": {
+        "AF": 0.9872,
+        "SLF": 0.9709,
+        "IFOF": 0.9854,
+        "ILF": 0.9734,
+        "UF": 0.9861,
+        "CG_exec": 0.9777,
+        "CG_dmn": 0.978,
+        "CC": 0.9998,
+        "MdLF": 0.9734
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 9.72,
+      "text_encoder": "ollama",
+      "word_count": 11,
+      "text_length": 67
+    },
+    {
+      "stimulus_id": 19,
+      "category": "social",
+      "text": "She knew he was lying, but chose to pretend she believed him.",
+      "expected_dominant": [
+        "G3_tpj",
+        "G4_pfc"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9553,
+        "G3_tpj": 0.9729,
+        "G4_pfc": 0.9704,
+        "G5_dmn": 0.9629,
+        "G6_limbic": 0.9487,
+        "G7_sensory": 0.9709,
+        "G8_atl": 0.979,
+        "G9_premotor": 0.9933
+      },
+      "streams": {
+        "dorsal": 0.9842,
+        "ventral": 0.9684,
+        "generative": 0.9629,
+        "modulatory": 0.9487,
+        "convergence": 0.9729
+      },
+      "edge_weights": {
+        "AF": 0.9774,
+        "SLF": 0.9716,
+        "IFOF": 0.9747,
+        "ILF": 0.9631,
+        "UF": 0.9637,
+        "CG_exec": 0.9595,
+        "CG_dmn": 0.9667,
+        "CC": 0.9948,
+        "MdLF": 0.9631
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 17.51,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 61
+    },
+    {
+      "stimulus_id": 20,
+      "category": "social",
+      "text": "He wondered what she was thinking as she stared out the window.",
+      "expected_dominant": [
+        "G3_tpj",
+        "G4_pfc"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G2_wernicke"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9712,
+        "G3_tpj": 0.9447,
+        "G4_pfc": 0.9497,
+        "G5_dmn": 0.947,
+        "G6_limbic": 0.9452,
+        "G7_sensory": 0.9647,
+        "G8_atl": 0.9359,
+        "G9_premotor": 0.9532
+      },
+      "streams": {
+        "dorsal": 0.9619,
+        "ventral": 0.9573,
+        "generative": 0.947,
+        "modulatory": 0.9452,
+        "convergence": 0.9447
+      },
+      "edge_weights": {
+        "AF": 0.9855,
+        "SLF": 0.9472,
+        "IFOF": 0.9428,
+        "ILF": 0.9679,
+        "UF": 0.9405,
+        "CG_exec": 0.9474,
+        "CG_dmn": 0.9484,
+        "CC": 0.9974,
+        "MdLF": 0.9679
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 63.65,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 63
+    },
+    {
+      "stimulus_id": 21,
+      "category": "social",
+      "text": "The diplomat carefully considered how each nation would interpret the proposal.",
+      "expected_dominant": [
+        "G3_tpj",
+        "G4_pfc"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G8_atl"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9629,
+        "G2_wernicke": 0.9836,
+        "G3_tpj": 0.9869,
+        "G4_pfc": 0.976,
+        "G5_dmn": 0.9566,
+        "G6_limbic": 0.959,
+        "G7_sensory": 0.9861,
+        "G8_atl": 0.987,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9814,
+        "ventral": 0.9856,
+        "generative": 0.9566,
+        "modulatory": 0.959,
+        "convergence": 0.9869
+      },
+      "edge_weights": {
+        "AF": 0.9732,
+        "SLF": 0.9815,
+        "IFOF": 0.9815,
+        "ILF": 0.9848,
+        "UF": 0.9729,
+        "CG_exec": 0.9675,
+        "CG_dmn": 0.9663,
+        "CC": 0.9994,
+        "MdLF": 0.9848
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 61.84,
+      "text_encoder": "ollama",
+      "word_count": 11,
+      "text_length": 79
+    },
+    {
+      "stimulus_id": 22,
+      "category": "motor",
+      "text": "She grasped the heavy stone and hurled it across the river.",
+      "expected_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G9_premotor"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G1_broca",
+        "G9_premotor"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9696,
+        "G3_tpj": 0.9682,
+        "G4_pfc": 0.9744,
+        "G5_dmn": 0.9834,
+        "G6_limbic": 0.994,
+        "G7_sensory": 0.9841,
+        "G8_atl": 0.9548,
+        "G9_premotor": 0.9981
+      },
+      "streams": {
+        "dorsal": 0.9852,
+        "ventral": 0.9695,
+        "generative": 0.9834,
+        "modulatory": 0.994,
+        "convergence": 0.9682
+      },
+      "edge_weights": {
+        "AF": 0.9847,
+        "SLF": 0.9713,
+        "IFOF": 0.9646,
+        "ILF": 0.9768,
+        "UF": 0.9742,
+        "CG_exec": 0.9841,
+        "CG_dmn": 0.9789,
+        "CC": 0.995,
+        "MdLF": 0.9768
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 192.92,
+      "text_encoder": "ollama",
+      "word_count": 11,
+      "text_length": 59
+    },
+    {
+      "stimulus_id": 23,
+      "category": "motor",
+      "text": "The dancer leaped across the stage with graceful precision.",
+      "expected_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G7_sensory"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G9_premotor"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9736,
+        "G2_wernicke": 0.9891,
+        "G3_tpj": 0.9429,
+        "G4_pfc": 0.9655,
+        "G5_dmn": 0.9755,
+        "G6_limbic": 0.9913,
+        "G7_sensory": 0.9924,
+        "G8_atl": 0.9416,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9705,
+        "ventral": 0.9744,
+        "generative": 0.9755,
+        "modulatory": 0.9913,
+        "convergence": 0.9429
+      },
+      "edge_weights": {
+        "AF": 0.9813,
+        "SLF": 0.9541,
+        "IFOF": 0.9535,
+        "ILF": 0.9907,
+        "UF": 0.9661,
+        "CG_exec": 0.9783,
+        "CG_dmn": 0.9705,
+        "CC": 0.9902,
+        "MdLF": 0.9907
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 9.57,
+      "text_encoder": "ollama",
+      "word_count": 9,
+      "text_length": 59
+    },
+    {
+      "stimulus_id": 24,
+      "category": "motor",
+      "text": "The surgeon's hands moved with practiced precision during the operation.",
+      "expected_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G2_wernicke",
+        "G9_premotor"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G9_premotor"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9843,
+        "G2_wernicke": 1.0,
+        "G3_tpj": 0.9517,
+        "G4_pfc": 0.9527,
+        "G5_dmn": 0.9548,
+        "G6_limbic": 0.92,
+        "G7_sensory": 0.9739,
+        "G8_atl": 0.939,
+        "G9_premotor": 0.9987
+      },
+      "streams": {
+        "dorsal": 0.9718,
+        "ventral": 0.971,
+        "generative": 0.9548,
+        "modulatory": 0.92,
+        "convergence": 0.9517
+      },
+      "edge_weights": {
+        "AF": 0.9921,
+        "SLF": 0.9522,
+        "IFOF": 0.9458,
+        "ILF": 0.9869,
+        "UF": 0.9295,
+        "CG_exec": 0.9362,
+        "CG_dmn": 0.9537,
+        "CC": 0.9945,
+        "MdLF": 0.9869
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.26,
+      "text_encoder": "ollama",
+      "word_count": 10,
+      "text_length": 72
+    },
+    {
+      "stimulus_id": 25,
+      "category": "memory",
+      "text": "She remembered the day they first met as if it were yesterday.",
+      "expected_dominant": [
+        "G5_dmn",
+        "G6_limbic"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G6_limbic"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G6_limbic"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.979,
+        "G3_tpj": 0.966,
+        "G4_pfc": 0.9763,
+        "G5_dmn": 0.9725,
+        "G6_limbic": 0.9939,
+        "G7_sensory": 0.963,
+        "G8_atl": 0.9867,
+        "G9_premotor": 0.9918
+      },
+      "streams": {
+        "dorsal": 0.9835,
+        "ventral": 0.9762,
+        "generative": 0.9725,
+        "modulatory": 0.9939,
+        "convergence": 0.966
+      },
+      "edge_weights": {
+        "AF": 0.9895,
+        "SLF": 0.9711,
+        "IFOF": 0.9815,
+        "ILF": 0.971,
+        "UF": 0.9903,
+        "CG_exec": 0.9851,
+        "CG_dmn": 0.9744,
+        "CC": 0.9976,
+        "MdLF": 0.971
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.2,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 62
+    },
+    {
+      "stimulus_id": 26,
+      "category": "memory",
+      "text": "The scent of fresh bread triggered vivid memories of his grandmother's kitchen.",
+      "expected_dominant": [
+        "G5_dmn",
+        "G6_limbic"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G5_dmn"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G5_dmn"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9316,
+        "G3_tpj": 0.9535,
+        "G4_pfc": 0.9557,
+        "G5_dmn": 0.9729,
+        "G6_limbic": 0.9523,
+        "G7_sensory": 0.9567,
+        "G8_atl": 0.9644,
+        "G9_premotor": 0.9695
+      },
+      "streams": {
+        "dorsal": 0.9697,
+        "ventral": 0.9509,
+        "generative": 0.9729,
+        "modulatory": 0.9523,
+        "convergence": 0.9535
+      },
+      "edge_weights": {
+        "AF": 0.9652,
+        "SLF": 0.9546,
+        "IFOF": 0.96,
+        "ILF": 0.9441,
+        "UF": 0.9583,
+        "CG_exec": 0.954,
+        "CG_dmn": 0.9643,
+        "CC": 0.9969,
+        "MdLF": 0.9441
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 14.59,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 79
+    },
+    {
+      "stimulus_id": 27,
+      "category": "memory",
+      "text": "The old journal revealed secrets from a century ago.",
+      "expected_dominant": [
+        "G5_dmn",
+        "G6_limbic"
+      ],
+      "actual_dominant": [
+        "G1_broca",
+        "G8_atl"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 1.0,
+        "G2_wernicke": 0.9509,
+        "G3_tpj": 0.9906,
+        "G4_pfc": 0.9724,
+        "G5_dmn": 0.9696,
+        "G6_limbic": 0.9698,
+        "G7_sensory": 0.9875,
+        "G8_atl": 0.9933,
+        "G9_premotor": 0.9767
+      },
+      "streams": {
+        "dorsal": 0.9849,
+        "ventral": 0.9772,
+        "generative": 0.9696,
+        "modulatory": 0.9698,
+        "convergence": 0.9906
+      },
+      "edge_weights": {
+        "AF": 0.9751,
+        "SLF": 0.9815,
+        "IFOF": 0.9828,
+        "ILF": 0.969,
+        "UF": 0.9815,
+        "CG_exec": 0.9711,
+        "CG_dmn": 0.971,
+        "CC": 0.9957,
+        "MdLF": 0.969
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 13.81,
+      "text_encoder": "ollama",
+      "word_count": 9,
+      "text_length": 52
+    },
+    {
+      "stimulus_id": 28,
+      "category": "auditory",
+      "text": "The melody drifted through the air like a gentle stream of sound.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G2_wernicke"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9865,
+        "G2_wernicke": 0.9708,
+        "G3_tpj": 0.9614,
+        "G4_pfc": 0.9717,
+        "G5_dmn": 0.9775,
+        "G6_limbic": 0.9573,
+        "G7_sensory": 0.9715,
+        "G8_atl": 0.9528,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9799,
+        "ventral": 0.965,
+        "generative": 0.9775,
+        "modulatory": 0.9573,
+        "convergence": 0.9614
+      },
+      "edge_weights": {
+        "AF": 0.9786,
+        "SLF": 0.9665,
+        "IFOF": 0.9622,
+        "ILF": 0.9712,
+        "UF": 0.9551,
+        "CG_exec": 0.9645,
+        "CG_dmn": 0.9746,
+        "CC": 0.9946,
+        "MdLF": 0.9712
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.65,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 65
+    },
+    {
+      "stimulus_id": 29,
+      "category": "auditory",
+      "text": "The orchestra swelled to a crescendo as the final movement began.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G2_wernicke"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G7_sensory"
+      ],
+      "hypothesis_support": true,
+      "matches": [
+        "G7_sensory"
+      ],
+      "sgp_nodes": {
+        "G1_broca": 0.9616,
+        "G2_wernicke": 0.9507,
+        "G3_tpj": 0.9358,
+        "G4_pfc": 0.9501,
+        "G5_dmn": 0.9338,
+        "G6_limbic": 0.9609,
+        "G7_sensory": 0.9623,
+        "G8_atl": 0.9028,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9619,
+        "ventral": 0.9386,
+        "generative": 0.9338,
+        "modulatory": 0.9609,
+        "convergence": 0.9358
+      },
+      "edge_weights": {
+        "AF": 0.9561,
+        "SLF": 0.9429,
+        "IFOF": 0.9261,
+        "ILF": 0.9564,
+        "UF": 0.9314,
+        "CG_exec": 0.9555,
+        "CG_dmn": 0.9419,
+        "CC": 0.9934,
+        "MdLF": 0.9564
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.83,
+      "text_encoder": "ollama",
+      "word_count": 11,
+      "text_length": 65
+    },
+    {
+      "stimulus_id": 30,
+      "category": "auditory",
+      "text": "The violin's high notes pierced the silence with crystalline clarity.",
+      "expected_dominant": [
+        "G7_sensory",
+        "G2_wernicke"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9916,
+        "G2_wernicke": 0.9753,
+        "G3_tpj": 0.9645,
+        "G4_pfc": 0.968,
+        "G5_dmn": 0.9536,
+        "G6_limbic": 0.9728,
+        "G7_sensory": 0.9771,
+        "G8_atl": 0.9305,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.981,
+        "ventral": 0.961,
+        "generative": 0.9536,
+        "modulatory": 0.9728,
+        "convergence": 0.9645
+      },
+      "edge_weights": {
+        "AF": 0.9834,
+        "SLF": 0.9662,
+        "IFOF": 0.949,
+        "ILF": 0.9762,
+        "UF": 0.9514,
+        "CG_exec": 0.9704,
+        "CG_dmn": 0.9608,
+        "CC": 0.9954,
+        "MdLF": 0.9762
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.24,
+      "text_encoder": "ollama",
+      "word_count": 10,
+      "text_length": 69
+    }
+  ]
+}
