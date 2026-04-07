@@ -1,0 +1,8 @@
+wing: sgp_tribe3
+rooms:
+- name: results
+  description: Files from results/
+- name: data
+  description: Files from data/
+- name: general
+  description: Files that don't fit other rooms

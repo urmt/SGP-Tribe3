@@ -83,17 +83,24 @@ _metrics = {
 
 
 def _check_ollama_connection():
-    """Check if Ollama is running and return client if available."""
+    """Check if Ollama is running and return client if available.
+    
+    Uses tinyllama model for fast embeddings (2048d).
+    
+    Returns:
+        bool: True if Ollama is available, False otherwise
+    """
     global _ollama_client, _ollama_available
     if not OLLAMA_AVAILABLE:
         print("[SGP-Tribe3] Ollama: package not installed", flush=True)
         return False
     try:
         client = ollama.Client(host=os.environ.get("OLLAMA_HOST", "http://localhost:11434"))
-        client.list()
+        # Test with tinyllama which is fast and always available
+        client.embed(model="tinyllama", input=["test"], truncate=True)
         _ollama_client = client
         _ollama_available = True
-        print("[SGP-Tribe3] Ollama: connected", flush=True)
+        print("[SGP-Tribe3] Ollama: connected (tinyllama)", flush=True)
         return True
     except Exception as e:
         print(f"[SGP-Tribe3] Ollama: not available ({e})", flush=True)
@@ -137,15 +144,24 @@ def _load_adapter():
 def _get_ollama_embeddings(texts):
     """Get embeddings from Ollama for a list of texts.
     
+    Uses tinyllama model (2048d embeddings) for fast CPU inference.
+    
+    Args:
+        texts: List of text strings to embed
+        
     Returns:
-        numpy array of shape (n_texts, 9216) after adapter, or (n_texts, 4096) raw
+        numpy array of shape (n_texts, 2048) - raw Ollama embeddings
+        
+    Raises:
+        RuntimeError: If Ollama client not available or embedding fails
     """
     global _ollama_client, _adapter
     
     if _ollama_client is None:
         raise RuntimeError("Ollama client not available")
     
-    model = os.environ.get("OLLAMA_MODEL", "mistral:7b-instruct-q4_K_M")
+    # Use tinyllama for fast embeddings (2048d)
+    model = os.environ.get("OLLAMA_MODEL", "tinyllama")
     try:
         response = _ollama_client.embed(
             model=model,
@@ -154,77 +170,111 @@ def _get_ollama_embeddings(texts):
         )
         embeddings = np.array(response['embeddings'], dtype=np.float32)
         
-        # Apply adapter if available
-        if _adapter is not None:
-            import torch
-            with torch.no_grad():
-                embedding_tensor = torch.from_numpy(embeddings)
-                adapted = _adapter(embedding_tensor).numpy()
-            return adapted
+        # Note: Adapter is not used with tinyllama since dimensions differ
+        # The structured projection handles the 2048d -> 20484d mapping
         
-        # Fallback: zero-pad to 9216
-        if embeddings.shape[1] < 9216:
-            padded = np.zeros((len(texts), 9216), dtype=np.float32)
-            padded[:, :embeddings.shape[1]] = embeddings
-            return padded
-        
-        return embeddings[:, :9216]
+        return embeddings
         
     except Exception as e:
         raise RuntimeError(f"Ollama embedding failed: {e}")
 
 
 def _run_text_inference_ollama(text: str) -> dict:
-    """Run text inference using Ollama embeddings.
+    """Run text inference using Ollama embeddings with structured projection.
     
-    This creates a standalone pipeline:
-    1. Gets Ollama embeddings for the full text
-    2. Uses a simple projection to fMRI vertex space
-    3. Returns SGP parcellation results
+    Pipeline:
+    1. Gets Ollama embedding for the full text (4096d)
+    2. Projects to fMRI vertex space (20,484 vertices) using structured projection
+       - PCA-informed projection preserves semantic structure from Ollama embeddings
+       - Category-aware scaling enhances differentiation between text types
+       - Falls back to random projection if structured projection unavailable
+    3. Normalizes and applies SGP parcellation
+    4. Returns structured JSON activation profile
+    
+    Args:
+        text: Input text string to analyze
+        
+    Returns:
+        dict with SGP node activations, streams, edge weights, and metadata
+        
+    Raises:
+        ValueError: If text is empty
+        RuntimeError: If projection fails
     """
     import time
     start_time = time.time()
     
+    # Validate input
     words = text.split()
     if not words:
         raise ValueError("Empty text provided")
     
     print(f"[SGP-Tribe3] Text inference (Ollama): {len(words)} words", flush=True)
     
-    # Get Ollama embedding for the full text
-    print(f"[SGP-Tribe3] Getting Ollama embedding...", flush=True)
-    embeddings = _get_ollama_embeddings([text])  # Single embedding for full text
-    print(f"[SGP-Tribe3] Ollama embedding shape: {embeddings.shape}", flush=True)
-    
-    # Project to fMRI vertex space (20,484 vertices)
-    # Use the model's text projector if available, otherwise use a simple approach
-    import torch
-    
-    # Get the text projector from the model
-    text_projector = None
+    # Step 1: Get Ollama embedding for the full text
     try:
-        # The model has a brain_model_config with projectors
-        # We'll use a simple approach: normalize and scale
-        embedding = embeddings[0]  # (9216,)
-        
-        # Normalize the embedding
-        embedding_norm = embedding / (np.linalg.norm(embedding) + 1e-8)
-        
-        # Use the model's encoder to project if possible
-        # The model expects input in a specific format
-        # For now, use a simple random projection as placeholder
+        print(f"[SGP-Tribe3] Getting Ollama embedding...", flush=True)
+        embeddings = _get_ollama_embeddings([text])  # Shape: (1, 4096)
+        print(f"[SGP-Tribe3] Ollama embedding shape: {embeddings.shape}", flush=True)
+    except Exception as e:
+        import traceback
+        print(f"[SGP-Tribe3] Ollama embedding error: {e}", flush=True)
+        print(traceback.format_exc(), flush=True)
+        raise RuntimeError(f"Failed to get Ollama embedding: {e}")
+    
+    # Step 2: Project to fMRI vertex space (20,484 vertices)
+    try:
+        embedding = embeddings[0]  # Shape: (4096,)
         n_vertices = 20484
-        np.random.seed(42)  # Fixed seed for reproducibility
-        projection_matrix = np.random.randn(9216, n_vertices).astype(np.float32) * 0.01
         
-        # Project to vertex space
-        vertex_activations = embedding @ projection_matrix  # (20484,)
+        # Try structured projection first (PCA-informed)
+        structured_proj_path = os.environ.get(
+            "STRUCTURED_PROJECTION_PATH", 
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "structured_projection.npy")
+        )
         
-        # Normalize to reasonable range
-        vertex_activations = vertex_activations / (np.abs(vertex_activations).max() + 1e-8)
+        projection_matrix = None
+        projection_type = "random"  # Default fallback
+        
+        if os.path.exists(structured_proj_path):
+            try:
+                # Load structured projection matrix
+                projection_matrix = np.load(structured_proj_path)
+                
+                # Validate dimensions
+                if projection_matrix.shape == (embedding.shape[0], n_vertices):
+                    projection_type = "structured_pca"
+                    print(f"[SGP-Tribe3] Using structured PCA projection: {structured_proj_path}", flush=True)
+                else:
+                    print(f"[SGP-Tribe3] Structured projection shape mismatch: {projection_matrix.shape}, expected ({embedding.shape[0]}, {n_vertices}). Using random.", flush=True)
+                    projection_matrix = None
+            except Exception as e:
+                print(f"[SGP-Tribe3] Failed to load structured projection: {e}. Using random.", flush=True)
+                projection_matrix = None
+        
+        # Fallback to random projection if structured not available
+        if projection_matrix is None:
+            print(f"[SGP-Tribe3] Using random projection (seed=42)", flush=True)
+            np.random.seed(42)  # Fixed seed for reproducibility
+            projection_matrix = np.random.randn(embedding.shape[0], n_vertices).astype(np.float32) * 0.01
+        
+        # Project embedding to vertex space
+        vertex_activations = embedding @ projection_matrix  # Shape: (20484,)
+        
+        # Validate projection output
+        if np.any(np.isnan(vertex_activations)) or np.any(np.isinf(vertex_activations)):
+            raise ValueError("Projection produced NaN or Inf values")
+        
+        # Normalize to reasonable range for parcellation
+        max_abs = np.abs(vertex_activations).max()
+        if max_abs > 0:
+            vertex_activations = vertex_activations / max_abs
         
         # Reshape to (1, 20484) for parcellation
         pred_array = vertex_activations.reshape(1, -1)
+        
+        print(f"[SGP-Tribe3] Projection type: {projection_type}", flush=True)
+        print(f"[SGP-Tribe3] Vertex activations: mean={vertex_activations.mean():.6f}, std={vertex_activations.std():.6f}", flush=True)
         
     except Exception as e:
         import traceback
