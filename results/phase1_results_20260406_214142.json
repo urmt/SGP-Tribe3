@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "phase": 1,
+    "date": "2026-04-06T21:41:42.336715",
+    "text_encoder": "ollama",
+    "adapter_loaded": false,
+    "total_tests": 5,
+    "successful_tests": 5,
+    "failed_tests": 0,
+    "total_time_seconds": 66.82
+  },
+  "results": [
+    {
+      "test_id": 1,
+      "text": "The cat sat on the mat.",
+      "purpose": "Baseline simple sentence",
+      "expected_dominant": [
+        "G2_wernicke",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G4_pfc"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9329,
+        "G2_wernicke": 0.9336,
+        "G3_tpj": 0.9243,
+        "G4_pfc": 0.9685,
+        "G5_dmn": 0.947,
+        "G6_limbic": 0.9486,
+        "G7_sensory": 0.9487,
+        "G8_atl": 0.9454,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9564,
+        "ventral": 0.9426,
+        "generative": 0.947,
+        "modulatory": 0.9486,
+        "convergence": 0.9243
+      },
+      "edge_weights": {
+        "AF": 0.9333,
+        "SLF": 0.9462,
+        "IFOF": 0.9569,
+        "ILF": 0.9411,
+        "UF": 0.947,
+        "CG_exec": 0.9585,
+        "CG_dmn": 0.9577,
+        "CC": 0.9934,
+        "MdLF": 0.9411
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 14.01,
+      "text_encoder": "ollama",
+      "word_count": 6,
+      "text_length": 23,
+      "activation_timeline": [
+        0.1972
+      ]
+    },
+    {
+      "test_id": 2,
+      "text": "If P implies Q, and Q implies R, then P implies R.",
+      "purpose": "Logical structure",
+      "expected_dominant": [
+        "G4_pfc",
+        "G1_broca"
+      ],
+      "actual_dominant": [
+        "G3_tpj",
+        "G6_limbic"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9384,
+        "G2_wernicke": 0.9576,
+        "G3_tpj": 1.0,
+        "G4_pfc": 0.987,
+        "G5_dmn": 0.9715,
+        "G6_limbic": 0.9919,
+        "G7_sensory": 0.9739,
+        "G8_atl": 0.9678,
+        "G9_premotor": 0.9765
+      },
+      "streams": {
+        "dorsal": 0.9755,
+        "ventral": 0.9664,
+        "generative": 0.9715,
+        "modulatory": 0.9919,
+        "convergence": 1.0
+      },
+      "edge_weights": {
+        "AF": 0.948,
+        "SLF": 0.9935,
+        "IFOF": 0.9774,
+        "ILF": 0.9657,
+        "UF": 0.9798,
+        "CG_exec": 0.9894,
+        "CG_dmn": 0.9792,
+        "CC": 0.9991,
+        "MdLF": 0.9657
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 14.79,
+      "text_encoder": "ollama",
+      "word_count": 12,
+      "text_length": 50,
+      "activation_timeline": [
+        0.1981
+      ]
+    },
+    {
+      "test_id": 3,
+      "text": "She felt the warmth of the sun on her skin as memories of childhood flooded back.",
+      "purpose": "Emotional + sensory",
+      "expected_dominant": [
+        "G6_limbic",
+        "G5_dmn"
+      ],
+      "actual_dominant": [
+        "G9_premotor",
+        "G1_broca"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9908,
+        "G2_wernicke": 0.9225,
+        "G3_tpj": 0.9278,
+        "G4_pfc": 0.9659,
+        "G5_dmn": 0.9263,
+        "G6_limbic": 0.9567,
+        "G7_sensory": 0.9662,
+        "G8_atl": 0.9673,
+        "G9_premotor": 1.0
+      },
+      "streams": {
+        "dorsal": 0.9711,
+        "ventral": 0.952,
+        "generative": 0.9263,
+        "modulatory": 0.9567,
+        "convergence": 0.9278
+      },
+      "edge_weights": {
+        "AF": 0.956,
+        "SLF": 0.9467,
+        "IFOF": 0.9666,
+        "ILF": 0.9441,
+        "UF": 0.962,
+        "CG_exec": 0.9613,
+        "CG_dmn": 0.9459,
+        "CC": 0.9952,
+        "MdLF": 0.9441
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 16.3,
+      "text_encoder": "ollama",
+      "word_count": 16,
+      "text_length": 81,
+      "activation_timeline": [
+        0.1935
+      ]
+    },
+    {
+      "test_id": 4,
+      "text": "The mitochondria is the powerhouse of the cell.",
+      "purpose": "Factual/technical",
+      "expected_dominant": [
+        "G4_pfc",
+        "G7_sensory"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G9_premotor"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9519,
+        "G2_wernicke": 0.9011,
+        "G3_tpj": 0.9704,
+        "G4_pfc": 0.9682,
+        "G5_dmn": 0.9642,
+        "G6_limbic": 0.958,
+        "G7_sensory": 0.962,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9989
+      },
+      "streams": {
+        "dorsal": 0.9723,
+        "ventral": 0.9544,
+        "generative": 0.9642,
+        "modulatory": 0.958,
+        "convergence": 0.9704
+      },
+      "edge_weights": {
+        "AF": 0.9261,
+        "SLF": 0.9693,
+        "IFOF": 0.984,
+        "ILF": 0.931,
+        "UF": 0.9788,
+        "CG_exec": 0.9631,
+        "CG_dmn": 0.9662,
+        "CC": 0.9974,
+        "MdLF": 0.931
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 10.08,
+      "text_encoder": "ollama",
+      "word_count": 8,
+      "text_length": 47,
+      "activation_timeline": [
+        0.1877
+      ]
+    },
+    {
+      "test_id": 5,
+      "text": "What if the universe is a simulation and we're just characters in someone else's dream?",
+      "purpose": "Self-referential/abstract",
+      "expected_dominant": [
+        "G5_dmn",
+        "G3_tpj"
+      ],
+      "actual_dominant": [
+        "G8_atl",
+        "G4_pfc"
+      ],
+      "hypothesis_support": false,
+      "matches": [],
+      "sgp_nodes": {
+        "G1_broca": 0.9962,
+        "G2_wernicke": 0.9462,
+        "G3_tpj": 0.9977,
+        "G4_pfc": 0.9997,
+        "G5_dmn": 0.9778,
+        "G6_limbic": 0.986,
+        "G7_sensory": 0.9895,
+        "G8_atl": 1.0,
+        "G9_premotor": 0.9673
+      },
+      "streams": {
+        "dorsal": 0.9902,
+        "ventral": 0.9786,
+        "generative": 0.9778,
+        "modulatory": 0.986,
+        "convergence": 0.9977
+      },
+      "edge_weights": {
+        "AF": 0.9709,
+        "SLF": 0.9987,
+        "IFOF": 0.9999,
+        "ILF": 0.9676,
+        "UF": 0.993,
+        "CG_exec": 0.9928,
+        "CG_dmn": 0.9887,
+        "CC": 0.9952,
+        "MdLF": 0.9676
+      },
+      "dominant_hemisphere": "bilateral",
+      "inference_time_seconds": 11.31,
+      "text_encoder": "ollama",
+      "word_count": 15,
+      "text_length": 87,
+      "activation_timeline": [
+        0.1809
+      ]
+    }
+  ]
+}

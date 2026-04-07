@@ -265,9 +265,12 @@ def _run_text_inference(text: str) -> dict:
     
     Uses Ollama if available, falls back to LLaMA on CPU.
     """
+    print(f"[SGP-Tribe3] _run_text_inference called, _ollama_available={_ollama_available}", flush=True)
     if _ollama_available:
+        print(f"[SGP-Tribe3] Using Ollama path", flush=True)
         return _run_text_inference_ollama(text)
     
+    print(f"[SGP-Tribe3] Using LLaMA CPU fallback path", flush=True)
     # Fallback: use LLaMA on CPU via TRIBE v2
     words = text.split()
     if not words:
@@ -309,6 +312,7 @@ def _run_text_inference(text: str) -> dict:
 
 def _load_model():
     global _model, _model_loaded, _model_loading, _model_error, _metrics
+    global _ollama_client, _ollama_available, _adapter
 
     with _model_lock:
         if _model_loaded or _model_loading:
@@ -599,45 +603,6 @@ def _run_audio_inference(audio_path: str) -> dict:
     finally:
         if os.path.exists(processed_path) and processed_path != audio_path:
             os.remove(processed_path)
-
-
-def _run_text_inference(text: str) -> dict:
-    """Run inference on text input (text-only modality)."""
-    words = text.split()
-    if not words:
-        raise ValueError("Empty text provided")
-
-    word_events = []
-    context = ""
-    for i, word in enumerate(words):
-        context = f"{context} {word}" if context else word
-        word_events.append({
-            "type": "Word",
-            "start": 0.0,
-            "duration": 1.0,
-            "text": word,
-            "context": context,
-            "timeline": "default",
-            "subject": "default",
-            "sequence_id": 0,
-            "sentence": text,
-            "language": "english",
-            "offset": 0.0,
-            "frequency": 1.0,
-            "filepath": None,
-            "extra": {}
-        })
-
-    events_df = pd.DataFrame(word_events)
-    
-    print(f"[SGP-Tribe3] Text inference: {len(words)} words", flush=True)
-
-    _metrics["predictions_by_modality"]["text"] += 1
-    result = _run_inference_from_events(events_df)
-    result["text_length"] = len(text)
-    result["word_count"] = len(words)
-
-    return result
 
 
 @app.route("/", methods=["GET"])
