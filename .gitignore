@@ -1,1 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Data files (keep small, exclude large)
 *.npy
+*.npz
+*.csv
+
+# Results (keep structure, exclude large outputs)
+results/checkpoint_*
+results/full_battery_1000/figures/*.png
+results/full_battery_1000/figures/*.log
+results/full_battery_1000/figures/*.aux
+results/full_battery_1000/figures/*.out
+results/full_battery_1000/figures/*.pdf
+results/full_battery_1000/sfh_sgp/*.png
+results/full_battery_1000/sfh_sgp/*.log
+results/full_battery_1000/sfh_sgp/*.aux
+results/full_battery_1000/sfh_sgp/*.out
+results/full_battery_1000/sfh_sgp/*.pdf
+results/full_battery_1000/sfh_sgp/*.json
+results/full_battery_1000/sfh_sgp/*.npy
+
+# Manuscript and drafts
+manuscript/
+*manuscript*.md
+*draft*.md
+*_draft.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large model files
+*.bin
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.hdf5
+
+# HuggingFace cache
+.cache/
+.cache/transformers/
+
+# LaTeX build files
+*.log
+*.aux
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+indent.log
+
+# Python
+*.pyc

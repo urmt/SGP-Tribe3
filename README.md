@@ -1,83 +1,114 @@
----
-title: SGP-Tribe3
-emoji: 🧠
-colorFrom: green
-colorTo: yellow
-sdk: docker
-pinned: false
-license: cc-by-nc-4.0
----
-
 # SGP-Tribe3
 
 **Sentient Generative Principal — Brain Encoding Calibration System**
 
-A fork of [TRIBE v2](https://huggingface.co/facebook/tribev2) (Meta AI) extended with:
+A multimodal brain encoding system built on [TRIBE v2](https://huggingface.co/facebook/tribev2) (Meta AI) for predicting cortical responses to text, audio, and video stimuli, with SGP 9-node parcellation.
 
-- Full multimodal inference: video + audio + text simultaneously
-- SGP 9-node parcellation using the Schaefer-200 cortical atlas
-- Dual-stream (dorsal/ventral) activation separation
-- White matter tract co-activation edge weight output
-- Stimulus calibration matrix accumulation across sessions
+## Overview
 
-## API Endpoints
+This repository contains:
 
-### `POST /predict`
-Upload a video file (mp4, max 120s). Returns SGP node activation profile.
+1. **SGP Encoding Pipeline** - TRIBE v2 integration with SGP parcellation
+2. **SFH-SGP Analysis** - Sentient-Field Hypothesis / Sentient-Generative Principal mathematical framework
+3. **Stimulus Bank** - 1,022 text stimuli across 10 semantic categories
 
-**Request:** `multipart/form-data` with `video` field
+## Installation
 
-**Response:**
-```json
-{
-  "stimulus_id": "uuid",
-  "sgp_nodes": {
-    "G1_broca": 0.73,
-    "G2_wernicke": 0.61,
-    "G3_tpj": 0.55,
-    "G4_pfc": 0.48,
-    "G5_dmn": 0.32,
-    "G6_limbic": 0.67,
-    "G7_sensory": 0.81,
-    "G8_atl": 0.59,
-    "G9_premotor": 0.44
-  },
-  "streams": {
-    "ventral_mean": 0.64,
-    "dorsal_mean": 0.58
-  },
-  "dominant_hemisphere": "left",
-  "n_timesteps": 42,
-  "n_vertices": 20484
-}
+```bash
+pip install -r requirements.txt
 ```
 
-### `GET /health`
-Returns model load status.
+## Quick Start
 
-### `POST /warmup`
-Triggers model loading (call once after cold start).
+### Run Full Battery Analysis
 
-## Architecture
+```bash
+python run_full_battery.py
+```
 
-Built on the SGP-LLM framework. Nodes map to:
-- **G1 Broca** — phonological production, syntactic processing
-- **G2 Wernicke** — auditory comprehension, lexical-semantic decoding  
-- **G3 TPJ** — stream convergence, sensorimotor interface
-- **G4 PFC** — executive control, coherence/veto
-- **G5 DMN** — generativity, self-referential processing
-- **G6 Limbic** — emotional weighting, memory consolidation
-- **G7 Sensory** — primary perceptual input encoding
-- **G8 ATL** — cross-modal semantic integration hub
-- **G9 Premotor** — action planning, motor speech preparation
+### SFH-SGP Topological Analysis
+
+```bash
+python sfh_sgp_analysis/sfh_sgp_comprehensive.py
+```
+
+## Project Structure
+
+```
+sgp-tribe3/
+├── sfh_sgp_analysis/       # SFH-SGP mathematical analysis
+│   ├── sfh_sgp_comprehensive.py   # Main analysis script
+│   └── generate_figures.py       # Figure generation
+├── data/                    # Embeddings and projections
+├── sgp_parcellation.py     # SGP node definitions
+├── run_full_battery.py     # Main analysis pipeline
+└── requirements.txt        # Dependencies
+```
+
+## SGP Node Definitions
+
+The 9 SGP nodes represent distinct functional territories:
+
+| Node | Region | Function | Stream |
+|------|--------|----------|--------|
+| G1_broca | Inferior Frontal Gyrus | Speech production | Dorsal |
+| G2_wernicke | Superior Temporal Gyrus | Language comprehension | Ventral |
+| G3_tpj | Temporoparietal Junction | Theory of mind | Convergence |
+| G4_pfc | Prefrontal Cortex | Executive function | Dorsal |
+| G5_dmn | Default Mode Network | Self-referential | Generative |
+| G6_limbic | Limbic System | Emotion | Modulatory |
+| G7_sensory | Sensory Cortex | Multisensory | Ventral |
+| G8_atl | Anterior Temporal Lobe | Semantic integration | Ventral/Convergence |
+| G9_premotor | Premotor Cortex | Motor planning | Dorsal |
+
+## SFH-SGP Framework
+
+The Sentient-Field Hypothesis / Sentient-Generative Principal (SFH-SGP) framework analyzes cortical activation patterns using mathematical topology.
+
+### Key Equations
+
+**Sentient Potential:**
+$$\chi = \alpha C + \beta F$$
+
+Where:
+- $C$ = Coherence (from differential co-activation)
+- $F$ = Fertility (G5_dmn differential)
+
+**Langevin Dynamics:**
+$$\frac{dq}{dt} = -\nabla\chi + \sqrt{2D}\cdot\xi(t)$$
+
+### Key Findings
+
+The SFH-SGP analysis reveals **two basins of attraction** in semantic category space:
+
+- **Basin 1 "Real-World"**: motor, auditory, emotional, memory, simple, social
+- **Basin 2 "Intellectual"**: abstract, factual, logical, spatial
+
+Statistical validation:
+- $t = 8.69$, $p = 2.4 \times 10^{-5}$
+- Cohen's $d = 5.75$ (very large effect)
+- 100% Leave-One-Out Cross-Validation accuracy
 
 ## Citation
 
-Built on TRIBE v2:
-```
+If you use this code, please cite:
+
+```bibtex
+@article{SGPTribe3,
+  title={The Geometry of Thought: A Hilbert Space Analysis of Semantic Categories 
+         Reveals Two Basins of Attraction in the SGP Topographic Field},
+  author={Traver, Mark Rowe},
+  year={2026}
+}
+
 @article{dAscoli2026TribeV2,
   title={A foundation model of vision, audition, and language for in-silico neuroscience},
-  author={d'Ascoli, Stéphane and Rapin, Jérémy and Benchetrit, Yohann and others},
+  author={d'Ascoli, Stéphane and Rapin, Jérémy and others},
+  journal={Nature},
   year={2026}
 }
 ```
+
+## License
+
+CC BY-NC 4.0
