@@ -1,0 +1,71 @@
+================================================================================
+V13 INTERPRETATION REPORT: EFFECTIVE DIMENSIONALITY INVARIANCE
+================================================================================
+
+QUESTION: Is low effective dimensionality (D_eff << D_ambient) a cross-domain invariant?
+----------------------------------------------------------------------
+
+1. SUCCESS CRITERIA ASSESSMENT
+--------------------------------------------------
+  a) D_eff << D_ambient across domains:
+     TRIBE_Full: D_eff=2.88, D_amb=9, D_eff/D_amb=0.320 ✓
+     TRIBE_Parcel_Mean: D_eff=2.75, D_amb=9, D_eff/D_amb=0.306 ✓
+     word2vec_like: D_eff=98.04, D_amb=100, D_eff/D_amb=0.980 ✗
+     bert_like: D_eff=98.10, D_amb=100, D_eff/D_amb=0.981 ✗
+     glove_like: D_eff=98.10, D_amb=100, D_eff/D_amb=0.981 ✗
+     Cooccurrence: D_eff=245.90, D_amb=500, D_eff/D_amb=0.492 ✓
+
+  b) Stable across splits:
+     CV across splits: 0.0256 ✓
+     Mean D_eff: 2.751 ± 0.071
+
+  c) Similar compression ratios:
+     Mean C: 0.677 ± 0.310
+     CV: 0.4578 ✗
+
+  Overall invariant: ✗ NO
+
+2. KEY METRICS SUMMARY
+--------------------------------------------------
+Dataset                      D_eff  D_amb      C     Top3
+---------------------------------------------------------
+TRIBE_Full                    2.88      9  0.320    0.829
+TRIBE_Parcel_Mean             2.75      9  0.306    0.292
+word2vec_like                98.04    100  0.980    0.038
+bert_like                    98.10    100  0.981    0.038
+glove_like                   98.10    100  0.981    0.038
+Cooccurrence                245.90    500  0.492    0.025
+
+3. STABILITY ANALYSIS
+--------------------------------------------------
+  Number of splits: 5
+  Mean D_eff: 2.751
+  Std across splits: 0.071
+  CV: 0.0256
+
+4. LOCAL ANALYSIS
+--------------------------------------------------
+  k=10: local D_eff = 1.59 ± 0.52
+  k=20: local D_eff = 2.57 ± 0.61
+  k=50: local D_eff = 3.81 ± 0.62
+
+5. KEY FINDINGS
+--------------------------------------------------
+  ✗ NOT all datasets show strong compression
+  ✓ D_eff is STABLE across data splits
+  ✗ Compression ratios vary across domains
+
+6. CONCLUSIONS
+--------------------------------------------------
+  LOW D_eff IS NOT AN INVARIANT
+  
+  D_eff varies significantly across datasets.
+  Dimensionality structure is domain-dependent.
+
+7. IMPLICATIONS FOR MANUSCRIPT
+--------------------------------------------------
+  - Be cautious about claiming universality
+  - Report with appropriate uncertainty
+  - Note domain-specific variations
+
+================================================================================

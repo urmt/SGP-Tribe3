@@ -1,0 +1,56 @@
+================================================================================
+V17 INTERPRETATION REPORT: NORMALIZED INVARIANT ANALYSIS
+================================================================================
+
+QUESTION: Do normalized D_eff(k) curves align across systems?
+----------------------------------------------------------------------
+
+1. NORMALIZED METRICS SUMMARY
+--------------------------------------------------
+System             D_max     Growth   Sat Frac
+----------------------------------------------
+TRIBE               4.41     1.0415     0.9550
+hierarchical       45.35     5.0513     0.0000
+correlated         27.49     6.5652     0.0000
+sparse             37.38     1.6909     0.0000
+manifold           45.01     5.0589     0.0000
+uniform_sphere     45.24     5.0456     0.0000
+power_law          45.26     5.0466     0.0000
+
+2. INVARIANCE METRICS
+--------------------------------------------------
+  Mean Alignment Score: 0.8981
+  Growth Rate CV: 0.4463
+  Saturation Fraction CV: 2.4495
+  D_max CV: 0.3974
+
+3. SUCCESS CRITERIA
+--------------------------------------------------
+  Alignment after normalization: ✓ YES (0.898)
+  Stable growth rates: ✗ NO (CV=0.446)
+  Stable saturation fractions: ✗ NO (CV=2.449)
+
+4. PAIRWISE ALIGNMENT
+--------------------------------------------------
+  Best alignment: hierarchical - uniform_sphere (1.000)
+  Worst alignment: correlated - sparse (0.695)
+
+5. CONCLUSIONS
+--------------------------------------------------
+  PARTIAL UNIVERSALITY: ALIGNED BUT VARIABLE METRICS
+  
+  Curves align but individual metrics vary:
+    - Alignment: 0.898 (good)
+    - Growth rate CV: 0.446
+    - Saturation CV: 2.449
+  
+  Interpretation:
+    - Overall shape is universal
+    - Scale parameters vary between systems
+
+6. KEY INSIGHT
+--------------------------------------------------
+  TRIBE growth rate (1.041) differs from others (4.743)
+  → TRIBE shows unique scaling
+
+================================================================================

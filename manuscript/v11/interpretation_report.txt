@@ -1,0 +1,63 @@
+================================================================================
+V11 INTERPRETATION REPORT: RESIDUAL INVARIANCE TEST
+================================================================================
+
+QUESTION: Is residual structure intrinsic or model-dependent?
+----------------------------------------------------------------------
+
+1. SUCCESS CRITERIA ASSESSMENT
+--------------------------------------------------
+  a) Same parcels remain outliers: 0 parcels
+     - Common outliers: 0/400 (0.0%)
+  b) Similar kurtosis across runs: NO
+     - Mean kurtosis: 1.730
+     - CV (stability): 0.428
+
+2. OUTLIER PARCEL ANALYSIS
+--------------------------------------------------
+  Outlier counts by analysis:
+    Full: 33 parcels (8.2%)
+    Half1: 42 parcels (10.5%)
+    Half2: 34 parcels (8.5%)
+    Model_all_nodes: 33 parcels (8.2%)
+    Model_sensory_focus: 1 parcels (0.2%)
+    Model_cognitive_focus: 23 parcels (5.8%)
+    Model_limbic_focus: 4 parcels (1.0%)
+
+3. STABILITY METRICS
+--------------------------------------------------
+  Kurtosis mean: 1.730
+  Kurtosis std: 0.740
+  Kurtosis CV: 0.428
+  Gaussian fraction mean: 0.223
+  Gaussian fraction std: 0.277
+  Unique outlier parcels: 114
+
+4. CROSS-DOMAIN COMPARISON
+--------------------------------------------------
+  TRIBE: kurtosis=2.185, gaussian=13.0%
+  gaussian: kurtosis=-0.054, gaussian=95.2%
+  uniform: kurtosis=-1.109, gaussian=0.0%
+  heavy_tail: kurtosis=12.800, gaussian=0.5%
+  bimodal: kurtosis=-0.005, gaussian=93.0%
+
+5. KEY FINDINGS
+--------------------------------------------------
+  ✗ No consistent intrinsic structure
+    Heavy-tailed residuals are model-dependent
+  ✗ Kurtosis varies significantly across analyses
+
+6. CONCLUSIONS
+--------------------------------------------------
+  The residual structure appears to be MODEL-DEPENDENT.
+  Heavy-tailed residuals are not consistent across analyses,
+  suggesting they are artifacts of the specific
+  model or data configuration rather than intrinsic.
+
+7. IMPLICATIONS
+--------------------------------------------------
+  - Heavy tails are likely data/model artifacts
+  - Standard modeling approaches should suffice
+  - Focus on improving model fit rather than adaptation
+
+================================================================================

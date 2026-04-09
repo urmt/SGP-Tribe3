@@ -1,0 +1,11 @@
+System_1,System_2,Alignment
+hierarchical,manifold,0.9999980114463651
+hierarchical,correlated,0.98419735417071
+correlated,manifold,0.9839124368997959
+TRIBE,correlated,0.9152152550211736
+sparse,manifold,0.8778388528065729
+hierarchical,sparse,0.876990875040395
+TRIBE,hierarchical,0.8300913368438632
+TRIBE,manifold,0.8291619396279617
+correlated,sparse,0.7809620754729569
+TRIBE,sparse,0.46361922554500234

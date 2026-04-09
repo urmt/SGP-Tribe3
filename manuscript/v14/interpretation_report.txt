@@ -1,0 +1,98 @@
+================================================================================
+V14 INTERPRETATION REPORT: SCALE-DEPENDENT DIMENSIONALITY
+================================================================================
+
+QUESTION: Does D_eff(k) follow a universal functional form across domains?
+----------------------------------------------------------------------
+
+1. SUCCESS CRITERIA ASSESSMENT
+--------------------------------------------------
+  a) Similar functional form: ✗ NO
+     Best models: {np.str_('power_law'): np.int64(1), np.str_('saturating'): np.int64(5)}
+  b) Stable parameters: ✓ (most stable: logarithmic)
+     Model R² stability (CV):
+       logarithmic: 0.003
+       power_law: 0.003
+       saturating: 0.011
+
+2. FIT QUALITY SUMMARY
+--------------------------------------------------
+Dataset              Best               R²   Log R²   Power R²   Sat R²
+-----------------------------------------------------------------------
+TRIBE                power_law       0.929    0.914      0.929    0.723
+uniform_sphere       saturating      0.997    0.989      0.962    0.997
+gaussian_cloud       saturating      0.997    0.990      0.961    0.997
+sparse               saturating      0.996    0.975      0.981    0.996
+manifold             saturating      0.997    0.990      0.961    0.997
+hierarchical         saturating      0.998    0.985      0.967    0.998
+
+3. FITTED PARAMETERS
+--------------------------------------------------
+
+  TRIBE:
+    Logarithmic: D = 0.758 × log(k) + 0.446 (R²=0.914)
+    Power Law:   D = 1.217 × k^0.252 (R²=0.929)
+    Saturating:   D = 4.093 × (1 - exp(-k/17.0)) (R²=0.723)
+
+  uniform_sphere:
+    Logarithmic: D = 10.198 × log(k) + -14.853 (R²=0.989)
+    Power Law:   D = 3.182 × k^0.488 (R²=0.962)
+    Saturating:   D = 39.847 × (1 - exp(-k/51.6)) (R²=0.997)
+
+  gaussian_cloud:
+    Logarithmic: D = 10.210 × log(k) + -14.837 (R²=0.990)
+    Power Law:   D = 3.206 × k^0.487 (R²=0.961)
+    Saturating:   D = 39.880 × (1 - exp(-k/51.3)) (R²=0.997)
+
+  sparse:
+    Logarithmic: D = 9.421 × log(k) + -14.694 (R²=0.975)
+    Power Law:   D = 2.274 × k^0.536 (R²=0.981)
+    Saturating:   D = 38.477 × (1 - exp(-k/65.8)) (R²=0.996)
+
+  manifold:
+    Logarithmic: D = 10.160 × log(k) + -14.746 (R²=0.990)
+    Power Law:   D = 3.199 × k^0.487 (R²=0.961)
+    Saturating:   D = 39.689 × (1 - exp(-k/51.2)) (R²=0.997)
+
+  hierarchical:
+    Logarithmic: D = 9.904 × log(k) + -15.187 (R²=0.985)
+    Power Law:   D = 2.678 × k^0.513 (R²=0.967)
+    Saturating:   D = 39.000 × (1 - exp(-k/57.6)) (R²=0.998)
+
+4. STABILITY ANALYSIS
+--------------------------------------------------
+  logarithmic:
+    a = 0.804 ± 0.007
+    R² = 0.941 ± 0.002
+  power_law:
+    a = 1.224 ± 0.019
+    R² = 0.926 ± 0.003
+  saturating:
+    a = 4.198 ± 0.013
+    R² = 0.850 ± 0.009
+
+5. KEY FINDINGS
+--------------------------------------------------
+  ✗ No single functional form dominates
+     power_law: 1/6 datasets
+     saturating: 5/6 datasets
+
+  High quality fits (R² > 0.9): 6/6
+
+6. CONCLUSIONS
+--------------------------------------------------
+  NO UNIVERSAL FUNCTIONAL FORM
+  
+  Different datasets require different functional forms.
+  Dimensionality structure is domain-dependent.
+
+7. INTERPRETATION
+--------------------------------------------------
+  Power law behavior suggests:
+    - Scale-free dimensionality structure
+    - Self-similar geometry across scales
+  Saturating behavior suggests:
+    - Finite intrinsic dimensionality
+    - Saturation at large scales
+
+================================================================================

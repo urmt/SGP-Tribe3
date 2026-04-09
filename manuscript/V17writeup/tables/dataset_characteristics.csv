@@ -1,0 +1,6 @@
+System,N_Samples,Ambient_Dim,Data_Type
+TRIBE,2000,9,Cortical model (SGP nodes)
+hierarchical,2000,50,Synthetic (hierarchical Gaussian)
+correlated,2000,50,Synthetic (correlated Gaussian)
+sparse,2000,50,Synthetic (sparse)
+manifold,2000,50,Synthetic (curved manifold)

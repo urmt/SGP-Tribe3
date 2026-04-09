@@ -1,0 +1,76 @@
+================================================================================
+V12 INTERPRETATION REPORT: INVARIANT STRUCTURAL PROPERTIES
+================================================================================
+
+QUESTION: What structural properties are invariant across domains?
+----------------------------------------------------------------------
+
+1. SUCCESS CRITERIA ASSESSMENT
+--------------------------------------------------
+  a) Stable curves across splits:
+     - PR CV: 0.4306 ✗
+     - D_MLE CV: 0.0000 ✓
+  b) Similar shapes across domains:
+     - Scaling CV: 1.1618 ✗
+
+  Overall invariant structure: ✗ NO
+
+2. GLOBAL METRIC SUMMARY
+--------------------------------------------------
+  Participation Ratio (PR):
+    Mean: 5.570
+    CV: 0.4306
+    Interpretation: High dimensionality
+
+  Intrinsic Dimensionality (MLE):
+    Mean: 9.000
+    CV: 0.0000
+
+  Scaling Exponent:
+    Mean: 8.710
+    CV: 1.1618
+    Interpretation: Slow decay
+
+3. DATASET-BY-DATASET RESULTS
+--------------------------------------------------
+Dataset                    PR    D_MLE  Scale β     Top3
+--------------------------------------------------------
+TRIBE_Full              2.830    9.000   19.883    0.834
+TRIBE_Split1            2.459    9.000   22.040    0.881
+TRIBE_Split2            2.430    9.000   23.221    0.881
+uniform_sphere          7.739    9.000    0.618    0.492
+gaussian_cloud          7.748    9.000    0.614    0.491
+sparse                  5.865    9.000    2.074    0.630
+curved_manifold         7.752    9.000    0.613    0.491
+hierarchical            7.734    9.000    0.617    0.492
+
+4. CROSS-DOMAIN COMPARISON
+--------------------------------------------------
+  PR range: 5.322 (2.430 - 7.752)
+  D_MLE range: 0.000 (9.000 - 9.000)
+  Scaling range: 22.609 (0.613 - 23.221)
+
+5. KEY FINDINGS
+--------------------------------------------------
+  ✗ Participation Ratio varies across datasets
+  ✓ Intrinsic Dimensionality is INVARIANT
+    All datasets estimate similar intrinsic dimension (D ≈ 9.00)
+  ✗ Scaling laws vary across datasets
+
+6. CONCLUSIONS
+--------------------------------------------------
+  NO COMPLETE STRUCTURAL INVARIANCE
+  
+  While some metrics may be partially stable, there is no
+  consistent structural invariance across all properties.
+  
+  This suggests that structural properties depend on the
+  specific data configuration and cannot be considered universal.
+
+7. IMPLICATIONS FOR MANUSCRIPT
+--------------------------------------------------
+  - Be cautious about claiming structural invariance
+  - Report metrics with appropriate uncertainty
+  - Acknowledge dependence on data configuration
+
+================================================================================

@@ -1,0 +1,60 @@
+================================================================================
+V10 INTERPRETATION REPORT: NOISE/JITTER ANALYSIS (ξ)
+================================================================================
+
+QUESTION: Does residual variability (ξ) contain consistent structure?
+----------------------------------------------------------------------
+
+1. GAUSSIANITY ASSESSMENT
+--------------------------------------------------
+  TRIBE               : 13.0% Gaussian, skew=+0.273, kurt=+2.185 ✗ NON-GAUSSIAN
+  gaussian            : 95.2% Gaussian, skew=-0.007, kurt=-0.011 ✓ PRIMARILY GAUSSIAN
+  uniform             : 0.0% Gaussian, skew=+0.001, kurt=-1.173 ✗ NON-GAUSSIAN
+  heavy_tail          : 0.0% Gaussian, skew=+0.417, kurt=+31.752 ✗ NON-GAUSSIAN
+  multimodal          : 0.0% Gaussian, skew=-0.001, kurt=-1.493 ✗ NON-GAUSSIAN
+  correlated          : 3.0% Gaussian, skew=-0.007, kurt=-0.041 ✗ NON-GAUSSIAN
+
+2. SPECTRAL STRUCTURE
+--------------------------------------------------
+  TRIBE               : entropy=1.248, condition#=inf
+  gaussian            : entropy=2.148, condition#=2.8
+  uniform             : entropy=2.154, condition#=2.6
+  heavy_tail          : entropy=2.046, condition#=6.2
+  multimodal          : entropy=0.613, condition#=101.7
+  correlated          : entropy=0.221, condition#=397.1
+
+3. VARIANCE DISTRIBUTION
+--------------------------------------------------
+  TRIBE               : mean=0.0001, std=0.0001
+  gaussian            : mean=0.0891, std=0.0043
+  uniform             : mean=0.3296, std=0.0099
+  heavy_tail          : mean=0.2721, std=0.1140
+  multimodal          : mean=0.2898, std=0.0066
+  correlated          : mean=1.0265, std=0.1428
+
+4. CLUSTERING ANALYSIS
+--------------------------------------------------
+  Optimal clusters: 2
+  Silhouette score: 0.6384
+  Cluster 0: n=369, mean_var=0.0001, mean_kurt=1.117
+  Cluster 1: n=31, mean_var=0.0001, mean_kurt=14.894
+
+5. KEY FINDINGS
+--------------------------------------------------
+  a) TRIBE residuals show NON-GAUSSIAN structure
+  b) Kurtosis=2.185 indicates heavy-tailed distribution
+  c) High variance in variance suggests systematic structure
+
+6. ANSWERS TO KEY QUESTIONS
+--------------------------------------------------
+  Is ξ Gaussian? False
+  Does ξ vary systematically? True
+  Similar across domains? True
+
+7. CONCLUSIONS
+--------------------------------------------------
+  The residuals show non-Gaussian structure (skewness/kurtosis).
+  This suggests the model may be missing systematic effects,
+  or that there are genuine heavy-tailed processes at play.
+
+================================================================================

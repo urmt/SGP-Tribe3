@@ -1,0 +1,14 @@
+Metric,Value
+k_range,5 - 1000
+n_points,14
+Mean Slope,0.1569
+Slope CV,1.3241
+power_law_a,1.4205
+power_law_b,0.1946
+power_law_R2,0.8180
+saturating_a,4.6814
+saturating_b,43.0880
+saturating_R2,0.8731
+broken_power_law_a,0.7499
+broken_power_law_b,0.3543
+broken_power_law_R2,0.9706
