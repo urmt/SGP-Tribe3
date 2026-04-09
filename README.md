@@ -1,29 +1,40 @@
-# SGP-Tribe3 V2
+# SGP-Tribe3
 
-**Applying the SFH-SGP Framework to TRIBE v2 Brain Predictions**
+**Compositional and Dynamical Metrics of Cortical Organization: Alignment with the Principal Cortical Gradient**
 
-A multimodal brain encoding system built on [TRIBE v2](https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/) (Meta AI) for analyzing the topological structure of semantic space using the Sentient-Field Hypothesis / Sentient-Generative Principal (SFH-SGP) mathematical framework.
+Analysis code for manuscript examining how metrics derived from representational data align with the principal cortical gradient from Margulies et al. (2016).
 
 ## Overview
 
-This repository contains the analysis code for testing SFH-SGP predictions about the Torsion ($\chi$) and its role in creating basins of attraction in semantic space.
+This repository contains the V7 analysis testing whether:
+1. **Composite Dispersion Index (CDI)**: A nonlinear combination of activation magnitude and dispersion
+2. **Dynamical Torsion (χ)**: A measure inspired by the SFH-SGP framework capturing rotational dynamics
 
-## Key Findings (V2 - April 2026)
+...align with established cortical organization as measured by the principal cortical gradient.
 
-**The Embodied Potential $\chi$ reveals topological structure in semantic space:**
+## Key Findings (V7 - April 2026)
 
-| Metric | Value |
-|--------|-------|
-| Silhouette Score | 0.661 |
-| t-statistic | 8.38 |
-| p-value | 4.1 × 10⁻⁹ |
-| Cohen's d | 3.17 |
-| Categories | 30 |
-| Stimuli | 1,422 |
+| Metric | r with Gradient | p-value | Partial (|norm) |
+|--------|----------------|---------|-----------------|
+| **χ (torsion)** | **-0.183** | **2.3×10⁻⁴** | **-0.297** |
+| CDI | +0.104 | 0.038 | +0.078 (n.s.) |
+| L2 norm | +0.204 | 3.8×10⁻⁵ | - |
 
-**Two Basins Identified:**
-- **Real-World Basin** (15 categories): economic, gustatory, historical, linguistic, logical, mathematical, narrative, olfactory, political, religious, scientific, social_relational, spatial_nav, technological, temporal
-- **Intellectual Basin** (15 categories): abstract, artistic, auditory, biological, emotional, factual, memory, motor, musical, procedural, proprioceptive, simple, social, spatial, visual
+**Key finding:** χ maintains significant partial correlation after controlling for norm (r=-0.297, p<10⁻⁸), demonstrating it's NOT reducible to variance/norm.
+
+## Repository Structure
+
+```
+sgp-tribe3/
+├── manuscript/v7/                      # Current publication-ready manuscript
+│   ├── manuscript.tex                 # LaTeX manuscript
+│   ├── references.bib                 # Bibliography
+│   ├── v7_complete_pipeline.py        # Analysis pipeline
+│   ├── analysis_results.csv           # Full data (400 parcels)
+│   └── figures/                       # Visualization figures
+└── results/
+    └── full_battery_1000/            # TRIBE v2 predictions
+```
 
 ## Repository Structure
 
@@ -45,71 +56,57 @@ sgp-tribe3/
 ## Installation
 
 ```bash
-pip install numpy scipy scikit-learn matplotlib pandas
+pip install numpy scipy scikit-learn matplotlib pandas nilearn
 ```
 
 ## Quick Start
 
-### Phase 1: Discovery Analysis (10 categories)
 ```bash
-python sfh_sgp_analysis/phase1_discovery_analysis.py
+cd manuscript/v7
+python v7_complete_pipeline.py
+pdflatex manuscript.tex
+bibtex manuscript
+pdflatex manuscript.tex
+pdflatex manuscript.tex
 ```
 
-### Phase 2: Expanded Analysis (30 categories)
-```bash
-python sfh_sgp_analysis/phase2_expanded_analysis.py
-```
+## Key Metrics
 
-## SFH-SGP Framework
+### Composite Dispersion Index (CDI)
+\[
+\text{CDI} = \|x\| \cdot \text{Var}(x) \cdot \text{Std}(x)
+\]
 
-### Key Primitives
-
-| Symbol | Name | Description |
-|--------|------|-------------|
-| Q | Quota | Total differential flux ($\sum |x_i - \bar{x}_i|$) |
-| C | Coherence | Projection onto leading eigenvector |
-| F | Fertility | G7_sensory differential (sensorimotor) |
-| $\chi$ | Torsion (τ) | Embodied Potential = \|αC\| + \|βF\| |
-
-### Interpretation
-
-$\chi$ (Torsion) represents the **Screening Effect** predicted by SFH-SGP:
-- High $\chi$ = more constrained processing ("kinked hose")
-- Low $\chi$ = less constrained processing ("unkinked hose")
-
-The framework predicts that Torsion creates basins in activation space. Our analysis validates this prediction.
+### Dynamical Torsion (χ)
+\[
+\chi = \|A\|_F \quad \text{where } A = (J - J^T)/2
+\]
+- J: Jacobian of velocity with respect to state
+- A: Antisymmetric component capturing rotational dynamics
 
 ## Methods
 
-1. **Encoding**: Text stimuli processed through TRIBE v2 pipeline → 9 SGP node activations
-2. **Computation**: SFH-SGP primitives computed from node activation patterns
-3. **Analysis**: Silhouette analysis, hierarchical clustering, generalization testing
-4. **Validation**: Two-stage approach to avoid circular reasoning
+1. **Data**: TRIBE v2 predictions for 1,422 stimuli × 30 categories
+2. **Trajectories**: Generated pseudo-temporal trajectories per parcel
+3. **Metrics**: CDI and χ computed for Schaefer-400 parcels (n=400)
+4. **Validation**: Spin permutation testing (n=1,000)
 
 ## Citation
 
 ```bibtex
-@article{SGPTribe3V2,
-  title={The Topographic Structure of Semantic Space: A TRIBE v2 Analysis 
-         Using the SFH-SGP Framework},
+@article{SGPTribe3V7,
+  title={Compositional and Dynamical Metrics of Cortical Organization: 
+         Alignment with the Principal Cortical Gradient},
   author={Traver, Mark Rowe},
   year={2026}
-}
-
-@article{dAscoli2026TribeV2,
-  title={A foundation model of vision, audition, and language for in-silico neuroscience},
-  author={d'Ascoli, Stéphane and Rapin, Jérémy and others},
-  journal={Meta AI Technical Report},
-  year={2026}
-}
-
-@article{Traver2026SFHSGP,
-  title={The Mathematical Atlas of Reality: The 5-Level SFH-SGP Hierarchy},
-  author={Traver, Mark Rowe},
-  year={2026},
-  doi={10.5281/zenodo.19472283}
 }
 ```
+
+## References
+
+- **Cortical Gradient**: Margulies et al. (2016), PNAS
+- **TRIBE v2**: d'Ascoli et al. (2026), Meta AI
+- **Parcellation**: Schaefer et al. (2018), Cerebral Cortex
 
 ## License
 
