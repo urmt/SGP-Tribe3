@@ -1,0 +1,90 @@
+================================================================================
+V27 HIGH-RESOLUTION STATE SPACE VALIDATION SUMMARY
+================================================================================
+
+OBJECTIVE: Test whether compression (D_eff/k) is the missing state variable
+responsible for TRIBE deviation.
+
+================================================================================
+DATA SUMMARY
+================================================================================
+
+High-resolution sampling: 13 k-values (log-spaced: 5, 7, 10, 15, 20, 30, 50, 75, 100, 150, 200, 300, 500)
+Total data points per system: ~11 (after derivative computation)
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+Model D (baseline):   dβ = a·D + b·H + c·(D·H) + d
+Model G (compression): dβ = a·D + b·H + c·(D·H) + e·R + f
+
+System             | D_baseline R² | G_compression R² | ΔR²
+-------------------|---------------|-------------------|--------
+TRIBE             |        0.6441 |            0.6962 | +0.0521
+correlated        |        0.9932 |            0.9933 | +0.0000
+hierarchical      |        0.9865 |            0.9890 | +0.0025
+manifold          |        0.6948 |            0.8253 | +0.1305
+sparse            |        0.7340 |            0.9208 | +0.1868
+
+Mean R² (D):     0.8105
+Mean R² (G):     0.8849
+Overall ΔR²:     +0.0744
+
+================================================================================
+TRIBE-SPECIFIC ANALYSIS
+================================================================================
+
+TRIBE D_baseline R²:   0.6441
+TRIBE G_compression R²: 0.6962
+TRIBE ΔR²:             +0.0521
+
+RESULT: Compression MARGINALLY improves TRIBE fit
+
+================================================================================
+PARAMETER COLLAPSE ANALYSIS
+================================================================================
+
+Model D parameters collapsed: None
+Model G parameters collapsed: None
+
+RESULT: Parameter stability UNCHANGED
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. DOES COMPRESSION IMPROVE MODEL FIT?
+   YES - Mean R² improves by 0.0744
+
+2. IS IMPROVEMENT TRIBE-SPECIFIC?
+   NO - Similar improvement across systems
+
+3. DOES COMPRESSION REDUCE RESIDUAL STRUCTURE?
+   Max correlation (R vs residual): |r| = 0.218 (TRIBE)
+   RANDOM - Residuals not explained by compression
+
+4. DOES PARAMETER STABILITY IMPROVE?
+   YES - 0 parameters collapse vs 0
+
+5. FINAL CONCLUSION
+   COMPRESSION PARTIALLY VALIDATED.
+   
+   Evidence:
+   - Overall R² improvement present
+   - But may not be TRIBE-specific
+   - Compression adds general information
+   
+================================================================================
+FILES GENERATED
+================================================================================
+
+/v27_high_res/data/high_res_base.csv       - D_eff, H, R at each k
+/v27_high_res/data/high_res_dataset.csv   - With derivatives
+/v27_high_res/data/model_results.csv       - Model fits
+/v27_high_res/data/parameter_collapse.csv  - Collapse analysis
+/v27_high_res/plots/r2_comparison.png     - R² comparison
+/v27_high_res/plots/compression_vs_residual.png - Compression correlation
+/v27_high_res/plots/system_fits.png      - Per-system fits
+
+================================================================================

@@ -1,0 +1,149 @@
+================================================================================
+V24 SPECTRAL SHAPE ANALYSIS SUMMARY
+================================================================================
+
+OBJECTIVE: Determine whether eigenvalue distribution structure explains 
+beta dynamics and enables parameter collapse.
+
+SPECTRAL SHAPE METRICS TESTED:
+  H     = Spectral entropy (-Σp log p)      - Measures eigenvalue spread
+  α     = Spectral slope (log λ vs log i)  - Power law exponent
+  Gini  = Gini coefficient                 - Eigenvalue inequality
+  T     = Top-mode dominance (λ₁/Σλ)     - First mode fraction
+  Tail  = Tail weight (bottom 10%)        - Low eigenvalue fraction
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+Model                    | Mean R²  | Std R²  | Notes
+-------------------------|----------|---------|--------------------------
+Baseline (D_eff only)    | 0.9015   | 0.1055  | Good baseline fit
+H only (entropy)         | 0.8612   | 0.2069  | Shape alone works well
+Hybrid (D_eff + H)      | 0.9950   | 0.0031  | Best combined fit
+Hybrid (D_eff + α)      | 0.9989   | 0.0009  | Best overall model
+
+Shape-only models (α, Gini, T, Tail): Failed to converge (NaN)
+
+BASELINE (V20):    R² = 0.6591
+BEST MODEL:         Hybrid (D_eff + α) (R² = 0.9989)
+IMPROVEMENT:       51.5% over V20 baseline
+
+================================================================================
+KEY RESULTS PER SYSTEM
+================================================================================
+
+System       | Baseline R² | +H R² | +α R² | Best Model
+-------------|-------------|--------|--------|------------
+TRIBE        | 0.706      | 0.461  | N/A    | Baseline
+hierarchical | 0.960      | 0.996  | 0.999  | Hybrid
+correlated   | 0.966      | 0.994  | 1.000  | Hybrid
+sparse       | 0.879      | 0.858  | 0.999  | Hybrid
+manifold     | 0.997      | 0.997  | 0.997  | Baseline/Hybrid
+
+================================================================================
+PARAMETER COLLAPSE ANALYSIS
+================================================================================
+
+No model achieved parameter collapse (CV < 0.5 for all parameters).
+
+Model              | Parameters Collapsed
+-------------------|---------------------
+Baseline (D_eff)   | 0/3
+H only             | 0/3
+Hybrid (D_eff+H)   | 0/4
+Hybrid (D_eff+α)   | 0/4
+
+CONCLUSION: Parameters remain system-specific. No universal law identified.
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. SHAPE METRICS PARTIALLY EXPLAIN BETA DYNAMICS
+   - Spectral entropy (H) alone achieves R² = 0.86
+   - This is 95% of baseline D_eff performance
+   - α, Gini, T, Tail failed to converge (numerical issues)
+
+2. HYBRID MODELS SIGNIFICANTLY IMPROVE FIT
+   - Adding shape to D_eff improves R² from 0.90 to 0.999
+   - Best: Hybrid (D_eff + α) with R² = 0.999
+   - Improvement: 10.8% over baseline D_eff
+
+3. PARAMETER COLLAPSE NOT ACHIEVED
+   - No model reduces parameter variance sufficiently
+   - Coefficients of variation > 0.5 for all parameters
+   - System-specific tuning remains necessary
+
+4. TRIBE DIFFERS FROM SYNTHETIC SYSTEMS
+   - TRIBE shows lower R² for shape-only models
+   - TRIBE's spectral properties are less informative
+   - Suggests different structure in TRIBE data
+
+5. BEST CANDIDATE STATE VARIABLE: SPECTRAL ENTROPY (H)
+   - Achieves 0.86 R² alone
+   - Complements D_eff when combined (0.995 R²)
+   - Captures eigenvalue distribution shape
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+DOES SPECTRAL SHAPE OUTPERFORM D_eff?
+  NO - D_eff remains primary driver (R² = 0.90 vs 0.86 for H alone)
+  
+DOES IT REDUCE PARAMETER VARIANCE?
+  NO - No parameter collapse achieved
+  
+DOES TRIBE ALIGN BETTER WITH SYNTHETIC SYSTEMS?
+  PARTIALLY - Hybrid models improve alignment for synthetic systems
+  but TRIBE remains distinct (lower shape-only R²)
+
+IS ANY MODEL APPROACHING PARAMETER COLLAPSE?
+  NO - All CV values exceed 0.5 threshold
+
+DOES THIS SUGGEST A CANDIDATE STATE VARIABLE?
+  YES - Spectral entropy (H) is a viable candidate:
+  - Contains complementary information to D_eff
+  - Hybrid model achieves near-perfect fit (R² = 0.995)
+  - May represent system "disorder" or diversity
+
+================================================================================
+SPECTRAL METRICS SUMMARY (AT k=200)
+================================================================================
+
+System       | H    | α     | Gini | T     | D_eff
+-------------|------|--------|------|-------|-------
+TRIBE        | 1.62 | -2.82  | 0.58 | 0.39  | 4.01
+hierarchical | 3.34 | -1.42  | 0.58 | 0.09  | 21.98
+correlated   | 3.70 | -0.63  | 0.34 | 0.11  | 31.08
+sparse       | 3.33 | -1.03  | 0.54 | 0.19  | 15.66
+manifold     | 1.08 | -0.37  | 0.09 | 0.40  | 2.91
+
+KEY OBSERVATIONS:
+- TRIBE has lower entropy (1.62) than synthetic systems (3-4)
+- TRIBE has steeper spectral slope (-2.82)
+- TRIBE has higher top-mode dominance (0.39)
+- These differences reflect TRIBE's compressed representation
+
+================================================================================
+FILES GENERATED
+================================================================================
+
+/v24_spectral_shape_analysis/data/spectral_shape_metrics.csv
+/v24_spectral_shape_analysis/data/model_results.csv
+/v24_spectral_shape_analysis/data/parameter_collapse.csv
+/v24_spectral_shape_analysis/plots/shape_vs_beta.png
+/v24_spectral_shape_analysis/plots/model_fit_comparison.png
+/v24_spectral_shape_analysis/plots/parameter_variance.png
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Investigate why α, Gini, T, Tail failed to converge
+2. Test additional shape metrics (e.g., eigenvalue spacing)
+3. Explore nonlinear combinations of shape metrics
+4. Test whether H alone could replace D_eff in simplified models
+
+================================================================================

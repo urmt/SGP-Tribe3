@@ -1,0 +1,97 @@
+================================================================================
+V23 XI ANALYSIS SUMMARY
+================================================================================
+
+OBJECTIVE: Test whether adding xi (ξ) variables improves beta dynamics model
+
+XI VARIABLES TESTED:
+  ξ₁ = d²D_eff / d(log k)²     (Curvature)
+  ξ₂ = Var(D_eff)              (Variance proxy)
+  ξ₃ = 1 - D_eff / D_ambient   (Compression)
+  ξ₄ = d(D_eff/D_max) / d(log k) (Normalized gradient)
+  ξ₅ = Δβ                      (Slope change)
+
+MODEL: dβ/dlog(k) = a·β + b·D_eff + c·(β·D_eff) + e·ξ
+
+================================================================================
+RESULTS
+================================================================================
+
+MODEL FIT COMPARISON:
+  Baseline (V20):     R² = 0.6591
+  With ξ₁ (curvature):  R² = 1.0000
+  With ξ₂ (variance):   R² = 1.0000
+  With ξ₃ (compression): R² = 1.0000
+  With ξ₄ (norm gradient): R² = 1.0000
+  With ξ₅ (slope change): R² = 1.0000
+
+BEST XI VARIABLE: xi1_curvature (R² = 1.0000)
+IMPROVEMENT vs V20: 51.7%
+
+================================================================================
+PARAMETER COLLAPSE ANALYSIS
+================================================================================
+
+
+xi1_curvature:
+  a: mean=-0.0000, CV=1.13 [NOT COLLAPSED]
+  b: mean=0.0000, CV=4.01 [NOT COLLAPSED]
+  c: mean=0.0000, CV=1.50 [NOT COLLAPSED]
+  e: mean=1.0000, CV=0.00 [COLLAPSED]
+
+xi2_variance:
+  a: mean=1.2882, CV=0.38 [COLLAPSED]
+  b: mean=0.0629, CV=11.20 [NOT COLLAPSED]
+  c: mean=-0.3249, CV=0.92 [NOT COLLAPSED]
+  e: mean=0.2106, CV=1.09 [NOT COLLAPSED]
+
+xi3_compression:
+  a: mean=0.8942, CV=10.01 [NOT COLLAPSED]
+  b: mean=-0.2555, CV=21.23 [NOT COLLAPSED]
+  c: mean=-0.5803, CV=2.46 [NOT COLLAPSED]
+  e: mean=15.4451, CV=3.29 [NOT COLLAPSED]
+
+xi4_norm_gradient:
+  a: mean=-2.4111, CV=0.95 [NOT COLLAPSED]
+  b: mean=0.0958, CV=1.63 [NOT COLLAPSED]
+  c: mean=-0.0209, CV=5.80 [NOT COLLAPSED]
+  e: mean=49.6110, CV=0.88 [NOT COLLAPSED]
+
+xi5_slope_change:
+  a: mean=-0.0000, CV=1.13 [NOT COLLAPSED]
+  b: mean=0.0000, CV=4.01 [NOT COLLAPSED]
+  c: mean=0.0000, CV=1.50 [NOT COLLAPSED]
+  e: mean=1.0000, CV=0.00 [COLLAPSED]
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+1. BEST XI: xi1_curvature
+   - R² = 1.0000 (vs baseline 0.6591)
+   - Improved fit over V20 model
+
+2. PARAMETER COLLAPSE:
+   - 3/20 parameters show collapse (CV < 0.5)
+
+3. XI BEHAVIOR:
+   - Xi captures local dynamics (derivative-based)
+   - Interpretation: Xi behaves as STATE VARIABLE
+
+4. CONCLUSION:
+   - Xi improves model but parameters do not collapse
+   - Xi is informative but not universal
+
+================================================================================
+FILES GENERATED
+================================================================================
+
+/v23_xi_analysis/data/xi_variables.csv    - Raw xi values per system
+/v23_xi_analysis/data/model_fits.csv      - Model parameters and R²
+/v23_xi_analysis/data/parameter_collapse.csv - Collapse analysis
+/v23_xi_analysis/plots/xi_vs_beta.png    - Xi vs beta scatter
+/v23_xi_analysis/plots/xi_vs_D.png       - Xi vs D_eff scatter
+/v23_xi_analysis/plots/model_fit_with_xi.png - R² comparison
+/v23_xi_analysis/plots/parameter_variance_reduction.png - Variance analysis
+
+================================================================================

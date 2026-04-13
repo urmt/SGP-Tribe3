@@ -1,0 +1,56 @@
+======================================================================
+ESTIMATOR ABLATION SUMMARY
+======================================================================
+
+GROWTH-PRESENCE ANALYSIS
+--------------------------------------------------
+  PR: 5/5 datasets show growth
+  MLE: 0/5 datasets show growth
+  Correlation: 1/5 datasets show growth
+  PCA_Threshold: 5/5 datasets show growth
+  Entropy: 5/5 datasets show growth
+
+SATURATION-PRESENCE ANALYSIS
+--------------------------------------------------
+  PR: 4/5 datasets show saturation
+  MLE: 2/5 datasets show saturation
+  Correlation: 1/5 datasets show saturation
+  PCA_Threshold: 5/5 datasets show saturation
+  Entropy: 4/5 datasets show saturation
+
+ALIGNMENT ANALYSIS (Cross-system Pearson r)
+--------------------------------------------------
+  PR:
+    Mean alignment: 0.7803
+    Std alignment: 0.2087
+  MLE:
+    Mean alignment: 0.9015
+    Std alignment: 0.0973
+  Correlation:
+    Mean alignment: 0.1169
+    Std alignment: 0.2799
+  PCA_Threshold:
+    Mean alignment: 0.8074
+    Std alignment: 0.1579
+  Entropy:
+    Mean alignment: 0.8318
+    Std alignment: 0.1376
+
+COMPARISON WITH PARTICIPATION RATIO
+--------------------------------------------------
+  MLE vs PR:
+    Mean alignment difference: 0.0970
+    Shape comparison: similar
+  Correlation vs PR:
+    Mean alignment difference: -0.5307
+    Shape comparison: different
+  PCA_Threshold vs PR:
+    Mean alignment difference: 0.0216
+    Shape comparison: similar
+  Entropy vs PR:
+    Mean alignment difference: 0.0412
+    Shape comparison: similar
+
+======================================================================
+END OF SUMMARY
+======================================================================

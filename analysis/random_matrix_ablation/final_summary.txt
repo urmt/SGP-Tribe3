@@ -1,0 +1,44 @@
+======================================================================
+RANDOM MATRIX ABLATION - FINAL SUMMARY
+======================================================================
+
+Total conditions tested: 12
+Total runs completed: 120
+
+GROWTH OBSERVATION
+--------------------------------------------------
+  PR: YES (12/12 conditions)
+  Entropy: YES (12/12 conditions)
+  PCA_95: YES (12/12 conditions)
+
+SATURATION OBSERVATION
+--------------------------------------------------
+  PR: NO (9/12 conditions)
+  Entropy: NO (9/12 conditions)
+  PCA_95: NO (9/12 conditions)
+
+ALIGNMENT RANGES (Cross-condition Pearson r)
+--------------------------------------------------
+  PR:
+    Mean: 0.9380
+    Std: 0.0661
+    Min: 0.7571
+    Max: 1.0000
+  Entropy:
+    Mean: 0.9014
+    Std: 0.0975
+    Min: 0.6537
+    Max: 1.0000
+  PCA_95:
+    Mean: 0.8935
+    Std: 0.1005
+    Min: 0.6374
+    Max: 1.0000
+
+ESTIMATORS WITH SIGNIFICANT DEVIATION (std > 0.3)
+--------------------------------------------------
+  None
+
+======================================================================
+END
+======================================================================

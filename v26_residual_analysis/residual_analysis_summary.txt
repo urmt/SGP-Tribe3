@@ -1,0 +1,101 @@
+================================================================================
+V26 RESIDUAL ANALYSIS SUMMARY
+================================================================================
+
+OBJECTIVE: Identify the missing state variable responsible for TRIBE deviation
+by analyzing residual structure from the best state-space model.
+
+================================================================================
+RESIDUAL STATISTICS (Model D)
+================================================================================
+
+TRIBE          : mean=-0.0000, std=0.5787, |max|=0.8422
+correlated     : mean=-0.0000, std=0.3798, |max|=0.5240
+hierarchical   : mean=+0.0000, std=0.7485, |max|=1.1480
+manifold       : mean=-0.0000, std=0.7659, |max|=0.9674
+sparse         : mean=+0.0000, std=0.4052, |max|=0.5868
+
+================================================================================
+CORRELATION ANALYSIS (Pooled)
+================================================================================
+
+curvature           : r = +0.2974
+acceleration        : r = +0.2974
+norm_slope          : r = +0.1394
+entropy_gradient    : r = +0.1364
+saturation          : r = +0.1056
+compression         : r = +0.0232
+
+================================================================================
+TRIBE-SPECIFIC CORRELATIONS
+================================================================================
+
+compression         : r = -0.5162
+curvature           : r = +0.4545
+acceleration        : r = +0.4545
+norm_slope          : r = +0.0713
+entropy_gradient    : r = -0.0477
+saturation          : r = -0.0000
+
+================================================================================
+AUGMENTED MODEL R² IMPROVEMENTS
+================================================================================
+
+Variable             | Mean R² | Mean Improvement
+---------------------|---------|-----------------
+curvature            |     nan | +nan
+acceleration         |     nan | +nan
+compression          |     nan | +nan
+norm_slope           |     nan | +nan
+entropy_gradient     |     nan | +nan
+saturation           |     nan | +nan
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. ARE RESIDUALS STRUCTURED OR RANDOM?
+   STRUCTURED - Significant residuals remain after Model D
+
+2. WHICH VARIABLE BEST EXPLAINS RESIDUALS?
+   Pooled: curvature (r = 0.2974)
+   TRIBE: compression (r = -0.5162)
+
+3. DOES ADDING X IMPROVE R² SIGNIFICANTLY?
+   NO - Insufficient data for improvement analysis
+
+4. IS TRIBE SPECIFICALLY EXPLAINED BY X?
+   YES - compression strongly correlates with TRIBE residuals (r=-0.516)
+
+5. CANDIDATE FOR MISSING STATE VARIABLE?
+   No strong candidate identified (max |r| = 0.297)
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+LIMITED SUCCESS: No strong candidate variable identified.
+
+Residuals may represent:
+1. Numerical noise in derivative estimation
+2. System-specific boundary effects
+3. Fundamental randomness in beta dynamics
+
+Recommendations:
+- Increase sampling resolution
+- Test additional candidate variables
+- Consider hierarchical models
+
+================================================================================
+FILES GENERATED
+================================================================================
+
+/v26_residual_analysis/data/residuals.csv              - Residual values
+/v26_residual_analysis/data/candidates.csv             - Candidate variables
+/v26_residual_analysis/data/correlation_results.csv   - Correlation analysis
+/v26_residual_analysis/data/augmented_model_results.csv - Model improvements
+/v26_residual_analysis/plots/residual_vs_candidates.png - Scatter plots
+/v26_residual_analysis/plots/correlation_heatmap.png   - Heatmap
+/v26_residual_analysis/plots/r2_improvement.png        - R² comparison
+
+================================================================================

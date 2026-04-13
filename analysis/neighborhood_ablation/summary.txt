@@ -1,0 +1,41 @@
+======================================================================
+NEIGHBORHOOD STRUCTURE ABLATION SUMMARY
+======================================================================
+
+GROWTH-PRESENCE BY NEIGHBORHOOD
+--------------------------------------------------
+  kNN: 15/15 show growth
+  Random: 15/15 show growth
+  Global: 15/15 show growth
+
+SATURATION-PRESENCE BY NEIGHBORHOOD
+--------------------------------------------------
+  kNN: 13/15 show saturation
+  Random: 15/15 show saturation
+  Global: 15/15 show saturation
+
+ALIGNMENT BY NEIGHBORHOOD (Cross-system Pearson r)
+--------------------------------------------------
+  kNN:
+    Mean alignment: 0.8065
+    Std alignment: 0.1691
+  Random:
+    Mean alignment: 0.8765
+    Std alignment: 0.1170
+  Global:
+    Mean alignment: 0.8860
+    Std alignment: 0.1135
+
+COMPARISON: k-NN vs Random vs Global
+--------------------------------------------------
+  kNN: 0.8065
+  Random: 0.8765
+  Global: 0.8860
+
+  kNN vs Random difference: -0.0701
+  kNN vs Global difference: -0.0795
+  Random vs Global difference: -0.0094
+
+======================================================================
+END OF SUMMARY
+======================================================================

@@ -1,0 +1,100 @@
+======================================================================
+FINAL ANALYSIS REPORT
+Multiscale Dimensionality: Generic vs. System-Specific Structure
+======================================================================
+
+EXPERIMENT SET 1: NULL MODEL RESULTS
+--------------------------------------------------
+Null models tested: 6
+
+Per-model results:
+  IsoGauss_d9:
+    Alignment to TRIBE: 0.9648
+    Alignment to synthetic: 0.9755
+    Saturation ratio: 1.0000
+  IsoGauss_d50:
+    Alignment to TRIBE: 0.9977
+    Alignment to synthetic: 0.9781
+    Saturation ratio: 1.0000
+  SpectrumMatch:
+    Alignment to TRIBE: 0.8534
+    Alignment to synthetic: 0.8944
+    Saturation ratio: 0.9747
+  EigenShuffle:
+    Alignment to TRIBE: 0.8584
+    Alignment to synthetic: 0.8994
+    Saturation ratio: 0.9831
+  NeighShuffle:
+    Alignment to TRIBE: 0.9951
+    Alignment to synthetic: 0.9637
+    Saturation ratio: 1.0000
+  DistPreserve:
+    Alignment to TRIBE: 0.9674
+    Alignment to synthetic: 0.9770
+    Saturation ratio: 1.0000
+
+Summary statistics:
+  Mean alignment to TRIBE: 0.9395
+  Mean alignment to synthetic: 0.9480
+
+EXPERIMENT SET 2: SYNTHETIC SWEEP RESULTS
+--------------------------------------------------
+Total sweep conditions: 14
+
+Dimensionality effect:
+  D_eff increases with ambient dimension
+    d=5: D_eff=3.79
+    d=10: D_eff=6.31
+    d=20: D_eff=10.00
+    d=50: D_eff=16.64
+    d=100: D_eff=22.19
+
+Sparsity effect:
+    sparsity=0.0: D_eff=16.58
+    sparsity=0.5: D_eff=16.53
+    sparsity=0.9: D_eff=8.40
+
+Decay effect:
+    decay=0.02: D_eff=16.18
+    decay=0.1: D_eff=11.43
+    decay=0.5: D_eff=4.97
+
+Noise effect:
+    sigma=0.01: D_eff=16.65
+    sigma=0.1: D_eff=16.65
+    sigma=0.5: D_eff=16.72
+
+EXPERIMENT SET 3: GENERALIZATION RESULTS
+--------------------------------------------------
+Cross-system alignment matrix:
+
+test_system   Correlated  Hierarchical    Sparse     TRIBE
+train_system                                              
+Correlated      1.000000      0.987553  0.885516  0.960130
+Hierarchical    0.987553      1.000000  0.945617  0.904597
+Sparse          0.885516      0.945617  1.000000  0.723640
+TRIBE           0.960130      0.904597  0.723640  1.000000
+
+Cross-system statistics:
+  Correlated: mean alignment to others = 0.9444
+  Hierarchical: mean alignment to others = 0.9459
+  Sparse: mean alignment to others = 0.8516
+  TRIBE: mean alignment to others = 0.8628
+
+EXPERIMENT SET 4: MINIMAL CONDITION RESULTS
+--------------------------------------------------
+Total conditions tested: 6
+Conditions with growth-saturation: 6
+Conditions without growth-saturation: 0
+
+All conditions produce growth-saturation pattern:
+  - Isotropic Gaussian (d=9): YES
+  - Isotropic Gaussian (d=50): YES
+  - Correlated (decay=0.02): YES
+  - Correlated (decay=0.1): YES
+  - Sparse (90%): YES
+  - Sparse (95%): YES
+
+======================================================================
+END OF REPORT
+======================================================================
