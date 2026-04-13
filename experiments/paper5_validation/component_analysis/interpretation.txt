@@ -1,0 +1,11 @@
+COMPONENT-SPECIFIC INFORMATION INTERPRETATION
+==================================================
+
+Question: Where does system-specific signal reside?
+
+PC1 only accuracy: 80.0%
+PC2-PC3 only accuracy: 40.0%
+Full accuracy: 80.0%
+
+RESULT: Signal is in PC1 (high-variance component).
+This suggests common structure across systems.

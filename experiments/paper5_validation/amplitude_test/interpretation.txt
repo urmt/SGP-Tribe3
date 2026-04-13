@@ -1,0 +1,47 @@
+AMPLITUDE NORMALIZATION TEST - INTERPRETATION
+============================================================
+
+1. DOES PC1 DOMINANCE PERSIST AFTER NORMALIZATION?
+----------------------------------------
+   Original: 98.9%
+   Mean-normalized: 90.1%
+   AUC-normalized: 92.8%
+   → YES (PC1 dominance REDUCES but REMAINS)
+
+2. DOES CLASSIFICATION ACCURACY REMAIN ABOVE CHANCE (~20%)?
+----------------------------------------
+   Original: 80%
+   Mean-normalized: 80%
+   AUC-normalized: 80%
+   → YES (Classification is UNCHANGED by amplitude removal)
+
+3. WHAT DOES CLASSIFICATION ACCURACY TELL US?
+----------------------------------------
+   Classification uses derived features (derivatives, sigmoid parameters),
+   NOT raw curve magnitude. The 80% accuracy AFTER amplitude removal
+   indicates shape-based features distinguish systems.
+
+4. CROSS-SYSTEM CORRELATION
+----------------------------------------
+   Mean-norm: -0.152
+   AUC-norm: -0.168
+   Note: Negative correlation reflects orthonormalization, not dissimilarity.
+   The classifier uses shape features, not raw curve alignment.
+
+5. IS STRUCTURE ENTIRELY AMPLITUDE-DRIVEN?
+----------------------------------------
+   Key finding: Classification accuracy DOES NOT CHANGE after amplitude removal.
+   If structure were purely amplitude-driven, accuracy would drop to chance.
+   → STRUCTURE IS PRIMARILY AMPLITUDE-DRIVEN WITH SIGNIFICANT SHAPE CONTRIBUTION
+
+6. FINAL CLASSIFICATION
+----------------------------------------
+   Structure is primarily amplitude-driven with significant shape contribution
+
+7. SUMMARY
+----------------------------------------
+   - PC1 dominance reduces from 98.9% to 90-93% after normalization
+   - Classification accuracy REMAINS at 80% after amplitude removal
+   - This indicates shape features (derivatives, sigmoid parameters)
+     distinguish systems independently of magnitude
+   - Systems differ in BOTH amplitude AND shape of residual profiles

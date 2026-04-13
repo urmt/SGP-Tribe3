@@ -1,0 +1,11 @@
+PAPER 5: RESIDUAL STRUCTURE ANALYSIS - FINAL REPORT
+============================================================
+
+Low-rank structure: YES
+Components for 85% variance: 1
+Best functional model: sigmoid
+Best model mean R²: 1.000
+Optimal clusters: 2
+Stability score: 1.000
+Classification accuracy: 80.0%
+Regression R²: -0.628

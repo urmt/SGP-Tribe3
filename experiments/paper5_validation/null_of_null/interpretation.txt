@@ -1,0 +1,11 @@
+NULL-OF-NULL CONTROL INTERPRETATION
+==================================================
+
+Question: Does residual structure exist in null data?
+
+Null residual PC1 variance: 48.9%
+Null residual sigmoid R²: 0.145
+Null residual cross-correlation: -0.164
+
+RESULT: Null residuals do NOT show same structure.
+This supports that structure is GENUINE.

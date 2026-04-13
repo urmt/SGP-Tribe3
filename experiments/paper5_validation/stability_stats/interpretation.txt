@@ -1,0 +1,16 @@
+STABILITY STATISTICS INTERPRETATION
+==================================================
+
+Question: Is stability metric realistic?
+
+Reported '1.000' stability was based on single trial.
+With 50 trials:
+
+Subsample 50%: mean=0.999 ± 0.000
+Subsample 75%: mean=1.000 ± 0.000
+Noise σ=0.1: mean=0.997 ± 0.002
+Noise σ=0.2: mean=0.991 ± 0.008
+Noise σ=0.5: mean=0.958 ± 0.031
+
+CONCLUSION: Stability remains HIGH but with real variance.
+The 1.000 value was an artifact of single-trial estimation.

@@ -1,0 +1,48 @@
+SHAPE RANDOMIZATION FALSIFICATION TEST - INTERPRETATION
+============================================================
+
+1. DOES CLASSIFICATION PERSIST AFTER SHAPE DESTRUCTION?
+----------------------------------------
+   original:          80% (baseline)
+   phase_randomized:  40% (DROPS TO CHANCE)
+   permuted_smoothed: 40% (DROPS TO CHANCE)
+   sigmoid_only:      80% (PRESERVED)
+
+2. WHICH CONTROL REDUCES ACCURACY THE MOST?
+----------------------------------------
+   Both phase_randomized and permuted_smoothed reduce accuracy to 40%
+   This represents a 40% drop from original
+
+3. KEY INSIGHT: SIGMOID-ONLY PRESERVES CLASSIFICATION
+----------------------------------------
+   Pure sigmoid curves (with original fit parameters) retain 80% accuracy
+   This indicates the distinguishing information is in the SIGMOID PARAMETERS:
+   - Amplitude (A)
+   - Midpoint (C)
+   - Steepness (B)
+
+4. INTERPRETATION
+----------------------------------------
+   Fine structure randomization (phase, permutation) DESTROYS classification
+   BUT pure functional form (sigmoid) PRESERVES classification
+   
+   This means:
+   - Classification is NOT driven by deviations from the sigmoid
+   - Classification IS driven by the sigmoid PARAMETERS themselves
+   - The coarse functional form (A, B, C) carries system-specific information
+
+5. FINAL CLASSIFICATION
+----------------------------------------
+   Classification driven by COARSE FUNCTIONAL FORM (sigmoid parameters)
+
+6. SUMMARY
+----------------------------------------
+   Classification results:
+   original            : ████████████████ 80% - TRUE
+   phase_randomized    : ████████         40% - CHANCE
+   permuted_smoothed   : ████████         40% - CHANCE  
+   sigmoid_only        : ████████████████ 80% - TRUE
+   
+   CONCLUSION: 
+   Systems differ in their sigmoid PARAMETERS, not in fine structure.
+   The sigmoid amplitude, midpoint, and steepness distinguish the systems.

@@ -1,0 +1,12 @@
+SHUFFLE CONTROL INTERPRETATION
+==================================================
+
+Question: Does structure depend on k-ordering?
+
+Real PC1 variance: 98.9%
+Shuffled PC1 variance: 35.2%
+Real sigmoid R²: 0.999
+Shuffled sigmoid R²: 0.185
+
+RESULT: Shuffle DOES destroy structure.
+This confirms structure is GENUINE.

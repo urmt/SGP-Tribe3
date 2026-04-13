@@ -1,0 +1,51 @@
+PARAMETER SWEEP INTERPRETATION
+============================================================
+
+1. WHICH PROPERTY MOST STRONGLY CONTROLS A?
+----------------------------------------
+   curvature: r=1.000
+   noise: r=0.975
+   dimensionality: r=0.689
+   sparsity: r=-0.389
+   correlation: r=-0.334
+
+2. WHICH PROPERTY MOST STRONGLY CONTROLS beta?
+----------------------------------------
+   curvature: r=-1.000
+   noise: r=-0.968
+   dimensionality: r=0.466
+   sparsity: r=0.374
+   correlation: r=-0.246
+
+3. WHICH PROPERTY MOST STRONGLY CONTROLS k0?
+----------------------------------------
+   curvature: r=-1.000
+   noise: r=-0.975
+   dimensionality: r=-0.761
+   sparsity: r=0.386
+   correlation: r=-0.249
+
+4. FULL CORRELATION TABLE
+----------------------------------------
+    experiment parameter  correlation  p_value  n_samples  abs_corr
+      sparsity         A    -0.388605 0.517965          5  0.388605
+      sparsity      beta     0.374434 0.534643          5  0.374434
+      sparsity        k0     0.385765 0.521298          5  0.385765
+   correlation         A    -0.333962 0.666038          4  0.333962
+   correlation      beta    -0.245640 0.754360          4  0.245640
+   correlation        k0    -0.249097 0.750903          4  0.249097
+dimensionality         A     0.688863 0.311137          4  0.688863
+dimensionality      beta     0.465997 0.534003          4  0.465997
+dimensionality        k0    -0.761095 0.238905          4  0.761095
+         noise         A     0.975218 0.024782          4  0.975218
+         noise      beta    -0.967672 0.032328          4  0.967672
+         noise        k0    -0.975271 0.024729          4  0.975271
+     curvature         A     1.000000 0.000000          3  1.000000
+     curvature      beta    -1.000000 0.000000          3  1.000000
+     curvature        k0    -1.000000 0.000000          3  1.000000
+
+5. SUMMARY
+----------------------------------------
+The parameter sweep reveals which data properties control
+each sigmoid parameter. This enables prediction of
+sigmoid parameters from underlying data characteristics.

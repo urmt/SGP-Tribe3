@@ -1,0 +1,45 @@
+PC1 INTERPRETATION ANALYSIS
+============================================================
+
+1. WHAT FEATURE(S) BEST EXPLAIN PC1?
+----------------------------------------
+   mean_residual: r = 0.999 (p = 0.0000)
+   auc_normalized: r = 0.999 (p = 0.0000)
+   auc: r = 0.999 (p = 0.0000)
+   sigmoid_C: r = -0.999 (p = 0.0000)
+   max_residual: r = 0.994 (p = 0.0005)
+
+2. IS PC1 PRIMARILY AMPLITUDE, SHIFT, OR CURVATURE?
+----------------------------------------
+   Amplitude features: max |r| = 0.999
+   Slope features: max |r| = 0.971
+   Curvature features: max |r| = 0.968
+   Sigmoid features: max |r| = 0.999
+
+   Best category: amplitude (r = 0.999)
+
+3. ARE RELATIONSHIPS ABSENT IN NULL/SHUFFLE CONTROLS?
+----------------------------------------
+   Null control mean |r|: 0.008
+   Shuffled control mean |r|: 0.729
+   Null similar to real: NO
+   Shuffled similar to real: YES
+
+4. PC1 LOADINGS PATTERN
+----------------------------------------
+   Loadings range: 0.0083
+   Loadings std: 0.0023
+   Uniform: YES
+   Increasing: YES
+   Centered: NO
+
+5. FINAL CLASSIFICATION
+----------------------------------------
+   PC1 = mixed geometric encoding
+
+6. SUMMARY
+----------------------------------------
+   PC1 captures the dominant mode of variation across residual curves.
+   The strongest correlation is with mean_residual (r = 0.999).
+   However, similar correlations appear in null/shuffle controls,
+   suggesting some relationship may be generic rather than specific.

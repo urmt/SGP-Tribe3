@@ -1,0 +1,64 @@
+CROSS-FIT FALSIFICATION TEST - INTERPRETATION
+============================================================
+
+1. DOES CROSS-FIT DESTROY CLASSIFICATION?
+----------------------------------------
+   Original (correct pairs): 80.0%
+   Cross-fit (swapped pairs): 80.0%
+   Drop: 0%
+   → NO, cross-fit maintains accuracy
+
+2. IMPORTANT CAVEAT: CLUSTER STRUCTURE
+----------------------------------------
+   Dataset has binary clustering:
+   - Cluster 0: TRIBE, Hierarchical, Correlated, CurvedManifold (label=0)
+   - Cluster 1: Sparse (label=1)
+   
+   Cross-fit pairs:
+   - 16 pairs: Cluster 0 params → Cluster 0 labels → Predict 0 → CORRECT
+   - 4 pairs: Cluster 0 params → Sparse label (1) → Predict 0 → INCORRECT
+   
+   All systems in Cluster 0 have SAME label (0), so swapping among
+   them always produces correct predictions.
+
+3. ARE SIGMOID PARAMETERS SYSTEM-SPECIFIC?
+----------------------------------------
+   Within Cluster 0 (same label), parameters CAN be interchanged.
+   This suggests parameters are partly GENERIC.
+   
+   The classifier predicts based on PARAMETER VALUES, not their source.
+   Parameters from Cluster 0 systems map to Cluster 0 regardless of
+   which system they came from.
+
+4. MISCLASSIFICATION ANALYSIS
+----------------------------------------
+   All 4 misclassifications are: Cluster 0 params → Sparse label
+   This is STRUCTURED (not random) - Cluster 0 parameters
+   always map to Cluster 0, never to Sparse.
+
+5. WHAT DOES DISTANCE ANALYSIS SHOW?
+----------------------------------------
+   Within-system distance: 0.000 (each system is its own centroid)
+   Between-system distance: 2.310 (well-separated)
+   → Sparse is DISTINCT in parameter space
+   → Cluster 0 systems are SIMILAR to each other
+
+6. FINAL CLASSIFICATION
+----------------------------------------
+   Parameters are GENERIC within cluster, but cluster structure is real.
+   
+   Interpretation:
+   - Within-cluster: Parameters are TRANSFERABLE (no distinction)
+   - Between-cluster: Parameters are DISTINCT (Sparse separates)
+   
+   The sigmoid parameters encode CLUSTER membership, not individual
+   system identity.
+
+7. SUMMARY
+----------------------------------------
+   Cross-fit does NOT destroy classification because Cluster 0 systems
+   share the same label. The classifier predicts cluster membership
+   based on parameter similarity, not system identity.
+   
+   Key insight: Parameters encode CLUSTER, not SYSTEM.
+   Cluster 0 parameters all predict Cluster 0 regardless of source.

@@ -1,0 +1,12 @@
+NORMALIZATION ABLATION INTERPRETATION
+==================================================
+
+Question: Does low-dimensional structure depend on normalization?
+
+PC1 variance:
+  Raw: 99.6%
+  Mean-centered: 98.4%
+  Z-scored: 98.9%
+
+CONCLUSION: PC1 dominance is OBSERVED ACROSS ALL normalization conditions.
+Structure is NOT an artifact of normalization method.

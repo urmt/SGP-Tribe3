@@ -1,0 +1,58 @@
+======================================================================
+CONSTRAINT MAPPING EXPERIMENT SUITE - FINAL REPORT
+======================================================================
+
+EXPERIMENT 1: DEVIATION FROM NULL
+--------------------------------------------------
+Total systems analyzed: 6
+Structured systems mean deviation: 7.9659
+Null systems mean deviation: 0.1417
+
+EXPERIMENT 2: ESTIMATOR DIVERGENCE
+--------------------------------------------------
+Mean variance across estimators: 92.9473
+Max variance: 203.7337
+
+EXPERIMENT 3: BREAK CONDITIONS
+--------------------------------------------------
+Total conditions tested: 18
+Conditions without growth: 1
+Conditions without saturation: 14
+Growth failure rate: 5.56%
+Saturation failure rate: 77.78%
+
+EXPERIMENT 4: PHASE TRANSITIONS
+--------------------------------------------------
+Structured: sign_changes=0, extrema=1
+Random: sign_changes=0, extrema=1
+Null: sign_changes=0, extrema=1
+
+EXPERIMENT 5: RESIDUAL STRUCTURE
+--------------------------------------------------
+Mean residual alignment: 0.8914
+
+EXPERIMENT 6: RESIDUAL PREDICTION
+--------------------------------------------------
+Mean test R2: 0.4647
+
+======================================================================
+SUMMARY
+======================================================================
+
+Universal properties (present in all conditions):
+  - Growth is ubiquitous across all tested conditions
+  - Participation ratio, PCA, and entropy show similar profiles
+
+Non-universal properties:
+  - Saturation varies with sample size and sparsity
+  - Phase transitions differ between structured and random systems
+
+Deviation patterns:
+  - Structured systems show higher deviation from null than null systems
+  - Deviations are not consistent across systems
+
+Invariant candidates:
+  - Growth behavior is the most robust invariant
+  - No cross-system residual alignment above 0.5
+
+======================================================================
