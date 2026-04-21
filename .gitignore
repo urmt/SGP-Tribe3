@@ -78,5 +78,13 @@ Thumbs.db
 *.synctex.gz
 indent.log
 
+# Large data outputs (85GB - too large for GitHub)
+empirical_analysis/neural_networks/outputs/
+empirical_analysis/neural_networks/*.csv
+empirical_analysis/neural_networks/*.npy
+empirical_analysis/outputs/
+figures/*.png
+figures/*.pdf
+
 # Python
 *.pyc
