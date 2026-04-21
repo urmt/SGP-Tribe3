@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{caption}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{A Unified Parametric Framework for Multiscale Dimensionality in Neural Population Representations}
+
+\author{Mark Rowe Traver\\[0.5em]
+\textit{Sentient-Field Initiative (Braintrust)}}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Multiscale dimensionality analysis has emerged as a key tool for characterizing the geometry of neural population representations across spatial and functional scales. However, existing approaches conflate generic statistical structure with system-specific organization, limiting interpretability. Here, we introduce a unified framework that decomposes multiscale dimensionality profiles into generic and residual components via null-model subtraction, and demonstrate that residual profiles exhibit a constrained, low-dimensional parametric structure.
+
+	Across diverse synthetic representational systems, residual dimensionality profiles are well-approximated by a three-parameter sigmoid function, with a single principal component accounting for approximately 99\% of variance. These parameters (amplitude, midpoint, steepness) provide a compact and interpretable representation that preserves classification-relevant information. Parameter analysis reveals systematic relationships with underlying system properties, including noise and curvature, with largely additive effects.
+
+	These results suggest that multiscale dimensionality profiles obey a low-dimensional parametric law, providing a tractable representation of high-dimensional structure. This framework establishes a foundation for applying multiscale dimensionality analysis to empirical neural data and for interpreting representational geometry in terms of a small number of biologically relevant parameters.
+\end{abstract}
+
+\section{Introduction}
+
+Understanding the geometric structure of neural population representations is a central problem in systems and computational neuroscience. High-dimensional activity patterns recorded from neural populations exhibit structured variability across multiple spatial and functional scales, motivating the development of methods that characterize dimensionality as a function of scale.
+
+Multiscale dimensionality profiling captures how effective dimensionality evolves with neighborhood scale, typically exhibiting a growth-to-saturation pattern. However, raw dimensionality profiles reflect a combination of generic statistical effects and system-specific structure, making interpretation difficult.
+
+To address this limitation, we introduce a decomposition framework based on null-model subtraction, separating generic contributions from residual structure. We show that these residual dimensionality profiles are not arbitrary, but instead exhibit a constrained and highly reproducible parametric form.
+
+\section{Background and Prior Characterization}
+\input{body_p1.tex}
+
+\section{Decomposition into Generic and Residual Structure}
+\input{body_p3.tex}
+
+\section{Parametric Structure of Residual Profiles}
+\input{body_p5.tex}
+
+\section{Discussion}
+
+The present work establishes a unified framework for understanding multiscale dimensionality in neural representations. Across three stages---characterization, decomposition, and parameterization---we demonstrate that dimensionality profiles exhibit consistent structure that can be reduced to a small number of interpretable parameters.
+
+A central finding is that residual dimensionality profiles occupy an effectively one-dimensional manifold, with a single principal component explaining approximately 99\% of variance. This result suggests that variability across systems is highly constrained, consistent with the presence of a low-dimensional governing structure.
+
+The success of sigmoid parameterization indicates that residual structure reflects a smooth transition across scales, with amplitude, midpoint, and steepness capturing distinct aspects of representational organization. These parameters exhibit systematic relationships with underlying system properties, including noise and curvature, suggesting that they provide a meaningful link between statistical structure and generative mechanisms.
+
+From a neuroscience perspective, this framework provides a compact representation of neural population geometry that may facilitate comparison across brain regions, tasks, and species. Rather than analyzing full dimensionality profiles, researchers can characterize representations using a small set of parameters with clear interpretations.
+
+Several limitations should be noted. The present analysis is restricted to synthetic systems, and empirical validation using neural data is an important next step. Additionally, while parameter-property relationships are robust, they remain correlational, and further work is required to establish causal mechanisms.
+
+Overall, these findings suggest that multiscale dimensionality profiles are governed by a low-dimensional parametric structure, providing a foundation for future work on neural representation geometry.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,53 @@
+SFH-SGP_LOAD_GRADIENT_DATA_ACQUISITION_STRICT
+============================================
+DATE: April 2026
+STATUS: FAILURE
+
+DATA ACQUISITION FAILED:
+-------------------------
+
+1. Dataset: ds000030 (hcp_wm)
+   Location: /home/student/sgp-tribe3/empirical_analysis/data/hcp_wm/
+
+2. Issue:
+   - All .nii.gz files are BROKEN SYMBOLIC LINKS (0 bytes)
+   - Point to ../../.git/annex/objects/... (git-annex pointers)
+   - Actual data files NOT downloaded
+
+3. Root Cause:
+   - OpenNeuro download via deno only retrieves metadata
+   - Actual fMRI data requires DataLad/git-annex download
+   - Tools unavailable: datalad (not configured), AWS CLI (not installed)
+
+4. Download Methods Tried:
+   a) deno run -A jsr:@openneuro/cli download ds000030
+      → Only metadata downloaded
+   
+   b) datalad get .
+      → Failed: git-annex not initialized
+   
+   c) AWS S3 sync
+      → Failed: AWS CLI not available
+   
+   d) Direct wget
+      → Failed: Direct download not available via OpenNeuro URL
+
+5. Verification:
+   - find . -name "*.nii.gz" -type f ! -links 1 | wc -l = 0
+   - Result: NO REAL NIfTI FILES PRESENT
+
+CONCLUSION:
+-----------
+DATA NOT AVAILABLE - ALL ATTEMPTS FAILED
+
+The ds000030 dataset cannot be acquired without:
+- Proper DataLad configuration and credentials
+- Or AWS CLI with S3 access
+- Or direct file download access
+
+RECOMMENDATION:
+--------------
+Use alternative approach:
+1. Use ds000114 (has real data and is confirmed working)
+2. OR request institutional data download
+3. OR obtain credentials for OpenNeuro S3 access

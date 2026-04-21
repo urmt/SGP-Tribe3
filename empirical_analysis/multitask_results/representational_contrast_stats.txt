@@ -1,0 +1,9 @@
+REPRESENTATIONAL CONTRAST: GO vs STOP
+========================================
+
+Mean AUC:
+  GO: 0.2048
+  STOP: 0.2343
+  Diff: -0.0294
+
+t-test: t=-5.174, p=0.0000, d=-0.343

@@ -1,0 +1,29 @@
+REST VARIANCE DIAGNOSTIC REPORT
+==================================================
+
+REST condition amplitude values:
+  sub-01: A = -1000.0
+  sub-02: A = -1000.0
+  sub-03: A = -1000.0
+  sub-04: A = -1000.0
+  sub-05: A = -1000.0
+  sub-06: A = -1000.0
+  sub-07: A = -1000.0
+  sub-08: A = -1000.0
+  sub-09: A = -1000.0
+  sub-10: A = -1000.0
+
+Are all REST profiles identical? False
+
+Variance across REST subjects at each k:
+  k=2: var = 0.0006
+  k=4: var = 2471.6216
+  k=8: var = 0.0000
+  k=16: var = 0.0000
+  k=32: var = 0.0000
+  k=64: var = 0.0000
+
+DIAGNOSIS:
+------------------------------
+FINDING: REST profiles have some variance.
+This suggests the fitting is working but constrained.

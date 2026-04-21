@@ -1,0 +1,17 @@
+BART WITHIN-TASK LOAD GRADIENT
+========================================
+
+Mean AUC:
+  LOW:  0.1416
+  MID:  0.1413
+  HIGH: 0.1466
+
+Linear Trend:
+  Slope: 0.00254
+  r: 0.0339
+  p-value: 0.6995
+
+Pairwise:
+  LOW vs MID: t=0.033, p=0.9742, d=-0.004
+  MID vs HIGH: t=-0.870, p=0.3890, d=0.083
+  LOW vs HIGH: t=-0.714, p=0.4790, d=0.089

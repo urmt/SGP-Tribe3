@@ -1,0 +1,8 @@
+[START] Paper 5 Cleanup — Remove Paper 4
+Sun Apr 12 03:53:00 PM CST 2026
+----------------------------------------
+[EDIT] Removed 'paper4' from citation blocks
+[EDIT] Rewrote null-model justification
+[DELETE] Removed Paper 4 from bibliography
+[OUTPUT] Generated: paper5_clean.tex, references_clean.bib
+[CHECK] paper4 in TEX: 0, BIB: 0

@@ -1,0 +1,16 @@
+SFH-SGP_SYNTHETIC_LOAD_VALIDATION_01
+==================================================
+
+Replicates: 15
+Levels: LOW (dim=5), MEDIUM (dim=15), HIGH (dim=30)
+
+
+early_auc:
+  LOW: -0.1428 +/- 0.5716
+  MEDIUM: 21.2261 +/- 0.6472
+  HIGH: 42.8643 +/- 1.0966
+
+d_early:
+  LOW: 11.9279 +/- 0.5544
+  MEDIUM: 33.3148 +/- 0.6602
+  HIGH: 54.9530 +/- 1.0907

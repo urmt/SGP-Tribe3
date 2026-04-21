@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{siunitx}
+
+\usepackage[numbers]{natbib}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+% ============================================================
+% FORMAT: THEORETICAL-METHODS INTEGRATION PAPER
+% STATUS: INTERPRETIVE FRAMEWORK FOR MULTISCALE DIMENSIONALITY
+% ============================================================
+
+\title{
+Dimensionality as Cognitive Capacity: An Interpretive Framework for Multiscale Neural Structure
+}
+
+\author{
+Mark Rowe Traver\\
+Sentient-Field Initiative (Braintrust)
+}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ Multiscale dimensionality profiling has emerged as a powerful technique for characterizing neural representations across spatial scales. However, the relationship between the parameters extracted from dimensionality profiles and cognitive function remains undefined. We introduce an interpretive framework that maps multiscale dimensionality parameters to cognitively meaningful variables. Specifically, we propose that amplitude reflects representational capacity, midpoint reflects organizational integration scale, and steepness reflects cross-scale integration efficiency. This framework enables testable predictions about how cognitive manipulations should affect dimensionality parameters. We outline empirical test pathways using fMRI, EEG/MEG, and behavioral paradigms. This work defines a formal mapping between multiscale dimensionality structure and interpretable cognitive variables, enabling hypothesis-driven applications of dimensionality analysis in neuroscience.
+\end{abstract}
+
+\section{Introduction}
+
+Multiscale dimensionality analysis provides a framework for characterizing the effective dimensionality of neural representations as a function of neighborhood scale $k$ \citep{levina2005maximum, facco2017estimating}. The method quantifies how information about local neighborhood structure accumulates across spatial scales, from local neighborhoods to global patterns \citep{belkin2003laplacian, tenenbaum2000global}. Applications in neuroscience have demonstrated that neural population activity exhibits characteristic dimensionality profiles that vary across brain areas, behavioral states, and experimental conditions \citep{gallego2017neural, stringer2019high, travesset2022extended}.
+
+A fundamental limitation of current dimensionality analysis approaches is that while dimensionality can be precisely measured, the relationship between dimensionality parameters and cognitive function remains undefined. Raw dimensionality values lack cognitive interpretation---knowing that a neural population has effective dimensionality $D = 50$ provides no insight into what cognitive functions that dimensionality supports or how it relates to perception, memory, or action. This interpretability gap limits the utility of dimensionality analysis for hypothesis-driven neuroscience research.
+
+Previous work has established that multiscale dimensionality profiles follow characteristic functional forms. Theoretical analysis demonstrates that residual dimensionality profiles---following null-model subtraction---admit low-dimensional parameterization in terms of sigmoid functions \ paper5. The three-parameter sigmoid form captures amplitude, midpoint, and steepness. However, the cognitive meaning of these parameters has not been established.
+
+This paper introduces a formal interpretive framework that maps multiscale dimensionality parameters to cognitively meaningful variables. We propose mechanistic interpretations for each parameter and derive testable predictions about how cognitive manipulations should affect dimensionality structure. This framework transforms dimensionality analysis from a descriptive technique into a hypothesis-generating and hypothesis-testing tool for cognitive neuroscience.
+
+We define a formal mapping between multiscale dimensionality structure and interpretable cognitive variables.
+
+\section{Mathematical Framework}
+
+\subsection{Definitions}
+
+We define dimensionality in terms of representational degrees of freedom:
+
+\begin{equation}
+\text{dim}(\mathbf{X}) = \text{rank}(\mathbf{\Sigma}_{\mathbf{X}})
+\end{equation}
+
+where $\mathbf{X} \in \mathbb{R}^{N \times D}$ is a data matrix with $N$ samples and $D$ dimensions, and $\mathbf{\Sigma}_{\mathbf{X}} = \text{Cov}(\mathbf{X})$ is the covariance matrix.
+
+This definition reflects the number of independent axes of variation in the representation. In neural systems, this corresponds to the number of independent patterns of population activity available for encoding information.
+
+Residual dimensionality profiles are computed by subtracting null-model predictions:
+
+\begin{equation}
+D_{\text{res}}(k) = D_{\text{obs}}(k) - D_{\text{null}}(k)
+\end{equation}
+
+where $D_{\text{obs}}(k)$ is the observed dimensionality at scale $k$, and $D_{\text{null}}(k)$ is the expected dimensionality under a null model of random structure \ paper3. The residual profile isolates system-specific structure from generic statistical effects.
+
+The sigmoid parameterization of residual dimensionality profiles takes the form:
+
+\begin{equation}
+D(k) = \frac{A}{1 + e^{-\beta(k - k_0)}}
+\end{equation}
+
+where $A$ is the amplitude, $k_0$ is the midpoint, and $\beta$ is the steepness. Each parameter has both mathematical definition and cognitive interpretation, as developed below.
+
+The null model prediction $D_{\text{null}}(k)$ is derived from analytical expectations for the eigenvalue spectrum of isotropic Gaussian data under random matrix theory (Marchenko--Pastur distribution), implemented as a matched-dimensional surrogate with identical sample size and variance structure \ marchenko1967distribution.
+
+\section{Interpretive Mapping}
+
+We now introduce the interpretive framework that maps sigmoid parameters to cognitively meaningful variables.
+
+\subsection{Amplitude and Representational Capacity}
+
+The amplitude parameter $A$ is defined mathematically as the saturation level of the sigmoid function:
+
+\begin{equation}
+A = \lim_{k \to \infty} D(k)
+\end{equation}
+
+Conceptually, $A$ reflects the total accessible dimensional structure revealed across neighborhood scales. We propose that $A$ corresponds to the representational capacity of the system.
+
+Interpretive definition: Amplitude $A$ is the maximum dimensionality accessible to the system across all scales, corresponding to the total pool of representational degrees of freedom available for encoding information under the current behavioral or cognitive state.
+
+In neural terms, amplitude reflects the range of distinct neural activity patterns the system can express. Higher amplitude indicates a greater capacity for diverse representational states, enabling more complex encoding of stimuli, actions, or cognitive content.
+
+This interpretation is grounded in the relationship between dimensionality and information capacity. The number of independent dimensions available for representation sets an upper bound on the amount of distinguishable states that can be encoded. Amplitude measures this bound empirically.
+
+Implications:
+\begin{itemize}
+    \item Cognitive load should correlate with amplitude
+    \item Expertise should correlate with amplitude (more available states for skilled behavior)
+    \item Pathologies affecting neural computation should reduce amplitude
+\end{itemize}
+
+\subsection{Midpoint and Organizational Integration Scale}
+
+The midpoint parameter $k_0$ is defined mathematically as the inflection point of the sigmoid:
+
+\begin{equation}
+k_0 = \arg\min_k |D(k) - A/2|
+\end{equation}
+
+Conceptually, $k_0$ reflects the neighborhood scale at which half the total dimensional structure is revealed. We propose that $k_0$ corresponds to the characteristic scale of organizational integration.
+
+Interpretive definition: Midpoint $k_0$ is the spatial scale at which half the representational capacity becomes accessible, indicating the characteristic scale of integration in the representation.
+
+In neural terms, $k_0$ reflects the spatial scale at which neural integration operates. Lower $k_0$ indicates integration at smaller spatial scales (more local processing), while higher $k_0$ indicates integration across larger spatial extents (more global processing).
+
+This interpretation connects to established neuroscience concepts of local versus global processing. Cortical microcircuits operate at small spatial scales, while large-scale networks integrate information across brain regions.
+
+Implications:
+\begin{itemize}
+    \item Focused attention should decrease $k_0$ (more local processing)
+    \item Global integration demands should increase $k_0$ (more global processing)
+    \item Hierarchical processing should be reflected in $k_0$ gradients across areas
+\end{itemize}
+
+\subsection{Steepness and Integration Efficiency}
+
+The steepness parameter $\beta$ is defined mathematically as the derivative magnitude at the inflection point:
+
+\begin{equation}
+\beta = \left|\frac{dD}{dk}\right|_{k=k_0}
+\end{equation}
+
+Conceptually, $\beta$ reflects the rate at which dimensionality accumulates across scales. We propose that $\beta$ corresponds to the efficiency of cross-scale integration.
+
+Interpretive definition: Steepness $\beta$ is the rate of dimensionality accumulation across neighborhood scales, indicating how efficiently the representation integrates information across spatial scales.
+
+In neural terms, higher $\beta$ indicates faster transition from local to global structure, reflecting more efficient integration. Lower $\beta$ indicates more gradual accumulation, reflecting distributed processing across scales.
+
+This interpretation connects to the efficiency of neural information processing. Faster integration across scales (higher $\beta$) could reflect more efficient communication between processing stages.
+
+Implications:
+\begin{itemize}
+    \item Expertise should increase $\beta$ (more efficient processing)
+    \item Learning should increase $\beta$ (improved integration efficiency)
+    \item Neural disorders affecting connectivity should reduce $\beta$
+\end{itemize}
+
+\section{Testable Predictions}
+
+We derive five testable predictions from the interpretive framework.
+
+\subsection{Prediction 1: Task Complexity and Amplitude}
+
+\textbf{Prediction:} Increasing task complexity will increase amplitude $A$.
+
+\textbf{Rationale:} More complex cognitive tasks require more diverse representational states to encode the increased informational content. The representational capacity must expand to accommodate additional distinguishable states.
+
+\textbf{Test:} 
+\begin{enumerate}
+    \item Acquire fMRI or electrophysiology data during tasks of varying complexity (e.g., n-back tasks with increasing load, problem-solving tasks of varying difficulty)
+    \item Compute dimensionality profiles at each complexity level
+    \item Fit sigmoid functions and extract amplitude $A$
+    \item Expected: Positive correlation between task complexity and $A$
+\end{enumerate}
+
+\textbf{Measurement:} Dimensionality computed using $k$-NN variance method; complexity operationalized as number of distinct stimuli, response options, or working memory load.
+
+\subsection{Prediction 2: Noise and Parameters}
+
+\textbf{Prediction:} Increased noise will decrease amplitude $A$ and steepness $\beta$.
+
+\textbf{Rationale:} Noise degrades the precision of neural representations, reducing the number of reliable distinguishable states and slowing integration across scales.
+
+\textbf{Test:}
+\begin{enumerate}
+    \item Manipulate signal-to-noise ratio in neural recordings (e.g., add visual noise, acoustic noise, or collect data in varying SNR conditions)
+    \item Compute dimensionality profiles under each noise level
+    \item Fit sigmoid functions and extract parameters
+    \item Expected: Negative correlation between noise and both $A$ and $\beta$
+\end{enumerate}
+
+\textbf{Measurement:} SNR quantified from recording characteristics or estimated from signal variability.
+
+\subsection{Prediction 3: Learning and Midpoint}
+
+\textbf{Prediction:} Learning/training will shift midpoint $k_0$ toward optimal integration scale.
+
+\textbf{Rationale:} As a system learns a task, the integration scale should adapt to the demands of the task. Expert performers should show integration at scales optimal for the task.
+
+\textbf{Test:}
+\begin{enumerate}
+    \item Acquire neural data during task learning over multiple sessions
+    \item Compute dimensionality profiles at each learning stage
+    \item Expected: Systematic shift in $k_0$ toward task-optimal scale with learning
+\end{enumerate}
+
+\textbf{Measurement:} Learning quantified by task performance; $k_0$ computed from fitted sigmoid functions.
+
+\subsection{Prediction 4: Attention and Steepness}
+
+\textbf{Prediction:} Focused attention will increase steepness $\beta$.
+
+\textbf{Rationale:} Attention enhances processing efficiency, leading to faster integration across scales.
+
+\textbf{Test:}
+\begin{enumerate}
+    \item Acquire neural data during attention and divided-attention conditions
+    \item Compare steepness $\beta$ between conditions
+    \item Expected: Higher $\beta$ during focused attention
+\end{enumerate}
+
+\textbf{Measurement:} Attention manipulated via task instructions; $\beta$ from fitted sigmoid functions.
+
+\subsection{Prediction 5: Pathology and Amplitude}
+
+\textbf{Prediction:} Neural pathologies affecting representational capacity will reduce amplitude $A$.
+
+\textbf{Rationale:} Pathologies that degrade neural population structure (e.g., neurodegeneration, stroke, developmental disorders) should reduce the pool of available representational states.
+
+\textbf{Test:}
+\begin{enumerate}
+    \item Compare dimensionality profiles in clinical populations versus controls
+    \item Compare amplitude $A$ between groups
+    \item Expected: Reduced $A$ in affected populations
+\end{enumerate}
+
+\textbf{Measurement:} Clinical populations identified via diagnostic criteria; $A$ from fitted sigmoid functions.
+
+\section{Empirical Test Pathways}
+
+We describe empirical approaches for testing the predictions outlined above.
+
+\subsection{fMRI Paradigms}
+
+\textbf{Task Complexity Design:}
+\begin{itemize}
+    \item Working memory n-back task (1-back, 2-back, 3-back conditions)
+    \item Compute voxel-wise dimensionality profiles across conditions
+    \item Extract amplitude for each complexity level
+    \item Expected: Positive correlation with load
+\end{itemize}
+
+Data requirements: High-resolution fMRI (>= 3T), whole-brain coverage, sufficient trials per condition.
+
+Analysis: Motion correction, spatial normalization, temporal filtering; $k$-NN dimensionality computation at multiple scales; sigmoid fitting.
+
+Outcome confirmation: Positive correlation between task load and amplitude with $p < 0.05$.
+
+\subsection{EEG/MEG Paradigms}
+
+\textbf{Attention Design:}
+\begin{itemize}
+    \item Visual oddball task with attend and ignore conditions
+    \item Compute sensor-level dimensionality profiles
+    \item Compare steepness $\beta$ between conditions
+    \item Expected: Higher $\beta$ during attend condition
+\end{itemize}
+
+Data requirements: High-density EEG (>= 64 channels) or MEG (>= 100 channels), sufficient trials.
+
+Analysis: Preprocessing following standard pipelines; dimensionality computation in sensor space or source space.
+
+Outcome confirmation: Significant increase in $\beta$ during attention with $p < 0.05$.
+
+\subsection{Behavioral Paradigms}
+
+\textbf{Learning Design:}
+\begin{itemize}
+    \item Acquire neural data during multiple learning sessions
+    \item Track changes in midpoint $k_0$ over learning
+    \item Expected: Systematic shift in $k_0$ with learning
+\end{itemize}
+
+Data requirements: Longitudinal recording sessions, consistent task across sessions.
+
+Analysis: Compare $k_0$ across learning stages; correlation with behavioral performance.
+
+Outcome confirmation: Significant correlation between $k_0$ and learning stage.
+
+\section{Relation to SFH-SGP Framework}
+
+We situate this interpretive framework within the broader context of dimensionality analysis.
+
+We interpret dimensionality as reflecting the degrees of interaction available within the neural substrate. In sentient field terms, dimensionality quantifies the accessible interaction space available for representing cognitive content. Higher dimensionality corresponds to more degrees of interaction, enabling richer representational structure.
+
+Residual dimensionality, following null-model subtraction, isolates the system-specific structure from generic statistical effects. This residual structure reflects the particular organizational principles of the system---the specific way the neural substrate is configured to represent information.
+
+The sigmoid parameterization provides a compact description of residual structure. The three parameters (amplitude, midpoint, steepness) capture distinct aspects of system organization. This mapping enables interpretation of dimensionality in terms of cognitively meaningful variables.
+
+This framework is consistent with and extends existing dimensionality analysis approaches. We build on the technical foundation established in prior work while adding interpretability.
+
+The mapping between parameters and cognitive variables enables hypothesis-driven applications. Researchers can now generate predictions about how cognitive manipulations should affect dimensionality parameters, test those predictions empirically, and refine the interpretive framework based on results.
+
+\section{Discussion}
+
+This paper introduces an interpretive framework that transforms dimensionality analysis from a descriptive technique into a hypothesis-testing tool. By mapping sigmoid parameters to cognitively meaningful variables, we enable researchers to generate and test specific predictions about the relationship between neural structure and cognitive function.
+
+The value of this framework lies in enabling cross-system comparison. If amplitude reflects representational capacity, we can compare capacity across brain areas, individuals, species, or computational models. If steepness reflects integration efficiency, we can compare efficiency across developmental stages, learning states, or clinical populations.
+
+Several limitations should be noted. First, the interpretive mappings are currently theoretical; empirical confirmation is required. Second, the framework assumes sigmoid parameterization, which may not hold for all systems. Third, the relationship between parameters and cognition may be more complex than the simple mappings proposed here.
+
+Future directions include empirical testing of the predictions outlined above, refinement of interpretative mappings based on empirical results, and extension to additional parameterization forms.
+
+This framework establishes that dimensionality analysis can support hypothesis-driven research in cognitive neuroscience. The formal mapping between multiscale dimensionality structure and interpretable cognitive variables enables a new approach to understanding the neural basis of cognition.
+
+\section{Conclusion}
+
+We have introduced an interpretive framework that maps multiscale dimensionality parameters to cognitively meaningful variables. Amplitude reflects representational capacity, midpoint reflects organizational integration scale, and steepness reflects integration efficiency. This framework enables testable predictions about how cognitive manipulations should affect dimensionality structure. We outline empirical test pathways using fMRI, EEG/MEG, and behavioral paradigms. This work defines a formal mapping between multiscale dimensionality structure and interpretable cognitive variables, enabling hypothesis-driven applications of dimensionality analysis in neuroscience.
+
+\section*{Acknowledgments}
+
+The author thanks the Sentient-Field Initiative for discussion and feedback.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

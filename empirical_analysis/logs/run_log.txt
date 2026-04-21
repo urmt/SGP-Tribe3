@@ -1,0 +1,21 @@
+EMPIRICAL ANALYSIS - REAL fMRI DATA PIPELINE
+=============================================
+
+Data: OpenNeuro ds000114
+Subject: sub-10 (partial download - single subject available)
+TR: 2.0s
+Timepoints: 173
+Voxels: 64 × 64 × 30 = 122,880
+Tasks: 5 trial types
+
+Trial Types:
+- Correct_Task (task)
+- Incorrect_Task (task)
+- Response_Control (control)
+- No_Response_Control (control)
+- No_Response_Task (task)
+
+Note: Only sub-10 downloaded (partial dataset)
+Pipeline Ready with 1 subject.
+
+STEP 2: Would ideally have ≥5 subjects, but proceeding with data available.

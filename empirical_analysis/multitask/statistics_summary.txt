@@ -1,0 +1,12 @@
+SFH-SGP_MULTITASK_VALIDATION_01_EXECUTED
+==================================================
+
+N subjects processed: 10
+Tasks: ['rest', 'bart', 'stopsignal', 'taskswitch', 'scap']
+
+Task means (early_auc):
+  rest: -0.61 +/- 0.94
+  bart: 0.41 +/- 0.68
+  stopsignal: 1.37 +/- 0.59
+  taskswitch: 1.69 +/- 0.66
+  scap: 1.44 +/- 0.87

@@ -1,0 +1,10 @@
+SSD GRADIENT STUDY
+========================================
+
+Valid subjects: 28
+
+Mean AUC:
+  LOW SSD: 0.6001
+  HIGH SSD: 0.6058
+
+Paired t-test: t=-0.179, p=0.8595, d=0.031

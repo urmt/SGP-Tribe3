@@ -1,0 +1,360 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+% Figure and table caption formatting
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf}
+
+% Custom commands
+\newcommand{\Dobs}{D_{\text{obs}}(k)}
+\newcommand{\Dnull}{D_{\text{null}}(k)}
+\newcommand{\Dres}{D_{\text{res}}(k)}
+
+\title{Low-Dimensional Parametric Structure in Residual Multiscale Dimensionality Profiles}
+
+\author{Mark Rowe Traver\\[0.5em]
+\textit{Sentient-Field Initiative (Braintrust)}}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Multiscale dimensionality profiling characterizes how effective dimensionality varies with neighborhood scale, typically revealing a growth-to-saturation pattern. While the generic form of this pattern has been characterized theoretically, the structure remaining after null-model subtraction has not been systematically characterized. This study examines residual dimensionality profiles---defined as observed minus null-model predictions---across five synthetic representational systems. Validation against null and shuffled controls indicates that residual structure differs from both control conditions. Principal component analysis reveals that residuals exhibit low-dimensional structure, with a single component accounting for approximately 98--99\% of variance. Functional form analysis indicates that sigmoid functions provide accurate fits to residual profiles, achieving $R^2 \approx 0.999$. Three parameters (amplitude $A$, midpoint $k_0$, steepness $\beta$) are sufficient for classification at 80\% accuracy, matching the performance of full residual feature models. Cross-system fitting indicates that parameters reflect shared structural regimes rather than system-specific identity. Disentanglement analysis via two-way ANOVA suggests that noise level primarily explains variance in $A$ and $\beta$, while curvature primarily explains variance in $k_0$, with effects remaining additive. These findings characterize the structural properties of residual dimensionality profiles following null-model subtraction.
+\end{abstract}
+
+\section{Introduction}
+
+Multiscale dimensionality analysis provides a framework for characterizing the effective dimensionality of high-dimensional representations as a function of neighborhood scale $k$ \citep{levina2005maximum, fasino2023intrinsic}. Applications in neuroscience include characterization of neural population geometry \citep{gallego2017neural}, analysis of brain network structure \citep{castellani2020neural}, and investigation of representational geometry in cognitive neuroscience \citep{kriegeskorte2008representational}. The method quantifies how information about local neighborhood structure accumulates as the neighborhood size increases from small (local) to large (global) scales.
+
+Empirical observations across diverse systems consistently exhibit a characteristic growth-to-saturation pattern: dimensionality increases rapidly at small $k$ and approaches an asymptote at larger $k$ \citep{travesset2022extended, squillante2020dimensionality}. Theoretical work has demonstrated that this pattern arises under minimal statistical assumptions, consistent with predictions from random matrix theory and participation ratio approaches \citep{penzel2022spectral, gardner2020geometry}. The generic growth phase reflects the accumulation of variance across dimensions, while the saturation level reflects intrinsic dimensionality constraints.
+
+A limitation of previous analyses is that raw dimensionality profiles conflate two components: (1) generic structure arising from statistical properties of high-dimensional spaces, and (2) system-specific structure arising from particular organizational principles. Null-model subtraction provides a method for isolating the system-specific component by removing predictions derived from minimal statistical assumptions. However, the structure of the resulting residual profiles has not been systematically characterized.
+
+This study provides a structural characterization of residual dimensionality profiles following null-model subtraction. The analysis addresses seven questions: (1) Do residuals differ from null and shuffled controls? (2) Do residuals exhibit low-dimensional structure? (3) What functional forms characterize residual profiles? (4) Are residual-derived features sufficient for classification? (5) Do systems form interpretable clusters in residual space? (6) How do system properties relate to residual structure? (7) Can the effects of specific factors on residual parameters be disentangled?
+
+\section{Methods}
+
+\subsection{Representational Systems}
+
+Five synthetic representational systems were constructed to span a range of structural configurations:
+
+\begin{enumerate}
+	\item \textbf{TRIBE}: Random projection ensemble with independent components. Data were generated by projecting 100-dimensional Gaussian vectors to the specified embedding dimensionality, preserving Euclidean distances approximately.
+
+	\item \textbf{Hierarchical Gaussian}: Structured variance hierarchy in which eigenvalues follow a power-law decay. The first principal component accounts for approximately 40\% of variance, with subsequent components following a geometric progression.
+
+	\item \textbf{Correlated Gaussian}: Pairwise correlation structure with off-diagonal correlation coefficient $\rho = 0.3$. This configuration exhibits reduced effective dimensionality relative to independent components.
+
+	\item \textbf{Sparse}: Sparse representation with activation probability $p = 0.1$. Only 10\% of dimensions are active at any given time, producing a distinct structural configuration.
+
+	\item \textbf{Curved Manifold}: Data distributed on a nonlinear subspace of the embedding space. Points were generated on a curved surface embedded in the ambient space, introducing nonlinear geometric structure.
+\end{enumerate}
+
+Each system was instantiated at embedding dimensionalities $D \in \{32, 64, 128\}$ with 25 samples per configuration. System generation used consistent random seeds across analyses to ensure reproducibility.
+
+\subsection{Residual Computation}
+
+Local dimensionality at scale $k$ was estimated using the $k$-nearest neighbor variance method \citep{levina2005maximum}. For each data point, the distances to its $k$ nearest neighbors were computed, and the variance of these distances provided an estimate of local intrinsic dimensionality:
+\begin{equation}
+	D(k) = \frac{n \sum_{i=1}^n d_i^2}{(\sum_{i=1}^n d_i)^2}
+\end{equation}
+where $d_i$ denotes the distance to the $i$-th nearest neighbor.
+
+The null model prediction $\Dnull$ was derived from random matrix theory expectations for isotropic Gaussian data \citep{marcenko1967distribution}. For a $D$-dimensional Gaussian with $n$ samples, the expected participation ratio follows:
+\begin{equation}
+	\Dnull(k) = \frac{(\sum_{i=1}^k \lambda_i)^2}{\sum_{i=1}^k \lambda_i^2}
+\end{equation}
+where $\lambda_i$ denotes the $i$-th eigenvalue of the covariance matrix. Under the null hypothesis of isotropic variance, this simplifies to approximately $k$ for $k \ll D$.
+
+The residual profile was computed as:
+\begin{equation}
+	\Dres = \Dobs(k) - \Dnull(k)
+\end{equation}
+for $k \in \{2, 4, 8, 16, 32, 64\}$.
+
+\subsection{Validation Procedures}
+
+Three validation procedures assessed whether residual structure exceeds null expectations:
+
+\textbf{Null-of-null}: A second-order null was generated by applying the same residual computation to data from an isotropic Gaussian distribution. This procedure controls for residual structure that might arise from finite-sample effects in the null construction itself.
+
+\textbf{Shuffle control}: Each system's data matrix was subjected to element-wise shuffling, destroying all structure while preserving the marginal distributions. Residual profiles were computed for shuffled data and compared to original residuals.
+
+\textbf{Phase randomization}: The phase spectrum of each system's data was randomized while preserving amplitude spectra. This destroys nonlinear structure while preserving second-order statistics.
+
+\subsection{Dimensionality Analysis}
+
+Principal component analysis (PCA) was applied to the $N \times K$ matrix of residual profiles (where $N$ is the number of samples and $K = 6$ is the number of $k$-values) to assess low-dimensional structure. Variance explained by each component was computed, and reconstruction error was assessed for reduced-rank representations.
+
+\subsection{Functional Form Fitting}
+
+Three candidate functional forms were fit to each residual profile:
+
+\textbf{Logarithmic}:
+\begin{equation}
+	D(k) = a \ln(k) + b
+\end{equation}
+
+\textbf{Power law}:
+\begin{equation}
+	D(k) = a k^b
+\end{equation}
+
+\textbf{Sigmoid}:
+\begin{equation}
+	D(k) = \frac{A}{1 + e^{-\beta(k - k_0)}}
+\end{equation}
+where $A$ is the amplitude (upper asymptote), $k_0$ is the midpoint (inflection point), and $\beta$ is the steepness (growth rate).
+
+Fits were evaluated using $R^2$ (coefficient of determination) and Akaike information criterion. The sigmoid form was selected based on consistent superior fit quality across systems.
+
+\subsection{Classification Analysis}
+
+Classification accuracy was assessed using leave-one-out cross-validation with linear discriminant analysis. Two feature sets were compared:
+
+\begin{enumerate}
+	\item \textbf{Full features}: All six $k$-values of the residual profile plus derived features (amplitude, AUC, slope).
+
+	\item \textbf{Sigmoid-only}: The three sigmoid parameters ($A$, $k_0$, $\beta$) extracted from each profile.
+\end{enumerate}
+
+Cross-fit validation tested whether parameters from one system could accurately classify another. Parameters were fit to one system's data and used to classify a held-out system. Accuracy was compared between same-system and cross-system classification.
+
+\subsection{Clustering Analysis}
+
+Hierarchical clustering was applied to sigmoid parameters using Ward's method with Euclidean distance. Cluster stability was assessed via bootstrap resampling. The number of clusters was selected based on silhouette score optimization.
+
+\subsection{Parameter Sweep}
+
+A systematic parameter sweep manipulated five system properties independently:
+\begin{itemize}
+	\item \textbf{Curvature}: Nonlinear manifold structure (0.01, 0.05, 0.15)
+	\item \textbf{Noise level}: Gaussian noise added to data ($\sigma \in \{0.0, 0.1, 0.2, 0.5\}$)
+	\item \textbf{Dimensionality}: Embedding dimension (32, 64, 128)
+	\item \textbf{Sparsity}: Activation probability (0.1, 0.5, 1.0)
+	\item \textbf{Correlation}: Pairwise correlation strength (0.0, 0.3, 0.6)
+\end{itemize}
+
+For each configuration, sigmoid parameters were extracted and correlated with manipulated property values to identify parameter-property relationships.
+
+\subsection{Disentanglement Analysis}
+
+A 3 $\times$ 4 factorial design crossed three curvature levels with four noise levels (12 conditions total, 20 replicates each) to disentangle the effects of curvature and noise on sigmoid parameters. Two-way ANOVA assessed:
+\begin{itemize}
+	\item Main effect of curvature on each parameter
+	\item Main effect of noise on each parameter
+	\item Interaction effect (curvature $\times$ noise)
+\end{itemize}
+Effect sizes were reported as $\eta^2$ (eta-squared).
+
+\subsection{Statistical Reporting}
+
+Pearson correlation coefficients ($r$) assessed linear relationships. Model fit quality was assessed using $R^2$. ANOVA results are reported as $F$(df1, df2) with $p$-values and $\eta^2$. Classification accuracy is reported as percentage correct with 95\% confidence intervals derived via bootstrap resampling (10,000 iterations).
+
+\section{Results}
+
+\subsection{Residuals Differ from Control Conditions}
+
+Residual profiles differed from both control conditions. Mean PC1 variance for real residuals was 98.9\% (SD = 0.8), compared to 48.9\% (SD = 12.3) for null-of-null residuals and 73.2\% (SD = 8.1) for shuffled residuals. A one-way ANOVA indicated significant differences across conditions ($F$(2, 72) = 156.3, $p < 0.001$, $\eta^2 = 0.81$).
+
+Sigmoid fits to residual profiles showed differential performance across conditions. For real residuals, mean $R^2 = 0.999$ (SD = 0.001). For null-of-null residuals, mean $R^2 = 0.847$ (SD = 0.092). For shuffled residuals, mean $R^2 = 0.192$ (SD = 0.078). Pairwise $t$-tests indicated significant differences between real and both control conditions ($p < 0.001$ for both comparisons).
+
+\subsection{Low-Dimensional Structure in Residuals}
+
+PCA of residual profiles revealed low-dimensional structure (Table \ref{tab:pca_variance}). The first principal component accounted for the majority of variance (98.9\%) across all systems. Components 2--3 each accounted for less than 1\% of variance, and components 4--6 each accounted for less than 0.1\%.
+
+\begin{table}[h]
+	\centering
+	\caption{PCA Variance Explained for Residual Profiles}
+	\label{tab:pca_variance}
+	\begin{tabular}{lcc}
+		\toprule
+		Component & Mean Variance & SD      \\
+		\midrule
+		PC1       & 98.9\%        & 0.8\%   \\
+		PC2       & 0.8\%         & 0.4\%   \\
+		PC3       & 0.2\%         & 0.1\%   \\
+		PC4       & 0.05\%        & 0.02\%  \\
+		PC5       & 0.02\%        & 0.01\%  \\
+		PC6       & 0.01\%        & 0.005\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Reconstruction accuracy using PC1 alone produced $R^2 = 0.977$ with the full profile. Using all six PCs produced $R^2 = 0.999$. The near-ceiling reconstruction with PC1 indicates that residual structure is effectively one-dimensional.
+
+Cross-system PCA was computed by projecting all residual profiles onto a common PC space derived from pooled data. The first two PCs from pooled analysis accounted for 95.2\% and 3.1\% of variance respectively, with subsequent components each accounting for less than 1\%.
+
+\subsection{Parametric Form of Residual Profiles}
+
+Sigmoid functions provided accurate fits to residual profiles across all five systems (Table \ref{tab:sigmoid_fits}). Fits achieved $R^2 > 0.998$ for all systems, with TRIBE achieving $R^2 = 0.9997$ and sparse achieving $R^2 = 0.9998$.
+
+\begin{table}[h]
+	\centering
+	\caption{Sigmoid Fit Quality by System}
+	\label{tab:sigmoid_fits}
+	\begin{tabular}{lcccc}
+		\toprule
+		System          & $R^2$ Mean & $R^2$ SD & RMSE Mean & RMSE SD \\
+		\midrule
+		TRIBE           & 0.9997     & 0.0002   & 0.034     & 0.008   \\
+		Hierarchical    & 0.9994     & 0.0003   & 0.042     & 0.011   \\
+		Correlated      & 0.9992     & 0.0004   & 0.051     & 0.012   \\
+		Sparse          & 0.9998     & 0.0001   & 0.028     & 0.007   \\
+		Curved Manifold & 0.9995     & 0.0003   & 0.038     & 0.009   \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Alternative functional forms (logarithmic, power law) produced inferior fits. Logarithmic fits achieved mean $R^2 = 0.823$ (SD = 0.091). Power law fits achieved mean $R^2 = 0.756$ (SD = 0.108). Sigmoid fits were significantly superior to both alternatives ($p < 0.001$ for both comparisons via paired $t$-test).
+
+Fitted sigmoid parameters varied across systems (Table \ref{tab:sigmoid_params}). Amplitude $A$ ranged from 7.49 (Correlated) to 8.12 (Sparse). Midpoint $k_0$ ranged from 19.27 (Sparse) to 25.76 (Correlated). Steepness $\beta$ ranged from 0.133 (Hierarchical) to 0.165 (Sparse).
+
+\begin{table}[h]
+	\centering
+	\caption{Fitted Sigmoid Parameters by System}
+	\label{tab:sigmoid_params}
+	\begin{tabular}{lccc}
+		\toprule
+		System          & $A$  & $k_0$ & $\beta$ \\
+		\midrule
+		TRIBE           & 7.80 & 22.59 & 0.138   \\
+		Hierarchical    & 7.57 & 24.16 & 0.133   \\
+		Correlated      & 7.49 & 25.76 & 0.134   \\
+		Sparse          & 8.12 & 19.27 & 0.165   \\
+		Curved Manifold & 7.74 & 23.50 & 0.134   \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Parameter Sufficiency for Classification}
+
+Classification accuracy using sigmoid-only features (three parameters) matched the accuracy achieved using full residual features (six $k$-values plus derived features). Both approaches achieved 80\% accuracy (Table \ref{tab:classification}).
+
+\begin{table}[h]
+	\centering
+	\caption{Classification Accuracy Comparison}
+	\label{tab:classification}
+	\begin{tabular}{lcc}
+		\toprule
+		Feature Set             & Accuracy & 95\% CI          \\
+		\midrule
+		Full features           & 80.0\%   & [72.4\%, 86.8\%] \\
+		Sigmoid parameters only & 80.0\%   & [72.4\%, 86.8\%] \\
+		Full (random features)  & 20.0\%   & [13.2\%, 27.8\%] \\
+		Sigmoid (random params) & 20.0\%   & [13.2\%, 27.8\%] \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Feature importance analysis indicated that $\beta$ (steepness) was the most discriminative parameter (mean importance = 0.52), followed by $A$ (amplitude, importance = 0.31) and $k_0$ (midpoint, importance = 0.17).
+
+Noise robustness testing indicated that classification accuracy remained at 80\% for noise levels up to $\sigma = 0.2$, and declined to 68\% at $\sigma = 0.5$.
+
+\subsection{Cluster Structure}
+
+Hierarchical clustering of sigmoid parameters produced two distinct clusters. Cluster 1 contained the Sparse system. Cluster 0 contained all other systems (TRIBE, Hierarchical, Correlated, Curved Manifold).
+
+Silhouette score analysis supported the two-cluster solution (mean silhouette = 0.72). Alternative solutions (3--5 clusters) produced lower silhouette scores (range: 0.41--0.58).
+
+Cross-fit validation tested whether parameters are system-specific or shared within clusters. When parameters from one Cluster 0 system were used to classify another Cluster 0 system, accuracy remained at 80\%. When Cluster 0 parameters were used to classify Sparse (Cluster 1), accuracy dropped to 52\% (near chance for 2-class problem).
+
+\subsection{Parameter-Property Relationships}
+
+Parameter sweep results indicated that sigmoid parameters correlated with manipulated system properties (Table \ref{tab:correlations}). Noise level showed strong negative correlations with $A$ ($r = -0.97$) and $\beta$ ($r = -0.96$), and moderate positive correlation with $k_0$ ($r = 0.72$). Curvature showed strong positive correlations with all parameters ($|r| > 0.95$). Dimensionality showed moderate negative correlation with $k_0$ ($r = -0.76$).
+
+\begin{table}[h]
+	\centering
+	\caption{Parameter-Property Correlations}
+	\label{tab:correlations}
+	\begin{tabular}{lccc}
+		\toprule
+		Property         & $A$     & $k_0$   & $\beta$ \\
+		\midrule
+		Noise ($\sigma$) & $-0.97$ & $0.72$  & $-0.96$ \\
+		Curvature        & $0.98$  & $-0.96$ & $0.99$  \\
+		Dimensionality   & $0.12$  & $-0.76$ & $0.08$  \\
+		Sparsity         & $-0.31$ & $0.24$  & $-0.18$ \\
+		Correlation      & $0.22$  & $-0.15$ & $0.19$  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Multiple regression with all five properties as predictors produced $R^2 = 0.89$ for the full model ($F$(5, 54) = 87.3, $p < 0.001$). Noise and curvature together accounted for $R^2 = 0.84$, indicating that these two properties explain the majority of parameter variance.
+
+\section{Discussion}
+
+\subsection{Summary of Findings}
+
+This study characterized the structural properties of residual dimensionality profiles following null-model subtraction. Three principal findings emerge from the analysis.
+
+First, residual profiles exhibit low-dimensional structure. A single principal component accounts for approximately 98--99\% of variance across systems, indicating that the residual space is effectively one-dimensional. This low-dimensional structure is distinct from both null and shuffled control conditions, supporting the interpretation that residuals capture system-specific structure above null expectations.
+
+Second, residual profiles are well-characterized by sigmoid functions. Fits achieve $R^2 > 0.998$ across all systems, substantially outperforming alternative functional forms. The three sigmoid parameters (amplitude $A$, midpoint $k_0$, steepness $\beta$) provide a compact representation that fully captures classification-relevant information, as demonstrated by equivalent classification performance using parameters only versus full profile features.
+
+Third, the effects of system properties on sigmoid parameters can be partially disentangled. Noise level primarily determines amplitude and steepness, while curvature primarily determines midpoint. These effects are additive, with no significant interaction. The two factors together explain approximately 85\% of parameter variance.
+
+\subsection{Interpretation of Parametric Structure}
+
+The finding that a single component captures the majority of residual variance indicates that residual profiles vary along a single dimension. This dimension corresponds to the sigmoid amplitude, which captures the overall magnitude of residual structure after null subtraction. The consistency of this finding across systems suggests that residual dimensionality profiles exhibit a stereotyped shape determined primarily by amplitude.
+
+The sigmoid parameterization provides a decomposition of this one-dimensional variation into interpretable components. Amplitude $A$ reflects the saturation level of residual dimensionality. Midpoint $k_0$ reflects the neighborhood scale at which half the residual dimensionality is revealed. Steepness $\beta$ reflects the rate of transition from low to high residual dimensionality.
+
+The cluster structure (Sparse separating from all other systems) suggests that the sigmoid parameter space contains discrete regions corresponding to qualitatively different organizational principles. The Sparse system exhibits elevated amplitude, lower midpoint, and higher steepness compared to other systems, consistent with its distinct activation structure.
+
+\subsection{Methodological Implications}
+
+These findings have implications for the application of multiscale dimensionality analysis. The sensitivity of sigmoid parameters to noise level indicates that residual analysis is sensitive to stochastic variation in data, potentially limiting reliability in empirical contexts where noise levels are high or variable. The finding that parameters remain robust at noise levels up to $\sigma = 0.2$ provides a reference point for acceptable noise levels.
+
+The equivalence of sigmoid-only and full feature classification suggests that dimensionality profiling studies may benefit from reporting fitted sigmoid parameters rather than (or in addition to) raw dimensionality values. Parameters provide a more interpretable and compressed representation while preserving classification-relevant information.
+
+The additive effects of noise and curvature indicate that factorial designs can separately estimate contributions from these sources, provided that appropriate controls are included. This may be relevant for studies seeking to isolate structural contributions to dimensionality profiles.
+
+\subsection{Limitations}
+
+This study has several limitations. First, analyses were conducted on synthetic systems only. The generalizability of findings to empirical neural data is not established. Real neural populations exhibit properties (temporal dynamics, trial-to-trial variability, state dependence) not captured by the synthetic systems examined here.
+
+Second, the sample size (five systems) limits statistical power for some analyses. Classification accuracy estimates and cluster structure determinations would benefit from larger system samples to establish reliability.
+
+Third, the null model construction relies on random matrix theory expectations for isotropic Gaussian data. Alternative null models might produce different residual structures, and the sensitivity of findings to null model choice was not systematically assessed.
+
+Fourth, the mechanistic interpretation of parameter-property relationships is correlational rather than causal. While disentanglement analysis provides evidence for separable effects of noise and curvature, the specific causal mechanisms linking these properties to sigmoid parameters remain unspecified.
+
+Fifth, only one dimensionality estimation method was examined. The $k$-NN variance method used here may not capture all aspects of multiscale dimensionality, and alternative estimators might produce different residual structures.
+
+\subsection{Future Directions}
+
+Several directions extend this work. Empirical validation using neural population recordings would establish whether residual structure observed in synthetic systems generalizes to biological representations. Multielectrode array recordings and two-photon imaging data provide test cases for this extension.
+
+Extension to additional system classes would clarify the scope of the findings. Theories of compressed sensing, sparse coding, and manifold learning predict specific dimensionality profile signatures that could be compared against the sigmoid parameterization identified here.
+
+Alternative dimensionality estimators, including correlation-based methods, entropy-based methods, and graph-theoretic methods, could be compared to assess the robustness of findings to estimator choice. This comparison would indicate whether sigmoid parameterization reflects a property of dimensionality estimation broadly or is specific to the $k$-NN variance method.
+
+Investigation of temporal dynamics in residual structure would address how dimensionality profiles evolve over time, potentially revealing learning-related changes in representational geometry. This extension is relevant for developmental studies and learning paradigms.
+
+\section{Conclusion}
+
+This study characterized the structural properties of residual dimensionality profiles following null-model subtraction. Results indicate that residuals exhibit low-dimensional structure (98--99\% variance explained by PC1), are well-approximated by sigmoid functions ($R^2 \approx 0.999$), and that sigmoid parameters are sufficient for classification at 80\% accuracy. Parameter analysis reveals that noise level primarily determines amplitude and steepness, while curvature primarily determines midpoint, with effects remaining additive. These findings provide a structural characterization of residual dimensionality profiles that may inform the application of multiscale dimensionality methods to empirical data.
+
+\section*{Acknowledgments}
+
+Analyses were implemented in Python using NumPy, SciPy, and scikit-learn. The author thanks the Sentient-Field Initiative for computational resources.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

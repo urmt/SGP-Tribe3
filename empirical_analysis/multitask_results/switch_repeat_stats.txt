@@ -1,0 +1,9 @@
+REPRESENTATIONAL CONTRAST: SWITCH vs REPEAT
+========================================
+
+Mean AUC:
+  SWITCH: 0.2412
+  REPEAT: 0.2404
+  Diff: +0.0008
+
+t-test: t=0.348, p=0.7295, d=0.011

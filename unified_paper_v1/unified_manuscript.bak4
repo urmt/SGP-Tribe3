@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Decomposing Multiscale Dimensionality Profiles: From Generic Structure to Low-Dimensional Residual Parameterization}
+
+\author{
+Mark Rowe Traver \\
+\textit{Sentient-Field Initiative (Braintrust)}
+}
+
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	Multiscale dimensionality profiles exhibit a characteristic growth-to-saturation structure across diverse systems. We show that this structure decomposes into a generic component predicted by null models and a residual component capturing system-specific organization. Across synthetic representational systems, residual profiles exhibit low-dimensional structure, with a single principal component accounting for approximately 99\% of variance. Residuals are accurately described by a three-parameter sigmoid function, achieving near-perfect fits ($R^2 > 0.998$). These parameters preserve classification-relevant information while providing a compact and interpretable representation. Parameter analysis indicates that noise and curvature explain the majority of variance, with additive effects. This decomposition provides a unified framework for separating generic and system-specific contributions to multiscale dimensionality.
+\end{abstract}
+
+\section{Introduction}
+
+Multiscale dimensionality analysis characterizes how effective dimensionality varies with neighborhood scale. Empirical studies consistently report a growth-to-saturation profile across neural and synthetic systems. However, this profile conflates generic statistical structure with system-specific organization.
+
+Null-model subtraction provides a principled decomposition by removing the component predicted under minimal statistical assumptions. The resulting residual isolates structure not explained by generic high-dimensional geometry.
+
+The present study integrates three questions: (1) whether multiscale profiles contain a generic component, (2) whether residuals encode system-specific structure, and (3) whether this structure admits a compact parametric description.
+
+We demonstrate that residual dimensionality profiles occupy a low-dimensional manifold and can be accurately represented by a three-parameter sigmoid function. This provides a compact and interpretable parameterization that preserves classification-relevant information while separating generic statistical structure from system-specific organization.
+
+\section{Methods}
+
+\subsection{Representational Systems}
+Five synthetic systems were constructed to span distinct structural regimes: independent Gaussian (TRIBE), hierarchical variance structure, correlated Gaussian ($\rho = 0.3$), sparse activation ($p = 0.1$), and nonlinear manifold embeddings. Each system was instantiated at dimensionalities $D \in \{32, 64, 128\}$ with multiple realizations per condition.
+
+\subsection{Dimensionality Estimation}
+Local intrinsic dimensionality was estimated using a $k$-nearest neighbor variance method across neighborhood scales $k \in \{2,4,8,16,32,64\}$.
+
+\subsection{Residual Computation}
+Residual profiles were computed as:
+\[
+	D_{\mathrm{res}}(k) = D_{\mathrm{obs}}(k) - D_{\mathrm{null}}(k)
+\]
+where $D_{\mathrm{null}}(k)$ corresponds to isotropic Gaussian expectations derived from random matrix theory.
+
+\subsection{Dimensionality Reduction}
+Principal component analysis was applied to residual profiles. Variance explained by each component was computed across all systems.
+
+\subsection{Functional Form Comparison}
+Three candidate models were evaluated: logarithmic, power-law, and sigmoid functions. Model performance was assessed using coefficient of determination ($R^2$) and Akaike Information Criterion (AIC).
+
+\subsection{Classification Analysis}
+Classification was performed using leave-one-system-out cross-validation with linear discriminant analysis. Performance was evaluated for both full residual profiles and sigmoid parameter representations.
+
+\section{Results}
+
+\subsection{Generic Growth Structure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/fig1_growth_profiles.png}
+	\caption{Growth-to-saturation dimensionality profiles.}
+\end{figure}
+
+Profiles exhibit consistent growth-to-saturation behavior across systems.
+
+\subsection{Residual Structure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/fig3_residual_profiles.png}
+	\caption{Residual dimensionality profiles after null subtraction.}
+\end{figure}
+
+Residuals differ from null and shuffled controls, indicating system-specific structure.
+
+\subsection{Low-Dimensional Structure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig4_pca_variance.png}
+	\caption{PCA variance explained.}
+\end{figure}
+
+PC1 explains approximately 99% of variance (mean = 98.9%, SD = 0.8 across systems), indicating effectively one-dimensional structure.
+
+\subsection{Parametric Representation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/fig5_sigmoid_fits.png}
+	\caption{Sigmoid fits to residual profiles.}
+\end{figure}
+
+Sigmoid fits achieve $R^2 > 0.998$ across systems.
+
+\subsection{Model Comparison}
+Sigmoid functions outperformed logarithmic and power-law models across all systems. Mean fit quality was $R^2 > 0.998$ for sigmoid models, compared to $R^2 \approx 0.91$ for logarithmic and $R^2 \approx 0.88$ for power-law models. AIC comparisons consistently favored the sigmoid parameterization, indicating superior explanatory efficiency despite comparable parameter counts.
+
+\subsection{Parameter Sufficiency}
+
+Three parameters ($A, k_0, \beta$) achieve classification accuracy comparable to full profiles.
+
+\section{Discussion}
+
+Multiscale dimensionality profiles decompose into a generic component and a structured residual. The residual occupies a low-dimensional manifold, enabling compact parametric representation.
+
+The dominance of a single principal component suggests that residual variation is governed by a constrained degree of freedom, expressed through sigmoid amplitude and transition dynamics.
+
+This framework separates universal statistical structure from system-specific organization and provides interpretable parameters for comparative analysis.
+
+\section{Conclusion}
+
+Residual dimensionality profiles exhibit low-dimensional structure and admit a compact parametric representation. This decomposition provides a unified framework for analyzing multiscale dimensionality across systems.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,12 @@
+[START] Paper 5 Submission Formatter
+Sun Apr 12 03:54:23 PM CST 2026
+[EDIT] Updated documentclass to elsarticle
+[EDIT] Added lineno + journal
+[EDIT] Enabled line numbering
+[EDIT] Fixed author block
+[EDIT] Added keywords
+[EDIT] Standardized captions
+[EDIT] Replaced [H] floats
+[EDIT] Updated bib style
+[CLEAN] Removed float package
+[CHECK] Lines: 294, Citations: 22

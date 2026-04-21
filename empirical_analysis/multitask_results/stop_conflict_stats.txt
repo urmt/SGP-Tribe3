@@ -1,0 +1,9 @@
+CONFLICT INTENSITY: SUCCESS vs FAILED STOP
+========================================
+
+Mean AUC:
+  SUCCESSFUL: 0.2306
+  FAILED: 0.2232
+  Diff: +0.0074
+
+t-test: t=0.783, p=0.4377, d=0.092
