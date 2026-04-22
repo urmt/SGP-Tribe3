@@ -89,11 +89,13 @@ For each layer, we apply time-delay embeddings with dimension $m=10$ and delay $
 \end{enumerate}
 We verified that results are qualitatively stable across small variations in embedding parameters $(m, \tau)$, though a full parameter sweep is left for future work.
 
+Although neural activations are not temporal sequences, we treat sample-indexed activation vectors as pseudo-trajectories and reconstruct dynamics via time-delay embedding.
+
 \section{Results}
 
 \subsection{Layer Separation}
 
-Under identity, $\Phi$ is nearly constant across layers. Under $\tanh$, a structured trajectory emerges in $(\alpha, \mathrm{DET})$ space, with systematic variation across layers, with significantly larger variance across layers.
+Under the identity operator, $\Phi$ is nearly constant across layers. Under $\tanh$, a structured trajectory emerges in $(\alpha, \mathrm{DET})$ space, exhibiting systematic variation and significantly increased variance across layers.
 
 As shown in Figure~\ref{fig:layer_geometry}, the identity operator produces a collapsed distribution in $(\alpha, \mathrm{DET})$ space, while the $\tanh$ operator yields a structured trajectory separating layers.
 
