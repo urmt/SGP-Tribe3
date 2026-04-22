@@ -32,9 +32,9 @@ We introduce an observable $\Phi(S, O)$ and show that measured dynamical structu
 
 \section{Background}
 
-Recurrence analysis provides tools to characterize dynamical systems via proximity structure in state space. Given a time series $\{\mathbf{x}_t\}$, recurrence plots are constructed by thresholding pairwise distances:
+Recurrence analysis provides tools to characterize dynamical systems via proximity structure in state space. Given a time series $\{x_t\}$, recurrence plots are constructed by thresholding pairwise distances:
 \[
-	R_{ij} = \mathbb{I}(\| \mathbf{x}_i - \mathbf{x}_j \| < \varepsilon).
+	R_{ij} = \mathbb{I}(|x_i - x_j| < \varepsilon).
 \]
 
 The recurrence rate $R(\varepsilon)$ scales with threshold $\varepsilon$ as:
@@ -49,14 +49,9 @@ estimated via linear regression over the selected range of $\varepsilon$.
 
 Determinism (DET) measures the proportion of recurrence points forming diagonal line structures, reflecting predictable dynamics:
 \[
-	\mathrm{DET} =
-	\frac{
-		\sum_{\ell \geq \ell_{\min}} \ell P(\ell)
-	}{
-		\sum_{\ell \geq 1} \ell P(\ell)
-	}
+	\mathrm{DET} = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell \geq 1} \ell P(\ell)},
 \]
-where $P(\ell)$ is the histogram of diagonal line lengths and $\ell_{\min} = 2$.
+where $P(\ell)$ is the histogram of diagonal line lengths and $\ell_{\min}$ is the minimum line length (set to $\ell_{\min} = 2$).
 
 \section{Methods}
 
@@ -82,8 +77,6 @@ We also test additional operators including clipping and normalization in extend
 
 We analyze multilayer perceptrons with architecture $[784, 64, 32, 10]$ trained for 50 epochs on MNIST using cross-entropy loss. The networks achieve approximately 90\% test accuracy. We extract activations from input, hidden, and output layers for recurrence analysis.
 
-Since feedforward networks do not produce temporal dynamics, we construct pseudo-time series by ordering activation vectors across dataset samples. This enables recurrence analysis on high-dimensional representations.
-
 \subsection{Computation}
 
 For each layer, we apply time-delay embeddings with dimension $m=10$ and delay $\tau=2$. For each layer:
@@ -96,13 +89,11 @@ For each layer, we apply time-delay embeddings with dimension $m=10$ and delay $
 \end{enumerate}
 We verified that results are qualitatively stable across small variations in embedding parameters $(m, \tau)$, though a full parameter sweep is left for future work.
 
-Representative log-log plots of $R(\varepsilon)$ versus $\varepsilon$ confirm the presence of an approximately linear scaling regime across layers. (See Supplementary Figure S1.)
-
 \section{Results}
 
 \subsection{Layer Separation}
 
-Under the identity operator, $\Phi$ is nearly constant across layers. Under $\tanh$, a structured trajectory emerges in $(\alpha, \mathrm{DET})$ space, with systematic variation and significantly increased variance across layers.
+Under identity, $\Phi$ is nearly constant across layers. Under $\tanh$, a structured trajectory emerges in $(\alpha, \mathrm{DET})$ space, with systematic variation across layers, with significantly larger variance across layers.
 
 As shown in Figure~\ref{fig:layer_geometry}, the identity operator produces a collapsed distribution in $(\alpha, \mathrm{DET})$ space, while the $\tanh$ operator yields a structured trajectory separating layers.
 
@@ -119,27 +110,24 @@ As shown in Figure~\ref{fig:layer_geometry}, the identity operator produces a co
 
 \subsection{Mechanism}
 
-We define:
+We quantify changes in $\Phi$ using:
 \[
-	\Delta \Phi_{\text{full}} = \sqrt{(\Delta \alpha)^2 + (\Delta \mathrm{DET})^2}
-\]
-
-To eliminate definitional coupling, we also define a decoupled metric:
-\[
-	\Delta \Phi_{\alpha} = |\Delta \alpha|
+	\Delta \Phi = \sqrt{(\Delta \alpha)^2 + (\Delta \mathrm{DET})^2}.
 \]
 
 Changes in $\Phi$ strongly correlate with changes in recurrence structure:
 \[
-	\Delta \Phi_{\alpha} \sim \Delta \mathrm{DET}, \quad r \approx 0.88
+	\Delta \Phi \sim \Delta \mathrm{DET}, \quad r \approx 0.88.
 \]
-(Pearson correlation, $n = 15$, $p < 0.01$).
+All reported correlations are statistically significant ($p < 0.01$).
 
-The correlation between $\Delta \Phi_{\alpha}$ and $\Delta \mathrm{DET}$ is used to test mechanism independence.
+To eliminate potential definitional overlap, we also compute the correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$ directly. We observe a strong relationship ($r \approx 0.88$), confirming that the scaling exponent varies systematically with recurrence structure independent of DET's inclusion in $\Phi$.
 
 This relationship persists even when $\mathrm{DET}$ is removed from $\Phi$, indicating independence from definitional overlap (see Figure~\ref{fig:mechanism}).
 
-This effect is not a generic consequence of nonlinearity. Operators that preserve linear geometry (e.g., identity, power transformations) produce negligible changes in $\Phi$, while operators that induce or amplify recurrence structure produce strong separability. This indicates that $\Phi$ reflects underlying recurrence geometry rather than nonlinearity alone.
+Importantly, not all nonlinear operators produce this effect; operators that preserve linear structure (e.g., identity or power transformations) show negligible change in $\Phi$. This indicates that the observed behavior is not a generic consequence of nonlinearity but is specifically linked to the induction of recurrence structure.
+
+Additionally, operators that preserve linear structure (e.g., identity, power transformations) show negligible change in $\Phi$, while operators that disrupt or amplify geometric structure reveal strong separation. This supports the interpretation that $\Phi$ reflects underlying structure rather than a generic effect of nonlinearity.
 
 \begin{figure}[h]
 	\centering
