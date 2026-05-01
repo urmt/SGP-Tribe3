@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{
+Observer-Dependent Geometry Cannot Recover Dynamical Invariants: Empirical Limits of Recurrence-Based Observables
+}
+
+\author{Mark Rowe Traver \\ Sentient Field Initiative}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Recurrence-based methods are widely used to infer dynamical structure from observed trajectories. Here we test whether recurrence-derived observables can recover system-invariant dynamical quantities, specifically Lyapunov exponents. Across logistic, harmonic, and Lorenz systems, we show that recurrence metrics (Fertility, Coherence, Determinism, scaling exponent) correlate with Lyapunov exponents within individual systems (up to R-squared approx 0.87), but fail catastrophically to generalize across systems (R-squared less than 0), even when augmented with local dynamical features. In contrast, direct divergence-based estimators recover Lyapunov exponents with up to 99 percent accuracy. These results establish a strict non-invertibility: recurrence geometry constitutes an observer-dependent projection of dynamics and cannot be used to reconstruct invariant instability measures.
+\end{abstract}
+
+\section{Introduction}
+
+Recurrence analysis provides a geometric lens on dynamical systems, enabling characterization of periodicity, complexity, and structure without explicit knowledge of governing equations.
+
+We address: Do recurrence-based observables encode sufficient information to recover system-invariant dynamical quantities?
+
+\section{Methods}
+
+\subsection{Systems}
+
+\begin{itemize}
+\item Logistic map (discrete chaos)
+\item Harmonic oscillator (periodic)
+\item Lorenz attractor (continuous chaos)
+\end{itemize}
+
+\subsection{Recurrence Observables}
+
+R-sub-ij equals indicator of absolute difference between x-sub-i and x-sub-j less than epsilon.
+
+Derived metrics: Fertility F, Coherence C, Determinism DET, Scaling exponent alpha.
+
+\subsection{Lyapunov Estimation}
+
+Compute lambda using: Analytical derivative (logistic), Direct divergence tracking, QR multi-vector method.
+
+\section{Results}
+
+\subsection{Within-System Predictability}
+
+Recurrence observables predict Lyapunov exponents within a single system.
+
+\begin{figure}[H]
+\centering
+\includegraphics{phase9c_verified/figure_lambda_vs_F.png}
+\caption{Within-system relationship between Fertility and Lyapunov exponent (logistic map). Strong correlation is observed (R-squared approx 0.8).}
+\end{figure}
+
+Hybrid observables improve fit:
+
+\begin{figure}[H]
+\centering
+includegraphics{phase9e_hybrid/figure_hybrid_fit.png}
+\caption{Hybrid observable (recurrence plus local dynamics) improves within-system prediction (R-squared approx 0.87).}
+\end{figure}
+
+\subsection{Cross-System Failure}
+
+Generalization across systems fails:
+
+\begin{figure}[H]
+\centering
+includegraphics{phase9d_cross_system/figure_cross_system.png}
+\caption{Model trained on logistic system fails on Lorenz and harmonic systems (R-squared less than 0), demonstrating lack of universality.}
+\end{figure}
+
+\subsection{Direct Dynamical Recovery}
+
+Direct divergence methods recover Lyapunov exponents accurately:
+
+\begin{figure}[H]
+\centering
+includegraphics{phase8e_multivector/figure_lyapunov_accuracy.png}
+\caption{Estimated vs true Lyapunov exponents. Direct dynamical methods achieve near-perfect agreement for logistic and harmonic systems.}
+\end{figure}
+
+\section{Discussion}
+
+We empirically establish: recurrence observables do not imply lambda.
+
+This implies recurrence observables are non-invertible projections of dynamics.
+
+Recurrence metrics quantify redundancy and trajectory recurrence, not divergence rates. This explains their failure to recover Lyapunov exponents across systems.
+
+\section{Conclusion}
+
+Recurrence-based observables capture meaningful geometric structure but cannot recover system-invariant dynamical quantities. This establishes a fundamental limitation of geometric approaches to dynamical inference.
+
+\begin{thebibliography}{9}
+
+bibitem{eckmann1987} Eckmann, J.-P., Kamphorst, S. O., and Ruelle, D. (1987). Recurrence plots of dynamical systems. Europhysics Letters, 4(9), 973-977.
+
+bibitem{marwan2007} Marwan, N., Romano, M. C., Thiel, M., and Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics Reports, 438(5-6), 237-329.
+
+\end{thebibliography}
+
+\end{document}

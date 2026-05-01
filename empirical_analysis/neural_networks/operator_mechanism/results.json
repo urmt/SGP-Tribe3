@@ -1,0 +1,37 @@
+[
+  {
+    "operator": "tanh",
+    "accuracy": 0.91,
+    "variance": 4.1e-05,
+    "smooth": true,
+    "saturating": true
+  },
+  {
+    "operator": "sigmoid",
+    "accuracy": 0.89,
+    "variance": 5.5e-05,
+    "smooth": true,
+    "saturating": true
+  },
+  {
+    "operator": "gelu",
+    "accuracy": 0.895,
+    "variance": 5e-05,
+    "smooth": true,
+    "saturating": "weak"
+  },
+  {
+    "operator": "softplus",
+    "accuracy": 0.885,
+    "variance": 6e-05,
+    "smooth": true,
+    "saturating": false
+  },
+  {
+    "operator": "leaky_relu",
+    "accuracy": 0.86,
+    "variance": 8.5e-05,
+    "smooth": false,
+    "saturating": false
+  }
+]

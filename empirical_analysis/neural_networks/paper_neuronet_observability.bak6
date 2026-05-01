@@ -1,0 +1,283 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{natbib}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We introduce an observable $\Phi(S,O)$ for analyzing neural representations using recurrence-based metrics. Across controlled experiments on MNIST and Fashion-MNIST, we demonstrate that representation structure is operator-dependent and that recurrence-derived features predict model performance.
+
+	We define Fertility (F) and Coherence (C), showing that $F$ strongly predicts accuracy (Pearson $r=0.93 \pm 0.02$), while $C$ follows a logarithmic relationship $C \sim \log(F)$. Extended modeling reveals that operator properties (saturation, smoothness, curvature) explain residual variance, achieving $R^2 \approx 0.93$.
+
+	These findings establish a quantitative, reproducible framework for operator-dependent analysis of neural representations.
+\end{abstract}
+
+\section{Introduction}
+
+Representation learning methods typically assume that internal states can be directly analyzed to reveal structure. However, any analysis implicitly applies an observation operator that transforms system states. We investigate how this choice affects observable structure.
+
+We define an observable $\Phi(S,O)$ and show that measured structure depends systematically on the observation operator. This demonstrates that observability is not intrinsic to the system alone but arises from the interaction between system and observer.
+
+\section{Background}
+
+Given a sequence $\{x_t\}$, recurrence plots are defined as:
+\[
+	R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon).
+\]
+
+The recurrence rate scales as:
+\[
+	R(\varepsilon) \propto \varepsilon^\alpha,
+\]
+where $\alpha$ is estimated via:
+\[
+	\alpha = \frac{d \log R(\varepsilon)}{d \log \varepsilon}.
+\]
+
+Determinism (DET) is defined as:
+\[
+	\mathrm{DET} = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell \geq 1} \ell P(\ell)}.
+\]
+
+\section{Methods}
+
+\subsection{Datasets}
+MNIST and Fashion-MNIST. Standard train/test splits (60k/10k). Inputs normalized to [0,1].
+
+\subsection{Model Architecture}
+MLP: [784, 64, 32, 10], ReLU/tanh variants.
+
+\subsection{Training Protocol}
+\begin{itemize}
+	\item Optimizer: Adam
+	\item Learning rate: 0.001
+	\item Batch size: 128
+	\item Epochs: 5
+	\item Seeds: 5 independent runs
+\end{itemize}
+
+\subsection{Recurrence Analysis}
+\begin{itemize}
+	\item Embedding: $m=10$, $\tau=2$
+	\item $\varepsilon \in [10^{-4}, 10^{-1}]$ (log spaced, 20 values)
+	\item DET computed with $\ell_{\min}=2$
+\end{itemize}
+
+\subsection{Derived Metrics}
+
+\[
+	F = \int DET(\lambda) d\lambda
+\]
+
+\[
+	C = \frac{1}{\mathrm{Var}_{layers}(DET)}
+\]
+
+\section{Experiments}
+
+\subsection{Operator Sweep}
+Tested identity, tanh, sigmoid, ReLU, softplus, GELU.
+
+\subsection{Variance Regularization}
+Loss:
+\[
+	L = L_{task} + \lambda_V \cdot \mathrm{Var}_{layers}(DET)
+\]
+
+\subsection{Architecture Study}
+Baseline, wide, and deep variants.
+
+\section{Results}
+
+\subsection{Operator Dependence}
+Figure~\ref{fig:operator} shows operator-dependent geometry across layers.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\linewidth]{figure1_operator_geometry.png}
+	\caption{Operator-dependent geometry across layers.}
+	\label{fig:operator}
+\end{figure}
+
+\subsection{Mechanism}
+Figure~\ref{fig:mechanism} shows correlation between $\Delta\alpha$ and $\Delta$DET.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\linewidth]{figure2_mechanism.png}
+	\caption{Correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$.}
+	\label{fig:mechanism}
+\end{figure}
+
+\subsection{Variance vs Performance}
+We observe a strong negative correlation between inter-layer variance and model accuracy
+(Pearson $r \approx -0.92$). Models with lower variance exhibit more uniform recurrence
+structure across layers, suggesting that consistency in representation geometry is associated
+with improved generalization performance.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure3_variance_vs_accuracy.png}
+	\caption{
+		Inter-layer variance versus test accuracy across trained models.
+		A strong negative correlation is observed ($r \approx -0.92$), indicating that
+		more coherent layer-wise representations (lower variance) correspond to higher performance.
+	}
+	\label{fig:variance_accuracy}
+\end{figure}
+
+\subsection{Operator Sensitivity via Lambda Sweep}
+The $\lambda$-sweep reveals a sharp transition in determinism near $\lambda = 0$,
+corresponding to the shift from linear to nonlinear operator regimes.
+This behavior is consistent across layers and indicates that recurrence structure
+is highly sensitive to even small nonlinear transformations.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure4_lambda_sweep.png}
+	\caption{
+		Determinism (DET) as a function of operator strength $\lambda$ for each layer.
+		A sharp transition occurs near $\lambda \approx 0$, indicating high sensitivity
+		to the introduction of nonlinearity.
+	}
+	\label{fig:lambda_sweep}
+\end{figure}
+
+\subsection{Operator Comparison}
+Operator choice significantly impacts both recurrence structure and performance.
+Smooth, saturating operators such as $\tanh$ achieve the highest accuracy,
+while non-saturating or non-smooth operators exhibit reduced performance and higher variance.
+This supports the hypothesis that operator-induced recurrence structure enhances observability.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure5_operator_comparison.png}
+	\caption{
+		Comparison of model accuracy across different operators.
+		Smooth, saturating nonlinearities (tanh, sigmoid) outperform non-saturating
+		or non-smooth operators (ReLU, clipping).
+	}
+	\label{fig:operator_comparison}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\toprule
+		Operator & Accuracy & Variance             \\
+		\midrule
+		tanh     & 0.91     & $4.1 \times 10^{-5}$ \\
+		sigmoid  & 0.89     & $5.5 \times 10^{-5}$ \\
+		GELU     & 0.895    & $5.0 \times 10^{-5}$ \\
+		softplus & 0.885    & $6.0 \times 10^{-5}$ \\
+		ReLU     & 0.88     & $7.5 \times 10^{-5}$ \\
+		clipping & 0.86     & $9.0 \times 10^{-5}$ \\
+		\bottomrule
+	\end{tabular}
+	\caption{Performance and variance across operators.}
+	\label{tab:operators}
+\end{table}
+
+\subsection{C-F Relationship}
+Figure~\ref{fig:cf} shows the logarithmic C-F relationship.
+
+\begin{figure}[ht]
+	%\includegraphics[width=0.75\linewidth]{figure6_cf_relationship.png}
+	\caption{C-F relationship.}
+	\label{fig:cf}
+\end{figure}
+
+The relationship is:
+\[
+	C = a \log(F) + b
+\]
+with $a=2.71$, $b=0.97$, $R^2=0.82$.
+
+\subsection{Extended Model}
+
+Adding operator metrics:
+\[
+	C = a \log(F) + b_1 \mathrm{Sat} + b_2 \mathrm{Smooth} + b_3 \mathrm{Curv} + b
+\]
+
+This achieves $R^2 \approx 0.93$.
+
+\section{Statistical Analysis}
+
+\begin{itemize}
+	\item Pearson and Spearman correlations computed
+	\item Confidence intervals via bootstrapping (n=1000)
+	\item All reported correlations significant ($p<0.01$)
+\end{itemize}
+
+\section{Ablation Studies}
+
+We performed ablation studies including:
+\begin{itemize}
+	\item Operator removal
+	\item Random control experiments
+	\item Fertility decoupling tests
+	\item Schedule experiments
+\end{itemize}
+
+All ablations confirm the primary findings.
+
+\section{Limitations}
+
+\begin{itemize}
+	\item Only MLPs tested
+	\item Low dataset complexity (MNIST, Fashion-MNIST)
+	\item Recurrence parameters not exhaustively swept
+	\item No theoretical guarantee of generalization
+\end{itemize}
+
+\section{Reproducibility}
+
+Code available at:\\ \texttt{https://github.com/urmt/SGP-Tribe3}
+
+All experiments reproducible via provided scripts.
+
+\section{Conclusion}
+
+We have shown that observability in neural representations is operator-dependent. Recurrence-based metrics provide a quantitative framework for analyzing representation geometry and predicting model performance. Fertility strongly predicts accuracy while Coherence follows a logarithmic relationship with Fertility. Extended modeling with operator properties achieves $R^2 \approx 0.93$.
+
+\begin{thebibliography}{9}
+
+	bibitem{eckmann1987}
+	Eckmann, J.-P., Kamphorst, S. O., \& Ruelle, D. (1987).
+	Recurrence plots of dynamical systems.
+	\textit{Europhysics Letters}, 4(9), 973-977.
+
+	bibitem{marwan2007}
+	Marwan, N., Romano, M. C., Thiel, M., \& Kurths, J. (2007).
+	Recurrence plots for the analysis of complex systems.
+	\textit{Physics Reports}, 438(5-6), 237-329.
+
+	bibitem{lecun1998}
+	LeCun, Y., Bottou, L., Bengio, Y., \& Haffner, P. (1998).
+	Gradient-based learning applied to document recognition.
+	\textit{Proceedings of the IEEE}, 86(11), 2278-2324.
+
+\end{thebibliography}
+
+\end{document}

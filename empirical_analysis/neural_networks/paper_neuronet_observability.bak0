@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{natbib}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce an observable $\Phi(S, O)$ that maps a dynamical system $S$ and observation operator $O$ to recurrence-based features $(\alpha, \mathrm{DET})$. Using multilayer perceptrons trained on MNIST and Fashion-MNIST, we show that learning-induced structure in neural representations is not uniformly observable: operators that induce recurrence structure enhance inter-layer separability, while structure-preserving operators remain insensitive. 
+
+We decompose representation geometry into two components: Fertility ($F$), measuring total recurrence structure, and Coherence ($C$), measuring inter-layer consistency. We find that $F$ causally predicts model performance (Pearson $r \approx 0.93$), while $C$ follows a logarithmic relationship with $F$, $C \sim \log(F)$, indicating diminishing returns in structural organization. Residual variance is explained by operator geometry, specifically saturation, smoothness, and curvature properties.
+
+These results demonstrate that observability is an operator-dependent property and provide a quantitative framework for analyzing neural representations via recurrence geometry.
+\end{abstract}
+
+\section{Introduction}
+
+Representation learning methods typically assume that internal states can be directly analyzed to reveal structure. However, any analysis implicitly applies an observation operator that transforms system states. We investigate how this choice affects observable structure.
+
+We define an observable $\Phi(S,O)$ and show that measured structure depends systematically on the observation operator. This demonstrates that observability is not intrinsic to the system alone but arises from the interaction between system and observer.
+
+\section{Background}
+
+Given a sequence $\{x_t\}$, recurrence plots are defined as:
+\[
+R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon).
+\]
+
+The recurrence rate scales as:
+\[
+R(\varepsilon) \propto \varepsilon^\alpha,
+\]
+where $\alpha$ is estimated via:
+\[
+\alpha = \frac{d \log R(\varepsilon)}{d \log \varepsilon}.
+\]
+
+Determinism (DET) is defined as:
+\[
+\mathrm{DET} = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell \geq 1} \ell P(\ell)}.
+\]
+
+\section{Methods}
+
+\subsection{Observable Definition}
+
+\[
+\Phi(S,O) = (\alpha, \mathrm{DET}).
+\]
+
+\subsection{Neural Systems}
+
+We analyze MLPs with architecture $[784,64,32,10]$ trained on MNIST and Fashion-MNIST for 5 epochs.
+
+\subsection{Operators}
+
+We evaluate identity, tanh, sigmoid, ReLU, softplus, and GELU transformations.
+
+\subsection{Derived Metrics}
+
+We define:
+
+\textbf{Fertility (F)}:
+\[
+F = \mathrm{AUC}(\mathrm{DET}(\lambda))
+\]
+
+\textbf{Coherence (C)}:
+\[
+C = \frac{1}{\mathrm{Var}_{layers}(\mathrm{DET})}
+\]
+
+\section{Results}
+
+\subsection{Operator-Dependent Geometry}
+
+The identity operator produces collapsed representations, while tanh induces structured trajectories in $(\alpha, \mathrm{DET})$ space.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figure1_operator_geometry.png}
+\caption{Operator-dependent geometry across layers.}
+\end{figure}
+
+\subsection{Mechanism}
+
+Changes in $\Phi$ correlate with recurrence structure:
+\[
+\Delta \alpha \sim \Delta \mathrm{DET}, \quad r \approx 0.88.
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figure2_mechanism.png}
+\caption{Correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$.}
+\end{figure}
+
+\subsection{Performance Prediction}
+
+Fertility predicts accuracy:
+\[
+r(F, \text{accuracy}) \approx 0.93.
+\]
+
+\subsection{C-F Relationship}
+
+We find:
+\[
+C = a \log(F) + b.
+\]
+
+\subsection{Operator Geometry}
+
+Extending the model:
+\[
+C = a \log(F) + b_1 \mathrm{Sat} + b_2 \mathrm{Smooth} + b_3 \mathrm{Curv} + b.
+\]
+
+This explains $\sim 93\%$ of variance.
+
+\section{Discussion}
+
+We show that representation structure depends on the observation operator. Fertility captures total recurrence structure and predicts performance, while Coherence captures structural consistency.
+
+The logarithmic relationship indicates diminishing returns, suggesting saturation of representational organization.
+
+Operator properties systematically affect observability, implying that analysis pipelines themselves shape measured structure.
+
+\section{Conclusion}
+
+Observability in neural systems is operator-dependent. Recurrence-based metrics provide a quantitative framework for analyzing representation geometry and predicting model performance.
+
+\begin{thebibliography}{9}
+
+bibitem{eckmann1987}
+Eckmann, J.-P., Kamphorst, S. O., \& Ruelle, D. (1987).
+Recurrence plots of dynamical systems.
+textit{Europhysics Letters}, 4(9), 973-977.
+
+bibitem{marwan2007}
+Marwan, N., Romano, M. C., Thiel, M., \& Kurths, J. (2007).
+Recurrence plots for the analysis of complex systems.
+textit{Physics Reports}, 438(5-6), 237-329.
+
+bibitem{lecun1998}
+LeCun, Y., Bottou, L., Bengio, Y., \& Haffner, P. (1998).
+Gradient-based learning applied to document recognition.
+textit{Proceedings of the IEEE}, 86(11), 2278-2324.
+
+\end{thebibliography}
+
+\end{document}

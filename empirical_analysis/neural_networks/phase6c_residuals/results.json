@@ -1,0 +1,52 @@
+{
+  "global_stats": {
+    "mean": -20.646694773506027,
+    "std": 1466.5184847840517,
+    "min": -2381.8946609744135,
+    "max": 2542.7074279235744
+  },
+  "noise_test": {
+    "pearson_r": -0.0033591097001956817,
+    "pearson_p": 0.991733565339837
+  },
+  "variance_breakdown": {
+    "total_variance": 2150676.4662133106,
+    "dataset_component": 12745.55547242881,
+    "activation_component": 347630.238875998
+  },
+  "dataset_effect": {
+    "MNIST": {
+      "mean": -133.5429102655623,
+      "std": 1927.0379175783291,
+      "count": 6
+    },
+    "Fashion-MNIST": {
+      "mean": 92.24952071855024,
+      "std": 749.92445332656,
+      "count": 6
+    }
+  },
+  "activation_effect": {
+    "relu": {
+      "mean": -1004.8453791316476,
+      "std": 805.7178107902935,
+      "count": 2
+    },
+    "tanh": {
+      "mean": 392.72770892410904,
+      "std": 1790.101190960711,
+      "count": 6
+    },
+    "softplus": {
+      "mean": -589.7014787754208,
+      "std": 813.0661896638755,
+      "count": 2
+    },
+    "gelu": {
+      "mean": 292.48356249370494,
+      "std": 277.9532475843527,
+      "count": 2
+    }
+  },
+  "classification": "ACTIVATION STRUCTURE PRESENT"
+}

@@ -1,0 +1,14 @@
+{
+  "harmonic": {
+    "lambda_true": 0.0,
+    "phi_dyn_stable": 4.999762093181663e-05
+  },
+  "logistic": {
+    "lambda_true": 0.49,
+    "phi_dyn_stable": 0.49484237669741515
+  },
+  "lorenz": {
+    "lambda_true": 0.905,
+    "phi_dyn_stable": 0.010030249080800814
+  }
+}

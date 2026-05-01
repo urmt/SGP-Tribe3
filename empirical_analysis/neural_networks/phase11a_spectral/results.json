@@ -1,0 +1,27 @@
+{
+  "correlations": {
+    "entropy_accuracy": -1.0,
+    "centroid_accuracy": -1.0,
+    "concentration_accuracy": 1.0,
+    "flatness_accuracy": -1.0
+  },
+  "models": [
+    {
+      "epoch": 0,
+      "accuracy": 0.1025,
+      "entropy": 1.4157655239105225,
+      "centroid": 4.328985699000611,
+      "concentration": 0.7853130102157593,
+      "flatness": 0.195048525929451
+    },
+    {
+      "epoch": 10,
+      "accuracy": 0.9235,
+      "entropy": 0.6348429322242737,
+      "centroid": 1.294331579797472,
+      "concentration": 0.9173890352249146,
+      "flatness": 0.05690675973892212
+    }
+  ],
+  "best_metric": "entropy_accuracy"
+}

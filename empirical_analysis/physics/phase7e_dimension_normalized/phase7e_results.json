@@ -1,0 +1,26 @@
+{
+    "results": [
+        {
+            "system": "logistic",
+            "lyapunov": 0.4896342371374776,
+            "alpha_raw": 0.6988080096074907,
+            "dimension": 1.0,
+            "alpha_normalized": 0.6988080096074907
+        },
+        {
+            "system": "harmonic",
+            "lyapunov": 0.0,
+            "alpha_raw": 0.6635290292918268,
+            "dimension": 1.0,
+            "alpha_normalized": 0.6635290292918268
+        },
+        {
+            "system": "lorenz_full",
+            "lyapunov": 0.905,
+            "alpha_raw": 0.3291733990779899,
+            "dimension": 2.05,
+            "alpha_normalized": 0.16057238979414143
+        }
+    ],
+    "correlation_alpha_norm_vs_lyapunov": -0.808284491936647
+}

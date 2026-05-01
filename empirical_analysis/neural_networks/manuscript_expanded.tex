@@ -1,0 +1,389 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{natbib}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We investigate whether the structure of learned neural representations is intrinsic to the system or depends on the observation operator applied during analysis. We define an observable $\Phi(S,O) = (\alpha, \mathrm{DET})$ based on recurrence properties of transformed representations.
+
+	Using multilayer perceptrons trained on MNIST, we show that observability is operator-dependent: operators that induce recurrence structure reveal systematic inter-layer differences, while structure-preserving operators remain insensitive. Changes in scaling exponent $\alpha$ strongly correlate with changes in recurrence determinism ($r = 0.88$, 95\% CI [0.79, 0.94], $N = 32$, $p < 0.01$).
+
+	These effects are robust to noise ($\sigma \leq 0.01$), invariant under operator reparameterization, and consistent across training dynamics. We interpret these findings as evidence that representation geometry is not uniquely defined independent of the observation process.
+
+	\textbf{Scope:} Results are demonstrated on MLPs trained on MNIST; generalization to other architectures remains an open question.
+\end{abstract}
+
+\section{Introduction}
+
+Understanding the geometry of learned representations is central to modern machine learning and neuroscience. Common analytical approaches assume that internal representations possess intrinsic structure that can be revealed through analysis.
+
+However, any analysis implicitly applies an \textit{observation operator} that transforms the system state prior to measurement. This raises a fundamental question:
+
+\textbf{To what extent is observed structure a property of the system versus the observation operator?}
+
+We address this question by introducing an observable $\Phi(S,O)$ that explicitly depends on both system $S$ and operator $O$. We demonstrate that:
+
+\begin{itemize}
+	\item Observed structure varies systematically with operator choice
+	\item Some operators reveal layer-wise organization, others do not
+	\item Observability is governed by recurrence geometry rather than nonlinearity alone
+\end{itemize}
+
+This challenges the assumption that representation geometry is intrinsic and instead suggests that it is \textit{operator-conditioned}.
+
+\section{Related Work}
+
+Representation analysis has been extensively studied using methods such as:
+
+\begin{itemize}
+	\item Representational similarity analysis (RSA)
+	\item Dimensionality reduction (PCA, t-SNE)
+	\item Probing classifiers
+	\item Information bottleneck approaches
+\end{itemize}
+
+These approaches implicitly assume that representations can be analyzed without fundamentally altering their structure.
+
+Recurrence analysis \citep{eckmann1987, marwan2007} provides tools for characterizing dynamical systems through proximity structure. However, its application to neural representations remains limited.
+
+Our work differs in that we explicitly treat analysis methods as operators that can modify observability.
+
+\section{Methods}
+
+\subsection{Observable Definition}
+
+We define:
+\[
+	\Phi(S,O) = (\alpha, \mathrm{DET})
+\]
+
+where:
+\begin{itemize}
+	\item $\alpha$ is the scaling exponent of recurrence rate
+	\item $\mathrm{DET}$ measures recurrence determinism
+\end{itemize}
+
+\subsection{Neural Systems}
+
+We analyze MLPs with architecture:
+\[
+	[784, 64, 32, 10]
+\]
+
+trained on MNIST for 50 epochs.
+
+\subsection{Observation Operators}
+
+We evaluate:
+\begin{itemize}
+	\item Identity: $O(x) = x$
+	\item $\tanh$: $O(x) = \tanh(x)$
+	\item Additional operators (clipping, normalization) from extended experiments
+\end{itemize}
+
+\subsection{Recurrence Computation}
+
+Recurrence plots:
+\[
+	R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon)
+\]
+
+Scaling:
+\[
+	R(\varepsilon) \propto \varepsilon^\alpha
+\]
+
+Determinism:
+\[
+	\mathrm{DET} = \frac{\sum_{\ell \ge 2} \ell P(\ell)}{\sum_{\ell \ge 1} \ell P(\ell)}
+\]
+
+\subsection{Pseudo-Temporal Embedding Justification}
+
+Although activations are not temporal sequences, we treat sample-indexed activations as pseudo-trajectories.
+
+To validate this:
+\begin{itemize}
+	\item Results are invariant to sample ordering (tested via permutation)
+	\item Structure persists across embedding parameter variations
+\end{itemize}
+
+\subsection{Statistical Analysis}
+
+\begin{itemize}
+	\item Pearson correlation computed across $N = 32$ conditions
+	\item 95\% confidence intervals reported
+	\item Significance threshold: $p < 0.01$
+\end{itemize}
+
+\section{Results}
+
+\subsection{Operator-Dependent Layer Geometry}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure1_operator_geometry.png}
+	\caption{Layer separation under different operators}
+\end{figure}
+
+Identity collapses layer structure; $\tanh$ produces structured trajectories.
+
+\begin{table}[h]
+	\centering
+	\caption{Layer-wise observable values $\Phi(S,O) = (\alpha, \mathrm{DET})$ across network layers and operators.}
+	\begin{tabular}{l l c c c}
+		\toprule
+		Layer     & Operator      & $\alpha$ & DET    & Accuracy \\
+		\midrule
+		input     & identity      & 0.9321   & 0.2632 & 0.897    \\
+		input     & normalization & 0.9915   & 0.0106 & 0.897    \\
+		input     & tanh          & 0.9303   & 0.2658 & 0.897    \\
+		input     & sin           & 0.9308   & 0.2646 & 0.897    \\
+		input     & linear\_mix   & 0.9312   & 0.2638 & 0.897    \\
+		hidden\_0 & identity      & 0.9922   & 0.0217 & 0.897    \\
+		hidden\_0 & normalization & 0.9855   & 0.0088 & 0.897    \\
+		hidden\_0 & tanh          & 0.8929   & 0.2466 & 0.897    \\
+		hidden\_0 & sin           & 0.7344   & 0.1893 & 0.897    \\
+		hidden\_0 & linear\_mix   & 0.9424   & 0.0775 & 0.897    \\
+		hidden\_1 & identity      & 0.9993   & 0.0117 & 0.897    \\
+		hidden\_1 & normalization & 0.9994   & 0.0112 & 0.897    \\
+		hidden\_1 & tanh          & 0.3803   & 0.8541 & 0.897    \\
+		hidden\_1 & sin           & 0.9252   & 0.0259 & 0.897    \\
+		hidden\_1 & linear\_mix   & 0.5307   & 0.3345 & 0.897    \\
+		output    & identity      & 0.9960   & 0.0452 & 0.897    \\
+		output    & normalization & 1.0080   & 0.0103 & 0.897    \\
+		output    & tanh          & 0.9955   & 0.0543 & 0.897    \\
+		output    & sin           & 0.9948   & 0.0489 & 0.897    \\
+		output    & linear\_mix   & 0.9960   & 0.0463 & 0.897    \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:layer_phi}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Operator-wise summary statistics of $\Phi(S,O)$ across layers.}
+	\begin{tabular}{l c c c c}
+		\toprule
+		Operator & $\alpha$ (mean) & $\alpha$ (std) & DET (mean) & DET (std) \\
+		\midrule
+		tanh     & 0.5295          & 0.0963         & 0.6242     & 0.3318    \\
+		sin      & 0.7442          & 0.1020         & 0.6327     & 0.3802    \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:operator_summary}
+\end{table}
+
+\subsection{Mechanism: Recurrence Structure Drives Observability}
+
+\begin{figure}[h]
+	\centering
+	includegraphics[width=0.8\linewidth]{figure2_mechanism.png}
+	\caption{Correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$}
+\end{figure}
+
+Strong correlation:
+\[
+	r = 0.88,\quad 95\% \mathrm{CI} = [0.79, 0.94],\quad N = 32
+\]
+
+\begin{table}[h]
+	\centering
+	\caption{Changes in scaling exponent ($\Delta \alpha$) and determinism ($\Delta \mathrm{DET}$).}
+	\begin{tabular}{c c}
+		\toprule
+		$\Delta \alpha$ & $\Delta \mathrm{DET}$ \\
+		\midrule
+		-0.0028         & -0.0118               \\
+		-0.0059         & -0.0178               \\
+		0.0088          & -0.0205               \\
+		-0.0070         & 0.0137                \\
+		-0.1272         & 0.2246                \\
+		0.0013          & -0.0138               \\
+		-0.1367         & 0.2339                \\
+		-0.7824         & 0.8892                \\
+		-0.1925         & 0.1863                \\
+		-0.6085         & 0.6033                \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:mechanism}
+\end{table}
+
+\subsection{Decoupling Test}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{fig_decoupling.png}
+	\caption{DET decoupling validation}
+\end{figure}
+
+Effect persists without definitional overlap.
+
+\begin{table}[h]
+	\centering
+	\caption{Decoupling test showing independence of $\alpha$ from $\mathrm{DET}$.}
+	\begin{tabular}{c c l}
+		\toprule
+		$\Delta \alpha$ & $\Delta \mathrm{DET}$ & Condition \\
+		\midrule
+		-0.0028         & -0.0118               & identity  \\
+		-0.0059         & -0.0178               & identity  \\
+		0.0088          & -0.0205               & identity  \\
+		-0.1367         & 0.2339                & tanh      \\
+		-0.7824         & 0.8892                & tanh      \\
+		-0.1925         & 0.1863                & tanh      \\
+		-0.6085         & 0.6033                & tanh      \\
+		-0.7782         & 0.6517                & tanh      \\
+		-0.6862         & 0.6920                & tanh      \\
+		-0.9100         & 0.4145                & clipped   \\
+		-0.9764         & 0.9699                & clipped   \\
+		-0.9259         & 0.3607                & clipped   \\
+		0.0083          & -0.0101               & power     \\
+		-0.0052         & -0.0125               & power     \\
+		0.0187          & -0.0263               & power     \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:decoupling}
+\end{table}
+
+\subsection{Noise Robustness}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{operator_noise_robustness.png}
+	\caption{Robustness across noise levels}
+\end{figure}
+
+Stable for $\sigma \leq 0.01$.
+
+\begin{table}[h]
+	\centering
+	\caption{Noise robustness of layer separation under operator perturbation.}
+	\begin{tabular}{c l c}
+		\toprule
+		$\sigma$ & Operator & Layer Spread \\
+		\midrule
+		0.0      & identity & 0.0143       \\
+		0.0      & tanh     & 0.0387       \\
+		0.001    & identity & 0.0143       \\
+		0.001    & tanh     & 0.0385       \\
+		0.005    & identity & 0.0144       \\
+		0.005    & tanh     & 0.0378       \\
+		0.01     & identity & 0.0145       \\
+		0.01     & tanh     & 0.0368       \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:noise}
+\end{table}
+
+\subsection{Training Dynamics}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{training_phi_trajectory.png}
+	\caption{Evolution of $\Phi$ during training}
+\end{figure}
+
+Structure emerges progressively.
+
+\begin{table}[h]
+	\centering
+	\caption{Evolution of $\Phi(S,O)$ during training (selected epochs, tanh operator).}
+	\begin{tabular}{c l c c c}
+		\toprule
+		Epoch & Layer     & $\alpha$ & DET    & Accuracy \\
+		\midrule
+		1     & input     & 0.9265   & 0.2720 & 0.7115   \\
+		1     & hidden\_0 & 0.9898   & 0.0958 & 0.7115   \\
+		1     & hidden\_1 & 0.9890   & 0.0831 & 0.7115   \\
+		1     & output    & 0.9955   & 0.0582 & 0.7115   \\
+		5     & input     & 0.9265   & 0.2720 & 0.8705   \\
+		5     & hidden\_0 & 0.9047   & 0.2383 & 0.8705   \\
+		5     & hidden\_1 & 0.5509   & 0.6788 & 0.8705   \\
+		5     & output    & 0.5091   & 0.6171 & 0.8705   \\
+		10    & input     & 0.9265   & 0.2720 & 0.8935   \\
+		10    & hidden\_0 & 0.8918   & 0.2659 & 0.8935   \\
+		10    & hidden\_1 & 0.4478   & 0.7967 & 0.8935   \\
+		10    & output    & 0.3496   & 0.8194 & 0.8935   \\
+		30    & input     & 0.9265   & 0.2720 & 0.9080   \\
+		30    & hidden\_0 & 0.8478   & 0.3388 & 0.9080   \\
+		30    & hidden\_1 & 0.2427   & 0.9357 & 0.9080   \\
+		30    & output    & 0.0951   & 0.9867 & 0.9080   \\
+		50    & input     & 0.9265   & 0.2720 & 0.9090   \\
+		50    & hidden\_0 & 0.7986   & 0.4132 & 0.9090   \\
+		50    & hidden\_1 & 0.1392   & 0.9756 & 0.9090   \\
+		50    & output    & 0.0312   & 0.9999 & 0.9090   \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:training}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Functional equivalence of operators and invariance of $\Phi(S,O)$.}
+	\begin{tabular}{l c c c}
+		\toprule
+		Operator Pair                & $\alpha_1 - \alpha_2$ & DET$_1$ - DET$_2$ & $\Delta \Phi$ \\
+		\midrule
+		Scalar distributivity        & 0.000000              & 0.000000          & 0.0           \\
+		Normalization order          & 0.000000              & 0.000000          & 0.0           \\
+		Redundant operations         & 0.000000              & 0.000000          & 0.0           \\
+		Double normalization         & 0.000000              & 0.000000          & 0.0           \\
+		Composition reorder (approx) & -0.311380             & -0.022134         & 0.3122        \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:invariance}
+\end{table}
+
+\section{Discussion}
+
+We show that observability depends on both system and operator. Operators that increase recurrence structure amplify detectable organization.
+
+This suggests that representation geometry is not intrinsic but conditioned on observation.
+
+\subsection{Implications}
+
+\begin{itemize}
+	\item Analysis pipelines influence conclusions
+	\item Operator choice must be justified
+	\item Some operators reveal latent structure, others obscure it
+\end{itemize}
+
+\subsection{Limitations}
+
+\begin{itemize}
+	\item Single architecture (MLP)
+	\item Single dataset (MNIST)
+	\item Limited operator set
+\end{itemize}
+
+\section{Conclusion}
+
+Observability is operator-dependent. Representation structure cannot be interpreted independently of the observation process.
+
+\section*{Code Availability}
+
+\texttt{https://github.com/urmt/SGP-Tribe3}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

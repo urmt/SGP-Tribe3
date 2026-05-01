@@ -1,0 +1,17 @@
+[
+  {
+    "system": "logistic",
+    "phi_dyn_mean": 0.004939605368673716,
+    "phi_dyn_std": 1.1006539832785451
+  },
+  {
+    "system": "harmonic",
+    "phi_dyn_mean": 4.9988572457603e-05,
+    "phi_dyn_std": 1.1778172275313575e-08
+  },
+  {
+    "system": "lorenz",
+    "phi_dyn_mean": 0.0071796423291133355,
+    "phi_dyn_std": 0.03910719664873805
+  }
+]

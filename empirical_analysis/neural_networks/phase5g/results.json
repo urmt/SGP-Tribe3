@@ -1,0 +1,192 @@
+{
+  "results": [
+    {
+      "mode": "uniform",
+      "seed": 0,
+      "accuracy": 0.9125,
+      "F": 1.7972,
+      "C": 24713.8
+    },
+    {
+      "mode": "uniform",
+      "seed": 1,
+      "accuracy": 0.9176,
+      "F": 1.7953,
+      "C": 24272.9
+    },
+    {
+      "mode": "uniform",
+      "seed": 2,
+      "accuracy": 0.9179,
+      "F": 1.8153,
+      "C": 24155.3
+    },
+    {
+      "mode": "uniform",
+      "seed": 3,
+      "accuracy": 0.9127,
+      "F": 1.7907,
+      "C": 24157.1
+    },
+    {
+      "mode": "uniform",
+      "seed": 4,
+      "accuracy": 0.9112,
+      "F": 1.7617,
+      "C": 23527.5
+    },
+    {
+      "mode": "increasing",
+      "seed": 0,
+      "accuracy": 0.9022,
+      "F": 1.7597,
+      "C": 23157.1
+    },
+    {
+      "mode": "increasing",
+      "seed": 1,
+      "accuracy": 0.9005,
+      "F": 1.7518,
+      "C": 23732.8
+    },
+    {
+      "mode": "increasing",
+      "seed": 2,
+      "accuracy": 0.9039,
+      "F": 1.7814,
+      "C": 22287.6
+    },
+    {
+      "mode": "increasing",
+      "seed": 3,
+      "accuracy": 0.9023,
+      "F": 1.7822,
+      "C": 22424.5
+    },
+    {
+      "mode": "increasing",
+      "seed": 4,
+      "accuracy": 0.9069,
+      "F": 1.768,
+      "C": 22854.2
+    },
+    {
+      "mode": "decreasing",
+      "seed": 0,
+      "accuracy": 0.897,
+      "F": 1.797,
+      "C": 21993.3
+    },
+    {
+      "mode": "decreasing",
+      "seed": 1,
+      "accuracy": 0.8947,
+      "F": 1.7765,
+      "C": 21389.6
+    },
+    {
+      "mode": "decreasing",
+      "seed": 2,
+      "accuracy": 0.901,
+      "F": 1.7208,
+      "C": 21335.9
+    },
+    {
+      "mode": "decreasing",
+      "seed": 3,
+      "accuracy": 0.901,
+      "F": 1.7748,
+      "C": 22085.7
+    },
+    {
+      "mode": "decreasing",
+      "seed": 4,
+      "accuracy": 0.8994,
+      "F": 1.754,
+      "C": 21260.7
+    },
+    {
+      "mode": "adaptive",
+      "seed": 0,
+      "accuracy": 0.9114,
+      "F": 1.8108,
+      "C": 26528.6
+    },
+    {
+      "mode": "adaptive",
+      "seed": 1,
+      "accuracy": 0.9167,
+      "F": 1.7847,
+      "C": 26162.0
+    },
+    {
+      "mode": "adaptive",
+      "seed": 2,
+      "accuracy": 0.9131,
+      "F": 1.8065,
+      "C": 26305.8
+    },
+    {
+      "mode": "adaptive",
+      "seed": 3,
+      "accuracy": 0.9202,
+      "F": 1.8386,
+      "C": 25580.4
+    },
+    {
+      "mode": "adaptive",
+      "seed": 4,
+      "accuracy": 0.9135,
+      "F": 1.8266,
+      "C": 26487.8
+    }
+  ],
+  "aggregates": {
+    "uniform": {
+      "accuracy_mean": 0.9144,
+      "accuracy_std": 0.0028,
+      "F_mean": 1.792,
+      "C_mean": 24165.3,
+      "Psi_mean": 43.31
+    },
+    "increasing": {
+      "accuracy_mean": 0.9032,
+      "accuracy_std": 0.0022,
+      "F_mean": 1.7686,
+      "C_mean": 22891.2,
+      "Psi_mean": 40.49
+    },
+    "decreasing": {
+      "accuracy_mean": 0.8986,
+      "accuracy_std": 0.0024,
+      "F_mean": 1.7646,
+      "C_mean": 21613.0,
+      "Psi_mean": 38.14
+    },
+    "adaptive": {
+      "accuracy_mean": 0.915,
+      "accuracy_std": 0.0031,
+      "F_mean": 1.8134,
+      "C_mean": 26212.9,
+      "Psi_mean": 47.54
+    }
+  },
+  "ranking": [
+    {
+      "mode": "adaptive",
+      "accuracy": 0.915
+    },
+    {
+      "mode": "uniform",
+      "accuracy": 0.9144
+    },
+    {
+      "mode": "increasing",
+      "accuracy": 0.9032
+    },
+    {
+      "mode": "decreasing",
+      "accuracy": 0.8986
+    }
+  ]
+}

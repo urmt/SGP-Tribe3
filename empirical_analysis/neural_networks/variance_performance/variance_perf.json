@@ -1,0 +1,30 @@
+[
+  {
+    "model_id": 1,
+    "variance": 6.2e-05,
+    "accuracy": 0.89
+  },
+  {
+    "model_id": 2,
+    "variance": 7.1e-05,
+    "accuracy": 0.87
+  },
+  {
+    "model_id": 3,
+    "variance": 5.8e-05,
+    "accuracy": 0.91
+  },
+  {
+    "model_id": 4,
+    "variance": 6.5e-05,
+    "accuracy": 0.88
+  },
+  {
+    "model_id": 5,
+    "variance": 5.5e-05,
+    "accuracy": 0.9
+  },
+  {
+    "correlation": -0.9149914219956281
+  }
+]

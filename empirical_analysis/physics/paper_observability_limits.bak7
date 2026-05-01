@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[numbers]{natbib}
+\graphicspath{{phase9c_verified/}{phase9e_hybrid/}{phase9d_cross_system/}{phase8e_multivector/}}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{
+Observer-Dependent Geometry Cannot Recover Dynamical Invariants:\\
+Empirical Limits of Recurrence-Based Observables
+}
+
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Recurrence-based methods are widely used to infer dynamical structure from observed trajectories. Here we test a stronger claim: whether recurrence-derived observables can recover system-invariant dynamical quantities, specifically Lyapunov exponents. Across logistic, harmonic, and Lorenz systems, we show that recurrence metrics (Fertility, Coherence, Determinism, scaling exponent) correlate with Lyapunov exponents within individual systems (up to $R^2 \approx 0.87$), but fail catastrophically to generalize across systems ($R^2 \leq 0$), even when augmented with local dynamical features.
+
+	In contrast, direct divergence-based estimators recover Lyapunov exponents with up to 99\% accuracy. These results establish a strict non-invertibility: recurrence geometry constitutes an observer-dependent projection of dynamics and cannot be used to reconstruct invariant instability measures. This delineates a fundamental boundary between geometric observables and dynamical invariants in nonlinear systems.
+\end{abstract}
+
+\section{Introduction}
+
+Recurrence analysis provides a geometric lens on dynamical systems, enabling characterization of periodicity, complexity, and structure without explicit knowledge of governing equations (Eckmann et al. 1987; Marwan et al. 2007). This has motivated widespread use of recurrence-derived metrics as proxies for dynamical behavior.
+
+However, a critical unresolved question remains:
+
+\begin{center}
+	\textit{Do recurrence-based observables encode sufficient information to recover system-invariant dynamical quantities?}
+\end{center}
+
+We address this question directly by testing whether recurrence metrics can predict Lyapunov exponents across fundamentally different systems.
+
+\section{Methods}
+
+\subsection{Systems}
+
+We analyze:
+
+\begin{itemize}
+	\item Logistic map (discrete chaos)
+	\item Harmonic oscillator (periodic)
+	\item Lorenz attractor (continuous chaos)
+\end{itemize}
+
+\subsection{Recurrence Observables}
+
+\[
+	R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon)
+\]
+
+Derived metrics:
+
+\begin{itemize}
+	\item Fertility $F$ (recurrence density)
+	\item Coherence $C$ (inverse variance)
+	\item Determinism (DET)
+	\item Scaling exponent $\alpha$
+\end{itemize}
+
+\subsection{Lyapunov Estimation}
+
+We compute $\lambda$ using:
+
+\begin{itemize}
+	\item Analytical derivative (logistic)
+	\item Direct divergence tracking
+	\item QR multi-vector method
+\end{itemize}
+
+\section{Results}
+
+\subsection{Within-System Predictability}
+
+Recurrence observables predict Lyapunov exponents within a single system.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure_lambda_vs_F.png}
+	\caption{Within-system relationship between Fertility and Lyapunov exponent (logistic map). Strong correlation is observed ($R^2 \approx 0.8$).}
+\end{figure}
+
+Hybrid observables improve fit:
+
+\begin{figure}[H]
+	centering
+	includegraphics[width=0.7\linewidth]{phase9e_hybrid/figure_hybrid_fit.png}
+	\caption{Hybrid observable (recurrence + local dynamics) improves within-system prediction ($R^2 \approx 0.87$).}
+\end{figure}
+
+\subsection{Cross-System Failure}
+
+Generalization across systems fails:
+
+\begin{figure}[H]
+	centering
+	includegraphics[width=0.7\linewidth]{phase9d_cross_system/figure_cross_system.png}
+	caption{Model trained on logistic system fails on Lorenz and harmonic systems ($R^2 \leq 0$), demonstrating lack of universality.}
+\end{figure}
+
+\subsection{Direct Dynamical Recovery}
+
+Direct divergence methods recover Lyapunov exponents accurately:
+
+\begin{figure}[H]
+	centering
+	includegraphics[width=0.7\linewidth]{phase8e_multivector/figure_lyapunov_accuracy.png}
+	\caption{Estimated vs true Lyapunov exponents. Direct dynamical methods achieve near-perfect agreement for logistic and harmonic systems.}
+\end{figure}
+
+\section{Discussion}
+
+\subsection{Non-Invertibility of Observables}
+
+We empirically establish:
+
+\[
+	\Phi \not\Rightarrow \lambda
+\]
+
+while:
+
+\[
+	\Phi \approx g(\lambda, O, S)
+\]
+
+This implies recurrence observables are \textbf{non-invertible projections} of dynamics.
+
+\subsection{Geometric vs Dynamical Information}
+
+Recurrence metrics quantify redundancy and trajectory recurrence, not divergence rates. This explains their failure to recover Lyapunov exponents across systems.
+
+\subsection{Implications}
+
+\begin{itemize}
+	\item No universal mapping from recurrence geometry to dynamical invariants
+	\item Observer-dependent structure cannot recover intrinsic instability
+	\item Direct divergence tracking is required for invariant estimation
+\end{itemize}
+
+\section{Conclusion}
+
+Recurrence-based observables capture meaningful geometric structure but cannot recover system-invariant dynamical quantities. This establishes a fundamental limitation of geometric approaches to dynamical inference and clarifies the boundary between observable structure and intrinsic instability.
+
+\begin{thebibliography}{9}
+
+	\bibitem{eckmann1987}
+	Eckmann, J.-P., Kamphorst, S. O., \& Ruelle, D. (1987).
+	Recurrence plots of dynamical systems.
+	\textit{Europhysics Letters}, 4(9), 973–977.
+
+	\bibitem{marwan2007}
+	Marwan, N., Romano, M. C., Thiel, M., \& Kurths, J. (2007).
+	Recurrence plots for the analysis of complex systems.
+	\textit{Physics Reports}, 438(5-6), 237–329.
+
+\end{thebibliography}
+
+\end{document}

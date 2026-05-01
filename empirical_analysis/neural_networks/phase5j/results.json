@@ -1,0 +1,22 @@
+{
+    "operators_tested": [
+        "identity",
+        "relu",
+        "softplus",
+        "scaled_2.0"
+    ],
+    "num_operators": 4,
+    "pairwise_spearman": {
+        "identity__relu": 1.0,
+        "identity__softplus": 0.9523809523809524,
+        "identity__scaled_2.0": 0.7857142857142858,
+        "relu__softplus": 0.9523809523809524,
+        "relu__scaled_2.0": 0.7857142857142858,
+        "softplus__scaled_2.0": 0.6666666666666669
+    },
+    "mean_correlation": 0.8571428571428572,
+    "min_correlation": 0.6666666666666669,
+    "max_correlation": 1.0,
+    "std_correlation": 0.119047619047619,
+    "consistency_score": 0.8571428571428572
+}

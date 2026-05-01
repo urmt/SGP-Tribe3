@@ -1,0 +1,91 @@
+{
+  "correlations": {
+    "all_F_vs_acc": 0.9295904885535794,
+    "all_C_vs_acc": 0.6079823430902791,
+    "saturating_F_vs_acc": 0.7192746199624686,
+    "identity_F_vs_acc": 0.9819805060619645
+  },
+  "operators": [
+    {
+      "operator": "tanh_k0.5",
+      "family": "tanh",
+      "k": 0.5,
+      "expected_F": 1.5,
+      "C": 10000.0,
+      "accuracy": 0.9025000000000001,
+      "variance": 0.0001
+    },
+    {
+      "operator": "tanh_k1.0",
+      "family": "tanh",
+      "k": 1.0,
+      "expected_F": 1.8,
+      "C": 20000.0,
+      "accuracy": 0.91,
+      "variance": 5e-05
+    },
+    {
+      "operator": "tanh_k2.0",
+      "family": "tanh",
+      "k": 2.0,
+      "expected_F": 2.0,
+      "C": 40000.0,
+      "accuracy": 0.925,
+      "variance": 2.5e-05
+    },
+    {
+      "operator": "tanh_k5.0",
+      "family": "tanh",
+      "k": 5.0,
+      "expected_F": 2.1,
+      "C": 99999.99999999999,
+      "accuracy": 0.93,
+      "variance": 1e-05
+    },
+    {
+      "operator": "sigmoid_k1.0",
+      "family": "sigmoid",
+      "k": 1.0,
+      "expected_F": 1.75,
+      "C": 20000.0,
+      "accuracy": 0.89,
+      "variance": 5e-05
+    },
+    {
+      "operator": "sigmoid_k2.0",
+      "family": "sigmoid",
+      "k": 2.0,
+      "expected_F": 1.9,
+      "C": 40000.0,
+      "accuracy": 0.902,
+      "variance": 2.5e-05
+    },
+    {
+      "operator": "identity_k0.5",
+      "family": "scaled_identity",
+      "k": 0.5,
+      "expected_F": 0.8,
+      "C": 10000.0,
+      "accuracy": 0.8675,
+      "variance": 0.0001
+    },
+    {
+      "operator": "identity_k1.0",
+      "family": "scaled_identity",
+      "k": 1.0,
+      "expected_F": 0.9,
+      "C": 20000.0,
+      "accuracy": 0.87,
+      "variance": 5e-05
+    },
+    {
+      "operator": "identity_k2.0",
+      "family": "scaled_identity",
+      "k": 2.0,
+      "expected_F": 1.0,
+      "C": 40000.0,
+      "accuracy": 0.875,
+      "variance": 2.5e-05
+    }
+  ]
+}

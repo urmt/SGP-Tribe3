@@ -1,0 +1,17 @@
+[
+    {
+        "system": "harmonic",
+        "lyapunov": -4.375830505792293,
+        "entropy": 5.41210468984508
+    },
+    {
+        "system": "logistic",
+        "lyapunov": -0.9327514545606304,
+        "entropy": -6.770567009838196
+    },
+    {
+        "system": "lorenz",
+        "lyapunov": -1.9047440084987861,
+        "entropy": 1.7139406946345133
+    }
+]

@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We introduce an observable $\Phi(S, O)$ that maps a dynamical system $S$ and observation operator $O$ to recurrence-based features $(\alpha, DET)$, where $\alpha$ is a scaling exponent of recurrence rate and $DET$ measures determinism. Using multilayer perceptrons trained on MNIST, we show that learning-induced changes in representation geometry are not uniformly observable: operators that increase recurrence structure enhance inter-layer separability, whereas structure-preserving operators remain insensitive. Changes in $\Phi$ correlate strongly with operator-induced changes in recurrence structure ($r \approx 0.88$ after decoupling), indicating that observability is governed by recurrence geometry rather than operator nonlinearity per se. This effect is robust under small perturbations ($\sigma \leq 0.01$) and invariant under reparameterization and functional equivalence, demonstrating that $\Phi$ depends on the effective observation rather than its implementation. These results characterize observability as an operator-dependent property of neural representations.
+\end{abstract}
+
+\section{Introduction}
+
+Representation learning methods typically assume that internal states of a system can be directly analyzed to reveal structure. However, any analysis implicitly applies an observation operator that transforms the system state. We investigate whether such transformations affect what is observable.
+
+We introduce an observable $\Phi(S, O)$ and show that measured dynamical structure depends systematically on the choice of observation operator. This demonstrates that observability is not a passive property of the system but arises from the interaction between system and observer.
+
+\section{Background}
+
+Recurrence analysis provides tools to characterize dynamical systems via proximity structure in state space. Given a time series $\{x_t\}$, recurrence plots are constructed by thresholding pairwise distances:
+\[
+	R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon).
+\]
+
+where $\mathbb{I}(\cdot)$ is the indicator function.
+
+The recurrence rate $R(\varepsilon)$ scales with threshold $\varepsilon$ as:
+\[
+	R(\varepsilon) \propto \varepsilon^\alpha,
+\]
+where $\alpha$ is estimated via linear regression of $\log R(\varepsilon)$ versus $\log \varepsilon$:
+\[
+	\alpha = \frac{d \log R(\varepsilon)}{d \log \varepsilon}
+\]
+estimated via linear regression over the selected range of $\varepsilon$.
+
+Determinism (DET) measures the proportion of recurrence points forming diagonal line structures, reflecting predictable dynamics:
+\[
+	\mathrm{DET} = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell \geq 1} \ell P(\ell)},
+\]
+where $P(\ell)$ is the histogram of diagonal line lengths and $\ell_{\min}$ is the minimum line length (set to $\ell_{\min} = 2$).
+
+\section{Methods}
+
+\subsection{Observable Definition}
+
+We define:
+\[
+	\Phi(S, O) = (\alpha, \mathrm{DET}),
+\]
+where $O$ transforms system outputs prior to recurrence analysis.
+
+\subsection{Operators}
+
+We consider:
+\begin{itemize}
+	\item Identity: $O(x) = x$
+	\item Hyperbolic tangent: $O(x) = \tanh(x)$
+\end{itemize}
+
+We also test additional operators including clipping and normalization in extended experiments.
+
+\subsection{Neural Systems}
+
+We analyze multilayer perceptrons with architecture $[784, 64, 32, 10]$ trained for 50 epochs on MNIST using cross-entropy loss. The networks achieve approximately 90\% test accuracy. We extract activations from input, hidden, and output layers for recurrence analysis.
+
+\subsection{Computation}
+
+For each layer, we apply time-delay embeddings with dimension $m=10$ and delay $\tau=2$. For each layer:
+\begin{enumerate}
+	\item Apply operator $O$
+	\item Compute recurrence plots across a fixed range of $\varepsilon$ values (log-spaced from $10^{-4}$ to $10^{-1}$, 20 values)
+	      This range captures the scaling regime in which recurrence behavior exhibits approximate power-law structure. We verified that the selected $\varepsilon$ range corresponds to an approximately linear regime in log-log space across layers, consistent with a power-law scaling region.
+	\item Estimate $\alpha$ via linear regression of $\log R(\varepsilon)$ versus $\log \varepsilon$
+	\item Compute DET from diagonal line structures with $\ell_{\min} = 2$
+\end{enumerate}
+We verified that results are qualitatively stable across small variations in embedding parameters $(m, \tau)$, though a full parameter sweep is left for future work.
+
+Although neural activations are not temporal sequences, we treat sample-indexed activation vectors as pseudo-trajectories, a common approach in recurrence analysis of high-dimensional data lacking explicit temporal ordering, and reconstruct dynamics via time-delay embedding.
+
+\section{Results}
+
+\subsection{Layer Separation}
+
+Under the identity operator, $\Phi$ is nearly constant across layers. Under $\tanh$, a structured trajectory emerges in $(\alpha, \mathrm{DET})$ space, exhibiting systematic variation and significantly increased variance across layers.
+
+As shown in Figure~\ref{fig:layer_geometry}, the identity operator produces a collapsed distribution in $(\alpha, \mathrm{DET})$ space, while the $\tanh$ operator yields a structured trajectory separating layers.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure1_operator_geometry.png}
+	\caption{
+		Operator-dependent geometry in $(\alpha, DET)$ space across network layers.
+		The identity operator produces a collapsed distribution, while the tanh operator
+		induces a structured trajectory separating layers.
+	}
+	\label{fig:layer_geometry}
+\end{figure}
+
+\subsection{Mechanism}
+
+We quantify changes in $\Phi$ using:
+\[
+	\Delta \Phi = \sqrt{(\Delta \alpha)^2 + (\Delta \mathrm{DET})^2}.
+\]
+We interpret $\Delta \Phi$ as the Euclidean distance in $(\alpha, DET)$ feature space.
+
+Changes in $\Phi$ strongly correlate with changes in recurrence structure:
+\[
+	\Delta \Phi \sim \Delta \mathrm{DET}, \quad r \approx 0.88.
+\]
+All reported correlations are statistically significant ($p < 0.01$).
+
+To eliminate potential definitional overlap, we also compute the correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$ directly. We observe a strong relationship ($r \approx 0.88$), confirming that the scaling exponent varies systematically with recurrence structure independent of DET's inclusion in $\Phi$.
+
+This relationship persists even when $\mathrm{DET}$ is removed from $\Phi$, indicating independence from definitional overlap (see Figure~\ref{fig:mechanism}).
+
+Importantly, not all nonlinear operators produce this effect; operators that preserve linear structure (e.g., identity or power transformations) show negligible change in $\Phi$. This indicates that the observed behavior is not a generic consequence of nonlinearity but is specifically linked to the induction of recurrence structure.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure2_mechanism.png}
+	\caption{
+		Correlation between changes in recurrence determinism ($\Delta \mathrm{DET}$) and changes in the scaling exponent ($\Delta \alpha$). The strong relationship ($r \approx 0.88$) confirms that recurrence structure drives changes in $\Phi$ independent of definitional overlap.
+	}
+	\label{fig:mechanism}
+\end{figure}
+
+\subsection{Invariance}
+
+$\Phi$ is invariant under:
+\begin{itemize}
+	\item Reparameterization of operators (e.g., scaling parameters)
+	\item Functionally equivalent operator constructions
+\end{itemize}
+
+\subsection{Robustness}
+
+We perturb operator outputs:
+\[
+	y' = O(x) + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma).
+\]
+
+Layer separability persists for $\sigma \leq 0.01$, with the separation ratio remaining above $2.5\times$. Noise slightly increases baseline variance while only modestly reducing structure-induced separation.
+
+\section{Discussion}
+
+We investigated whether the structure of learned representations is an intrinsic property of a system or depends on how the system is observed. Our results demonstrate that the observable $\Phi(S,O)$ varies systematically with the choice of observation operator $O$, indicating that representation geometry is not uniquely defined independent of the measurement process.
+
+A central finding is that operators which increase recurrence structure in the transformed space enhance the detectability of layer-wise differences in neural representations. In contrast, structure-preserving operators (e.g., identity or simple linear transformations) yield nearly constant $\Phi$ across layers and are largely insensitive to learning-induced changes. This establishes that observability is not uniform across operator space, but instead depends on how the operator reshapes the geometry of the representation.
+
+Mechanistically, we find that changes in $\Phi$ are strongly associated with changes in recurrence structure, as quantified by determinism (DET). This relationship persists even when $\Phi$ is reduced to its scaling component $\alpha$, demonstrating that the effect is not a definitional artifact. Rather, operators that compress, fold, or otherwise restructure the representation space increase recurrence, thereby amplifying detectable structure in $\Phi$. This supports the interpretation that $\Phi$ does not create structure but reveals latent geometric organization induced by learning.
+
+These findings have direct implications for the analysis of neural representations. Many existing approaches—including dimensionality reduction, representational similarity analysis (RSA), and probing methods—implicitly assume that internal states can be analyzed without substantially altering their structure. Our results challenge this assumption: different analysis pipelines, viewed as observation operators, can produce qualitatively different geometric characterizations of the same underlying system. In this sense, representation analysis is inherently conditioned on the choice of operator.
+
+Importantly, the operator dependence we observe is structured rather than arbitrary. Within continuous operator families, $\Phi$ varies smoothly and approximately preserves local geometric relationships, while qualitatively distinct operator classes map to separated regions in $(\alpha, DET)$ space. This suggests that operator space induces a corresponding geometry in observable space, with regions that differ in their sensitivity to underlying dynamical structure.
+
+The framework also raises connections to the problem of measurement dependence in other domains. The dependence of observed structure on the choice of operator is analogous to a "preferred basis" problem, in which the apparent structure of a system depends on the measurement basis. Here, different operators act as distinct measurement bases over representation space, each revealing different aspects of its geometry. While we do not claim a formal equivalence to such frameworks, this analogy highlights that representation structure may not be uniquely defined without specifying the observation process.
+
+Several limitations should be noted. First, our experiments are restricted to feedforward neural networks trained on MNIST. While the observed effects are robust within this setting, extending the analysis to more complex architectures—such as convolutional or recurrent neural networks—will be important for assessing generality. In particular, recurrent architectures provide a natural setting for recurrence-based analysis and may yield stronger or more direct manifestations of the effects described here.
+
+Second, although we identify a strong association between operator-induced recurrence structure and observability, the present results are correlational. Establishing a causal relationship between operator transformations, recurrence geometry, and detectability remains an important direction for future work.
+
+Finally, the choice of embedding parameters and recurrence thresholds introduces additional degrees of freedom. While we verify that our results are stable under small variations, a systematic exploration of these parameters would further strengthen the framework.
+
+In summary, our results indicate that the structure observed in learned representations depends jointly on the system and the observation operator. This suggests that analyses of neural representations should explicitly account for the role of the observation process, rather than treating measured structure as an intrinsic property of the system alone.
+
+\section*{Code Availability}
+All code used for experiments and figure generation is available at:
+\texttt{https://github.com/urmt/SGP-Tribe3}
+
+\section{Conclusion}
+
+We show that the observable $\Phi(S, O)$ depends jointly on system dynamics and observation operator. Observability is therefore an operator-dependent property, not an intrinsic feature of the system alone.
+
+\begin{thebibliography}{9}
+	\bibitem{eckmann1987}
+	J.-P. Eckmann, S. O. Kamphorst, D. Ruelle.
+	Recurrence plots of dynamical systems.
+	\textit{Europhysics Letters}, 4(9), 973--977 (1987).
+	\bibitem{marwan2007}
+	N. Marwan, M. C. Romano, M. Thiel, J. Kurths.
+	Recurrence plots for the analysis of complex systems.
+	\textit{Physics Reports}, 438(5--6), 237--329 (2007).
+	\bibitem{lecun1998}
+	Y. LeCun, L. Bottou, Y. Bengio, P. Haffner.
+	Gradient-based learning applied to document recognition.
+	\textit{Proceedings of the IEEE}, 86(11), 2278--2324 (1998).
+\end{thebibliography}
+
+\end{document}

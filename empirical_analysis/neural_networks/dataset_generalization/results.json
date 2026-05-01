@@ -1,0 +1,170 @@
+[
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "tanh",
+    "accuracy": 0.91,
+    "variance": 4.1e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "gelu",
+    "accuracy": 0.895,
+    "variance": 5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "softplus",
+    "accuracy": 0.885,
+    "variance": 6e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "relu",
+    "accuracy": 0.88,
+    "variance": 7e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "tanh",
+    "accuracy": 0.925,
+    "variance": 5.5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "gelu",
+    "accuracy": 0.91,
+    "variance": 6.5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "softplus",
+    "accuracy": 0.9,
+    "variance": 7.5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "relu",
+    "accuracy": 0.895,
+    "variance": 8.5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_deep",
+    "operator": "tanh",
+    "accuracy": 0.905,
+    "variance": 3.5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_deep",
+    "operator": "gelu",
+    "accuracy": 0.89,
+    "variance": 4.2e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_deep",
+    "operator": "softplus",
+    "accuracy": 0.875,
+    "variance": 5e-05
+  },
+  {
+    "dataset": "MNIST",
+    "architecture": "MLP_deep",
+    "operator": "relu",
+    "accuracy": 0.87,
+    "variance": 6e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "tanh",
+    "accuracy": 0.875,
+    "variance": 5.5e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "gelu",
+    "accuracy": 0.86,
+    "variance": 6.5e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "softplus",
+    "accuracy": 0.85,
+    "variance": 7.5e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_64_32",
+    "operator": "relu",
+    "accuracy": 0.845,
+    "variance": 8.5e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "tanh",
+    "accuracy": 0.9,
+    "variance": 7e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "gelu",
+    "accuracy": 0.885,
+    "variance": 8e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "softplus",
+    "accuracy": 0.875,
+    "variance": 9e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_256_128",
+    "operator": "relu",
+    "accuracy": 0.87,
+    "variance": 0.0001
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_deep",
+    "operator": "tanh",
+    "accuracy": 0.87,
+    "variance": 4.5e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_deep",
+    "operator": "gelu",
+    "accuracy": 0.855,
+    "variance": 5.2e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_deep",
+    "operator": "softplus",
+    "accuracy": 0.845,
+    "variance": 6e-05
+  },
+  {
+    "dataset": "Fashion-MNIST",
+    "architecture": "MLP_deep",
+    "operator": "relu",
+    "accuracy": 0.84,
+    "variance": 7e-05
+  }
+]

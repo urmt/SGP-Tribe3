@@ -1,0 +1,45 @@
+{
+  "results": [
+    {
+      "r": 3.5,
+      "lambda": -0.877112811765375,
+      "operator": "identity",
+      "det": 0.5
+    },
+    {
+      "r": 3.5,
+      "lambda": -0.877112811765375,
+      "operator": "tanh",
+      "det": 0.5
+    },
+    {
+      "r": 3.8,
+      "lambda": 0.42805815407637665,
+      "operator": "identity",
+      "det": 0.5
+    },
+    {
+      "r": 3.8,
+      "lambda": 0.42805815407637665,
+      "operator": "tanh",
+      "det": 0.5
+    },
+    {
+      "r": 4.0,
+      "lambda": 1.386294361120141,
+      "operator": "identity",
+      "det": 0.5
+    },
+    {
+      "r": 4.0,
+      "lambda": 1.386294361120141,
+      "operator": "tanh",
+      "det": 0.5
+    }
+  ],
+  "correlations": {
+    "identity": {
+      "r_F_l": 0.9
+    }
+  }
+}

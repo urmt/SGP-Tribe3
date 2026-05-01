@@ -1,0 +1,22 @@
+[
+  {
+    "operator": "tanh",
+    "accuracy": 0.91,
+    "variance": 4.1e-05
+  },
+  {
+    "operator": "sigmoid",
+    "accuracy": 0.89,
+    "variance": 5.5e-05
+  },
+  {
+    "operator": "relu",
+    "accuracy": 0.88,
+    "variance": 7.5e-05
+  },
+  {
+    "operator": "clipping",
+    "accuracy": 0.86,
+    "variance": 9e-05
+  }
+]

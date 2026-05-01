@@ -1,0 +1,73 @@
+{
+  "test": "fertility_decoupling",
+  "model_accuracy": 0.91,
+  "accuracy_std": 1.1102230246251565e-16,
+  "F_mean": 1.6700000000000002,
+  "F_std": 1.2391932859727737,
+  "interpretation": "F varies significantly while accuracy is constant - F is MEASUREMENT-DEPENDENT, not causal",
+  "results": [
+    {
+      "transform": "scale_k0.5",
+      "accuracy": 0.91,
+      "F": 0.45,
+      "accuracy_variance": 0.0,
+      "F_variance": 0.0
+    },
+    {
+      "transform": "scale_k1.0",
+      "accuracy": 0.91,
+      "F": 0.9,
+      "accuracy_variance": 0.0,
+      "F_variance": 0.0
+    },
+    {
+      "transform": "scale_k2.0",
+      "accuracy": 0.91,
+      "F": 1.8,
+      "accuracy_variance": 0.0,
+      "F_variance": 0.050625
+    },
+    {
+      "transform": "scale_k5.0",
+      "accuracy": 0.91,
+      "F": 4.5,
+      "accuracy_variance": 0.0,
+      "F_variance": 0.315
+    },
+    {
+      "transform": "tanh_warp_k0.5",
+      "accuracy": 0.91,
+      "F": 0.7200000000000001,
+      "accuracy_variance": 0.0,
+      "F_variance": 2.46796875
+    },
+    {
+      "transform": "tanh_warp_k1.0",
+      "accuracy": 0.91,
+      "F": 1.4400000000000002,
+      "accuracy_variance": 0.0,
+      "F_variance": 2.201904
+    },
+    {
+      "transform": "tanh_warp_k2.0",
+      "accuracy": 0.91,
+      "F": 2.8800000000000003,
+      "accuracy_variance": 0.0,
+      "F_variance": 1.842525
+    },
+    {
+      "transform": "ortho_proj",
+      "accuracy": 0.91,
+      "F": 1.8,
+      "accuracy_variance": 0.0,
+      "F_variance": 1.7691061224489795
+    },
+    {
+      "transform": "shuffle",
+      "accuracy": 0.91,
+      "F": 0.54,
+      "accuracy_variance": 0.0,
+      "F_variance": 1.5479859375
+    }
+  ]
+}

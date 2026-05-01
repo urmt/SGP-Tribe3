@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Learned Representations via Recurrence-Based Metrics}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce an observable $\Phi(S, O)$ that maps a dynamical system $S$ and an observation operator $O$ to recurrence-based features $(\alpha, \mathrm{DET})$, where $\alpha$ is a scaling exponent of recurrence rate and $\mathrm{DET}$ measures determinism. Across trained feedforward neural networks on MNIST, we find that learning-induced changes in representation geometry are not uniformly observable: operators that increase recurrence structure in the transformed space enhance inter-layer separability relative to structure-preserving operators. This effect is supported by correlations between changes in $\Phi$ and operator-induced changes in recurrence structure ($r \approx 0.88$ after decoupling). Robustness analysis shows that this separation persists under small perturbations to operator outputs ($\sigma \leq 0.01$), with minimal degradation. $\Phi$ is invariant under reparameterization and functional equivalence, indicating dependence on the effective observation rather than its implementation. These results characterize observability as an operator-dependent property of learned representations.
+\end{abstract}
+
+\section{Introduction}
+
+Representation learning methods typically assume that internal states of a system can be directly analyzed to reveal structure. However, any analysis implicitly applies an observation operator that transforms the system state. We investigate whether such transformations affect what is observable.
+
+We introduce an observable $\Phi(S, O)$ and show that measured dynamical structure depends systematically on the choice of observation operator. This demonstrates that observability is not a passive property of the system but arises from the interaction between system and observer.
+
+\section{Background}
+
+Recurrence analysis provides tools to characterize dynamical systems via proximity structure in state space. Given a time series $\{x_t\}$, recurrence plots are constructed by thresholding pairwise distances:
+\[
+R_{ij} = \mathbb{I}(|x_i - x_j| < \varepsilon).
+\]
+
+The recurrence rate $R(\varepsilon)$ scales with threshold $\varepsilon$ as:
+\[
+R(\varepsilon) \propto \varepsilon^\alpha,
+\]
+where $\alpha$ is estimated via log-log regression.
+
+Determinism (DET) measures the proportion of recurrence points forming diagonal line structures, reflecting predictable dynamics.
+
+\section{Methods}
+
+\subsection{Observable Definition}
+
+We define:
+\[
+\Phi(S, O) = (\alpha, \mathrm{DET}),
+\]
+where $O$ transforms system outputs prior to recurrence analysis.
+
+\subsection{Operators}
+
+We consider:
+\begin{itemize}
+\item Identity: $O(x) = x$
+\item Hyperbolic tangent: $O(x) = \tanh(x)$
+\end{itemize}
+
+\subsection{Neural Systems}
+
+We analyze multilayer perceptrons trained on MNIST, extracting activations from multiple layers.
+
+\subsection{Computation}
+
+For each layer:
+\begin{enumerate}
+\item Apply operator $O$
+\item Compute recurrence plots across $\varepsilon$
+\item Estimate $\alpha$ via log-log slope
+\item Compute DET from diagonal structures
+\end{enumerate}
+
+\section{Results}
+
+\subsection{Layer Separation}
+
+Under identity, $\Phi$ is nearly constant across layers. Under $\tanh$, clear separation emerges, with significantly larger variance across layers.
+
+\subsection{Mechanism}
+
+Changes in $\Phi$ strongly correlate with changes in recurrence structure:
+\[
+\Delta \Phi \sim \Delta \mathrm{DET}, \quad r \approx 0.88.
+\]
+
+This relationship persists even when $\mathrm{DET}$ is removed from $\Phi$, indicating independence from definitional overlap.
+
+\subsection{Invariance}
+
+$\Phi$ is invariant under:
+\begin{itemize}
+\item Reparameterization of operators
+\item Functionally equivalent operator constructions
+\end{itemize}
+
+\subsection{Robustness}
+
+We perturb operator outputs:
+\[
+y' = O(x) + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma).
+\]
+
+Layer separability persists for $\sigma \leq 0.01$, with the separation ratio remaining above $2.5\times$. Noise slightly increases baseline variance while only modestly reducing structure-induced separation.
+
+\section{Discussion}
+
+Our results demonstrate that observability depends on the observation operator. Structure-inducing operators reveal recurrence patterns that remain hidden under structure-preserving transformations.
+
+This effect is robust and mechanistically linked to recurrence structure. However, results are currently limited to feedforward neural systems; extension to other architectures remains future work.
+
+\section{Conclusion}
+
+We show that the observable $\Phi(S, O)$ depends jointly on system dynamics and observation operator. Observability is therefore an operator-dependent property, not an intrinsic feature of the system alone.
+
+\end{document}

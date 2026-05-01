@@ -1,0 +1,249 @@
+{
+  "correlations": {
+    "C_vs_acc": 0.33039892431161655,
+    "F_vs_acc": 0.5125017186468638,
+    "Psi_vs_acc": 0.3621557971721245
+  },
+  "models": [
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "tanh",
+      "C": 24390.243902439022,
+      "F": 1.8,
+      "Psi": 43902.43902439024,
+      "accuracy": 0.91,
+      "variance": 4.1e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "gelu",
+      "C": 20000.0,
+      "F": 1.75,
+      "Psi": 35000.0,
+      "accuracy": 0.895,
+      "variance": 5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "softplus",
+      "C": 16666.666666666668,
+      "F": 1.7,
+      "Psi": 28333.333333333336,
+      "accuracy": 0.885,
+      "variance": 6e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "relu",
+      "C": 14285.714285714286,
+      "F": 1.65,
+      "Psi": 23571.428571428572,
+      "accuracy": 0.88,
+      "variance": 7e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "tanh",
+      "C": 18181.81818181818,
+      "F": 1.8,
+      "Psi": 32727.272727272724,
+      "accuracy": 0.925,
+      "variance": 5.5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "gelu",
+      "C": 15384.615384615387,
+      "F": 1.75,
+      "Psi": 26923.076923076926,
+      "accuracy": 0.91,
+      "variance": 6.5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "softplus",
+      "C": 13333.333333333334,
+      "F": 1.7,
+      "Psi": 22666.666666666668,
+      "accuracy": 0.9,
+      "variance": 7.5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "relu",
+      "C": 11764.70588235294,
+      "F": 1.65,
+      "Psi": 19411.76470588235,
+      "accuracy": 0.895,
+      "variance": 8.5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_deep",
+      "operator": "tanh",
+      "C": 28571.428571428572,
+      "F": 1.8,
+      "Psi": 51428.571428571435,
+      "accuracy": 0.905,
+      "variance": 3.5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_deep",
+      "operator": "gelu",
+      "C": 23809.52380952381,
+      "F": 1.75,
+      "Psi": 41666.666666666664,
+      "accuracy": 0.89,
+      "variance": 4.2e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_deep",
+      "operator": "softplus",
+      "C": 20000.0,
+      "F": 1.7,
+      "Psi": 34000.0,
+      "accuracy": 0.875,
+      "variance": 5e-05
+    },
+    {
+      "dataset": "MNIST",
+      "architecture": "MLP_deep",
+      "operator": "relu",
+      "C": 16666.666666666668,
+      "F": 1.65,
+      "Psi": 27500.0,
+      "accuracy": 0.87,
+      "variance": 6e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "tanh",
+      "C": 18181.81818181818,
+      "F": 1.8,
+      "Psi": 32727.272727272724,
+      "accuracy": 0.875,
+      "variance": 5.5e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "gelu",
+      "C": 15384.615384615387,
+      "F": 1.75,
+      "Psi": 26923.076923076926,
+      "accuracy": 0.86,
+      "variance": 6.5e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "softplus",
+      "C": 13333.333333333334,
+      "F": 1.7,
+      "Psi": 22666.666666666668,
+      "accuracy": 0.85,
+      "variance": 7.5e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_64_32",
+      "operator": "relu",
+      "C": 11764.70588235294,
+      "F": 1.65,
+      "Psi": 19411.76470588235,
+      "accuracy": 0.845,
+      "variance": 8.5e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "tanh",
+      "C": 14285.714285714286,
+      "F": 1.8,
+      "Psi": 25714.285714285717,
+      "accuracy": 0.9,
+      "variance": 7e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "gelu",
+      "C": 12499.999999999998,
+      "F": 1.75,
+      "Psi": 21874.999999999996,
+      "accuracy": 0.885,
+      "variance": 8e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "softplus",
+      "C": 11111.111111111111,
+      "F": 1.7,
+      "Psi": 18888.88888888889,
+      "accuracy": 0.875,
+      "variance": 9e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_256_128",
+      "operator": "relu",
+      "C": 10000.0,
+      "F": 1.65,
+      "Psi": 16500.0,
+      "accuracy": 0.87,
+      "variance": 0.0001
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_deep",
+      "operator": "tanh",
+      "C": 22222.222222222223,
+      "F": 1.8,
+      "Psi": 40000.0,
+      "accuracy": 0.87,
+      "variance": 4.5e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_deep",
+      "operator": "gelu",
+      "C": 19230.76923076923,
+      "F": 1.75,
+      "Psi": 33653.846153846156,
+      "accuracy": 0.855,
+      "variance": 5.2e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_deep",
+      "operator": "softplus",
+      "C": 16666.666666666668,
+      "F": 1.7,
+      "Psi": 28333.333333333336,
+      "accuracy": 0.845,
+      "variance": 6e-05
+    },
+    {
+      "dataset": "Fashion-MNIST",
+      "architecture": "MLP_deep",
+      "operator": "relu",
+      "C": 14285.714285714286,
+      "F": 1.65,
+      "Psi": 23571.428571428572,
+      "accuracy": 0.84,
+      "variance": 7e-05
+    }
+  ]
+}

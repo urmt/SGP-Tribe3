@@ -1,0 +1,16 @@
+=== PHASE 0 AUDIT EXTENSION ===
+Variance:
+accuracy    0.001581
+det_mean    0.002236
+
+CV:
+accuracy          0.001767
+det_mean          0.032883
+alpha_det_corr    0.008035
+
+Flags:
+NO CRITICAL FLAGS
+
+Status: PROMISING (low variance, stable det_mean ~0.067, r ~0.88)
+Trust: NOT YET FULLY TRUSTWORTHY — Phase 1 expansion required
+Audit pass: YES (variance and correlation within acceptable bounds)

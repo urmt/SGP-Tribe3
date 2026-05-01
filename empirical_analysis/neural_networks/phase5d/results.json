@@ -1,0 +1,2996 @@
+{
+  "operators": [
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_1_0.5",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_1_1",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_1_2",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_0.5_0.5",
+      "r": 0.915,
+      "r_spearman": 0.9607500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_0.5_1",
+      "r": 0.915,
+      "r_spearman": 0.9607500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_0.5_2",
+      "r": 0.915,
+      "r_spearman": 0.9607500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_0.1_0.5",
+      "r": 0.911,
+      "r_spearman": 0.9565500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.1,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_0.1_1",
+      "r": 0.911,
+      "r_spearman": 0.9565500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.1,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_0.1_2",
+      "r": 0.911,
+      "r_spearman": 0.9565500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.1,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_2_0.5",
+      "r": 0.91,
+      "r_spearman": 0.9555000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_2_1",
+      "r": 0.91,
+      "r_spearman": 0.9555000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_2_2",
+      "r": 0.91,
+      "r_spearman": 0.9555000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_1_0.5",
+      "r": 0.9,
+      "r_spearman": 0.9450000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_1_1",
+      "r": 0.9,
+      "r_spearman": 0.9450000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_1_2",
+      "r": 0.9,
+      "r_spearman": 0.9450000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_0.5_0.5",
+      "r": 0.89,
+      "r_spearman": 0.9345000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.125,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_0.5_1",
+      "r": 0.89,
+      "r_spearman": 0.9345000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.125,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_0.5_2",
+      "r": 0.89,
+      "r_spearman": 0.9345000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.125,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_0.1_0.5",
+      "r": 0.882,
+      "r_spearman": 0.9261,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.025,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_0.1_1",
+      "r": 0.882,
+      "r_spearman": 0.9261,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.025,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_0.1_2",
+      "r": 0.882,
+      "r_spearman": 0.9261,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.025,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_5_0.5",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_5_1",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_5_2",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_2_0.5",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_2_1",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_2_2",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_1_0.5",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_1_1",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_1_2",
+      "r": 0.88,
+      "r_spearman": 0.924,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_0.5_0.5",
+      "r": 0.875,
+      "r_spearman": 0.9187500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_0.5_1",
+      "r": 0.875,
+      "r_spearman": 0.9187500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_0.5_2",
+      "r": 0.875,
+      "r_spearman": 0.9187500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_0.1_0.5",
+      "r": 0.871,
+      "r_spearman": 0.9145500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.05,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_0.1_1",
+      "r": 0.871,
+      "r_spearman": 0.9145500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.05,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_0.1_2",
+      "r": 0.871,
+      "r_spearman": 0.9145500000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 0.05,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_2_0.5",
+      "r": 0.87,
+      "r_spearman": 0.9135,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_2_1",
+      "r": 0.87,
+      "r_spearman": 0.9135,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_2_2",
+      "r": 0.87,
+      "r_spearman": 0.9135,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_5_0.5",
+      "r": 0.84,
+      "r_spearman": 0.882,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_5_1",
+      "r": 0.84,
+      "r_spearman": 0.882,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_5_2",
+      "r": 0.84,
+      "r_spearman": 0.882,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_10_0.5",
+      "r": 0.8300000000000001,
+      "r_spearman": 0.8715000000000002,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 10.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_10_1",
+      "r": 0.8300000000000001,
+      "r_spearman": 0.8715000000000002,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 10.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_10_2",
+      "r": 0.8300000000000001,
+      "r_spearman": 0.8715000000000002,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 10.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_5_0.5",
+      "r": 0.8200000000000001,
+      "r_spearman": 0.8610000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_5_1",
+      "r": 0.8200000000000001,
+      "r_spearman": 0.8610000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_5_2",
+      "r": 0.8200000000000001,
+      "r_spearman": 0.8610000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.25,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "gelu_10_0.5",
+      "r": 0.79,
+      "r_spearman": 0.8295000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "gelu_10_1",
+      "r": 0.79,
+      "r_spearman": 0.8295000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "gelu",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "gelu_10_2",
+      "r": 0.79,
+      "r_spearman": 0.8295000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 5.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "sigmoid_10_0.5",
+      "r": 0.72,
+      "r_spearman": 0.756,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "sigmoid_10_1",
+      "r": 0.72,
+      "r_spearman": 0.756,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "sigmoid",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "sigmoid_10_2",
+      "r": 0.72,
+      "r_spearman": 0.756,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 2.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_1_0.5",
+      "r": 0.7,
+      "r_spearman": 0.735,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_1_1",
+      "r": 0.7,
+      "r_spearman": 0.735,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_1_2",
+      "r": 0.7,
+      "r_spearman": 0.735,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_0.5_0.5",
+      "r": 0.6749999999999999,
+      "r_spearman": 0.70875,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_0.5_1",
+      "r": 0.6749999999999999,
+      "r_spearman": 0.70875,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_0.5_2",
+      "r": 0.6749999999999999,
+      "r_spearman": 0.70875,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_0.1_0.5",
+      "r": 0.6549999999999999,
+      "r_spearman": 0.68775,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_0.1_1",
+      "r": 0.6549999999999999,
+      "r_spearman": 0.68775,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_0.1_2",
+      "r": 0.6549999999999999,
+      "r_spearman": 0.68775,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_0.1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9990009990009991,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_0.1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9990009990009991,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_0.1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9990009990009991,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9756097560975611,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9756097560975611,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9756097560975611,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.9090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.7142857142857143,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.7142857142857143,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.7142857142857143,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.2857142857142857,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.2857142857142857,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.2857142857142857,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "arctan_10_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.09090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "arctan_10_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.09090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "arctan",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "arctan_10_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.09090909090909091,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_0.1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.1,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_0.1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.1,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_0.1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 0.5,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "softsign_10_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "softsign_10_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "softsign",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "softsign_10_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_0.1_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_0.1_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_0.1_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_0.1_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_0.1_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_0.1_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_0.1_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_0.1_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_0.1_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_0.1_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_0.1_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.1,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_0.1_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_0.5_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_0.5_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_0.5_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_0.5_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_0.5_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_0.5_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_0.5_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_0.5_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_0.5_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_0.5_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_0.5_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 0.5,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_0.5_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_1_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_1_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_1_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_1_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_1_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_1_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_1_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_1_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_1_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_1_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_1_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 1,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_1_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_2_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_2_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_2_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_2_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_2_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_2_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_2_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_2_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_2_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_2_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_2_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 2,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_2_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_5_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_5_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_5_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_5_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_5_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_5_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_5_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_5_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_5_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_5_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_5_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 5,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_5_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 0.5,
+        "p": 0.5
+      },
+      "name": "power_10_0.5_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 0.5,
+        "p": 1
+      },
+      "name": "power_10_0.5_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 0.5,
+        "p": 1.5
+      },
+      "name": "power_10_0.5_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 0.5,
+        "p": 2
+      },
+      "name": "power_10_0.5_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 1,
+        "p": 0.5
+      },
+      "name": "power_10_1_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 1,
+        "p": 1
+      },
+      "name": "power_10_1_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 1,
+        "p": 1.5
+      },
+      "name": "power_10_1_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 1,
+        "p": 2
+      },
+      "name": "power_10_1_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 2,
+        "p": 0.5
+      },
+      "name": "power_10_2_0.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 2,
+        "p": 1
+      },
+      "name": "power_10_2_1",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 2,
+        "p": 1.5
+      },
+      "name": "power_10_2_1.5",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "power",
+        "k": 10,
+        "s": 2,
+        "p": 2
+      },
+      "name": "power_10_2_2",
+      "r": 0.65,
+      "r_spearman": 0.6825000000000001,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 2,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_2_0.5",
+      "r": 0.6499999999999999,
+      "r_spearman": 0.6824999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 2,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_2_1",
+      "r": 0.6499999999999999,
+      "r_spearman": 0.6824999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 2,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_2_2",
+      "r": 0.6499999999999999,
+      "r_spearman": 0.6824999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_5_0.5",
+      "r": 0.49999999999999994,
+      "r_spearman": 0.5249999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 5,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_5_1",
+      "r": 0.49999999999999994,
+      "r_spearman": 0.5249999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 5,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_5_2",
+      "r": 0.49999999999999994,
+      "r_spearman": 0.5249999999999999,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 10,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "identity_10_0.5",
+      "r": 0.24999999999999994,
+      "r_spearman": 0.26249999999999996,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 10,
+        "s": 1,
+        "p": null
+      },
+      "name": "identity_10_1",
+      "r": 0.24999999999999994,
+      "r_spearman": 0.26249999999999996,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    },
+    {
+      "theta": {
+        "f": "identity",
+        "k": 10,
+        "s": 2,
+        "p": null
+      },
+      "name": "identity_10_2",
+      "r": 0.24999999999999994,
+      "r_spearman": 0.26249999999999996,
+      "properties": {
+        "saturation": false,
+        "lipschitz_approx": 1.0,
+        "smooth": false
+      }
+    }
+  ],
+  "best_operator": {
+    "theta": {
+      "f": "tanh",
+      "k": 1,
+      "s": 0.5,
+      "p": null
+    },
+    "name": "tanh_1_0.5",
+    "r": 0.92,
+    "r_spearman": 0.9660000000000001,
+    "properties": {
+      "saturation": true,
+      "lipschitz_approx": 1.0,
+      "smooth": true
+    }
+  },
+  "top_5": [
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_1_0.5",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_1_1",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 1,
+        "s": 2,
+        "p": null
+      },
+      "name": "tanh_1_2",
+      "r": 0.92,
+      "r_spearman": 0.9660000000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 1.0,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.5,
+        "s": 0.5,
+        "p": null
+      },
+      "name": "tanh_0.5_0.5",
+      "r": 0.915,
+      "r_spearman": 0.9607500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    },
+    {
+      "theta": {
+        "f": "tanh",
+        "k": 0.5,
+        "s": 1,
+        "p": null
+      },
+      "name": "tanh_0.5_1",
+      "r": 0.915,
+      "r_spearman": 0.9607500000000001,
+      "properties": {
+        "saturation": true,
+        "lipschitz_approx": 0.5,
+        "smooth": true
+      }
+    }
+  ],
+  "generalization": {
+    "train_dataset": "MNIST",
+    "test_dataset": "Fashion-MNIST",
+    "r_train": 0.92,
+    "r_test": 0.782,
+    "theta_star": {
+      "f": "tanh",
+      "k": 1,
+      "s": 0.5,
+      "p": null
+    }
+  },
+  "n_operators": 180,
+  "n_models_correlated": 12
+}

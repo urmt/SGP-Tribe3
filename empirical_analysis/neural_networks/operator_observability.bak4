@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce an observable $\Phi(S, O)$ mapping a system $S$ and observation operator $O$ to recurrence-based features $(\alpha, \mathrm{DET})$. Using multilayer perceptrons trained on MNIST, we demonstrate that learning-induced changes in representation geometry are operator-dependent: operators that increase recurrence structure enhance inter-layer separability, while structure-preserving operators remain insensitive. Across layers and operator conditions ($N=32$), changes in $\alpha$ strongly correlate with changes in recurrence determinism ($r = 0.88$, $95\%$ CI $[0.79, 0.94]$, $p < 0.01$). Control experiments (untrained networks, shuffled labels, and permuted sample order) confirm that the effect depends on learned structure and not data ordering artifacts. Results are robust to embedding parameters and small perturbations ($\sigma \leq 0.01$). These findings establish observability as an operator-dependent property of neural representations, governed by recurrence geometry rather than nonlinearity alone.
+\end{abstract}
+
+\section{Introduction}
+
+Analyses of neural representations typically assume that internal states possess intrinsic geometric structure independent of the analysis method. In practice, however, every analysis applies a transformation—explicit or implicit—to the system's outputs. We refer to this transformation as an \textit{observation operator}.
+
+We investigate whether the structure of learned representations is invariant under such operators. Specifically, we ask: \textit{does the apparent geometry of neural representations depend on how they are observed?}
+
+We introduce an observable $\Phi(S, O)$ based on recurrence analysis and demonstrate that measured structure varies systematically with the choice of observation operator. This shows that observability is not an intrinsic property of the system alone, but arises from the interaction between system dynamics and the observation process.
+
+Conceptually, operators act as geometric transformations on representation space. Nonlinear operators can compress, expand, or fold trajectories, altering proximity relations and thus recurrence structure. We hypothesize that operators which increase recurrence structure enhance the detectability of latent geometric organization.
+
+\section{Background}
+
+Given a sequence $\{x_t\}$, recurrence plots are defined as:
+\[
+R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon)
+\]
+
+The recurrence rate scales as:
+\[
+R(\varepsilon) \propto \varepsilon^\alpha
+\]
+
+Determinism (DET) is:
+\[
+\mathrm{DET} = \frac{\sum_{\ell \ge \ell_{\min}} \ell P(\ell)}{\sum_{\ell \ge 1} \ell P(\ell)}
+\]
+
+These metrics capture geometric structure via proximity and trajectory regularity.
+
+\section{Methods}
+
+\subsection{Observable}
+
+\[
+\Phi(S, O) = (\alpha, \mathrm{DET})
+\]
+
+We select $\alpha$ and DET as complementary measures of scaling structure and temporal coherence in reconstructed trajectories.
+
+\subsection{Operators}
+
+We evaluate:
+\begin{itemize}
+\item Identity: $O(x)=x$
+\item $\tanh$: $O(x)=\tanh(x)$
+\item Clipping: $O(x)=\mathrm{clip}(x, -1, 1)$
+\item Normalization: $O(x)=x/\|x\|$
+\end{itemize}
+
+These span structure-preserving and structure-altering transformations.
+
+\subsection{Neural Systems}
+
+We use MLPs with architecture $[784,64,32,10]$ trained on MNIST (50 epochs, $\sim$90\% accuracy).
+
+Controls:
+\begin{itemize}
+\item Untrained networks
+\item Shuffled labels
+\end{itemize}
+
+\subsection{Embedding and Justification}
+
+Activations are treated as pseudo-trajectories. While not temporal, this approach captures geometric structure via delay embedding.
+
+We validate this assumption by:
+\begin{itemize}
+\item Randomly permuting sample order (no effect observed)
+\item Varying embedding parameters $(m,\tau)$
+\end{itemize}
+
+\subsection{Computation}
+
+Parameters:
+\begin{itemize}
+\item $m \in \{8,10,12\}$
+\item $\tau \in \{1,2,3\}$
+\item $\varepsilon \in [10^{-4},10^{-1}]$
+\end{itemize}
+
+Statistics:
+\begin{itemize}
+\item $N=32$ layer/operator samples
+\item Pearson correlation with 95\% CI
+\end{itemize}
+
+\section{Results}
+
+\subsection{Layer Separation}
+
+Identity yields collapsed $\Phi$ across layers. $\tanh$ and clipping produce structured separation. Normalization shows intermediate behavior.
+
+\subsection{Mechanism}
+
+Changes in $\alpha$ track changes in DET:
+\[
+r = 0.88,\quad 95\%~CI=[0.79,0.94],\quad N=32
+\]
+
+This holds when DET is excluded from $\Phi$.
+
+\subsection{Controls}
+
+\begin{itemize}
+\item Untrained networks: no structure
+\item Shuffled labels: reduced structure
+\item Permuted samples: no change
+\end{itemize}
+
+\subsection{Robustness}
+
+Stable across:
+\begin{itemize}
+\item $m,\tau$ variations
+\item Noise $\sigma \le 0.01$
+\end{itemize}
+
+\section{Discussion}
+
+We show that representation structure is operator-dependent. Operators that increase recurrence geometry reveal latent structure rather than create it.
+
+This challenges the assumption that representation geometry is intrinsic. Instead, geometry is conditional on observation.
+
+The effect is not due to nonlinearity alone. Only operators that modify recurrence structure alter observability.
+
+Limitations:
+\begin{itemize}
+\item Single architecture and dataset
+\item Pseudo-temporal embedding assumption
+\item Correlational analysis
+\end{itemize}
+
+Future work should extend to CNNs, transformers, and alternative geometric metrics.
+
+\section{Conclusion}
+
+Observability depends jointly on system and operator. Recurrence geometry governs what becomes measurable.
+
+\end{document}
