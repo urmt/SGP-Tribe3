@@ -1,0 +1,81 @@
+{
+  "criticality": {
+    "transitions_detected": 7,
+    "critical_parameters": [
+      "linear_recursive",
+      "autoregressive",
+      "predictive_coding",
+      "simple_recurrent",
+      "adaptive_covariance",
+      "feedback_coupling",
+      "temporal_integration"
+    ],
+    "max_susceptibility": 263.0223153485672,
+    "all_results": {
+      "linear_recursive": {
+        "critical_alpha": 1.0,
+        "max_susceptibility": 263.0223153485672,
+        "max_curvature": 3441.3182996426863,
+        "critical_transition": 1.0
+      },
+      "autoregressive": {
+        "critical_alpha": 1.0,
+        "max_susceptibility": 148.79793650330137,
+        "max_curvature": 1475.7011180687582,
+        "critical_transition": 1.0
+      },
+      "predictive_coding": {
+        "critical_alpha": 0.13793103448275862,
+        "max_susceptibility": 76.29110576930414,
+        "max_curvature": 1028.000070501305,
+        "critical_transition": 1.0
+      },
+      "simple_recurrent": {
+        "critical_alpha": 0.896551724137931,
+        "max_susceptibility": 27.549403545487678,
+        "max_curvature": 396.7354522025699,
+        "critical_transition": 1.0
+      },
+      "adaptive_covariance": {
+        "critical_alpha": 0.0,
+        "max_susceptibility": 238.75953975488724,
+        "max_curvature": 2539.1504536748826,
+        "critical_transition": 1.0
+      },
+      "feedback_coupling": {
+        "critical_alpha": 0.896551724137931,
+        "max_susceptibility": 124.34484769165425,
+        "max_curvature": 1594.9764996363172,
+        "critical_transition": 1.0
+      },
+      "temporal_integration": {
+        "critical_alpha": 1.0,
+        "max_susceptibility": 221.85443936709638,
+        "max_curvature": 2500.33465489185,
+        "critical_transition": 1.0
+      }
+    }
+  },
+  "hysteresis": {
+    "hysteresis_area": 0.8337017214170207,
+    "path_dependence": 0.05601135504775681,
+    "metastability": 0.0
+  },
+  "minimal_mechanisms": {
+    "required": [],
+    "removable": [
+      "temporal_integration",
+      "temporal_integration",
+      "temporal_integration"
+    ]
+  },
+  "universality": {
+    "cross_system_stability": 0.8085287883337292,
+    "noise_robustness": 0.9365758790993594
+  },
+  "analytic_law": {
+    "best_equation": "eff_rank = 3.360 * alpha^-0.482",
+    "fit_error": Infinity
+  },
+  "verdict": "minimal_autoregressive_sufficient"
+}
