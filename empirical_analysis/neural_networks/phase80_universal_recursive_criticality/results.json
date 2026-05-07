@@ -1,0 +1,128 @@
+{
+  "critical_surfaces": {
+    "surface_count": 160,
+    "critical_boundaries": 1865,
+    "instability_regions": 9535,
+    "critical_points": [
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.0,
+        "sigma": 0.1,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 2.3711408695497805e+64
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.0,
+        "sigma": 0.3,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 1.977350790968246e+66
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.0,
+        "sigma": 0.5,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 7.401533325499777e+66
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.26666666666666666,
+        "sigma": 0.1,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 1.4187331838544718e+65
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.26666666666666666,
+        "sigma": 0.3,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 2.826327530656692e+64
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.26666666666666666,
+        "sigma": 0.5,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 2.6689156928347178e+66
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.5333333333333333,
+        "sigma": 0.1,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 5.877324849690943e+63
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.5333333333333333,
+        "sigma": 0.3,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 1.3848564400136684e+66
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.5333333333333333,
+        "sigma": 0.5,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 1.4198188368738737e+66
+      },
+      {
+        "system": "linear_ar",
+        "beta": 1,
+        "gamma": 0.0,
+        "eta": 0.8,
+        "sigma": 0.1,
+        "critical_alpha": 1.5,
+        "max_susceptibility": 7.03942411755222e+61
+      }
+    ]
+  },
+  "scaling": {
+    "best_scaling_law": "logarithmic",
+    "critical_exponents": 133.54827741728127,
+    "universality_score": -1.3100631690576847e-14
+  },
+  "fixed_points": {
+    "attractors": 11520,
+    "repellors": 9535,
+    "bifurcations": 1920
+  },
+  "hysteresis": {
+    "path_dependence": 1.7541470136895276,
+    "metastability": 1.0,
+    "memory_persistence": 0.058044359830302004
+  },
+  "minimal_equation": {
+    "best_equation": "eff_rank = 0.000*alpha^2 + ... (quadratic)",
+    "fit_error": 0.701892750629492,
+    "closed_form_detected": false,
+    "analytic_equation": "\u03a3(t+1) = \u03b1\u00b2\u03a3(t) + \u03c3\u00b2 \u2192 \u03a3* = \u03c3\u00b2/(1-\u03b1\u00b2) for |\u03b1|<1, diverges for |\u03b1|\u22651",
+    "transition_condition": "|\u03b1| = 1 (critical boundary)",
+    "critical_exponent_analytic": -1
+  },
+  "universality": {
+    "cross_system_stability": 0.6023781746795634,
+    "noise_robustness": 0.9638706874171854,
+    "dimension_robustness": 0.9544885651940612
+  },
+  "verdict": "complex_criticality_emergent"
+}
