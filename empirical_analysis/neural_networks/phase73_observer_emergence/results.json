@@ -1,0 +1,59 @@
+{
+  "observer_prediction": {
+    "best_model": "gradient_boosting",
+    "r2": 0.9963868029676669,
+    "mae": 0.16725741023218327,
+    "all_results": {
+      "linear": {
+        "r2": 0.9306247173925661,
+        "mae": 1.9987326891025847
+      },
+      "random_forest": {
+        "r2": 0.9902423765366486,
+        "mae": 0.2599431320164798
+      },
+      "gradient_boosting": {
+        "r2": 0.9963868029676669,
+        "mae": 0.16725741023218327
+      },
+      "ridge": {
+        "r2": 0.7440389175721922,
+        "mae": 2.8532663252794257
+      }
+    }
+  },
+  "interventions": {
+    "A": {
+      "delta_var_x1": 8.881784197001252e-16,
+      "delta_self_ref": 0.000340834009058405
+    },
+    "B": {
+      "delta_var_x1": 0.009227480084559758,
+      "delta_self_ref": 0.00019347416173282062
+    },
+    "C": {
+      "delta_var_x1": 0.7959835352286784,
+      "delta_self_ref": 0.8005396421843729
+    },
+    "D": {
+      "delta_var_x1": 0.24253152108514087,
+      "delta_self_ref": 0.04219689967686918
+    }
+  },
+  "observer_rg": {
+    "fixed_points": 8,
+    "attractors": 8,
+    "collapse_regions": 0,
+    "critical_threshold": 0.0005452530363743661
+  },
+  "thresholds": {
+    "prediction": 0.9291651577578872,
+    "self_model": 0.8847255941240763,
+    "observer_coherence": NaN
+  },
+  "phase_agreement": {
+    "with_group": 0.7058823529411765,
+    "with_geometry": 0.7058823529411765
+  },
+  "verdict": "observer_emergence_origin"
+}
