@@ -1,0 +1,33 @@
+{
+  "phase": 66,
+  "model_performance": {
+    "info_only_r2": -3516.083454,
+    "info_only_mae": 0.223701,
+    "spectral_only_r2": -815.916152,
+    "spectral_only_mae": 0.179456,
+    "combined_r2": -4302.763386,
+    "combined_mae": 0.251539
+  },
+  "information_latent_space": {
+    "intrinsic_dimension": 4,
+    "variance_explained": 1.0,
+    "cluster_separation": 3
+  },
+  "tail_correlations": {
+    "entropy": -0.857924,
+    "fisher": -0.886401,
+    "kl_divergence": -0.846583,
+    "mutual_information": -0.770892
+  },
+  "universal_collapse": {
+    "best_parameter": "combined",
+    "r2": 0.181644,
+    "mae": 0.175388
+  },
+  "interventions": {
+    "entropy_preserve_cov_scramble": 0.019755,
+    "cov_preserve_entropy_distort": 0.351617,
+    "tail_preserve_gaussianize": 0.101296
+  },
+  "verdict": "covariance_geometry"
+}
