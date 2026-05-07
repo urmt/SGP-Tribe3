@@ -1,0 +1,20 @@
+{
+  "invariant_rankings": {
+    "unique_x1": 0.9338,
+    "effective_rank": 0.9072,
+    "participation_ratio": 0.8179,
+    "var_x1": 0.7299,
+    "fisher_metric": 0.6302
+  },
+  "meta_geometry": {
+    "intrinsic_dim": 1,
+    "clusters": 3
+  },
+  "law_r2": 1.0,
+  "falsification": {
+    "broken": 2,
+    "stable": 0
+  },
+  "U_final": 0.5549,
+  "verdict": "partial_universal_organization"
+}
