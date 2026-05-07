@@ -1,0 +1,81 @@
+{
+  "phase_count": {
+    "kmeans": 3,
+    "gmm": 3,
+    "spectral": 3,
+    "dbscan": 6
+  },
+  "phase_types": {
+    "0": "ordered",
+    "1": "ordered",
+    "2": "ordered"
+  },
+  "phase_stats": {
+    "phase_0": {
+      "var_x1_mean": 7.368398128719934,
+      "var_x1_std": 6.164114436422306,
+      "unique_x1_mean": 4.0,
+      "latent_dim_mean": 1.0,
+      "kurtosis_mean": 8.334669160159441,
+      "entropy_mean": 5.616000799470053,
+      "effective_rank_mean": 30.171326340821192,
+      "fisher_metric_mean": 18.897115305552806,
+      "count": 27,
+      "type": "ordered"
+    },
+    "phase_1": {
+      "var_x1_mean": 10.173662847181998,
+      "var_x1_std": 5.8488418192485625,
+      "unique_x1_mean": 4.0,
+      "latent_dim_mean": 1.0,
+      "kurtosis_mean": -0.39020612267755067,
+      "entropy_mean": 6.323418468555874,
+      "effective_rank_mean": 5.763436677925674,
+      "fisher_metric_mean": 24.937185433116294,
+      "count": 12,
+      "type": "ordered"
+    },
+    "phase_2": {
+      "var_x1_mean": 8.69279177544219,
+      "var_x1_std": 2.2725931594337228,
+      "unique_x1_mean": 4.0,
+      "latent_dim_mean": 1.0,
+      "kurtosis_mean": 103.74682253013694,
+      "entropy_mean": 0.2827192475630228,
+      "effective_rank_mean": 13.944122362779074,
+      "fisher_metric_mean": 3.717514407769266,
+      "count": 5,
+      "type": "ordered"
+    }
+  },
+  "boundaries": {
+    "boundary_count": 2,
+    "boundary_dimension": 1,
+    "boundary_sharpness": 2.9193403875591004
+  },
+  "criticality": {
+    "scaling_model": "power_law",
+    "critical_exponent": 0.26934952423106023
+  },
+  "rg_structure": {
+    "attractors": 3,
+    "repellors": 0,
+    "saddles": 0
+  },
+  "topology": {
+    "mean_betti0": {
+      "phase_0": 113,
+      "phase_1": 102,
+      "phase_2": 15
+    },
+    "overall_components": 3
+  },
+  "universal_coordinates": {
+    "minimal_dimension": 6,
+    "reconstruction_error": 0.7499007683532362,
+    "r2_1d": 0.11224456490955281,
+    "r2_2d": 0.1287653173973723,
+    "r2_3d": 0.25009923164676384
+  },
+  "verdict": "loosely_organized_phase_structure"
+}
