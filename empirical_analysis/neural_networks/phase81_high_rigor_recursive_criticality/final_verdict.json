@@ -1,0 +1,61 @@
+{
+  "surviving_effects": {
+    "cross_domain_accuracy": 0.6785714285714286,
+    "cross_domain_auroc": 0.5,
+    "passing_criticality_domains": [
+      "language"
+    ],
+    "nested_cv": 0.6188562776613091
+  },
+  "failed_effects": {
+    "failed_combinations": 12,
+    "permutation_false_positive_rate": 0.6187500000000001
+  },
+  "generalization_results": {
+    "best": 1.0,
+    "worst": 0.0,
+    "std": 0.4374088826398532
+  },
+  "null_model_results": {
+    "covariance_only": 0.020204499347491217,
+    "spectrum_only": 5.91593046541074,
+    "entropy_only": 1.5362248030759829,
+    "autocorr_only": 0.4519324622167049,
+    "temporal_ordering_only": 4.5
+  },
+  "reproducibility": {
+    "weather": {
+      "susceptibility": 0.03434269713943713,
+      "seed_repro": 0.9977707906875982
+    },
+    "biological": {
+      "susceptibility": 0.012839336210615993,
+      "seed_repro": 0.9966565683544848
+    },
+    "neural": {
+      "susceptibility": 0.469217222878675,
+      "seed_repro": 0.9516307928306449
+    },
+    "ecological": {
+      "susceptibility": 0.0027938207877382256,
+      "seed_repro": 0.9979993867805876
+    },
+    "network": {
+      "susceptibility": 0.2906767490647631,
+      "seed_repro": 0.9800361601040627
+    },
+    "financial": {
+      "susceptibility": 0.18234894129624624,
+      "seed_repro": 0.9880945481714645
+    },
+    "language": {
+      "susceptibility": 0.554102969544886,
+      "seed_repro": 0.8549243338306463
+    },
+    "physical": {
+      "susceptibility": 0.012008990419598574,
+      "seed_repro": 0.9931761302458839
+    }
+  },
+  "verdict": "PARTIAL_GENERALIZATION"
+}

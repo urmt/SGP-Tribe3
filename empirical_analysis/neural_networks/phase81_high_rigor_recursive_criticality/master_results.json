@@ -1,0 +1,47 @@
+{
+  "cross_domain_accuracy": 0.6785714285714286,
+  "cross_domain_auroc": 0.5,
+  "null_controls": {
+    "covariance_only": 0.020204499347491217,
+    "spectrum_only": 5.91593046541074,
+    "entropy_only": 1.5362248030759829,
+    "autocorr_only": 0.4519324622167049,
+    "temporal_ordering_only": 4.5
+  },
+  "criticality_criteria": {
+    "weather_susceptibility_peak": 0.03434269713943713,
+    "weather_scaling": 0,
+    "weather_seed_repro": 0.9977707906875982,
+    "biological_susceptibility_peak": 0.012839336210615993,
+    "biological_scaling": 0,
+    "biological_seed_repro": 0.9966565683544848,
+    "neural_susceptibility_peak": 0.469217222878675,
+    "neural_scaling": 0,
+    "neural_seed_repro": 0.9516307928306449,
+    "ecological_susceptibility_peak": 0.0027938207877382256,
+    "ecological_scaling": 0,
+    "ecological_seed_repro": 0.9979993867805876,
+    "network_susceptibility_peak": 0.2906767490647631,
+    "network_scaling": 0,
+    "network_seed_repro": 0.9800361601040627,
+    "financial_susceptibility_peak": 0.18234894129624624,
+    "financial_scaling": 0,
+    "financial_seed_repro": 0.9880945481714645,
+    "language_susceptibility_peak": 0.554102969544886,
+    "language_scaling": 1,
+    "language_seed_repro": 0.8549243338306463,
+    "physical_susceptibility_peak": 0.012008990419598574,
+    "physical_scaling": 0,
+    "physical_seed_repro": 0.9931761302458839,
+    "passing_domains": [
+      "language"
+    ]
+  },
+  "nested_cv_score": 0.6188562776613091,
+  "permutation_mean": 0.6187500000000001,
+  "baseline_score": 0.8947123223852783,
+  "ablation_results": {
+    "temporal_removed": 0.8947123223852783,
+    "spectral_removed": 0.83298392732355
+  }
+}
