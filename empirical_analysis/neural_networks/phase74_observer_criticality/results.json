@@ -1,0 +1,38 @@
+{
+  "criticality": {
+    "critical_alpha": 0.8586,
+    "max_susceptibility": 34.9927,
+    "max_curvature": 664.9246,
+    "transition_type": "discontinuous"
+  },
+  "finite_size": {
+    "critical_exponent": 0.1,
+    "collapse_error": 0.6313,
+    "sizes_tested": [64, 128, 256, 512]
+  },
+  "hysteresis": {
+    "hysteresis_area": 1.3048,
+    "path_dependence": 0.5201,
+    "metastability": 1.0
+  },
+  "rg_flow": {
+    "fixed_points": 5,
+    "attractors": 4,
+    "repellors": 1,
+    "critical_surfaces": 0
+  },
+  "universality": {
+    "trajectory_correlation": 0.969,
+    "collapse_quality": 0.3687
+  },
+  "topology": {
+    "betti0": {
+      "non_observer": 1,
+      "critical": 1,
+      "observer": 6
+    },
+    "betti1": 3,
+    "phase_transition_detected": true
+  },
+  "verdict": "critical_observer_transition"
+}
