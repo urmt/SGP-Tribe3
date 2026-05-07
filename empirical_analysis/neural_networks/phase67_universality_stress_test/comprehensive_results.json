@@ -1,0 +1,127 @@
+{
+  "operator_results": {
+    "polynomial": {
+      "corr": -0.6044210856200799,
+      "distortion": 0.00036726052565721746,
+      "var_x1_new": 0.0006122440595836938,
+      "var_x1_orig": 0.0002449835339264764
+    },
+    "oscillatory": {
+      "corr": -0.6246846265721839,
+      "distortion": 7.022937951330348e-05,
+      "var_x1_new": 0.0003173571445041947,
+      "var_x1_orig": 0.0002471277649908912
+    },
+    "threshold": {
+      "corr": 0.44569718259052266,
+      "distortion": 0.00023105035998287912,
+      "var_x1_new": 4.5039307454937146e-06,
+      "var_x1_orig": 0.00023555429072837284
+    }
+  },
+  "metric_results": {
+    "euclidean": {
+      "phase_count": 3.0,
+      "latent_dimension": 1.0,
+      "var_x1": 0.00023781942439341197,
+      "unique_x1": 8.0
+    },
+    "cosine": {
+      "phase_count": 3.0,
+      "latent_dimension": 1.0,
+      "var_x1": 1.609956100180357e-11,
+      "unique_x1": 1.0
+    },
+    "correlation": {
+      "phase_count": 3.0,
+      "latent_dimension": 1.0,
+      "var_x1": 4.5055063294050465e-11,
+      "unique_x1": 1.0
+    }
+  },
+  "embedding_results": {
+    "mds": {
+      "corr": 1.0,
+      "cluster_agreement": 1.0,
+      "var_x1": 0.0002552559272563058,
+      "unique_x1": 8.0
+    },
+    "pca": {
+      "corr": -1.0,
+      "cluster_agreement": 1.0,
+      "var_x1": 0.0002552559272563059,
+      "unique_x1": 8.0
+    },
+    "isomap": {
+      "corr": -1.0,
+      "cluster_agreement": 1.0,
+      "var_x1": 0.00025525592725630594,
+      "unique_x1": 8.0
+    },
+    "spectral": {
+      "corr": 0.1571167042074407,
+      "cluster_agreement": 0.5882352941176471,
+      "var_x1": 0.053707591143240294,
+      "unique_x1": 17.0
+    },
+    "tsne": {
+      "corr": -0.9602320867645261,
+      "cluster_agreement": 0.4117647058823529,
+      "var_x1": 192949.765625,
+      "unique_x1": 15.0
+    }
+  },
+  "normalization_results": {
+    "none": {
+      "var_x1": 0.00023949154286494125,
+      "unique_x1": 8.0,
+      "cluster_count": 3.0
+    },
+    "per_sample_zscore": {
+      "var_x1": 0.00023715801256017657,
+      "unique_x1": 8.0,
+      "cluster_count": 3.0
+    },
+    "global_zscore": {
+      "var_x1": 0.00023934965081247103,
+      "unique_x1": 8.0,
+      "cluster_count": 3.0
+    },
+    "whitening": {
+      "var_x1": 0.0,
+      "unique_x1": 1.0,
+      "cluster_count": 1.0
+    },
+    "rank_normalization": {
+      "var_x1": 2.851683434049523e-05,
+      "unique_x1": 5.0,
+      "cluster_count": 3.0
+    },
+    "unit_sphere": {
+      "var_x1": 0.00018995648989736854,
+      "unique_x1": 7.0,
+      "cluster_count": 3.0
+    }
+  },
+  "topological_results": {
+    "mean_betti_0": 9.6,
+    "mean_betti_1": 0.0,
+    "betti_0_values": [
+      10,
+      10,
+      10,
+      10,
+      8
+    ]
+  },
+  "universality_results": {
+    "operator_invariance": 0.5582676315942622,
+    "metric_invariance": 0.8234697581943934,
+    "embedding_invariance": 0.8,
+    "finite_size_stability": 0.0,
+    "topology_stability": 0.9166666667534722,
+    "normalization_stability": 0.3460654797056527,
+    "U_global": 0.5740782560412968
+  },
+  "verdict": "partial_universality"
+}
