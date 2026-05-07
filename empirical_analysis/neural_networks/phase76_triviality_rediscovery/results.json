@@ -1,0 +1,50 @@
+{
+  "equivalence": {
+    "transition_similarity": 0.060721662905153434,
+    "rg_similarity": 0.7073917928029321,
+    "topology_similarity": 0.4656079851457645,
+    "universality_similarity": 0.5607216629051535
+  },
+  "reduction": {
+    "best_theory": "representation_geometry",
+    "explained_variance": 1.0,
+    "all_r2": {
+      "covariance_geometry": 0.0,
+      "information_geometry": 0.01604604617294214,
+      "attractor_geometry": 0.006525105243540774,
+      "criticality_theory": 0.0047560109840059095,
+      "representation_geometry": 1.0
+    }
+  },
+  "minimal_explanation": {
+    "minimal_set": [
+      "var_x1",
+      "self_model"
+    ],
+    "r2_by_features": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    }
+  },
+  "novelty": {
+    "residual_novelty": 0.0,
+    "unexplained_std": 1.271187257375724e-15,
+    "unexplained_obs": 6.252286414877358e-16
+  },
+  "literature_overlap": {
+    "active_inference": 0.714939973007112,
+    "criticality": 0.12144332581030687,
+    "information_geometry": 0.01604604617294214,
+    "representation_geometry": 1.0
+  },
+  "blind_geometry": {
+    "clustering_accuracy": 0.75,
+    "phase_separation": -0.0764977298333404
+  },
+  "verdict": {
+    "observer_transition_status": "observer_transition_confirmed",
+    "novelty_status": "rediscovery"
+  }
+}
