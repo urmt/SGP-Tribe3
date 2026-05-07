@@ -1,0 +1,13 @@
+{
+  "controls": {
+    "shuffled_temporal": 0.9937106918238993,
+    "preserve_covariance": 0.4807826694619148,
+    "preserve_spectrum": 0.5312136035406475,
+    "randomized_recurrence": 0.863964593524342
+  },
+  "ablation": {
+    "remove_temporal": 0.9937106918238993,
+    "remove_spectral": 0.7690426275331936,
+    "remove_statistical": 0.9937106918238993
+  }
+}

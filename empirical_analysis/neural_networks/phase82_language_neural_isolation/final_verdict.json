@@ -1,0 +1,33 @@
+{
+  "cross_domain": {
+    "language_to_neural": {
+      "accuracy": 0.5,
+      "auroc": 0.5
+    },
+    "neural_to_language": {
+      "accuracy": 0.5,
+      "auroc": 0.5
+    }
+  },
+  "controls": {
+    "shuffled_temporal": 0.9937106918238993,
+    "preserve_covariance": 0.4807826694619148,
+    "preserve_spectrum": 0.5312136035406475,
+    "randomized_recurrence": 0.863964593524342
+  },
+  "ablation": {
+    "remove_temporal": 0.9937106918238993,
+    "remove_spectral": 0.7690426275331936,
+    "remove_statistical": 0.9937106918238993
+  },
+  "permutation": {
+    "mean": 0.5890625
+  },
+  "bootstrap": {
+    "mean": 0.997682273468437,
+    "ci_lower": 0.9874213836477987,
+    "ci_upper": 1.0,
+    "n_bootstrap": 100
+  },
+  "verdict": "NO_STRUCTURE"
+}

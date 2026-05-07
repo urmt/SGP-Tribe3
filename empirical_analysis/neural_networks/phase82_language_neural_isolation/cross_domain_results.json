@@ -1,0 +1,12 @@
+[
+  {
+    "direction": "language_to_neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "direction": "neural_to_language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  }
+]
