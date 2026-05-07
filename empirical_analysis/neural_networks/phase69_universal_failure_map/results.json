@@ -1,0 +1,51 @@
+{
+  "failure_clusters": {
+    "cluster_count": 3,
+    "silhouette": 0.44744901862496694,
+    "davies_bouldin": 0.8416124585612925
+  },
+  "failure_drivers": {
+    "fisher_metric": 0.18427115002459946,
+    "total_variance": 0.17930039565397116,
+    "entropy": 0.14860911191023274,
+    "skewness": 0.14727450900967956,
+    "effective_rank": 0.1028571961206031,
+    "kurtosis": 0.09109622844148971,
+    "participation_ratio": 0.0861545173916569,
+    "top_fraction": 0.06043689144776746
+  },
+  "critical_boundaries": {
+    "kurtosis": -1.62661007309487,
+    "effective_rank": 1.8916563533749908,
+    "entropy": 3.601953864287787,
+    "participation_ratio": 1.2205701286641155
+  },
+  "adversarial_results": [
+    {
+      "system": "extreme_heavy_tail",
+      "error": "matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 32 is different from 10)"
+    },
+    {
+      "system": "sparse_spikes",
+      "error": "matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 32 is different from 10)"
+    },
+    {
+      "system": "hierarchical_cov",
+      "error": "matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 32 is different from 10)"
+    },
+    {
+      "system": "discontinuous",
+      "error": "matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 32 is different from 10)"
+    },
+    {
+      "system": "multi_scale",
+      "error": "matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 32 is different from 10)"
+    }
+  ],
+  "meta_universality": {
+    "failure_geometry_dimension": 1,
+    "failure_cluster_count": 2,
+    "failure_topology": "discrete"
+  },
+  "verdict": "diffuse_failure_manifold"
+}
