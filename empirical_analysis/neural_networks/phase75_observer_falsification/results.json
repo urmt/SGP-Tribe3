@@ -1,0 +1,96 @@
+{
+  "destruction_test": {
+    "A": {
+      "delta_var_x1": 0.0,
+      "collapsed": false
+    },
+    "B": {
+      "delta_var_x1": 0.0,
+      "collapsed": false
+    },
+    "C": {
+      "delta_var_x1": NaN,
+      "collapsed": false
+    },
+    "D": {
+      "delta_var_x1": 0.0,
+      "collapsed": false
+    },
+    "E": {
+      "delta_var_x1": 0.0,
+      "collapsed": false
+    }
+  },
+  "alternative_models": {
+    "best_model": "all_features",
+    "best_r2": 0.16667258479729985
+  },
+  "blind_classification": {
+    "accuracy": 1.0,
+    "auroc": 1.0,
+    "calibration": 0.15299508006352328
+  },
+  "cross_domain": {
+    "generalization_score": 1.0,
+    "failures": 0,
+    "domain_scores": {
+      "coupled_osc": {
+        "var_x1": 2.992101202463861,
+        "would_be_observer": 1.0
+      },
+      "reaction_diff": {
+        "var_x1": 11.243751445554164,
+        "would_be_observer": 1.0
+      },
+      "game_like": {
+        "var_x1": 3.635487561091179,
+        "would_be_observer": 1.0
+      },
+      "symbolic": {
+        "var_x1": 3.6928378587057638,
+        "would_be_observer": 1.0
+      }
+    }
+  },
+  "null_models": {
+    "null_transition_rate": 0.0,
+    "criticality_match": 1.0
+  },
+  "replication": {
+    "replication_stability": 0.9184635085008965,
+    "threshold_variation": 0.08153649149910351,
+    "results": [
+      {
+        "seed": 42,
+        "critical_alpha": 0.7894736842105263,
+        "max_deriv": 4.9400522428754226
+      },
+      {
+        "seed": 123,
+        "critical_alpha": 0.8421052631578947,
+        "max_deriv": 4.1552672612570944
+      },
+      {
+        "seed": 456,
+        "critical_alpha": 0.7894736842105263,
+        "max_deriv": 3.0823291927962746
+      },
+      {
+        "seed": 789,
+        "critical_alpha": 1.0,
+        "max_deriv": 4.104877819394583
+      },
+      {
+        "seed": 1000,
+        "critical_alpha": 0.7894736842105263,
+        "max_deriv": 4.610428845023067
+      }
+    ]
+  },
+  "bayesian_evidence": {
+    "bayes_factor": 0.23478149418496735,
+    "posterior_probability": 0.1901401159949783,
+    "robustness_score": 0.9688246523586604
+  },
+  "verdict": "observer_transition_weak"
+}
