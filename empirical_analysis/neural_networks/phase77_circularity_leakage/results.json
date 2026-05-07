@@ -1,0 +1,46 @@
+{
+  "feature_independence": {
+    "max_mutual_information": 0.9682536996439142,
+    "conditional_independence_score": 0.8593745454952098,
+    "redundancy_ratio": 0.9746667015605734
+  },
+  "ablation": {
+    "observer_without_geometry": 1.0,
+    "geometry_without_observer": 0.8906162139840986
+  },
+  "orthogonalization": {
+    "transition_survival": NaN,
+    "residual_transition_strength": NaN
+  },
+  "random_controls": {
+    "random_feature_transition_rate": NaN,
+    "matched_random_accuracy": 0.6535443526542124
+  },
+  "label_leakage": {
+    "false_positive_rate": 0.22499999999999998,
+    "shuffled_accuracy": 0.725
+  },
+  "causality": {
+    "directionality_score": 0.0,
+    "causal_asymmetry": 0.0
+  },
+  "embeddings": {
+    "embedding_stability": 0.07856556313792695,
+    "embedding_dependence": 0.7098007810778608,
+    "per_embedding": {
+      "pca": 0.09309055705661021,
+      "mds": 0.11780317617775744,
+      "isomap": 0.27072974395914556
+    }
+  },
+  "raw_data": {
+    "raw_covariance_accuracy": 1.0,
+    "raw_spectrum_accuracy": 1.0,
+    "raw_moment_accuracy": 0.8
+  },
+  "pipeline_nulls": {
+    "artifact_rate": 1.0,
+    "pipeline_false_transition_rate": 0.2
+  },
+  "verdict": "circularity_detected"
+}
