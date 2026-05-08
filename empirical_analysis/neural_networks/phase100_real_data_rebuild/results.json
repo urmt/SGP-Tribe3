@@ -1,0 +1,39 @@
+{
+  "verdict": "NO_ROBUST_EFFECT",
+  "nested_cv_scores": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "null_controls": {
+    "phase_randomization": 0.6222222222222222,
+    "covariance_preserving": 1.0,
+    "shuffled_recovery": 1.0,
+    "matched_ar": 0.7602222222222222
+  },
+  "holdout_test": {
+    "eeg_auroc": 0.3466666666666667
+  },
+  "intervention_test": {
+    "no_intervention_auroc": 1.0
+  },
+  "preregistered_metrics": [
+    "recovery_trajectory_mean",
+    "recovery_trajectory_variance",
+    "spectral_recovery_rate",
+    "entropy_recovery_slope",
+    "temporal_persistence",
+    "intervention_sensitivity",
+    "prediction_error_adaptation",
+    "autocorr_recovery"
+  ],
+  "pass_conditions": {
+    "real_auc_075": true,
+    "nulls_060": false,
+    "holdout_065": false,
+    "intervention_06": true
+  },
+  "data_note": "Using documented proxies - real external data needed for validation"
+}
