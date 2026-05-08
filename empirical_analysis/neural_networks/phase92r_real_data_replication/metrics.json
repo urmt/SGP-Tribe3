@@ -1,0 +1,37 @@
+{
+  "ood_mean_auc": 0.6135347222222223,
+  "cv_results": {
+    "EEG": {
+      "real": 1.0,
+      "perm": 0.491712962962963,
+      "effect": 0.5082870370370369
+    },
+    "Financial": {
+      "real": 1.0,
+      "perm": 0.4861111111111111,
+      "effect": 0.5138888888888888
+    },
+    "Ecological": {
+      "real": 1.0,
+      "perm": 0.49062500000000003,
+      "effect": 0.5093749999999999
+    },
+    "Language": {
+      "real": 1.0,
+      "perm": 0.4867129629629629,
+      "effect": 0.513287037037037
+    },
+    "Physiological": {
+      "real": 1.0,
+      "perm": 0.4927777777777777,
+      "effect": 0.5072222222222222
+    }
+  },
+  "controls": {
+    "temporal_shuffle": 0.8791666666666667,
+    "phase_randomization": 0.9819444444444445,
+    "covariance_preservation": 0.5625,
+    "spectrum_preservation": 0.8347222222222221
+  },
+  "verdict": "NO_ROBUST_SIGNAL"
+}

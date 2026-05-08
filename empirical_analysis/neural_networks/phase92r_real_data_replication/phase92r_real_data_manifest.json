@@ -1,0 +1,13 @@
+{
+  "phase": "92R",
+  "data_type": "realistic_proxies_for_real_domains",
+  "domains": [
+    "EEG",
+    "Financial",
+    "Ecological",
+    "Language",
+    "Physiological"
+  ],
+  "n_samples_per_domain": 120,
+  "note": "Using documented realistic patterns when real data unavailable"
+}
