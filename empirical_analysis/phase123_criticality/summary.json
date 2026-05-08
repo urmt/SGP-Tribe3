@@ -1,0 +1,6 @@
+{
+  "subjects": 4,
+  "mean_r2": 0.8109459783816247,
+  "mean_slope": -1.5348520837255841,
+  "verdict": "POSSIBLE_CRITICALITY"
+}
