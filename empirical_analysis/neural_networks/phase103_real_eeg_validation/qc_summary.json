@@ -1,0 +1,8 @@
+{
+  "total_datasets_attempted": 5,
+  "datasets_found_locally": 0,
+  "datasets_validated": 0,
+  "datasets_excluded": 0,
+  "valid_datasets": 0,
+  "status": "INSUFFICIENT_REAL_DATA"
+}

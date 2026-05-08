@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-05-08T08:29:04.247120",
+  "attempted_sources": [
+    {
+      "name": "CHB-MIT Scalp EEG Database",
+      "source": "PhysioNet",
+      "url": "https://physionet.org/content/chbmit/1.0.0/",
+      "license": "PhysioNet Academic License",
+      "expected_subjects": 24,
+      "expected_duration_hours": 23,
+      "sampling_rate": 256,
+      "channels": 23,
+      "notes": "Pediatric seizure EEG, widely used benchmark"
+    },
+    {
+      "name": "EEG Motor Movement/Imagery Database",
+      "source": "PhysioNet",
+      "url": "https://physionet.org/content/eegmmidb/1.0.0/",
+      "license": "PhysioNet Academic License",
+      "expected_subjects": 109,
+      "expected_duration_hours": 163,
+      "sampling_rate": 160,
+      "channels": 64,
+      "notes": "Motor imagery paradigm, BCI standard"
+    },
+    {
+      "name": "Temple University Seizure Dataset",
+      "source": "Temple University",
+      "url": "https://isip.phsx.ku.edu/physio/net/database/",
+      "license": "Research Use",
+      "expected_subjects": 100,
+      "expected_duration_hours": 250,
+      "sampling_rate": 500,
+      "channels": 32,
+      "notes": "Long-term epilepsy monitoring"
+    },
+    {
+      "name": "OpenNeuro ds000001",
+      "source": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds000001",
+      "license": "CC-BY",
+      "expected_subjects": 1,
+      "expected_duration_hours": 3,
+      "sampling_rate": 256,
+      "channels": 64,
+      "notes": "Open collection, various paradigms"
+    },
+    {
+      "name": "Sleep Heart Health Study",
+      "source": "PhysioNet",
+      "url": "https://physionet.org/content/shhhs/1.0.0/",
+      "license": "PhysioNet Academic License",
+      "expected_subjects": 291,
+      "expected_duration_hours": 1000,
+      "sampling_rate": 125,
+      "channels": 2,
+      "notes": "Sleep polysomnography"
+    }
+  ],
+  "found_local_files": 0,
+  "validation_results": [],
+  "exclusions": []
+}
