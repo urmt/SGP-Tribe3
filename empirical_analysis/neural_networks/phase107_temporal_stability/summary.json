@@ -1,0 +1,7 @@
+{
+  "files_downloaded": 2,
+  "files_readable": 0,
+  "issue": "pyedflib required to parse EDF format - raw float reading gives invalid data",
+  "verdict": "DATA_AVAILABLE_BUT_UNREADABLE",
+  "recommendation": "Install pyedflib: pip install pyedflib"
+}
