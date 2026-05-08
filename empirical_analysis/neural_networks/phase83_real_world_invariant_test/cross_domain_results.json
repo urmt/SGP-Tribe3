@@ -1,0 +1,2354 @@
+[
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "ecology",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "language",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "climate",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "financial",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "neural",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "physics",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "social",
+    "test": "genomics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "physics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "ecology",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "language",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "climate",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "financial",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "neural",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "physics",
+    "valid": "genomics",
+    "test": "social",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "ecology",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "language",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "climate",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "financial",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "neural",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "genomics",
+    "valid": "social",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "ecology",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "language",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "climate",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "financial",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "neural",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  },
+  {
+    "train": "social",
+    "valid": "genomics",
+    "test": "physics",
+    "accuracy": 0.5,
+    "auroc": 0.5
+  }
+]

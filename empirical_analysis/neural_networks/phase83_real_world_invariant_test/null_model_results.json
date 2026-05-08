@@ -1,0 +1,9 @@
+{
+  "shuffled_temporal": 0.1437301117963448,
+  "preserve_covariance": 0.13128326434062684,
+  "preserve_spectrum": 0.14249105910844526,
+  "preserve_entropy": 0.35876676710502853,
+  "randomized_recurrence": 1.0,
+  "random_fourier_phase": 0.8763669473308738,
+  "bootstrap_permutation": 0.10037471957046176
+}
