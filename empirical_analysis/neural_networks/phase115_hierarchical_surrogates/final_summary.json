@@ -1,0 +1,7 @@
+{
+  "phase_auc": 0.7829044149843708,
+  "interpretation": "Real EEG phase structure is distinguishable from phase-randomized surrogates - robust temporal organization exists",
+  "verdict": "PHASE_SENSITIVE",
+  "n_subjects": 5,
+  "n_windows": 5
+}
