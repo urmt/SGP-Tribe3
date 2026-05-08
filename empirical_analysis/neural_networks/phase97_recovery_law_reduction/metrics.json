@@ -1,0 +1,187 @@
+{
+  "domain_results": {
+    "Ecological": {
+      "Exponential": {
+        "mean_r_squared": 0.03825440194547786,
+        "std_r_squared": 0.034354404403587314,
+        "n_success": 50
+      },
+      "DampedHarmonic": {
+        "mean_r_squared": 0.0894161876786495,
+        "std_r_squared": 0.04866565491833338,
+        "n_success": 50
+      },
+      "Diffusion": {
+        "mean_r_squared": 0.030841493152434608,
+        "std_r_squared": 0.031051428487144563,
+        "n_success": 50
+      },
+      "PowerLaw": {
+        "mean_r_squared": 0.031210106764553987,
+        "std_r_squared": 0.03253355571650295,
+        "n_success": 50
+      }
+    },
+    "Physiological": {
+      "Exponential": {
+        "mean_r_squared": 0.03894275267124111,
+        "std_r_squared": 0.03981666188587414,
+        "n_success": 50
+      },
+      "DampedHarmonic": {
+        "mean_r_squared": 0.07794888985623165,
+        "std_r_squared": 0.05687208794302234,
+        "n_success": 50
+      },
+      "Diffusion": {
+        "mean_r_squared": 0.03085456868362172,
+        "std_r_squared": 0.042035451820168254,
+        "n_success": 50
+      },
+      "PowerLaw": {
+        "mean_r_squared": 0.0328980010467373,
+        "std_r_squared": 0.03581041593433489,
+        "n_success": 50
+      }
+    },
+    "Network": {
+      "Exponential": {
+        "mean_r_squared": 0.040765902947555686,
+        "std_r_squared": 0.041673240148272186,
+        "n_success": 50
+      },
+      "DampedHarmonic": {
+        "mean_r_squared": 0.07979395009418318,
+        "std_r_squared": 0.057536031223686356,
+        "n_success": 50
+      },
+      "Diffusion": {
+        "mean_r_squared": 0.033420994669721635,
+        "std_r_squared": 0.036302599997904327,
+        "n_success": 50
+      },
+      "PowerLaw": {
+        "mean_r_squared": 0.03063807751928026,
+        "std_r_squared": 0.034534369512538465,
+        "n_success": 50
+      }
+    },
+    "Financial": {
+      "Exponential": {
+        "mean_r_squared": 0.0338772324554206,
+        "std_r_squared": 0.02656795451475794,
+        "n_success": 50
+      },
+      "DampedHarmonic": {
+        "mean_r_squared": 0.08547801663179994,
+        "std_r_squared": 0.047186228240054306,
+        "n_success": 50
+      },
+      "Diffusion": {
+        "mean_r_squared": 0.028121383079528293,
+        "std_r_squared": 0.028350148875909236,
+        "n_success": 50
+      },
+      "PowerLaw": {
+        "mean_r_squared": 0.029187840108209285,
+        "std_r_squared": 0.02440369308623267,
+        "n_success": 50
+      }
+    },
+    "Climate": {
+      "Exponential": {
+        "mean_r_squared": 0.028525469703308996,
+        "std_r_squared": 0.02686344559918845,
+        "n_success": 50
+      },
+      "DampedHarmonic": {
+        "mean_r_squared": 0.08609977292415091,
+        "std_r_squared": 0.05311830650520156,
+        "n_success": 50
+      },
+      "Diffusion": {
+        "mean_r_squared": 0.029135148620239103,
+        "std_r_squared": 0.027839740646352428,
+        "n_success": 50
+      },
+      "PowerLaw": {
+        "mean_r_squared": 0.021397048899578334,
+        "std_r_squared": 0.027042422216409755,
+        "n_success": 50
+      }
+    }
+  },
+  "best_models": {
+    "Ecological": {
+      "model": "DampedHarmonic",
+      "r2": 0.0894161876786495
+    },
+    "Physiological": {
+      "model": "DampedHarmonic",
+      "r2": 0.07794888985623165
+    },
+    "Network": {
+      "model": "DampedHarmonic",
+      "r2": 0.07979395009418318
+    },
+    "Financial": {
+      "model": "DampedHarmonic",
+      "r2": 0.08547801663179994
+    },
+    "Climate": {
+      "model": "DampedHarmonic",
+      "r2": 0.08609977292415091
+    }
+  },
+  "residual_structure": {
+    "Ecological": {
+      "residual_ac1": -0.458632575986603,
+      "residual_var": 1.276659549090742,
+      "best_model_r2": 0.0894161876786495
+    },
+    "Physiological": {
+      "residual_ac1": -0.4583713171782765,
+      "residual_var": 1.6315197258586716,
+      "best_model_r2": 0.07794888985623165
+    },
+    "Network": {
+      "residual_ac1": -0.32572007277266285,
+      "residual_var": 1.156033271407517,
+      "best_model_r2": 0.07979395009418318
+    },
+    "Financial": {
+      "residual_ac1": -0.5549283174917152,
+      "residual_var": 1.9990561978988919,
+      "best_model_r2": 0.08547801663179994
+    },
+    "Climate": {
+      "residual_ac1": -0.5737688897794104,
+      "residual_var": 1.4923212450622225,
+      "best_model_r2": 0.08609977292415091
+    }
+  },
+  "model_consistency": {
+    "Exponential": {
+      "mean": 0.036073151944600854,
+      "std": 0.004400089578426057,
+      "cv": 0.12197685372937453
+    },
+    "PowerLaw": {
+      "mean": 0.02906621486767183,
+      "std": 0.004014486500871932,
+      "cv": 0.13811521448562705
+    },
+    "Diffusion": {
+      "mean": 0.030474717641109074,
+      "std": 0.001805103218098137,
+      "cv": 0.05923281190976149
+    }
+  },
+  "verdict": "CROSS_DOMAIN_RECOVERY_INVARIANT",
+  "analysis": {
+    "avg_best_r2": 0.08374736343700304,
+    "mean_residual_ac": 0.47428423464173364,
+    "n_domains": 5,
+    "n_trajectories_per_domain": 50
+  }
+}
