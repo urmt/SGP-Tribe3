@@ -1,0 +1,7 @@
+{
+  "subjects": 4,
+  "mean_trans_ent": 2.5509918375905265,
+  "mean_self_prob": 0.48891659683950894,
+  "mean_mi_gain": 0.1729791656652818,
+  "verdict": "STRUCTURED_TRANSITIONS"
+}
