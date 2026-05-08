@@ -1,0 +1,22 @@
+{
+  "phase": 105,
+  "status": "NETWORK_TIMEOUT",
+  "valid_datasets": 0,
+  "results": [
+    {
+      "dataset": "EEGMMIDB",
+      "url": "https://physionet.org/files/eegmmidb/1.0.0/S001/S001R01.edf",
+      "downloaded": false,
+      "validated": false,
+      "reason": "timeout - network access unavailable"
+    },
+    {
+      "dataset": "CHBMIT", 
+      "url": "https://physionet.org/files/chbmit/1.0.0/chb01/chb01_01.edf",
+      "downloaded": false,
+      "validated": false,
+      "reason": "timeout - network access unavailable"
+    }
+  ],
+  "note": "Network access to PhysioNet not available in this environment"
+}
