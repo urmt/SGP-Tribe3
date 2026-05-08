@@ -1,0 +1,16 @@
+{
+  "mean_auroc": 1.0,
+  "std_auroc": 0.0,
+  "shuffle_mean": 0.8979027777777778,
+  "shuffle_std": 0.016643635151293825,
+  "feature_importance": {
+    "variance": 0.136,
+    "autocorr1": 0.0,
+    "autocorr5": 0.194,
+    "spectral_entropy": 0.136,
+    "eig_max": 0.15,
+    "eig_min": 0.156,
+    "eig_mean": 0.106,
+    "mean_abs_diff": 0.122
+  }
+}
