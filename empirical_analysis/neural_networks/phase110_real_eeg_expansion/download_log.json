@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://physionet.org/files/eegmmidb/1.0.0/S001/S001R04.edf?download=1",
+    "status": "success",
+    "file": "S001R04.edf"
+  },
+  {
+    "url": "https://physionet.org/files/eegmmidb/1.0.0/S002/S002R04.edf?download=1",
+    "status": "success",
+    "file": "S002R04.edf"
+  },
+  {
+    "url": "https://physionet.org/files/eegmmidb/1.0.0/S003/S003R04.edf?download=1",
+    "status": "success",
+    "file": "S003R04.edf"
+  },
+  {
+    "url": "https://physionet.org/files/eegmmidb/1.0.0/S004/S004R04.edf?download=1",
+    "status": "success",
+    "file": "S004R04.edf"
+  }
+]
