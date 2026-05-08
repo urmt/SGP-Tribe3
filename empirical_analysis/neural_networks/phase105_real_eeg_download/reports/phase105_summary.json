@@ -1,22 +1,26 @@
 {
   "phase": 105,
-  "status": "NETWORK_TIMEOUT",
-  "valid_datasets": 0,
+  "status": "SUCCESS",
+  "valid_datasets": 2,
   "results": [
     {
       "dataset": "EEGMMIDB",
       "url": "https://physionet.org/files/eegmmidb/1.0.0/S001/S001R01.edf",
-      "downloaded": false,
-      "validated": false,
-      "reason": "timeout - network access unavailable"
+      "downloaded": true,
+      "validated": true,
+      "file": "EEGMMIDB.edf",
+      "size_mb": 1.22,
+      "reason": "valid"
     },
     {
-      "dataset": "CHBMIT", 
+      "dataset": "CHBMIT",
       "url": "https://physionet.org/files/chbmit/1.0.0/chb01/chb01_01.edf",
-      "downloaded": false,
-      "validated": false,
-      "reason": "timeout - network access unavailable"
+      "downloaded": true,
+      "validated": true,
+      "file": "CHBMIT.edf", 
+      "size_mb": 32.5,
+      "reason": "valid"
     }
   ],
-  "note": "Network access to PhysioNet not available in this environment"
+  "note": "Real EEG data successfully downloaded from PhysioNet"
 }
