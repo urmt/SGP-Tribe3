@@ -1,7 +1,7 @@
 {
-  "files_downloaded": 2,
-  "files_readable": 0,
-  "issue": "pyedflib required to parse EDF format - raw float reading gives invalid data",
-  "verdict": "DATA_AVAILABLE_BUT_UNREADABLE",
-  "recommendation": "Install pyedflib: pip install pyedflib"
+  "files": 1,
+  "pers_effect": 0.07125832969683511,
+  "coherence": 0.060420774409486844,
+  "entropy": 2.9326025728561245,
+  "verdict": "WEAK_OR_NO_TEMPORAL_STRUCTURE"
 }
