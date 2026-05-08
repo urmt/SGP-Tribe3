@@ -1,0 +1,8 @@
+{
+  "iaaft_auc": 0.8598472569809467,
+  "perm_auc": 0.49920724681492823,
+  "effect_size": 0.36064001016601843,
+  "interpretation": "EEG structure survives IAAFT destruction - higher-order nonlinear temporal organization present",
+  "verdict": "HIGHER_ORDER_TEMPORAL",
+  "n_subjects": 5
+}
