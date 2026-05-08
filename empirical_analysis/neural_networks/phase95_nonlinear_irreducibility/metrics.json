@@ -1,0 +1,601 @@
+{
+  "domain_results": {
+    "EEG": {
+      "original": {
+        "PermutationEntropy": {
+          "mean": 2.88863426771127,
+          "std": 0.04133300742189913
+        },
+        "LempelZiv": {
+          "mean": 89.8625,
+          "std": 1.6335831016510913
+        },
+        "TemporalAsymmetry": {
+          "mean": 3.449623245581201e-17,
+          "std": 4.072477615104744e-17
+        },
+        "PredictionError": {
+          "mean": 0.6489780438588229,
+          "std": 0.2871494970969338
+        }
+      },
+      "IAAFT": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.893833700816277,
+          "survival_ratio": 1.0017999624123848
+        },
+        "LempelZiv": {
+          "surrogate_mean": 90.0125,
+          "survival_ratio": 1.0016692168590904
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.748855677693023e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.6116976276213734,
+          "survival_ratio": 0.9425551964504374
+        }
+      },
+      "TimeReverse": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.9066599724034363,
+          "survival_ratio": 1.0062402170096971
+        },
+        "LempelZiv": {
+          "surrogate_mean": 90.0125,
+          "survival_ratio": 1.0016692168590904
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.1004984698796678e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.5937482873522572,
+          "survival_ratio": 0.9148973420145778
+        }
+      },
+      "BlockShuffle": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.9289464399826906,
+          "survival_ratio": 1.0139554434848412
+        },
+        "LempelZiv": {
+          "surrogate_mean": 90.8375,
+          "survival_ratio": 1.0108499095840868
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.5569158652085946e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.742878400845132,
+          "survival_ratio": 1.1446895744391872
+        }
+      },
+      "NonlinearPhase": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.8466525384184203,
+          "survival_ratio": 0.9854665819892412
+        },
+        "LempelZiv": {
+          "surrogate_mean": 88.55,
+          "survival_ratio": 0.98539435248296
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.2366478324090394e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.8094881228782598,
+          "survival_ratio": 2.0
+        }
+      },
+      "AR_Surrogate": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.9199403062258016,
+          "survival_ratio": 1.0108376608504808
+        },
+        "LempelZiv": {
+          "surrogate_mean": 90.925,
+          "survival_ratio": 1.0118236194185561
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 1.9916449166854293e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.6083544529106824,
+          "survival_ratio": 0.9374037514326484
+        }
+      }
+    },
+    "Financial": {
+      "original": {
+        "PermutationEntropy": {
+          "mean": 3.1515035492601244,
+          "std": 0.010309689997504163
+        },
+        "LempelZiv": {
+          "mean": 98.4,
+          "std": 0.874642784226795
+        },
+        "TemporalAsymmetry": {
+          "mean": 3.633234355748352e-17,
+          "std": 4.900596098548094e-17
+        },
+        "PredictionError": {
+          "mean": 1.1416831655318573,
+          "std": 0.47417272800420424
+        }
+      },
+      "IAAFT": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.1502964287344413,
+          "survival_ratio": 0.9996169699615389
+        },
+        "LempelZiv": {
+          "surrogate_mean": 98.1625,
+          "survival_ratio": 0.997586382113821
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.8929097451976754e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.1828102338283273,
+          "survival_ratio": 1.0360231888654596
+        }
+      },
+      "TimeReverse": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.1522902450592527,
+          "survival_ratio": 1.0002496255475621
+        },
+        "LempelZiv": {
+          "surrogate_mean": 98.3125,
+          "survival_ratio": 0.9991107723577235
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.9488425252917884e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.2299337570644642,
+          "survival_ratio": 1.0772986711173016
+        }
+      },
+      "BlockShuffle": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.152927857688322,
+          "survival_ratio": 1.000451945684317
+        },
+        "LempelZiv": {
+          "surrogate_mean": 98.3375,
+          "survival_ratio": 0.999364837398374
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.3903247515530256e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.1713112289876988,
+          "survival_ratio": 1.0259512133929374
+        }
+      },
+      "NonlinearPhase": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.1503415329629325,
+          "survival_ratio": 0.9996312819328842
+        },
+        "LempelZiv": {
+          "surrogate_mean": 98.0375,
+          "survival_ratio": 0.996316056910569
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.208768514326128e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 3.4531986064349796,
+          "survival_ratio": 2.0
+        }
+      },
+      "AR_Surrogate": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.151489894983837,
+          "survival_ratio": 0.9999956673771506
+        },
+        "LempelZiv": {
+          "surrogate_mean": 98.125,
+          "survival_ratio": 0.9972052845528455
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.338047682556578e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.2601260989677305,
+          "survival_ratio": 1.1037441358616302
+        }
+      }
+    },
+    "Ecological": {
+      "original": {
+        "PermutationEntropy": {
+          "mean": 2.9882168017844957,
+          "std": 0.037522600613455824
+        },
+        "LempelZiv": {
+          "mean": 86.65,
+          "std": 2.17428149051589
+        },
+        "TemporalAsymmetry": {
+          "mean": 3.601298133543187e-17,
+          "std": 4.755434851319312e-17
+        },
+        "PredictionError": {
+          "mean": 0.5264439698011916,
+          "std": 0.23710371166184657
+        }
+      },
+      "IAAFT": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0084534130510425,
+          "survival_ratio": 1.0067721362300293
+        },
+        "LempelZiv": {
+          "surrogate_mean": 88.0875,
+          "survival_ratio": 1.016589728793999
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.847221650079949e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.505894406014393,
+          "survival_ratio": 2.0
+        }
+      },
+      "TimeReverse": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.000106923301268,
+          "survival_ratio": 1.0039790022965107
+        },
+        "LempelZiv": {
+          "surrogate_mean": 87.1125,
+          "survival_ratio": 1.0053375649163299
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.370591829676052e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.5048152188475726,
+          "survival_ratio": 0.9589153790444462
+        }
+      },
+      "BlockShuffle": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.013925911507221,
+          "survival_ratio": 1.0086034954717382
+        },
+        "LempelZiv": {
+          "surrogate_mean": 89.2625,
+          "survival_ratio": 1.0301500288517023
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.5086636310593968e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.6872958126806347,
+          "survival_ratio": 1.3055440884624205
+        }
+      },
+      "NonlinearPhase": {
+        "PermutationEntropy": {
+          "surrogate_mean": 2.984632172123912,
+          "survival_ratio": 0.9988004117845656
+        },
+        "LempelZiv": {
+          "surrogate_mean": 86.925,
+          "survival_ratio": 1.0031736872475474
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.404207381180353e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.7232958309915087,
+          "survival_ratio": 2.0
+        }
+      },
+      "AR_Surrogate": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0034279291290056,
+          "survival_ratio": 1.0050903693920155
+        },
+        "LempelZiv": {
+          "surrogate_mean": 87.4125,
+          "survival_ratio": 1.008799769186382
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.523149084261393e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.6252039505007015,
+          "survival_ratio": 1.187598275153206
+        }
+      }
+    },
+    "Language": {
+      "original": {
+        "PermutationEntropy": {
+          "mean": 3.0395196353501053,
+          "std": 0.030227599013184968
+        },
+        "LempelZiv": {
+          "mean": 85.0,
+          "std": 2.6879360111431225
+        },
+        "TemporalAsymmetry": {
+          "mean": 2.787237371578472e-17,
+          "std": 3.8505117412009814e-17
+        },
+        "PredictionError": {
+          "mean": 0.46544064313271305,
+          "std": 0.1927792978298272
+        }
+      },
+      "IAAFT": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.054238435121829,
+          "survival_ratio": 1.0048424756334986
+        },
+        "LempelZiv": {
+          "surrogate_mean": 87.125,
+          "survival_ratio": 1.025
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.3332319898165548e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.35461534168809,
+          "survival_ratio": 2.0
+        }
+      },
+      "TimeReverse": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0480684068699953,
+          "survival_ratio": 1.00281254031738
+        },
+        "LempelZiv": {
+          "surrogate_mean": 85.45,
+          "survival_ratio": 1.005294117647059
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.014224820734754e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.4990687756075909,
+          "survival_ratio": 1.0722500988494237
+        }
+      },
+      "BlockShuffle": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.047737577150508,
+          "survival_ratio": 1.0027036975530037
+        },
+        "LempelZiv": {
+          "surrogate_mean": 88.2,
+          "survival_ratio": 1.0376470588235294
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.813735017692545e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.6396493410747963,
+          "survival_ratio": 1.374287678810229
+        }
+      },
+      "NonlinearPhase": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0375779422977858,
+          "survival_ratio": 0.9993611842378851
+        },
+        "LempelZiv": {
+          "surrogate_mean": 85.1625,
+          "survival_ratio": 1.0019117647058824
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.6144845076904796e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.8007346118317131,
+          "survival_ratio": 2.0
+        }
+      },
+      "AR_Surrogate": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0407547657695404,
+          "survival_ratio": 1.000406357111522
+        },
+        "LempelZiv": {
+          "surrogate_mean": 85.6375,
+          "survival_ratio": 1.0075
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.840355660303928e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.5089134143838248,
+          "survival_ratio": 1.0934013217206648
+        }
+      }
+    },
+    "Physiological": {
+      "original": {
+        "PermutationEntropy": {
+          "mean": 3.0759058395772003,
+          "std": 0.02311871803825098
+        },
+        "LempelZiv": {
+          "mean": 92.425,
+          "std": 1.9350387593017355
+        },
+        "TemporalAsymmetry": {
+          "mean": 2.383155716793638e-17,
+          "std": 3.431320032735102e-17
+        },
+        "PredictionError": {
+          "mean": 0.7038725795813432,
+          "std": 0.2872126898208828
+        }
+      },
+      "IAAFT": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.078491473263871,
+          "survival_ratio": 1.0008406088552522
+        },
+        "LempelZiv": {
+          "surrogate_mean": 92.525,
+          "survival_ratio": 1.0010819583446038
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.321196279270293e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 1.3298570218656383,
+          "survival_ratio": 1.8893434130601092
+        }
+      },
+      "TimeReverse": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0795772954111817,
+          "survival_ratio": 1.0011936177586263
+        },
+        "LempelZiv": {
+          "surrogate_mean": 92.5,
+          "survival_ratio": 1.0008114687584528
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.2957306717715343e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.7582826190728259,
+          "survival_ratio": 1.0773009789979962
+        }
+      },
+      "BlockShuffle": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.085830735499104,
+          "survival_ratio": 1.0032266579146218
+        },
+        "LempelZiv": {
+          "surrogate_mean": 93.55,
+          "survival_ratio": 1.012172031376792
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 3.299228716576578e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.8350276370594021,
+          "survival_ratio": 1.1863335229738154
+        }
+      },
+      "NonlinearPhase": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.0719261543573317,
+          "survival_ratio": 0.9987061745620875
+        },
+        "LempelZiv": {
+          "surrogate_mean": 92.075,
+          "survival_ratio": 0.996213145793887
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.899013836848117e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 2.4706973177311653,
+          "survival_ratio": 2.0
+        }
+      },
+      "AR_Surrogate": {
+        "PermutationEntropy": {
+          "surrogate_mean": 3.079392014471727,
+          "survival_ratio": 1.0011333815390804
+        },
+        "LempelZiv": {
+          "surrogate_mean": 92.0875,
+          "survival_ratio": 0.9963483905869625
+        },
+        "TemporalAsymmetry": {
+          "surrogate_mean": 2.163461072652812e-17,
+          "survival_ratio": 1.0
+        },
+        "PredictionError": {
+          "surrogate_mean": 0.8217807746664544,
+          "survival_ratio": 1.16751355075551
+        }
+      }
+    }
+  },
+  "surrogate_survival": {
+    "IAAFT": {
+      "mean": 1.1461860618790112,
+      "std": 0.34417331348909597,
+      "min": 0.9425551964504374,
+      "max": 2.0
+    },
+    "TimeReverse": {
+      "mean": 1.006368030674609,
+      "std": 0.03564750891448423,
+      "min": 0.9148973420145778,
+      "max": 1.0773009789979962
+    },
+    "BlockShuffle": {
+      "mean": 1.0577965592110796,
+      "std": 0.10626561985691703,
+      "min": 0.999364837398374,
+      "max": 1.374287678810229
+    },
+    "NonlinearPhase": {
+      "mean": 1.2482487320823754,
+      "std": 0.43404614855102497,
+      "min": 0.98539435248296,
+      "max": 2.0
+    },
+    "AR_Surrogate": {
+      "mean": 1.0264400767469326,
+      "std": 0.060463516838884165,
+      "min": 0.9374037514326484,
+      "max": 1.187598275153206
+    }
+  },
+  "null_results": {
+    "PermutationEntropy": 1.0922498876241866,
+    "LempelZiv": 1.093534961154273,
+    "TemporalAsymmetry": 0.6978510000699738,
+    "PredictionError": 2.2084068167352777
+  },
+  "verdict": "FULLY_LINEARLY_REDUCIBLE",
+  "analysis": {
+    "avg_survival": 1.0970078921188016,
+    "null_survival": 1.273010666395928,
+    "n_domains": 5,
+    "n_signals_per_domain": 80,
+    "n_surrogates": 5,
+    "n_metrics": 4
+  }
+}
