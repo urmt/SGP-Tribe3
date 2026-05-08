@@ -1,0 +1,20 @@
+PHASE 101 TERMINATED - DATA NOT FOUND
+============================================================
+
+Per Phase 101 MANDATORY RULES:
+IF REAL DATA NOT FOUND: STOP, REPORT MISSING DATA
+
+Searched locations:
+  - /home/student/sgp-tribe3/data/
+  - /home/student/sgp-tribe3/empirical_analysis/neural_networks/data/
+  - /home/student/sgp-tribe3/empirical_analysis/neural_networks/
+
+Required data types:
+  - EEG recordings
+  - MEG recordings
+  - Neural population recordings
+  - Resting-state neural data
+  - Stimulation/recovery paradigms
+
+VERDICT: NO_EFFECT
+REASON: No real neural temporal data available
