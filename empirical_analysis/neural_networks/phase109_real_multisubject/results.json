@@ -1,0 +1,11 @@
+{
+  "subjects_used": 1,
+  "windows_total": 289,
+  "mean_auc": null,
+  "perm_auc": null,
+  "shuffle_auc": null,
+  "phase_auc": null,
+  "cov_auc": null,
+  "effect_size": null,
+  "verdict": "INSUFFICIENT_REAL_SUBJECTS"
+}

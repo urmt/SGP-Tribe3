@@ -1,0 +1,14 @@
+[
+  {
+    "file": "EEGMMIDB.edf",
+    "nchan": 64,
+    "duration": 61.0,
+    "sfreq": 160.0
+  },
+  {
+    "file": "CHBMIT.edf",
+    "nchan": 23,
+    "duration": 2893.0,
+    "sfreq": 256.0
+  }
+]
