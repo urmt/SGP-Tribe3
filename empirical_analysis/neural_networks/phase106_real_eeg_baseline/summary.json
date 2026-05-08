@@ -1,0 +1,8 @@
+{
+  "verdict": "NO_ROBUST_REAL_SIGNAL",
+  "real_auc": 0.5714285714285714,
+  "perm_mean": 0.4863520408163266,
+  "effect": 0.0850765306122448,
+  "files": 2,
+  "windows": 56
+}

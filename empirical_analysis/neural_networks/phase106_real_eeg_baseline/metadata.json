@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/home/student/sgp-tribe3/empirical_analysis/neural_networks/phase105_real_eeg_download/raw/EEGMMIDB.edf",
+    "size": 1275936,
+    "sha256": "4743b736131a7e147c150e8b37711029b6cda5e356c4b3e8261a03cdcaaf8b0c"
+  },
+  {
+    "path": "/home/student/sgp-tribe3/empirical_analysis/neural_networks/phase105_real_eeg_download/raw/CHBMIT.edf",
+    "size": 34078720,
+    "sha256": "e7e14f94b433dd7295bc46e63f7face2bbcd039437fae1adce2b40f30faf9448"
+  }
+]

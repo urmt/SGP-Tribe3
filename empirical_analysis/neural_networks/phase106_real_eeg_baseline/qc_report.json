@@ -1,0 +1,15 @@
+{
+  "total_files": 2,
+  "feature_rows": 56,
+  "columns": [
+    "mean",
+    "std",
+    "kurtosis",
+    "skew",
+    "spectral_entropy",
+    "autocorr_decay",
+    "mobility",
+    "complexity",
+    "label"
+  ]
+}
