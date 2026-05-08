@@ -1,0 +1,9 @@
+{
+  "real_r2": -0.35885844954538265,
+  "iaaft_r2": -0.22538008473248125,
+  "perm_r2": -0.9501898069273029,
+  "predictive_gain": -0.1334783648129014,
+  "interpretation": "No robust predictive structure found",
+  "verdict": "NO_ROBUST_PREDICTABILITY",
+  "n_subjects": 5
+}
