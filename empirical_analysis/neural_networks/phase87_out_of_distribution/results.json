@@ -1,0 +1,5 @@
+{
+  "A_to_B_AUROC": 1.0,
+  "B_to_A_AUROC": 1.0,
+  "mean_OOD_AUROC": 1.0
+}
