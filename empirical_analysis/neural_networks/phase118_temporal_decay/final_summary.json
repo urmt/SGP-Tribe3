@@ -1,0 +1,8 @@
+{
+  "best_window": 10,
+  "best_lag": 1,
+  "best_r2": -0.5453484559708616,
+  "null_r2": -0.9434501362072252,
+  "predictive_gain": 0.3981016802363636,
+  "verdict": "RAPID_DECAY_DYNAMICS"
+}
