@@ -1,0 +1,8 @@
+{
+  "real": 1.0,
+  "phase_destroy": 0.6815167243367936,
+  "temporal_shuffle": 0.7159746251441753,
+  "permutation": 0.4819636678200692,
+  "effect": 0.5180363321799308,
+  "verdict": "NO_CAUSAL_SIGNAL"
+}
