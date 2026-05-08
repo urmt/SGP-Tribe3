@@ -1,0 +1,102 @@
+{
+  "status": "PIPELINE_READY_WAITING_FOR_DATA",
+  "timestamp": "2026-05-08T08:23:36.496466",
+  "pipeline_infrastructure": {
+    "directories_created": [
+      "raw",
+      "validated",
+      "metadata",
+      "excluded",
+      "qc_reports"
+    ],
+    "validation_functions": [
+      "__name__",
+      "__doc__",
+      "__package__",
+      "__loader__",
+      "__spec__",
+      "__builtins__",
+      "__file__",
+      "__cached__",
+      "os",
+      "json",
+      "np",
+      "datetime",
+      "hashlib",
+      "OUTDIR",
+      "public_sources",
+      "search_paths",
+      "local_files",
+      "path",
+      "items",
+      "item",
+      "full_path",
+      "size",
+      "sub_items",
+      "eeg_candidates",
+      "fname",
+      "info",
+      "lower",
+      "quality_metrics",
+      "perturbation_types",
+      "metadata_template",
+      "validate_eeg_file",
+      "standardize_eeg_format",
+      "compute_quality_metrics",
+      "downloadable_sources",
+      "sources_to_document"
+    ],
+    "quality_metrics_defined": [
+      "missingness_threshold",
+      "clipping_threshold",
+      "variance_threshold",
+      "stationarity_windows",
+      "spectral_range"
+    ],
+    "perturbation_types_indexed": [
+      "stimulus_epoch",
+      "seizure_transition",
+      "sleep_transition",
+      "task_switch",
+      "recovery_period",
+      "stimulation_epoch",
+      "medication_change"
+    ]
+  },
+  "available_local_data": {
+    "total_items": 286,
+    "eeg_candidates": 5,
+    "note": "No EEG/MEG/neural temporal data currently available"
+  },
+  "downloadable_sources": [
+    {
+      "name": "PhysioNet CHB-MIT",
+      "url": "https://physionet.org/content/chbmit/1.0.0/",
+      "description": "Pediatric seizure EEG",
+      "expected_subjects": 24,
+      "expected_duration": "23 hours total"
+    },
+    {
+      "name": "PhysioNet EEGMMIDB",
+      "url": "https://physionet.org/content/eegmmidb/1.0.0/",
+      "description": "Motor imagery EEG",
+      "expected_subjects": 109,
+      "expected_duration": "1.5 hours per subject"
+    },
+    {
+      "name": "OpenNeuro",
+      "url": "https://openneuro.org/datasets",
+      "description": "Open repository of neuroimaging",
+      "expected_subjects": "Various",
+      "expected_duration": "Various"
+    },
+    {
+      "name": "Kaggle EEG Datasets",
+      "url": "https://www.kaggle.com/datasets?search=eeg",
+      "description": "Various EEG competitions and datasets",
+      "expected_subjects": "Various",
+      "expected_duration": "Various"
+    }
+  ],
+  "required_action": "Download real EEG/MEG datasets to proceed with Phases 101-102 analysis"
+}

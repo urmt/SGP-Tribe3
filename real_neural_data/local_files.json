@@ -1,0 +1,1286 @@
+{
+  "stimulus_bank.json": {
+    "path": "/home/student/sgp-tribe3/data/stimulus_bank.json",
+    "size": 227470
+  },
+  "ollama_embeddings_1022.checkpoint.npy": {
+    "path": "/home/student/sgp-tribe3/data/ollama_embeddings_1022.checkpoint.npy",
+    "size": 819328
+  },
+  "structured_projection.npy": {
+    "path": "/home/student/sgp-tribe3/data/structured_projection.npy",
+    "size": 167805056
+  },
+  "projection_metadata.json": {
+    "path": "/home/student/sgp-tribe3/data/projection_metadata.json",
+    "size": 1147
+  },
+  "ollama_embeddings_tinyllama_20.npy": {
+    "path": "/home/student/sgp-tribe3/data/ollama_embeddings_tinyllama_20.npy",
+    "size": 163968
+  },
+  "expanded_stimulus_bank_v2.json": {
+    "path": "/home/student/sgp-tribe3/data/expanded_stimulus_bank_v2.json",
+    "size": 32175
+  },
+  "FashionMNIST": {
+    "path": "/home/student/sgp-tribe3/empirical_analysis/neural_networks/data/FashionMNIST",
+    "type": "directory",
+    "contents": 1
+  },
+  "MNIST": {
+    "path": "/home/student/sgp-tribe3/empirical_analysis/neural_networks/data/MNIST",
+    "type": "directory",
+    "contents": 1
+  },
+  ".mozilla": {
+    "path": "/home/student/.mozilla",
+    "type": "directory",
+    "contents": 4
+  },
+  ".bash_logout": {
+    "path": "/home/student/.bash_logout",
+    "size": 18
+  },
+  ".bash_profile": {
+    "path": "/home/student/.bash_profile",
+    "size": 165
+  },
+  ".bashrc": {
+    "path": "/home/student/.bashrc",
+    "size": 1090
+  },
+  ".config": {
+    "path": "/home/student/.config",
+    "type": "directory",
+    "contents": 150
+  },
+  ".local": {
+    "path": "/home/student/.local",
+    "type": "directory",
+    "contents": 7
+  },
+  ".cache": {
+    "path": "/home/student/.cache",
+    "type": "directory",
+    "contents": 125
+  },
+  "Desktop": {
+    "path": "/home/student/Desktop",
+    "type": "directory",
+    "contents": 10
+  },
+  "Templates": {
+    "path": "/home/student/Templates",
+    "type": "directory",
+    "contents": 0
+  },
+  "Public": {
+    "path": "/home/student/Public",
+    "type": "directory",
+    "contents": 0
+  },
+  "Documents": {
+    "path": "/home/student/Documents",
+    "type": "directory",
+    "contents": 87
+  },
+  "Videos": {
+    "path": "/home/student/Videos",
+    "type": "directory",
+    "contents": 5
+  },
+  ".var": {
+    "path": "/home/student/.var",
+    "type": "directory",
+    "contents": 1
+  },
+  ".gtkrc-2.0": {
+    "path": "/home/student/.gtkrc-2.0",
+    "size": 0
+  },
+  ".BitwigStudio": {
+    "path": "/home/student/.BitwigStudio",
+    "type": "directory",
+    "contents": 20
+  },
+  ".elc": {
+    "path": "/home/student/.elc",
+    "type": "directory",
+    "contents": 5
+  },
+  "student": {
+    "path": "/home/student/student",
+    "type": "directory",
+    "contents": 1
+  },
+  "vamp": {
+    "path": "/home/student/vamp",
+    "type": "directory",
+    "contents": 1
+  },
+  ".pki": {
+    "path": "/home/student/.pki",
+    "type": "directory",
+    "contents": 1
+  },
+  "sound check": {
+    "path": "/home/student/sound check",
+    "type": "directory",
+    "contents": 10
+  },
+  "BLANK": {
+    "path": "/home/student/BLANK",
+    "type": "directory",
+    "contents": 11
+  },
+  "protonvpn-stable-release-1.0.3-1.noarch.rpm": {
+    "path": "/home/student/protonvpn-stable-release-1.0.3-1.noarch.rpm",
+    "size": 7765
+  },
+  ".java": {
+    "path": "/home/student/.java",
+    "type": "directory",
+    "contents": 2
+  },
+  ".eteks": {
+    "path": "/home/student/.eteks",
+    "type": "directory",
+    "contents": 1
+  },
+  ".hunspell_en_US": {
+    "path": "/home/student/.hunspell_en_US",
+    "size": 42
+  },
+  ".hunspell_en_AG": {
+    "path": "/home/student/.hunspell_en_AG",
+    "size": 22
+  },
+  ".android": {
+    "path": "/home/student/.android",
+    "type": "directory",
+    "contents": 3
+  },
+  "VirtualBox VMs": {
+    "path": "/home/student/VirtualBox VMs",
+    "type": "directory",
+    "contents": 1
+  },
+  ".jmf-resource": {
+    "path": "/home/student/.jmf-resource",
+    "size": 678
+  },
+  "AnythingLLMDesktop": {
+    "path": "/home/student/AnythingLLMDesktop",
+    "type": "directory",
+    "contents": 2
+  },
+  "dwhelper": {
+    "path": "/home/student/dwhelper",
+    "type": "directory",
+    "contents": 12
+  },
+  ".cargo": {
+    "path": "/home/student/.cargo",
+    "type": "directory",
+    "contents": 9
+  },
+  ".profile": {
+    "path": "/home/student/.profile",
+    "size": 21
+  },
+  ".rustup": {
+    "path": "/home/student/.rustup",
+    "type": "directory",
+    "contents": 5
+  },
+  "lab-swarm": {
+    "path": "/home/student/lab-swarm",
+    "type": "directory",
+    "contents": 6
+  },
+  "swarm_labs_project": {
+    "path": "/home/student/swarm_labs_project",
+    "type": "directory",
+    "contents": 1
+  },
+  "Games": {
+    "path": "/home/student/Games",
+    "type": "directory",
+    "contents": 1
+  },
+  ".texlive2023": {
+    "path": "/home/student/.texlive2023",
+    "type": "directory",
+    "contents": 1
+  },
+  ".npm": {
+    "path": "/home/student/.npm",
+    "type": "directory",
+    "contents": 4
+  },
+  "package.json": {
+    "path": "/home/student/package.json",
+    "size": 2536
+  },
+  "SwarmLab2.0": {
+    "path": "/home/student/SwarmLab2.0",
+    "type": "directory",
+    "contents": 1
+  },
+  "IPFS_SFH_page-main.zip": {
+    "path": "/home/student/IPFS_SFH_page-main.zip",
+    "size": 103639
+  },
+  "SFH_Charts_Programs from Github": {
+    "path": "/home/student/SFH_Charts_Programs from Github",
+    "type": "directory",
+    "contents": 8
+  },
+  ".ipython": {
+    "path": "/home/student/.ipython",
+    "type": "directory",
+    "contents": 1
+  },
+  ".jupyter": {
+    "path": "/home/student/.jupyter",
+    "type": "directory",
+    "contents": 2
+  },
+  "node_modules": {
+    "path": "/home/student/node_modules",
+    "type": "directory",
+    "contents": 247
+  },
+  "package-lock.json": {
+    "path": "/home/student/package-lock.json",
+    "size": 227011
+  },
+  ".windsurf": {
+    "path": "/home/student/.windsurf",
+    "type": "directory",
+    "contents": 2
+  },
+  ".codeium": {
+    "path": "/home/student/.codeium",
+    "type": "directory",
+    "contents": 1
+  },
+  ".gitignore": {
+    "path": "/home/student/.gitignore",
+    "size": 13
+  },
+  ".ssh": {
+    "path": "/home/student/.ssh",
+    "type": "directory",
+    "contents": 3
+  },
+  ".gnupg": {
+    "path": "/home/student/.gnupg",
+    "type": "directory",
+    "contents": 3
+  },
+  "FAv3": {
+    "path": "/home/student/FAv3",
+    "type": "directory",
+    "contents": 2
+  },
+  ".gitattributes": {
+    "path": "/home/student/.gitattributes",
+    "size": 150
+  },
+  ".subversion": {
+    "path": "/home/student/.subversion",
+    "type": "directory",
+    "contents": 4
+  },
+  "TheSentient-Field_Braintrust": {
+    "path": "/home/student/TheSentient-Field_Braintrust",
+    "type": "directory",
+    "contents": 1
+  },
+  "sfh-trading-bot": {
+    "path": "/home/student/sfh-trading-bot",
+    "type": "directory",
+    "contents": 273
+  },
+  ".ipfs": {
+    "path": "/home/student/.ipfs",
+    "type": "directory",
+    "contents": 9
+  },
+  "OSE_Book": {
+    "path": "/home/student/OSE_Book",
+    "type": "directory",
+    "contents": 11
+  },
+  "STADIUM_GAMES": {
+    "path": "/home/student/STADIUM_GAMES",
+    "type": "directory",
+    "contents": 4
+  },
+  ".streamlit": {
+    "path": "/home/student/.streamlit",
+    "type": "directory",
+    "contents": 2
+  },
+  "ipfs-keep-alive.sh": {
+    "path": "/home/student/ipfs-keep-alive.sh",
+    "size": 2109
+  },
+  "ipfs-keep-alive.service": {
+    "path": "/home/student/ipfs-keep-alive.service",
+    "size": 319
+  },
+  "ipfs-keep-alive.timer": {
+    "path": "/home/student/ipfs-keep-alive.timer",
+    "size": 357
+  },
+  "ipfs-keep-alive.log": {
+    "path": "/home/student/ipfs-keep-alive.log",
+    "size": 9649
+  },
+  "WARP.md": {
+    "path": "/home/student/WARP.md",
+    "size": 5087
+  },
+  "The Echos of the Feild series": {
+    "path": "/home/student/The Echos of the Feild series",
+    "type": "directory",
+    "contents": 0
+  },
+  ".cloudflared": {
+    "path": "/home/student/.cloudflared",
+    "type": "directory",
+    "contents": 2
+  },
+  "RBE-TVP-SIM": {
+    "path": "/home/student/RBE-TVP-SIM",
+    "type": "directory",
+    "contents": 28
+  },
+  "BACKGROUND BAND": {
+    "path": "/home/student/BACKGROUND BAND",
+    "type": "directory",
+    "contents": 17
+  },
+  ".warp": {
+    "path": "/home/student/.warp",
+    "type": "directory",
+    "contents": 1
+  },
+  ".ipfs-keepalive": {
+    "path": "/home/student/.ipfs-keepalive",
+    "type": "directory",
+    "contents": 6
+  },
+  "BackingTrackReggae": {
+    "path": "/home/student/BackingTrackReggae",
+    "type": "directory",
+    "contents": 11
+  },
+  "ARDOUR-SHORTS-EDUCATION-AI": {
+    "path": "/home/student/ARDOUR-SHORTS-EDUCATION-AI",
+    "type": "directory",
+    "contents": 2
+  },
+  "RE_TRACKER_by_ZIP": {
+    "path": "/home/student/RE_TRACKER_by_ZIP",
+    "type": "directory",
+    "contents": 13
+  },
+  ".vscode": {
+    "path": "/home/student/.vscode",
+    "type": "directory",
+    "contents": 3
+  },
+  ".dotnet": {
+    "path": "/home/student/.dotnet",
+    "type": "directory",
+    "contents": 1
+  },
+  "plank.py": {
+    "path": "/home/student/plank.py",
+    "size": 2233
+  },
+  "Figure_1_plank.png": {
+    "path": "/home/student/Figure_1_plank.png",
+    "size": 85479
+  },
+  "plank_foam.png": {
+    "path": "/home/student/plank_foam.png",
+    "size": 446160
+  },
+  "primes.py": {
+    "path": "/home/student/primes.py",
+    "size": 2651
+  },
+  "murmuration_primes.png": {
+    "path": "/home/student/murmuration_primes.png",
+    "size": 436591
+  },
+  "hopi_cycles.py": {
+    "path": "/home/student/hopi_cycles.py",
+    "size": 1558
+  },
+  "hopi_cycles_TRUTH.png": {
+    "path": "/home/student/hopi_cycles_TRUTH.png",
+    "size": 278430
+  },
+  "SFH Backing Trak Maker": {
+    "path": "/home/student/SFH Backing Trak Maker",
+    "size": 0
+  },
+  "SFH_BackingTrack_Maker": {
+    "path": "/home/student/SFH_BackingTrack_Maker",
+    "type": "directory",
+    "contents": 18
+  },
+  ".gemini": {
+    "path": "/home/student/.gemini",
+    "type": "directory",
+    "contents": 12
+  },
+  "BitNet": {
+    "path": "/home/student/BitNet",
+    "type": "directory",
+    "contents": 46
+  },
+  ".conda": {
+    "path": "/home/student/.conda",
+    "type": "directory",
+    "contents": 3
+  },
+  ".bun": {
+    "path": "/home/student/.bun",
+    "type": "directory",
+    "contents": 1
+  },
+  ".antigravity": {
+    "path": "/home/student/.antigravity",
+    "type": "directory",
+    "contents": 2
+  },
+  "nodejs": {
+    "path": "/home/student/nodejs",
+    "type": "directory",
+    "contents": 8
+  },
+  ".npm-global": {
+    "path": "/home/student/.npm-global",
+    "type": "directory",
+    "contents": 2
+  },
+  ".npmrc": {
+    "path": "/home/student/.npmrc",
+    "size": 33
+  },
+  "Clawbot-Workspace": {
+    "path": "/home/student/Clawbot-Workspace",
+    "type": "directory",
+    "contents": 2
+  },
+  "chat-local.sh": {
+    "path": "/home/student/chat-local.sh",
+    "size": 870
+  },
+  "chat.sh": {
+    "path": "/home/student/chat.sh",
+    "size": 1137
+  },
+  "litellm": {
+    "path": "/home/student/litellm",
+    "type": "directory",
+    "contents": 1
+  },
+  "local-agent": {
+    "path": "/home/student/local-agent",
+    "type": "directory",
+    "contents": 2
+  },
+  "rbe": {
+    "path": "/home/student/rbe",
+    "type": "directory",
+    "contents": 22
+  },
+  "bots-watchdog.py": {
+    "path": "/home/student/bots-watchdog.py",
+    "size": 2226
+  },
+  "bots-watchdog.log": {
+    "path": "/home/student/bots-watchdog.log",
+    "size": 10290068
+  },
+  "sfh-collaborator-shortlist.json": {
+    "path": "/home/student/sfh-collaborator-shortlist.json",
+    "size": 33254
+  },
+  ".sfh-invited.json": {
+    "path": "/home/student/.sfh-invited.json",
+    "size": 573
+  },
+  "start-homeai-vm": {
+    "path": "/home/student/start-homeai-vm",
+    "size": 147
+  },
+  "stop-homeai-vm": {
+    "path": "/home/student/stop-homeai-vm",
+    "size": 101
+  },
+  "status-homeai-vm": {
+    "path": "/home/student/status-homeai-vm",
+    "size": 80
+  },
+  "homeai-autostart.sh": {
+    "path": "/home/student/homeai-autostart.sh",
+    "size": 2019
+  },
+  "homeai-autostart.log": {
+    "path": "/home/student/homeai-autostart.log",
+    "size": 461
+  },
+  "homeai-vm-start.sh": {
+    "path": "/home/student/homeai-vm-start.sh",
+    "size": 190
+  },
+  "homeai-vm-startup.log": {
+    "path": "/home/student/homeai-vm-startup.log",
+    "size": 0
+  },
+  ".ollama": {
+    "path": "/home/student/.ollama",
+    "type": "directory",
+    "contents": 5
+  },
+  ".dbus": {
+    "path": "/home/student/.dbus",
+    "type": "directory",
+    "contents": 1
+  },
+  "API_Monitor": {
+    "path": "/home/student/API_Monitor",
+    "type": "directory",
+    "contents": 8
+  },
+  "SOCIAL MEDIA AI SITE": {
+    "path": "/home/student/SOCIAL MEDIA AI SITE",
+    "type": "directory",
+    "contents": 14
+  },
+  "HOTEL": {
+    "path": "/home/student/HOTEL",
+    "type": "directory",
+    "contents": 20
+  },
+  "clean_repo": {
+    "path": "/home/student/clean_repo",
+    "type": "directory",
+    "contents": 2
+  },
+  "runner_boot.log": {
+    "path": "/home/student/runner_boot.log",
+    "size": 120
+  },
+  "git-hooks": {
+    "path": "/home/student/git-hooks",
+    "type": "directory",
+    "contents": 4
+  },
+  "VERSION-2.0-no-sales": {
+    "path": "/home/student/VERSION-2.0-no-sales",
+    "type": "directory",
+    "contents": 6
+  },
+  "AcademAIreader-2025-11-09-10-04-39": {
+    "path": "/home/student/AcademAIreader-2025-11-09-10-04-39",
+    "type": "directory",
+    "contents": 12
+  },
+  ".claude": {
+    "path": "/home/student/.claude",
+    "type": "directory",
+    "contents": 11
+  },
+  ".claude.json": {
+    "path": "/home/student/.claude.json",
+    "size": 4415
+  },
+  "Hermes + OpenClaw Hybred AI agent system": {
+    "path": "/home/student/Hermes + OpenClaw Hybred AI agent system",
+    "type": "directory",
+    "contents": 4
+  },
+  "Oracle SERVER Cloud": {
+    "path": "/home/student/Oracle SERVER Cloud",
+    "type": "directory",
+    "contents": 0
+  },
+  ".neo": {
+    "path": "/home/student/.neo",
+    "type": "directory",
+    "contents": 2
+  },
+  ".cursor": {
+    "path": "/home/student/.cursor",
+    "type": "directory",
+    "contents": 9
+  },
+  ".aitk": {
+    "path": "/home/student/.aitk",
+    "type": "directory",
+    "contents": 46
+  },
+  "PrivateCable-Install-Ready.tar.gz": {
+    "path": "/home/student/PrivateCable-Install-Ready.tar.gz",
+    "size": 6150972056
+  },
+  ".openplex": {
+    "path": "/home/student/.openplex",
+    "type": "directory",
+    "contents": 1
+  },
+  "ObsidianFiles": {
+    "path": "/home/student/ObsidianFiles",
+    "type": "directory",
+    "contents": 1
+  },
+  ".agents": {
+    "path": "/home/student/.agents",
+    "type": "directory",
+    "contents": 2
+  },
+  "GoViral": {
+    "path": "/home/student/GoViral",
+    "type": "directory",
+    "contents": 1
+  },
+  "HotelPhoneSmall": {
+    "path": "/home/student/HotelPhoneSmall",
+    "type": "directory",
+    "contents": 24
+  },
+  "Sentient-Seed": {
+    "path": "/home/student/Sentient-Seed",
+    "type": "directory",
+    "contents": 24
+  },
+  "CPU-LLM": {
+    "path": "/home/student/CPU-LLM",
+    "type": "directory",
+    "contents": 0
+  },
+  "ollama-modelfiles": {
+    "path": "/home/student/ollama-modelfiles",
+    "type": "directory",
+    "contents": 1
+  },
+  "local-ai-setup": {
+    "path": "/home/student/local-ai-setup",
+    "type": "directory",
+    "contents": 1
+  },
+  "sgp-tribe3": {
+    "path": "/home/student/sgp-tribe3",
+    "type": "directory",
+    "contents": 85
+  },
+  "VM-CONNECTION-INSTRUCTIONS.md": {
+    "path": "/home/student/VM-CONNECTION-INSTRUCTIONS.md",
+    "size": 1094
+  },
+  "AI": {
+    "path": "/home/student/AI",
+    "type": "directory",
+    "contents": 1
+  },
+  ".notebooklm": {
+    "path": "/home/student/.notebooklm",
+    "type": "directory",
+    "contents": 1
+  },
+  "CRYSTALS-TATI-SHOPIFY": {
+    "path": "/home/student/CRYSTALS-TATI-SHOPIFY",
+    "type": "directory",
+    "contents": 3
+  },
+  "RANDOM WORKSPACE FOR AI": {
+    "path": "/home/student/RANDOM WORKSPACE FOR AI",
+    "type": "directory",
+    "contents": 15
+  },
+  ".mempalace": {
+    "path": "/home/student/.mempalace",
+    "type": "directory",
+    "contents": 3
+  },
+  "MemoryPalaceAI": {
+    "path": "/home/student/MemoryPalaceAI",
+    "type": "directory",
+    "contents": 0
+  },
+  ".gitconfig": {
+    "path": "/home/student/.gitconfig",
+    "size": 365
+  },
+  ".litert-lm": {
+    "path": "/home/student/.litert-lm",
+    "type": "directory",
+    "contents": 1
+  },
+  "Gemma4-SGP.Modelfile": {
+    "path": "/home/student/Gemma4-SGP.Modelfile",
+    "size": 269
+  },
+  ".codex": {
+    "path": "/home/student/.codex",
+    "type": "directory",
+    "contents": 18
+  },
+  "VBoxGuestAdditions_7.2.6.iso": {
+    "path": "/home/student/VBoxGuestAdditions_7.2.6.iso",
+    "size": 53391360
+  },
+  "antiX-23.2_x64-full.iso": {
+    "path": "/home/student/antiX-23.2_x64-full.iso",
+    "size": 105266948
+  },
+  "CrystalPOS-Tati": {
+    "path": "/home/student/CrystalPOS-Tati",
+    "type": "directory",
+    "contents": 42
+  },
+  ".expo": {
+    "path": "/home/student/.expo",
+    "type": "directory",
+    "contents": 3
+  },
+  "opencode.md": {
+    "path": "/home/student/opencode.md",
+    "size": 1426
+  },
+  "CODING SKILLS FOR AI": {
+    "path": "/home/student/CODING SKILLS FOR AI",
+    "size": 2947
+  },
+  ".deno": {
+    "path": "/home/student/.deno",
+    "type": "directory",
+    "contents": 1
+  },
+  "CHESS-BOARD-PROJECT": {
+    "path": "/home/student/CHESS-BOARD-PROJECT",
+    "type": "directory",
+    "contents": 28
+  },
+  "Music": {
+    "path": "/home/student/Music",
+    "type": "directory",
+    "contents": 0
+  },
+  "scikit_learn_data": {
+    "path": "/home/student/scikit_learn_data",
+    "type": "directory",
+    "contents": 1
+  },
+  "Downloads": {
+    "path": "/home/student/Downloads",
+    "type": "directory",
+    "contents": 11
+  },
+  "Screenshots": {
+    "path": "/home/student/Screenshots",
+    "type": "directory",
+    "contents": 0
+  },
+  "sfh_sgp_core": {
+    "path": "/home/student/sfh_sgp_core",
+    "type": "directory",
+    "contents": 2
+  },
+  "setup.py": {
+    "path": "/home/student/setup.py",
+    "size": 137
+  },
+  "sfh_sgp_core.egg-info": {
+    "path": "/home/student/sfh_sgp_core.egg-info",
+    "type": "directory",
+    "contents": 4
+  },
+  "data": {
+    "path": "/home/student/data",
+    "type": "directory",
+    "contents": 1
+  },
+  "Observation_defines_the_geometry_of_data.m4a": {
+    "path": "/home/student/Observation_defines_the_geometry_of_data.m4a",
+    "size": 36697438
+  },
+  "DISCUSSION-SFH-SGP-Observation_defines_the_geometry_of_data.mp3": {
+    "path": "/home/student/DISCUSSION-SFH-SGP-Observation_defines_the_geometry_of_data.mp3",
+    "size": 16609559
+  },
+  "unnamed.png": {
+    "path": "/home/student/unnamed.png",
+    "size": 5011332
+  },
+  "Bayesian_Observability.mp4": {
+    "path": "/home/student/Bayesian_Observability.mp4",
+    "size": 35770391
+  },
+  "SFH-SGP Phase6 LAW.png": {
+    "path": "/home/student/SFH-SGP Phase6 LAW.png",
+    "size": 5105119
+  },
+  "SFH-SGP_Post_Phase_6.mp4": {
+    "path": "/home/student/SFH-SGP_Post_Phase_6.mp4",
+    "size": 31153503
+  },
+  "The_SFH-SGP_Locked_Empirical_Law.m4a": {
+    "path": "/home/student/The_SFH-SGP_Locked_Empirical_Law.m4a",
+    "size": 29792997
+  },
+  "The_SFH-SGP_Locked_Empirical_Law.mp3": {
+    "path": "/home/student/The_SFH-SGP_Locked_Empirical_Law.mp3",
+    "size": 13478078
+  },
+  "Untitled-2026-04-29-14-35-34": {
+    "path": "/home/student/Untitled-2026-04-29-14-35-34",
+    "type": "directory",
+    "contents": 10
+  },
+  "SFH-SGP-Law2narator.flac": {
+    "path": "/home/student/SFH-SGP-Law2narator.flac",
+    "size": 45618834
+  },
+  ".supabase": {
+    "path": "/home/student/.supabase",
+    "type": "directory",
+    "contents": 1
+  },
+  "auto-browser-config": {
+    "path": "/home/student/auto-browser-config",
+    "type": "directory",
+    "contents": 2
+  },
+  ".docker": {
+    "path": "/home/student/.docker",
+    "type": "directory",
+    "contents": 3
+  },
+  "The_WeaveChip_and_Sentient_Field_Hypothesis.m4a": {
+    "path": "/home/student/The_WeaveChip_and_Sentient_Field_Hypothesis.m4a",
+    "size": 43063025
+  },
+  "OpenCloudFileServer": {
+    "path": "/home/student/OpenCloudFileServer",
+    "type": "directory",
+    "contents": 12
+  },
+  ".ocis": {
+    "path": "/home/student/.ocis",
+    "type": "directory",
+    "contents": 8
+  },
+  "download.zip": {
+    "path": "/home/student/download.zip",
+    "size": 47693
+  },
+  "test_router.js": {
+    "path": "/home/student/test_router.js",
+    "size": 798
+  },
+  "router_login.png": {
+    "path": "/home/student/router_login.png",
+    "size": 118985
+  },
+  "router_login.js": {
+    "path": "/home/student/router_login.js",
+    "size": 3947
+  },
+  "router_error.png": {
+    "path": "/home/student/router_error.png",
+    "size": 120745
+  },
+  "router_01_login_page.png": {
+    "path": "/home/student/router_01_login_page.png",
+    "size": 118978
+  },
+  "router_02_filled.png": {
+    "path": "/home/student/router_02_filled.png",
+    "size": 119962
+  },
+  "router_03_after_login.png": {
+    "path": "/home/student/router_03_after_login.png",
+    "size": 120217
+  },
+  "router_04_final.png": {
+    "path": "/home/student/router_04_final.png",
+    "size": 120216
+  },
+  "r_01_page.png": {
+    "path": "/home/student/r_01_page.png",
+    "size": 118985
+  },
+  "r_02_filled.png": {
+    "path": "/home/student/r_02_filled.png",
+    "size": 120446
+  },
+  "r_03_after_submit.png": {
+    "path": "/home/student/r_03_after_submit.png",
+    "size": 120444
+  },
+  "r_04_after_click.png": {
+    "path": "/home/student/r_04_after_click.png",
+    "size": 120446
+  },
+  "r_1_page.png": {
+    "path": "/home/student/r_1_page.png",
+    "size": 118985
+  },
+  "r_2_filled.png": {
+    "path": "/home/student/r_2_filled.png",
+    "size": 120446
+  },
+  "r_3_after_click.png": {
+    "path": "/home/student/r_3_after_click.png",
+    "size": 54147
+  },
+  "router_port_forward.js": {
+    "path": "/home/student/router_port_forward.js",
+    "size": 3343
+  },
+  "pf_01_logged_in.png": {
+    "path": "/home/student/pf_01_logged_in.png",
+    "size": 50496
+  },
+  "pf_02_advanced.png": {
+    "path": "/home/student/pf_02_advanced.png",
+    "size": 46566
+  },
+  "pf_03_port_forwarding.png": {
+    "path": "/home/student/pf_03_port_forwarding.png",
+    "size": 46566
+  },
+  "router_port_mapping.js": {
+    "path": "/home/student/router_port_mapping.js",
+    "size": 2040
+  },
+  "pf_result.png": {
+    "path": "/home/student/pf_result.png",
+    "size": 7702
+  },
+  "port_mapping_page.png": {
+    "path": "/home/student/port_mapping_page.png",
+    "size": 62488
+  },
+  "port_mapping_full.png": {
+    "path": "/home/student/port_mapping_full.png",
+    "size": 36796
+  },
+  "cloudflared.log": {
+    "path": "/home/student/cloudflared.log",
+    "size": 13100
+  },
+  "start_tunnel.sh": {
+    "path": "/home/student/start_tunnel.sh",
+    "size": 832
+  },
+  "oci_nginx.conf": {
+    "path": "/home/student/oci_nginx.conf",
+    "size": 642
+  },
+  ".nginx": {
+    "path": "/home/student/.nginx",
+    "type": "directory",
+    "contents": 1
+  },
+  "start_all.sh": {
+    "path": "/home/student/start_all.sh",
+    "size": 1006
+  },
+  "file_browser.log": {
+    "path": "/home/student/file_browser.log",
+    "size": 8748
+  },
+  "tunnel_8081.log": {
+    "path": "/home/student/tunnel_8081.log",
+    "size": 2762
+  },
+  "tunnel_8082.log": {
+    "path": "/home/student/tunnel_8082.log",
+    "size": 6705
+  },
+  "new_tunnel.log": {
+    "path": "/home/student/new_tunnel.log",
+    "size": 8433
+  },
+  "tunnel_8090.log": {
+    "path": "/home/student/tunnel_8090.log",
+    "size": 4620
+  },
+  "file_browser.py": {
+    "path": "/home/student/file_browser.py",
+    "size": 4584
+  },
+  "tunnel_8091.log": {
+    "path": "/home/student/tunnel_8091.log",
+    "size": 3588
+  },
+  "cbsrmt_0734_land_of_the_living_dead.mp3": {
+    "path": "/home/student/cbsrmt_0734_land_of_the_living_dead.mp3",
+    "size": 809
+  },
+  "bun.lock": {
+    "path": "/home/student/bun.lock",
+    "size": 115848
+  },
+  ".vscode-shared": {
+    "path": "/home/student/.vscode-shared",
+    "type": "directory",
+    "contents": 1
+  },
+  ".copilot": {
+    "path": "/home/student/.copilot",
+    "type": "directory",
+    "contents": 1
+  },
+  ".opencode": {
+    "path": "/home/student/.opencode",
+    "type": "directory",
+    "contents": 5
+  },
+  "opencode-desktop-linux-x86_64.rpm": {
+    "path": "/home/student/opencode-desktop-linux-x86_64.rpm",
+    "size": 210876561
+  },
+  ".bash_history": {
+    "path": "/home/student/.bash_history",
+    "size": 32351
+  },
+  ".gtkrc-2.0-kde4": {
+    "path": "/home/student/.gtkrc-2.0-kde4",
+    "size": 427
+  },
+  ".f9ef7fe7dfdb3fff-00000000.so": {
+    "path": "/tmp/.f9ef7fe7dfdb3fff-00000000.so",
+    "size": 4673832
+  },
+  ".f9ef7fe7dbcb17ff-00000000.so": {
+    "path": "/tmp/.f9ef7fe7dbcb17ff-00000000.so",
+    "size": 4673832
+  },
+  "plasma-browser-integration_artwork_lFJfwd.png": {
+    "path": "/tmp/plasma-browser-integration_artwork_lFJfwd.png",
+    "size": 1687
+  },
+  "tmp-7cz.xpi": {
+    "path": "/tmp/tmp-7cz.xpi",
+    "size": 84880
+  },
+  "tmp-5fu.xpi": {
+    "path": "/tmp/tmp-5fu.xpi",
+    "size": 612418
+  },
+  "org.chromium.Chromium.Hem1xP": {
+    "path": "/tmp/org.chromium.Chromium.Hem1xP",
+    "type": "directory",
+    "contents": 2
+  },
+  ".f9ef2fefdfcb87be-00000000.so": {
+    "path": "/tmp/.f9ef2fefdfcb87be-00000000.so",
+    "size": 4673832
+  },
+  ".f9ef2fefdbeb2fbf-00000000.so": {
+    "path": "/tmp/.f9ef2fefdbeb2fbf-00000000.so",
+    "size": 4673832
+  },
+  "plasma-systemmonitor.AFoUAf": {
+    "path": "/tmp/plasma-systemmonitor.AFoUAf",
+    "size": 0
+  },
+  "plasma-systemmonitor.BnLFJr": {
+    "path": "/tmp/plasma-systemmonitor.BnLFJr",
+    "size": 0
+  },
+  "plasma-systemmonitor.cDluwr": {
+    "path": "/tmp/plasma-systemmonitor.cDluwr",
+    "size": 0
+  },
+  "plasma-systemmonitor.XnsyUx": {
+    "path": "/tmp/plasma-systemmonitor.XnsyUx",
+    "size": 0
+  },
+  "plasma-systemmonitor.DuCkRO": {
+    "path": "/tmp/plasma-systemmonitor.DuCkRO",
+    "size": 0
+  },
+  "plasma-systemmonitor.JpZGOX": {
+    "path": "/tmp/plasma-systemmonitor.JpZGOX",
+    "size": 0
+  },
+  "plasma-systemmonitor.VpBIcJ": {
+    "path": "/tmp/plasma-systemmonitor.VpBIcJ",
+    "size": 0
+  },
+  "plasma-systemmonitor.ntOFEQ": {
+    "path": "/tmp/plasma-systemmonitor.ntOFEQ",
+    "size": 0
+  },
+  "plasma-systemmonitor.kQZkpu": {
+    "path": "/tmp/plasma-systemmonitor.kQZkpu",
+    "size": 0
+  },
+  "plasma-systemmonitor.dpWSYC": {
+    "path": "/tmp/plasma-systemmonitor.dpWSYC",
+    "size": 0
+  },
+  ".f9ef17e77fcb2ffe-00000000.so": {
+    "path": "/tmp/.f9ef17e77fcb2ffe-00000000.so",
+    "size": 4673832
+  },
+  ".f9ef17e77bfb87bf-00000000.so": {
+    "path": "/tmp/.f9ef17e77bfb87bf-00000000.so",
+    "size": 4673832
+  },
+  "plasma-browser-integration_artwork_tJowKq.jpg": {
+    "path": "/tmp/plasma-browser-integration_artwork_tJowKq.jpg",
+    "size": 7370
+  },
+  "gimp": {
+    "path": "/tmp/gimp",
+    "type": "directory",
+    "contents": 1
+  },
+  "tmp-4kt.xpi": {
+    "path": "/tmp/tmp-4kt.xpi",
+    "size": 84880
+  },
+  "tmp-rzh.xpi": {
+    "path": "/tmp/tmp-rzh.xpi",
+    "size": 612418
+  },
+  "org.chromium.Chromium.K36BCc": {
+    "path": "/tmp/org.chromium.Chromium.K36BCc",
+    "type": "directory",
+    "contents": 2
+  },
+  "fashion_activations.npy": {
+    "path": "/tmp/fashion_activations.npy",
+    "size": 2560128
+  },
+  "torchinductor_student": {
+    "path": "/tmp/torchinductor_student",
+    "type": "directory",
+    "contents": 0
+  },
+  ".f9efdfe75befb7ff-00000000.so": {
+    "path": "/tmp/.f9efdfe75befb7ff-00000000.so",
+    "size": 4673832
+  },
+  ".f9efdfe7fbdfafbe-00000000.so": {
+    "path": "/tmp/.f9efdfe7fbdfafbe-00000000.so",
+    "size": 4673832
+  },
+  "hsperfdata_student": {
+    "path": "/tmp/hsperfdata_student",
+    "type": "directory",
+    "contents": 0
+  },
+  "migration.sql": {
+    "path": "/tmp/migration.sql",
+    "size": 85
+  },
+  "org.chromium.Chromium.kKMgHf": {
+    "path": "/tmp/org.chromium.Chromium.kKMgHf",
+    "type": "directory",
+    "contents": 2
+  },
+  ".f9efbfe77bef47ff-00000000.so": {
+    "path": "/tmp/.f9efbfe77bef47ff-00000000.so",
+    "size": 4673832
+  },
+  ".f9efbfe77fcb47ff-00000000.so": {
+    "path": "/tmp/.f9efbfe77fcb47ff-00000000.so",
+    "size": 4673832
+  },
+  "tmp-8h5.xpi": {
+    "path": "/tmp/tmp-8h5.xpi",
+    "size": 84880
+  },
+  "tmp-ctq.xpi": {
+    "path": "/tmp/tmp-ctq.xpi",
+    "size": 612418
+  },
+  "org.chromium.Chromium.u4e4rO": {
+    "path": "/tmp/org.chromium.Chromium.u4e4rO",
+    "type": "directory",
+    "contents": 2
+  },
+  "node-compile-cache": {
+    "path": "/tmp/node-compile-cache",
+    "type": "directory",
+    "contents": 1
+  },
+  "opencode": {
+    "path": "/tmp/opencode",
+    "type": "directory",
+    "contents": 0
+  },
+  ".f9ef6fe7dbff0fff-00000000.so": {
+    "path": "/tmp/.f9ef6fe7dbff0fff-00000000.so",
+    "size": 4673832
+  },
+  ".f9ef6fe7dfdf57ff-00000000.so": {
+    "path": "/tmp/.f9ef6fe7dfdf57ff-00000000.so",
+    "size": 4673832
+  },
+  "plasma-systemmonitor.Qnlcer": {
+    "path": "/tmp/plasma-systemmonitor.Qnlcer",
+    "size": 0
+  },
+  "plasma-systemmonitor.aqyuWq": {
+    "path": "/tmp/plasma-systemmonitor.aqyuWq",
+    "size": 0
+  },
+  "plasma-systemmonitor.IiJcKt": {
+    "path": "/tmp/plasma-systemmonitor.IiJcKt",
+    "size": 0
+  },
+  "plasma-systemmonitor.liAiYl": {
+    "path": "/tmp/plasma-systemmonitor.liAiYl",
+    "size": 0
+  },
+  "plasma-systemmonitor.HKutBc": {
+    "path": "/tmp/plasma-systemmonitor.HKutBc",
+    "size": 0
+  },
+  "plasma-csd-generator.AblJFa": {
+    "path": "/tmp/plasma-csd-generator.AblJFa",
+    "type": "directory",
+    "contents": 0
+  },
+  ".X0-lock": {
+    "path": "/tmp/.X0-lock",
+    "size": 11
+  },
+  ".font-unix": {
+    "path": "/tmp/.font-unix",
+    "type": "directory",
+    "contents": 0
+  },
+  ".XIM-unix": {
+    "path": "/tmp/.XIM-unix",
+    "type": "directory",
+    "contents": 0
+  },
+  ".ICE-unix": {
+    "path": "/tmp/.ICE-unix",
+    "type": "directory",
+    "contents": 1
+  },
+  ".X11-unix": {
+    "path": "/tmp/.X11-unix",
+    "type": "directory",
+    "contents": 1
+  }
+}
