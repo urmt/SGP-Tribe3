@@ -1,0 +1,484 @@
+{
+  "domain_results": {
+    "EEG": {
+      "Level0_Original": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.486828992744461,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -20.47143172463374,
+        "spectral_div_mean": 0.0
+      },
+      "Level1_MeanVar": {
+        "survival_rate": 0.9881675557071921,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.273353358920932,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -20.229204649157,
+        "spectral_div_mean": 0.8330703543599022
+      },
+      "Level2_Covariance": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 6.190561997767798,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -25.50966073648578,
+        "spectral_div_mean": 0.4806092924462621
+      },
+      "Level3_Spectrum": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 6.342979306853553,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -24.98115997714564,
+        "spectral_div_mean": 0.09233073745591107
+      },
+      "Level4_Autocorr": {
+        "survival_rate": -1.8048577935366708,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": -2.0139416899353444,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": 36.94802309305725,
+        "spectral_div_mean": 0.40506762558478615
+      },
+      "Level5_Pairwise": {
+        "survival_rate": 0.6742802715060491,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 3.2323587594756504,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -13.80348254140291,
+        "spectral_div_mean": 0.8306175819024152
+      },
+      "Level6_Nonlinear": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.486828992744461,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -21.44389295544857,
+        "spectral_div_mean": 0.8268282527740227
+      },
+      "Level7_Recurrence": {
+        "survival_rate": 0.936801607715917,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.446146579771129,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -19.17767015188258,
+        "spectral_div_mean": 0.012469286045620642
+      },
+      "Level8_CausalLag": {
+        "survival_rate": 0.8673498784172345,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.426764907487492,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -17.755893817386927,
+        "spectral_div_mean": 0.04676051725881408
+      },
+      "Level9_MaxEntropy": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.486828992744461,
+        "dest_entropy_mean": 7.486828992744461,
+        "orig_pred_mean": -20.47143172463374,
+        "dest_pred_mean": -21.493675658793112,
+        "spectral_div_mean": 0.8395179200150165
+      }
+    },
+    "Financial": {
+      "Level0_Original": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.901662077280579,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -9.343091657404328,
+        "spectral_div_mean": 0.0
+      },
+      "Level1_MeanVar": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.930231271086898,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -9.56332902094961,
+        "spectral_div_mean": 0.0909615045428696
+      },
+      "Level2_Covariance": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 7.414164080971234,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -17.336141541291866,
+        "spectral_div_mean": 0.5180434648457629
+      },
+      "Level3_Spectrum": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 7.312067715001543,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -16.61171351480185,
+        "spectral_div_mean": 0.0451328984420954
+      },
+      "Level4_Autocorr": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 5.315514711269913,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -23.584713658980956,
+        "spectral_div_mean": 0.35450772992068835
+      },
+      "Level5_Pairwise": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.9335522519146116,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -24.206617341555592,
+        "spectral_div_mean": 0.0934465056807885
+      },
+      "Level6_Nonlinear": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.901662077280579,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -9.367438486327533,
+        "spectral_div_mean": 0.09234536070585367
+      },
+      "Level7_Recurrence": {
+        "survival_rate": 0.9295716362618522,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.838826785970719,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -8.685072999716873,
+        "spectral_div_mean": 0.006451570129509778
+      },
+      "Level8_CausalLag": {
+        "survival_rate": 0.8062194196303668,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.703178260586152,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -7.532581933585033,
+        "spectral_div_mean": 0.01580870449056733
+      },
+      "Level9_MaxEntropy": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.901662077280579,
+        "dest_entropy_mean": 6.901662077280579,
+        "orig_pred_mean": -9.343091657404328,
+        "dest_pred_mean": -9.368435902101952,
+        "spectral_div_mean": 0.09418134179996772
+      }
+    },
+    "Ecological": {
+      "Level0_Original": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 6.7061121441492,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -26.140907971251814,
+        "spectral_div_mean": 0.0
+      },
+      "Level1_MeanVar": {
+        "survival_rate": 0.9329739566505616,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 6.422266248346409,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -24.38878634037608,
+        "spectral_div_mean": 0.8142426704651533
+      },
+      "Level2_Covariance": {
+        "survival_rate": 0.6074111511852132,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 3.7514062844863583,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -15.878279003844172,
+        "spectral_div_mean": 0.08068210846768788
+      },
+      "Level3_Spectrum": {
+        "survival_rate": 0.6417672960558356,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 3.9515002872090945,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -16.776379825154073,
+        "spectral_div_mean": 0.03397683781649969
+      },
+      "Level4_Autocorr": {
+        "survival_rate": -7.593646789522864,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": -11.656023917681761,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": 198.5048218911014,
+        "spectral_div_mean": 0.1215869636529332
+      },
+      "Level5_Pairwise": {
+        "survival_rate": -1.5758884482569882,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": -2.21307145859228,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": 41.19515489884318,
+        "spectral_div_mean": 0.8325799768124922
+      },
+      "Level6_Nonlinear": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 6.7061121441492,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -26.641635091470224,
+        "spectral_div_mean": 0.8184290378383892
+      },
+      "Level7_Recurrence": {
+        "survival_rate": 0.9723473883286475,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 6.783456085255413,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -25.418043594385253,
+        "spectral_div_mean": 0.014089717870358833
+      },
+      "Level8_CausalLag": {
+        "survival_rate": 0.931321116159436,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 7.028162819794988,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -24.34557958920641,
+        "spectral_div_mean": 0.0526343483465674
+      },
+      "Level9_MaxEntropy": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 6.7061121441492,
+        "dest_entropy_mean": 6.7061121441492,
+        "orig_pred_mean": -26.140907971251814,
+        "dest_pred_mean": -26.498415936756484,
+        "spectral_div_mean": 0.826574689946952
+      }
+    },
+    "Language": {
+      "Level0_Original": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.49694505631404,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -15.82989405345942,
+        "spectral_div_mean": 0.0
+      },
+      "Level1_MeanVar": {
+        "survival_rate": 0.9447733115539276,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.247695815798827,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -14.955661426433737,
+        "spectral_div_mean": 0.9082588103181767
+      },
+      "Level2_Covariance": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.0556025559074556,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -23.050145194618466,
+        "spectral_div_mean": 0.09478743015163868
+      },
+      "Level3_Spectrum": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.300130363176304,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -23.12284907850044,
+        "spectral_div_mean": 0.041564848049132845
+      },
+      "Level4_Autocorr": {
+        "survival_rate": 0.2721405460519505,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 2.1279446753835787,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -4.307956011652698,
+        "spectral_div_mean": 0.15769049131348228
+      },
+      "Level5_Pairwise": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 5.3830658425747995,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -23.95734828794492,
+        "spectral_div_mean": 0.9040156424271716
+      },
+      "Level6_Nonlinear": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.49694505631404,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -16.178094066975454,
+        "spectral_div_mean": 0.9055271009759364
+      },
+      "Level7_Recurrence": {
+        "survival_rate": 0.9144426740714887,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.355557996327664,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -14.475530648512875,
+        "spectral_div_mean": 0.013022678820715165
+      },
+      "Level8_CausalLag": {
+        "survival_rate": 0.8123524793919465,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.246124340456036,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -12.859453682838778,
+        "spectral_div_mean": 0.0511562302845767
+      },
+      "Level9_MaxEntropy": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.49694505631404,
+        "dest_entropy_mean": 7.49694505631404,
+        "orig_pred_mean": -15.82989405345942,
+        "dest_pred_mean": -16.183867984431878,
+        "spectral_div_mean": 0.915337472724833
+      }
+    },
+    "Physiological": {
+      "Level0_Original": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.383001010362117,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -20.72718706544463,
+        "spectral_div_mean": 0.0
+      },
+      "Level1_MeanVar": {
+        "survival_rate": 0.9892033793385219,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.295829278499038,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -20.503403489318544,
+        "spectral_div_mean": 0.4734905860974877
+      },
+      "Level2_Covariance": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 6.219460419802439,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -25.652079008593876,
+        "spectral_div_mean": 0.09177286993835043
+      },
+      "Level3_Spectrum": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 6.248204667892091,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -25.230131888191895,
+        "spectral_div_mean": 0.04277836673169351
+      },
+      "Level4_Autocorr": {
+        "survival_rate": -1.9420190617652244,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": -2.0756672137950263,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": 40.25259237786514,
+        "spectral_div_mean": 0.07084670077460212
+      },
+      "Level5_Pairwise": {
+        "survival_rate": 0.6454435591074841,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 3.208910409307585,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -13.378229389806547,
+        "spectral_div_mean": 0.4847028958878225
+      },
+      "Level6_Nonlinear": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.383001010362117,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -20.79515754932373,
+        "spectral_div_mean": 0.48056253705531526
+      },
+      "Level7_Recurrence": {
+        "survival_rate": 0.9402341705075895,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.356998051029136,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -19.488409537433032,
+        "spectral_div_mean": 0.009093969773182012
+      },
+      "Level8_CausalLag": {
+        "survival_rate": 0.87714387283367,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.432558356691557,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -18.18072513553118,
+        "spectral_div_mean": 0.030264207808644996
+      },
+      "Level9_MaxEntropy": {
+        "survival_rate": 1.0,
+        "orig_entropy_mean": 7.383001010362117,
+        "dest_entropy_mean": 7.383001010362117,
+        "orig_pred_mean": -20.72718706544463,
+        "dest_pred_mean": -20.82316188825462,
+        "spectral_div_mean": 0.4862766143627201
+      }
+    }
+  },
+  "level_survival": {
+    "Level0_Original": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "Level1_MeanVar": {
+      "mean": 0.9710236406500407,
+      "std": 0.026836185845088754,
+      "min": 0.9329739566505616,
+      "max": 1.0
+    },
+    "Level2_Covariance": {
+      "mean": 0.9214822302370426,
+      "std": 0.15703553952591473,
+      "min": 0.6074111511852132,
+      "max": 1.0
+    },
+    "Level3_Spectrum": {
+      "mean": 0.9283534592111671,
+      "std": 0.14329308157766574,
+      "min": 0.6417672960558356,
+      "max": 1.0
+    },
+    "Level4_Autocorr": {
+      "mean": -2.0136766197545617,
+      "std": 3.0163558837529467,
+      "min": -7.593646789522864,
+      "max": 1.0
+    },
+    "Level5_Pairwise": {
+      "mean": 0.348767076471309,
+      "std": 0.974318562456213,
+      "min": -1.5758884482569882,
+      "max": 1.0
+    },
+    "Level6_Nonlinear": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "Level7_Recurrence": {
+      "mean": 0.9386794953770989,
+      "std": 0.019025493934663483,
+      "min": 0.9144426740714887,
+      "max": 0.9723473883286475
+    },
+    "Level8_CausalLag": {
+      "mean": 0.8588773532865307,
+      "std": 0.04602384178985079,
+      "min": 0.8062194196303668,
+      "max": 0.931321116159436
+    },
+    "Level9_MaxEntropy": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    }
+  },
+  "verdict": "MOSTLY_REDUCIBLE",
+  "analysis": {
+    "higher_order_survival_mean": -0.22163651442775092,
+    "low_order_preservation_mean": 0.9402864433660835,
+    "n_domains": 5,
+    "n_signals_per_domain": 100,
+    "signal_length": 500
+  }
+}
