@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "real": {
+      "mean_r2": 0.8919055166547645,
+      "mean_slope": -1.692557021367602
+    },
+    "phase": {
+      "mean_r2": 0.9413369966442533,
+      "mean_slope": -2.5207808905021793
+    },
+    "colored": {
+      "mean_r2": 0.9638307541457145,
+      "mean_slope": -6.619360767701603
+    },
+    "iaaft": {
+      "mean_r2": 0.9236692549356406,
+      "mean_slope": -2.1802504277841095
+    }
+  },
+  "effect_size": -0.07192523749095003,
+  "verdict": "CRITICALITY_EXPLAINED_BY_SURROGATES"
+}
