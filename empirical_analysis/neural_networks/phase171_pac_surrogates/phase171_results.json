@@ -1,0 +1,31 @@
+{
+  "subjects": 4,
+  "mean_gain": -0.006,
+  "verdict": "SURROGATE_EXPLAINED_PAC",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "real_mi": 2.889,
+      "sur_mi": 2.89,
+      "gain": -0.001
+    },
+    {
+      "file": "chb02_01.edf",
+      "real_mi": 2.888,
+      "sur_mi": 2.89,
+      "gain": -0.003
+    },
+    {
+      "file": "chb03_01.edf",
+      "real_mi": 2.884,
+      "sur_mi": 2.89,
+      "gain": -0.006
+    },
+    {
+      "file": "chb04_01.edf",
+      "real_mi": 2.877,
+      "sur_mi": 2.89,
+      "gain": -0.013
+    }
+  ]
+}
