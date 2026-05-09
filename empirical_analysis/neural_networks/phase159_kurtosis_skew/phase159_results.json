@@ -1,0 +1,28 @@
+{
+  "subjects": 4,
+  "mean_kurtosis": 42.0295,
+  "mean_skew": 0.7799,
+  "verdict": "LEPTOKURTIC",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "kurtosis": 7.2189,
+      "skew": 0.1313
+    },
+    {
+      "file": "chb02_01.edf",
+      "kurtosis": 20.4617,
+      "skew": 1.0652
+    },
+    {
+      "file": "chb03_01.edf",
+      "kurtosis": 117.3081,
+      "skew": 1.164
+    },
+    {
+      "file": "chb04_01.edf",
+      "kurtosis": 23.1293,
+      "skew": 0.759
+    }
+  ]
+}
