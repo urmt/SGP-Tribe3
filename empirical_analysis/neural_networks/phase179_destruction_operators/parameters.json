@@ -1,0 +1,11 @@
+{
+  "random_state": 42,
+  "controls": [
+    "real",
+    "phase_random",
+    "channel_perm",
+    "temporal_block",
+    "burst_timing",
+    "white_noise"
+  ]
+}

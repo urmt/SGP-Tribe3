@@ -1,0 +1,7 @@
+control,pc1_mean,pc1_std,dim80_mean,dim80_std
+real,0.5889,0.1463,3.5,1.5
+phase_random,0.1546,0.0244,12.0,2.12
+channel_perm,0.5889,0.1463,3.5,1.5
+temporal_block,0.1287,0.0213,12.25,2.17
+burst_timing,0.6217,0.1467,3.25,1.79
+white_noise,0.1545,0.0228,12.0,2.12

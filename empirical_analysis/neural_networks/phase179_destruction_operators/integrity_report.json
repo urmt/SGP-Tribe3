@@ -1,0 +1,32 @@
+{
+  "phase": 179,
+  "integrity_report": {
+    "assumptions": [
+      "Burst detection via 90th percentile phase synchrony threshold (identical to Phase 177)",
+      "PCA on burst windows captures coordination dimensionality",
+      "5 destruction operators tested: phase_random, channel_perm, temporal_block, burst_timing, white_noise",
+      "10% effect size threshold for surrogate equivalence"
+    ],
+    "shortcuts_taken": [
+      "IAAFT surrogate omitted due to computational cost (timeout at 600s)",
+      "Replaced with white_noise control as simpler destruction operator"
+    ],
+    "unresolved_weaknesses": [
+      "Burst timing shuffle preserves burst occurrence times but shuffles which time points get burst labels",
+      "This may not fully destroy the low-dimensional structure because the underlying amplitude dynamics remain"
+    ],
+    "result_survived_surrogate_controls": false,
+    "which_controls_passed": ["channel_perm", "burst_timing"],
+    "key_finding": "Burst timing shuffle (within 10% effect) shows that the low-dimensional structure arises from burst patterns themselves, not from some unique neural mechanism",
+    "confidence": "MODERATE - burst timing control suggests structural persistence but channel permutation being identical is expected (PCA is invariant to channel ordering)",
+    "methodology_changes_from_phase_177": []
+  },
+  "strict_verdict": "SURROGATE_EXPLAINED_LOW_DIMENSIONALITY",
+  "reason": "burst_timing control shows PC1=0.622 (5.6% effect) and dim80=3.2 (7.1% effect), both within 10% threshold",
+  "files_generated": [
+    "phase179_results.json",
+    "control_comparison.csv",
+    "parameters.json",
+    "phase179_fast.py"
+  ]
+}
