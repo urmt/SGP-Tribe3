@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_fd": -0.5185,
+  "verdict": "LOW_FRACTAL",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "fd": -0.3532
+    },
+    {
+      "file": "chb02_01.edf",
+      "fd": -0.4258
+    },
+    {
+      "file": "chb03_01.edf",
+      "fd": -0.5119
+    },
+    {
+      "file": "chb04_01.edf",
+      "fd": -0.7832
+    }
+  ]
+}
