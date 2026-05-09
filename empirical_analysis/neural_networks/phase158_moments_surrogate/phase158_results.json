@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_diff": 0.1161,
+  "verdict": "NON_GAUSSIAN_STRUCTURE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "diff": 0.137
+    },
+    {
+      "file": "chb02_01.edf",
+      "diff": 0.1036
+    },
+    {
+      "file": "chb03_01.edf",
+      "diff": 0.1194
+    },
+    {
+      "file": "chb04_01.edf",
+      "diff": 0.1043
+    }
+  ]
+}
