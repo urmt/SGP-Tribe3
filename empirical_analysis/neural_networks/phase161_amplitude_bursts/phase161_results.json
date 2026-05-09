@@ -1,0 +1,27 @@
+{
+  "subjects": 4,
+  "mean_bursts": 32238.6,
+  "verdict": "HIGH_BURST_ACTIVITY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "n_bursts": 16718.6,
+      "mean_amp": 0.0001
+    },
+    {
+      "file": "chb02_01.edf",
+      "n_bursts": 37514.8,
+      "mean_amp": 0.0001
+    },
+    {
+      "file": "chb03_01.edf",
+      "n_bursts": 24855.8,
+      "mean_amp": 0.0001
+    },
+    {
+      "file": "chb04_01.edf",
+      "n_bursts": 49865.4,
+      "mean_amp": 0.0001
+    }
+  ]
+}
