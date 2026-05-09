@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_lz": 0.9888,
+  "verdict": "HIGH_COMPLEXITY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "lz": 0.9992
+    },
+    {
+      "file": "chb02_01.edf",
+      "lz": 0.9958
+    },
+    {
+      "file": "chb03_01.edf",
+      "lz": 0.9627
+    },
+    {
+      "file": "chb04_01.edf",
+      "lz": 0.9973
+    }
+  ]
+}
