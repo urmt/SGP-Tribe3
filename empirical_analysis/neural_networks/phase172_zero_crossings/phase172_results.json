@@ -1,0 +1,27 @@
+{
+  "subjects": 4,
+  "mean_zcr_std": 0.053,
+  "verdict": "STABLE_ZERO_CROSSINGS",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "zcr_std": 0.0292,
+      "zcr_mean": 0.0811
+    },
+    {
+      "file": "chb02_01.edf",
+      "zcr_std": 0.0628,
+      "zcr_mean": 0.1481
+    },
+    {
+      "file": "chb03_01.edf",
+      "zcr_std": 0.0506,
+      "zcr_mean": 0.0788
+    },
+    {
+      "file": "chb04_01.edf",
+      "zcr_std": 0.0696,
+      "zcr_mean": 0.1551
+    }
+  ]
+}
