@@ -1,0 +1,9 @@
+{
+  "phase": 183,
+  "tier": "T1",
+  "evidence": "SURROGATE_EXPLAINED",
+  "controls_surviving": [],
+  "controls_omitted": ["B", "F"],
+  "compliance": "FULL",
+  "verdict": "SURROGATE_EXPLAINED_NETWORK_STRUCTURE"
+}

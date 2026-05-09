@@ -1,0 +1,99 @@
+{
+  "phase": 183,
+  "verdict": "SURROGATE_EXPLAINED_NETWORK_STRUCTURE",
+  "results": {
+    "chb01_04.edf": {
+      "file": "chb01_04.edf",
+      "real": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "A": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "C": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "D": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "E": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      }
+    },
+    "chb02_01.edf": {
+      "file": "chb02_01.edf",
+      "real": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "A": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "C": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "D": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "E": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      }
+    },
+    "chb03_01.edf": {
+      "file": "chb03_01.edf",
+      "real": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "A": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "C": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "D": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "E": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      }
+    },
+    "chb04_01.edf": {
+      "file": "chb04_01.edf",
+      "real": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "A": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "C": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "D": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      },
+      "E": {
+        "modularity_q": 0.18666666666666665,
+        "global_efficiency": 0.2
+      }
+    }
+  },
+  "surviving": []
+}
