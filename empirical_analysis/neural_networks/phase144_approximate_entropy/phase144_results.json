@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_entropy": 0.8301,
+  "verdict": "MODERATE_SIGNAL_COMPLEXITY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "entropy": 0.7874
+    },
+    {
+      "file": "chb02_01.edf",
+      "entropy": 0.9621
+    },
+    {
+      "file": "chb03_01.edf",
+      "entropy": 0.5311
+    },
+    {
+      "file": "chb04_01.edf",
+      "entropy": 1.0398
+    }
+  ]
+}
