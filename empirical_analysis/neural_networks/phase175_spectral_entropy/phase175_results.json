@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_spectral_entropy": 3.5954,
+  "verdict": "MODERATE_SPECTRAL",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "entropy": 3.0685
+    },
+    {
+      "file": "chb02_01.edf",
+      "entropy": 4.3495
+    },
+    {
+      "file": "chb03_01.edf",
+      "entropy": 3.2091
+    },
+    {
+      "file": "chb04_01.edf",
+      "entropy": 3.7543
+    }
+  ]
+}
