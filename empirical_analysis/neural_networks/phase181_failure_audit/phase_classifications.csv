@@ -1,0 +1,4 @@
+phase,classification,controls_completed,controls_omitted,deviations,leakage_risk,replication_status,confidence
+Phase_177,PARTIAL,1,4,Only_phase_random_control_completed,LOW,INCOMPLETE,LOW
+Phase_179,PARTIAL,5,1,IAAFT_replaced_with_white_noise,LOW,COMPLETE,MODERATE
+Phase_180,FAILED,4,1,Fast_versions_used_controls_changed_mid_execution,MODERATE,COMPROMISED,LOW

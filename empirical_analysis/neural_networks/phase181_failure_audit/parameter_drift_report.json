@@ -1,0 +1,30 @@
+{
+  "parameter_drift_analysis": {
+    "burst_threshold": {
+      "Phase_177": {"value": 90, "status": "FIXED"},
+      "Phase_179": {"value": 90, "status": "FIXED"},
+      "Phase_180": {"value": 90, "status": "FIXED"}
+    },
+    "pca_components": {
+      "Phase_177": {"value": 20, "status": "FIXED"},
+      "Phase_179": {"value": 20, "status": "FIXED"},
+      "Phase_180": {"value": 20, "status": "FIXED"}
+    },
+    "variance_threshold": {
+      "Phase_177": {"value": 0.80, "status": "FIXED"},
+      "Phase_179": {"value": 0.80, "status": "FIXED"},
+      "Phase_180": {"value": 0.80, "status": "FIXED"}
+    },
+    "random_state": {
+      "Phase_177": {"value": 42, "status": "FIXED"},
+      "Phase_179": {"value": 42, "status": "FIXED"},
+      "Phase_180": {"value": 42, "status": "FIXED"}
+    },
+    "methodology_changes": {
+      "Phase_177": {"changes": "NONE", "note": "First implementation"},
+      "Phase_179": {"changes": "IAAFT_removed_due_to_timeout", "note": "5_controls_completed"},
+      "Phase_180": {"changes": "Fast_versions_used", "note": "4_controls_completed_LOSO_not_implemented"}
+    }
+  },
+  "verdict": "NO_PARAMETER_DRIFT_DETECTED"
+}

@@ -1,0 +1,53 @@
+LEAKAGE REVIEW - PHASES 177-180
+================================
+
+TRAIN/TEST LEAKAGE CHECKS:
+-------------------------
+
+Phase 177:
+- Method: Simple holdout (50/50 split)
+- Leakage: NONE
+- Note: Uses separate subjects per file - no cross-subject contamination
+- Train on first half of each subject, test on second half
+
+Phase 179:
+- Method: Simple holdout
+- Leakage: NONE
+- Same structure as Phase 177
+
+Phase 180:
+- Method: Simple holdout (replication audit)
+- Leakage: NONE
+- Note: Changed from original LOSO specification to holdout for speed
+
+FEATURE/TARGET LEAKAGE:
+-----------------------
+
+All phases compute features and labels from same data (e.g., phase synchrony 
+derived from raw EEG). This is NOT leakage - it's standard signal processing.
+
+However: The "LOSO" claim in Phase 180 is inaccurate - it's simple holdout.
+
+CROSS-SUBJECT CONTAMINATION:
+---------------------------
+
+None - each subject (EDF file) is processed independently.
+
+PARAMETER LEAKAGE:
+-----------------
+
+- Random state 42: FIXED (no leakage)
+- Burst threshold 90th: FIXED (not optimized on test data)
+- PCA components: FIXED (not tuned)
+- Variance threshold 80%: FIXED (not tuned)
+
+VERDICT:
+--------
+
+LEAKAGE RISK: LOW to MODERATE
+- Low: Phases 177, 179
+- Moderate: Phase 180 (holdout instead of LOSO)
+
+No train/test or feature/target leakage.
+No cross-subject contamination.
+Parameter choices fixed a priori.

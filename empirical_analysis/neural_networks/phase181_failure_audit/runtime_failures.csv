@@ -1,0 +1,4 @@
+phase,failure_type,runtime_seconds,memory_mb,convergence,iteration_count,failure_mode
+Phase_179_original,IAAFT_timeout,600+,N/A,NOT_CONVERGED,>100,TIMEOUT
+Phase_180_fast,Multiple_timeouts,120+,N/A,N/A,N/A,TIMEOUT_REQUIRES_FAST_VERSION
+Phase_180_replication,Full_analysis_timeout,300+,N/A,N/A,N/A,TIMEOUT

@@ -1,0 +1,23 @@
+{
+  "Phase_177": {
+    "original_claim": "LOW_DIMENSIONAL_COORDINATION",
+    "original_controls": ["phase_random"],
+    "replication_status": "INCOMPLETE",
+    "can_verify": false,
+    "reason": "Only_1_of_5_controls_specified"
+  },
+  "Phase_179": {
+    "original_claim": "SURROGATE_EXPLAINED_LOW_DIMENSIONALITY", 
+    "original_controls": ["phase_random", "channel_perm", "temporal_block", "burst_timing", "white_noise"],
+    "replication_status": "COMPLETE",
+    "can_verify": true,
+    "note": "IAAFT_replaced_with_white_noise_but_4_controls_agree"
+  },
+  "Phase_180": {
+    "original_claim": "Replication_of_177_and_179",
+    "original_controls": ["A", "C", "D", "E"],
+    "replication_status": "COMPROMISED",
+    "can_verify": false,
+    "reason": "Procedural_drift_fast_versions_mid_execution_changes"
+  }
+}
