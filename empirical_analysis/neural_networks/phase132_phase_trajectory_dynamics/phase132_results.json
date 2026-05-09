@@ -1,0 +1,6 @@
+{
+  "subjects": 4,
+  "mean_auc": 0.5,
+  "effect": 0.0,
+  "verdict": "NO_ROBUST_TRAJECTORY_STRUCTURE"
+}
