@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_hurst": 0.9121,
+  "verdict": "LONG_RANGE_DEPENDENCIES",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "hurst": 0.9124
+    },
+    {
+      "file": "chb02_01.edf",
+      "hurst": 0.9748
+    },
+    {
+      "file": "chb03_01.edf",
+      "hurst": 0.9293
+    },
+    {
+      "file": "chb04_01.edf",
+      "hurst": 0.8319
+    }
+  ]
+}
