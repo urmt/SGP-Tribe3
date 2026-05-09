@@ -1,0 +1,106 @@
+{
+  "runtime_logging_specification": {
+    "version": "1.0.0",
+    "effective_from_phase": 183,
+    
+    "mandatory_fields": {
+      "phase_number": {
+        "type": "integer",
+        "required": true,
+        "description": "Phase identifier"
+      },
+      "execution_start": {
+        "type": "timestamp_iso8601",
+        "required": true,
+        "format": "YYYY-MM-DDTHH:MM:SSZ"
+      },
+      "execution_end": {
+        "type": "timestamp_iso8601", 
+        "required": true,
+        "format": "YYYY-MM-DDTHH:MM:SSZ"
+      },
+      "runtime_seconds": {
+        "type": "float",
+        "required": true,
+        "unit": "seconds"
+      },
+      "cpu_time_seconds": {
+        "type": "float",
+        "required": true,
+        "unit": "seconds",
+        "description": "Total CPU time across all cores"
+      },
+      "memory_mb_estimate": {
+        "type": "integer",
+        "required": true,
+        "unit": "megabytes",
+        "description": "Peak memory usage estimate"
+      },
+      "status": {
+        "type": "enum",
+        "required": true,
+        "values": ["COMPLETED", "FAILED", "SOFT_FAIL", "PARTIAL", "TIMEOUT"]
+      }
+    },
+    
+    "optional_fields": {
+      "failed_iterations": {
+        "type": "integer",
+        "default": 0
+      },
+      "convergence_status": {
+        "type": "string",
+        "values": ["CONVERGED", "NOT_CONVERGED", "N/A", "PARTIAL"]
+      },
+      "retry_count": {
+        "type": "integer",
+        "default": 0
+      },
+      "timeout_events": {
+        "type": "integer", 
+        "default": 0
+      },
+      "warnings": {
+        "type": "array",
+        "description": "Non-fatal warnings during execution"
+      },
+      "errors": {
+        "type": "array",
+        "description": "Error messages if any"
+      }
+    },
+    
+    "control_completion": {
+      "type": "object",
+      "required": true,
+      "structure": {
+        "A_phase_random": {"completed": true/false, "runtime_ms": 0},
+        "B_iaaft": {"completed": true/false, "runtime_ms": 0},
+        "C_temporal_block": {"completed": true/false, "runtime_ms": 0},
+        "D_channel_perm": {"completed": true/false, "runtime_ms": 0},
+        "E_white_noise": {"completed": true/false, "runtime_ms": 0},
+        "F_burst_timing": {"completed": true/false, "runtime_ms": 0}
+      }
+    },
+    
+    "output_location": "runtime_log.json",
+    
+    "format": "JSON",
+    "validation": "strict"
+  },
+  
+  "failure_logging": {
+    "timeout_event": {
+      "required_fields": ["control", "timeout_seconds", "attempted_retries"]
+    },
+    "memory_failure": {
+      "required_fields": ["control", "requested_mb", "available_mb", "failure_point"]
+    },
+    "convergence_failure": {
+      "required_fields": ["control", "iterations_completed", "final_error", "threshold"]
+    },
+    "library_failure": {
+      "required_fields": ["library_name", "import_error", "attempted_fixes"]
+    }
+  }
+}

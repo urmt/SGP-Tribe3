@@ -1,0 +1,20 @@
+phase,required_controls,minimum_complete,robustness_claim,label_allowed
+183,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+184,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+185,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+186,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+187,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+188,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+189,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+190,A|B|C|D|E|F,4,4_controls,SURROGATE_RESISTANT
+
+# Control Key:
+# A = Phase Randomization
+# B = IAAFT Surrogate  
+# C = Temporal Block Shuffle
+# D = Channel Permutation
+# E = White/Pink Noise
+# F = Burst Timing Shuffle
+
+# Minimum Complete = controls required to make any claim
+# Robustness Claim = controls required to claim SURROGATE_RESISTANT

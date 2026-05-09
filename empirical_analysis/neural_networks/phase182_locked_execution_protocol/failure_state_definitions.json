@@ -1,0 +1,85 @@
+{
+  "failure_states": {
+    "HARD_FAIL": {
+      "code": "HF",
+      "description": "Critical protocol violation with no recovery",
+      "recovery_possible": false,
+      "automatic_invalidation": true,
+      "examples": [
+        "No audit chain generated",
+        "Missing required controls",
+        "Parameter drift from registry",
+        "Silent threshold modification",
+        "Post-hoc optimization"
+      ]
+    },
+    "SOFT_FAIL": {
+      "code": "SF", 
+      "description": "Recoverable runtime interruption",
+      "recovery_possible": true,
+      "automatic_invalidation": false,
+      "retry_allowed": true,
+      "examples": [
+        "Timeout with documented reason",
+        "Missing library (install retry)",
+        "Memory limit exceeded",
+        "Disk space issues"
+      ]
+    },
+    "PARTIAL_EXECUTION": {
+      "code": "PE",
+      "description": "Incomplete controls executed",
+      "recovery_possible": false,
+      "automatic_invalidation": false,
+      "verdict_limitation": true,
+      "examples": [
+        "3 of 5 controls completed",
+        "IAAFT omitted due to timeout",
+        "Missing temporal block shuffle"
+      ]
+    },
+    "INVALID_REPLICATION": {
+      "code": "IR",
+      "description": "Methodology mismatch with source phase",
+      "recovery_possible": false,
+      "automatic_invalidation": true,
+      "examples": [
+        "Different window size than source",
+        "Different threshold than source",
+        "Different LOSO strategy"
+      ]
+    },
+    "UNVERIFIABLE": {
+      "code": "UV",
+      "description": "Insufficient audit evidence",
+      "recovery_possible": false,
+      "automatic_invalidation": true,
+      "examples": [
+        "No runtime log",
+        "Missing control matrix",
+        "No parameter snapshot"
+      ]
+    }
+  },
+  "recovery_procedures": {
+    "timeout_retry": {
+      "max_retries": 2,
+      "backoff_factor": 2,
+      "timeout_limit_seconds": 300
+    },
+    "memory_optimization": {
+      "chunk_processing": true,
+      "max_chunk_samples": 100000
+    },
+    "library_recovery": {
+      "attempt_install": true,
+      "fallback_availability": false
+    }
+  },
+  "escalation_rules": {
+    "HARD_FAIL": "IMMEDIATE_INVALIDATION",
+    "SOFT_FAIL_3_attempts": "CONVERT_TO_HARD_FAIL",
+    "PARTIAL_with_0_controls": "CONVERT_TO_HARD_FAIL",
+    "INVALID_REPLICATION": "REQUIRE_REDO"
+  }
+}

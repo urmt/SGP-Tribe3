@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "effective_from_phase": 183,
+  "registry_status": "MANDATORY",
+  
+  "core_parameters": {
+    "random_state": {
+      "value": 42,
+      "type": "integer",
+      "scope": "ALL_PHASES",
+      "description": "Fixed seed for all random operations"
+    },
+    "window_size": {
+      "value": 512,
+      "type": "integer",
+      "scope": "ALL_PHASES",
+      "unit": "samples",
+      "description": "Standard window length for feature extraction"
+    },
+    "window_overlap": {
+      "value": 256,
+      "type": "integer", 
+      "scope": "ALL_PHASES",
+      "unit": "samples",
+      "description": "50% overlap for sliding windows"
+    },
+    "fs": {
+      "value": 256,
+      "type": "integer",
+      "scope": "ALL_PHASES",
+      "unit": "Hz",
+      "description": "Sampling frequency"
+    },
+    "filtering_order": {
+      "value": 3,
+      "type": "integer",
+      "scope": "ALL_PHASES",
+      "description": "Butterworth filter order"
+    }
+  },
+  
+  "burst_detection": {
+    "burst_threshold_percentile": {
+      "value": 90,
+      "type": "integer",
+      "unit": "percentile",
+      "description": "Threshold for burst detection via phase synchrony"
+    },
+    "burst_minimum_samples": {
+      "value": 50,
+      "type": "integer",
+      "description": "Minimum samples required for valid burst"
+    }
+  },
+  
+  "pca_parameters": {
+    "variance_threshold": {
+      "value": 0.80,
+      "type": "float",
+      "unit": "proportion",
+      "description": "Cumulative variance threshold for dimensionality"
+    },
+    "max_components": {
+      "value": 20,
+      "type": "integer",
+      "description": "Maximum PCA components to compute"
+    }
+  },
+  
+  "loso_configuration": {
+    "leave_out_count": {
+      "value": 1,
+      "type": "integer",
+      "description": "Leave-one-subject-out: 1 subject out per fold"
+    },
+    "validation_strategy": {
+      "value": "strict_loso",
+      "type": "string",
+      "description": "Full LOSO cross-validation required for T4+"
+    }
+  },
+  
+  "surrogate_parameters": {
+    "phase_random_n_iterations": {
+      "value": 1,
+      "type": "integer",
+      "description": "Single phase randomization pass"
+    },
+    "iaaft_max_iterations": {
+      "value": 10,
+      "type": "integer",
+      "description": "IAAFT convergence iterations"
+    },
+    "temporal_block_size": {
+      "value": 512,
+      "type": "integer",
+      "unit": "samples",
+      "description": "Block size for temporal shuffle"
+    },
+    "noise_generation": {
+      "distribution": "gaussian",
+      "normalization": "match_std",
+      "description": "White noise matched to signal std"
+    }
+  },
+  
+  "thresholds": {
+    "effect_size_threshold": {
+      "value": 0.20,
+      "type": "float",
+      "description": "20% effect size for survival判定"
+    },
+    "survival_minimum_controls": {
+      "value": 4,
+      "type": "integer",
+      "description": "Minimum controls for robustness claim"
+    }
+  },
+  
+  "data_sources": {
+    "eeg_data_directory": "/home/student/sgp-tribe3/empirical_analysis/neural_networks/phase112_persistent_acquisition/downloaded",
+    "required_format": "edf",
+    "minimum_subjects": 4
+  },
+  
+  "version_control": {
+    "registry_version": "1.0.0",
+    "phase_introduced": 182,
+    "last_updated": "2026-05-09"
+  }
+}

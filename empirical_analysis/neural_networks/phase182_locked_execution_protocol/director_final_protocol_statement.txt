@@ -1,0 +1,151 @@
+================================================================================
+DIRECTOR FINAL PROTOCOL STATEMENT
+PHASE 182 - LOCKED EXECUTION PROTOCOL (LEP)
+================================================================================
+
+DATE: 2026-05-09
+AUTHORITY: Research Director Override
+STATUS: MANDATORY FOR PHASES 183+
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+Phase 182 establishes a LOCKED EXECUTION PROTOCOL (LEP) that becomes binding
+for ALL future phases (183+). This protocol transforms the repository from
+an "adaptive exploratory notebook" into a "regulated laboratory pipeline."
+
+================================================================================
+KEY PROVISIONS
+================================================================================
+
+1. EXECUTION LOCKS (10 Prohibitions)
+   - No "fast versions"
+   - No fallback analyses  
+   - No runtime simplifications
+   - No control substitutions
+   - No silent threshold changes
+   - No altered window sizes
+   - No altered sampling rates
+   - No altered subject pools
+   - No altered LOSO behavior
+   - No post-hoc parameter tuning
+
+2. PARAMETER IMMUTABILITY
+   - All phases must use central registry
+   - random_state = 42 (fixed)
+   - window_size = 512 (fixed)
+   - burst_threshold = 90th percentile (fixed)
+   - pca_variance_target = 0.80 (fixed)
+
+3. CONTROL ENFORCEMENT
+   - 6 mandatory controls (A-F)
+   - Minimum 4/6 for any claim
+   - IAAFT cannot be silently omitted
+
+4. FAILURE STATES
+   - HARD_FAIL: Invalid (no recovery)
+   - SOFT_FAIL: Retry allowed
+   - PARTIAL_EXECUTION: Limited claims
+   - INVALID_REPLICATION: Must redo
+   - UNVERIFIABLE: Auto-invalid
+
+5. REPLICATION TIERS
+   - T0: Exploratory (PROVISIONAL)
+   - T1: Single-control (OBSERVED)
+   - T2: Multi-control (REPLICATED)
+   - T3: Surrogate-resistant (SURROGATE_RESISTANT)
+   - T4: Replication-ready
+   - T5: Publication-grade (VERIFIED)
+
+================================================================================
+APPROVED EVIDENCE LABELS
+================================================================================
+
+- OBSERVED (T1+)
+- REPLICATED (T2+)
+- SURROGATE_RESISTANT (T3+)
+- CONTROL_DEPENDENT (T2+)
+- SURROGATE_EXPLAINED (T1+)
+- PROVISIONAL (T0+)
+- INVALIDATED (none)
+
+PROHIBITED: ROBUST, STRONG, SIGNIFICANT, NOVEL, BREAKTHROUGH, PROOF
+
+================================================================================
+COMMIT REQUIREMENTS
+================================================================================
+
+Format:
+  Phase: XXX
+  Protocol-Hash: [version]
+  Controls: [matrix]
+  Runtime: [status]
+  Tier: [T0-T5]
+  Evidence: [label]
+
+Non-compliant commits are AUTOMATICALLY REJECTED.
+
+================================================================================
+AUDIT CHAIN ENFORCEMENT
+================================================================================
+
+Every phase must generate:
+- audit_manifest.json
+- parameter_snapshot.json
+- runtime_log.json
+- control_matrix.csv
+- integrity_summary.txt
+
+Phases without audit chain are INVALID.
+
+================================================================================
+PHASE 181 FINDINGS INTEGRATION
+================================================================================
+
+Current audit shows:
+- Phase 177: PARTIAL (only 1/5 controls)
+- Phase 179: PARTIAL (IAAFT replaced)
+- Phase 180: FAILED (procedural drift)
+
+These phases CANNOT claim robustness under LEP rules.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+This protocol is MANDATORY for Phases 183+.
+
+Violation consequence: AUTOMATIC_INVALIDATION
+
+The LEP will be enforced through:
+1. Git commit hook validation
+2. Audit chain verification
+3. Director review before publication claims
+
+================================================================================
+DIRECTOR AUTHORITY STATEMENT
+================================================================================
+
+As Research Director, I establish Phase 182 as the governance foundation
+for all future work. The LEP ensures:
+
+- Reproducibility
+- Auditability  
+- Hostile-review resistance
+- Publication defensibility
+
+The protocol transforms this repository from exploratory analysis to
+regulated scientific pipeline.
+
+================================================================================
+SIGNATURES
+================================================================================
+
+Director: [Research Director Override]
+Date: 2026-05-09
+Status: APPROVED AND BINDING
+
+================================================================================
+END OF DIRECTOR FINAL PROTOCOL STATEMENT
+================================================================================
