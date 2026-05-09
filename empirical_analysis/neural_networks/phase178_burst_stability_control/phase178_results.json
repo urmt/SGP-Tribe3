@@ -1,0 +1,48 @@
+{
+  "subjects": 4,
+  "pc1_real": 0.589,
+  "pc1_sur": 0.155,
+  "pc1_chan": 0.589,
+  "dim_real": 3.5,
+  "dim_sur": 12.0,
+  "dim_chan": 3.5,
+  "verdict": "STABLE_LOW_DIMENSIONAL_COORDINATION",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "real_pc1": 0.512,
+      "real_dim": 5,
+      "sur_pc1": 0.128,
+      "sur_dim": 15,
+      "chan_pc1": 0.512,
+      "chan_dim": 5
+    },
+    {
+      "file": "chb02_01.edf",
+      "real_pc1": 0.404,
+      "real_dim": 5,
+      "sur_pc1": 0.145,
+      "sur_dim": 12,
+      "chan_pc1": 0.404,
+      "chan_dim": 5
+    },
+    {
+      "file": "chb03_01.edf",
+      "real_pc1": 0.796,
+      "real_dim": 2,
+      "sur_pc1": 0.189,
+      "sur_dim": 9,
+      "chan_pc1": 0.796,
+      "chan_dim": 2
+    },
+    {
+      "file": "chb04_01.edf",
+      "real_pc1": 0.644,
+      "real_dim": 2,
+      "sur_pc1": 0.157,
+      "sur_dim": 12,
+      "chan_pc1": 0.644,
+      "chan_dim": 2
+    }
+  ]
+}
