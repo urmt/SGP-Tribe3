@@ -1,0 +1,28 @@
+{
+  "subjects": 4,
+  "mean_ibi": 3.99,
+  "cv": 13.17,
+  "verdict": "POISSON_LIKE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "mean_ibi": 4.0,
+      "cv": 6.0
+    },
+    {
+      "file": "chb02_01.edf",
+      "mean_ibi": 4.0,
+      "cv": 6.82
+    },
+    {
+      "file": "chb03_01.edf",
+      "mean_ibi": 3.97,
+      "cv": 28.11
+    },
+    {
+      "file": "chb04_01.edf",
+      "mean_ibi": 4.0,
+      "cv": 11.76
+    }
+  ]
+}
