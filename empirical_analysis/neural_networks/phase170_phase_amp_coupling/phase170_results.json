@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_mi": 2.8878,
+  "verdict": "STRONG_PHASE_AMP_COUPLING",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "mi": 2.89
+    },
+    {
+      "file": "chb02_01.edf",
+      "mi": 2.8884
+    },
+    {
+      "file": "chb03_01.edf",
+      "mi": 2.8877
+    },
+    {
+      "file": "chb04_01.edf",
+      "mi": 2.8851
+    }
+  ]
+}
