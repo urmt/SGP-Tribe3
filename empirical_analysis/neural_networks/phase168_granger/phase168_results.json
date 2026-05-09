@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_granger": 0.0,
+  "verdict": "NO_CAUSALITY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "granger": 0.0
+    },
+    {
+      "file": "chb02_01.edf",
+      "granger": 0.0
+    },
+    {
+      "file": "chb03_01.edf",
+      "granger": 0.0
+    },
+    {
+      "file": "chb04_01.edf",
+      "granger": 0.0
+    }
+  ]
+}
