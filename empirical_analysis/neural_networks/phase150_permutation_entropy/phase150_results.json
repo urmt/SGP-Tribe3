@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_perm_ent": 0.9209,
+  "verdict": "HIGH_ENTROPY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "perm_ent": 0.8601
+    },
+    {
+      "file": "chb02_01.edf",
+      "perm_ent": 0.9484
+    },
+    {
+      "file": "chb03_01.edf",
+      "perm_ent": 0.9183
+    },
+    {
+      "file": "chb04_01.edf",
+      "perm_ent": 0.9569
+    }
+  ]
+}
