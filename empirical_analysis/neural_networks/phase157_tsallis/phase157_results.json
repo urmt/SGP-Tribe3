@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_tsallis": 0.8897,
+  "verdict": "HIGH_NON_EXTENSIVE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "tsallis": 1.1422
+    },
+    {
+      "file": "chb02_01.edf",
+      "tsallis": 1.0398
+    },
+    {
+      "file": "chb03_01.edf",
+      "tsallis": 0.5398
+    },
+    {
+      "file": "chb04_01.edf",
+      "tsallis": 0.8371
+    }
+  ]
+}
