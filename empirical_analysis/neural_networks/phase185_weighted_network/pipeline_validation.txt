@@ -1,0 +1,18 @@
+PHASE 185 PIPELINE VALIDATION
+================================
+
+WEIGHTED NETWORK TEST:
+- NO edge thresholding applied
+- Full weighted adjacency matrices used
+- Metrics computed on raw synchrony values
+
+RESULTS:
+- Weighted metrics successfully computed
+- Effect sizes calculated for all controls
+- Verdict: MIXED_OR_UNSTABLE
+- Surviving controls: ['A', 'E', 'F']
+
+COMPARISON TO PHASE 183/184:
+- Phase 183 used thresholding -> collapsed to 0.200
+- Phase 184 weighted test -> 51% difference (A vs real)
+- Phase 185 full replication under LEP -> survives

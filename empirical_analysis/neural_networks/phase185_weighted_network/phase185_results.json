@@ -1,0 +1,305 @@
+{
+  "phase": 185,
+  "verdict": "MIXED_OR_UNSTABLE",
+  "surviving_controls": [
+    "A",
+    "E",
+    "F"
+  ],
+  "aggregate": {
+    "real": {
+      "efficiency": 22222222241.98208,
+      "modularity": -2.883977778811442e-17,
+      "clustering": 0.3395917932529661,
+      "participation": 0.7782145626920756,
+      "largest_eigenvalue": 1.7474982641269925,
+      "spectral_gap": 1.181118690604072
+    },
+    "A": {
+      "efficiency": 22222222334.734108,
+      "modularity": 7.025630077706069e-17,
+      "clustering": 0.0,
+      "participation": 0.729737431212657,
+      "largest_eigenvalue": 0.17845245217988326,
+      "spectral_gap": 0.14047015229731963
+    },
+    "B": {
+      "efficiency": 22222222241.98208,
+      "modularity": -3.5778671692021646e-17,
+      "clustering": 0.33959179325296546,
+      "participation": 0.7782145626920756,
+      "largest_eigenvalue": 1.747498264126993,
+      "spectral_gap": 1.1811186906040732
+    },
+    "C": {
+      "efficiency": 22222222241.121296,
+      "modularity": 1.8648277366750676e-17,
+      "clustering": 0.43436172260949546,
+      "participation": 0.765547708130294,
+      "largest_eigenvalue": 1.6888213652949156,
+      "spectral_gap": 1.1153801443686562
+    },
+    "D": {
+      "efficiency": 22222222241.98208,
+      "modularity": 5.421010862427522e-18,
+      "clustering": 0.33959179325296596,
+      "participation": 0.7782145626920756,
+      "largest_eigenvalue": 1.7474982641269925,
+      "spectral_gap": 1.1811186906040723
+    },
+    "E": {
+      "efficiency": 22222222326.43019,
+      "modularity": 5.637851296924623e-18,
+      "clustering": 0.0,
+      "participation": 0.8626159802719644,
+      "largest_eigenvalue": 0.19164887656312524,
+      "spectral_gap": 0.1600248683621621
+    },
+    "F": {
+      "efficiency": 22222222351.381523,
+      "modularity": 3.230922474006803e-17,
+      "clustering": 0.0,
+      "participation": 0.7642081688530955,
+      "largest_eigenvalue": 0.18064314862724234,
+      "spectral_gap": 0.1448050068032309
+    }
+  },
+  "details": {
+    "chb01_04.edf": {
+      "file": "chb01_04.edf",
+      "real": {
+        "efficiency": 22222222233.75532,
+        "modularity": 2.6020852139652106e-18,
+        "clustering": 0.4255649024673936,
+        "participation": 0.8804800771118639,
+        "largest_eigenvalue": 1.7842395117434404,
+        "spectral_gap": 1.253540041381171
+      },
+      "A": {
+        "efficiency": 22222222292.26688,
+        "modularity": 1.491862189340054e-16,
+        "clustering": 0.0,
+        "participation": 0.6380527753975441,
+        "largest_eigenvalue": 0.2835945949833923,
+        "spectral_gap": 0.2065574852855727
+      },
+      "B": {
+        "efficiency": 22222222233.75532,
+        "modularity": -5.637851296924623e-17,
+        "clustering": 0.42556490246739365,
+        "participation": 0.8804800771118639,
+        "largest_eigenvalue": 1.7842395117434424,
+        "spectral_gap": 1.2535400413811746
+      },
+      "C": {
+        "efficiency": 22222222245.37328,
+        "modularity": 9.194034422677078e-17,
+        "clustering": 0.6016273890175456,
+        "participation": 0.8499998300050479,
+        "largest_eigenvalue": 1.6776977016480146,
+        "spectral_gap": 1.107571380500551
+      },
+      "D": {
+        "efficiency": 22222222233.755318,
+        "modularity": 4.163336342344337e-17,
+        "clustering": 0.4255649024673936,
+        "participation": 0.8804800771118639,
+        "largest_eigenvalue": 1.7842395117434404,
+        "spectral_gap": 1.253540041381171
+      },
+      "E": {
+        "efficiency": 22222222299.72283,
+        "modularity": -4.163336342344337e-17,
+        "clustering": 0.0,
+        "participation": 0.9294930309541227,
+        "largest_eigenvalue": 0.30543003625828413,
+        "spectral_gap": 0.272897847122569
+      },
+      "F": {
+        "efficiency": 22222222279.42082,
+        "modularity": -3.0357660829594124e-17,
+        "clustering": 0.0,
+        "participation": 0.7892664594755621,
+        "largest_eigenvalue": 0.31209564266991346,
+        "spectral_gap": 0.25035036282651185
+      }
+    },
+    "chb02_01.edf": {
+      "file": "chb02_01.edf",
+      "real": {
+        "efficiency": 22222222232.296055,
+        "modularity": -1.3530843112619095e-16,
+        "clustering": 0.4620928430554715,
+        "participation": 0.8455694221998213,
+        "largest_eigenvalue": 1.686979312255535,
+        "spectral_gap": 1.0114950067898942
+      },
+      "A": {
+        "efficiency": 22222222382.852875,
+        "modularity": 1.3010426069826053e-16,
+        "clustering": 0.0,
+        "participation": 0.7827270689091069,
+        "largest_eigenvalue": 0.13284192562050062,
+        "spectral_gap": 0.10711143070980385
+      },
+      "B": {
+        "efficiency": 22222222232.296055,
+        "modularity": -2.6020852139652106e-17,
+        "clustering": 0.46209284305547127,
+        "participation": 0.8455694221998213,
+        "largest_eigenvalue": 1.6869793122555357,
+        "spectral_gap": 1.0114950067898953
+      },
+      "C": {
+        "efficiency": 22222222236.931465,
+        "modularity": 8.673617379884035e-18,
+        "clustering": 0.4384206598107577,
+        "participation": 0.8437297273818064,
+        "largest_eigenvalue": 1.6659222310901054,
+        "spectral_gap": 1.0141127175747928
+      },
+      "D": {
+        "efficiency": 22222222232.29605,
+        "modularity": -5.0306980803327406e-17,
+        "clustering": 0.46209284305547127,
+        "participation": 0.8455694221998213,
+        "largest_eigenvalue": 1.6869793122555352,
+        "spectral_gap": 1.0114950067898945
+      },
+      "E": {
+        "efficiency": 22222222353.454403,
+        "modularity": 1.0928757898653885e-16,
+        "clustering": 0.0,
+        "participation": 0.8767848733885941,
+        "largest_eigenvalue": 0.1330471364109012,
+        "spectral_gap": 0.10498681764842377
+      },
+      "F": {
+        "efficiency": 22222222325.650368,
+        "modularity": 1.5092094240998222e-16,
+        "clustering": 0.0,
+        "participation": 0.7488903852205931,
+        "largest_eigenvalue": 0.14958737750536724,
+        "spectral_gap": 0.11551809785685715
+      }
+    },
+    "chb03_01.edf": {
+      "file": "chb03_01.edf",
+      "real": {
+        "efficiency": 22222222250.871197,
+        "modularity": 1.3877787807814457e-16,
+        "clustering": 0.1655748164196743,
+        "participation": 0.6864871882565493,
+        "largest_eigenvalue": 1.8903827489156269,
+        "spectral_gap": 1.2980475192248209
+      },
+      "A": {
+        "efficiency": 22222222322.689835,
+        "modularity": -1.3877787807814457e-17,
+        "clustering": 0.0,
+        "participation": 0.8627510785017425,
+        "largest_eigenvalue": 0.16791465584068863,
+        "spectral_gap": 0.1427803961205164
+      },
+      "B": {
+        "efficiency": 22222222250.871197,
+        "modularity": 1.196959198423997e-16,
+        "clustering": 0.16557481641967414,
+        "participation": 0.6864871882565493,
+        "largest_eigenvalue": 1.890382748915627,
+        "spectral_gap": 1.2980475192248209
+      },
+      "C": {
+        "efficiency": 22222222239.60175,
+        "modularity": -2.7755575615628914e-17,
+        "clustering": 0.2886867395938561,
+        "participation": 0.677649669672418,
+        "largest_eigenvalue": 1.7898277575379482,
+        "spectral_gap": 1.2166216888433063
+      },
+      "D": {
+        "efficiency": 22222222250.8712,
+        "modularity": 2.7755575615628914e-17,
+        "clustering": 0.165574816419674,
+        "participation": 0.6864871882565494,
+        "largest_eigenvalue": 1.890382748915628,
+        "spectral_gap": 1.2980475192248222
+      },
+      "E": {
+        "efficiency": 22222222321.87837,
+        "modularity": -4.683753385137379e-17,
+        "clustering": 0.0,
+        "participation": 0.8588965529891059,
+        "largest_eigenvalue": 0.17906101084432227,
+        "spectral_gap": 0.1367339757760855
+      },
+      "F": {
+        "efficiency": 22222222408.376892,
+        "modularity": -1.734723475976807e-18,
+        "clustering": 0.0,
+        "participation": 0.8059084029763259,
+        "largest_eigenvalue": 0.1408370445974616,
+        "spectral_gap": 0.1158210972090597
+      }
+    },
+    "chb04_01.edf": {
+      "file": "chb04_01.edf",
+      "real": {
+        "efficiency": 22222222251.005737,
+        "modularity": -1.214306433183765e-16,
+        "clustering": 0.305134611069325,
+        "participation": 0.7003215632000674,
+        "largest_eigenvalue": 1.6283914835933673,
+        "spectral_gap": 1.1613921950204018
+      },
+      "A": {
+        "efficiency": 22222222341.126846,
+        "modularity": 1.5612511283791264e-17,
+        "clustering": 0.0,
+        "participation": 0.6354188020422346,
+        "largest_eigenvalue": 0.1294586322749514,
+        "spectral_gap": 0.10543129707338551
+      },
+      "B": {
+        "efficiency": 22222222251.005737,
+        "modularity": -1.8041124150158794e-16,
+        "clustering": 0.30513461106932266,
+        "participation": 0.7003215632000674,
+        "largest_eigenvalue": 1.6283914835933673,
+        "spectral_gap": 1.1613921950204018
+      },
+      "C": {
+        "efficiency": 22222222242.57869,
+        "modularity": 1.734723475976807e-18,
+        "clustering": 0.4087121020158224,
+        "participation": 0.6908116054619038,
+        "largest_eigenvalue": 1.6218377709035945,
+        "spectral_gap": 1.1232147905559744
+      },
+      "D": {
+        "efficiency": 22222222251.005737,
+        "modularity": 2.6020852139652106e-18,
+        "clustering": 0.3051346110693249,
+        "participation": 0.7003215632000674,
+        "largest_eigenvalue": 1.6283914835933673,
+        "spectral_gap": 1.1613921950204018
+      },
+      "E": {
+        "efficiency": 22222222330.665165,
+        "modularity": 1.734723475976807e-18,
+        "clustering": 0.0,
+        "participation": 0.7852894637560351,
+        "largest_eigenvalue": 0.14905732273899333,
+        "spectral_gap": 0.12548083290157008
+      },
+      "F": {
+        "efficiency": 22222222392.078026,
+        "modularity": 1.0408340855860843e-17,
+        "clustering": 0.0,
+        "participation": 0.7127674277399005,
+        "largest_eigenvalue": 0.1200525297362271,
+        "spectral_gap": 0.09753046932049496
+      }
+    }
+  }
+}

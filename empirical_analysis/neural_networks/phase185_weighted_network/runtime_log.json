@@ -1,0 +1,46 @@
+{
+  "phase": 185,
+  "controls": {
+    "real": "success",
+    "A": {
+      "name": "phase_randomization",
+      "start": 1778370517.2925072,
+      "status": "success",
+      "runtime": 0.7326436042785645
+    },
+    "B": {
+      "name": "temporal_circular_shift",
+      "start": 1778370518.025187,
+      "status": "success",
+      "runtime": 0.6440718173980713
+    },
+    "C": {
+      "name": "burst_timing_shuffle",
+      "start": 1778370518.6692896,
+      "status": "success",
+      "runtime": 0.7567164897918701
+    },
+    "D": {
+      "name": "channel_permutation",
+      "start": 1778370519.4260452,
+      "status": "success",
+      "runtime": 0.6393609046936035
+    },
+    "E": {
+      "name": "spectrum_matched_noise",
+      "start": 1778370520.0654423,
+      "status": "success",
+      "runtime": 0.6754674911499023
+    },
+    "F": {
+      "name": "iaaft_surrogate",
+      "start": 1778370520.7409372,
+      "status": "success",
+      "runtime": 0.9126133918762207
+    }
+  },
+  "failures": [],
+  "random_state": 42,
+  "burst_threshold": 90,
+  "execution_end": "2026-05-09T17:48:41Z"
+}
