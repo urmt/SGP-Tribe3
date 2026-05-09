@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_sampen": 0.9071,
+  "verdict": "MODERATE_COMPLEXITY",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "entropy": 0.7109
+    },
+    {
+      "file": "chb02_01.edf",
+      "entropy": 0.84
+    },
+    {
+      "file": "chb03_01.edf",
+      "entropy": 0.7205
+    },
+    {
+      "file": "chb04_01.edf",
+      "entropy": 1.3572
+    }
+  ]
+}
