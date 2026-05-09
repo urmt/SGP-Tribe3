@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_coherence": 0.108,
+  "verdict": "MODERATE_COHERENCE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "mean_coherence": 0.132
+    },
+    {
+      "file": "chb02_01.edf",
+      "mean_coherence": 0.135
+    },
+    {
+      "file": "chb03_01.edf",
+      "mean_coherence": 0.09
+    },
+    {
+      "file": "chb04_01.edf",
+      "mean_coherence": 0.073
+    }
+  ]
+}
