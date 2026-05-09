@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_entropy": 1.1378,
+  "verdict": "DISTRIBUTED_BANDS",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "entropy": 1.0901
+    },
+    {
+      "file": "chb02_01.edf",
+      "entropy": 1.3291
+    },
+    {
+      "file": "chb03_01.edf",
+      "entropy": 0.9851
+    },
+    {
+      "file": "chb04_01.edf",
+      "entropy": 1.147
+    }
+  ]
+}
