@@ -1,0 +1,6 @@
+{
+  "subjects": 4,
+  "mean_auc": 0.999,
+  "effect": 0.499,
+  "verdict": "BURST_SYNCHRONY_STRUCTURE"
+}
