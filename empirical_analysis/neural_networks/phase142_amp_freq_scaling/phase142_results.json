@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_slope": -0.051,
+  "verdict": "WHITE_NOISE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "slope": -0.0826
+    },
+    {
+      "file": "chb02_01.edf",
+      "slope": -0.0265
+    },
+    {
+      "file": "chb03_01.edf",
+      "slope": -0.0555
+    },
+    {
+      "file": "chb04_01.edf",
+      "slope": -0.0394
+    }
+  ]
+}
