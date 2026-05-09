@@ -1,0 +1,31 @@
+{
+  "subjects": 4,
+  "mean_gain": 6.91,
+  "verdict": "STRUCTURED_HEAVY_TAILS",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "real_k": 6.07,
+      "sur_k": -0.14,
+      "gain": 6.21
+    },
+    {
+      "file": "chb02_01.edf",
+      "real_k": 5.65,
+      "sur_k": -0.08,
+      "gain": 5.74
+    },
+    {
+      "file": "chb03_01.edf",
+      "real_k": 4.9,
+      "sur_k": 0.16,
+      "gain": 4.74
+    },
+    {
+      "file": "chb04_01.edf",
+      "real_k": 10.79,
+      "sur_k": -0.16,
+      "gain": 10.95
+    }
+  ]
+}
