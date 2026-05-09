@@ -1,0 +1,39 @@
+{
+  "subjects": 4,
+  "pc1_real": 0.589,
+  "pc1_sur": 0.155,
+  "dim_real": 3.5,
+  "dim_sur": 12.0,
+  "effect": 0.434,
+  "verdict": "LOW_DIMENSIONAL_COORDINATION",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "pc1_real": 0.512,
+      "dim_real": 5,
+      "pc1_sur": 0.128,
+      "dim_sur": 15
+    },
+    {
+      "file": "chb02_01.edf",
+      "pc1_real": 0.404,
+      "dim_real": 5,
+      "pc1_sur": 0.144,
+      "dim_sur": 12
+    },
+    {
+      "file": "chb03_01.edf",
+      "pc1_real": 0.796,
+      "dim_real": 2,
+      "pc1_sur": 0.19,
+      "dim_sur": 9
+    },
+    {
+      "file": "chb04_01.edf",
+      "pc1_real": 0.644,
+      "dim_real": 2,
+      "pc1_sur": 0.158,
+      "dim_sur": 12
+    }
+  ]
+}
