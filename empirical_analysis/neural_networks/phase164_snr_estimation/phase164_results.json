@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_snr": 20.54,
+  "verdict": "HIGH_SNR",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "snr": 23.07
+    },
+    {
+      "file": "chb02_01.edf",
+      "snr": 17.79
+    },
+    {
+      "file": "chb03_01.edf",
+      "snr": 23.15
+    },
+    {
+      "file": "chb04_01.edf",
+      "snr": 18.14
+    }
+  ]
+}
