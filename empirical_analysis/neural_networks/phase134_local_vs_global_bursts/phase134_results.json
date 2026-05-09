@@ -1,0 +1,32 @@
+{
+  "subjects": 4,
+  "global_count": 4,
+  "local_count": 0,
+  "verdict": "GLOBAL_BURST_DOMINANCE",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "local": 0.3003,
+      "global": 0.3345,
+      "org": "GLOBAL"
+    },
+    {
+      "file": "chb02_01.edf",
+      "local": 0.2865,
+      "global": 0.3295,
+      "org": "GLOBAL"
+    },
+    {
+      "file": "chb03_01.edf",
+      "local": 0.3309,
+      "global": 0.363,
+      "org": "GLOBAL"
+    },
+    {
+      "file": "chb04_01.edf",
+      "local": 0.2837,
+      "global": 0.3236,
+      "org": "GLOBAL"
+    }
+  ]
+}
