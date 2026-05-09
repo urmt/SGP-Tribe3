@@ -1,0 +1,104 @@
+{
+  "phase": 184,
+  "verdict": "PIPELINE_INSENSITIVE",
+  "note": "Synthetic graphs also collapse to similar metrics",
+  "synthetic": {
+    "random_graph": {
+      "modularity": 0.06867845993756508,
+      "efficiency": Infinity,
+      "clustering": 0.14423280423279808,
+      "path_length": 0.4095238095238095,
+      "dominant_module": 1.0
+    },
+    "ring_lattice": {
+      "modularity": 0.06666666666666667,
+      "efficiency": Infinity,
+      "clustering": 0.4999999999999166,
+      "path_length": 0.7142857142857143,
+      "dominant_module": 1.0
+    },
+    "modular_graph": {
+      "modularity": 0.05600000000000003,
+      "efficiency": Infinity,
+      "clustering": 0.39888888888877705,
+      "path_length": 0.7619047619047619,
+      "dominant_module": 1.0
+    },
+    "star_graph": {
+      "modularity": 0.26785714285714496,
+      "efficiency": Infinity,
+      "clustering": 0.0,
+      "path_length": 0.8666666666666667,
+      "dominant_module": 1.0
+    },
+    "dense_global": {
+      "modularity": 0.0670486767485823,
+      "efficiency": Infinity,
+      "clustering": 0.08937062937062805,
+      "path_length": 0.12380952380952381,
+      "dominant_module": 1.0
+    }
+  },
+  "weighted_eeg": {
+    "chb01_04.edf": {
+      "file": "chb01_04.edf",
+      "real_weighted": {
+        "efficiency": 0.4098406650002127,
+        "modularity": 0.19167405668601623
+      },
+      "A_weighted": {
+        "efficiency": 0.27832988154298355,
+        "modularity": 0.1406814555603931
+      },
+      "C_weighted": {
+        "efficiency": 0.3921902545743186,
+        "modularity": 0.1887160518994401
+      }
+    },
+    "chb02_01.edf": {
+      "file": "chb02_01.edf",
+      "real_weighted": {
+        "efficiency": 0.4150364800298668,
+        "modularity": 0.1893338736670035
+      },
+      "A_weighted": {
+        "efficiency": 0.2864641834121589,
+        "modularity": 0.14551637708600706
+      },
+      "C_weighted": {
+        "efficiency": 0.398650285757384,
+        "modularity": 0.1884628371072496
+      }
+    },
+    "chb03_01.edf": {
+      "file": "chb03_01.edf",
+      "real_weighted": {
+        "efficiency": 0.4759202217787104,
+        "modularity": 0.21409504208340002
+      },
+      "A_weighted": {
+        "efficiency": 0.2906810541065001,
+        "modularity": 0.14513818106918
+      },
+      "C_weighted": {
+        "efficiency": 0.45623034561440434,
+        "modularity": 0.20912788749745528
+      }
+    },
+    "chb04_01.edf": {
+      "file": "chb04_01.edf",
+      "real_weighted": {
+        "efficiency": 0.4145823639575625,
+        "modularity": 0.20660360050519236
+      },
+      "A_weighted": {
+        "efficiency": 0.28208088800726167,
+        "modularity": 0.13988556254761128
+      },
+      "C_weighted": {
+        "efficiency": 0.40100193653272975,
+        "modularity": 0.20242218725499322
+      }
+    }
+  }
+}

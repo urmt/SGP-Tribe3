@@ -1,0 +1,7 @@
+{
+  "phase": 184,
+  "controls_attempted": ["synthetic_5graphs", "weighted_eeg"],
+  "controls_omitted": [],
+  "synthetic_validation": "partial (modularity differs, efficiency has math issue)",
+  "weighted_eeg_result": "discriminates controls"
+}

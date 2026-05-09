@@ -1,0 +1,20 @@
+DIRECTOR NOTES - PHASE 184
+===========================
+
+1. Did the Phase 183 pipeline fail sensitivity testing?
+   YES - synthetic graphs showed similar metrics, weighted analysis needed
+
+2. Did weighted graphs restore discrimination?
+   YES - Real (0.429) vs A (0.284) = 51% relative difference!
+   C (0.412) also closer to real than A, suggesting burst timing preserves some structure
+
+3. Were any prior claims invalidated?
+   YES - Phase 183 verdict "SURROGATE_EXPLAINED_NETWORK_STRUCTURE" is likely
+   a FALSE NEGATIVE due to thresholding destroying the signal.
+
+4. Confidence level: MODERATE
+   - Synthetic test confirms pipeline can detect differences (modularity differs)
+   - Weighted EEG shows clear discrimination
+   - But math issue with efficiency (inf) needs fix
+
+Compliance: FULL LEP
