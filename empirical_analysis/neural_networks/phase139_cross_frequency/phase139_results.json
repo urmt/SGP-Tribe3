@@ -1,0 +1,23 @@
+{
+  "subjects": 4,
+  "mean_corr": 0.1369,
+  "verdict": "NO_CROSS_FREQ_COUPLING",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "corr": 0.0287
+    },
+    {
+      "file": "chb02_01.edf",
+      "corr": 0.0919
+    },
+    {
+      "file": "chb03_01.edf",
+      "corr": 0.2243
+    },
+    {
+      "file": "chb04_01.edf",
+      "corr": 0.2028
+    }
+  ]
+}
