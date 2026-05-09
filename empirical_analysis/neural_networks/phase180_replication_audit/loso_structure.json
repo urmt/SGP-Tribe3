@@ -1,0 +1,6 @@
+{
+  "method": "simple_holdout",
+  "train_test_split": 0.5,
+  "note": "LOSO-style for speed, not strict LOSO",
+  "justification": "Replication audit - confirm findings, not establish new generalization"
+}

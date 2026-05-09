@@ -1,0 +1,3 @@
+q,metric,real,verdict,survivors
+Q3,kurtosis,8.2,SURROGATE_EXPLAINED,[]
+Q4,pc1_dim,0.589/4,SURROGATE_EXPLAINED,"['D_cp', 'C_bt']"

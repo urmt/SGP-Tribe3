@@ -1,0 +1,9 @@
+{
+  "F_iaaft": {
+    "control_name": "IAAFT surrogate",
+    "reason": "timeout_risk",
+    "evidence": "Phase 179 showed IAAFT timed out at 600s",
+    "impact": "Cannot test iterative amplitude-adjusted Fourier transform surrogate",
+    "action": "OMITTED from all tests"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "random_state": 42,
+  "window_size": 512,
+  "burst_threshold_percentile": 90,
+  "variance_threshold": 0.80,
+  "max_pca_components": 20,
+  "effect_size_threshold": 0.20,
+  "survival_threshold": 3,
+  "controls_used": ["A_phase_random", "D_channel_perm", "C_burst_timing", "E_white_noise"],
+  "control_F_iaaft": "OMITTED_due_to_timeout"
+}

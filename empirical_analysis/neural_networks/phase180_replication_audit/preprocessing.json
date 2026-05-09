@@ -1,0 +1,7 @@
+{
+  "preprocessing": "identical to Phase 177/179",
+  "random_state": 42,
+  "fs": 256,
+  "windowing": "full_signal_with_burst_detection",
+  "normalization": "none"
+}
