@@ -1,0 +1,28 @@
+{
+  "subjects": 4,
+  "mean_duration": 8.09,
+  "max_duration": 1059.2,
+  "verdict": "LONG_TAILED_BURSTS",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "mean_dur": 11.21,
+      "max_dur": 890
+    },
+    {
+      "file": "chb02_01.edf",
+      "mean_dur": 6.14,
+      "max_dur": 602
+    },
+    {
+      "file": "chb03_01.edf",
+      "mean_dur": 9.27,
+      "max_dur": 837
+    },
+    {
+      "file": "chb04_01.edf",
+      "mean_dur": 5.74,
+      "max_dur": 1908
+    }
+  ]
+}
