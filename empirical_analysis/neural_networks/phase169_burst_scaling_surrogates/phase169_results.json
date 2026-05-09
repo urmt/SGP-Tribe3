@@ -1,0 +1,31 @@
+{
+  "subjects": 4,
+  "mean_gain": -0.141,
+  "verdict": "SURROGATE_EXPLAINED_BURSTS",
+  "details": [
+    {
+      "file": "chb01_04.edf",
+      "real_r2": 0.705,
+      "sur_r2": 0.621,
+      "gain": 0.084
+    },
+    {
+      "file": "chb02_01.edf",
+      "real_r2": 0.009,
+      "sur_r2": 0.415,
+      "gain": -0.407
+    },
+    {
+      "file": "chb03_01.edf",
+      "real_r2": 0.575,
+      "sur_r2": 0.814,
+      "gain": -0.239
+    },
+    {
+      "file": "chb04_01.edf",
+      "real_r2": 0.645,
+      "sur_r2": 0.648,
+      "gain": -0.003
+    }
+  ]
+}
