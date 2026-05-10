@@ -1,0 +1,7 @@
+condition,cross_channel_coincidence,eigenvalue,coincidence_effect
+real,0.00015,1.376,0.0
+T1,0.098,0.149,65472.2
+T2,0.00001,0.080,94.4
+T3,0.00015,1.389,0.0
+T4,0.0,0.056,100.0
+T5,0.00001,0.080,94.4

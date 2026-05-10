@@ -1,0 +1,7 @@
+condition,largest_eigenvalue,spectral_gap,sync_mean,cross_channel_coincidence,temporal_transition,eigenvalue_effect
+real,1.376,0.893,0.284,0.00015,0.5,0.0
+T1,0.149,0.149,0.284,0.098,0.5,0.892
+T2,0.080,0.080,0.284,0.00001,0.5,0.942
+T3,1.389,0.893,0.284,0.00015,0.5,0.009
+T4,0.056,0.056,0.284,0.0,0.5,0.959
+T5,0.080,0.080,0.284,0.00001,0.5,0.942

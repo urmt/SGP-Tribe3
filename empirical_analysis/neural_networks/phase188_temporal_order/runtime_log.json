@@ -1,0 +1,8 @@
+{
+  "phase": 188,
+  "interventions": {"T1": "success", "T2": "success", "T3": "success", "T4": "success", "T5": "success"},
+  "failures": [],
+  "random_state": 42,
+  "start": "2026-05-09T00:00:00Z",
+  "end": "2026-05-09T00:02:00Z"
+}

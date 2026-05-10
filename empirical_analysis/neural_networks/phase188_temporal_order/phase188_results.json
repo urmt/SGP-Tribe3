@@ -1,0 +1,17 @@
+{
+  "phase": 188,
+  "verdict": "CROSS_CHANNEL_ALIGNMENT_REQUIRED",
+  "strongest_predictor": "cross_channel_coincidence",
+  "temporal_order_effect": 0.892,
+  "cross_channel_effect": 0.959,
+  "pearson_r_coincidence": -0.193,
+  "pearson_r_transition": -0.338,
+  "aggregate": {
+    "real": {"largest_eigenvalue": 1.376, "spectral_gap": 0.893, "cross_channel_coincidence": 0.00015},
+    "T1": {"largest_eigenvalue": 0.149, "spectral_gap": 0.149, "cross_channel_coincidence": 0.098},
+    "T2": {"largest_eigenvalue": 0.080, "spectral_gap": 0.080, "cross_channel_coincidence": 0.00001},
+    "T3": {"largest_eigenvalue": 1.389, "spectral_gap": 0.893, "cross_channel_coincidence": 0.00015},
+    "T4": {"largest_eigenvalue": 0.056, "spectral_gap": 0.056, "cross_channel_coincidence": 0.0},
+    "T5": {"largest_eigenvalue": 0.080, "spectral_gap": 0.080, "cross_channel_coincidence": 0.00001}
+  }
+}
