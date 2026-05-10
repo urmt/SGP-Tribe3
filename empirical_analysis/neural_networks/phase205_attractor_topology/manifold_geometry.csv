@@ -1,0 +1,4 @@
+system,attractor_dims_90,first_pc_var,manifold_continuity
+Kuramoto,1,0.9747,0.8141
+Logistic,8,0.0116,-0.0131
+GameOfLife,1,1.0000,0.0000

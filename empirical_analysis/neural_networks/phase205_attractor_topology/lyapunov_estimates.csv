@@ -1,0 +1,4 @@
+system,div_rate,early_div,late_div
+Kuramoto,0.00001066,0.0076,0.0108
+Logistic,-0.00001232,0.0098,0.0061
+GameOfLife,0.00000000,0.0000,0.0000

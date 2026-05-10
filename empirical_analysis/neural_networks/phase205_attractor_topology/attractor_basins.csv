@@ -1,0 +1,4 @@
+system,num_basins,max_basin_size
+Kuramoto,0,239
+Logistic,1,81
+GameOfLife,0,56

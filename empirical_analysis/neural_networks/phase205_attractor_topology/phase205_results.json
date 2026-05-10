@@ -1,0 +1,27 @@
+{
+  "phase": 205,
+  "attractor_type": "LOW_DIMENSIONAL_ATTRACTOR",
+  "metastability": "LOW",
+  "topology": "BOUNDED",
+  "trajectory_reversibility": false,
+  "geometric_constraints": true,
+  "attractor_dimensions": {
+    "Kuramoto": 1,
+    "Logistic": 8,
+    "GameOfLife": 1
+  },
+  "metastable_wells": {
+    "Kuramoto": 0,
+    "Logistic": 1
+  },
+  "manifold_continuity": {
+    "Kuramoto": 0.8140988195285382,
+    "Logistic": -0.013072132154379539,
+    "GameOfLife": 0.0
+  },
+  "divergence": {
+    "Kuramoto": 0.05486578979430703,
+    "Logistic": 0.0012020062315196511,
+    "GameOfLife": 0.0
+  }
+}

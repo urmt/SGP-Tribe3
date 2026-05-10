@@ -1,0 +1,4 @@
+system,avg_curvature,max_curvature,std_curvature
+Kuramoto,0.228085,2.596506,0.384919
+Logistic,0.101268,0.385546,0.073032
+GameOfLife,0.000000,0.000000,0.000000
