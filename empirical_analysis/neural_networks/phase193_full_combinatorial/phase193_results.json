@@ -1,0 +1,344 @@
+{
+  "phase": 193,
+  "verdict": "HIGH_ORDER_DEPENDENCY_CONFIRMED",
+  "pairwise_survivors": 0,
+  "triple_survivors": 0,
+  "surviving_models": [],
+  "best_survivor": null,
+  "high_order_dependency_confirmed": true,
+  "aggregate": {
+    "real": {
+      "largest_eigenvalue": 1.3764543707099417,
+      "spectral_gap": 0.9601955481629816,
+      "zero_lag": 0.18817824342323639,
+      "plv": 0.08054448215112825,
+      "propagation": 0.199800766159039,
+      "coalition": 0.7296594900199669,
+      "coincidence": 0.023000595238095237,
+      "efficiency": 12.663671704738139,
+      "sync_var": 0.023491759940164794
+    },
+    "M1": {
+      "largest_eigenvalue": 0.04955752517256165,
+      "spectral_gap": 0.04157914271332522,
+      "zero_lag": 0.016548022282453435,
+      "plv": 0.005701022689665829,
+      "propagation": 0.202982879603488,
+      "coalition": -0.00029084147436370583,
+      "coincidence": 0.009776488095238095,
+      "efficiency": 220.4751142651824,
+      "sync_var": 1.618893600252809e-05
+    },
+    "M2": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M3": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M4": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M5": {
+      "largest_eigenvalue": 0.04889688492237828,
+      "spectral_gap": 0.042075890689948874,
+      "zero_lag": 0.0120530529959933,
+      "plv": 0.0074358215823471276,
+      "propagation": 0.2178674753551224,
+      "coalition": -0.00028247570500213054,
+      "coincidence": 0.009614583333333333,
+      "efficiency": 241.30682086990385,
+      "sync_var": 1.577612917967744e-05
+    },
+    "M6": {
+      "largest_eigenvalue": 0.05081838948055347,
+      "spectral_gap": 0.041357009010399376,
+      "zero_lag": 0.016740778862066683,
+      "plv": 0.007623055500423588,
+      "propagation": 0.22020888163394114,
+      "coalition": -0.0003006850083437558,
+      "coincidence": 0.011496130952380952,
+      "efficiency": 211.7652577828432,
+      "sync_var": 1.8526885887778928e-05
+    },
+    "M7": {
+      "largest_eigenvalue": 0.05323747050836157,
+      "spectral_gap": 0.04759594598569131,
+      "zero_lag": 0.013086993698504766,
+      "plv": 0.01503562340531316,
+      "propagation": 0.21863210113445275,
+      "coalition": -0.00033546056395172526,
+      "coincidence": 0.009908928571428572,
+      "efficiency": 194.3164121805192,
+      "sync_var": 1.7724230534279283e-05
+    },
+    "M8": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M9": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M10": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M11": {
+      "largest_eigenvalue": 0.04955671510913072,
+      "spectral_gap": 0.04312967433985005,
+      "zero_lag": 0.017705483882445004,
+      "plv": 0.007277414045193007,
+      "propagation": 0.19995351696055677,
+      "coalition": -0.00028975083015993116,
+      "coincidence": 0.009688988095238096,
+      "efficiency": 211.6332305844767,
+      "sync_var": 1.6149293295676056e-05
+    },
+    "M12": {
+      "largest_eigenvalue": 0.05703215405052983,
+      "spectral_gap": 0.051757394728410185,
+      "zero_lag": 0.017557724469543783,
+      "plv": 0.006891169986906032,
+      "propagation": 0.20331954515609318,
+      "coalition": -0.00038714598810945486,
+      "coincidence": 0.010879761904761906,
+      "efficiency": 208.46808289354237,
+      "sync_var": 2.220876616469417e-05
+    },
+    "M13": {
+      "largest_eigenvalue": 0.06983921224450913,
+      "spectral_gap": 0.05817169127433953,
+      "zero_lag": 0.020477849254714263,
+      "plv": 0.02312596279201279,
+      "propagation": 0.20423680577765524,
+      "coalition": -0.0005961706843587392,
+      "coincidence": 0.009991666666666668,
+      "efficiency": 175.97594665301528,
+      "sync_var": 4.592728731179691e-05
+    },
+    "M14": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M15": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M16": {
+      "largest_eigenvalue": 0.05064067137552611,
+      "spectral_gap": 0.04320862638282843,
+      "zero_lag": 0.013236145996967081,
+      "plv": 0.005771424580931031,
+      "propagation": 0.2188461098307501,
+      "coalition": -0.0002964094955868471,
+      "coincidence": 0.010513690476190475,
+      "efficiency": 194.95828942410293,
+      "sync_var": 1.9636380109458797e-05
+    },
+    "M17": {
+      "largest_eigenvalue": 0.07423184122284471,
+      "spectral_gap": 0.053406182869330174,
+      "zero_lag": 0.023450919976021996,
+      "plv": 0.009328780035093184,
+      "propagation": 0.2196719061056232,
+      "coalition": -0.0006015021683184179,
+      "coincidence": 0.010570833333333335,
+      "efficiency": 209.35779076146497,
+      "sync_var": 6.491332897710275e-05
+    },
+    "M18": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    },
+    "M19": {
+      "largest_eigenvalue": 0.06131161726414365,
+      "spectral_gap": 0.05194240029737485,
+      "zero_lag": 0.014768989079373818,
+      "plv": 0.012574687811344692,
+      "propagation": 0.22237793685197502,
+      "coalition": -0.0004519621844619853,
+      "coincidence": 0.013483035714285715,
+      "efficiency": 190.66922855696885,
+      "sync_var": 2.51259050489978e-05
+    },
+    "M20": {
+      "largest_eigenvalue": null,
+      "spectral_gap": null,
+      "zero_lag": null,
+      "plv": null,
+      "propagation": null,
+      "coalition": null,
+      "coincidence": null,
+      "efficiency": null,
+      "sync_var": null
+    }
+  },
+  "survival": {
+    "M1": {
+      "eig_dest": 0.9639962455515316,
+      "gap_dest": 0.9566972136114636,
+      "survived": 0.0
+    },
+    "M2": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M3": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M4": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M5": {
+      "eig_dest": 0.964476203524888,
+      "gap_dest": 0.9561798731826582,
+      "survived": 0.0
+    },
+    "M6": {
+      "eig_dest": 0.963080222227532,
+      "gap_dest": 0.9569285557618733,
+      "survived": 0.0
+    },
+    "M7": {
+      "eig_dest": 0.9613227494923039,
+      "gap_dest": 0.9504309866081441,
+      "survived": 0.0
+    },
+    "M8": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M9": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M10": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M11": {
+      "eig_dest": 0.9639968340660864,
+      "gap_dest": 0.9550824054304725,
+      "survived": 0.0
+    },
+    "M12": {
+      "eig_dest": 0.9585658956343652,
+      "gap_dest": 0.9460970269780661,
+      "survived": 0.0
+    },
+    "M13": {
+      "eig_dest": 0.9492615129635662,
+      "gap_dest": 0.9394168288057241,
+      "survived": 0.0
+    },
+    "M14": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M15": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M16": {
+      "eig_dest": 0.9632093351925594,
+      "gap_dest": 0.9550001804679329,
+      "survived": 0.0
+    },
+    "M17": {
+      "eig_dest": 0.9460702491833727,
+      "gap_dest": 0.9443798891053959,
+      "survived": 0.0
+    },
+    "M18": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    },
+    "M19": {
+      "eig_dest": 0.9554568472672867,
+      "gap_dest": 0.9459043520908323,
+      "survived": 0.0
+    },
+    "M20": {
+      "eig_dest": 1.0,
+      "gap_dest": 1.0,
+      "survived": 0.0
+    }
+  }
+}

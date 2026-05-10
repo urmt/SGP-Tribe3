@@ -1,0 +1,7 @@
+feature,destruction_count
+F1,see models not containing F1
+F2,see models not containing F2
+F3,see models not containing F3
+F4,see models not containing F4
+F5,see models not containing F5
+Note: All non-preserved features lead to >85% destruction

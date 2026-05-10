@@ -1,0 +1,9 @@
+{
+  "phase": 193,
+  "verdict": "HIGH_ORDER_DEPENDENCY_CONFIRMED",
+  "pairwise_survivors": 0,
+  "triple_survivors": 0,
+  "high_order_dependency": true,
+  "search_completeness": "100%",
+  "compliance": "FULL"
+}
