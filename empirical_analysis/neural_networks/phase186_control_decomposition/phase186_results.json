@@ -1,0 +1,70 @@
+{
+  "phase": 186,
+  "verdict": "CONTROL_DEPENDENT_STRUCTURE",
+  "best_predictor": "kurtosis",
+  "best_correlation": -1.0,
+  "aggregate": {
+    "real": {
+      "sync_mean": 0.284,
+      "sync_var": 0.032,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 1.376,
+      "spectral_gap": 0.893,
+      "participation": 0.812,
+      "kurtosis": 42.3
+    },
+    "A": {
+      "sync_mean": 0.284,
+      "sync_var": 0.032,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 0.052,
+      "spectral_gap": 0.052,
+      "participation": 0.893,
+      "kurtosis": 0.0
+    },
+    "B": {
+      "sync_mean": 0.284,
+      "sync_var": 0.032,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 1.376,
+      "spectral_gap": 0.893,
+      "participation": 0.812,
+      "kurtosis": 42.3
+    },
+    "C": {
+      "sync_mean": 0.284,
+      "sync_var": 0.033,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 1.757,
+      "spectral_gap": 1.164,
+      "participation": 0.789,
+      "kurtosis": 41.8
+    },
+    "D": {
+      "sync_mean": 0.284,
+      "sync_var": 0.032,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 1.376,
+      "spectral_gap": 0.893,
+      "participation": 0.812,
+      "kurtosis": 42.3
+    },
+    "E": {
+      "sync_mean": 0.284,
+      "sync_var": 0.032,
+      "burst_count": 3000.0,
+      "largest_eigenvalue": 0.051,
+      "spectral_gap": 0.051,
+      "participation": 0.892,
+      "kurtosis": 0.0
+    }
+  },
+  "predictors": {
+    "kurtosis": {"corr": -1.0, "p": 0.0},
+    "sync_mean": {"corr": -0.983, "p": 0.017},
+    "sync_var": {"corr": -0.935, "p": 0.065},
+    "largest_eigenvalue": {"corr": -0.976, "p": 0.024},
+    "spectral_gap": {"corr": -0.975, "p": 0.025},
+    "participation": {"corr": 0.891, "p": 0.109}
+  }
+}

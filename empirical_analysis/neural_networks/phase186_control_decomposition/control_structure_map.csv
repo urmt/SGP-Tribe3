@@ -1,0 +1,6 @@
+control,eig_dest%,gap_dest%,preserved,destroyed
+A,96.2,94.2,sync_mean|participation,kurtosis|largest_eigenvalue
+B,0.0,0.0,sync_mean|kurtosis|largest_eigenvalue,none
+C,-27.7,-30.3,kurtosis|sync_mean,spectral_gap
+D,0.0,0.0,sync_mean|kurtosis|largest_eigenvalue,none
+E,96.3,94.3,sync_mean|participation,kurtosis|largest_eigenvalue

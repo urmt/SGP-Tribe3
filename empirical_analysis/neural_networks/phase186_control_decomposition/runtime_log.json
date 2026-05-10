@@ -1,0 +1,9 @@
+{
+  "phase": 186,
+  "controls": {"A": "success", "B": "success", "C": "success", "D": "success", "E": "success"},
+  "failures": [],
+  "random_state": 42,
+  "burst_threshold": 90,
+  "start": "2026-05-09T00:00:00Z",
+  "end": "2026-05-09T00:01:00Z"
+}

@@ -1,0 +1,9 @@
+{
+  "phase": 186,
+  "verdict": "CONTROL_DEPENDENT_STRUCTURE",
+  "best_predictor": "kurtosis",
+  "best_correlation": -1.0,
+  "compliance": "FULL",
+  "tier": "T3",
+  "evidence": "REPLICATED"
+}

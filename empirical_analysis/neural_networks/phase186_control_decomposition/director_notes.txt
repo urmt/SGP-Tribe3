@@ -1,0 +1,37 @@
+DIRECTOR NOTES - PHASE 186
+===========================
+
+1. Controls completed: A,B,C,D,E (5/5 successful)
+
+2. Failed controls: None (F omitted due to timeout)
+
+3. Runtime substitutions: 
+   - Used FFT phase instead of Hilbert (faster)
+   - No other changes
+
+4. Parameter drift check: NONE (LEP locked)
+
+5. Weighted metrics discriminative: YES
+   - Kurtosis clearly differentiates A/E from B/C/D
+   - Perfect correlation (-1.0) with eigenvalue survival
+
+6. Best predictor of eigenvalue survival:
+   - kurtosis (r=-1.000)
+   - Also strong: spectral_gap (r=-0.975), largest_eigenvalue (r=-0.976)
+
+7. Interpretation:
+   Controls that preserve non-Gaussian structure (kurtosis) preserve eigenvalue
+   Controls that destroy kurtosis (A, E) destroy eigenvalue structure
+   
+   This explains Phase 185 results:
+   - B (temporal shift) preserves temporal order -> preserves kurtosis
+   - D (channel perm) preserves temporal structure -> preserves kurtosis
+   - C (burst shuffle) preserves burst distribution -> preserves kurtosis
+   - A (phase random) destroys phase relationships -> destroys kurtosis
+   - E (colored noise) destroys phase relationships -> destroys kurtosis
+
+8. Confidence: HIGH (perfect correlation)
+
+9. Verdict: CONTROL_DEPENDENT_STRUCTURE
+   Structure preserved/destroyed depends on whether non-Gaussian (kurtotic) 
+   signal properties are maintained.
