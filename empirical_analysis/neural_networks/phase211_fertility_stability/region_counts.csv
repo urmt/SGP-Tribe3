@@ -1,0 +1,3 @@
+system,stable_regions,fertile_hubs,sterile_attractors,collapse_traps,exploratory
+Kuramoto,8,3,2,3,0
+Logistic,10,4,5,1,0

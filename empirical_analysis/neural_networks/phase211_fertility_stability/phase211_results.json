@@ -1,0 +1,30 @@
+{
+  "phase": 211,
+  "verdict": "MAXIMAL_FERTILITY_WINDOW",
+  "fertility_stability_corr": 0.721425122169502,
+  "fertile_region_count": 7,
+  "sterile_region_count": 7,
+  "collapse_trap_count": 4,
+  "metrics": {
+    "Kuramoto": {
+      "stable_regions": 8,
+      "fertile_hubs": 3,
+      "sterile_attractors": 2,
+      "collapse_traps": 3,
+      "exploratory": 0,
+      "correlation": 0.721609811962615,
+      "novelty_rate": 0.9588291969482465,
+      "offspring_ratio": 0.13223791973791973
+    },
+    "Logistic": {
+      "stable_regions": 10,
+      "fertile_hubs": 4,
+      "sterile_attractors": 5,
+      "collapse_traps": 1,
+      "exploratory": 0,
+      "correlation": 0.7212404323763892,
+      "novelty_rate": 0.9805602823552618,
+      "offspring_ratio": 0.1285557253204312
+    }
+  }
+}
