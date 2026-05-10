@@ -1,0 +1,14 @@
+{
+  "phase": 199,
+  "verdict": "SFH_SGP_CONSTRAINT_REGISTRY",
+  "e0_facts": 10,
+  "e1_constraints": 6,
+  "e2_implications": 4,
+  "e3_interpretations": 4,
+  "e4_speculations": 5,
+  "theory_governance": "LOCKED",
+  "exclusions_registered": "YES",
+  "future_roadmap": "DEFINED",
+  "compliance": "FULL",
+  "new_computation": "NO"
+}

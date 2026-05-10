@@ -1,0 +1,33 @@
+DIRECTOR NOTES - PHASE 199
+===========================
+
+1. Task: SFH-SGP constraint registry (no new computation)
+
+2. Key outputs:
+   - Master constraint registry (E0-E4 hierarchy)
+   - Evidence layer registry (10+6+4+4+5 statements)
+   - Unsupported claims registry (30+ prohibited)
+   - Mathematical constraints (4 formal implications)
+   - Allowed/prohibited claims defined
+   - Future roadmap (5 tracks)
+
+3. Strongest E0 fact:
+   30+ reduced-order models tested, 0 survived
+
+4. Strongest E1 constraint:
+   Multi-factor alignment required (R²=1.0)
+
+5. Strongest E2 implication:
+   Non-separability (structure requires all 5 simultaneously)
+
+6. Strongest E3 interpretation:
+   Observer-dependent organization (labeled: compatible but unverified)
+
+7. Highest-risk E4 speculation:
+   Qualic field emergence (labeled: speculative)
+
+8. Most important unsupported claim to avoid:
+   Consciousness/sentience proof claims
+
+9. Most important future falsification target:
+   Cross-dataset generalizability (Track A)

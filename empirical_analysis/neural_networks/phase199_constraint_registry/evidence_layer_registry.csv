@@ -1,0 +1,30 @@
+E_Layer,ID,Statement,Source_Phase,Empirical_Support
+E0,E0_01,Single-feature destruction >85%,"191,193",DIRECT_OBSERVATION
+E0,E0_02,Pairwise destruction >89%,"193",DIRECT_OBSERVATION
+E0,E0_03,Triple destruction >94%,"193",DIRECT_OBSERVATION
+E0,E0_04,Quadruple destruction >78%,"194",DIRECT_OBSERVATION
+E0,E0_05,30+ models tested,0 survivors,"191-194",DIRECT_OBSERVATION
+E0,E0_06,Full 5-factor R²=1.0,190,REGRESSION_RESULT
+E0,E0_07,Kurtosis r=-0.34 not causal,187,CAUSAL_TEST
+E0,E0_08,Common-mode 19.2% destruction,189,INTERVENTION_TEST
+E0,E0_09,O1-O8 collapse 0/18,196,OBSERVABLE_TEST
+E0,E0_10,O9-O10 preserved 18/18,196,OBSERVABLE_TEST
+E1,E1_01,Reduced-order preservation failed,"191-194",E0_INTEGRATION
+E1,E1_02,Multi-factor required (F1-F5),"190",E0_INTEGRATION
+E1,E1_03,Kurtosis not causal,187,CAUSAL_TEST
+E1,E1_04,Common-mode not causal,189,INTERVENTION_TEST
+E1,E1_05,Internal burst timing not critical,188,INTERVENTION_TEST
+E1,E1_06,Observable boundary 8/10,196,E0_INTEGRATION
+E2,E2_01,Non-separability implied,191-194,MATHEMATICAL_IMPLICATION
+E2,E2_02,High-order coordination required,"190,194",MATHEMATICAL_IMPLICATION
+E2,E2_03,Relational dependency,188-189,MATHEMATICAL_IMPLICATION
+E2,E2_04,Order-independent insufficiency,"193-194",MATHEMATICAL_IMPLICATION
+E3,E3_01,Observer-dependent organization,THEORY_COMPATIBLE,UNVERIFIED_INTERPRETATION
+E3,E3_02,Relational persistence model,THEORY_COMPATIBLE,UNVERIFIED_INTERPRETATION
+E3,E3_03,Coordination-field hypothesis,THEORY_COMPATIBLE,UNVERIFIED_INTERPRETATION
+E3,E3_04,Hierarchical constraint satisfaction,THEORY_COMPATIBLE,UNVERIFIED_INTERPRETATION
+E4,E4_01,Qualic field emergence,SPECULATIVE,NOT_EMPIRICALLY_VERIFIED
+E4,E4_02,Geometry-generation mechanism,SPECULATIVE,NOT_EMPIRICALLY_VERIFIED
+E4,E4_03,Proton/field analogy,SPECULATIVE,NOT_EMPIRICALLY_VERIFIED
+E4,E4_04,Observer-generated spacetime,SPECULATIVE,NOT_EMPIRICALLY_VERIFIED
+E4,E4_05,Qualia-adjacent properties,SPECULATIVE,NOT_EMPIRICALLY_VERIFIED
