@@ -1,0 +1,9 @@
+{
+  "phase": 194,
+  "verdict": "MIXED_QUADRUPLE_DEPENDENCY",
+  "quadruple_survivors": 0,
+  "most_destructive_omission": "F5",
+  "irreducible_confirmed": false,
+  "search_completeness": "100%",
+  "compliance": "FULL"
+}

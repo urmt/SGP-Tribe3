@@ -1,0 +1,13 @@
+SURVIVAL ANALYSIS - PHASE 194
+============================
+
+Quadruple models tested: 5
+Survivors: 0
+Verdict: MIXED_QUADRUPLE_DEPENDENCY
+
+Feature destruction ranking:
+  1. F5: 96.2%
+  2. F3: 92.4%
+  3. F2: 91.3%
+  4. F1: 86.0%
+  5. F4: 78.1%
