@@ -1,0 +1,7 @@
+model,type,features
+M1,pairwise,F1+F2
+M2,pairwise,F1+F3
+M3,pairwise,F3+F4
+M4,pairwise,F1+F4
+F1_only,single,F1
+F2_only,single,F2
