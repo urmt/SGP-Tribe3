@@ -1,0 +1,25 @@
+{
+  "phase": 212,
+  "verdict": "PARTIAL_STATE_RETENTION",
+  "memory_persistence_index": 0.33517772567802695,
+  "attractor_return_probability": 0.55,
+  "hysteresis_strength": 8.090562093305834,
+  "metrics": {
+    "Kuramoto": {
+      "memory_index": 0.38549765728430613,
+      "return_prob": 0.2,
+      "hysteresis": 13.929677117642353,
+      "recovery_dist": 1.5413966679744808,
+      "basin_duration": 37.4,
+      "recovery_curvature": 0.2626856009947813
+    },
+    "Logistic": {
+      "memory_index": 0.2848577940717477,
+      "return_prob": 0.9,
+      "hysteresis": 2.2514470689693167,
+      "recovery_dist": 0.07589586928099476,
+      "basin_duration": 37.6,
+      "recovery_curvature": 0.05181139292216811
+    }
+  }
+}

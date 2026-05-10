@@ -1,0 +1,3 @@
+system,memory_index,return_prob,hysteresis,recovery_dist,basin_duration,recovery_curvature
+Kuramoto,0.385498,0.200000,13.929677,1.541397,37.40,0.262686
+Logistic,0.284858,0.900000,2.251447,0.075896,37.60,0.051811

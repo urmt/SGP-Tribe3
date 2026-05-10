@@ -1,0 +1,5 @@
+metric,value
+avg_memory_index,0.335178
+avg_return_prob,0.550000
+avg_hysteresis,8.090562
+verdict,PARTIAL_STATE_RETENTION
