@@ -1,0 +1,23 @@
+PUBLICATION-SAFE LANGUAGE
+==========================
+
+APPROVED WORDING (constrained to evidence):
+
+1. "All evaluated reduced-order preservation models failed under the defined survival criteria."
+
+2. "The organizational structure was not preserved under any tested single, pairwise, triple, or quadruple feature-preservation model."
+
+3. "The results support an irreducible five-factor dependency under the evaluated intervention framework."
+
+4. "Across 30+ tested feature-preservation model combinations, no reduced-order model maintained eigenvalue/spectral-gap structure within the 15% survival threshold."
+
+NOT APPROVED (exceeds evidence):
+- "universal"
+- "fundamental law"  
+- "proof"
+- "impossible"
+- "absolute irreducibility"
+- "definitively proven"
+- "100% certainty"
+
+SAFE BOUNDARY: The claim is constrained to the tested intervention space only.
