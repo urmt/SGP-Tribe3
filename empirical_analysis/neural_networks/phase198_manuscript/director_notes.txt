@@ -1,0 +1,32 @@
+DIRECTOR NOTES - PHASE 198
+===========================
+
+1. Task: Manuscript evidence architecture (no new computation)
+
+2. Key outputs:
+   - Manuscript architecture (10 sections)
+   - Claim tier registry (20 claims)
+   - Phase mapping (12 main claims)
+   - Figure plan (6 figures)
+   - Reviewer attack matrix (10 attacks)
+   - Supplementary plan (6 supplements)
+   - Discussion boundaries defined
+   - Abstract scaffold created
+
+3. Strongest publishable claim:
+   Multi-factor alignment required (R²=1.0 from Phase 190)
+
+4. Weakest defensible claim:
+   Partial generalization to 8/10 metrics (2 preserved)
+
+5. Highest reviewer-risk area:
+   Threshold dependence (15% not theoretically grounded)
+   Small sample size (4 subjects)
+
+6. Supplementary material:
+   All detailed tables, governance corrections,
+   negative results registry
+
+7. Recommended framing:
+   "Falsification study" not "consciousness theory"
+   "Empirical organizational dependency" not "biological principle"

@@ -1,0 +1,11 @@
+Reviewer_Attack,Description,Current_Defense,Remaining_Weakness,Risk_Level
+metric_specificity,"Results may be artifact of specific eigenvalue-based metrics",O9-O10 preserved shows not universal - but 8/10 do collapse,WEAK - must acknowledge 2/10 preserved,MEDIUM
+overfitting,"30+ models tested, some will fail by chance",Survival threshold was a priori (15%), no post-hoc adjustment,But threshold choice is arbitrary,MEDIUM
+threshold_dependence,"Results depend on 15% threshold choice",Not tested - threshold sensitivity unknown,HIGH - major limitation,HIGH
+small_sample_size,"Only 4 subjects from CHB-MIT",Documented in limitations,But can't address without new data,HIGH
+surrogate_incompleteness,"Some controls may not fully destroy structure",Full factorial design,Complex interactions not fully tested,LOW
+preprocessing_dependence,"Results may depend on FFT/preprocessing choices",Documented preprocessing choices,Alternative preprocessing not tested,MEDIUM
+intervention_realism,"Interventions may not reflect real neural mechanisms",Documented as mathematical operations,No biological validation,LOW
+publication_bias,"Only publishing positive (non-survival) results",Negative results explicitly included (Section 6),May seem like fishing expedition,MEDIUM
+multi_comparison,"Testing 30+ models inflates false positives",A priori hypothesis: no reduced-order sufficiency,Post-hoc could be accused,MEDIUM
+replication_crisis,"Results may not replicate to other datasets",Documented as CHB-MIT only,Generalizability unknown,HIGH

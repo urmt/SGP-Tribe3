@@ -1,0 +1,57 @@
+# DISCUSSION BOUNDARIES - PHASE 198
+
+## WHAT CAN BE DISCUSSED:
+
+1. **The empirical finding:**
+   - Multi-factor required vs single/few factors insufficient
+   - Specific features identified (F1-F5)
+   - Evidence strength (R²=1.0, 30+ models tested)
+
+2. **Implications for synchrony theory:**
+   - Low-order explanations falsified
+   - Multi-factor frameworks supported
+   - Constraint on possible models
+
+3. **Methodological contribution:**
+   - Combinatorial intervention approach
+   - Falsification framework for organizational structure
+   - Cross-metric validation
+
+4. **Limitations (acknowledged):**
+   - CHB-MIT only (4 subjects)
+   - FFT-based preprocessing
+   - 15% threshold choice
+   - No mechanism, only correlation
+
+## WHAT CANNOT BE CLAIMED:
+
+1. **Consciousness / cognition:**
+   - No psychological measures
+   - No cognitive task data
+
+2. **Universal neural laws:**
+   - Single dataset
+   - No cross-species comparison
+
+3. **Biological principles:**
+   - No mechanistic explanation
+   - No dynamical system theory
+
+4. **Causal certainty:**
+   - Correlation only (not intervention causation in dynamical sense)
+
+5. **Generalizability beyond data:**
+   - Explicitly bounded to CHB-MIT
+
+## BOUNDARY LANGUAGE EXAMPLES:
+
+**ACCEPTABLE:** "Within the evaluated framework..."
+**UNACCEPTABLE:** "In all brain states..."
+**ACCEPTABLE:** "These findings support multi-factor organization..."
+**UNACCEPTABLE:** "Neural integration fundamentally requires..."
+
+**ACCEPTABLE:** "The five identified features account for..."
+**UNACCEPTABLE:** "Consciousness emerges from..."
+
+**ACCEPTABLE:** "Further research needed on generalizability..."
+**UNACCEPTABLE:** "This is a universal principle of neural systems..."

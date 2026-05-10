@@ -1,0 +1,14 @@
+{
+  "phase": 198,
+  "task": "manuscript_evidence_architecture",
+  "core_claims": 20,
+  "tier1_claims": 12,
+  "tier2_claims": 5,
+  "tier3_claims": 3,
+  "figure_count": 6,
+  "supplementary_count": 6,
+  "reviewer_attacks_identified": 10,
+  "main_narrative_phases": ["186","187","188","189","190","193","194","196"],
+  "manuscript_framing": "falsification_study",
+  "evidence_boundary": "DEFINED"
+}

@@ -1,0 +1,21 @@
+Claim_ID,Claim_Description,Phase_Support,TIER,Governance_Status,Reviewer_Risk,Publication_Confidence
+C1,Multi-factor alignment required,R190,MULTIPLIER,HIGH,HIGH,LOW
+C2,Zero-lag synchrony required,Phase 189/190,TIER1,VALIDATED,LOW,MEDIUM
+C3,Propagation ordering required,Phase 189/190,TIER1,VALIDATED,LOW,MEDIUM
+C4,PLV structure required,Phase 189/190,TIER1,VALIDATED,LOW,MEDIUM
+C5,Coalition persistence required,Phase 189/190,TIER1,VALIDATED,LOW,MEDIUM
+C6,Burst coincidence required,Phase 189/190,TIER1,VALIDATED,LOW,MEDIUM
+C7,Kurtosis NOT causal,Phase 187,TIER1,VALIDATED,LOW,HIGH
+C8,Common-mode NOT causal,Phase 189,TIER1,VALIDATED,LOW,HIGH
+C9,No single-factor sufficiency,Phase 191-194,TIER1,VALIDATED,LOW,HIGH
+C10,No pairwise sufficiency,Phase 193,TIER1,VALIDATED,LOW,HIGH
+C11,No triple sufficiency,Phase 193,TIER1,VALIDATED,LOW,HIGH
+C12,No quadruple sufficiency,Phase 194,TIER1,VALIDATED,LOW,HIGH
+C13,Burst coincidence most destructive (96%),Phase 194,TIER2,VALIDATED,MEDIUM,MEDIUM
+C14,Coalition least destructive (78%),Phase 194,TIER2,VALIDATED,MEDIUM,MEDIUM
+C15,5-factor model R2=1.0,Phase 190,TIER1,VALIDATED,LOW,HIGH
+C16,Universal irreducibility (8/10),Phase 196,TIER2,CORRECTED,MEDIUM,MEDIUM
+C17,Burst timing not critical,Phase 188,TIER1,VALIDATED,LOW,HIGH
+C18,Internal burst reversal minimal (0.9%),Phase 188,TIER2,VALIDATED,MEDIUM,MEDIUM
+C19,Sync mean predicts eigenvalue (r=1.0),Phase 187,TIER1,VALIDATED,LOW,HIGH
+C20,Cross-channel alignment required,Phase 188,TIER1,VALIDATED,LOW,HIGH

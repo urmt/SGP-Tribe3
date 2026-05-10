@@ -1,0 +1,13 @@
+Claim,Supporting_Phases,Supporting_Observables,Governance_Status,Reviewer_Risk,Defense_Strength
+Multi-factor required,R190,O1-O8,HIGH,LOW,STRONG
+No single-factor sufficiency,"191,193",O1-O2,HIGH,LOW,STRONG
+No pairwise sufficiency,"193",O1-O2,HIGH,LOW,STRONG
+No triple sufficiency,"193",O1-O2,HIGH,LOW,STRONG
+No quadruple sufficiency,"194",O1-O2,HIGH,LOW,STRONG
+Kurtosis not causal,"186,187",O1-O2,VALIDATED,LOW,STRONG
+Common-mode not causal,189,O1-O2,VALIDATED,LOW,STRONG
+Zero-lag required,"189,190",O1-O2,HIGH,LOW,STRONG
+Propagation required,"189,190",O1-O2,HIGH,LOW,STRONG
+Partial generalization,196,"O1-O8 vs O9-O10",VALIDATED,MEDIUM,MODERATE
+Burst coincidence most destructive,194,O1-O2,VALIDATED,MEDIUM,MODERATE
+5-factor R2=1.0,190,O1-O8,VALIDATED,LOW,STRONG

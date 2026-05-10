@@ -1,0 +1,14 @@
+{
+  "phase": 198,
+  "verdict": "MANUSCRIPT_EVIDENCE_ARCHITECTURE",
+  "core_claims": 20,
+  "tier1_claims": 12,
+  "main_narrative_phases": ["186","187","188","189","190","193","194","196"],
+  "figure_plan": 6,
+  "supplementary_plan": 6,
+  "reviewer_attack_defenses": 10,
+  "manuscript_framing": "falsification_study",
+  "evidence_boundary": "DEFINED",
+  "compliance": "FULL",
+  "new_computation": "NO"
+}

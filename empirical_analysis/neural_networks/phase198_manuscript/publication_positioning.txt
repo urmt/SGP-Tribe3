@@ -1,0 +1,40 @@
+# PUBLICATION POSITIONING - PHASE 198
+
+## Framing Strategy
+
+**Primary Positioning:**
+This is a **falsification study** - not a theory-proving study.
+We test whether reduced-order models can explain synchrony structure.
+We find they cannot. This is positive empirical result.
+
+**Alternative Framing (if reviewers prefer):**
+This is a **structural dependency analysis** - 
+we map which organizational features are required for structure preservation.
+
+**NEVER frame as:**
+- "Consciousness criticality"
+- "Neural integration theory"
+- "Emergence proof"
+- "Universal brain principle"
+
+## Key Positioning Statements:
+
+1. **What this IS:**
+   - Empirical falsification of reduced-order preservation hypotheses
+   - Combinatorial intervention study
+   - Evidence-bound organizational dependency analysis
+
+2. **What this is NOT:**
+   - Consciousness theory
+   - Cognitive neuroscience
+   - Mechanistic explanation
+   - Universal law
+
+3. **What can be claimed:**
+   - "Within the evaluated framework, no reduced-order model preserved structure"
+   - "Multi-factor alignment required for eigenvalue/efficiency metrics"
+   - "Results bounded to CHB-MIT dataset, specific preprocessing, 15% threshold"
+
+## Recommended Submission Venue:
+Clinical neurophysiology or computational neuroscience journal
+emphasizing empirical methods over theory.

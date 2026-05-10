@@ -1,0 +1,28 @@
+# ABSTRACT SCAFFOLD - PHASE 198
+
+## TITLE:
+"Reduced-order preservation failure in EEG synchrony structure: An intervention-based falsification study"
+
+## BACKGROUND (2-3 sentences):
+- Current theories propose various single or multi-factor explanations
+- Need empirical test of reduced-order sufficiency
+
+## OBJECTIVE (1 sentence):
+- Test whether any reduced-order feature combination preserves synchrony structure
+
+## METHODS (3-4 sentences):
+- Intervene to preserve specific feature combinations while destroying others
+- Test single (5), pairwise (10), triple (10), quadruple (5) models
+- Measure across 10 observables with 15% survival threshold
+
+## RESULTS (3-4 sentences):
+- 0/30+ reduced-order models survived
+- Full five-factor model achieves R²=1.0
+- 8/10 metrics show collapse; 2 preserved
+
+## CONCLUSIONS (2 sentences):
+- Multi-factor alignment required for eigenvalue/efficiency metrics
+- No reduced-order sufficiency demonstrated within framework
+
+## KEYWORDS:
+EEG, synchrony, falsification, multi-factor, reduced-order, intervention
