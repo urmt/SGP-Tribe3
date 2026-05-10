@@ -1,0 +1,29 @@
+{
+  "phase": 208,
+  "action_minimization": false,
+  "transport_type": "FREE_DIFFUSIVE_TRANSPORT",
+  "variational_geometry": false,
+  "low_action_basins": true,
+  "collapse_energy_spikes": false,
+  "energy_prefers_stable": true,
+  "metrics": {
+    "Kuramoto": {
+      "action": 1943.4393784401348,
+      "action_ratio": 1.0566587258145084,
+      "constrained_ratio": 0.9100141609991682,
+      "action_curvature_corr": -0.5414919672139172,
+      "action_barriers": 3,
+      "collapse_count": 15,
+      "action_entropy": 1.4777236531597986
+    },
+    "Logistic": {
+      "action": 129.53010753291983,
+      "action_ratio": 1.0442253284934169,
+      "constrained_ratio": -0.043317949930472714,
+      "action_curvature_corr": 0.43959686908817375,
+      "action_barriers": 3,
+      "collapse_count": 15,
+      "action_entropy": 1.9106110843273778
+    }
+  }
+}
