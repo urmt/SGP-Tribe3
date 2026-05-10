@@ -1,0 +1,30 @@
+REVIEWER LIMITATIONS PARAGRAPH
+==============================
+
+LIMITATIONS:
+
+1. Dataset: Analysis restricted to CHB-MIT dataset (4 subjects from Phase 112 
+   acquisition). Generalizability to other EEG datasets is unknown.
+
+2. Observable selection: Results constrained to 10 specific metrics. Two 
+   metrics (propagation asymmetry, graph entropy) showed preservation under 
+   reduced-order models - the dependency is not universal across all possible 
+   observables.
+
+3. Survival threshold: The 15% survival criterion was specified a priori but 
+   is not theoretically grounded. Sensitivity to threshold choice is not tested.
+
+4. Preprocessing: FFT-based phase computation, 10% burst threshold, and 
+   weighted adjacency matrices (no thresholding) were held constant. Effects 
+   of alternative preprocessing choices are unknown.
+
+5. Temporal window: 512-sample windows with 10% burst threshold may not capture 
+   all relevant temporal scales.
+
+6. Causal mechanism: The five factors are identified but their dynamical 
+   interaction mechanism remains unknown. Results support WHAT is required, 
+   not HOW the requirement emerges.
+
+7. Governance corrections: Initial analyses had incomplete search (Phase 191) 
+   and inconsistent verdict language (Phase 194), which were corrected in 
+   subsequent governance phases.

@@ -1,0 +1,11 @@
+Hypothesis,Phase_Tested,Result,Reason,Evidence_Strength,Governance_Status,Publication_Risk
+H1_kurtosis_causality,186,UNSUPPORTED,Correlation r=-1.0 but causal test showed kurtosis NOT causal (Phase 187: artificial kurtosis r=290 did NOT restore eigenvalue),HIGH,VALIDATED,LOW
+H2_burst_amplitude_dominance,187,PARTIAL,Burst presence predicts eigenvalue (r=1.0) but burst amplitude alone insufficient,MODERATE,VALIDATED,MEDIUM
+H3_internal_burst_temporal_coding,188,UNSUPPORTED,T3 (internal time reversal) caused only 0.9% destruction - internal burst timing NOT critical,HIGH,VALIDATED,LOW
+H4_common_mode_global_artifact,189,UNSUPPORTED,A5 (common-mode removal) caused only 19.2% destruction - NOT the causal structure,HIGH,VALIDATED,LOW
+H5_zero_lag_only_explanation,190,UNSUPPORTED,Both zero-lag AND propagation required (all interventions >85% destruction),HIGH,VALIDATED,LOW
+H6_propagation_only_explanation,190,UNSUPPORTED,Both zero-lag AND propagation required (all interventions >85% destruction),HIGH,VALIDATED,LOW
+H7_low_order_reducibility,191-194,UNSUPPORTED,All single/pairwise/triple/quadruple models failed (0 survivors from 30+ models),VERY_HIGH,VALIDATED (with corrections),LOW
+H8_universal_irreducibility_all_observables,196,PARTIAL,O1-O8 show universal collapse (0 survivors) but O9-O10 preserved (18/18 survivors),HIGH,VALIDATED,LOW
+H9_metric_specific_artifact,196,PARTIAL,8/10 observables show irreducibility but 2 preserved - not artifact but metric-dependent,HIGH,VALIDATED,MEDIUM
+H10_multifactor_alignment_dependency,186-190,SUPPORTED,Full model with F1-F5 achieves R²=1.0 (Phase 190) - multi-factor alignment required,VERY_HIGH,VALIDATED,LOW

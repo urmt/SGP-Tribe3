@@ -1,0 +1,11 @@
+Hypothesis,Phase,Finding,Negative_Result_Value
+kurtosis_causality,186-187,"Kurtosis correlation r=-1.0 but artificial kurtosis (r=290) FAILS to restore structure",HIGH
+internal_burst_temporal_coding,188,"T3 internal time reversal caused only 0.9% destruction",HIGH
+common_mode_artifact,189,"A5 common-mode removal caused only 19.2% destruction",HIGH
+zero_lag_only,190,"P1 preserve zero-lag destroyed propagation - still 91% collapse",HIGH
+propagation_only,190,"P2 preserve propagation destroyed zero-lag - still 86% collapse",HIGH
+single_feature_sufficiency,191-194,"All 5 single-feature models failed (>85% destruction)",HIGH
+pairwise_sufficiency,193,"All 10 pairwise models failed (>89% destruction)",HIGH
+triple_sufficiency,193,"All 10 triple models failed (>94% destruction)",HIGH
+quadruple_sufficiency,194,"All 5 quadruple models failed (>78% destruction)",HIGH
+universal_irreducibility,196,"O9 propagation and O10 graph entropy preserved under reduced-order",MODERATE

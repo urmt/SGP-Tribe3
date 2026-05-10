@@ -1,0 +1,14 @@
+PUBLICATION-SAFE ABSTRACT
+==========================
+
+We tested whether EEG synchrony structure can be reduced to lower-order feature 
+combinations using cross-channel alignment metrics. Across 30+ tested preservation 
+models (single-feature, pairwise, triple, and quadruple combinations), no reduced-
+order model preserved eigenvalue/efficiency metrics within the 15% survival 
+threshold. The organizational structure requires simultaneous presence of five 
+factors: zero-lag synchrony, temporal propagation ordering, phase-locking value, 
+coalition persistence, and burst coincidence timing. This five-factor dependency 
+generalizes across 8 of 10 tested observables but is not universal. The findings 
+support a multi-factor alignment requirement for synchrony structure preservation.
+
+[Word count: 108]

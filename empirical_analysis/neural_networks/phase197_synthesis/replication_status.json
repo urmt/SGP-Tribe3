@@ -1,0 +1,11 @@
+{
+  "phase": 197,
+  "task": "falsification_synthesis",
+  "verdict": "FALSIFICATION_SYNTHESIS",
+  "hypotheses_evaluated": 10,
+  "supported": 1,
+  "unsupported": 8,
+  "partial": 2,
+  "governance_integration": "PASS",
+  "evidence_boundary": "DEFINED"
+}

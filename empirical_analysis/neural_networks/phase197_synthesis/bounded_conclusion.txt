@@ -1,0 +1,29 @@
+BOUNDED CONCLUSION
+===================
+
+FINAL EVIDENCE BOUNDARY:
+
+1. **Hypotheses Evaluated**: 10 (H1-H10)
+
+2. **Supported**: 1 (H10 - multifactor alignment dependency)
+   
+3. **Unsupported**: 8 (H1, H3, H4, H5, H6, H7, H8 partial, H9 partial)
+
+4. **Partial**: 2 (H2 burst amplitude, H8/H9 partial generalization)
+
+5. **Strongest supported claim**: Multi-factor alignment (F1-F5 simultaneously) 
+   is required for eigenvalue/efficiency structure preservation (R²=1.0)
+
+6. **Weakest supported claim**: The dependency generalizes to 8/10 metrics 
+   (not universal but substantive)
+
+7. **Largest remaining uncertainty**: Generalizability to different EEG 
+   datasets, temporal scales, and recording conditions is unknown
+
+CONCLUSION:
+
+The evidence supports an irreducible five-factor dependency for EEG synchrony 
+structure under the evaluated framework. This is not a universal law but a 
+demonstrated falsification of all tested reduced-order alternatives within 
+the defined parameter space. The claim is bounded to eigenvalue/efficiency 
+metrics (O1-O8), specific preprocessing choices, and the CHB-MIT dataset.

@@ -1,0 +1,22 @@
+PHASE 197 AUDIT CHAIN
+=====================
+Phase: 197 - FALSIFICATION SYNTHESIS
+LEP Compliance: YES (review only, no new computation)
+
+Task: Synthesize findings from Phases 186-196
+
+Hypothesis Summary:
+- H1-H10 evaluated
+- 1 supported (H10: multifactor)
+- 8 unsupported (kurtosis, internal timing, common-mode, etc.)
+- 2 partial (burst amplitude, partial generalization)
+
+Governance integration:
+- Phase 180: FAILED (procedural)
+- Phase 191-192: INCOMPLETE_SEARCH (corrected in 193)
+- Phase 194-195: VERDICT_CORRECTION (language fixed)
+- Phase 196: PARTIAL_GENERALIZATION (documented)
+
+Evidence boundary: DEFINED
+
+Publication-safe language: ESTABLISHED
