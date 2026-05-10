@@ -1,0 +1,6 @@
+{
+  "phase": 191,
+  "verdict": "HIGH_ORDER_DEPENDENCY",
+  "minimal_features": "multiple required",
+  "compliance": "FULL"
+}

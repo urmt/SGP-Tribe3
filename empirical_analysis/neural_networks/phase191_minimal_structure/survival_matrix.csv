@@ -1,0 +1,7 @@
+model,eig_dest,gap_dest,survived
+M1,0.9621,0.9519,False
+M2,0.8900,0.8739,False
+M3,0.8909,0.8893,False
+M4,0.9412,0.9375,False
+F1_only,0.9367,0.9357,False
+F2_only,0.8670,0.8519,False

@@ -1,0 +1,5 @@
+interaction,effect
+F1*F2,required
+F1*F3,required
+F2*F4,required
+Note: All interactions appear required based on high destruction

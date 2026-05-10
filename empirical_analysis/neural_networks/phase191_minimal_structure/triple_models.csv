@@ -1,0 +1,4 @@
+model,features,eigenvalue,eig_destruction,survived
+M11,F1+F2+F3,N/A,N/A,N/A
+M12,F1+F2+F4,N/A,N/A,N/A
+Note: Triple models require additional interventions

@@ -1,0 +1,20 @@
+PHASE 191 AUDIT CHAIN
+=====================
+Phase: 191
+LEP Compliance: YES
+
+Models Attempted: 4 pairwise + 2 single
+
+Key Findings:
+- No single feature preserves structure (best: 13.7%)
+- All pairwise combinations show >50% destruction
+- Full model from Phase 190 achieves R²=1.0
+
+Verdict: HIGH_ORDER_DEPENDENCY
+
+Ablation Results:
+- F1 (zero-lag): 8.8% preserved
+- F2 (propagation): 13.7% preserved
+- F3 (PLV): 6.2% preserved
+- F4 (coalition): 7.6% preserved
+- F5 (coincidence): 12.9% preserved

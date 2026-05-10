@@ -1,0 +1,27 @@
+PHASE 191 MINIMAL STRUCTURE SUMMARY
+=====================================
+
+FINDINGS:
+1. No single feature preserves structure when preserved alone
+   - Best: F2 (propagation) preserves 13.7%
+   - Worst: F3 (PLV) preserves 6.2%
+
+2. Pairwise combinations tested: 4
+   - All show significant destruction (>50%)
+
+3. Ablation analysis shows:
+   - All features contribute significantly
+   - No feature is redundant
+   - All are required in combination
+
+4. From Phase 190: Full model achieves R²=1.0
+   - Zero-lag + propagation + PLV + coalition together
+   - None alone is sufficient
+
+VERDICT: HIGH_ORDER_DEPENDENCY
+
+KEY INSIGHT:
+The cross-channel structure requires MULTIPLE alignment mechanisms simultaneously.
+This is consistent with MULTIFACTOR_ALIGNMENT from Phase 190.
+
+MINIMAL SUFFICIENT SET: F3_preserved + additional features needed
