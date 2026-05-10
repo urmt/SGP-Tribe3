@@ -1,0 +1,28 @@
+{
+  "phase": 213,
+  "verdict": "STABLE_IDENTITY_CORE",
+  "identity_persistence_index": 0.9773390423749571,
+  "fingerprint_strength": 0.7912423716214103,
+  "recovery_lock_probability": 1.0,
+  "degradation_rate": -0.003756452162221409,
+  "metrics": {
+    "Kuramoto": {
+      "identity": 0.9906536476539898,
+      "attractor": 0.13611111110867516,
+      "topology": 0.8,
+      "coalition": 0.58,
+      "fingerprint": 0.859256882472233,
+      "lock_prob": 1.0,
+      "degradation": -0.0025215032709437054
+    },
+    "Logistic": {
+      "identity": 0.9640244370959243,
+      "attractor": 0.282936507932099,
+      "topology": 0.9333333333333332,
+      "coalition": 0.69,
+      "fingerprint": 0.7232278607705875,
+      "lock_prob": 1.0,
+      "degradation": -0.004991401053499113
+    }
+  }
+}
