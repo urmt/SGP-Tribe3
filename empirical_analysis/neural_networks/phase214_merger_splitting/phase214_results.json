@@ -1,0 +1,22 @@
+{
+  "phase": 214,
+  "verdict": "STABLE_ORGANIZATIONAL_MERGER",
+  "merger_success_rate": 0.6666666666666666,
+  "identity_inheritance_index": 0.719747649092823,
+  "fragment_persistence": 0.5,
+  "topology_recombination_score": 0.09477124183006536,
+  "metrics": {
+    "Kuramoto": {
+      "merger_success": 0.3333333333333333,
+      "identity_inheritance": 0.7542433484024946,
+      "fragment_persistence": 0.5,
+      "topology_recombination": 0.07777777777777778
+    },
+    "Logistic": {
+      "merger_success": 1.0,
+      "identity_inheritance": 0.6852519497831514,
+      "fragment_persistence": 0.5,
+      "topology_recombination": 0.11176470588235295
+    }
+  }
+}

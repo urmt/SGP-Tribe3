@@ -1,0 +1,9 @@
+metric,value
+merger_success_rate,0.666667
+identity_inheritance_index,0.719748
+fragment_persistence,0.500000
+topology_recombination,0.094771
+hybrid_structure_count,3
+collapse_after_merger,2
+persistent_fragment_count,0
+verdict,STABLE_ORGANIZATIONAL_MERGER
