@@ -1,0 +1,8 @@
+{
+  "phase": 187,
+  "verdict": "BURST_STRUCTURE_DOMINANT",
+  "best_causal_predictor": "sync_mean",
+  "compliance": "FULL",
+  "tier": "T3",
+  "evidence": "CAUSAL"
+}

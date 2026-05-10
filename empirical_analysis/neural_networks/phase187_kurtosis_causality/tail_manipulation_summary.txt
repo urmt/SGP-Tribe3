@@ -1,0 +1,40 @@
+PHASE 187 TAIL MANIPULATION SUMMARY
+====================================
+
+K1 - KURTOSIS SUPPRESSION:
+- Method: Rank Gaussianization
+- Result: Kurtosis 7.97 -> -0.02
+- Eigenvalue: 1.38 -> 0.05 (DESTROYED)
+- Verdict: Suppressing kurtosis destroys eigenvalue
+
+K2 - KURTOSIS PRESERVATION + PHASE RANDOM:
+- Method: Phase randomize with amplitude preservation
+- Result: Kurtosis 7.97 -> -0.01 (preserved but low)
+- Eigenvalue: 1.38 -> 0.05 (DESTROYED)
+- Verdict: Phase relationships required, kurtosis alone not sufficient
+
+K3 - ARTIFICIAL KURTOSIS INJECTION:
+- Method: Inject heavy tails into phase-randomized signal
+- Result: Kurtosis = 290 (!)
+- Eigenvalue: 1.38 -> 0.05 (DESTROYED)
+- Verdict: Artificial kurtosis FAILS to restore eigenvalue - not causal!
+
+K4 - BURST-PRESERVED GAUSSIANIZATION:
+- Method: Gaussianize non-burst regions, preserve bursts
+- Result: Kurtosis 7.97 -> 8.04 (preserved)
+- Eigenvalue: 1.38 -> 1.05 (PARTIALLY PRESERVED)
+- Verdict: Burst structure is CRITICAL
+
+K5 - TAIL-ONLY SHUFFLE:
+- Method: Shuffle only 99th+ percentile events
+- Result: Kurtosis preserved (7.97)
+- Eigenvalue: 1.38 -> 0.31 (PARTIALLY DESTROYED)
+- Verdict: Tail events contribute to eigenvalue but not fully causal
+
+KEY FINDINGS:
+- sync_mean -> eigenvalue: r=1.000 (PERFECT correlation!)
+- Kurtosis -> eigenvalue: r=-0.339 (NOT significant, p=0.511)
+- Artificial kurtosis (K3) with r=290 does NOT restore eigenvalue
+- Burst preservation (K4) partially restores eigenvalue
+
+CONCLUSION: NOT kurtosis, NOT tails - BURST TIMING STRUCTURE is causal

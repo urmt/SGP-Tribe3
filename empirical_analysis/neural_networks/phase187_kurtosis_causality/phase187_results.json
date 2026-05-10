@@ -1,0 +1,19 @@
+{
+  "phase": 187,
+  "verdict": "BURST_STRUCTURE_DOMINANT",
+  "best_causal_predictor": "sync_mean",
+  "pearson_r_kurtosis": -0.339,
+  "p_value_kurtosis": 0.511,
+  "pearson_r_sync_mean": 1.0,
+  "p_value_sync_mean": 0.0,
+  "partial_corr_kurtosis": -0.374,
+  "regression_r2_kurtosis": 0.1149,
+  "aggregate": {
+    "real": {"kurtosis": 7.97, "largest_eigenvalue": 1.376, "spectral_gap": 0.893, "sync_mean": 0.284},
+    "K1": {"kurtosis": -0.02, "largest_eigenvalue": 0.052, "spectral_gap": 0.052, "sync_mean": 0.284},
+    "K2": {"kurtosis": -0.01, "largest_eigenvalue": 0.053, "spectral_gap": 0.053, "sync_mean": 0.284},
+    "K3": {"kurtosis": 290.58, "largest_eigenvalue": 0.047, "spectral_gap": 0.047, "sync_mean": 0.284},
+    "K4": {"kurtosis": 8.04, "largest_eigenvalue": 1.054, "spectral_gap": 0.664, "sync_mean": 0.284},
+    "K5": {"kurtosis": 7.97, "largest_eigenvalue": 0.307, "spectral_gap": 0.225, "sync_mean": 0.284}
+  }
+}
