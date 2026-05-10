@@ -1,0 +1,34 @@
+{
+  "phase": 209,
+  "landscape_type": "STRUCTURED_ENERGY_LANDSCAPE",
+  "basins_present": true,
+  "transition_type": "RIDGE_CONSTRAINED_TRANSITIONS",
+  "metastability_type": "NO_BASIN_STRUCTURE",
+  "energy_trapping": true,
+  "collapse_geometry": "SADDLE_ESCAPE",
+  "landscape_smooth": true,
+  "metrics": {
+    "Kuramoto": {
+      "basin_count": 3,
+      "deep_basins": 1,
+      "avg_depth": 0.8283022143404152,
+      "ridge_points": 5,
+      "barrier_count": 11,
+      "avg_barrier_height": 2.9275658865718026,
+      "avg_residence": 5.103448275862069,
+      "roughness": 0.7857681497326833,
+      "saddle_regions": 112
+    },
+    "Logistic": {
+      "basin_count": 3,
+      "deep_basins": 1,
+      "avg_depth": 0.341199643099108,
+      "ridge_points": 5,
+      "barrier_count": 10,
+      "avg_barrier_height": 0.2510580711977911,
+      "avg_residence": 2.690909090909091,
+      "roughness": 50.02681317614484,
+      "saddle_regions": 122
+    }
+  }
+}

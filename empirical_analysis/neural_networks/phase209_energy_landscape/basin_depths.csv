@@ -1,0 +1,3 @@
+system,basin_count,deep_count,shallow_count,avg_depth
+Kuramoto,3,1,2,0.8283
+Logistic,3,1,2,0.3412

@@ -1,0 +1,1 @@
+{"phase": 209, "verdict": "STRUCTURED_ENERGY_LANDSCAPE", "basins": true, "transitions": "RIDGE_CONSTRAINED_TRANSITIONS", "metastability": "NO_BASIN_STRUCTURE", "collapse_geometry": "SADDLE_ESCAPE", "pipeline_artifact_risk": "DECREASED", "compliance": "FULL"}
