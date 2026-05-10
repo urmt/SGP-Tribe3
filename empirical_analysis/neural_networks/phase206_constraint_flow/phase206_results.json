@@ -1,0 +1,23 @@
+{
+  "phase": 206,
+  "flow_type": "CONSTRAINED_FLOW_FIELD",
+  "topology": "SMOOTH_TOPOLOGY",
+  "collapse_prediction": true,
+  "entropy_directionality": true,
+  "constraint_geometry": true,
+  "basin_steering": true,
+  "flow_metrics": {
+    "Kuramoto": {
+      "compression": 0.03952231317865268,
+      "flow_magnitude": 0.10881980538735173,
+      "avg_curvature": 7947.73727118612,
+      "bottleneck_count": 30
+    },
+    "Logistic": {
+      "compression": 0.0262687669142229,
+      "flow_magnitude": 0.011166055895827268,
+      "avg_curvature": 4317.210788796876,
+      "bottleneck_count": 30
+    }
+  }
+}

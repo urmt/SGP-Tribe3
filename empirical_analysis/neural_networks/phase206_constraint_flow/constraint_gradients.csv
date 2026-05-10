@@ -1,0 +1,3 @@
+system,avg_gradient,sign_changes,constraint_present
+Kuramoto,0.2658,98,True
+Logistic,0.0443,118,True

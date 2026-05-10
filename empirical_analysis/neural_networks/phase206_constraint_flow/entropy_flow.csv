@@ -1,0 +1,3 @@
+system,avg_entropy,flow_correlation,directional
+Kuramoto,0.8255,-0.8161,True
+Logistic,2.0276,-0.7073,True

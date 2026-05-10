@@ -1,0 +1,3 @@
+system,minima_count,maxima_count,basin_steering
+Kuramoto,14,12,True
+Logistic,6,8,True

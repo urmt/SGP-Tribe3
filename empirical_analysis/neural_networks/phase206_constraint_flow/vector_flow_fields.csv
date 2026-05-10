@@ -1,0 +1,4 @@
+system,avg_velocity,avg_acceleration,flow_magnitude
+Kuramoto,0.003839,-0.000346,0.1088
+Logistic,0.000047,0.000080,0.0112
+GameOfLife,0.000000,0.000000,0.0000
