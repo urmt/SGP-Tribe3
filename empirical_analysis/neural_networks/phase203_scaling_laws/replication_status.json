@@ -1,0 +1,1 @@
+{"phase": 203, "verdict": "FINITE_SIZE_DEPENDENT", "strongest_scaling": "O1", "universal_exponent": false, "finite_size_collapse": false, "power_law_detected": true, "scaling_regime": "FINITE_SIZE_DEPENDENT", "pipeline_artifact_risk": "DECREASED", "compliance": "FULL"}

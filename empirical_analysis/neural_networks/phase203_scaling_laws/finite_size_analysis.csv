@@ -1,0 +1,4 @@
+system,parameter,classification
+kuramoto,channels,GROWING_STRUCTURE
+logistic,channels,FINITE_SIZE_DEPENDENT
+gol,channels,GROWING_STRUCTURE

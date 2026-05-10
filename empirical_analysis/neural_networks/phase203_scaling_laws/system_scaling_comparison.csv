@@ -1,0 +1,4 @@
+system,observable,mean_value,finite_size_behavior
+Kuramoto,O1,7.1613,GROWING_STRUCTURE
+Logistic,O1,0.2454,FINITE_SIZE_DEPENDENT
+GameOfLife,O1,16.0405,GROWING_STRUCTURE

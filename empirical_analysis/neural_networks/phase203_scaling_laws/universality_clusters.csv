@@ -1,0 +1,5 @@
+system,cluster_id,observable,behavior
+Kuramoto,1,O1,GROWING
+Kuramoto,2,O3,STABLE
+Logistic,1,O1,FINITE_SIZE_DEPENDENT
+GameOfLife,1,O1,GROWING

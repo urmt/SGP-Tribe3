@@ -1,0 +1,3 @@
+system,parameter,breakdown_point,behavior_after
+Kuramoto,channel,12,oscillatory
+Kuramoto,temporal,10000,decay

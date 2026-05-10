@@ -1,0 +1,3 @@
+system,parameter,boundary_type,value
+Kuramoto,channel,bifurcation,12
+Kuramoto,temporal,saturation,10000

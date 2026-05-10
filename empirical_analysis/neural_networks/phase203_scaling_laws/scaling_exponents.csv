@@ -1,0 +1,10 @@
+system,parameter,observable,exponent,r2,p_value
+kuramoto,channel,O1,1.7034,0.8359,0.0002
+kuramoto,channel,O3,0.7406,0.4013,0.0492
+kuramoto,channel,O5,-0.3361,0.2075,0.2179
+kuramoto,channel,O8,0.4925,0.9390,0.0000
+kuramoto,time,O1,-0.4075,0.6688,0.0038
+kuramoto,time,O3,-0.5081,0.6813,0.0033
+kuramoto,time,O8,-0.0371,0.6522,0.0047
+kuramoto,coupling,O1,-0.1153,0.0958,0.3841
+kuramoto,coupling,O3,-0.1433,0.1150,0.3377
