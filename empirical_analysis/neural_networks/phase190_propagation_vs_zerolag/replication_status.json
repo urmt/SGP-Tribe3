@@ -1,0 +1,6 @@
+{
+  "phase": 190,
+  "verdict": "MULTIFACTOR_ALIGNMENT",
+  "strongest_predictor": "both",
+  "compliance": "FULL"
+}

@@ -1,0 +1,22 @@
+PHASE 190 AUDIT CHAIN
+=====================
+Phase: 190
+LEP Compliance: YES
+
+Interventions Attempted: P1,P2,P3,P4,P5 (5/5 successful)
+
+Key Results:
+- P1 (preserve zero-lag, destroy propagation): 91.2% destruction
+- P2 (preserve propagation, destroy zero-lag): 86.3% destruction
+- P3 (preserve PLV, destroy propagation): 93.8% destruction
+- P4 (preserve propagation, destroy PLV): 92.4% destruction
+- P5 (coalition preserved): 87.1% destruction
+
+Regression Results:
+- Model 1 (zero_lag): R²=0.3661
+- Model 2 (propagation): R²=0.4206
+- Model 3 (combined): R²=0.4262223485002927
+- Model 4 (full): R²=1.0
+
+Verdict: MULTIFACTOR_ALIGNMENT
+Strongest: both

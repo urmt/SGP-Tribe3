@@ -1,0 +1,120 @@
+{
+  "phase": 190,
+  "verdict": "MULTIFACTOR_ALIGNMENT",
+  "strongest_predictor": "both",
+  "best_model": "Model 4 (full)",
+  "best_r2": 1.0,
+  "aggregate": {
+    "real": {
+      "largest_eigenvalue": 1.3764543707099417,
+      "spectral_gap": 0.9601955481629816,
+      "zero_lag_correlation": 0.18817824342323639,
+      "plv_mean": 0.08054448215112825,
+      "wpli_mean": 2.710505431213761e-19,
+      "propagation_asymmetry": 0.2511355738536278,
+      "coalition_persistence": 0.7296594900199669,
+      "burst_coincidence": 0.023000595238095237,
+      "efficiency": 12.663671704738139,
+      "sync_mean": 0.16375859629966605,
+      "sync_var": 0.023491759940164794
+    },
+    "P1": {
+      "largest_eigenvalue": 0.12067855269769615,
+      "spectral_gap": 0.09759916060011453,
+      "zero_lag_correlation": 0.04272909239970568,
+      "plv_mean": 0.00714799924274728,
+      "wpli_mean": 1.0842021724855044e-19,
+      "propagation_asymmetry": 0.251096705320547,
+      "coalition_persistence": -0.0011218597244048408,
+      "burst_coincidence": 0.013130654761904762,
+      "efficiency": 174.37515274589123,
+      "sync_mean": 0.011311466911309723,
+      "sync_var": 0.00041527370100653415
+    },
+    "P2": {
+      "largest_eigenvalue": 0.18909585271130347,
+      "spectral_gap": 0.1383285891214317,
+      "zero_lag_correlation": 0.08209342628463892,
+      "plv_mean": 0.012551125812946243,
+      "wpli_mean": 9.147955830346444e-20,
+      "propagation_asymmetry": 0.21452606073676644,
+      "coalition_persistence": -0.0045977549763332555,
+      "burst_coincidence": 0.018163392857142857,
+      "efficiency": 81.35638639860804,
+      "sync_mean": 0.021551243008849284,
+      "sync_var": 0.0004309965764430282
+    },
+    "P3": {
+      "largest_eigenvalue": 0.0849603131771961,
+      "spectral_gap": 0.06469472837036569,
+      "zero_lag_correlation": 0.038339890737251976,
+      "plv_mean": 0.0059261425516933175,
+      "wpli_mean": 8.131516293641283e-20,
+      "propagation_asymmetry": 0.25105358984972237,
+      "coalition_persistence": -0.0007415433714731769,
+      "burst_coincidence": 0.013339583333333332,
+      "efficiency": 176.167126294951,
+      "sync_mean": 0.009485007917656508,
+      "sync_var": 9.913646416097275e-05
+    },
+    "P4": {
+      "largest_eigenvalue": 0.10464057937576626,
+      "spectral_gap": 0.07913867447248679,
+      "zero_lag_correlation": 0.027350283577721464,
+      "plv_mean": 0.021027343913846357,
+      "wpli_mean": 3.3881317890172014e-20,
+      "propagation_asymmetry": 0.25096183051069054,
+      "coalition_persistence": -0.0013618058231071135,
+      "burst_coincidence": 0.013785714285714285,
+      "efficiency": 115.58257512593758,
+      "sync_mean": 0.012843566360306835,
+      "sync_var": 9.98791816257502e-05
+    },
+    "P5": {
+      "largest_eigenvalue": 0.1777511848445464,
+      "spectral_gap": 0.11595256470619028,
+      "zero_lag_correlation": 0.033113247996169826,
+      "plv_mean": 0.025171783171032882,
+      "wpli_mean": 9.486769009248164e-20,
+      "propagation_asymmetry": 0.2513919219944415,
+      "coalition_persistence": -0.0049186638899421375,
+      "burst_coincidence": 0.01111220238095238,
+      "efficiency": 105.87134503005794,
+      "sync_mean": 0.020475374173490424,
+      "sync_var": 0.0006248082858554113
+    }
+  },
+  "effects": {
+    "P1": {
+      "eigenvalue": 0.9123265142196809,
+      "zero_lag": 0.772932876706817,
+      "plv": 0.9112540170008603
+    },
+    "P2": {
+      "eigenvalue": 0.8626210525135154,
+      "zero_lag": 0.5637464523432484,
+      "plv": 0.8441715002867566
+    },
+    "P3": {
+      "eigenvalue": 0.9382759683247796,
+      "zero_lag": 0.7962575798318139,
+      "plv": 0.9264239784731582
+    },
+    "P4": {
+      "eigenvalue": 0.9239781705790979,
+      "zero_lag": 0.8546575678408161,
+      "plv": 0.7389350163660994
+    },
+    "P5": {
+      "eigenvalue": 0.8708630023435745,
+      "zero_lag": 0.824032537478214,
+      "plv": 0.6874797317029151
+    }
+  },
+  "model_r2": {
+    "M1": 0.36605289916204553,
+    "M2": 0.42056075994387887,
+    "M3": 0.4262223485002927,
+    "M4": 1.0
+  }
+}

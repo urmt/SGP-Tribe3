@@ -1,0 +1,5 @@
+model,predictors,r_squared
+M1,zero_lag,0.3661
+M2,propagation,0.4206
+M3,zero_lag + propagation,0.4262
+M4,zero_lag + propagation + PLV + coalition,1.0000
