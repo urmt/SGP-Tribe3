@@ -1,0 +1,29 @@
+{
+  "phase": 207,
+  "transport_type": "CURVATURE_GUIDED_TRANSPORT",
+  "geodesic_structure": "GEODESIC_ORGANIZATION",
+  "potential_wells_present": true,
+  "collapse_curvature_present": true,
+  "stabilization_prediction": true,
+  "manifold_dynamics": "FLAT_MANIFOLD_DYNAMICS",
+  "metrics": {
+    "Kuramoto": {
+      "geodesic_ratio": 0.03952231317865268,
+      "deviation": 0.5574174805586032,
+      "curvature": 0.1708928349350979,
+      "potential_wells": 12,
+      "collapse_points": 15,
+      "tension": 0.23936780712697253,
+      "bottlenecks": 0
+    },
+    "Logistic": {
+      "geodesic_ratio": 0.0262687669142229,
+      "deviation": 0.06513104797606604,
+      "curvature": 0.03785851790372398,
+      "potential_wells": 12,
+      "collapse_points": 15,
+      "tension": 0.03798304932368433,
+      "bottlenecks": 4
+    }
+  }
+}

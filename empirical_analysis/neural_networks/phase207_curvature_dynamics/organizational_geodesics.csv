@@ -1,0 +1,3 @@
+system,curvature_wells,bottlenecks,transport_type
+Kuramoto,14,0,CURVATURE_GUIDED_TRANSPORT
+Logistic,15,4,CURVATURE_GUIDED_TRANSPORT
