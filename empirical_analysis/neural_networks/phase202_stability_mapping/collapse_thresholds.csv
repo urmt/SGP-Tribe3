@@ -1,0 +1,7 @@
+system,parameter,threshold_start,threshold_end,metric
+Kuramoto,coupling,None,None,O1
+Kuramoto,noise,0.001,0.018,O1
+Kuramoto,r,3.533,3.600,O1
+Kuramoto,burst,None,None,O1
+Kuramoto,coalition,None,None,O1
+Kuramoto,forcing,None,None,O1

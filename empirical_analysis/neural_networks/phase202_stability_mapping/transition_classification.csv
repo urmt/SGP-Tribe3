@@ -1,0 +1,7 @@
+system,parameter,transition_type
+Kuramoto,coupling,GRADUAL_TRANSITION
+Kuramoto,noise,ABRUPT_TRANSITION
+Kuramoto,logistic_r,ABRUPT_TRANSITION
+Kuramoto,burst_density,GRADUAL_TRANSITION
+Kuramoto,coalition_p,GRADUAL_TRANSITION
+Kuramoto,forcing,GRADUAL_TRANSITION

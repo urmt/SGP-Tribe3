@@ -1,0 +1,13 @@
+{
+  "phase": 202,
+  "verdict": "METASTABLE_REGIME_CONFIRMED",
+  "transition_type": "MIXED (2 ABRUPT, 4 GRADUAL)",
+  "stable_regions": 8,
+  "collapse_thresholds": 2,
+  "hysteresis_detected": false,
+  "parameter_sweeps": 6,
+  "kuramoto_similarity": "MODERATE",
+  "universal_invariants": 2,
+  "pipeline_artifact_risk": "DECREASED",
+  "compliance": "FULL"
+}

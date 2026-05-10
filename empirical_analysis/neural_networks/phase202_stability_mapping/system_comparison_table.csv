@@ -1,0 +1,7 @@
+system,parameter,transition_type,stable_windows,collapse_threshold
+Kuramoto,coupling,GRADUAL_TRANSITION,1,None
+Kuramoto,noise,ABRUPT_TRANSITION,1,0.001-0.018
+Kuramoto,logistic_r,ABRUPT_TRANSITION,0,None
+Kuramoto,burst_density,GRADUAL_TRANSITION,0,None
+Kuramoto,coalition_p,GRADUAL_TRANSITION,0,None
+Kuramoto,forcing,GRADUAL_TRANSITION,2,None

@@ -1,0 +1,54 @@
+{
+  "phase": 202,
+  "transition_types": {
+    "coupling": "GRADUAL_TRANSITION",
+    "noise": "ABRUPT_TRANSITION",
+    "logistic_r": "ABRUPT_TRANSITION",
+    "burst_density": "GRADUAL_TRANSITION",
+    "coalition_p": "GRADUAL_TRANSITION",
+    "forcing": "GRADUAL_TRANSITION"
+  },
+  "stable_windows": {
+    "coupling": 1,
+    "noise": 1,
+    "r": 1,
+    "burst": 2,
+    "coalition": 1,
+    "forcing": 2
+  },
+  "collapse_thresholds": {
+    "coupling": [
+      "None",
+      "None"
+    ],
+    "noise": [
+      "0.001",
+      "0.017555555555555557"
+    ],
+    "r": [
+      "3.533333333333333",
+      "3.6"
+    ],
+    "burst": [
+      "None",
+      "None"
+    ],
+    "coalition": [
+      "None",
+      "None"
+    ],
+    "forcing": [
+      "None",
+      "None"
+    ]
+  },
+  "hysteresis_detected": false,
+  "hysteresis_magnitude": 0.19380925783378838,
+  "answers": {
+    "q1_emergence": "GRADUAL",
+    "q2_stable_windows": 8,
+    "q4_observables_collapse": "O1, O3",
+    "q5_universal_boundaries": false,
+    "q6_smooth_surfaces": false
+  }
+}
