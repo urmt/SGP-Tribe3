@@ -1,0 +1,124 @@
+{
+  "phase": 189,
+  "verdict": "ZERO_LAG_ALIGNMENT_REQUIRED",
+  "strongest_predictor": "zero_lag_correlation",
+  "largest_destruction_condition": "A3",
+  "largest_destruction_percent": 0.9574921930396632,
+  "aggregate": {
+    "real": {
+      "largest_eigenvalue": 1.3764543707099417,
+      "spectral_gap": 0.9601955481629816,
+      "sync_mean": 0.16375859629966605,
+      "sync_var": 0.023491759940164794,
+      "zero_lag_correlation": 0.18817824342323639,
+      "plv_mean": 0.08054448215112825,
+      "wpli_mean": 0.9999999997973766,
+      "burst_coincidence": 0.023000595238095237,
+      "coalition_persistence": 0.7296594900199669,
+      "propagation_asymmetry": 0.07355320025720494,
+      "common_mode_energy": 0.2272426999268724
+    },
+    "A1": {
+      "largest_eigenvalue": 0.1403593615263758,
+      "spectral_gap": 0.12294626390434196,
+      "sync_mean": 0.016657620980257956,
+      "sync_var": 0.0001422021033885671,
+      "zero_lag_correlation": 0.048903705460255256,
+      "plv_mean": 0.016667040965108168,
+      "wpli_mean": 0.9999999980280696,
+      "burst_coincidence": 0.016197619047619047,
+      "coalition_persistence": -0.002672927015944202,
+      "propagation_asymmetry": 0.05510113842763259,
+      "common_mode_energy": 0.15118786449495175
+    },
+    "A2": {
+      "largest_eigenvalue": 0.06757123302424467,
+      "spectral_gap": 0.05409724224108654,
+      "sync_mean": 0.007985533004135717,
+      "sync_var": 4.750977787498223e-05,
+      "zero_lag_correlation": 0.028881563740912407,
+      "plv_mean": 0.005474157462008199,
+      "wpli_mean": 0.9999999984631623,
+      "burst_coincidence": 0.01199375,
+      "coalition_persistence": -0.0004944412996728278,
+      "propagation_asymmetry": 0.07346333134339747,
+      "common_mode_energy": 0.11741908663705886
+    },
+    "A3": {
+      "largest_eigenvalue": 0.05851005667985026,
+      "spectral_gap": 0.046663913934842406,
+      "sync_mean": 0.007001173224085264,
+      "sync_var": 3.172408819790241e-05,
+      "zero_lag_correlation": 0.02545581412081603,
+      "plv_mean": 0.020125101843855398,
+      "wpli_mean": 0.9999999987035213,
+      "burst_coincidence": 0.011149702380952382,
+      "coalition_persistence": -0.00038256231075690683,
+      "propagation_asymmetry": 0.07337536683211848,
+      "common_mode_energy": 0.11886708493972094
+    },
+    "A4": {
+      "largest_eigenvalue": 0.30137059937687793,
+      "spectral_gap": 0.16572206091803116,
+      "sync_mean": 0.0290857617866321,
+      "sync_var": 0.0028023390720207236,
+      "zero_lag_correlation": 0.04121757849002967,
+      "plv_mean": 0.031336780281585555,
+      "wpli_mean": 0.999999998358545,
+      "burst_coincidence": 0.011420535714285716,
+      "coalition_persistence": -0.0070376150875141735,
+      "propagation_asymmetry": 0.07350843458824369,
+      "common_mode_energy": 0.14081249769154686
+    },
+    "A5": {
+      "largest_eigenvalue": 1.640072839817539,
+      "spectral_gap": 1.1777790406171245,
+      "sync_mean": 0.1947023511296615,
+      "sync_var": 0.027506793318722796,
+      "zero_lag_correlation": 0.26178295507251215,
+      "plv_mean": 0.08246070771800013,
+      "wpli_mean": 0.9999999941394777,
+      "burst_coincidence": 0.026803273809523808,
+      "coalition_persistence": 1.0548324778783007,
+      "propagation_asymmetry": 0.09193899447238334,
+      "common_mode_energy": 3.434750683584052e-33
+    }
+  },
+  "effects": {
+    "A1": 0.8980283222508989,
+    "A2": 0.9509092095879699,
+    "A3": 0.9574921930396632,
+    "A4": 0.7810529678354408,
+    "A5": 0.1915199477129266
+  },
+  "predictors": {
+    "plv_mean": {
+      "r": 0.9773405586127807,
+      "p": 0.004080618568003885
+    },
+    "wpli_mean": {
+      "r": -0.9885792430443725,
+      "p": 0.0014626176036106324
+    },
+    "burst_coincidence": {
+      "r": 0.9397657701252503,
+      "p": 0.0175847260996854
+    },
+    "coalition_persistence": {
+      "r": 0.988771672929847,
+      "p": 0.0014258492994547495
+    },
+    "propagation_asymmetry": {
+      "r": 0.7853956114136561,
+      "p": 0.11542302599388195
+    },
+    "common_mode_energy": {
+      "r": -0.9398077797560654,
+      "p": 0.017566445858444985
+    },
+    "zero_lag_correlation": {
+      "r": 0.9934064740042516,
+      "p": 0.0006420671427113073
+    }
+  }
+}
