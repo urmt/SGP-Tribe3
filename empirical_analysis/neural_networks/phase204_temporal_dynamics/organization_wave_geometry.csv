@@ -1,0 +1,4 @@
+system,metric,value
+Kuramoto,wave_correlation,0.6208
+Kuramoto,coherence_persistence,48
+Kuramoto,peak_count,15

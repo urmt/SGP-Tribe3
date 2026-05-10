@@ -1,0 +1,11 @@
+system,attractor_id,peak_time,peak_value
+Kuramoto,0,2,0.8271
+Kuramoto,1,10,0.8681
+Kuramoto,2,19,0.8684
+Kuramoto,3,28,0.8631
+Kuramoto,4,32,0.8674
+Kuramoto,5,38,0.8641
+Kuramoto,6,40,0.8624
+Kuramoto,7,44,0.8614
+Kuramoto,8,51,0.8671
+Kuramoto,9,53,0.8668

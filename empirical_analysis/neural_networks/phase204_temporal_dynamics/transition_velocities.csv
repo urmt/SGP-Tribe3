@@ -1,0 +1,4 @@
+system,event_type,velocity
+Kuramoto,collapse,nan
+Kuramoto,recovery,0.1904
+Kuramoto,propagation,0.6208

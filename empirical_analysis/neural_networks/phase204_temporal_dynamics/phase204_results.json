@@ -1,0 +1,18 @@
+{
+  "phase": 204,
+  "collapse_type": "LOCAL_COLLAPSE",
+  "critical_slowing": true,
+  "metastability": "LOW",
+  "self_repair": true,
+  "wave_propagation": false,
+  "dynamic_phase_behavior": false,
+  "transition_velocities": {
+    "collapse": NaN,
+    "recovery": 0.19037029315330106,
+    "propagation": 0.6208173866585514
+  },
+  "metastable_lifetime": 0.0,
+  "coherence_persistence": 48,
+  "nucleation_events": 15,
+  "cascade_count": 26
+}
