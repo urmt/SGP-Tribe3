@@ -1,0 +1,46 @@
+{
+  "phase": 210,
+  "hierarchy_depth": "FLAT_ORGANIZATION",
+  "persistence_gain": false,
+  "collapse_amplification": true,
+  "recursive_stability_index": 0.0008409761290742322,
+  "verdict": "COLLAPSE_CASCADE",
+  "metrics": {
+    "Kuramoto": {
+      "layer0_stability": 0.12221513212009269,
+      "layer1_coalitions": 56,
+      "layer1_persistence": 2.642857142857143,
+      "layer2_meta_groups": 4,
+      "layer3_global_stability": 3.243636039398584,
+      "persistence_gains": [
+        0.014430737477177408,
+        0.9639060277352902,
+        0.49469265797702716
+      ],
+      "inherited_constraints": [
+        0.9999999991817707,
+        0.9639060277352902,
+        0.49469265797702716
+      ],
+      "metastable_periods": 0
+    },
+    "Logistic": {
+      "layer0_stability": 0.19194774684575458,
+      "layer1_coalitions": 86,
+      "layer1_persistence": 1.7209302325581395,
+      "layer2_meta_groups": 4,
+      "layer3_global_stability": 25.99170858331879,
+      "persistence_gains": [
+        0.005854681939167777,
+        0.8567266294429755,
+        55.56846166998956
+      ],
+      "inherited_constraints": [
+        0.9999999994790248,
+        0.8567266294429755,
+        0.9999999997862069
+      ],
+      "metastable_periods": 0
+    }
+  }
+}
