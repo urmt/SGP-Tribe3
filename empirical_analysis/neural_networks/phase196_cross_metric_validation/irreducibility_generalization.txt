@@ -1,0 +1,24 @@
+IRREDUCIBILITY GENERALIZATION - PHASE 196
+============================================
+
+VERDICT: PARTIAL_GENERALIZATION
+
+Universal collapse across all observables: False
+
+OBSERVABLE SURVIVAL COUNTS:
+  O1_eigenvalue: 0 survivors
+  O2_spectral_gap: 0 survivors
+  O3_efficiency: 0 survivors
+  O4_sync_variance: 0 survivors
+  O5_coalition: 0 survivors
+  O6_coincidence_stability: 0 survivors
+  O7_plv: 0 survivors
+  O8_zerolag: 0 survivors
+  O9_propagation: 18 survivors
+  O10_graph_entropy: 18 survivors
+
+STRONGEST OBSERVABLE: O10_graph_entropy
+WEAKEST OBSERVABLE: O1_eigenvalue
+
+CONCLUSION:
+Irreducibility is partially generalizable

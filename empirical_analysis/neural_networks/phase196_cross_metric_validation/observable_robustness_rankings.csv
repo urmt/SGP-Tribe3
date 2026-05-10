@@ -1,0 +1,11 @@
+rank,observable,survivors,robustness
+1,O1_eigenvalue,0,weak
+2,O2_spectral_gap,0,weak
+3,O3_efficiency,0,weak
+4,O4_sync_variance,0,weak
+5,O5_coalition,0,weak
+6,O6_coincidence_stability,0,weak
+7,O7_plv,0,weak
+8,O8_zerolag,0,weak
+9,O9_propagation,18,strong
+10,O10_graph_entropy,18,strong

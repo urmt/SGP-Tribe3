@@ -1,0 +1,11 @@
+observable,avg_destruction,survivors
+O1_eigenvalue,0.9261,0
+O2_spectral_gap,0.9172,0
+O3_efficiency,11.7444,0
+O4_sync_variance,0.9888,0
+O5_coalition,1.0021,0
+O6_coincidence_stability,0.6993,0
+O7_plv,0.8131,0
+O8_zerolag,0.8443,0
+O9_propagation,0.0423,18
+O10_graph_entropy,0.0066,18

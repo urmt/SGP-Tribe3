@@ -1,0 +1,15 @@
+DIRECTOR NOTES - PHASE 196
+===========================
+
+1. Models: Reused from Phases 193-194 (no new interventions)
+
+2. Observables: 10 metrics tested
+
+3. Results:
+   - Verdict: PARTIAL_GENERALIZATION
+   - Universal collapse: False
+   - Strongest: O10_graph_entropy
+   - Weakest: O1_eigenvalue
+
+4. Interpretation:
+   Some metrics show partial preservation
