@@ -1,0 +1,10 @@
+metric,value
+persistence_selection_gradient,87.058900
+evolutionary_stability_score,-1.193659
+adaptive_geometry_retention,0.079224
+collapse_filtered_survival,6.460105
+persistence_fitness_gain,28.466614
+structural_selection_pressure,87.058900
+recovery_selection_bias,1.072984
+organizational_drift_rate,0.920776
+verdict,PERSISTENCE_DRIVEN_SELECTION

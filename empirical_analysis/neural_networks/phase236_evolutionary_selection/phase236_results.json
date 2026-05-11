@@ -1,0 +1,20 @@
+{
+  "phase": 236,
+  "verdict": "PERSISTENCE_DRIVEN_SELECTION",
+  "persistence_selection_gradient": 87.0588999748836,
+  "evolutionary_stability_score": -1.1936585449527872,
+  "adaptive_geometry_retention": 0.0792242655593241,
+  "collapse_filtered_survival": 6.460104881540216,
+  "persistence_fitness_gain": 28.466614134029072,
+  "structural_selection_pressure": 87.0588999748836,
+  "recovery_selection_bias": 1.0729835372872925,
+  "organizational_drift_rate": 0.920775734440676,
+  "mechanism_scores": {
+    "PERSISTENCE_DRIVEN_SELECTION": 562.409624709267,
+    "RANDOM_ORGANIZATIONAL_DRIFT": -79.24094682953012,
+    "COLLAPSE_FILTERED_EVOLUTION": 0.5117970646762277,
+    "ADAPTIVE_GEOMETRIC_CONVERGENCE": 6.897177410912813,
+    "SURVIVAL_OPTIMIZED_STRUCTURE": -7.711159393141692,
+    "NON_DIRECTIONAL_EVOLUTION": -79.24094682953012
+  }
+}
