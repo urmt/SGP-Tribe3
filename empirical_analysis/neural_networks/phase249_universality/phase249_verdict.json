@@ -1,0 +1,112 @@
+{
+  "phase": 249,
+  "name": "Dynamical Universality Audit",
+  "timestamp": "2026-05-11T12:13:58",
+  "verdict": "SYNCHRONIZATION_SPECIFIC_GENERATION",
+  "confidence": "MODERATE",
+  "evidence": {
+    "mean_dni_all_systems": 0.12784615264757754,
+    "mean_dni_per_class": {
+      "metastable": -0.07310892361262834,
+      "oscillatory": 1.2103284995174701,
+      "chaotic": 0.14332445833468785,
+      "self_organized_critical": -0.34915831593597974,
+      "fixed_point": -0.16333562946442765,
+      "stochastic": 0.0402190313162948
+    },
+    "mean_arp_all": 0.6,
+    "n_systems_above_threshold": 2,
+    "total_systems": 10,
+    "oscillatory_dni": 1.2103284995174701,
+    "chaotic_dni": 0.14332445833468785
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "attractor_class": "metastable",
+      "dynamical_necessity_index": -0.07310892361262834,
+      "attractor_return_probability": 0.0,
+      "metastability_index": 0.3147183465901712,
+      "synchronization_entropy": 3.7016502164755543
+    },
+    {
+      "system": "Kuramoto",
+      "attractor_class": "oscillatory",
+      "dynamical_necessity_index": 1.2103284995174701,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.11433152000291504,
+      "synchronization_entropy": 4.023395084757482
+    },
+    {
+      "system": "Logistic",
+      "attractor_class": "chaotic",
+      "dynamical_necessity_index": -0.08909632631411248,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.20400189664440402,
+      "synchronization_entropy": 3.752486913809401
+    },
+    {
+      "system": "Lorenz",
+      "attractor_class": "chaotic",
+      "dynamical_necessity_index": 0.4410176533652933,
+      "attractor_return_probability": 0.0,
+      "metastability_index": 0.21457148626371578,
+      "synchronization_entropy": 4.134065239876145
+    },
+    {
+      "system": "Rossler",
+      "attractor_class": "chaotic",
+      "dynamical_necessity_index": 0.0,
+      "attractor_return_probability": 0.0,
+      "metastability_index": 0.0,
+      "synchronization_entropy": 0.0
+    },
+    {
+      "system": "CellularAutomata",
+      "attractor_class": "self_organized_critical",
+      "dynamical_necessity_index": -0.34915831593597974,
+      "attractor_return_probability": 0.0,
+      "metastability_index": 13.999999999999996,
+      "synchronization_entropy": 3.891343315526151
+    },
+    {
+      "system": "Hopfield",
+      "attractor_class": "fixed_point",
+      "dynamical_necessity_index": -0.16333562946442765,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.0,
+      "synchronization_entropy": 2.484906649788001
+    },
+    {
+      "system": "RNN",
+      "attractor_class": "chaotic",
+      "dynamical_necessity_index": 0.22137650628757058,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.19045358760394676,
+      "synchronization_entropy": 3.665954864852149
+    },
+    {
+      "system": "Noise",
+      "attractor_class": "stochastic",
+      "dynamical_necessity_index": 0.1673992295195071,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.19846517666208574,
+      "synchronization_entropy": 3.720641117547883
+    },
+    {
+      "system": "PhaseSurrogate",
+      "attractor_class": "stochastic",
+      "dynamical_necessity_index": -0.08696116688691749,
+      "attractor_return_probability": 1.0,
+      "metastability_index": 0.15886989563580994,
+      "synchronization_entropy": 3.9166764774183243
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "phase_199_boundaries": true
+  }
+}

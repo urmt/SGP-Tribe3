@@ -1,0 +1,34 @@
+# PHASE 249 AUDIT CHAIN
+Timestamp: 2026-05-11 12:13:58
+Verdict: SYNCHRONIZATION_SPECIFIC_GENERATION
+
+--- EEG [metastable] ---
+DNI=-0.0731 ARP=0.00 A_sim=0.003 B_sim=0.077
+
+--- Kuramoto [oscillatory] ---
+DNI=1.2103 ARP=1.00 A_sim=0.997 B_sim=-0.214
+
+--- Logistic [chaotic] ---
+DNI=-0.0891 ARP=1.00 A_sim=0.123 B_sim=0.212
+
+--- Lorenz [chaotic] ---
+DNI=0.4410 ARP=0.00 A_sim=0.547 B_sim=0.106
+
+--- Rossler [chaotic] ---
+DNI=0.0000 ARP=0.00 A_sim=0.000 B_sim=0.000
+
+--- CellularAutomata [self_organized_critical] ---
+DNI=-0.3492 ARP=0.00 A_sim=-0.133 B_sim=0.216
+
+--- Hopfield [fixed_point] ---
+DNI=-0.1633 ARP=1.00 A_sim=0.000 B_sim=0.163
+
+--- RNN [chaotic] ---
+DNI=0.2214 ARP=1.00 A_sim=0.059 B_sim=-0.162
+
+--- Noise [stochastic] ---
+DNI=0.1674 ARP=1.00 A_sim=0.243 B_sim=0.075
+
+--- PhaseSurrogate [stochastic] ---
+DNI=-0.0870 ARP=1.00 A_sim=-0.145 B_sim=-0.058
+
