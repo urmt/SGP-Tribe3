@@ -1,0 +1,84 @@
+{
+  "phase": 248,
+  "name": "Dynamical Attractor Necessity Audit",
+  "timestamp": "2026-05-11T12:02:58",
+  "verdict": "DYNAMICAL_ATTRACTOR_GENERATION",
+  "confidence": "LOW",
+  "evidence": {
+    "mean_dynamical_necessity_index": 0.24783038406050986,
+    "mean_attractor_return_probability": 0.6666666666666666,
+    "mean_recovery_regeneration_score": 0.23221070817427547,
+    "A_vs_B_wins": "2/3",
+    "per_system": {
+      "EEG": {
+        "dni": -0.15109915535900587,
+        "arp": 0.0,
+        "A_sim": -0.4119817279517741,
+        "B_sim": -0.26088257259276826,
+        "A_beh": "chaotic_recurrence",
+        "B_beh": "chaotic_recurrence",
+        "D_beh": "chaotic_recurrence"
+      },
+      "Kuramoto": {
+        "dni": 0.8375836838553701,
+        "arp": 1.0,
+        "A_sim": 0.9925722772480946,
+        "B_sim": 0.15498859339272458,
+        "A_beh": "stochastic_drift",
+        "B_beh": "chaotic_recurrence",
+        "D_beh": "chaotic_recurrence"
+      },
+      "Logistic": {
+        "dni": 0.05700662368516545,
+        "arp": 1.0,
+        "A_sim": 0.11604157522650599,
+        "B_sim": 0.05903495154134054,
+        "A_beh": "chaotic_recurrence",
+        "B_beh": "chaotic_recurrence",
+        "D_beh": "chaotic_recurrence"
+      }
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "dynamical_necessity_index": -0.15109915535900587,
+      "attractor_return_probability": 0.0,
+      "recovery_regeneration_score": -0.4119817279517741,
+      "condition_A_similarity": -0.4119817279517741,
+      "condition_A_behavior": "chaotic_recurrence",
+      "condition_B_similarity": -0.26088257259276826,
+      "condition_B_behavior": "chaotic_recurrence",
+      "condition_D_behavior": "chaotic_recurrence"
+    },
+    {
+      "system": "Kuramoto",
+      "dynamical_necessity_index": 0.8375836838553701,
+      "attractor_return_probability": 1.0,
+      "recovery_regeneration_score": 0.9925722772480946,
+      "condition_A_similarity": 0.9925722772480946,
+      "condition_A_behavior": "stochastic_drift",
+      "condition_B_similarity": 0.15498859339272458,
+      "condition_B_behavior": "chaotic_recurrence",
+      "condition_D_behavior": "chaotic_recurrence"
+    },
+    {
+      "system": "Logistic",
+      "dynamical_necessity_index": 0.05700662368516545,
+      "attractor_return_probability": 1.0,
+      "recovery_regeneration_score": 0.11604157522650599,
+      "condition_A_similarity": 0.11604157522650599,
+      "condition_A_behavior": "chaotic_recurrence",
+      "condition_B_similarity": 0.05903495154134054,
+      "condition_B_behavior": "chaotic_recurrence",
+      "condition_D_behavior": "chaotic_recurrence"
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "phase_199_boundaries": true
+  }
+}

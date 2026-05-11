@@ -1,0 +1,25 @@
+# PHASE 248 AUDIT CHAIN
+Timestamp: 2026-05-11 12:02:58
+Verdict: DYNAMICAL_ATTRACTOR_GENERATION
+
+--- EEG ---
+DNI: -0.1511
+ARP: 0.0000
+A sim: -0.4120 (chaotic_recurrence)
+B sim: -0.2609 (chaotic_recurrence)
+D beh: chaotic_recurrence
+
+--- Kuramoto ---
+DNI: 0.8376
+ARP: 1.0000
+A sim: 0.9926 (stochastic_drift)
+B sim: 0.1550 (chaotic_recurrence)
+D beh: chaotic_recurrence
+
+--- Logistic ---
+DNI: 0.0570
+ARP: 1.0000
+A sim: 0.1160 (chaotic_recurrence)
+B sim: 0.0590 (chaotic_recurrence)
+D beh: chaotic_recurrence
+
