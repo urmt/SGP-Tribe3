@@ -1,0 +1,10 @@
+metric,value
+constraint_saturation_index,0.092038
+overload_instability_threshold,0.000000
+routing_saturation_density,0.106571
+persistence_burden_ratio,0.562910
+stabilization_capacity_limit,0.723055
+redundancy_exhaustion_score,0.284091
+collapse_compression_factor,0.993631
+overload_recovery_probability,1.000000
+verdict,RECOVERABLE_CAPACITY_OVERLOAD

@@ -1,0 +1,20 @@
+{
+  "phase": 230,
+  "verdict": "RECOVERABLE_CAPACITY_OVERLOAD",
+  "constraint_saturation_index": 0.09203801913733352,
+  "overload_instability_threshold": 0.0,
+  "routing_saturation_density": 0.10657051282051282,
+  "persistence_burden_ratio": 0.5629101602060393,
+  "stabilization_capacity_limit": 0.7230545601378897,
+  "redundancy_exhaustion_score": 0.28409090909090906,
+  "collapse_compression_factor": 0.9936305732484076,
+  "overload_recovery_probability": 1.0,
+  "mechanism_scores": {
+    "CONSTRAINT_SATURATION_COLLAPSE": 0.0,
+    "DISTRIBUTED_OVERLOAD_RESILIENCE": 0.9079619808626664,
+    "REDUNDANCY_EXHAUSTION_FAILURE": 0.0,
+    "RECOVERABLE_CAPACITY_OVERLOAD": 1.0,
+    "NON_SATURATION_COLLAPSE": 0.0,
+    "STABILIZATION_LIMIT_GEOMETRY": 0.4070147582849268
+  }
+}
