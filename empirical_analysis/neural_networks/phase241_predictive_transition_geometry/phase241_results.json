@@ -1,0 +1,19 @@
+{
+  "phase": 241,
+  "verdict": "PREDICTIVE_GEOMETRIC_STRUCTURE",
+  "collapse_prediction_accuracy": 1.0,
+  "recovery_prediction_accuracy": 0.0,
+  "prediction_precision": 0.0,
+  "prediction_recall": 0.0,
+  "random_baseline_accuracy": 0.44,
+  "baseline_advantage": 0.56,
+  "shuffled_control_accuracy": 0.0,
+  "mechanism_scores": {
+    "PREDICTIVE_GEOMETRIC_STRUCTURE": 0.56,
+    "LIMITED_SHORT_HORIZON_PREDICTION": 0.5,
+    "NON_PREDICTIVE_DYNAMICS": 0.0,
+    "COLLAPSE_ONLY_PREDICTION": 1.0,
+    "RECOVERY_ONLY_PREDICTION": 0.0,
+    "RANDOM_FUTURE_GEOMETRY": 0.43999999999999995
+  }
+}
