@@ -1,0 +1,25 @@
+{
+  "phase": 228,
+  "verdict": "RESONANCE_MATCHING_STABILITY",
+  "compatibility_stabilization_index": 1.7561590722153595,
+  "geometric_matching_score": 0.050912934985078345,
+  "resonance_compatibility": 0.9923411928553582,
+  "coalition_compatibility": 0.08333333333333333,
+  "attractor_alignment_score": 0.4885636312324364,
+  "cross_system_persistence_gain": 1.145512173447263,
+  "incompatibility_rejection_strength": -0.2567646742220497,
+  "structural_harmony_index": 0.40378777310155156,
+  "mechanism_scores": {
+    "GEOMETRIC_COMPATIBILITY_SELECTION": 0.0894112126671561,
+    "STRUCTURE_INDEPENDENT_INTERACTION": 0.9490870650149217,
+    "RESONANCE_MATCHING_STABILITY": 1.7427089885659488,
+    "INCOMPATIBILITY_REJECTION": 0.19415493783742413,
+    "PARTIAL_COMPATIBILITY_REGIMES": 1.2561590722153595,
+    "ADAPTIVE_COMPATIBILITY_REORGANIZATION": 0.46254380957698865
+  },
+  "compatibility_levels_tested": [
+    0.2,
+    0.5,
+    0.8
+  ]
+}
