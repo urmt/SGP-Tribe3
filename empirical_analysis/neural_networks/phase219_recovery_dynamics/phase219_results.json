@@ -1,0 +1,42 @@
+{
+  "phase": 219,
+  "verdict": "ATTRACTOR_RETURN_RECOVERY",
+  "recovery_latency": 0.8333333333333334,
+  "recovery_completeness": 1.0049468169742786,
+  "rescue_seed_density": 0.25,
+  "coalition_regeneration_rate": 0.04576797869192069,
+  "resonance_relock_probability": 0.9951301462404438,
+  "attractor_return_probability": 1.0,
+  "boundary_repair_efficiency": 0.499732032663607,
+  "irreversible_collapse_fraction": 0.11648629148629148,
+  "mechanism_scores": {
+    "CORE_SEED_RECOVERY": 0.13636363636363635,
+    "RESONANCE_ASSISTED_RESCUE": 0.9951301462404438,
+    "ATTRACTOR_RETURN_RECOVERY": 1.0,
+    "IRREVERSIBLE_FRAGMENTATION": 0.11648629148629148,
+    "BOUNDARY_MEDIATED_RECOVERY": 0.499732032663607,
+    "OVER_REPAIR_INSTABILITY": -0.0005762363639951477
+  },
+  "metrics": {
+    "Kuramoto": {
+      "latency": 0.0,
+      "completeness": 1.0158208128350594,
+      "seed": 0.25,
+      "coalition": 0.029576234163390128,
+      "resonance": 0.9980072052296043,
+      "attractor": 1.0,
+      "boundary": 0.3544714276838034,
+      "irreversible": 0.10093795093795094
+    },
+    "Logistic": {
+      "latency": 1.6666666666666667,
+      "completeness": 0.9940728211134978,
+      "seed": 0.25,
+      "coalition": 0.06195972322045124,
+      "resonance": 0.9922530872512834,
+      "attractor": 1.0,
+      "boundary": 0.6449926376434105,
+      "irreversible": 0.13203463203463203
+    }
+  }
+}

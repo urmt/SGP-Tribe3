@@ -1,0 +1,10 @@
+metric,value
+recovery_latency,0.8
+recovery_completeness,1.004947
+rescue_seed_density,0.250000
+coalition_regeneration_rate,0.045768
+resonance_relock_probability,0.995130
+attractor_return_probability,1.000000
+boundary_repair_efficiency,0.499732
+irreversible_collapse_fraction,0.116486
+verdict,ATTRACTOR_RETURN_RECOVERY
