@@ -1,0 +1,20 @@
+{
+  "phase": 238,
+  "verdict": "EDGE_OF_COLLAPSE_OPTIMIZATION",
+  "criticality_index": -0.2703243037783391,
+  "edge_of_collapse_adaptability": 0.26357978757684697,
+  "metastable_transition_density": 0.10256410256410256,
+  "critical_fluctuation_strength": 0.6754503152044944,
+  "persistence_vs_instability_curve": 1015.5103418925228,
+  "adaptive_window_width": 0.52,
+  "collapse_recovery_optimization": 1.0380276591926831,
+  "structural_variability_peak": 0.6984546015247853,
+  "mechanism_scores": {
+    "EDGE_OF_COLLAPSE_OPTIMIZATION": 139.18736010302365,
+    "STABILITY_DOMINATED_PERSISTENCE": 1.2703243037783392,
+    "CRITICAL_ADAPTIVE_WINDOW": 0.05333333333333334,
+    "INSTABILITY_DRIVEN_COLLAPSE": 0.010279800495582025,
+    "METASTABLE_CRITICALITY": 0.06927695540558916,
+    "RIGID_NONCRITICAL_ORGANIZATION": 0.3245496847955056
+  }
+}

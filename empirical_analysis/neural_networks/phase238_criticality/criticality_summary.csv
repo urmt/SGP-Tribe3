@@ -1,0 +1,10 @@
+metric,value
+criticality_index,-0.270324
+edge_of_collapse_adaptability,0.263580
+metastable_transition_density,0.102564
+critical_fluctuation_strength,0.675450
+persistence_vs_instability_curve,1015.510342
+adaptive_window_width,0.520000
+collapse_recovery_optimization,1.038028
+structural_variability_peak,0.698455
+verdict,EDGE_OF_COLLAPSE_OPTIMIZATION
