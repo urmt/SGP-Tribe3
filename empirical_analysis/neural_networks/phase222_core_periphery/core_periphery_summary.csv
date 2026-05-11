@@ -1,0 +1,10 @@
+metric,value
+core_protection_index,1.526429
+peripheral_sacrifice_rate,0.007701
+resilience_asymmetry,0.541084
+regeneration_seed_density,0.250000
+persistence_centrality,0.988845
+vulnerability_gradient,-0.534130
+recovery_origin_score,0.250000
+structural_core_fraction,0.375000
+verdict,PROTECTED_STRUCTURAL_CORE

@@ -1,0 +1,25 @@
+{
+  "phase": 222,
+  "verdict": "PROTECTED_STRUCTURAL_CORE",
+  "core_protection_index": 1.5264288755106385,
+  "peripheral_sacrifice_rate": 0.007701368743808594,
+  "resilience_asymmetry": 0.541084140119594,
+  "regeneration_seed_density": 0.25,
+  "persistence_centrality": 0.9888446585288359,
+  "vulnerability_gradient": -0.5341302442544474,
+  "recovery_origin_score": 0.25,
+  "structural_core_fraction": 0.375,
+  "mechanism_scores": {
+    "PROTECTED_STRUCTURAL_CORE": 1.5146732838791341,
+    "HOMOGENEOUS_VULNERABILITY": 0.45891585988040595,
+    "SACRIFICIAL_PERIPHERY": -0.004054222887695937,
+    "CENTRALIZED_RECOVERY": 0.0625,
+    "DISTRIBUTED_RESILIENCE": 0.011155341471164149,
+    "CORE_DEPENDENT_SURVIVAL": 0.5724108283164895
+  },
+  "damage_types_tested": [
+    "core",
+    "periphery",
+    "random"
+  ]
+}
