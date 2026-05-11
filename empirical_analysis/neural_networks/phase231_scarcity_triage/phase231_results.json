@@ -1,0 +1,20 @@
+{
+  "phase": 231,
+  "verdict": "SELECTIVE_PRIORITY_PRESERVATION",
+  "priority_preservation_index": 0.59375,
+  "selective_sacrifice_ratio": 0.0,
+  "core_resource_retention": 79.11770679836921,
+  "peripheral_degradation_rate": -873.8898828602623,
+  "triage_efficiency_score": 953.0075896586314,
+  "persistence_priority_hierarchy": 0.5,
+  "survival_weight_distribution": 0.05558144849803889,
+  "scarcity_recovery_latency": 0.0,
+  "mechanism_scores": {
+    "SELECTIVE_PRIORITY_PRESERVATION": 565.8482563598125,
+    "UNIFORM_DEGRADATION": -952.0075896586314,
+    "SACRIFICIAL_PERIPHERY_STABILIZATION": -518.8721179482808,
+    "DISTRIBUTED_SURVIVAL_PRESERVATION": 0.9444185515019611,
+    "HIERARCHICAL_TRIAGE_DYNAMICS": 476.5037948293157,
+    "NON_SELECTIVE_COLLAPSE": 0.0
+  }
+}

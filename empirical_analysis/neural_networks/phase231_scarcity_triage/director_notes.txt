@@ -1,0 +1,7 @@
+DIRECTOR NOTES - PHASE 231
+
+VERDICT: SELECTIVE_PRIORITY_PRESERVATION
+
+INTERPRETATION (EMPIRICAL):
+- Priority: 0.5938, Triage: 953.0076
+- This measures EMPIRICAL scarcity triage without metaphysical claims.

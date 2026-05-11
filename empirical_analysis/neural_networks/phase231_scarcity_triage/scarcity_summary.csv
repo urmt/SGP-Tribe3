@@ -1,0 +1,10 @@
+metric,value
+priority_preservation_index,0.593750
+selective_sacrifice_ratio,0.000000
+core_resource_retention,79.117707
+peripheral_degradation_rate,-873.889883
+triage_efficiency_score,953.007590
+persistence_priority_hierarchy,0.500000
+survival_weight_distribution,0.055581
+scarcity_recovery_latency,0.000000
+verdict,SELECTIVE_PRIORITY_PRESERVATION
