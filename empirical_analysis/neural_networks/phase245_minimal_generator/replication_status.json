@@ -1,0 +1,8 @@
+{
+  "phase": 245,
+  "name": "minimal_organizational_generator",
+  "verdict": "PARTIAL_LOW_DIMENSIONAL_RECOVERY",
+  "runtime": "COMPLETED",
+  "tier": "VALIDATION",
+  "compliance": "FULL"
+}

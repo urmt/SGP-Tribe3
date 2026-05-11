@@ -1,0 +1,22 @@
+# PHASE 245 AUDIT CHAIN
+Timestamp: 2026-05-11 11:29:32
+Verdict: PARTIAL_LOW_DIMENSIONAL_RECOVERY
+
+--- EEG ---
+Generator sufficiency: 0.4582
+Saturation k: 2, Best k: 8
+Max score: 0.7560
+Curve: ['0.668', '0.730', '0.751', '0.748', '0.756', '0.756', '0.756']
+
+--- Kuramoto ---
+Generator sufficiency: 0.5561
+Saturation k: 1, Best k: 1
+Max score: 0.7007
+Curve: ['0.701', '0.693', '0.691', '0.690', '0.690', '0.690', '0.690']
+
+--- Logistic ---
+Generator sufficiency: 0.1165
+Saturation k: 2, Best k: 5
+Max score: 0.3640
+Curve: ['0.314', '0.328', '0.326', '0.364', '0.353', '0.353', '0.353']
+

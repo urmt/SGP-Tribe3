@@ -1,0 +1,92 @@
+{
+  "phase": 245,
+  "name": "Minimal Organizational Generator Audit",
+  "timestamp": "2026-05-11T11:29:32",
+  "verdict": "PARTIAL_LOW_DIMENSIONAL_RECOVERY",
+  "confidence": "LOW",
+  "evidence": {
+    "mean_generator_sufficiency_score": 0.37696827841900626,
+    "mean_saturation_k": 1.6666666666666667,
+    "mean_max_recovery_score": 0.606893444351864,
+    "per_system": {
+      "EEG": {
+        "generator_score": 0.4582183045276527,
+        "saturation_k": 2,
+        "best_k": 8,
+        "max_score": 0.7560276474268318
+      },
+      "Kuramoto": {
+        "generator_score": 0.5561467192981945,
+        "saturation_k": 1,
+        "best_k": 1,
+        "max_score": 0.7006633555810685
+      },
+      "Logistic": {
+        "generator_score": 0.11653981143117162,
+        "saturation_k": 2,
+        "best_k": 5,
+        "max_score": 0.3639893300476915
+      }
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "generator_sufficiency_score": 0.4582183045276527,
+      "saturation_k": 2,
+      "best_k": 8,
+      "max_recovery_score": 0.7560276474268318,
+      "reconstruction_curve": [
+        0.6675442706263238,
+        0.7300600842746522,
+        0.7511534258735163,
+        0.7475441899909623,
+        0.7560276474268318,
+        0.7560276474268318,
+        0.7560276474268318
+      ]
+    },
+    {
+      "system": "Kuramoto",
+      "generator_sufficiency_score": 0.5561467192981945,
+      "saturation_k": 1,
+      "best_k": 1,
+      "max_recovery_score": 0.7006633555810685,
+      "reconstruction_curve": [
+        0.7006633555810685,
+        0.692649450344945,
+        0.6908681360418835,
+        0.6904897239969345,
+        0.6904876648499422,
+        0.6904876648499422,
+        0.6904876648499422
+      ]
+    },
+    {
+      "system": "Logistic",
+      "generator_sufficiency_score": 0.11653981143117162,
+      "saturation_k": 2,
+      "best_k": 5,
+      "max_recovery_score": 0.3639893300476915,
+      "reconstruction_curve": [
+        0.3137795384002103,
+        0.32829818956948265,
+        0.3260806970829223,
+        0.3639893300476915,
+        0.35294234126628055,
+        0.35294234126628055,
+        0.35294234126628055
+      ]
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "phase_199_boundaries": true,
+    "true_operators_phase_201": true,
+    "scale_hierarchy_phase_243": true,
+    "skeleton_metrics_phase_244": true
+  }
+}
