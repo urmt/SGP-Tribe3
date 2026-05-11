@@ -1,0 +1,20 @@
+{
+  "phase": 240,
+  "verdict": "COLLAPSE_DOMINATED_DYNAMICS",
+  "optimal_instability_index": 0.1818181818181818,
+  "persistence_adaptability_overlap": 26.50680024052538,
+  "recovery_adaptation_peak": 0.3884252641174698,
+  "instability_efficiency_curve": 0.6,
+  "bounded_chaos_window": 1.0,
+  "structural_continuity_score": 0.202499584946188,
+  "collapse_productivity_ratio": 528.0944251248197,
+  "adaptive_persistence_balance": 0.5,
+  "mechanism_scores": {
+    "BOUNDED_ADAPTIVE_INSTABILITY": 0.1818181818181818,
+    "RIGID_STABILITY_TRAP": 0.0,
+    "CHAOTIC_PERSISTENCE_FAILURE": 0.6525003395894826,
+    "OPTIMAL_INSTABILITY_WINDOW": 1.871983797151833,
+    "METASTABLE_ADAPTIVE_BALANCE": 0.5,
+    "COLLAPSE_DOMINATED_DYNAMICS": 432.0772569203071
+  }
+}
