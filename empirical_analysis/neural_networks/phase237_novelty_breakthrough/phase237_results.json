@@ -1,0 +1,20 @@
+{
+  "phase": 237,
+  "verdict": "COLLAPSE_INDUCED_REORGANIZATION",
+  "novelty_breakthrough_threshold": 0.02,
+  "instability_assimilation_index": 0.3613926388570434,
+  "adaptive_transition_probability": 0.3,
+  "identity_restructuring_score": 180.81704974112455,
+  "collapse_induced_integration": 0.5,
+  "hybridization_transition_density": 0.4,
+  "attractor_reconfiguration_rate": 180.81704974112455,
+  "persistence_after_transformation": 0.5615102277354039,
+  "mechanism_scores": {
+    "THRESHOLD_TRIGGERED_ADAPTATION": 0.006,
+    "CONTINUOUS_NOVELTY_REJECTION": 0.6386073611429566,
+    "COLLAPSE_INDUCED_REORGANIZATION": 90.40852487056227,
+    "ADAPTIVE_BIFURCATION_WINDOW": 0.10841779165711303,
+    "IRREVERSIBLE_STRUCTURAL_TRANSFORMATION": 79.28642696254184,
+    "STABILITY_LOCKED_IDENTITY": -179.81704974112455
+  }
+}

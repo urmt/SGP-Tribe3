@@ -1,0 +1,8 @@
+DIRECTOR NOTES - PHASE 237
+
+VERDICT: COLLAPSE_INDUCED_REORGANIZATION
+
+INTERPRETATION (EMPIRICAL):
+- Assimilation: 0.3614
+- Transition: 0.3000
+- This measures EMPIRICAL breakthrough thresholds without metaphysical claims.
