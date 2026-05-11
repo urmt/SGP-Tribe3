@@ -1,0 +1,25 @@
+{
+  "phase": 226,
+  "verdict": "COLLAPSE_PREVENTION_DYNAMICS",
+  "predictive_stabilization_score": 0.8078101878872515,
+  "pre_collapse_restructuring_index": 0.20061033630232405,
+  "anticipatory_coalition_shift_rate": 0.0300960913139376,
+  "early_warning_geometry_score": 0.2058873365626872,
+  "predictive_rerouting_efficiency": -0.010333721345679095,
+  "collapse_anticipation_latency": 20.0,
+  "adaptive_prevention_frequency": 1.0,
+  "false_positive_prediction_rate": 0.0,
+  "mechanism_scores": {
+    "ANTICIPATORY_STABILIZATION": 0.16631788803231012,
+    "PURELY_REACTIVE_DYNAMICS": 0.18640564997779474,
+    "EARLY_WARNING_GEOMETRY": 0.2058873365626872,
+    "PREDICTIVE_RESTRUCTURING": -0.002073051314411188,
+    "FAILED_ANTICIPATORY_CONTROL": 0.19218981211274855,
+    "COLLAPSE_PREVENTION_DYNAMICS": 0.8078101878872515
+  },
+  "collapse_points_tested": [
+    0.4,
+    0.5,
+    0.6
+  ]
+}

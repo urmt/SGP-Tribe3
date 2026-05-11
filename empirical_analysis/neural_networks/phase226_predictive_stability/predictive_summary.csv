@@ -1,0 +1,10 @@
+metric,value
+predictive_stabilization_score,0.807810
+pre_collapse_restructuring_index,0.200610
+anticipatory_coalition_shift_rate,0.030096
+early_warning_geometry_score,0.205887
+predictive_rerouting_efficiency,-0.010334
+collapse_anticipation_latency,20.0
+adaptive_prevention_frequency,1.000000
+false_positive_prediction_rate,0.000000
+verdict,COLLAPSE_PREVENTION_DYNAMICS
