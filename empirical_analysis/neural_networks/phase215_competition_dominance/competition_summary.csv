@@ -1,0 +1,8 @@
+metric,value
+coexistence_probability,1.000000
+dominance_index,0.303154
+suppression_rate,0.000000
+takeover_probability,0.490404
+monopolization_score,0.000000
+competition_network_density,3.333333
+verdict,STABLE_COEXISTENCE

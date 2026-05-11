@@ -1,0 +1,26 @@
+{
+  "phase": 215,
+  "verdict": "STABLE_COEXISTENCE",
+  "coexistence_probability": 1.0,
+  "dominance_index": 0.3031540923139653,
+  "suppression_rate": 0.0,
+  "takeover_probability": 0.4904040404040404,
+  "monopolization_score": 0.0,
+  "competition_network_density": 3.3333333333333335,
+  "metrics": {
+    "Kuramoto": {
+      "coexistence_prob": 1.0,
+      "dominance_index": 0.30058660978610224,
+      "suppression_rate": 0.0,
+      "takeover_prob": 0.5111111111111111,
+      "monopolization_score": 0.0
+    },
+    "Logistic": {
+      "coexistence_prob": 1.0,
+      "dominance_index": 0.3057215748418284,
+      "suppression_rate": 0.0,
+      "takeover_prob": 0.4696969696969697,
+      "monopolization_score": 0.0
+    }
+  }
+}
