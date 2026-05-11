@@ -1,0 +1,34 @@
+# PHASE 250 AUDIT CHAIN
+Timestamp: 2026-05-11 12:23:55
+Verdict: CRITICAL_SYNCHRONIZATION_CAUSAL
+
+--- KuramotoStandard ---
+DNI=0.7469 R=0.9777 PLV=0.9774
+
+--- KuramotoWeak ---
+DNI=0.0916 R=0.4320 PLV=0.2309
+
+--- KuramotoStrong ---
+DNI=0.7561 R=0.9949 PLV=0.9917
+
+--- KuramotoDelayed ---
+DNI=0.6638 R=0.9792 PLV=0.9802
+
+--- KuramotoChimera ---
+DNI=1.0166 R=0.9809 PLV=0.9782
+
+--- KuramotoAdaptive ---
+DNI=1.2410 R=0.9879 PLV=0.9817
+
+--- KuramotoRepulsive ---
+DNI=0.0340 R=0.0717 PLV=0.4632
+
+--- KuramotoRandomized ---
+DNI=0.8249 R=0.9771 PLV=0.9721
+
+--- LorenzSync ---
+DNI=1.1701 R=0.4544 PLV=0.2211
+
+--- EEGSurrogate ---
+DNI=-0.2391 R=0.3193 PLV=0.0009
+

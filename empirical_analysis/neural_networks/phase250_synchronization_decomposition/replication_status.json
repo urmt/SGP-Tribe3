@@ -1,0 +1,8 @@
+{
+  "phase": 250,
+  "name": "synchronization_decomposition",
+  "verdict": "CRITICAL_SYNCHRONIZATION_CAUSAL",
+  "runtime": "COMPLETED",
+  "tier": "VALIDATION_CAPSTONE",
+  "compliance": "FULL"
+}
