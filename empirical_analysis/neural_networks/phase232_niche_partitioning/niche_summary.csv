@@ -1,0 +1,10 @@
+metric,value
+niche_partitioning_index,0.896503
+overlap_competition_ratio,0.065009
+functional_separation_score,0.103497
+persistence_niche_diversity,0.047574
+dynamic_interference_index,2.543817
+coexistence_efficiency,5.937991
+role_specialization_density,2.703067
+adaptive_partitioning_rate,0.000000
+verdict,FUNCTIONAL_SPECIALIZATION_PERSISTENCE

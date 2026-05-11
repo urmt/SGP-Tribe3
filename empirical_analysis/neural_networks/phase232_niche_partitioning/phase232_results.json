@@ -1,0 +1,20 @@
+{
+  "phase": 232,
+  "verdict": "FUNCTIONAL_SPECIALIZATION_PERSISTENCE",
+  "niche_partitioning_index": 0.8965031322785895,
+  "overlap_competition_ratio": 0.06500928005859419,
+  "functional_separation_score": 0.10349686772141065,
+  "persistence_niche_diversity": 0.04757404157934919,
+  "dynamic_interference_index": 2.543816538730048,
+  "coexistence_efficiency": 5.9379906847196615,
+  "role_specialization_density": 2.703066893455459,
+  "adaptive_partitioning_rate": 0.0,
+  "mechanism_scores": {
+    "NICHE_PARTITIONED_STABILITY": 0.09278526609326748,
+    "OVERLAP_DRIVEN_COLLAPSE": -0.32101521934966976,
+    "FUNCTIONAL_SPECIALIZATION_PERSISTENCE": 16.05078603351263,
+    "DISTRIBUTED_ROLE_SEPARATION": -1.3840363626349785,
+    "NON_PARTITIONED_COEXISTENCE": 0.10349686772141053,
+    "INTERFERENCE_MINIMIZATION_DYNAMICS": -9.167168225895177
+  }
+}
