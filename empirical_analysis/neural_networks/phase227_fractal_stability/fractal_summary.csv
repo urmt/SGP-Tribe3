@@ -1,0 +1,10 @@
+metric,value
+fractal_dimension,1.041371
+self_similarity_index,0.091778
+cross_scale_topology_preservation,0.317032
+recursive_pattern_density,0.006579
+scale_invariant_persistence,0.916040
+coalition_self_similarity,0.690476
+attractor_recurrence_score,0.110000
+temporal_fractal_persistence,1.000000
+verdict,NON_RECURSIVE_STRUCTURE

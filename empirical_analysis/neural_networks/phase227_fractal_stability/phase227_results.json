@@ -1,0 +1,42 @@
+{
+  "phase": 227,
+  "verdict": "NON_RECURSIVE_STRUCTURE",
+  "fractal_dimension": 1.0413709528831252,
+  "self_similarity_index": 0.09177813287843657,
+  "cross_scale_topology_preservation": 0.3170318052963399,
+  "recursive_pattern_density": 0.006578947368421018,
+  "scale_invariant_persistence": 0.9160397533241025,
+  "coalition_self_similarity": 0.6904761904761905,
+  "attractor_recurrence_score": 0.11,
+  "temporal_fractal_persistence": 1.0,
+  "mechanism_scores": {
+    "FRACTAL_ORGANIZATIONAL_STABILITY": 0.09557508168945157,
+    "SCALE_DEPENDENT_ORGANIZATION": 0.6829681947036601,
+    "SELF_SIMILAR_PERSISTENCE": 0.08407241820250974,
+    "NON_RECURSIVE_STRUCTURE": 0.993421052631579,
+    "MULTISCALE_ATTRACTOR_GEOMETRY": 0.03487349858259739,
+    "FRACTURED_SCALE_TRANSITIONS": 0.6202866489784016
+  },
+  "systems": {
+    "Kuramoto": {
+      "fractal_dimension": 1.0413709528831252,
+      "self_similarity_index": 0.11792474241674245,
+      "cross_scale_topology_preservation": 0.5365344700029528,
+      "recursive_pattern_density": 0.006578947368421018,
+      "scale_invariant_persistence": 0.9930523264292569,
+      "coalition_self_similarity": 0.6666666666666666,
+      "attractor_recurrence_score": 0.09,
+      "temporal_fractal_persistence": 1.0
+    },
+    "Logistic": {
+      "fractal_dimension": 1.0413709528831252,
+      "self_similarity_index": 0.0656315233401307,
+      "cross_scale_topology_preservation": 0.09752914058972699,
+      "recursive_pattern_density": 0.006578947368421018,
+      "scale_invariant_persistence": 0.8390271802189482,
+      "coalition_self_similarity": 0.7142857142857143,
+      "attractor_recurrence_score": 0.13,
+      "temporal_fractal_persistence": 1.0
+    }
+  }
+}
