@@ -1,0 +1,10 @@
+metric,value
+modularity_index,0.533333
+firebreak_efficiency,0.165111
+cascade_containment_score,0.087140
+compartmentalization_density,0.165111
+intermodule_dependency,1.948318
+intramodule_cohesion,153.366774
+failure_localization_index,0.597595
+recovery_isolation_advantage,0.616535
+verdict,GLOBAL_ENTANGLEMENT_FRAGILITY
