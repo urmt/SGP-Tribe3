@@ -1,0 +1,10 @@
+metric,value
+basin_transition_probability,0.259615
+corridor_constraint_index,-0.203197
+transition_curvature,0.840349
+saddle_occupancy_time,0.128205
+resonance_bridge_frequency,0.102564
+failed_transition_fraction,1.000000
+return_to_origin_probability,1.000000
+irreversible_escape_fraction,0.000000
+verdict,RANDOM_STATE_JUMPS

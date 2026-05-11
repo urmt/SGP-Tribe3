@@ -1,0 +1,22 @@
+DIRECTOR NOTES - PHASE 220
+===========================
+
+INTERPRETATION (EMPIRICAL):
+
+1. BASIN TRANSITION:
+   - Probability: 0.2596
+   - How often do organizations change basins?
+
+2. CORRIDOR CONSTRAINT:
+   - Index: -0.2032
+   - How constrained are transition paths?
+
+3. TRANSITION GEOMETRY:
+   - Curvature: 0.8403
+   - Saddle time: 0.1282
+   - Bridge frequency: 0.1026
+
+VERDICT: RANDOM_STATE_JUMPS
+
+NOTE: This measures EMPIRICAL basin transition geometry
+      without metaphysical 'attractor' claims.

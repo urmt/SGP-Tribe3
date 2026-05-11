@@ -1,0 +1,42 @@
+{
+  "phase": 220,
+  "verdict": "RANDOM_STATE_JUMPS",
+  "basin_transition_probability": 0.25961538461521816,
+  "corridor_constraint_index": -0.20319658286356257,
+  "transition_curvature": 0.8403491370394655,
+  "saddle_occupancy_time": 0.1282051282051282,
+  "resonance_bridge_frequency": 0.10256410256410257,
+  "failed_transition_fraction": 1.0,
+  "return_to_origin_probability": 1.0,
+  "irreversible_escape_fraction": 0.0,
+  "mechanism_scores": {
+    "CONSTRAINED_BASIN_CORRIDORS": -0.05275295901262184,
+    "RANDOM_STATE_JUMPS": 1.0797918051339663,
+    "RESONANCE_BRIDGE_TRANSITIONS": 0.10256410256410257,
+    "MANIFOLD_DRIFT_TRANSITIONS": 0.1282051282051282,
+    "IRREVERSIBLE_BASIN_ESCAPE": 0.0,
+    "SADDLE_GUIDED_REORGANIZATION": 0.03328402366861771
+  },
+  "metrics": {
+    "Kuramoto": {
+      "trans_prob": 0.16025641025630755,
+      "corridor": -0.3557504310122883,
+      "curvature": 1.558306209859144,
+      "saddle": 0.04487179487179487,
+      "bridge": 0.10256410256410257,
+      "failed": 1.0,
+      "return": 1.0,
+      "escape": 0.0
+    },
+    "Logistic": {
+      "trans_prob": 0.3589743589741288,
+      "corridor": -0.05064273471483682,
+      "curvature": 0.12239206421978681,
+      "saddle": 0.21153846153846154,
+      "bridge": 0.10256410256410257,
+      "failed": 1.0,
+      "return": 1.0,
+      "escape": 0.0
+    }
+  }
+}
