@@ -1,0 +1,73 @@
+{
+  "phase": 247,
+  "name": "Relational Constraint Invariance Audit",
+  "timestamp": "2026-05-11T11:53:48",
+  "verdict": "NONRELATIONAL_RECOVERY",
+  "confidence": "LOW",
+  "evidence": {
+    "mean_basis_invariance_score": 0.653767246840326,
+    "mean_relational_causal_impact": 0.05410872472179986,
+    "per_system": {
+      "EEG": {
+        "basis_invariance": 0.7456302926840824,
+        "relational_impact": 0.02763388771955355
+      },
+      "Kuramoto": {
+        "basis_invariance": 0.6579420951357836,
+        "relational_impact": -0.00883658012778299
+      },
+      "Logistic": {
+        "basis_invariance": 0.5577293527011119,
+        "relational_impact": 0.143528866573629
+      }
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "basis_invariance_score": 0.7456302926840824,
+      "relational_causal_impact": 0.02763388771955355,
+      "constraint_impact": {
+        "triadic_destruction": 0.0,
+        "mst_scrambling": 0.0,
+        "shortest_path_randomization": 0.0,
+        "recurrence_destruction": 0.8489092908032808,
+        "random_graph_rewiring": 0.0,
+        "coordinate_destruction": 0.843112279409546
+      }
+    },
+    {
+      "system": "Kuramoto",
+      "basis_invariance_score": 0.6579420951357836,
+      "relational_causal_impact": -0.00883658012778299,
+      "constraint_impact": {
+        "triadic_destruction": 0.0,
+        "mst_scrambling": 0.0,
+        "shortest_path_randomization": 0.0,
+        "recurrence_destruction": 0.9883679995189026,
+        "random_graph_rewiring": 0.0,
+        "coordinate_destruction": 1.0109599488996985
+      }
+    },
+    {
+      "system": "Logistic",
+      "basis_invariance_score": 0.5577293527011119,
+      "relational_causal_impact": 0.143528866573629,
+      "constraint_impact": {
+        "triadic_destruction": 0.5345412495335229,
+        "mst_scrambling": 0.6982698366120879,
+        "shortest_path_randomization": 0.455366492322276,
+        "recurrence_destruction": 0.6467124154458486,
+        "random_graph_rewiring": 0.5614969657383895,
+        "coordinate_destruction": 0.6184101235829778
+      }
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "phase_199_boundaries": true
+  }
+}

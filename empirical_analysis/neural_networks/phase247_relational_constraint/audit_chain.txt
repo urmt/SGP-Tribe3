@@ -1,0 +1,22 @@
+# PHASE 247 AUDIT CHAIN
+Timestamp: 2026-05-11 11:53:48
+Verdict: NONRELATIONAL_RECOVERY
+
+--- EEG ---
+Basis invariance: 0.7456
+Relational impact: 0.0276
+Best preserving: pca_basis_identity
+Worst destroying: recurrence_destruction
+
+--- Kuramoto ---
+Basis invariance: 0.6579
+Relational impact: -0.0088
+Best preserving: pca_basis_identity
+Worst destroying: coordinate_destruction
+
+--- Logistic ---
+Basis invariance: 0.5577
+Relational impact: 0.1435
+Best preserving: pca_basis_identity
+Worst destroying: mst_scrambling
+

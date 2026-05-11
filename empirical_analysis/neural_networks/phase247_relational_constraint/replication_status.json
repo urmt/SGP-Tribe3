@@ -1,0 +1,8 @@
+{
+  "phase": 247,
+  "name": "relational_constraint_invariance",
+  "verdict": "NONRELATIONAL_RECOVERY",
+  "runtime": "COMPLETED",
+  "tier": "VALIDATION",
+  "compliance": "FULL"
+}
