@@ -1,0 +1,25 @@
+{
+  "phase": 224,
+  "verdict": "REDUNDANT_ROUTING_STRUCTURE",
+  "bottleneck_concentration_index": 1.1049314068440397,
+  "pathway_redundancy": 0.9853811519017551,
+  "flow_vulnerability": 0.17203805589770468,
+  "persistence_channel_density": 0.7999999999999999,
+  "rerouting_efficiency": 0.9702609155912851,
+  "critical_edge_dependence": 0.2000600478142113,
+  "collapse_trigger_fraction": 0.0,
+  "distributed_resilience_score": 0.817279581222652,
+  "mechanism_scores": {
+    "CRITICAL_INFORMATION_BOTTLENECKS": 0.19009025113376438,
+    "DISTRIBUTED_FLOW_RESILIENCE": 0.8053318951709608,
+    "FRAGILE_COORDINATION_HUBS": 0.005949602648758362,
+    "REDUNDANT_ROUTING_STRUCTURE": 0.9560768186505921,
+    "BOTTLENECK_DEPENDENT_PERSISTENCE": 0.19009025113376438,
+    "FLEXIBLE_FLOW_REORGANIZATION": 0.8033391139594335
+  },
+  "disruption_types": [
+    "bottleneck",
+    "distributed",
+    "random"
+  ]
+}
