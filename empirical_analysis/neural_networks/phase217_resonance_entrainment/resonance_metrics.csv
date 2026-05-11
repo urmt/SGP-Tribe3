@@ -1,0 +1,9 @@
+system,coupling,entrainment,phase_locking,sync_persistence,amplification,collapse,anti_phase,delayed_sync
+Kuramoto,0.05,1,0.5098,0.5000,-0.0343,0,0,0.0440
+Kuramoto,0.1,1,0.5098,0.5556,-0.0597,0,0,0.0483
+Kuramoto,0.2,1,0.5098,0.9444,-0.0838,0,0,0.0552
+Kuramoto,0.3,1,0.5098,1.0000,-0.0721,0,0,0.0594
+Logistic,0.05,1,0.5954,0.0556,-0.0466,0,0,-0.0296
+Logistic,0.1,1,0.5954,0.1667,-0.0827,0,0,-0.0126
+Logistic,0.2,1,0.5954,0.6667,-0.1236,0,0,0.0177
+Logistic,0.3,1,0.5954,0.9444,-0.1228,0,0,0.0392

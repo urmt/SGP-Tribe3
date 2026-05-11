@@ -1,0 +1,31 @@
+{
+  "phase": 217,
+  "verdict": "STABLE_RESONANT_ENTRAINMENT",
+  "entrainment_probability": 1.0,
+  "phase_locking_index": 0.5525924251082344,
+  "synchronization_persistence": 0.6041666666666666,
+  "resonance_amplification": -0.07819580697412708,
+  "resonance_collapse_rate": 0.0,
+  "anti_phase_frequency": 0.0,
+  "delayed_sync_strength": 0.027718890448820182,
+  "metrics": {
+    "Kuramoto": {
+      "entrainment": 1.0,
+      "phase_lock": 0.5098047901109365,
+      "sync_persistence": 0.75,
+      "amplification": -0.062485478263453825,
+      "collapse": 0.0,
+      "anti_phase": 0.0,
+      "delayed": 0.05172366695102393
+    },
+    "Logistic": {
+      "entrainment": 1.0,
+      "phase_lock": 0.5953800601055323,
+      "sync_persistence": 0.4583333333333333,
+      "amplification": -0.09390613568480033,
+      "collapse": 0.0,
+      "anti_phase": 0.0,
+      "delayed": 0.003714113946616437
+    }
+  }
+}

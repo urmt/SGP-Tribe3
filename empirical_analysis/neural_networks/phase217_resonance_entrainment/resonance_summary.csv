@@ -1,0 +1,9 @@
+metric,value
+entrainment_probability,1.000000
+phase_locking_index,0.552592
+synchronization_persistence,0.604167
+resonance_amplification,-0.078196
+resonance_collapse_rate,0.000000
+anti_phase_frequency,0.000000
+delayed_sync_strength,0.027719
+verdict,STABLE_RESONANT_ENTRAINMENT
