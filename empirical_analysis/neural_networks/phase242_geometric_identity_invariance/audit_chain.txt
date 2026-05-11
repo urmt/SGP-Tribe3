@@ -1,0 +1,40 @@
+# PHASE 242 AUDIT CHAIN
+Timestamp: 2026-05-11 10:58:53
+Verdict: PARTIAL_GEOMETRIC_RECOVERY
+
+--- EEG ---
+Effect Size: 0.3417
+Cohen's d: 0.2932
+Metrics: {
+  "attractor_identity_similarity": 0.9555690473652881,
+  "curvature_preservation": -0.11073835832942093,
+  "topological_persistence_overlap": 0.11538461538461539,
+  "recovery_path_compression": 0.5295856486035933,
+  "reconstruction_fidelity": -0.010836010376266083,
+  "coalition_similarity": 0.0
+}
+
+--- Kuramoto ---
+Effect Size: 0.1446
+Cohen's d: 0.1591
+Metrics: {
+  "attractor_identity_similarity": 0.9942336226152829,
+  "curvature_preservation": -0.006238514688738388,
+  "topological_persistence_overlap": 0.05555555555555555,
+  "recovery_path_compression": 0.47985176955730546,
+  "reconstruction_fidelity": 0.06350644665151954,
+  "coalition_similarity": -0.05487859898388656
+}
+
+--- Logistic ---
+Effect Size: 0.7497
+Cohen's d: 0.8755
+Metrics: {
+  "attractor_identity_similarity": 0.1913653638730206,
+  "curvature_preservation": 0.2485578385752762,
+  "topological_persistence_overlap": 0.16666666666666666,
+  "recovery_path_compression": 0.2861494865670946,
+  "reconstruction_fidelity": 0.2328142423573761,
+  "coalition_similarity": -0.005102040816326535
+}
+

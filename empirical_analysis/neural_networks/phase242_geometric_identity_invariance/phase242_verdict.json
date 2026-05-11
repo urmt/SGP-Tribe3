@@ -1,0 +1,75 @@
+{
+  "phase": 242,
+  "name": "Geometric Identity Invariance Audit",
+  "timestamp": "2026-05-11T10:58:53",
+  "verdict": "PARTIAL_GEOMETRIC_RECOVERY",
+  "confidence": "MODERATE",
+  "evidence": {
+    "mean_effect_size": 0.41198683516642115,
+    "mean_cohens_d": 0.44260357231852215,
+    "mean_real_score": 0.22952482114321981,
+    "metric_means": {
+      "attractor_identity_similarity": 0.7137226779511971,
+      "curvature_preservation": 0.04386032185237229,
+      "topological_persistence_overlap": 0.11253561253561255,
+      "recovery_path_compression": 0.43186230157599775,
+      "reconstruction_fidelity": 0.09516155954420985,
+      "coalition_similarity": -0.019993546600071032
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "effect_size_vs_random": 0.34171328239325766,
+      "cohens_d": 0.29318002937591725,
+      "real_mean": 0.2464941571079683,
+      "control_mean": 0.14806711482823723,
+      "metrics": {
+        "attractor_identity_similarity": 0.9555690473652881,
+        "curvature_preservation": -0.11073835832942093,
+        "topological_persistence_overlap": 0.11538461538461539,
+        "recovery_path_compression": 0.5295856486035933,
+        "reconstruction_fidelity": -0.010836010376266083,
+        "coalition_similarity": 0.0
+      }
+    },
+    {
+      "system": "Kuramoto",
+      "effect_size_vs_random": 0.14459462893885563,
+      "cohens_d": 0.1591493775310902,
+      "real_mean": 0.25533838011783977,
+      "control_mean": 0.18836997727508972,
+      "metrics": {
+        "attractor_identity_similarity": 0.9942336226152829,
+        "curvature_preservation": -0.006238514688738388,
+        "topological_persistence_overlap": 0.05555555555555555,
+        "recovery_path_compression": 0.47985176955730546,
+        "reconstruction_fidelity": 0.06350644665151954,
+        "coalition_similarity": -0.05487859898388656
+      }
+    },
+    {
+      "system": "Logistic",
+      "effect_size_vs_random": 0.7496525941671502,
+      "cohens_d": 0.8754813100485589,
+      "real_mean": 0.1867419262038513,
+      "control_mean": 0.08352306800063185,
+      "metrics": {
+        "attractor_identity_similarity": 0.1913653638730206,
+        "curvature_preservation": 0.2485578385752762,
+        "topological_persistence_overlap": 0.16666666666666666,
+        "recovery_path_compression": 0.2861494865670946,
+        "reconstruction_fidelity": 0.2328142423573761,
+        "coalition_similarity": -0.005102040816326535
+      }
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness_language": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "no_semantic_interpretation": true,
+    "empirical_only": true
+  }
+}
