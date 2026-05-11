@@ -1,0 +1,67 @@
+# PHASE 244 AUDIT CHAIN
+Timestamp: 2026-05-11 11:22:35
+Verdict: WEAK_RECOVERY_SCAFFOLD
+
+--- EEG ---
+Skeleton overall: 0.5247
+Skeleton recovery: 0.6924
+Effect vs random: 1.6544
+Metrics: {
+  "component_overlap": 0.7777777777777778,
+  "cycle_overlap": 1.0,
+  "backbone_preservation": 0.9858876358379048,
+  "persistent_edge_survival": 0.25,
+  "mst_similarity": 0.75,
+  "centroid_retention": 0.9679725614825889,
+  "peak_conservation": 0.11538461538461539
+}
+Controls: {
+  "random_topology": 0.38306190286051517,
+  "edge_shuffled": 0.47663485563295527,
+  "phase_randomized": 0.416965119203427,
+  "synthetic_gaussian": 0.19915524228916756,
+  "random_backbone": 0.3800789802152086
+}
+
+--- Kuramoto ---
+Skeleton overall: 0.2709
+Skeleton recovery: 0.3608
+Effect vs random: -1.0517
+Metrics: {
+  "component_overlap": 0.4,
+  "cycle_overlap": 0.0,
+  "backbone_preservation": 0.9992227097569953,
+  "persistent_edge_survival": 0.0,
+  "mst_similarity": 0.07692307692307693,
+  "centroid_retention": 0.9942336226152829,
+  "peak_conservation": 0.05555555555555555
+}
+Controls: {
+  "random_topology": 0.3569398472557088,
+  "edge_shuffled": 0.3783512419151299,
+  "phase_randomized": 0.35266444576707634,
+  "synthetic_gaussian": 0.2632945338176456,
+  "random_backbone": 0.2632945338176446
+}
+
+--- Logistic ---
+Skeleton overall: 0.3111
+Skeleton recovery: 0.3026
+Effect vs random: 1.5361
+Metrics: {
+  "component_overlap": 0.4,
+  "cycle_overlap": 1.0,
+  "backbone_preservation": -0.4089278018451685,
+  "persistent_edge_survival": 0.0,
+  "mst_similarity": 0.2727272727272727,
+  "centroid_retention": 0.6876357361081772,
+  "peak_conservation": 0.16666666666666666
+}
+Controls: {
+  "random_topology": 0.30724400646358035,
+  "edge_shuffled": 0.19582751477215263,
+  "phase_randomized": 0.2821665194102347,
+  "synthetic_gaussian": 0.1927443111381095,
+  "random_backbone": 0.19274431113810928
+}
+
