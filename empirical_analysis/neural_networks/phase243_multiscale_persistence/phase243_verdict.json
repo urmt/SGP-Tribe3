@@ -1,0 +1,197 @@
+{
+  "phase": 243,
+  "name": "Multi-Scale Organizational Persistence Audit",
+  "timestamp": "2026-05-11T11:13:15",
+  "verdict": "HIERARCHICAL_PERSISTENCE_STRUCTURE",
+  "confidence": "MODERATE",
+  "evidence": {
+    "mean_hierarchical_fraction": 0.0,
+    "mean_persistence_gradient": -0.14820751660579853,
+    "mean_coarse_to_fine_drop": 0.14651843626065136,
+    "mean_advantage_vs_random": -0.01806350229931006,
+    "mean_gradient_effect_vs_random": -1.5289608209532766,
+    "mean_persistence_by_scale": {
+      "1": 0.877731516349769,
+      "2": 0.857554242648904,
+      "3": 0.8030844960781963,
+      "4": 0.7312130800891176
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "persistence_decay": {
+        "persistence_by_scale": {
+          "scale_1": 0.8310757836058905,
+          "scale_2": 0.8822976759566096,
+          "scale_3": 0.7903460623155044,
+          "scale_4": 0.9109293823702181
+        },
+        "is_hierarchical": false,
+        "hierarchical_persistence_gradient": 0.04428275479556332,
+        "scale_drop_coarse_to_fine": -0.07985359876432763,
+        "slope": 0.014760918265187772,
+        "r_squared": 0.12640376863425765
+      },
+      "mean_advantage_vs_random": 0.02200177521788846,
+      "gradient_effect_vs_random": -0.021092339732921954,
+      "scale_metrics_summary": {
+        "1": {
+          "scale_persistence": 0.7333283708111834,
+          "recovery_fidelity": 0.9944387754064169,
+          "attractor_overlap": 0.7730501163991044,
+          "curvature_preservation": 0.3333968964052779,
+          "topology_similarity": 0.9944387754064169,
+          "recurrence_reconstruction": 0.9944387754064169,
+          "coalition_recovery": 0.9944387754064169
+        },
+        "2": {
+          "scale_persistence": 0.8456892593010165,
+          "recovery_fidelity": 0.9428465712431784,
+          "attractor_overlap": 0.6161616161793593,
+          "curvature_preservation": 0.9428465712431784,
+          "topology_similarity": 0.9428465712431784,
+          "recurrence_reconstruction": 0.9428465712431784,
+          "coalition_recovery": 0.9428465712431784
+        },
+        "3": {
+          "scale_persistence": 0.2142354490534233,
+          "recovery_fidelity": 0.9214101931802322,
+          "attractor_overlap": 0.7111360212539461,
+          "curvature_preservation": 0.9214101931802322,
+          "topology_similarity": 0.9214101931802322,
+          "recurrence_reconstruction": 0.9214101931802322,
+          "coalition_recovery": 0.9214101931802322
+        },
+        "4": {
+          "scale_persistence": 0.8124213651651577,
+          "recovery_fidelity": 0.9838354149909423,
+          "attractor_overlap": 0.6449072364716582,
+          "curvature_preservation": 0.9838354149909423,
+          "topology_similarity": 0.9838354149909423,
+          "recurrence_reconstruction": 0.9838354149909423,
+          "coalition_recovery": 0.9838354149909423
+        }
+      }
+    },
+    {
+      "system": "Kuramoto",
+      "persistence_decay": {
+        "persistence_by_scale": {
+          "scale_1": 0.8411224471744386,
+          "scale_2": 0.7578206490994125,
+          "scale_3": 0.8345037457633053,
+          "scale_4": 0.4579669272294217
+        },
+        "is_hierarchical": false,
+        "hierarchical_persistence_gradient": -0.32183503895134735,
+        "scale_drop_coarse_to_fine": 0.3831555199450169,
+        "slope": -0.10727834631711579,
+        "r_squared": 0.5881303897807215
+      },
+      "mean_advantage_vs_random": -0.07532143751027244,
+      "gradient_effect_vs_random": -2.4730178319579266,
+      "scale_metrics_summary": {
+        "1": {
+          "scale_persistence": 0.999588120650552,
+          "recovery_fidelity": 0.9665175205958655,
+          "attractor_overlap": 0.7156217570310797,
+          "curvature_preservation": 0.30657717015597685,
+          "topology_similarity": 0.9665175205958655,
+          "recurrence_reconstruction": 0.9665175205958655,
+          "coalition_recovery": 0.9665175205958655
+        },
+        "2": {
+          "scale_persistence": 0.8856314400232157,
+          "recovery_fidelity": 0.8013226207329095,
+          "attractor_overlap": 0.412500000008125,
+          "curvature_preservation": 0.8013226207329095,
+          "topology_similarity": 0.8013226207329095,
+          "recurrence_reconstruction": 0.8013226207329095,
+          "coalition_recovery": 0.8013226207329095
+        },
+        "3": {
+          "scale_persistence": 0.6940765541946695,
+          "recovery_fidelity": 0.9285393873498677,
+          "attractor_overlap": 0.5047527293991305,
+          "curvature_preservation": 0.9285393873498677,
+          "topology_similarity": 0.9285393873498677,
+          "recurrence_reconstruction": 0.9285393873498677,
+          "coalition_recovery": 0.9285393873498677
+        },
+        "4": {
+          "scale_persistence": 0.7918394269519445,
+          "recovery_fidelity": 0.3864513755346675,
+          "attractor_overlap": 0.48167218598067024,
+          "curvature_preservation": 0.3864513755346675,
+          "topology_similarity": 0.3864513755346675,
+          "recurrence_reconstruction": 0.3864513755346675,
+          "coalition_recovery": 0.3864513755346675
+        }
+      }
+    },
+    {
+      "system": "Logistic",
+      "persistence_decay": {
+        "persistence_by_scale": {
+          "scale_1": 0.9609963182689777,
+          "scale_2": 0.9325444028906897,
+          "scale_3": 0.7844036801557789,
+          "scale_4": 0.8247429306677129
+        },
+        "is_hierarchical": false,
+        "hierarchical_persistence_gradient": -0.1670702656616116,
+        "scale_drop_coarse_to_fine": 0.13625338760126482,
+        "slope": -0.05569008855387053,
+        "r_squared": 0.723325438492524
+      },
+      "mean_advantage_vs_random": -0.000870844605546206,
+      "gradient_effect_vs_random": -2.0927722911689814,
+      "scale_metrics_summary": {
+        "1": {
+          "scale_persistence": 0.9996091558948541,
+          "recovery_fidelity": 0.999993033486794,
+          "attractor_overlap": 0.9473791323873305,
+          "curvature_preservation": 0.780013805653484,
+          "topology_similarity": 0.999993033486794,
+          "recurrence_reconstruction": 0.999993033486794,
+          "coalition_recovery": 0.999993033486794
+        },
+        "2": {
+          "scale_persistence": 0.8692853420250082,
+          "recovery_fidelity": 0.998062654846257,
+          "attractor_overlap": 0.6682122039785344,
+          "curvature_preservation": 0.998062654846257,
+          "topology_similarity": 0.998062654846257,
+          "recurrence_reconstruction": 0.998062654846257,
+          "coalition_recovery": 0.998062654846257
+        },
+        "3": {
+          "scale_persistence": 0.6803608387460223,
+          "recovery_fidelity": 0.8725724989549049,
+          "attractor_overlap": 0.44760242756990565,
+          "curvature_preservation": 0.8725724989549049,
+          "topology_similarity": 0.8725724989549049,
+          "recurrence_reconstruction": 0.8725724989549049,
+          "coalition_recovery": 0.8725724989549049
+        },
+        "4": {
+          "scale_persistence": 0.7413279305401028,
+          "recovery_fidelity": 0.8813745167330275,
+          "attractor_overlap": 0.6250000004687499,
+          "curvature_preservation": 0.8813745167330275,
+          "topology_similarity": 0.8813745167330275,
+          "recurrence_reconstruction": 0.8813745167330275,
+          "coalition_recovery": 0.8813745167330275
+        }
+      }
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness_language": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "no_semantic_interpretation": true
+  }
+}

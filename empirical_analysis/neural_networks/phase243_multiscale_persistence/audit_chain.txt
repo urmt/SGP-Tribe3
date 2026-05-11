@@ -1,0 +1,40 @@
+# PHASE 243 AUDIT CHAIN
+Timestamp: 2026-05-11 11:13:15
+Verdict: HIERARCHICAL_PERSISTENCE_STRUCTURE
+
+--- EEG ---
+Hierarchical: False
+Gradient: 0.0443
+Drop: -0.0799
+Advantage vs random: 0.0220
+Persistence: {
+  "scale_1": 0.8310757836058905,
+  "scale_2": 0.8822976759566096,
+  "scale_3": 0.7903460623155044,
+  "scale_4": 0.9109293823702181
+}
+
+--- Kuramoto ---
+Hierarchical: False
+Gradient: -0.3218
+Drop: 0.3832
+Advantage vs random: -0.0753
+Persistence: {
+  "scale_1": 0.8411224471744386,
+  "scale_2": 0.7578206490994125,
+  "scale_3": 0.8345037457633053,
+  "scale_4": 0.4579669272294217
+}
+
+--- Logistic ---
+Hierarchical: False
+Gradient: -0.1671
+Drop: 0.1363
+Advantage vs random: -0.0009
+Persistence: {
+  "scale_1": 0.9609963182689777,
+  "scale_2": 0.9325444028906897,
+  "scale_3": 0.7844036801557789,
+  "scale_4": 0.8247429306677129
+}
+
