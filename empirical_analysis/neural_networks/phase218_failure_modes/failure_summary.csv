@@ -1,0 +1,10 @@
+metric,value
+collapse_threshold_step,4.2
+fragmentation_index,0.685263
+coherence_decay_rate,0.087799
+topology_fracture_score,0.287829
+cascade_amplification,0.659722
+local_global_ratio,0.927885
+metastable_rescue_prob,0.780608
+bifurcation_density,0.196429
+verdict,LOCALIZED_FAILURE_DYNAMICS

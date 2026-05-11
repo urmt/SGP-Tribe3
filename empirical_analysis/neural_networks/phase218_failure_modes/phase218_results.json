@@ -1,0 +1,34 @@
+{
+  "phase": 218,
+  "verdict": "LOCALIZED_FAILURE_DYNAMICS",
+  "collapse_threshold": 4.25,
+  "fragmentation_index": 0.6852629475015923,
+  "coherence_decay_rate": 0.0877987615988113,
+  "topology_fracture_score": 0.287828947368421,
+  "cascade_amplification": 0.6597222222222222,
+  "local_global_ratio": 0.9278846153846154,
+  "metastable_rescue_probability": 0.7806078102688272,
+  "bifurcation_density": 0.19642857142857142,
+  "metrics": {
+    "Kuramoto": {
+      "collapse": 9.5,
+      "fragmentation": 0.7103604299984112,
+      "decay": 0.08257159396105165,
+      "topology": 0.26973684210526316,
+      "cascade": 1.3194444444444444,
+      "local": 0.8557692307692308,
+      "rescue": 0.7663438256658596,
+      "bifurcation": 0.17532467532467533
+    },
+    "Logistic": {
+      "collapse": -1.0,
+      "fragmentation": 0.6601654650047735,
+      "decay": 0.09302592923657094,
+      "topology": 0.3059210526315789,
+      "cascade": 0.0,
+      "local": 1.0,
+      "rescue": 0.7948717948717949,
+      "bifurcation": 0.21753246753246752
+    }
+  }
+}

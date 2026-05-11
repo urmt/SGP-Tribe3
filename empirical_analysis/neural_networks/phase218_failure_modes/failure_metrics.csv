@@ -1,0 +1,9 @@
+system,destab_type,collapse_onset,fragmentation,coherence_decay,topology_fracture,cascade,local_ratio,rescue,bifurcation
+Kuramoto,noise,19,0.8605,0.0110,0.2105,1.6667,0.9359,0.8983,0.0909
+Kuramoto,disruption,1,0.2547,0.1653,0.3421,1.6111,0.5641,0.2857,0.2597
+Kuramoto,curvature,19,0.8583,0.0024,0.1842,2.0000,0.9231,0.8814,0.0909
+Kuramoto,overload,-1,0.8680,0.1517,0.3421,0.0000,1.0000,1.0000,0.2597
+Logistic,noise,-1,0.4455,0.1567,0.3026,0.0000,1.0000,0.8077,0.2208
+Logistic,disruption,-1,0.3493,-0.1373,0.4079,0.0000,1.0000,0.8205,0.2857
+Logistic,curvature,-1,0.9779,0.0173,0.1711,0.0000,1.0000,0.8077,0.1039
+Logistic,overload,-1,0.8680,0.3355,0.3421,0.0000,1.0000,0.7436,0.2597
