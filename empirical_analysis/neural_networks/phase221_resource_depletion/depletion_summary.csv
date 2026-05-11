@@ -1,0 +1,10 @@
+metric,value
+persistence_survival_fraction,7.490971
+adaptive_redistribution_index,0.288018
+coalition_sacrifice_ratio,0.277778
+identity_preservation_score,0.046057
+dormant_state_frequency,0.100641
+minimal_viable_size,7.490971
+graceful_degradation_index,1.000000
+collapse_threshold,0.0
+verdict,ADAPTIVE_REDISTRIBUTION

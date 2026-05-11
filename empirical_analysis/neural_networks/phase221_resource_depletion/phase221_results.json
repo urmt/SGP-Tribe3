@@ -1,0 +1,28 @@
+{
+  "phase": 221,
+  "verdict": "ADAPTIVE_REDISTRIBUTION",
+  "persistence_survival_fraction": 7.490971209537766,
+  "adaptive_redistribution_index": 0.28801829431446546,
+  "coalition_sacrifice_ratio": 0.2777777777777778,
+  "identity_preservation_score": 0.046056619586701195,
+  "dormant_state_frequency": 0.10064102564102564,
+  "minimal_viable_size": 7.490971209537766,
+  "graceful_degradation_index": 1.0,
+  "collapse_threshold": null,
+  "mechanism_scores": {
+    "GRACEFUL_DEGRADATION": 0.8993589743589744,
+    "CATASTROPHIC_COLLAPSE": -0.0,
+    "CORE_PRESERVATION": 0.3450088113326118,
+    "ADAPTIVE_REDISTRIBUTION": 2.1575367505298355,
+    "DORMANT_METASTABILITY": 0.10064102564102564,
+    "RESOURCE_LOCK_FAILURE": -6.490971209537766
+  },
+  "resource_levels_tested": [
+    1.0,
+    0.75,
+    0.5,
+    0.25,
+    0.1,
+    0.0
+  ]
+}
