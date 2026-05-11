@@ -1,0 +1,10 @@
+metric,value
+dominant_rhythm_index,0.145990
+phase_hierarchy_depth,1.000000
+synchronization_dominance_score,0.430275
+rhythm_persistence_strength,0.871539
+phase_governance_coupling,0.070868
+cross_rhythm_stabilization,0.250000
+harmonic_persistence_ratio,0.333333
+phase_instability_sensitivity,0.325332
+verdict,RHYTHM_INDEPENDENT_STABILITY

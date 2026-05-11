@@ -1,0 +1,20 @@
+{
+  "phase": 229,
+  "verdict": "RHYTHM_INDEPENDENT_STABILITY",
+  "dominant_rhythm_index": 0.1459900719143837,
+  "phase_hierarchy_depth": 1.0,
+  "synchronization_dominance_score": 0.4302750578839427,
+  "rhythm_persistence_strength": 0.8715385614586222,
+  "phase_governance_coupling": 0.07086840127689742,
+  "cross_rhythm_stabilization": 0.249999999996875,
+  "harmonic_persistence_ratio": 0.3333333333333333,
+  "phase_instability_sensitivity": 0.3253320181911997,
+  "mechanism_scores": {
+    "RHYTHM_GOVERNED_PERSISTENCE": 0.06281588664344241,
+    "DISTRIBUTED_PHASE_DYNAMICS": 0.5697249421160573,
+    "HARMONIC_STABILIZATION": 0.29051285381954073,
+    "PHASE_DOMINANCE_HIERARCHY": 0.1459900719143837,
+    "RHYTHM_INDEPENDENT_STABILITY": 0.8540099280856163,
+    "SYNCHRONIZATION_CASCADE_CONTROL": 0.030492905461559517
+  }
+}
