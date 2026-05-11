@@ -1,0 +1,8 @@
+metric,value
+boundary_persistence_index,0.228814
+permeability_score,1.000000
+containment_efficiency,0.288136
+perturbation_penetration_depth,0.010593
+internal_stability_preservation,0.543693
+membrane_recovery_rate,0.594614
+verdict,SEMI_PERMEABLE_MEMBRANES

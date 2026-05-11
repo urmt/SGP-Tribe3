@@ -1,0 +1,3 @@
+system,boundary_persistence,permeability,containment_efficiency,penetration_depth,internal_preservation,recovery_rate
+Kuramoto,0.186441,1.000000,0.000000,0.016949,0.612891,0.767244
+Logistic,0.271186,1.000000,0.576271,0.004237,0.474495,0.421985

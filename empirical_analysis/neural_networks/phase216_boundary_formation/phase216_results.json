@@ -1,0 +1,28 @@
+{
+  "phase": 216,
+  "verdict": "SEMI_PERMEABLE_MEMBRANES",
+  "boundary_persistence_index": 0.2288135593220339,
+  "permeability_score": 1.0,
+  "containment_efficiency": 0.2881355932198506,
+  "perturbation_penetration_depth": 0.01059322033898305,
+  "internal_stability_preservation": 0.543693151988757,
+  "membrane_recovery_rate": 0.59461439946043,
+  "metrics": {
+    "Kuramoto": {
+      "boundaries": 11,
+      "persistence": 0.1864406779661017,
+      "permeability": 1.0,
+      "containment": 0.0,
+      "penetration": 0.01694915254237288,
+      "preservation": 0.612891055266419
+    },
+    "Logistic": {
+      "boundaries": 15,
+      "persistence": 0.2711864406779661,
+      "permeability": 1.0,
+      "containment": 0.5762711864397012,
+      "penetration": 0.00423728813559322,
+      "preservation": 0.474495248711095
+    }
+  }
+}

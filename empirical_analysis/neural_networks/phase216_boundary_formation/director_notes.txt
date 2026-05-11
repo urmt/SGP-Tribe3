@@ -1,0 +1,26 @@
+DIRECTOR NOTES - PHASE 216
+===========================
+
+INTERPRETATION (EMPIRICAL):
+
+1. BOUNDARY PERSISTENCE:
+   - 0.2288
+   - Do stable boundaries form?
+
+2. PERMEABILITY:
+   - 1.0000
+   - Can perturbations pass through?
+
+3. CONTAINMENT:
+   - 0.2881
+   - Do boundaries contain high-organization regions?
+
+4. PERTURBATION RESPONSE:
+   - Penetration: 0.0106
+   - Preservation: 0.5437
+   - Recovery: 0.5946
+
+VERDICT: SEMI_PERMEABLE_MEMBRANES
+
+NOTE: This measures EMPIRICAL boundary properties
+      without metaphysical claims about 'membranes' or containment.
