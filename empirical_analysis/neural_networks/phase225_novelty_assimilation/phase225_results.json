@@ -1,0 +1,26 @@
+{
+  "phase": 225,
+  "verdict": "NOVELTY_REJECTION",
+  "novelty_assimilation_index": 0.1295995393009855,
+  "identity_preservation_after_novelty": 0.8858095220128699,
+  "structural_integration_efficiency": 0.03324715301248128,
+  "novelty_rejection_probability": 1.0,
+  "adaptive_hybridization_score": 0.0,
+  "attractor_mutation_fraction": 0.11419047798713017,
+  "persistence_under_novelty": 0.9193527659418543,
+  "stable_post_novelty_fraction": 0.1548722584024408,
+  "mechanism_scores": {
+    "ADAPTIVE_NOVELTY_ASSIMILATION": 0.11914769492115107,
+    "NOVELTY_REJECTION": 0.8858095220128699,
+    "COLLAPSE_UNDER_NOVELTY": 0.009209146205439616,
+    "HYBRID_REORGANIZATION": 0.0,
+    "IDENTITY_PRESERVING_ADAPTATION": 0.11480050596129411,
+    "NOVELTY_TRIGGERED_ATTRACTOR_SHIFT": 0.013039465262929253
+  },
+  "novelty_types_tested": [
+    "random_motif",
+    "sync_disrupt",
+    "propagation_anomaly",
+    "attractor_fragment"
+  ]
+}

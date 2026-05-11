@@ -1,0 +1,10 @@
+metric,value
+novelty_assimilation_index,0.129600
+identity_preservation_after_novelty,0.885810
+structural_integration_efficiency,0.033247
+novelty_rejection_probability,1.000000
+adaptive_hybridization_score,0.000000
+attractor_mutation_fraction,0.114190
+persistence_under_novelty,0.919353
+stable_post_novelty_fraction,0.154872
+verdict,NOVELTY_REJECTION
