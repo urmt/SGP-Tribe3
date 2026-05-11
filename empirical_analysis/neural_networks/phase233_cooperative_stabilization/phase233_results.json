@@ -1,0 +1,20 @@
+{
+  "phase": 233,
+  "verdict": "MUTUAL_RESCUE_DYNAMICS",
+  "cooperative_stabilization_index": 5.203821194770562,
+  "mutual_persistence_gain": 1.155300417798995,
+  "collapse_risk_reduction": -2.8916288695280623,
+  "persistence_exchange_efficiency": 5.203821194770562,
+  "cooperative_recovery_rate": 1.0,
+  "stabilization_dependency_score": 4.203821194770562,
+  "mutual_rescue_probability": 13.135977036399197,
+  "distributed_support_density": 0.16880341880341884,
+  "mechanism_scores": {
+    "COOPERATIVE_STABILIZATION_NETWORK": 6.011976800469696,
+    "PASSIVE_COEXISTENCE_ONLY": -4.203821194770562,
+    "MUTUAL_RESCUE_DYNAMICS": 13.135977036399197,
+    "ASYMMETRIC_STABILIZATION_DEPENDENCY": -17.672112637602194,
+    "DISTRIBUTED_SUPPORT_PERSISTENCE": 0.1950186602694885,
+    "ISOLATION_INDUCED_INSTABILITY": -0.0
+  }
+}

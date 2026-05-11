@@ -1,0 +1,10 @@
+metric,value
+cooperative_stabilization_index,5.203821
+mutual_persistence_gain,1.155300
+collapse_risk_reduction,-2.891629
+persistence_exchange_efficiency,5.203821
+cooperative_recovery_rate,1.000000
+stabilization_dependency_score,4.203821
+mutual_rescue_probability,13.135977
+distributed_support_density,0.168803
+verdict,MUTUAL_RESCUE_DYNAMICS
