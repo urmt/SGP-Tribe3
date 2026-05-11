@@ -1,0 +1,20 @@
+{
+  "phase": 234,
+  "verdict": "SYSTEMIC_DEPENDENCY_FRAGILITY",
+  "dependency_cascade_index": 10.085107963476503,
+  "systemic_fragility_score": 3.0214587596414177,
+  "cooperative_failure_amplification": 2.8297474646558567,
+  "dependency_depth": 1.5,
+  "resilience_vs_dependency_ratio": 0.9746055286207037,
+  "shared_failure_probability": 0.0,
+  "isolation_survival_fraction": 1.1099722720243492,
+  "support_chain_collapse_rate": 0.09862028564644698,
+  "mechanism_scores": {
+    "RESILIENT_DISTRIBUTED_COOPERATION": -1.970124883025276,
+    "SYSTEMIC_DEPENDENCY_FRAGILITY": 30.4717377981755,
+    "CASCADE_PRONE_SUPPORT_NETWORK": 0.0,
+    "DISTRIBUTED_RESILIENCE_ADVANTAGE": 1.0817851129306144,
+    "HUB_DEPENDENT_INSTABILITY": 4.532188139462127,
+    "COOPERATIVE_STABILITY_WITHOUT_FRAGILITY": 2.7578875236540172
+  }
+}

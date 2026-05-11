@@ -1,0 +1,10 @@
+metric,value
+dependency_cascade_index,10.085108
+systemic_fragility_score,3.021459
+cooperative_failure_amplification,2.829747
+dependency_depth,1.500000
+resilience_vs_dependency_ratio,0.974606
+shared_failure_probability,0.000000
+isolation_survival_fraction,1.109972
+support_chain_collapse_rate,0.098620
+verdict,SYSTEMIC_DEPENDENCY_FRAGILITY
