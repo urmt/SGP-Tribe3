@@ -1,0 +1,82 @@
+{
+  "phase": 246,
+  "name": "Causal Generator Dimension Ablation Audit",
+  "timestamp": "2026-05-11T11:48:52",
+  "verdict": "NONCAUSAL_COMPRESSED_SUMMARY",
+  "confidence": "HIGH",
+  "evidence": {
+    "mean_generator_causal_impact": 0.007850709408413231,
+    "mean_lambda1_share_of_max": 0.8925149772694138,
+    "mean_dominant_dim_dependence": 1.140258756339761,
+    "per_system": {
+      "EEG": {
+        "causal_impact": 0.0,
+        "lambda1_share": 0.8353586170806239,
+        "dominant_dim": 0.0,
+        "lambda1_fraction": 0.35611337772425145
+      },
+      "Kuramoto": {
+        "causal_impact": 0.023552128225239694,
+        "lambda1_share": 0.8421863147276175,
+        "dominant_dim": 3.420776269019283,
+        "lambda1_fraction": 0.9432258444337155
+      },
+      "Logistic": {
+        "causal_impact": 0.0,
+        "lambda1_share": 1.0,
+        "dominant_dim": 0.0,
+        "lambda1_fraction": 0.13205734678914569
+      }
+    }
+  },
+  "per_system": [
+    {
+      "system": "EEG",
+      "generator_causal_impact": 0.0,
+      "dominant_dim_dependence": 0.0,
+      "lambda1_share": 0.8353586170806239,
+      "lambda1_fraction": 0.35611337772425145,
+      "causal_impact_by_ablation": {
+        "none": 0.0,
+        "\u03bb1_only": 0.0,
+        "\u03bb1_\u03bb2": 0.0,
+        "\u03bb1_\u03bb2_\u03bb3": 0.0
+      }
+    },
+    {
+      "system": "Kuramoto",
+      "generator_causal_impact": 0.023552128225239694,
+      "dominant_dim_dependence": 3.420776269019283,
+      "lambda1_share": 0.8421863147276175,
+      "lambda1_fraction": 0.9432258444337155,
+      "causal_impact_by_ablation": {
+        "none": 0.0,
+        "\u03bb1_only": 0.032299811142168844,
+        "\u03bb1_\u03bb2": 0.01536928464091425,
+        "\u03bb1_\u03bb2_\u03bb3": 0.009442246028977808
+      }
+    },
+    {
+      "system": "Logistic",
+      "generator_causal_impact": 0.0,
+      "dominant_dim_dependence": 0.0,
+      "lambda1_share": 1.0,
+      "lambda1_fraction": 0.13205734678914569,
+      "causal_impact_by_ablation": {
+        "none": 0.0,
+        "\u03bb1_only": 0.0,
+        "\u03bb1_\u03bb2": 0.0,
+        "\u03bb1_\u03bb2_\u03bb3": 0.0
+      }
+    }
+  ],
+  "compliance": {
+    "lep": true,
+    "no_consciousness": true,
+    "no_sfh_metaphysics": true,
+    "no_observer_theory": true,
+    "phase_199_boundaries": true,
+    "true_operators_phase_201": true,
+    "recovery_phase_242": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "phase": 246,
+  "name": "causal_generator_ablation",
+  "verdict": "NONCAUSAL_COMPRESSED_SUMMARY",
+  "runtime": "COMPLETED",
+  "tier": "VALIDATION",
+  "compliance": "FULL"
+}

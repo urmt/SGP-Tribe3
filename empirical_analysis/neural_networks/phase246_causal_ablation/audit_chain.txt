@@ -1,0 +1,55 @@
+# PHASE 246 AUDIT CHAIN
+Timestamp: 2026-05-11 11:48:52
+Verdict: NONCAUSAL_COMPRESSED_SUMMARY
+
+--- EEG ---
+Causal impact: 0.0000
+λ1 share: 0.8354
+λ1 fraction: 0.356
+Impairments: {
+  "none": 0.14285714285714285,
+  "\u03bb1_only": 0.4083312562404287,
+  "\u03bb1_\u03bb2": 0.4688115014487232,
+  "\u03bb1_\u03bb2_\u03bb3": 0.4888095338831215
+}
+Causal: {
+  "none": 0.0,
+  "\u03bb1_only": 0.0,
+  "\u03bb1_\u03bb2": 0.0,
+  "\u03bb1_\u03bb2_\u03bb3": 0.0
+}
+
+--- Kuramoto ---
+Causal impact: 0.0236
+λ1 share: 0.8422
+λ1 fraction: 0.943
+Impairments: {
+  "none": 0.0,
+  "\u03bb1_only": 0.618794820191871,
+  "\u03bb1_\u03bb2": 0.6583571830764958,
+  "\u03bb1_\u03bb2_\u03bb3": 0.7347481303967799
+}
+Causal: {
+  "none": 0.0,
+  "\u03bb1_only": 0.032299811142168844,
+  "\u03bb1_\u03bb2": 0.01536928464091425,
+  "\u03bb1_\u03bb2_\u03bb3": 0.009442246028977808
+}
+
+--- Logistic ---
+Causal impact: 0.0000
+λ1 share: 1.0000
+λ1 fraction: 0.132
+Impairments: {
+  "none": 0.14285714285714285,
+  "\u03bb1_only": 0.3145384072367505,
+  "\u03bb1_\u03bb2": 0.2915380230955951,
+  "\u03bb1_\u03bb2_\u03bb3": 0.29456081724937516
+}
+Causal: {
+  "none": 0.0,
+  "\u03bb1_only": 0.0,
+  "\u03bb1_\u03bb2": 0.0,
+  "\u03bb1_\u03bb2_\u03bb3": 0.0
+}
+
