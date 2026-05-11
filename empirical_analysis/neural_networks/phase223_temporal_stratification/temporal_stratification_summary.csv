@@ -1,0 +1,10 @@
+metric,value
+temporal_stratification_index,0.539933
+fast_layer_fraction,0.421930
+slow_layer_fraction,0.272260
+cross_scale_coupling,0.061466
+resonance_lag_persistence,0.500000
+temporal_hysteresis_gradient,0.365077
+delayed_recovery_score,0.000000
+temporal_anchor_density,0.249545
+verdict,DECOUPLED_TIME_SCALES

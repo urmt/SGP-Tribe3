@@ -1,0 +1,42 @@
+{
+  "phase": 223,
+  "verdict": "DECOUPLED_TIME_SCALES",
+  "temporal_stratification_index": 0.5399332428573029,
+  "fast_layer_fraction": 0.42192962297455594,
+  "slow_layer_fraction": 0.2722604419391957,
+  "cross_scale_coupling": 0.06146554526896347,
+  "resonance_lag_persistence": 0.5,
+  "temporal_hysteresis_gradient": 0.3650770838964089,
+  "delayed_recovery_score": 0.0,
+  "temporal_anchor_density": 0.2495446265938069,
+  "mechanism_scores": {
+    "MULTI_SCALE_TEMPORAL_ORGANIZATION": 0.5067459516762391,
+    "SINGLE_SCALE_DYNAMICS": 0.46006675714269707,
+    "TEMPORAL_HIERARCHY": 0.11487474561829081,
+    "FAST_LAYER_DOMINANCE": 0.30705487735626513,
+    "SLOW_CORE_PERSISTENCE": 0.06794113031998143,
+    "DECOUPLED_TIME_SCALES": 0.9385344547310366
+  },
+  "systems": {
+    "Kuramoto": {
+      "temporal_stratification_index": 0.18666984484352717,
+      "fast_layer_fraction": 0.28889114970351687,
+      "slow_layer_fraction": 0.36169747449150347,
+      "cross_scale_coupling": 0.11532949359729634,
+      "resonance_lag_persistence": 0.5,
+      "temporal_hysteresis_gradient": 0.6849874242408629,
+      "delayed_recovery_score": 0.0,
+      "temporal_anchor_density": 0.2495446265938069
+    },
+    "Logistic": {
+      "temporal_stratification_index": 0.8931966408710788,
+      "fast_layer_fraction": 0.554968096245595,
+      "slow_layer_fraction": 0.1828234093868879,
+      "cross_scale_coupling": 0.007601596940630597,
+      "resonance_lag_persistence": 0.5,
+      "temporal_hysteresis_gradient": 0.0451667435519549,
+      "delayed_recovery_score": 0.0,
+      "temporal_anchor_density": 0.2495446265938069
+    }
+  }
+}
