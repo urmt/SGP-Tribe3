@@ -1,0 +1,343 @@
+METHODS FORBIDDEN SHORTCUTS — PHASE 262
+========================================
+
+This document explicitly prohibits methods, practices, and language that
+would compromise the audit integrity of the manuscript. These shortcuts
+are forbidden regardless of apparent elegance or convenience.
+
+================================================================================
+CATEGORY 1: OMITTED INSTABILITY REPORTING
+================================================================================
+
+F1.1: DO NOT omit reporting of tau saturation.
+      Current status: tau_peak = 50.0 (max) for all N in Phase 256.
+      Forbidden: "tau reaches equilibrium at Kc"
+      Allowed: "tau could not be measured within STEPS=1000; stability
+                criterion not met; tau saturates at maximum value"
+
+F1.2: DO NOT omit reporting of Kc convergence failure.
+      Current status: max_deviation = 41.3 >> 0.25 threshold.
+      Forbidden: "estimators converge to Kc ~ 1.4"
+      Allowed: "three-estimator convergence was not achieved; K estimates
+                range from 0.4 to 1.78 depending on N and metric"
+
+F1.3: DO NOT omit reporting of Binder conflict.
+      Current status: Phase 252 Binder min -> 0.29 (N=64, STEPS=2000);
+                     Phase 256 Binder min -> 0.644 (N=64, STEPS=1000).
+      Forbidden: "Binder minimum deepens with N"
+      Allowed: "Binder depth is sensitive to simulation parameters;
+                conflicting observations between Phase 252 and Phase 256"
+
+F1.4: DO NOT omit reporting of gamma non-universality.
+      Current status: gamma varies 0.62 to 1.98 across conditions.
+      Forbidden: "scaling exponent gamma = 1.1 is universal"
+      Allowed: "gamma varies with frequency distribution; only A2A+Gaussian
+                produces gamma approximately 1.1"
+
+F1.5: DO NOT omit reporting of loop_area threshold arbitrariness.
+      Current status: threshold = 0.15 chosen ad hoc.
+      Forbidden: "hysteresis ruled out by loop area test"
+      Allowed: "loop area of 0.03 is below the chosen threshold of 0.15;
+                this threshold is arbitrary with no theoretical basis"
+
+================================================================================
+CATEGORY 2: HIDDEN RERUNS
+================================================================================
+
+F2.1: DO NOT rerun any Phase 252-256 script after freeze date.
+      Frozen scripts are:
+        - phase252_minimal_transition_test.py
+        - phase252_finite_size_test.py
+        - phase252_script4.py through phase252_script8.py
+        - phase253_script9.py
+        - phase254_script10.py
+        - phase255_script11.py
+        - phase256_replication_stable.py
+        - phase256_script12.py
+      Forbidden: Running any of the above scripts to "improve results"
+      Reason: Reruns may produce different RNG outputs or parameter artifacts
+              that break audit traceability
+
+F2.2: DO NOT create new scripts that retroactively reproduce old figures.
+      Forbidden: "To validate, we ran the analysis again with improved parameters"
+      Reason: New scripts produce new artifacts that are not in the audit chain
+
+F2.3: DO NOT suppress scripts that produced conflicting or negative results.
+      Phase 256 script 12 produced FAILED convergence (max_deviation=41.3).
+      This script and its outputs are REQUIRED in the manuscript audit chain.
+      Forbidden: "script 12 timed out" as an excuse to omit results
+      Allowed: "Phase 256 script 12 was executed; convergence was not achieved"
+
+================================================================================
+CATEGORY 3: PARAMETER RETUNING
+================================================================================
+
+F3.1: DO NOT adjust STEPS, TRANSIENT, or TRIALS to make results "look better."
+      Known parameter sensitivity issues:
+        - Binder: STEPS=2000 produces min ~0.29; STEPS=1000 produces ~0.644
+        - Tau: STEPS=1000 causes saturation; STEPS=3000+ would be needed
+        - Chi: STEPS=1000 produces peak ~0.115; STEPS=2000 produces ~1.665
+      Forbidden: Switching to STEPS=3000 to "verify Binder deepening"
+      Reason: Post-hoc parameter selection breaks audit integrity
+
+F3.2: DO NOT adjust K resolution to shift peaks toward a target Kc.
+      Known K estimates shift with N:
+        - N=16: K spans 0.4 to 1.78
+        - N=32: K spans 0.71 to 2.59
+        - N=64: K spans 0.86 to 1.32
+      Forbidden: "High-resolution scan near K=1.33 confirms critical point"
+      Reason: Adaptive K resolution is valid only if pre-specified, not post-hoc
+
+F3.3: DO NOT adjust loop_area threshold to achieve a desired verdict.
+      Current threshold: 0.15 (arbitrary)
+      Measured loop_area: 0.0304
+      Forbidden: "we set threshold at 0.04 after sensitivity analysis"
+      Reason: Threshold is not theory-motivated; changing it post-hoc is invalid
+
+F3.4: DO NOT change RNG seed to find "better" results.
+      All scripts use seed=42.
+      Forbidden: "we tested multiple seeds and found consistent behavior"
+      Reason: Multiple seeds without systematic analysis is data snooping
+
+================================================================================
+CATEGORY 4: SELECTIVE FIGURE OMISSION
+================================================================================
+
+F4.1: DO NOT omit Phase 256 Binder figures (phase256_replication_binder_*.png)
+      because they conflict with Phase 252 Binder deepening.
+      Forbidden: "Binder data from Phase 256 replication is not shown"
+      Allowed: "Phase 256 Binder results conflict with Phase 252; Binder depth
+                is sensitive to simulation parameters; no standardized protocol"
+
+F4.2: DO NOT omit phase256_script12 Kc extrapolation figures
+      because convergence failed.
+      Forbidden: "Kc extrapolation results are not shown due to technical issues"
+      Allowed: "1/N linear extrapolation produced unreliable estimates;
+                negative Kc values obtained; convergence not achieved"
+
+F4.3: DO NOT omit failed Binder sensitivity analysis from Phase 257.
+      The failure registry documents 8 failed estimators.
+      Forbidden: "failed estimators are not relevant to the final results"
+      Allowed: "8 estimators were found to be failed or unstable; all are
+                documented in the methods failure registry"
+
+F4.4: DO NOT omit phase252.py original run outputs from audit.
+      Original phase252.py produced 17 CSV + 15 JSON files.
+      Forbidden: "original run was superseded and is not shown"
+      Allowed: "original phase252.py placed K* outside K_VALUES range;
+                all verdicts were TOPOLOGY_DEPENDENT; hard reset performed;
+                9 lean scripts replaced this run"
+
+================================================================================
+CATEGORY 5: POST-HOC ESTIMATOR REPLACEMENT
+================================================================================
+
+F5.1: DO NOT replace tau estimator with an alternative not used in Phase 255.
+      Phase 255 uses: tau defined by 90% threshold, stability criterion
+                      |R_t - R_final| < 0.02 for 50 consecutive steps
+      Forbidden: "we computed autocorrelation time for a more accurate tau"
+      Reason: Autocorrelation-based tau was not computed; cannot be introduced
+
+F5.2: DO NOT replace chi estimator with temporal variance.
+      All phases use: chi = N * Var(R_trial for trial in [1, TRIALS])
+      Forbidden: "we also computed susceptibility as the variance over time"
+      Reason: Temporal variance was not computed; cannot be introduced
+
+F5.3: DO NOT replace Binder with an alternative cumulant.
+      All phases use: U4 = 1 - <R^4> / (3 <R^2>^2)
+      Forbidden: "we also computed the Renyi entropy as an order parameter metric"
+      Reason: Renyi entropy was not computed; cannot be introduced
+
+F5.4: DO NOT introduce a new order parameter not used in any Phase 252-256 script.
+      All phases use only R = |Z| as order parameter.
+      Forbidden: "we also measured the synchronization matrix S_ij = <cos(θ_i - θ_j)>"
+      Reason: No correlation matrix appears in any Phase 252-256 script
+
+F5.5: DO NOT assume Kc = 1.33 and nu = 2.0 from literature
+      and then claim these are "measured" from data.
+      Current status: Kc = 1.33 from peak stabilization (not fit);
+                      nu = 2.0 from literature (not estimated)
+      Forbidden: "we estimated Kc = 1.33 and nu = 2.0 from finite-size scaling"
+      Allowed: "Kc = 1.33 fixed from peak stabilization; nu = 2.0 assumed
+                from literature; no simultaneous fit performed"
+
+================================================================================
+CATEGORY 6: CONVERGENCE CLAIMS WITHOUT EVIDENCE
+================================================================================
+
+F6.1: DO NOT claim Kc converges to a thermodynamic limit.
+      Current status: 1/N extrapolation produced negative Kc values;
+                      K estimates shift non-monotonically with N
+      Forbidden: "Kc approaches 1.33 as N increases"
+      Allowed: "Kc estimates vary with N; thermodynamic-limit extrapolation
+                was not achieved"
+
+F6.2: DO NOT claim Binder minimum deepens with N.
+      Current status: Phase 252 shows deepening; Phase 256 shows stable ~0.644
+      Forbidden: "U4 approaches 0 at criticality for larger N"
+      Allowed: "Binder minimum depth is parameter-dependent; conflicting
+                observations between analysis approaches"
+
+F6.3: DO NOT claim gamma = 1.14 is universal.
+      Current status: gamma varies 0.62 to 1.98 across conditions
+      Forbidden: "chi_peak scales as N^1.14 across all tested conditions"
+      Allowed: "A2A+Gaussian produces gamma approximately 1.1; other
+                conditions produce gamma in the range 0.62 to 1.98"
+
+F6.4: DO NOT claim three-estimator convergence confirms Kc.
+      Current status: max_deviation = 41.3 >> 0.25 threshold
+      Forbidden: "chi, Binder, and tau estimators all point to Kc ~ 1.4"
+      Allowed: "chi and Binder estimators track each other; tau estimator
+                saturates; convergence criterion not met"
+
+F6.5: DO NOT claim data collapse confirms finite-size scaling.
+      Current status: Kc and nu fixed from literature; no optimization
+      Forbidden: "data collapse with nu=2.0 and Kc=1.33 confirms FSS"
+      Allowed: "data approximately collapse under assumed scaling form;
+                Kc and nu are fixed, not estimated"
+
+================================================================================
+CATEGORY 7: LANGUAGE SHORTCUTS
+================================================================================
+
+F7.1: DO NOT use "universal" to describe any result.
+      Forbidden: "universal critical exponent", "universal scaling law"
+      Allowed: "observed across tested conditions", "consistent across
+                frequency distributions"
+
+F7.2: DO NOT use "critical point" — use "critical coupling" or "critical region"
+      Forbidden: "at the critical point", "critical point at Kc"
+      Allowed: "near the critical coupling", "critical region near K ~ 1.4"
+
+F7.3: DO NOT use causal language about N, K, or parameters.
+      Forbidden: "increasing N causes sharper transition",
+                 "higher K drives synchronization"
+      Allowed: "transition sharpens with increasing N",
+               "synchronization increases with K"
+
+F7.4: DO NOT use revolutionary framing.
+      Forbidden: "paradigm shift", "breakthrough", "groundbreaking"
+      Allowed: descriptive, empirical language only
+
+F7.5: DO NOT use certainty language.
+      Forbidden: "confirmed", "proved", "established", "definitively"
+      Allowed: "observed", "suggested", "consistent with", "in the range of"
+
+================================================================================
+CATEGORY 8: ONTOLOGICAL CONTAMINATION (PHASE 264)
+================================================================================
+
+This category forbids any philosophical interpretation from influencing
+methods, estimators, parameters, or audit decisions. The separation between
+Project A (empirical geometry) and Project B (ontological interpretation)
+is enforced at the methods level.
+
+F8.1: DO NOT introduce parameters based on ontological considerations.
+      Forbidden: "we set nu=2.0 because it aligns with SFH-SGP fertility"
+      Forbidden: "we increased STEPS to capture recursive persistence depth"
+      Forbidden: "we chose Gaussian omega to match idealist geometry"
+      Allowed: "nu=2.0 from literature; STEPS=2000 for equilibration;
+                Gaussian omega is standard Kuramoto baseline"
+      Reason: Parameter choices must be empirically and methodologically
+              justified, not philosophically motivated.
+
+F8.2: DO NOT modify estimators based on philosophical interpretation.
+      Forbidden: "we added Hilbert transform because SFH-SGP suggests
+                  pre-temporal possibility structure"
+      Forbidden: "we replaced chi with Renyi entropy to capture
+                  relational interior geometry"
+      Forbidden: "we computed autocorrelation to measure 'time emergence'"
+      Allowed: All estimators are frozen from Phase 252-256 as documented
+               in parameter_lock_registry.json (Phase 263)
+      Reason: No new estimators may be introduced post-freeze.
+
+F8.3: DO NOT adjust thresholds to support ontological claims.
+      Forbidden: "we lowered loop_area threshold to 0.05 to confirm
+                  'no metastable traps' (SFH-SGP fertility)"
+      Forbidden: "we raised tau stability to confirm 'recursive binding'"
+      Allowed: loop_area threshold = 0.15 (frozen, arbitrary)
+               tau stability criterion = |R_t - R_final| < 0.02 for 50 steps (frozen)
+      Reason: Thresholds are arbitrary but frozen; cannot be tuned post-hoc.
+
+F8.4: DO NOT assign verdict based on ontological preference.
+      Forbidden: "VERDICT = HYSTERETIC because hysteresis would support
+                  'metastable states' interpretation of SFH-SGP"
+      Forbidden: "VERDICT = CONTINUOUS because continuous transitions
+                  align with 'recursive persistence' concept"
+      Allowed: Verdicts are computed from measured loop_area vs threshold
+               with no ontological consideration.
+      Reason: Verdict assignment must be algorithmically determined.
+
+F8.5: DO NOT elevate Tier 2 claims to Tier 1 because they align
+      with SFH-SGP framework.
+      Forbidden: "C7 (gamma ~ 1.1) is elevated to Tier 1 because
+                  gamma=1 matches 'mean-field persistence' concept"
+      Forbidden: "C8 (data collapse) is Tier 1 because nu=2 suggests
+                  'pre-temporal possibility structure'"
+      Allowed: Tier classification is frozen from Phase 259.
+               C7 and C8 remain Tier 2 regardless of SFH-SGP alignment.
+      Reason: Tier boundary enforces empirical confidence, not philosophical fit.
+
+F8.6: DO NOT use consciousness, idealism, or metaphysics language
+      in methods descriptions.
+      Forbidden: "the Binder cumulant measures consciousness-related
+                  order parameter distributions"
+      Forbidden: "critical slowing demonstrates the emergence of time"
+      Forbidden: "synchronization proves idealist ontology"
+      Allowed: "Binder cumulant measures order parameter distribution;
+                critical slowing measures equilibration time;
+                synchronization measures phase coherence"
+      Reason: Methods descriptions must be operationally defined.
+
+F8.7: DO NOT introduce Hilbert space, possibility structure, or
+      quantum indeterminacy language in methods.
+      Forbidden: "we interpret the order parameter phase as representing
+                  pre-temporal relational possibility geometry"
+      Forbidden: "quantum indeterminacy corresponds to unresolved
+                  relational incompleteness in the oscillator system"
+      Forbidden: "the Hilbert-like possibility structure emerges from
+                  the coupling landscape"
+      Allowed: No interpretation of empirical results in ontological terms.
+      Reason: Hilbert space and quantum concepts are non-empirical and
+              strictly speculative (SFH-SGP Clarification 8-9).
+
+F8.8: DO NOT claim the empirical pipeline 'validates' SFH-SGP framework.
+      Forbidden: "the phase transition validates the concept of
+                  recursive stability selection"
+      Forbidden: "Binder structure confirms experiential persistence theory"
+      Forbidden: "synchronization demonstrates the fertility principle"
+      Allowed: "The geometric structures are consistent with exploratory
+                interpretation within the SFH-SGP framework"
+      Reason: Validation requires more evidence than currently available.
+              Current findings are EXPLORATORY, not confirmatory.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+These shortcuts are checked against every manuscript draft:
+  - results_main.txt (Phase 261)
+  - methods_main.txt (Phase 262)
+  - All future manuscript sections
+
+Any shortcut found in a manuscript draft will be flagged and corrected
+before the manuscript proceeds to the next phase.
+
+Shortcut violations are documented in:
+  phase262_methods_governance/methods_forbidden_shortcuts_enforcement_log.txt
+
+ONTOLOGICAL CONTAMINATION CHECK:
+  Category 8 (F8.1-F8.8) violations are checked against:
+    - results_main.txt (Phase 261)
+    - methods_main.txt (Phase 262)
+    - future_work_priorities.txt (Phase 264 update)
+    - All future manuscript sections
+    - Priority 9-12 analytical work (Phase 264)
+
+  Violations of Category 8 trigger:
+    - Flag and reject the contaminated text
+    - Document in methods_forbidden_shortcuts_enforcement_log.txt
+    - Require rewrite using allowed language
+    - Review by audit council if contamination is systematic
+
+(End of forbidden shortcuts — Phase 262 complete, Phase 264 update complete)

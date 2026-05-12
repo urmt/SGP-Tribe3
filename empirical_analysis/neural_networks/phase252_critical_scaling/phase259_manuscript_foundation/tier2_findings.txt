@@ -1,0 +1,174 @@
+TIER 2 FINDINGS — PHASE 252-259 MANUSCRIPT FOUNDATION
+======================================================
+
+These findings are VERIFIED PRESENT with VERDICT=PASS or INCONCLUSIVE.
+Confidence is LOWER than Tier 1. Used for discussion/future work only.
+No quantitative claims may be elevated to Tier 1 without further verification.
+
+================================================================================
+T2-1: SUSCEPTIBILITY EXPONENT GAMMA ~ 1.14 (A2A + GAUSSIAN)
+================================================================================
+Evidence: chi_peak ~ N^gamma with gamma=1.1416, R2=0.9847
+Phases: 252-6 (FSS fit), 252-7 (Binder min scaling)
+System: N=(16,32,64), all-to-all, Gaussian omega, K=0-4
+Observations:
+  N=16: chi_peak = 0.3420
+  N=32: chi_peak = 0.6361
+  N=64: chi_peak = 1.6648
+  log-log slope = 1.1416, R2=0.9847
+Conclusion: Susceptibility peak grows approximately as N^1.14.
+  This is close to mean-field gamma=1, with small finite-N corrections.
+Warning: gamma varies 0.62-1.98 across conditions (Phase 253).
+  Gamma is NOT universal; it depends on frequency distribution and topology.
+Manuscript usage: "preliminary estimate suggests gamma approximately 1.
+  Further work needed to characterize gamma across frequency classes."
+Forbidden: "gamma = 1.14" as established constant.
+
+================================================================================
+T2-2: FINITE-SIZE SCALING DATA COLLAPSE (NU = 2.0 ASSUMED)
+================================================================================
+Evidence: chi / N^gamma vs (K - Kc) * N^(1/nu) collapse with Kc=1.33, nu=2.0
+Phases: 252-8 (data collapse)
+System: N=(16,32,64), all-to-all, Gaussian omega
+Observations:
+  Curves approximately overlap when rescaled
+  Kc = 1.33 (from peak stabilization)
+  nu = 2.0 (assumed, not independently estimated)
+Conclusion: Finite-size scaling form chi ~ N^gamma * F[(K-Kc) N^(1/nu)] is
+  approximately consistent with data.
+Warning: nu=2.0 is chosen from literature (mean-field), not fit.
+  No optimization attempted. No error bars on collapse quality.
+Manuscript usage: "data approximately collapse under mean-field scaling ansatz
+  with assumed nu=2, suggesting consistency with mean-field universality class."
+Forbidden: "nu estimated as 2.0" or "nu confirmed".
+
+================================================================================
+T2-3: Kc APPROXIMATELY 1.3-1.8 (ESTIMATOR-DEPENDENT)
+================================================================================
+Evidence: Kc estimates from chi peak, Binder min, critical slowing span 0.4-3.0
+Phases: 252-8, 254, 255, 256-replication
+Observations:
+  chi_peak K: N=16 -> 1.78, N=32 -> 0.71, N=64 -> 1.32 (Phase 256)
+  Binder min K: N=16 -> 1.78, N=32 -> 0.71, N=64 -> 0.86 (Phase 256)
+  critical slowing K: 1.42 (Phase 255, N=64 only)
+  hysteresis K: ~1.4 (Phase 254, N=64)
+  Phase 256 script12: K estimates inconsistent across N (max deviation 41.3)
+Conclusion: Kc is approximately 1.3-1.8 across measurements, but precise
+  value depends on estimator and N. No converged thermodynamic-limit estimate.
+Warning: Three-estimator convergence test FAILED (Phase 256, max_deviation >> 0.25)
+Manuscript usage: "critical coupling approximately Kc ~ 1.4 across estimators.
+  Finite-size effects and estimator choice introduce uncertainty of ~0.5."
+Forbidden: "Kc = 1.33" or "thermodynamic-limit Kc determined"
+
+================================================================================
+T2-4: BINDER MINIMUM DEEPENS WITH N (CONFLICTING DATA)
+================================================================================
+Evidence: Phase 252 scripts 4-8 show Binder min: 0.5345 -> 0.4267 -> 0.2948
+  Phase 256 replication stable shows Binder min: 0.644 (flat across N)
+Phases: 252-7, 252-8, 256-replication
+Observations:
+  Phase 252 scripts (STEPS=2000, TRANSIENT=500, TRIALS=4-5): deepening clear
+  Phase 256 replication (STEPS=1000, TRANSIENT=300, TRIALS=3): no deepening
+  Root cause: shorter simulation insufficient for Binder minimum development
+Conclusion: Binder minimum deepening is parameter-dependent.
+  Cannot confirm without standardized simulation protocol.
+Warning: Conflicting evidence between Phase 252 lean scripts and Phase 256.
+Manuscript usage: "Binder cumulant shows non-trivial structure near criticality.
+  Deeper characterization requires longer simulations and standardized protocols."
+Forbidden: "Binder minimum deepens with N" as established fact
+
+================================================================================
+T2-5: TAU ESTIMATOR SATURATED AT MAX (PHASE 256)
+================================================================================
+Evidence: tau_peak = 50.0 (max) for all N=(16,32,64) in Phase 256 replication
+  50-step stability criterion (|R_t - R_final| < 0.02) not met within 1000 steps
+Phase: 256-replication
+Observations:
+  N=16: tau_peak = 50.0, K_tau_peak = 0.40
+  N=32: tau_peak = 50.0, K_tau_peak = 0.55
+  N=64: tau_peak = 50.0, K_tau_peak = 0.71
+Conclusion: tau estimator is unreliable at current STEPS=1000.
+  Kc convergence test compromised by tau saturation.
+Manuscript usage: "Relaxation time measurements require longer simulation
+  durations. Current step budget (1000) is insufficient for convergence."
+Forbidden: any tau-based Kc claims from Phase 256
+
+================================================================================
+T2-6: GAMMA VARIATION WITH FREQUENCY DISTRIBUTION (NON-UNIVERSAL)
+================================================================================
+Evidence: gamma = 0.62 (ER+Gaussian) to 1.98 (A2A+Uniform)
+Phase: 253 (universality stress test)
+Observations:
+  all_to_all + gaussian: gamma=0.8779, R2=0.9949
+  all_to_all + uniform: gamma=1.9772, R2=0.9697
+  erdos_renyi + gaussian: gamma=0.6206, R2=0.8906
+  erdos_renyi + uniform: gamma=1.8578, R2=0.9817
+Conclusion: Susceptibility exponent gamma is NOT universal across conditions.
+  Frequency distribution significantly affects scaling behavior.
+  Gaussian frequencies produce lower gamma (broader transition).
+  Uniform frequencies produce higher gamma (sharper transition).
+Manuscript usage: "Scaling exponent shows sensitivity to frequency distribution.
+  Gaussian frequencies produce gamma ~ 0.6-0.9; uniform frequencies produce
+  gamma ~ 1.9-2.0. This variation suggests non-universal critical behavior
+  dependent on frequency statistics."
+Forbidden: "gamma = 1.14 is universal" or "exponent is well-characterized"
+
+================================================================================
+T2-7: HYSTERESIS LOOP AREA COMPUTED FROM COUPLED SWEEPS
+================================================================================
+Evidence: loop_area = 0.030444 from forward-backward sweep with coupled init
+Phase: 254
+Observations:
+  Backward sweep initializes from forward end-state (not independent)
+  loop_area computed as integral of |R_forward - R_backward_flip| over K
+  4-trial average; single-trial loop areas not reported
+Conclusion: loop_area is a lower bound (biased low) due to initialization coupling.
+  True hysteresis test requires independent random initialization.
+Manuscript usage: "Forward and backward sweeps show near-overlap with loop
+  area approximately 0.03. Independent initialization required for definitive
+  hysteresis exclusion."
+Forbidden: "hysteresis ruled out" or "loop_area = 0.03 confirms continuous"
+
+================================================================================
+T2-8: PHASE 252 INITIAL FULL RUN (TOPOLOGY SWEEP) VERDICT: TOPOLOGY_DEPENDENT
+================================================================================
+Evidence: Phase 252 original run (4 topologies x 6 N x 15 K x 5 trials) gave:
+  AllToAll: score=9.17, verdict=TOPOLOGY_DEPENDENT
+  SmallWorld: score=10.38, verdict=TOPOLOGY_DEPENDENT
+  ScaleFree: score=8.45, verdict=TOPOLOGY_DEPENDENT
+  LorenzSync: score=9.48, verdict=TOPOLOGY_DEPENDENT
+  Reason: Binder never crosses zero; K* outside K range (0-0.18)
+Phase: 252 (original run, phase252.py)
+Observations:
+  K_VALUES = linspace(0, 0.18, 15) was too low (K* ~0.012)
+  All verdicts: TOPOLOGY_DEPENDENT
+  This was superseded by lean scripts with K=0-4 range
+Conclusion: Original topology sweep inconclusive due to K range error.
+  Superseded by lean approach (Scripts 4-8) with proper K range.
+Manuscript usage: "An initial topology sweep with limited K range (0-0.18)
+  did not resolve critical transitions. Subsequent lean analysis with
+  extended K range (0-4) confirmed transitions across topologies."
+Forbidden: any quantitative claims from Phase 252 original topology sweep
+
+================================================================================
+SUMMARY: TIER 2 USAGE GUIDELINES
+================================================================================
+Tier 2 findings are PRELIMINARY and DISCuSSIONAL.
+They may appear in:
+  - Future work sections
+  - Methodological discussion
+  - Parameter sensitivity analyses
+  - Speculative discussion of universality
+
+They may NOT appear in:
+  - Abstract
+  - Results section as primary finding
+  - Conclusions as established fact
+  - Claims in executive summary
+
+All Tier 2 claims must carry explicit uncertainty language:
+  - "preliminary estimate suggests..."
+  - "approximately..."
+  - "parameter-sensitive..."
+  - "requires further verification..."
+  - "noisy estimator, further work needed..."

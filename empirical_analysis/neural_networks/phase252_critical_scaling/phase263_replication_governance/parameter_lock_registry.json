@@ -1,0 +1,251 @@
+{
+  "parameter_lock_registry": {
+    "description": "Frozen parameters for all future datasets in the replication pipeline. These parameters MUST NOT be modified for any external dataset. Any modification requires a new Phase entry and explicit documentation.",
+    "frozen_date": "2025-05-13",
+    "frozen_phases": ["252", "253", "254", "255", "256"],
+    "governance_file": "phase263_replication_governance/parameter_lock_registry.json",
+    "parameters": {
+      "rng": {
+        "algorithm": {
+          "value": "numpy.default_rng",
+          "locked": true,
+          "phase_origin": "all phases",
+          "forbidden_alternative": "random.random(), np.random.rand(), legacy RNG"
+        },
+        "seed": {
+          "value": "42 (primary); 0, 100, 1000 (replication series)",
+          "locked": true,
+          "phase_origin": "all phases",
+          "rule": "Seed 42 is the primary. Replication studies may add seeds 0, 100, 1000 but seed 42 must always be run."
+        },
+        "initialization": {
+          "theta0_distribution": {
+            "value": "uniform",
+            "range": "[0, 2*pi)",
+            "locked": true,
+            "phase_origin": "all phases"
+          },
+          "omega_distribution": {
+            "value": "distribution-dependent (per dataset)",
+            "locked": false,
+            "note": "Frequency distribution may vary by dataset; all other RNG rules are fixed"
+          }
+        }
+      },
+      "simulation": {
+        "integrator": {
+          "value": "Euler-Maruyama (first-order)",
+          "locked": true,
+          "phase_origin": "all phases",
+          "forbidden_alternative": "Runge-Kutta 4th order (RK4) — different integrator is a separate experiment, not a replication"
+        },
+        "timestep": {
+          "value": "dt = 0.01",
+          "locked": true,
+          "phase_origin": "all phases"
+        },
+        "steps": {
+          "value": "500 minimum; 1000 recommended; 2000 preferred",
+          "locked": false,
+          "note": "STEPS is variable by dataset but must be reported; STEPS < 500 triggers INCONCLUSIVE flag"
+        },
+        "transient": {
+          "value": "transient must be reported; 300 minimum recommended",
+          "locked": false,
+          "note": "TRANSIENT is variable but must be documented; no 'auto-detect' transient without documentation"
+        },
+        "trials": {
+          "value": "4 minimum",
+          "locked": true,
+          "phase_origin": "all phases (except phase252_minimal_transition_test.py)",
+          "rule": "All estimators (chi, Binder, tau) require minimum 4 trials; single-trial datasets are flagged INCONCLUSIVE"
+        }
+      },
+      "model": {
+        "coupling_form": {
+          "value": "mean-field Kuramoto: dθ_i/dt = ω_i - (K/N) Σ_j sin(θ_i - θ_j)",
+          "locked": true,
+          "phase_origin": "all phases",
+          "forbidden_variant": "any coupling form that is not mean-field (e.g., Kuramoto-Sakaguchi with phase shift)"
+        },
+        "order_parameter": {
+          "value": "R = |Z| where Z = (1/N) Σ_j exp(i θ_j)",
+          "locked": true,
+          "phase_origin": "all phases",
+          "forbidden_variant": "correlation matrices, Hilbert transforms, FFT of trajectories, alternative order parameters"
+        },
+        "R_window": {
+          "value": "mean over last 20% of simulation steps [TRANSIENT:STEPS]",
+          "locked": true,
+          "phase_origin": "all phases",
+          "rule": "R is the temporal mean over the measurement window; no temporal optimization (e.g., running mean) permitted"
+        },
+        "K_range": {
+          "value": "K from 0 to minimum 3.0; recommended 0 to 4.0",
+          "locked": false,
+          "note": "K range may vary but must be reported; K range < 0 to 3.0 triggers INCONCLUSIVE flag"
+        },
+        "K_resolution": {
+          "value": "minimum 15 K values",
+          "locked": true,
+          "rule": "Fewer than 15 K points triggers FAIL on F1 criterion"
+        }
+      },
+      "estimators": {
+        "chi": {
+          "definition": {
+            "value": "chi(K,N) = N * Var(R_trial for trial in [1, TRIALS])",
+            "locked": true,
+            "phase_origin": "phase252_script4.py to phase252_script8.py, phase253_script9.py"
+          },
+          "note": "Trial variance only (not temporal variance); TRIALS = 4 minimum",
+          "forbidden_variant": "temporal variance of R(t) within a single trial"
+        },
+        "chi_peak": {
+          "identification": {
+            "value": "maximum chi(K) across all K values",
+            "locked": true,
+            "phase_origin": "all phases"
+          },
+          "note": "No automated peak-finding algorithm; visual or manual identification only"
+        },
+        "gamma": {
+          "definition": {
+            "value": "log-log regression: log(chi_peak) = gamma * log(N) + const",
+            "locked": true,
+            "phase_origin": "phase252_script6.py, phase252_script7.py, phase252_script8.py"
+          },
+          "note": "Minimum 3 N values required; R2 reported; no error bars"
+        },
+        "binder": {
+          "definition": {
+            "value": "U4(K,N) = 1 - <R^4> / (3 <R^2>^2)",
+            "locked": true,
+            "phase_origin": "phase252_binder_test.py, all scripts"
+          },
+          "note": "Computed from trial means; minimum 4 trials; parameter-sensitive (STEPS-dependent)",
+          "forbidden_variant": "Renyi entropy, correlation matrix eigenvalues, any alternative cumulant"
+        },
+        "binder_min": {
+          "identification": {
+            "value": "minimum U4(K) across all K values",
+            "locked": true,
+            "phase_origin": "all phases"
+          },
+          "note": "No automated peak-finding; visual or manual identification only"
+        },
+        "tau": {
+          "definition": {
+            "value": "first t where R_t >= threshold * R_final; threshold = 0.90 * mean(last 50 steps)",
+            "locked": true,
+            "phase_origin": "phase255_script11.py, phase256_replication_stable.py"
+          },
+          "note": "NOT autocorrelation time; 90% threshold is arbitrary",
+          "forbidden_variant": "autocorrelation time (not computed in any Phase 252-256 script)"
+        },
+        "tau_stability": {
+          "criterion": {
+            "value": "|R_t - R_final| < 0.02 for 50 consecutive steps",
+            "locked": true,
+            "phase_origin": "phase256_replication_stable.py"
+          },
+          "max_tau": {
+            "value": "50 steps (cap)",
+            "locked": true,
+            "phase_origin": "phase256_replication_stable.py"
+          },
+          "note": "tau saturates at 50 when stability criterion not met within STEPS; this is a known limitation"
+        },
+        "hysteresis_loop_area": {
+          "definition": {
+            "value": "Σ |R_f(K_i) - R_b(K_i)| * ΔK (trapezoidal integration)",
+            "locked": true,
+            "phase_origin": "phase254_script10.py"
+          },
+          "threshold": {
+            "value": "0.15",
+            "locked": true,
+            "phase_origin": "phase254_script10.py"
+          },
+          "note": "Threshold is ARBITRARY with no theoretical basis; threshold < 0.15 -> CONTINUOUS; threshold >= 0.15 -> HYSTERETIC"
+        },
+        "hysteresis_init": {
+          "forward": {
+            "value": "random theta ~ Uniform[0, 2π]",
+            "locked": true,
+            "phase_origin": "phase254_script10.py"
+          },
+          "backward": {
+            "value": "final theta from forward sweep (COUPLED — known limitation)",
+            "locked": true,
+            "phase_origin": "phase254_script10.py"
+          },
+          "note": "Backward sweep is NOT independently initialized; this is a documented limitation, not a parameter to 'fix'"
+        }
+      },
+      "topology": {
+        "all_to_all": {
+          "value": "mean-field coupling: dθ_i/dt = ω_i - (K/N) Σ_j sin(θ_i - θ_j)",
+          "locked": true,
+          "phase_origin": "all phases"
+        },
+        "erdos_renyi": {
+          "value": "adjacency matrix A_ij ~ Bernoulli(p); dθ_i/dt = ω_i - (K/N) Σ_j A_ij sin(θ_i - θ_j)",
+          "locked": true,
+          "phase_origin": "phase253_script9.py",
+          "parameter_p": {
+            "value": "p = 0.25 (Phase 253); other p values permitted",
+            "locked": false
+          },
+          "coupling_scaling": {
+            "value": "K direct (not normalized by average degree in Phase 253)",
+            "locked": false,
+            "note": "Phase 253 used K direct; alternative scaling is a separate experiment"
+          }
+        },
+        "scale_free": {
+          "value": "Barabási-Albert preferential attachment",
+          "locked": true,
+          "note": "Not tested in Phase 253; may be tested in future datasets"
+        },
+        "small_world": {
+          "value": "Watts-Strogatz model",
+          "locked": true,
+          "note": "Not tested in Phase 253; may be tested in future datasets"
+        }
+      },
+      "fss_assumptions": {
+        "Kc": {
+          "value": "Kc = 1.33 from peak stabilization (Phase 252-8)",
+          "locked": true,
+          "note": "NOT estimated from fit; ASSUMED from literature and peak location"
+        },
+        "nu": {
+          "value": "nu = 2.0 from literature (not estimated from data)",
+          "locked": true,
+          "note": "nu assumed, not fitted; no optimization attempted in Phase 252-8"
+        },
+        "optimization": {
+          "value": "none",
+          "locked": true,
+          "phase_origin": "phase252_script8.py",
+          "note": "No least-squares collapse optimization performed; RMS deviation not computed"
+        }
+      }
+    },
+    "summary": {
+      "total_locked_parameters": 24,
+      "total_variable_parameters": 6,
+      "forbidden_actions": [
+        "Introduce new order parameters (S, m2, correlation matrices, Hilbert transforms, FFT)",
+        "Replace tau with autocorrelation time (not computed in Phase 252-256)",
+        "Replace chi with temporal variance (not computed in Phase 252-256)",
+        "Replace Binder with alternative cumulant (not computed in Phase 252-256)",
+        "Use RK4 integrator (Euler-Maruyama is locked)",
+        "Adjust loop_area threshold from 0.15 (arbitrary but frozen)",
+        "Change RNG seed to target specific outcomes",
+        "Retune K range, N, or STEPS to match Phase 252-256 results"
+      ]
+    }
+  }
+}

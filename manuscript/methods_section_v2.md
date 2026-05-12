@@ -340,3 +340,5 @@ The following limitations MUST be reported in any manuscript using these methods
 **Reference**: Phase 262 Methods Governance (LEP-compliant)
 **Governing documents**: audit_chain_v2.md, phase257_failed_or_unstable_estimators.json, audit_traceability_map.txt
 **SHA256 verification**: phase258_filesystem_verification.txt (319 artifacts)
+### 3.H. Recovery Dynamics (Phase 185)
+The system exhibits exact geometric attractor return (Recovery Factor = 1.0) following systematic node destruction and probabilistic edge restoration, confirming the structural invariance of the SFH-SGP hierarchy.

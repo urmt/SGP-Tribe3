@@ -1,0 +1,301 @@
+REPRODUCIBILITY CHAIN — PHASE 262
+==================================
+
+This document maps every script to its outputs, audits, and manuscript
+sections. Every artifact in the manuscript has a traceable provenance chain.
+
+FORMAT:
+  script.py -> [figures] -> [audits] -> [manuscript sections]
+
+================================================================================
+PHASE 252 SCRIPTS
+================================================================================
+
+phase252_minimal_transition_test.py
+  -> R_vs_K.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT (phase257_audit_package)
+  -> Tier 1 Evidence: C1 (Transition exists)
+  -> Manuscript: Section 3.1 (Transition Geometry)
+  -> Limitations: N=128 only; single trial; all-to-all
+
+phase252_finite_size_test.py
+  -> finite_size_transition.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C1 (Transition exists), C3 (Finite-size sharpening)
+  -> Manuscript: Section 3.1 (Transition Geometry), Section 3.2 (Finite-Size Sharpening)
+  -> Limitations: N=16/32/64/128; qualitative sharpening only
+
+phase252_susceptibility_test.py
+  -> susceptibility_curves.png, order_parameter_curves.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening support)
+  -> Manuscript: Section 3.2 (Finite-Size Sharpening)
+  -> Note: susceptibility not used as primary evidence; chi used from lean scripts
+
+phase252_binder_test.py
+  -> binder_test_crossing.png, binder_test_order_parameter.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C6 (Binder structure)
+  -> Manuscript: Section 3.3 (Binder Cumulant)
+  -> Conflict: Phase 256 shows no Binder deepening; sensitivity acknowledged
+
+phase252_script4.py
+  -> phase252_script4_order_parameter.png, phase252_script4_binder.png,
+     phase252_script4_susceptibility.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening), C6 (Binder)
+  -> Manuscript: Section 3.2, Section 3.3
+  -> Note: STEPS=2000, TRANSIENT=500; more complete than Phase 256
+
+phase252_script5.py
+  -> phase252_script5_order_parameter.png, phase252_script5_binder.png,
+     phase252_script5_susceptibility.png, phase252_script5_fss.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening), C6 (Binder)
+  -> Manuscript: Section 3.2, Section 3.3
+
+phase252_script6.py
+  -> phase252_script6_order_parameter.png, phase252_script6_binder.png,
+     phase252_script6_susceptibility.png, phase252_script6_fss.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening), C7 (gamma estimate)
+  -> Manuscript: Section 3.2, Section 3.8 (Preliminary Scaling)
+  -> Note: gamma=1.14 from this script; Tier 2 only
+
+phase252_script7.py
+  -> phase252_script7_order_parameter.png, phase252_script7_binder.png,
+     phase252_script7_susceptibility.png, phase252_script7_fss.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening), C7 (gamma estimate)
+  -> Manuscript: Section 3.2, Section 3.8 (Preliminary Scaling)
+
+phase252_script8.py
+  -> phase252_script8_order_parameter.png, phase252_script8_binder.png,
+     phase252_script8_susceptibility.png, phase252_script8_fss.png,
+     phase252_script8_data_collapse.png, phase252_script8_binder_min_scaling.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C3 (Sharpening), C6 (Binder)
+  -> Tier 2 Evidence: C7 (gamma), C8 (data collapse), C9 (Kc ~ 1.33)
+  -> Manuscript: Section 3.2, Section 3.3, Section 3.8
+  -> Note: Kc=1.33 from this script; Tier 2 only
+
+phase252.py (original)
+  -> outputs/phase252_*.csv, outputs/phase252_*.json, outputs/phase252_combined_*.csv
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Status: SUPERSEDED — K* placed outside K_VALUES range; all verdicts TOPOLOGY_DEPENDENT
+  -> Manuscript: NOT USED
+  -> Note: Hard reset performed after this script; replaced with 9 lean scripts
+
+================================================================================
+PHASE 253 SCRIPTS
+================================================================================
+
+phase253_script9.py
+  -> phase253_script9_universality.png
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C5 (Topology + frequency robustness)
+  -> Tier 2 Evidence: C10 (gamma varies by frequency)
+  -> Manuscript: Section 3.6 (Topology Robustness), Section 3.7 (Frequency Robustness)
+  -> Limitations: ER p=0.25 only; 4 conditions; Gaussian+Uniform only
+
+================================================================================
+PHASE 254 SCRIPTS
+================================================================================
+
+phase254_script10.py
+  -> phase254_script10_hysteresis.png, phase254_script10_gap.png,
+     phase254_script10_summary.txt
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C2 (No hysteresis)
+  -> Manuscript: Section 3.4 (Hysteresis Analysis)
+  -> Limitations: N=64 only; coupled init; threshold 0.15 arbitrary
+  -> Verdict: CONTINUOUS_TRANSITION (loop_area=0.0304, max_gap=0.0338)
+
+================================================================================
+PHASE 255 SCRIPTS
+================================================================================
+
+phase255_script11.py
+  -> phase255_script11_critical_slowing.png, phase255_script11_summary.txt
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C4 (Critical slowing)
+  -> Manuscript: Section 3.5 (Critical Slowing)
+  -> Limitations: N=64 only; tau via 90% threshold; K_peak=1.4222
+  -> Verdict: CRITICAL_SLOWING_CONFIRMED (peak_ratio=5.8903)
+
+================================================================================
+PHASE 256 SCRIPTS
+================================================================================
+
+phase256_replication_stable.py
+  -> phase256_replication_order_N16.png, phase256_replication_order_N32.png,
+     phase256_replication_order_N64.png, phase256_replication_chi_N16.png,
+     phase256_replication_chi_N32.png, phase256_replication_chi_N64.png,
+     phase256_replication_binder_N16.png, phase256_replication_binder_N32.png,
+     phase256_replication_binder_N64.png, phase256_replication_tau_N16.png,
+     phase256_replication_tau_N32.png, phase256_replication_tau_N64.png,
+     phase256_replication_summary.txt
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: C1 (confirms), C3 (confirms), C6 (conflicts with Phase 252)
+  -> Tier 2 Evidence: C4 (inconclusive — tau saturated)
+  -> Manuscript: Section 3.1, Section 3.2, Section 3.3
+  -> Conflict: Binder min ~0.644 (no deepening) vs Phase 252 ~0.29 (deepening)
+  -> Tau: SATURATED at 50.0 for all N
+
+phase256_script12.py
+  -> phase256_script12_R_vs_K.png, phase256_script12_chi_peak_K.png,
+     phase256_script12_binder_min_K.png, phase256_script12_extrapolation.png,
+     phase256_script12_Kc_summary.txt
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Audit: VERIFIED_PRESENT
+  -> Tier 1 Evidence: NONE (Phase 256 script 12 is Kc convergence attempt)
+  -> Tier 2 Evidence: C9 (Kc ~ 1.4 — FAILED)
+  -> Manuscript: Section 3.8 (Preliminary Scaling) — Kc estimates only
+  -> Verdict: CONVERGENCE FAILED (max_deviation=41.3 >> 0.25)
+  -> Note: tau saturated; 1/N extrapolation gives negative Kc values
+
+================================================================================
+PHASE 257 AUDIT SCRIPTS
+================================================================================
+
+phase257_audit_package/phase257_audit.py (implicit — runs all audits)
+  -> phase257_master_summary.txt
+  -> phase257_claim_registry.json
+  -> phase257_failed_or_unstable_estimators.json
+  -> Audit verdict for each figure
+  -> SHA256: verified in phase258_filesystem_verification.txt
+  -> Status: AUDIT COMPLETE; all 319 artifacts verified
+
+================================================================================
+PHASE 258 VERIFICATION SCRIPTS
+================================================================================
+
+phase258_filesystem_verification.txt (verification log)
+  -> SHA256 hashes for all 319 artifacts
+  -> STATUS: VERIFIED_PRESENT
+  -> All artifacts confirmed in filesystem
+
+================================================================================
+PHASE 259 MANUSCRIPT FOUNDATION SCRIPTS
+================================================================================
+
+phase259_manuscript_foundation/
+  -> audit_traceability_map.txt (script -> figure -> claim -> section)
+  -> manuscript_claim_boundaries.json (tier assignments, language rules)
+  -> figure_manifest.csv (all figures, hashes, claims)
+  -> tier1_findings.txt (C1-C6 evidence summary)
+  -> tier2_findings.txt (C7-C10 evidence summary)
+  -> future_work_priorities.txt (P1-P4 priorities)
+  -> Audit: COMPLETE
+
+================================================================================
+MANUSCRIPT SECTION MAPPING
+================================================================================
+
+Section 3.1 — Transition Geometry
+  -> phase252_minimal_transition_test.py (R_vs_K.png)
+  -> phase252_finite_size_test.py (finite_size_transition.png)
+  -> Supporting: Tier 1 C1
+
+Section 3.2 — Finite-Size Sharpening
+  -> phase252_finite_size_test.py (finite_size_transition.png)
+  -> phase252_script4.py (phase252_script4_order_parameter.png)
+  -> phase252_script8.py (phase252_script8_order_parameter.png)
+  -> Supporting: Tier 1 C3
+
+Section 3.3 — Binder Cumulant Structure
+  -> phase252_binder_test.py (binder_test_crossing.png)
+  -> phase252_script8.py (phase252_script8_binder.png)
+  -> phase256_replication_stable.py (phase256_replication_binder_*.png)
+  -> Supporting: Tier 1 C6 (with conflict caveat)
+  -> Conflict: Phase 256 Binder stable at ~0.644; Phase 252 Binder deepens
+
+Section 3.4 — Hysteresis Analysis
+  -> phase254_script10.py (phase254_script10_hysteresis.png)
+  -> Supporting: Tier 1 C2
+  -> Limitations: N=64; coupled init; arbitrary threshold
+
+Section 3.5 — Critical Slowing
+  -> phase255_script11.py (phase255_script11_critical_slowing.png)
+  -> Supporting: Tier 1 C4
+  -> Limitations: N=64; tau via 90% threshold (not autocorrelation)
+  -> Phase 256 tau saturation NOT used in this section
+
+Section 3.6 — Topology Robustness
+  -> phase253_script9.py (phase253_script9_universality.png)
+  -> Supporting: Tier 1 C5 (topology component)
+  -> Limitations: ER p=0.25 only; 2 topologies tested
+
+Section 3.7 — Frequency Robustness
+  -> phase253_script9.py (phase253_script9_universality.png)
+  -> Supporting: Tier 1 C5 (frequency component), Tier 2 C10
+  -> Limitations: Gaussian+Uniform only; gamma varies 0.62-1.98
+
+Section 3.8 — Preliminary Scaling Observations (Tier 2)
+  -> phase252_script6.py, phase252_script7.py, phase252_script8.py
+     (gamma ~ 1.1, data collapse Kc=1.33, nu=2 assumed)
+  -> phase256_script12.py (Kc ~ 1.4, convergence FAILED)
+  -> Supporting: Tier 2 C7, C8, C9, C10
+  -> No Tier 1 claims in this section
+
+================================================================================
+REPRODUCIBILITY REQUIREMENTS
+================================================================================
+
+To reproduce all results:
+  1. Set RNG seed to 42 (numpy default_rng)
+  2. Run phase252_minimal_transition_test.py -> produces R_vs_K.png
+  3. Run phase252_finite_size_test.py -> produces finite_size_transition.png
+  4. Run phase252_script4.py -> produces 3 figures
+  5. Run phase252_script5.py -> produces 4 figures
+  6. Run phase252_script6.py -> produces 4 figures
+  7. Run phase252_script7.py -> produces 4 figures
+  8. Run phase252_script8.py -> produces 6 figures
+  9. Run phase253_script9.py -> produces phase253_script9_universality.png
+  10. Run phase254_script10.py -> produces 3 figures + summary
+  11. Run phase255_script11.py -> produces critical_slowing.png + summary
+  12. Run phase256_replication_stable.py -> produces 13 figures + summary
+  13. Run phase256_script12.py -> produces 5 figures + summary
+
+All figures verified in:
+  phase258_filesystem_verification.txt
+
+All audits completed in:
+  phase257_audit_package/phase257_master_summary.txt
+
+All claims verified in:
+  phase259_manuscript_foundation/audit_traceability_map.txt
+
+No script output is used in the manuscript unless it appears in the above
+three files.
+
+================================================================================
+PROVENANCE STATEMENT
+================================================================================
+
+All 319 artifacts in this analysis chain are:
+  - Physically present in the filesystem
+  - SHA256-verified in phase258_filesystem_verification.txt
+  - Audited for content in phase257_audit_package/
+  - Traced to manuscript claims in phase259_manuscript_foundation/
+
+No artifact is used in the manuscript that is not in the above chain.
+No method is introduced that is not documented in this chain.
+No claim is made that cannot be traced to a verified figure.
+
+The entire reproducibility chain is frozen at Phase 262.
+No new analysis, results, or claims will be introduced.

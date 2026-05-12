@@ -1,0 +1,48 @@
+{
+  "phase": 252,
+  "topology": "AllToAll",
+  "verdict": "TRUE_CRITICAL_PHASE_TRANSITION",
+  "confidence": "HIGH",
+  "evidence": {
+    "n_sizes": 6,
+    "best_model": "log",
+    "best_r2": 0.9999999999997689,
+    "binder_crossing": 0.013262806596204066,
+    "has_chi_div": true,
+    "has_binder_crossing": true,
+    "has_scaling": true,
+    "nu": null,
+    "K_inf": null
+  },
+  "best_scaling": {
+    "model": "log",
+    "params": {
+      "a": 1.3676156988613308e-17,
+      "b": 0.17999999999999994,
+      "r2": 0.9999999999997689,
+      "aic": -272.31021115928525,
+      "bic": -272.72669222082914
+    },
+    "r2": 0.9999999999997689
+  },
+  "binder_crossing": 0.013262806596204066,
+  "parameters": {
+    "sizes": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "K_range": [
+      0.0,
+      0.18
+    ],
+    "N_K": 15,
+    "STEPS": 800,
+    "dt": 0.05,
+    "threshold": 0.25,
+    "metric_window": 300
+  }
+}

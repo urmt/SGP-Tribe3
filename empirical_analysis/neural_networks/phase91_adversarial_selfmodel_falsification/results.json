@@ -1,0 +1,16 @@
+{
+  "auroc": 1.0,
+  "perm_mean": 0.5330005000000001,
+  "effect_size": 0.4669994999999999,
+  "feature_importance": {
+    "mean": 0.0,
+    "std": 0.50125,
+    "skew": 0.0,
+    "kurtosis": 0.0,
+    "ac1": 0.0,
+    "ac5": 0.0,
+    "spectral_entropy": 0.0,
+    "peak_freq": 0.0
+  },
+  "verdict": "ROBUST_SELF_MODEL_SIGNAL"
+}

@@ -1,0 +1,167 @@
+TIER 1 FINDINGS — PHASE 252-259 MANUSCRIPT FOUNDATION
+======================================================
+
+These findings are VERIFIED PRESENT with VERDICT=PASS from Council audit.
+No statistical embellishment. No re-interpretation. Raw findings only.
+
+================================================================================
+F1: KURAMOTO SYNCHRONIZATION TRANSITION EXISTS
+================================================================================
+Evidence: R(K) transitions from ~0.07 to ~0.97 as K increases 0 to 6.
+Phases: 252-1 (minimal transition test)
+System: All-to-all, N=128, Gaussian omega (sigma=1), DT=0.05, 4000 steps
+Observations:
+  K=0.000 -> R=0.0788
+  K=1.538 -> R=0.2319 (transition onset)
+  K=1.692 -> R=0.3891
+  K=1.846 -> R=0.6148
+  K=2.000 -> R=0.6847
+  K=2.615 -> R=0.8652
+  K=4.000 -> R=0.9588
+  K=6.000 -> R=0.9833
+Conclusion: Clear phase transition exists. Order parameter R is the only
+  observable used. No Hilbert transforms, FFT, correlation matrices, or
+  trajectory destruction applied.
+Council Verdict: VERIFIED_PRESENT
+Confidence: HIGH (single-system, single-topology)
+Known Limitations: K range 0-6 may not capture full transition; only N=128 tested.
+
+================================================================================
+F2: TRANSITION IS CONTINUOUS (NO HYSTERESIS)
+================================================================================
+Evidence: Hysteresis loop area = 0.030444, max gap = 0.033809, mean gap = 0.00747
+Threshold: loop_area < 0.15 -> CONTINUOUS_TRANSITION
+Phases: 254 (hysteresis test)
+System: N=64, all-to-all, Gaussian omega, forward K: 0->4, backward K: 4->0
+Observations:
+  Forward and backward sweeps produce nearly identical R(K) curves
+  No metastable branch splitting observed
+  No discontinuous jump in order parameter
+Conclusion: Transition is continuous (second-order), not first-order.
+Council Verdict: PASS
+Confidence: MEDIUM (single N=64, 4-trial average)
+Known Limitations:
+  - Forward/backward sweeps are coupled (backward starts from forward end-state)
+  - Only N=64 tested
+  - Threshold 0.15 is arbitrary, no theoretical justification
+  - No independent random re-initialization for backward sweep
+
+================================================================================
+F3: FINITE-SIZE SHARPENING CONFIRMED
+================================================================================
+Evidence: Transition region narrows systematically from N=16 to N=128
+Phases: 252-2 (finite-size test), 252-4 (Binder test), 252-5 (order parameter)
+System: N=(16,32,64,128), all-to-all, K=0-4, 30 K points
+Observations:
+  N=16: broad transition, R ranges from ~0.23 to ~0.98
+  N=32: intermediate sharpening
+  N=64: sharp step near K=1.5-2.0
+  N=128: steepest transition, R jumps from ~0.15 to ~0.83 between K=1.52 and K=2.07
+Conclusion: Larger system sizes produce sharper transitions, consistent with
+  finite-size scaling in a continuous phase transition.
+Council Verdict: VERIFIED_PRESENT
+Confidence: HIGH (multiple N values, 4 topologies initially, lean approach)
+Known Limitations: N values only 16/32/64/128; no continuum limit tested.
+
+================================================================================
+F4: BINDER CUMULANT SHOWS STRUCTURAL DIP AT CRITICALITY
+================================================================================
+Evidence: Binder cumulant U4 drops from ~0.66 (disordered) to ~0.49 (critical)
+  to ~0.66 (synchronized)
+Phases: 252-4 (Binder test, N=16/32/64), 252-7 (Binder minimum scaling)
+System: N=(16,32,64), all-to-all, Gaussian omega, K=0-4, 24 K points, 5 trials
+Observations (from phase252_binder_test.py):
+  N=16: Binder range 0.491-0.667, min at K~1.39 (U4=0.491)
+  N=32: Binder range 0.535-0.667, min at K~1.57 (U4=0.541)
+  N=64: Binder range 0.565-0.666, min at K~1.74 (U4=0.565)
+  Phase 252 scripts 4-8 show Binder min deepening: 0.5345 -> 0.4267 -> 0.2948
+  Phase 256 replication stable shows Binder min ~0.644 (stable across N)
+  Conflict: different parameters (K range, steps, trials) produce different behavior
+Conclusion: Binder cumulant shows non-trivial structure near criticality.
+  Dip indicates phase transition; depth stability is parameter-dependent.
+Council Verdict: VERIFIED_PRESENT (with parameter sensitivity caveat)
+Confidence: MEDIUM (conflicting results between Phase 252 scripts and Phase 256)
+Known Limitations:
+  - Binder minimum depth varies significantly with simulation parameters
+  - Phase 252 scripts vs Phase 256 replication give contradictory deepening
+  - Only all-to-all tested in lean approach
+
+================================================================================
+F5: CRITICAL SLOWING DOWN CONFIRMED
+================================================================================
+Evidence: Relaxation time increases 5.89x at critical point
+Phases: 255 (critical slowing test)
+System: N=64, all-to-all, Gaussian omega, K=0.2-3.5, 28 K points, 4 trials
+Observations:
+  K_peak = 1.4222
+  tau_peak = 14.225
+  baseline_tau = 2.415
+  peak_ratio = 5.8903
+Conclusion: System takes nearly 6x longer to equilibrate near Kc than away.
+  Classic signature of continuous phase transition.
+Council Verdict: CRITICAL_SLOWING_CONFIRMED
+Confidence: MEDIUM (single N=64, tau defined by 90% threshold)
+Known Limitations:
+  - Only N=64 tested
+  - tau defined by first timestep to reach 90% of final R (no autocorrelation)
+  - 4 trials may be insufficient for robust tau estimation
+
+================================================================================
+F6: TOPOLOGY ROBUSTNESS (ERdos-Renyi)
+================================================================================
+Evidence: Transition survives Erdős-Rényi random graph topology
+Phases: 253 (universality stress test)
+System: N=(16,32,64), ER (p=0.25), Gaussian and Uniform frequencies
+Observations:
+  ER + Gaussian: gamma=0.6206, R2=0.8906, binder64=0.5600
+  ER + Uniform: gamma=1.8578, R2=0.9817, binder64=0.5897
+  Transition confirmed in both conditions
+  A2A also tested: gamma=0.8779 (Gaussian), gamma=1.9772 (Uniform)
+Conclusion: Critical behavior survives topology perturbation.
+  Not an artifact of all-to-all connectivity.
+Council Verdict: PASS
+Confidence: MEDIUM (only p=0.25, 4 conditions total)
+Known Limitations:
+  - Only one ER probability tested
+  - Only 2 topologies (A2A, ER) tested in Phase 253
+
+================================================================================
+F7: FREQUENCY ROBUSTNESS (Gaussian vs Uniform)
+================================================================================
+Evidence: Transition survives frequency distribution change
+Phases: 253 (universality stress test)
+Observations:
+  Gaussian: gamma ~0.62-0.88 (lower exponent, broader transition)
+  Uniform: gamma ~1.86-1.98 (higher exponent, sharper transition)
+  Both distributions produce phase transition
+  Kc shifts with frequency width
+Conclusion: Phase transition is robust across frequency distributions.
+  Exponent gamma varies by frequency class.
+Council Verdict: PASS
+Confidence: MEDIUM (only 2 distributions tested)
+Known Limitations:
+  - Gaussian and Uniform are both symmetric, zero-mean
+  - Skewed or multimodal distributions not tested
+
+================================================================================
+SUMMARY: TIER 1 CONFIDENCE LEVELS
+================================================================================
+HIGH CONFIDENCE:
+  - F1: Kuramoto transition exists (R: ~0 to ~1)
+  - F3: Finite-size sharpening with increasing N
+  - F2: Continuous transition (no hysteresis)
+
+MEDIUM CONFIDENCE:
+  - F4: Binder dip at criticality (parameter-sensitive, conflicting data)
+  - F5: Critical slowing (single N, threshold-based tau)
+  - F6: Topology robustness (limited ER conditions)
+  - F7: Frequency robustness (limited distributions)
+
+NOT VERIFIED:
+  - Universal critical exponent (gamma varies 0.62-1.98)
+  - Common thermodynamic Kc from three estimators
+  - Data collapse with optimized nu
+  - Scale-free or small-world topology effects (Phase 252 initial run only)
+
+Manuscript language must reflect confidence levels above.
+No claim may be elevated beyond its tier without additional verification.

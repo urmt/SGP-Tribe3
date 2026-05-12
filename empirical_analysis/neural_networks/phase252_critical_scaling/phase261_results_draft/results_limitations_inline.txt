@@ -1,0 +1,299 @@
+RESULTS — INLINE LIMITATIONS ATTACHMENT
+========================================
+
+Each figure and estimator carries its limitations directly.
+No limitations are deferred to supplementary materials or Discussion.
+
+================================================================================
+PER-FIGURE LIMITATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+R_vs_K.png (phase252_minimal_transition_test.py)
+--------------------------------------------------------------------------------
+Type: Primary transition characterization
+Limitations:
+  - N = 128 only (single system size)
+  - All-to-all topology only
+  - Single frequency distribution (Gaussian, sigma = 1)
+  - Single trial per K (no error bars; no ensemble variance)
+  - K range 0 to 6 may not capture full transition geometry
+  - Order parameter R is the only observable used
+  - No independent verification of transition classification
+Inline limitation text: "Single system size (N=128), all-to-all topology,
+  Gaussian frequencies. One trial per K value. No error estimation."
+
+--------------------------------------------------------------------------------
+finite_size_transition.png (phase252_finite_size_test.py)
+--------------------------------------------------------------------------------
+Type: Finite-size sharpening (4 system sizes)
+Limitations:
+  - N values: 16, 32, 64, 128 only (no N > 128)
+  - Single trial per (N, K) configuration
+  - No formal width quantification; sharpening is qualitative
+  - All-to-all topology only
+  - Gaussian frequencies only
+Inline limitation text: "Four system sizes (N=16,32,64,128), all-to-all.
+  Single trial per configuration. No quantitative width estimate."
+
+--------------------------------------------------------------------------------
+binder_test_crossing.png (phase252_binder_test.py)
+--------------------------------------------------------------------------------
+Type: Binder structure
+Limitations:
+  - 5 trials per (N, K); Binder variance not reported
+  - Binder minimum depth is parameter-sensitive
+  - Conflicting data: Phase 256 replication shows flat Binder (~0.64)
+    while this figure shows U4 reaching approximately 0.49
+  - Binder minimum location shifts with N (not converging)
+  - Short simulation (STEPS=2000) may still be insufficient for
+    full Binder minimum development
+Inline limitation text: "5 trials per configuration. Binder depth sensitive
+  to simulation parameters. Conflicting with phase256_replication
+  Binder results. Minimum location not stable across N."
+
+--------------------------------------------------------------------------------
+binder_test_order_parameter.png (phase252_binder_test.py)
+--------------------------------------------------------------------------------
+Type: Order parameter sharpening (Binder test context)
+Limitations:
+  - Same as finite_size_transition.png
+  - Secondary context within Binder section
+Inline limitation text: "Same as finite_size_transition.png limitations."
+
+--------------------------------------------------------------------------------
+phase252_script8_order_parameter.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: Order parameter sharpening (FSS context)
+Limitations:
+  - N = 16, 32, 64 only
+  - 4 trials per (N, K); mean reported
+  - STEPS = 2000, TRANSIENT = 500
+  - All-to-all, Gaussian frequencies
+Inline limitation text: "Three system sizes (N=16,32,64), 4 trials,
+  STEPS=2000."
+
+--------------------------------------------------------------------------------
+phase252_script8_susceptibility.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: Susceptibility (chi = N * Var(R_trials))
+Limitations:
+  - N = 16, 32, 64 only (3 values for chi_peak scaling)
+  - chi is computed from variance of 4 trial means (not temporal variance)
+  - chi ~ N^1.14 fit from 3-point log-log regression (low power)
+  - Gamma varies 0.62 to 1.98 across conditions (not universal)
+  - No error bars on gamma estimate
+Inline limitation text: "3-point log-log fit; gamma varies 0.62-1.98
+  across conditions. No error estimation on scaling exponent."
+
+--------------------------------------------------------------------------------
+phase252_script8_binder.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: Binder structure (FSS context)
+Limitations:
+  - Same as binder_test_crossing.png
+  - Additional: no independent Binder variance measurement
+Inline limitation text: "Same as binder_test_crossing.png limitations."
+
+--------------------------------------------------------------------------------
+phase252_script8_fss.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: FSS log-log fit
+Limitations:
+  - 3-point fit (N=16, 32, 64) only; no extrapolation power
+  - nu = 2.0 assumed from literature (not estimated from data)
+  - No optimization of data collapse quality
+  - chi_peak values from 4-trial ensemble; variance on chi_peak not computed
+  - R2 = 0.985 from regression on 3 points (inflated)
+Inline limitation text: "3-point fit; nu assumed (not estimated);
+  no collapse optimization; no error bars."
+
+--------------------------------------------------------------------------------
+phase252_script8_data_collapse.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: Finite-size scaling data collapse
+Limitations:
+  - Kc = 1.33 fixed from peak stabilization (not from fit)
+  - nu = 2.0 assumed (not estimated)
+  - No least-squares optimization of nu or Kc
+  - Collapse quality not quantified (no RMS deviation reported)
+  - Only N = 16, 32, 64; only A2A topology
+Inline limitation text: "Kc and nu fixed from literature; no
+  optimization; no collapse quality metric."
+
+--------------------------------------------------------------------------------
+phase252_script8_binder_min_scaling.png (phase252_script8.py)
+--------------------------------------------------------------------------------
+Type: Binder minimum scaling
+Limitations:
+  - Conflicting with phase256_replication Binder results
+  - Binder minimum depth parameter-sensitive (STEPS, TRANSIENT dependent)
+  - No standardized protocol for Binder measurement
+Inline limitation text: "Conflicting with phase256_replication results.
+  Parameter-sensitive. No standardized protocol."
+
+--------------------------------------------------------------------------------
+phase253_script9_universality.png (phase253_script9.py)
+--------------------------------------------------------------------------------
+Type: Universality stress test (4 conditions)
+Limitations:
+  - ER topology at p = 0.25 only; no other probabilities tested
+  - Only Gaussian and Uniform frequencies tested
+  - 4 conditions total; gamma variation suggests non-universal exponent
+  - Scale-free and small-world not in Phase 253
+  - No quantitative topology comparison (Kc shift, sharpness comparison)
+Inline limitation text: "4 conditions tested; ER p=0.25 only;
+  gamma varies 0.62-1.98 (non-universal). Scale-free and small-world
+  not included."
+
+--------------------------------------------------------------------------------
+phase254_script10_hysteresis.png (phase254_script10.py)
+--------------------------------------------------------------------------------
+Type: Hysteresis test
+Limitations:
+  - Only N = 64 tested
+  - Backward sweep initialized from forward end-state (not independent)
+  - 4-trial average; single-trial loop areas not reported
+  - Threshold 0.15 is arbitrary with no theoretical basis
+  - No metastability analysis (no waiting times, no double-well evidence)
+Inline limitation text: "N=64 only; backward initialized from forward
+  end-state; 4-trial average; threshold arbitrary."
+
+--------------------------------------------------------------------------------
+phase254_script10_gap.png (phase254_script10.py)
+--------------------------------------------------------------------------------
+Type: Sweep difference gap
+Limitations:
+  - Same as hysteresis.png limitations
+  - Gap values are at most 0.035 (small but not zero)
+Inline limitation text: "Same as phase254_script10_hysteresis.png."
+
+--------------------------------------------------------------------------------
+phase255_script11_critical_slowing.png (phase255_script11.py)
+--------------------------------------------------------------------------------
+Type: Critical slowing test
+Limitations:
+  - Only N = 64 tested
+  - tau defined by 90% threshold (not autocorrelation time)
+  - 4 trials may be insufficient for robust tau estimation
+  - K_peak = 1.42 slightly higher than other estimator Kc estimates (~1.3)
+  - No independent verification of correlation length divergence
+Inline limitation text: "N=64 only; tau via 90% threshold (not
+  autocorrelation); 4 trials; K_peak above other Kc estimates."
+
+--------------------------------------------------------------------------------
+phase256_replication_order_N16.png, _N32.png, _N64.png
+--------------------------------------------------------------------------------
+Type: Order parameter (Phase 256 replication)
+Limitations:
+  - STEPS = 1000, TRANSIENT = 300 (shorter than Phase 252 scripts)
+  - 4 trials per configuration
+  - All-to-all, Gaussian frequencies only
+  - N = 16, 32, 64 only
+Inline limitation text: "STEPS=1000, TRANSIENT=300 (shorter than
+  Phase 252 scripts); 4 trials."
+
+--------------------------------------------------------------------------------
+phase256_replication_chi_N16.png, _N32.png, _N64.png
+--------------------------------------------------------------------------------
+Type: Susceptibility (Phase 256 replication)
+Limitations:
+  - chi = N * Var(R_trials) from 4 trials
+  - chi peaks not as pronounced as in Phase 252 scripts
+  - No peak identification algorithm; raw chi plotted
+  - chi values small (max 0.115 for N=64) compared to Phase 252
+    (max 1.665 for N=64) due to shorter simulation
+Inline limitation text: "Shorter simulation (STEPS=1000) produces
+  lower chi values; peak less pronounced than Phase 252 scripts."
+
+--------------------------------------------------------------------------------
+phase256_replication_binder_N16.png, _N32.png, _N64.png
+--------------------------------------------------------------------------------
+Type: Binder (Phase 256 replication)
+Limitations:
+  - Conflicting with Phase 252 Binder results (no deepening observed)
+  - Binder min stable at approximately 0.64 across all N
+  - Suggests simulation length dependency
+  - Binder computed from 4-trial means
+Inline limitation text: "Conflicting with Phase 252 Binder results.
+  No deepening with N. STEPS=1000 may be insufficient for full
+  Binder minimum development."
+
+--------------------------------------------------------------------------------
+phase256_replication_tau_N16.png, _N32.png, _N64.png
+--------------------------------------------------------------------------------
+Type: Relaxation time (Phase 256 replication)
+Limitations:
+  - tau_peak = 50 (maximum value) for all N
+  - 50-step stability criterion not met within STEPS = 1000
+  - tau values are lower bounds (saturation artifact)
+  - No reliable K_tau_peak identification
+Inline limitation text: "TAU SATURATED at max(50). Stability
+  criterion not met. No reliable peak identification."
+
+--------------------------------------------------------------------------------
+phase256_script12_*.png (4 figures)
+--------------------------------------------------------------------------------
+Type: Kc extrapolation
+Limitations:
+  - 3-point linear fit (N=16, 32, 64) only
+  - K estimates shift non-monotonically with N (N=16: K=0.4-1.78)
+  - tau saturated; K_tau estimates unreliable
+  - Negative Kc_inf from extrapolation (unphysical)
+  - Three-estimator convergence FAILED (max_deviation >> 0.25)
+Inline limitation text: "K estimates shift with N; 3-point fits
+  unreliable; tau saturated; convergence failed."
+
+================================================================================
+PER-ESTIMATOR LIMITATIONS
+================================================================================
+
+ORDER PARAMETER R:
+  - Single scalar; no phase information
+  - No verification with alternative order parameters
+  - Computed as mean of last window (no temporal averaging optimization)
+
+SUSCEPTIBILITY chi = N * Var(R_trials):
+  - Variance of trial means (not temporal variance)
+  - 4 trials only; chi estimate has high variance
+  - chi ~ N^gamma fit from 3 points (low statistical power)
+  - gamma not universal; varies 0.62 to 1.98
+
+BINDER CUMULANT U4 = 1 - <R^4> / (3 <R^2>^2):
+  - Requires 4 trials minimum for meaningful moments
+  - Sensitive to simulation length (STEPS, TRANSIENT)
+  - No standardized measurement protocol
+  - Conflicting results between different simulation parameters
+
+RELAXATION TIME tau:
+  - 90% threshold is arbitrary
+  - STEPS = 1000 insufficient for equilibration at some K values
+  - 50-step stability criterion too strict; causes saturation
+  - No autocorrelation-based tau measurement attempted
+
+LOOP AREA (hysteresis):
+  - Threshold 0.15 is arbitrary
+  - Coupled forward/backward initialization (lower bound)
+  - 4-trial average; single-trial variance not reported
+
+================================================================================
+PER-SCALING-RESULT LIMITATIONS
+================================================================================
+
+FINITE-SIZE SHARPENING:
+  - Qualitative only; no quantitative width measure
+  - No formal finite-size scaling analysis
+
+CHI PEAK SCALING chi ~ N^gamma:
+  - Gamma approximately 1.1 for A2A + Gaussian (not universal)
+  - 3-point fit; no error bars; R2 inflated by low N
+
+DATA COLLAPSE:
+  - Kc fixed at 1.33 (not estimated)
+  - nu fixed at 2.0 (assumed from literature)
+  - No optimization; no collapse quality metric
+
+KC APPROXIMATION:
+  - Kc approximately 1.3 to 1.8 depending on estimator and N
+  - No converged thermodynamic-limit estimate
+  - Three-estimator convergence failed

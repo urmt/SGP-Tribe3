@@ -1,0 +1,492 @@
+{
+    "summary": {
+        "mean_deviation": 0.7849585002805242,
+        "max_deviation": 3.8188130791298667,
+        "min_deviation": 0.0,
+        "num_paths": 60
+    },
+    "top_deviations": [
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "relu",
+            "C": "tanh",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "relu",
+            "C": "sigmoid",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "tanh",
+            "B": "identity",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "sigmoid",
+            "B": "identity",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "tanh",
+            "B": "relu",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "sigmoid",
+            "B": "relu",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "relu",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "relu",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "relu",
+            "C": "tanh",
+            "B": "identity",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "relu",
+            "C": "sigmoid",
+            "B": "identity",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "identity",
+            "C": "softplus",
+            "B": "relu",
+            "deviation": 2.5
+        },
+        {
+            "A": "relu",
+            "C": "softplus",
+            "B": "identity",
+            "deviation": 2.5
+        },
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "softplus",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "sigmoid",
+            "deviation": 0.0
+        }
+    ],
+    "all_results": [
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "softplus",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "relu",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "identity",
+            "C": "softplus",
+            "B": "relu",
+            "deviation": 2.5
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "relu",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "sigmoid",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "identity",
+            "C": "tanh",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "relu",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "identity",
+            "C": "softplus",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "relu",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "softplus",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "sigmoid",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "identity",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "softplus",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "sigmoid",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "identity",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "relu",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "sigmoid",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "identity",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "relu",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "tanh",
+            "C": "softplus",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "tanh",
+            "B": "identity",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "relu",
+            "C": "softplus",
+            "B": "identity",
+            "deviation": 2.5
+        },
+        {
+            "A": "relu",
+            "C": "sigmoid",
+            "B": "identity",
+            "deviation": 2.886751345948129
+        },
+        {
+            "A": "relu",
+            "C": "identity",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "softplus",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "sigmoid",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "identity",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "tanh",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "relu",
+            "C": "sigmoid",
+            "B": "softplus",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "relu",
+            "C": "identity",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "tanh",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "relu",
+            "C": "softplus",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "tanh",
+            "B": "identity",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "relu",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "sigmoid",
+            "B": "identity",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "identity",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "relu",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "sigmoid",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "identity",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "tanh",
+            "B": "relu",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "sigmoid",
+            "B": "relu",
+            "deviation": 3.8188130791298667
+        },
+        {
+            "A": "softplus",
+            "C": "identity",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "tanh",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "softplus",
+            "C": "relu",
+            "B": "sigmoid",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "tanh",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "relu",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "softplus",
+            "B": "identity",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "identity",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "relu",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "softplus",
+            "B": "tanh",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "identity",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "tanh",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "softplus",
+            "B": "relu",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "identity",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "tanh",
+            "B": "softplus",
+            "deviation": 0.0
+        },
+        {
+            "A": "sigmoid",
+            "C": "relu",
+            "B": "softplus",
+            "deviation": 0.0
+        }
+    ]
+}

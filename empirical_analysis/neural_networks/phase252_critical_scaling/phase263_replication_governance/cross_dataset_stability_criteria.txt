@@ -1,0 +1,338 @@
+CROSS-DATASET STABILITY CRITERIA — PHASE 263
+==============================================
+
+Purpose: Define exact PASS / INCONCLUSIVE / FAIL criteria for each
+         geometric structure when tested on external datasets.
+
+These criteria apply to ALL datasets in the replication pipeline.
+No dataset-specific adjustments are permitted.
+
+Each criterion traces to a specific Phase 252-262 claim (C1-C10).
+
+================================================================================
+STRUCTURE 1: PHASE TRANSITION EXISTENCE
+================================================================================
+
+Claim: C1 — "Kuramoto model exhibits a phase transition from disordered
+             to synchronized states as K increases."
+
+Criterion F1: R increases from low (<0.3) to high (>0.7) as K increases
+              across the tested range.
+
+PASS:
+  - R(K_min) < 0.3 AND R(K_max) > 0.7
+  - R(K) monotonic or near-monotonic increasing
+  - Transition occurs within tested K range
+  - Confirmed across all tested N values
+
+INCONCLUSIVE:
+  - R(K) shows increasing trend but does not reach 0.7 at K_max
+  - R(K) is non-monotonic (fluctuates with K)
+  - Only one N value tested
+  - K range insufficient to capture full transition
+
+FAIL:
+  - R(K) approximately constant across entire K range (< 0.1 change)
+  - R(K) decreases with increasing K
+  - R(K) shows no synchronization (max R < 0.5)
+  - Multiple N values show contradictory behavior
+
+Evidence required:
+  - R_vs_K curves for all N values
+  - R(K_min) and R(K_max) values reported
+  - K at which R = 0.5 (if reached) reported
+
+================================================================================
+STRUCTURE 2: FINITE-SIZE SHARPENING
+================================================================================
+
+Claim: C3 — "The transition region narrows as N increases."
+
+Criterion F2: The steepness of R(K) near the critical region increases
+              monotonically with N.
+
+PASS:
+  - dR/dK (estimated as finite difference) increases from smallest N to
+    largest N in the critical region
+  - R(K) curve for largest N is steeper than for smallest N
+  - Sharpening visible at all tested N values
+  - No N shows anomalous flattening near critical region
+
+INCONCLUSIVE:
+  - Sharpening visible but not monotonic (e.g., N=32 steeper than N=64)
+  - Only 2 N values tested
+  - K resolution too coarse to resolve sharpening
+  - Noise obscures sharpening (insufficient trials)
+
+FAIL:
+  - R(K) curves are identical across all N (no sharpening)
+  - Largest N shows flatter transition than smallest N
+  - Sharpening reverses direction (e.g., N=128 flatter than N=16)
+  - Conflicting behavior across N values
+
+Evidence required:
+  - R(K) curves for all N overlaid in same figure
+  - Finite difference dR/dK table for each N
+  - K resolution reported
+
+================================================================================
+STRUCTURE 3: HYSTERESIS ABSENCE
+================================================================================
+
+Claim: C2 — "The transition is continuous with negligible hysteresis."
+
+Criterion F3: Loop area between forward and backward K sweeps is below
+              the Phase 254 threshold (0.15), OR hysteresis is absent.
+
+PASS:
+  - Forward sweep R_f(K) and backward sweep R_b(K) produce loop_area < 0.15
+  - Gap |R_f(K) - R_b(K)| < 0.15 at all K values
+  - Loop_area computed from at least 4 trials
+  - Backward sweep initialized independently (not from forward end-state)
+
+Note: Phase 254 used coupled initialization, so replication with
+      independent initialization is STRONGER evidence.
+
+INCONCLUSIVE:
+  - Loop_area between 0.10 and 0.25
+  - Only N = 64 tested
+  - Threshold sensitivity not tested
+  - Backward sweep not independently initialized
+  - Only 2 trials averaged
+
+FAIL:
+  - Loop_area > 0.25 at any N
+  - Gap > 0.25 at any K value
+  - R_b(K) systematically above R_f(K) across entire range (hysteresis)
+  - Discontinuous jump in order parameter in either direction
+
+Evidence required:
+  - Forward and backward R(K) curves overlaid
+  - Loop_area value with units
+  - Max gap value
+  - Number of trials averaged
+  - Initialization method documented
+
+================================================================================
+STRUCTURE 4: BINDER BEHAVIOR
+================================================================================
+
+Claim: C6 — "Binder cumulant shows non-trivial structure near criticality
+             with values below the Gaussian limit (~0.67)."
+
+Criterion F4: Binder cumulant U4(K) drops below 0.67 in the critical region,
+              OR shows non-trivial structure (non-monotonic behavior).
+
+Note: Phase 252 shows deepening with N (min ~0.29 at N=64, STEPS=2000).
+      Phase 256 shows stable ~0.644 (STEPS=1000).
+      This conflict is known — replication criterion is BROADER.
+
+PASS:
+  - U4(K) drops below 0.67 at any K value
+  - U4(K) shows non-monotonic behavior (dip, then recovery)
+  - U4(K) at critical region is measurably different from Gaussian limit
+  - Confirmed across at least 2 N values
+
+INCONCLUSIVE:
+  - U4(K) near but not below 0.67 (e.g., 0.65-0.67 range)
+  - Only one N value tested
+  - Binder minimum location shifts significantly with N (not converging)
+  - Simulation length insufficient (STEPS too short)
+  - Only 4 trials (Binder variance high)
+
+FAIL:
+  - U4(K) ≈ 0.67 (Gaussian) across entire K range — no structure
+  - U4(K) > 0.67 at all K (supergaussian — unlikely Kuramoto)
+  - U4(K) monotonic with no dip
+  - U4(K) behavior completely inconsistent with phase transition
+
+Evidence required:
+  - Binder U4(K) curves for all N
+  - Minimum U4 value and K location reported
+  - Simulation STEPS and TRANSIENT reported
+  - Number of trials
+
+================================================================================
+STRUCTURE 5: SUSCEPTIBILITY SCALING
+================================================================================
+
+Claim: C7 — "Susceptibility peak grows approximately as N^gamma with
+             gamma approximately 1." (Tier 2)
+
+Criterion F5: chi(K) peak increases with N, AND chi_peak scales as N^gamma
+              for some gamma in the range 0.5 to 2.5.
+
+Note: gamma varies 0.62-1.98 in Phase 252-253. This criterion accepts
+      the full observed range, not just gamma ~ 1.
+
+PASS:
+  - chi(K) peak identified at each N
+  - chi_peak increases monotonically with N
+  - gamma computed via log-log fit is in range [0.5, 2.5]
+  - R2 of log-log fit > 0.80 (acceptable fit quality)
+
+INCONCLUSIVE:
+  - chi_peak increases with N but not monotonically
+  - gamma out of range [0.5, 2.5] — flagged as unusual
+  - R2 < 0.80 — fit quality poor
+  - Only 2 N values for chi scaling fit
+  - chi_peak identification ambiguous (flat peak)
+
+FAIL:
+  - chi_peak does NOT increase with N (decreases or stays flat)
+  - gamma < 0.3 or gamma > 3.0 (severe deviation from expected range)
+  - chi(K) curve shows no peak
+  - chi(K) is non-monotonic in unexpected way
+
+Evidence required:
+  - chi(K) curves for all N
+  - chi_peak table (N, chi_peak)
+  - Log-log regression: log(chi_peak) vs log(N)
+  - gamma value and R2 reported
+  - Number of N values in fit
+
+================================================================================
+STRUCTURE 6: CRITICAL SLOWING
+================================================================================
+
+Claim: C4 — "Relaxation time increases near the critical coupling."
+
+Criterion F6: tau(K) peaks near the critical region with peak ratio
+               tau_peak / tau_baseline > 2.0.
+
+Note: Phase 255 found peak_ratio = 5.89 at N=64 with tau via 90% threshold.
+      External datasets may use different tau definitions.
+
+PASS:
+  - tau(K) shows clear peak in critical region
+  - peak_ratio > 2.0
+  - tau_peak location K_tau within K range
+  - Confirmed at N >= 32
+
+INCONCLUSIVE:
+  - tau(K) shows increasing trend but no clear peak
+  - peak_ratio between 1.5 and 2.0
+  - tau definition differs from Phase 255 (90% threshold)
+  - Only N < 32 tested
+  - tau saturates at maximum value (like Phase 256)
+
+FAIL:
+  - tau(K) is approximately flat across entire K range
+  - peak_ratio < 1.5
+  - tau decreases with K (inverse slowing — unexpected)
+  - tau(K) shows no relationship to critical region
+
+Evidence required:
+  - tau(K) curves for all N
+  - tau_baseline (average of tau at low and high K) reported
+  - tau_peak and K_tau reported
+  - peak_ratio computed
+  - Tau definition documented
+
+================================================================================
+STRUCTURE 7: TOPOLOGY ROBUSTNESS
+================================================================================
+
+Claim: C5 — "Critical behavior is robust across topology and frequency."
+
+Criterion F7: Transition survives perturbation from all-to-all to
+              alternative topology (ER, scale-free, or small-world).
+
+Note: Phase 253 tested A2A vs ER(p=0.25). Replication should test
+      at least one alternative topology.
+
+PASS:
+  - Transition observed (F1 PASS) on both all-to-all AND alternative topology
+  - R(K) curves show similar shape on both topologies
+  - Critical region K_c is within factor 2 on both topologies
+  - Both topologies show synchronization at high K
+
+INCONCLUSIVE:
+  - Transition observed on one topology but not clearly on other
+  - K_c shifts by factor > 2 between topologies (but transition exists)
+  - Only one non-A2A topology tested
+  - STEPS insufficient on alternative topology
+
+FAIL:
+  - Alternative topology shows NO transition (flat R(K))
+  - Alternative topology shows fundamentally different R(K) shape
+  - Alternative topology produces R >> 1 (unphysical) or R < 0
+  - Alternative topology has isolated oscillators
+
+Evidence required:
+  - R(K) curves for all topologies overlaid
+  - K_c estimate for each topology
+  - Topology parameters documented
+
+================================================================================
+STRUCTURE 8: FREQUENCY ROBUSTNESS
+================================================================================
+
+Claim: C10 — "Scaling exponent gamma varies with frequency distribution."
+
+Criterion F8: Different frequency distributions produce measurably
+              different chi_peak scaling behavior.
+
+Note: This is NOT a "must reproduce same gamma" criterion.
+      It is a "gamma must be measurable and may vary" criterion.
+
+PASS:
+  - chi_peak scaling measured for at least 2 different frequency distributions
+  - gamma computed for each distribution
+  - gamma values differ by at least 0.3 between distributions
+  - Both distributions show transition (F1 PASS)
+
+INCONCLUSIVE:
+  - Only one frequency distribution tested
+  - gamma differs by < 0.3 (may be measurement noise)
+  - chi_peak not clearly identifiable for one distribution
+  - K resolution too coarse for one distribution
+
+FAIL:
+  - One frequency distribution shows NO transition
+  - gamma < 0.3 or gamma > 3.0 for any distribution
+  - chi(K) curves are identical for different distributions (unexpected)
+  - Frequency distribution parameters outside tested ranges
+
+Evidence required:
+  - gamma table (frequency_type, N values, gamma, R2)
+  - chi_peak curves for each distribution
+  - Frequency distribution parameters documented
+
+================================================================================
+VERDICT AGGREGATION
+================================================================================
+
+Overall replication verdict for a dataset:
+
+STRONG REPLICATION (SR):
+  - F1 PASS AND at least 4 of F2-F8 PASS
+  - No FAIL on any structure
+
+PARTIAL REPLICATION (PR):
+  - F1 PASS AND at least 2 of F2-F8 PASS
+  - No more than 1 FAIL
+
+INCONCLUSIVE REPLICATION (IR):
+  - F1 PASS but fewer than 2 additional PASS
+  - OR F1 INCONCLUSIVE with at least 2 PASS on other structures
+
+FAILED REPLICATION (FR):
+  - F1 FAIL
+  - OR F1 PASS with more than 2 FAIL on other structures
+
+================================================================================
+MANUSCRIPT LANGUAGE BY VERDICT
+================================================================================
+
+SR: "The geometric structures observed in Phase 252-256 are reproduced
+     in an independent dataset."
+PR: "The transition is confirmed; some geometric structures show
+     qualitative agreement with Phase 252-256."
+IR: "The transition is observed; geometric structure characterization
+     requires further investigation."
+FR: "The transition geometry differs from Phase 252-256; the nature
+     of this difference warrants investigation."
+
+No verdict uses "universal", "confirmed critical point", or "proved".
+All verdicts use "observed", "measured", "qualitative agreement".

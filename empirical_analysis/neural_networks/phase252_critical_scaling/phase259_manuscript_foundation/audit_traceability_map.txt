@@ -1,0 +1,269 @@
+AUDIT TRACEABILITY MAP — PHASE 252-259
+=========================================
+
+This document maps each manuscript claim to its supporting evidence chain:
+Claim -> Figure -> Script -> Audit Verdict
+
+================================================================================
+TIER 1 CLAIMS
+================================================================================
+
+--------------------------------------------------------------------------------
+C1: "Kuramoto model exhibits a phase transition from disordered to
+    synchronized states as coupling K increases."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: R_vs_K.png
+      Source: phase252_minimal_transition_test.py
+      Phase: 252-1
+      System: N=128, all-to-all, Gaussian omega, K=0-6, 40 pts, single trial
+      Data: R(K=0) = 0.079, R(K=6) = 0.983
+      Hash: [verified in phase258_filesystem_verification.txt]
+    Figure: finite_size_transition.png
+      Source: phase252_finite_size_test.py
+      Phase: 252-2
+      System: N=(16,32,64,128), all-to-all, K=0-4, 30 pts
+      Data: N=128 transition sharp (R: 0.15 to 0.83 between K=1.52-2.07)
+      Hash: [verified in phase258_filesystem_verification.txt]
+
+  AUDIT TRACE:
+    Scripts -> Figures -> Verdict
+    phase252_minimal_transition_test.py -> R_vs_K.png -> VERIFIED_PRESENT
+    phase252_finite_size_test.py -> finite_size_transition.png -> VERIFIED_PRESENT
+
+  COUNCIL VERDICT: PASS
+  CONFIDENCE: HIGH (single N; single topology)
+  LIMITATIONS: N=128 only; all-to-all only
+
+--------------------------------------------------------------------------------
+C2: "The transition is continuous with negligible hysteresis."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: phase254_script10_hysteresis.png
+      Source: phase254_script10.py
+      Phase: 254
+      System: N=64, all-to-all, K: 0-4 and 4-0, 32 pts, 4 trials
+      Data: loop_area = 0.030444, max_gap = 0.033809
+      Hash: [verified in phase258_filesystem_verification.txt]
+    Figure: phase254_script10_gap.png
+      Source: phase254_script10.py
+      Data: Gap at all K below 0.035
+      Hash: [verified in phase258_filesystem_verification.txt]
+
+  AUDIT TRACE:
+    Scripts -> Figures -> Verdict
+    phase254_script10.py -> phase254_script10_hysteresis.png -> PASS
+    phase254_script10.py -> phase254_script10_gap.png -> PASS
+
+  COUNCIL VERDICT: PASS
+  CONFIDENCE: MEDIUM (coupled init; single N)
+  LIMITATIONS: Backward initialized from forward end-state; N=64 only
+
+--------------------------------------------------------------------------------
+C3: "Finite-size sharpening observed as N increases."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: finite_size_transition.png
+      Source: phase252_finite_size_test.py
+      Phase: 252-2
+      Data: N=16 broad -> N=128 steep
+    Figure: phase252_script4_order_parameter.png
+      Source: phase252_script4.py
+      Phase: 252-5
+      Data: N=(16,32,64), sharpening visible
+    Figure: phase252_script8_order_parameter.png
+      Source: phase252_script8.py
+      Phase: 252-8
+      Data: N=(16,32,64), sharpening visible
+
+  AUDIT TRACE:
+    phase252_finite_size_test.py -> finite_size_transition.png -> VERIFIED_PRESENT
+    phase252_script4.py -> phase252_script4_order_parameter.png -> VERIFIED_PRESENT
+    phase252_script8.py -> phase252_script8_order_parameter.png -> VERIFIED_PRESENT
+
+  COUNCIL VERDICT: PASS
+  CONFIDENCE: HIGH
+  LIMITATIONS: N values only 16/32/64/128
+
+--------------------------------------------------------------------------------
+C4: "Critical slowing observed near Kc."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: phase255_script11_critical_slowing.png
+      Source: phase255_script11.py
+      Phase: 255
+      System: N=64, all-to-all, K=0.2-3.5, 28 pts, 4 trials
+      Data: K_peak=1.4222, peak_ratio=5.8903
+      Hash: [verified in phase258_filesystem_verification.txt]
+
+  AUDIT TRACE:
+    phase255_script11.py -> phase255_script11_critical_slowing.png -> CRITICAL_SLOWING_CONFIRMED
+
+  COUNCIL VERDICT: PASS
+  CONFIDENCE: MEDIUM (single N; threshold-based tau)
+  LIMITATIONS: N=64 only; tau via 90% threshold, not autocorrelation
+
+--------------------------------------------------------------------------------
+C5: "Critical behavior robust across topology and frequency."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: phase253_script9_universality.png
+      Source: phase253_script9.py
+      Phase: 253
+      System: N=(16,32,64), A2A and ER (p=0.25), Gaussian and Uniform
+      Data: transition in all 4 conditions; gamma varies 0.62-1.98
+      Hash: [verified in phase258_filesystem_verification.txt]
+
+  AUDIT TRACE:
+    phase253_script9.py -> phase253_script9_universality.png -> PASS
+
+  COUNCIL VERDICT: PASS
+  CONFIDENCE: MEDIUM (4 conditions; limited topologies)
+  LIMITATIONS: p=0.25 only; 2 frequencies only
+
+--------------------------------------------------------------------------------
+C6: "Binder cumulant shows structural dip at criticality."
+--------------------------------------------------------------------------------
+  SUPPORTING EVIDENCE:
+    Figure: binder_test_crossing.png
+      Source: phase252_binder_test.py
+      Phase: 252-4
+      Data: U4 drops to ~0.49 at K~1.4 (N=16)
+      Hash: [verified in phase258_filesystem_verification.txt]
+    Figure: phase252_script7_binder.png
+      Source: phase252_script8.py
+      Phase: 252-8
+      Data: Binder dip visible for all N
+
+  AUDIT TRACE:
+    phase252_binder_test.py -> binder_test_crossing.png -> VERIFIED_PRESENT
+    phase252_script8.py -> phase252_script8_binder.png -> VERIFIED_PRESENT
+
+  CONFLICT NOTE:
+    Phase 256 replication stable shows Binder min ~0.644 (stable across N)
+    Phase 252 scripts show Binder min deepening (0.5345->0.4267->0.2948)
+    Parameter sensitivity: STEPS=2000 vs STEPS=1000
+
+  COUNCIL VERDICT: PASS (with parameter sensitivity caveat)
+  CONFIDENCE: MEDIUM (conflicting data)
+  LIMITATIONS: Parameter-sensitive; standardized protocol needed
+
+================================================================================
+TIER 2 CLAIMS
+================================================================================
+
+--------------------------------------------------------------------------------
+C7: "Susceptibility peak grows as N^gamma, gamma approximately 1."
+--------------------------------------------------------------------------------
+  AUDIT TRACE:
+    phase252_script6.py -> phase252_script6_fss.png -> VERIFIED_PRESENT
+    phase252_script7.py -> phase252_script7_fss.png -> VERIFIED_PRESENT
+    phase252_script8.py -> phase252_script8_fss.png -> VERIFIED_PRESENT
+
+  Data: gamma=1.1416, R2=0.9847 (Phase 252-6)
+  Warning: gamma varies 0.62-1.98 (Phase 253)
+
+  COUNCIL VERDICT: PASS (Tier 2)
+  CONFIDENCE: LOW (3-point fit; non-universal)
+
+--------------------------------------------------------------------------------
+C8: "Data approximately collapses under mean-field scaling."
+--------------------------------------------------------------------------------
+  AUDIT TRACE:
+    phase252_script8.py -> phase252_script8_data_collapse.png -> VERIFIED_PRESENT
+
+  Data: Kc=1.33, nu=2.0 (assumed, not estimated)
+  No optimization attempted.
+
+  COUNCIL VERDICT: PASS (Tier 2)
+  CONFIDENCE: LOW (nu assumed)
+
+--------------------------------------------------------------------------------
+C9: "Kc approximately 1.4 with uncertainty of approximately 0.5."
+--------------------------------------------------------------------------------
+  AUDIT TRACE:
+    phase256_replication_stable.py -> phase256_replication_*.png -> VERIFIED_PRESENT
+    phase256_script12.py -> phase256_script12_*.png -> VERIFIED_PRESENT
+
+  Data: K_chi_peak: N=16->1.78, N=32->0.71, N=64->1.32
+        K_binder_min: N=16->1.78, N=32->0.71, N=64->0.86
+        K_tau_peak: 1.4222 (Phase 255)
+
+  CONFLICT NOTE: Three-estimator convergence FAILED (max_deviation >> 0.25)
+
+  COUNCIL VERDICT: INCONCLUSIVE (Tier 2)
+  CONFIDENCE: LOW (tau saturated; K estimates shift with N)
+
+--------------------------------------------------------------------------------
+C10: "Scaling exponent gamma varies with frequency distribution."
+--------------------------------------------------------------------------------
+  AUDIT TRACE:
+    phase253_script9.py -> phase253_script9_universality.png -> VERIFIED_PRESENT
+
+  Data: gaussian -> gamma ~0.62-0.88; uniform -> gamma ~1.86-1.98
+
+  COUNCIL VERDICT: PASS (Tier 2)
+  CONFIDENCE: MEDIUM (4 conditions)
+  LIMITATIONS: Only Gaussian and Uniform
+
+================================================================================
+UNVERIFIED CLAIMS (DO NOT USE IN MANUSCRIPT)
+================================================================================
+
+  - Universal critical exponent (gamma NOT universal)
+  - Kc convergence from three estimators (FAILED in Phase 256)
+  - Binder minimum deepening (conflicting data)
+  - Data collapse optimization (nu assumed)
+  - Scale-free topology effects (Phase 252 initial run only)
+  - Small-world topology effects (Phase 252 initial run only)
+  - Cross-dataset replication (not performed)
+
+================================================================================
+SCRIPT INVENTORY (VERIFIED)
+================================================================================
+
+PHASE 252:
+  phase252_minimal_transition_test.py -> R_vs_K.png
+  phase252_finite_size_test.py -> finite_size_transition.png
+  phase252_susceptibility_test.py -> susceptibility_curves.png, order_parameter_curves.png
+  phase252_binder_test.py -> binder_test_*.png
+  phase252_script4.py -> phase252_script4_*.png
+  phase252_script5.py -> phase252_script5_*.png
+  phase252_script6.py -> phase252_script6_*.png
+  phase252_script7.py -> phase252_script7_*.png
+  phase252_script8.py -> phase252_script8_*.png
+  phase252.py (original, superseded)
+
+PHASE 253:
+  phase253_script9.py -> phase253_script9_universality.png
+
+PHASE 254:
+  phase254_script10.py -> phase254_script10_*.png
+
+PHASE 255:
+  phase255_script11.py -> phase255_script11_critical_slowing.png
+
+PHASE 256:
+  phase256_replication_stable.py -> phase256_replication_*.png
+  phase256_script12.py -> phase256_script12_*.png
+
+PHASE 257 (AUDIT):
+  phase257_audit_package/phase257_master_summary.txt
+  phase257_audit_package/phase257_claim_registry.json
+  phase257_audit_package/phase257_failed_or_unstable_estimators.json
+
+PHASE 258 (VERIFICATION):
+  phase258_filesystem_verification.txt -> SHA256 hashes for all 319 artifacts
+
+================================================================================
+VERDICT SUMMARY
+================================================================================
+
+PASS: C1, C2, C3, C4, C5, C6, C7, C8, C10
+INCONCLUSIVE: C9
+NOT VERIFIED: universal claims, Kc convergence, Binder deepening
+
+STATUS: VERIFIED_PRESENT
+PROVENANCE: All artifacts confirmed in filesystem.
+MANUSCRIPT BASIS: Tier 1 claims only.
+FUTURE WORK: All Tier 2 claims for discussion only.

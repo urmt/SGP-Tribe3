@@ -1,0 +1,283 @@
+FUTURE WORK PRIORITIES — PHASE 252-259
+========================================
+
+Prioritized by: empirical urgency and manuscript impact.
+No speculative claims. Only verified gaps.
+
+================================================================================
+PRIORITY 1: METASTABILITY GEOMETRY
+================================================================================
+Gap: No analysis of metastable states, double-well potentials, or energy
+  landscapes. Hysteresis test (Phase 254) used coupled forward/backward
+  sweeps and cannot distinguish metastability from initialization artifact.
+Action: Independent random re-initialization for backward sweep;
+  compute 2D order parameter landscape (amplitude + phase coherence);
+  measure waiting times in metastable states.
+Evidence needed: Phase diagram with first-order signatures excluded
+  or quantified.
+Verdict dependency: C2 (hysteresis) upgrade from MEDIUM to HIGH
+  requires independent initialization.
+Rerun allowed: YES (new simulation, not reproduction)
+
+================================================================================
+PRIORITY 2: RELAXATION DYNAMICS REFINEMENT
+================================================================================
+Gap: tau estimator saturated at max(50) for all N in Phase 256.
+  Critical slowing (Phase 255) used 90% threshold, not autocorrelation time.
+  Kc convergence test compromised by tau saturation.
+Action: Increase STEPS to 4000+; implement autocorrelation-based tau
+  (integrated time scale); use multiple independent trajectories per K.
+Evidence needed: Reliable tau(K) curve with peak near Kc;
+  true diverging relaxation time.
+Verdict dependency: C4 (critical slowing) upgrade requires
+  autocorrelation-based tau; C9 (Kc convergence) requires stable tau.
+Rerun allowed: YES (tau measurement refinement)
+
+================================================================================
+PRIORITY 3: Kc THERMODYNAMIC EXTRAPOLATION
+================================================================================
+Gap: 1/N linear extrapolation gave unreliable Kc_inf (negative values);
+  K estimates shift with N (N=16: K=0.4-1.78, N=64: K=0.86-1.32);
+  three-estimator convergence FAILED (max_deviation >> 0.25).
+Action: Extend N to (16,32,64,128,256); use finer K resolution near
+  critical region (40+ pts, K range 0.8-2.5); implement weighted
+  average of chi, Binder, and autocorrelation-based tau estimators.
+Evidence needed: Converged Kc with error bars; demonstrated 1/N approach.
+Verdict dependency: C9 (Kc ~1.4) upgrade from Tier 2 to Tier 1 requires
+  verified convergence.
+Rerun allowed: YES (extended N range, new K resolution)
+
+================================================================================
+PRIORITY 4: CROSS-DATASET REPLICATION
+================================================================================
+Gap: All findings from single random seed (42) and single computational
+  environment. No replication in different language, platform, or
+  random seed series.
+Action: Reproduce core results (F1, F2, F3) with:
+  - Different random seeds (0, 100, 1000)
+  - Different integrator (Runge-Kutta 4th order vs Euler)
+  - Different K resolution (80 pts vs 30 pts)
+  - Different STEPS/TRANSIENT values
+Evidence needed: Results stable across random seed; not seed-dependent artifacts.
+Verdict dependency: All Tier 1 claims strengthen with replication.
+Rerun allowed: YES (replication study, not reproduction)
+
+================================================================================
+PRIORITY 5: BINDER MINIMUM STANDARDIZATION
+================================================================================
+Gap: Phase 252 scripts (STEPS=2000) show Binder min deepening
+  (0.53->0.43->0.29). Phase 256 replication (STEPS=1000) shows
+  flat Binder min (~0.644). Conflict: different simulation parameters
+  produce different conclusions.
+Action: Establish standardized simulation protocol for Binder measurement:
+  - Minimum STEPS sufficient for full equilibration
+  - TRANSIENT verified by autocorrelation convergence
+  - Trials sufficient for Binder variance estimation
+  - K resolution adequate to locate minimum precisely
+Evidence needed: Reproducible Binder minimum behavior across protocols;
+  systematic parameter sensitivity study.
+Verdict dependency: C6 (Binder dip) reliability depends on protocol standardization.
+Rerun allowed: YES (protocol standardization, not new physics)
+
+================================================================================
+PRIORITY 6: TOPOLOGY EXTENSION
+================================================================================
+Gap: Phase 253 only tested A2A and ER(p=0.25). Phase 252 initial run
+  tested Scale-Free and Small-World but with wrong K range (0-0.18).
+  No verification of critical behavior on heterogeneous networks.
+Action: Test Scale-Free (Barabasi-Albert) and Small-World (Watts-Strogatz)
+  with proper K range (0-4) and sufficient steps.
+Evidence needed: Critical behavior confirmed or excluded on heterogeneous
+  topologies; gamma comparison across network types.
+Verdict dependency: C5 (topology robustness) extension beyond A2A and ER.
+Rerun allowed: YES (new topology study)
+
+================================================================================
+PRIORITY 7: FREQUENCY DISTRIBUTION SYSTEMATICITY
+================================================================================
+Gap: Phase 253 tested only Gaussian (sigma=1) and Uniform (-1,1).
+  Gamma varies 0.62-1.98 by frequency distribution. No systematic
+  characterization of gamma as function of frequency width/distribution.
+Action: Systematic sweep of frequency distributions:
+  - Gaussian with sigma = 0.5, 1.0, 2.0, 4.0
+  - Uniform with width = 0.5, 1.0, 2.0, 4.0
+  - Cauchy/Lorentzian distributions
+  - Bimodal distributions
+Evidence needed: gamma(frequency_statistics) landscape; identification
+  of whether gamma is continuous or discrete function of distribution.
+Verdict dependency: C10 (gamma variation) becomes quantitative rather
+  than qualitative.
+Rerun allowed: YES (systematic parameter sweep)
+
+================================================================================
+PRIORITY 8: DATA COLLAPSE OPTIMIZATION
+================================================================================
+Gap: Phase 252-8 used nu=2.0 (assumed from literature) with no optimization.
+  No systematic variation of nu to find optimal collapse.
+Action: Implement least-squares collapse optimization;
+  vary nu from 0.5 to 5.0; compute collapse quality metric (RMS deviation
+  from master curve).
+Evidence needed: Best-fit nu with error bars; comparison with literature
+  values for Kuramoto universality class.
+Verdict dependency: C8 (data collapse) upgrade from qualitative to
+  quantitative.
+Rerun allowed: YES (optimization study, different from current analysis)
+
+================================================================================
+NOT PRIORITIZED (DO NOT PURSUE)
+================================================================================
+
+- Hilbert transform order parameters (not used in current framework)
+- FFT trajectory analysis (not used in current framework)
+- Correlation matrices (not used in current framework)
+- Surrogate testing (DNI approach superseded by lean approach)
+- Consciousness or SFH metaphysics (LEP compliance)
+- Observer theory (LEP compliance)
+
+These are excluded by LEP or by the lean approach decision.
+
+================================================================================
+REPLICATION vs REPRODUCTION vs NEW PHYSICS
+================================================================================
+
+REPLICATION: Same analysis, different random seed/platform.
+  -> Priority 4 (cross-dataset replication)
+
+REPRODUCTION: Same code, verified outputs.
+  -> Already done (Phase 258 verification)
+
+NEW PHYSICS: Novel experiments addressing verified gaps.
+  -> Priorities 1, 2, 3, 5, 6, 7, 8
+
+RULE: No future work may elevate Tier 2 claims to Tier 1 without
+  completing Priority 3 (Kc thermodynamic extrapolation) first.
+
+RULE: No future work may strengthen C2 (hysteresis) without completing
+  Priority 1 (metastability geometry).
+
+RULE: All future simulation parameters must be documented and archived
+  in the same provenance system as Phases 252-259.
+
+RULE: All future figures must be added to figure_manifest.csv with
+  tier, limitations, and supporting phases fields updated.
+
+================================================================================
+PRIORITY 9: PERSISTENCE GEOMETRY FORMALIZATION
+================================================================================
+Gap: No formal characterization of the geometric structures identified in
+  Phases 252-256 as instances of PERSISTENT RELATIONAL GEOMETRY.
+  The project identifies coordination dynamics but does not formally
+  connect them to the concept of recursively stabilizing structures.
+Action: Develop formal description of:
+  - Invariant geometric features (Binder dip, sharpening, critical slowing)
+    that persist across topology and frequency perturbations.
+  - Interaction-capable geometries (synchronization as collective mode)
+    as potential substrates for recursive persistence.
+  - Conditions under which coordination structures stabilize vs decohere.
+Evidence needed: Formal taxonomy of persistent coordination geometries;
+  classification of which geometric features are invariant vs
+  implementation-dependent (frequency, topology, N-dependent).
+Verdict dependency: Informs interpretation of Phase 252-256 findings
+  within SFH-SGP framework without altering empirical claims.
+Rerun allowed: NO (conceptual/analytical, not empirical)
+Note: This work is EXPLORATORY and NON-EMPIRICAL. It does not produce
+  new figures, new simulations, or new claims that affect Tier 1/2 status.
+
+================================================================================
+PRIORITY 10: RECURSIVE STABILITY SELECTION
+================================================================================
+Gap: No analysis of why some coordination structures stabilize (R high)
+  while others decohere (R low). The SFH-SGP framework introduces the concept
+  of FERTILITY: structures that propagate, bind, and recursively generate
+  higher-order persistent structures vs structures that terminate/annihilate.
+Action: Analyze the coupling landscape for evidence of:
+  - Bistability or multi-stability regions (potential for recursive binding).
+  - Coexistence of ordered and disordered phases (potential for propagation).
+  - Metastability as a signature of recursive persistence (vs trivial decay).
+Evidence needed: Phase diagram distinguishing stable-coherent regions
+  from unstable-decoherent regions; correlation between Binder structure
+  and stability regime.
+Verdict dependency: C2 (hysteresis) and C6 (Binder) upgrades require
+  understanding whether Binder dip reflects genuine multi-stability
+  or is a statistical artifact.
+Rerun allowed: YES (new simulation addressing metastability, Priority 1)
+Note: This connects empirical geometry to SFH-SGP fertility concept
+  but does NOT claim consciousness or experience.
+
+================================================================================
+PRIORITY 11: INVARIANT VS IMPLEMENTATION-DEPENDENT GEOMETRY
+================================================================================
+Gap: Phase 253 shows gamma varies with frequency distribution (0.62-1.98).
+  Phase 252 shows Binder deepening depends on STEPS.
+  Phase 256 shows tau saturates under different parameters.
+  No formal classification of which features are invariant (robust across
+  implementation) vs implementation-dependent (parameter-sensitive).
+Action: Systematic classification of all geometric features:
+  INVARIANT (robust): transition existence, sharpening, hysteresis absence.
+  CONDITIONALLY INVARIANT: Binder structure (STEPS-sensitive but
+    consistent within protocol), critical slowing (N-sensitive but
+    present across N values).
+  IMPLEMENTATION-DEPENDENT: gamma value, Kc estimate, tau saturation.
+Evidence needed: Taxonomy table with feature, robustness classification,
+  conditions under which feature holds.
+Verdict dependency: Informs generalization claims; invariant features
+  support cross-dataset replication criteria.
+Rerun allowed: NO (analytical from existing data)
+Note: This is a classification exercise using existing Phase 252-256 data.
+
+================================================================================
+PRIORITY 12: INTERACTION FERTILITY ANALYSIS
+================================================================================
+Gap: The SFH-SGP framework introduces FERTILITY as the property that
+  distinguishes structures that recursively stabilize vs decohere.
+  No empirical correlate of fertility has been identified in the
+  Phase 252-256 analysis.
+Action: Explore whether geometric features correlate with fertility:
+  - High R (high synchronization) suggests stable interaction geometry.
+  - Binder dip (non-Gaussian) suggests multi-modal order parameter
+    distribution — potential substrate for recursive binding.
+  - Critical slowing suggests near-critical interaction — fertility peak.
+  - Hysteresis absence suggests no metastable traps — open propagation.
+Evidence needed: Qualitative mapping of geometric features to fertility
+  concept; identification of which features serve as fertility proxies.
+Verdict dependency: C4 (critical slowing) and C6 (Binder) interpretation
+  within SFH-SGP framework.
+Rerun allowed: NO (analytical/interpretive only)
+Note: This is EXPLORATORY interpretation. No new empirical claims.
+  Must NOT elevate Tier 2 to Tier 1.
+
+================================================================================
+ONTOLOGICAL SEPARATION REMINDER
+================================================================================
+
+Project A (EMPIRICAL GEOMETRY) — Phases 252-263:
+  - Phase transitions, scaling, Binder structure, hysteresis, critical slowing
+  - All figures, scripts, audits, claims C1-C10
+  - Tier 1 and Tier 2 governance structure
+  - Cross-dataset replication criteria
+
+Project B (ONTOLOGICAL INTERPRETATION) — Phase 264+:
+  - Experiential persistence, relational interiors, emergent selfhood
+  - Hilbert possibility structures, idealist interpretation
+  - Fertility concept, recursive stability selection
+  - Priority 9-12 above
+
+RULE: Project B MUST NOT influence Project A.
+  - No parameter changes based on ontological considerations.
+  - No estimator modifications based on philosophical interpretation.
+  - No claim elevation based on SFH-SGP framework alignment.
+  - No manuscript language that claims consciousness, sentience, or idealism.
+
+RULE: Project A constrains Project B.
+  - SFH-SGP interpretations must be consistent with empirical findings.
+  - Ontological claims must not contradict Tier 1 evidence.
+  - Exploratory interpretations must be labeled as such.
+
+================================================================================
+PHASE 264 ADDITION (2025-05-13)
+================================================================================
+
+Priority 9-12 added during Phase 264 governance integration.
+These priorities are EXPLORATORY and NON-EMPIRICAL.
+They do NOT modify Tier 1/2 status, parameter locks, or audit chain.
+They do NOT produce new figures or new simulations.

@@ -1,0 +1,14 @@
+PHASE 252 VERDICT
+==================================================
+Topology: SmallWorld
+Verdict: TRUE_CRITICAL_PHASE_TRANSITION
+Confidence: HIGH
+Best model: log (R²=1.0000)
+  a: 0.000000
+  b: 0.180000
+  r2: 1.000000
+  aic: -272.310211
+  bic: -272.726692
+Binder crossing: 0.015654773464553982
+N sizes: 6
+Chi divergence: True

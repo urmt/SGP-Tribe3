@@ -1,0 +1,83 @@
+{
+  "failed_or_unstable_estimators": [
+    {
+      "estimator": "tau_relaxation",
+      "phase": "256",
+      "issue": "SATURATED_AT_MAX",
+      "details": "tau_peak = 50.0 (max possible value) for all N=(16,32,64). The 50-step stability criterion (abs(R_t - R_final) < 0.02 for 50 consecutive steps) is not satisfied within STEPS=1000. tau hits maximum and stops.",
+      "root_cause": "Relaxation time to reach 0.02 stability band exceeds 1000 steps for all N and K values. K=0.4 to 3.0 range may not provide enough time for equilibration in disordered phase.",
+      "impact": "K_tau_peak cannot be reliably identified; all tau_peak values are identical (50.0) regardless of K. Kc convergence test compromised.",
+      "resolution_needed": "Increase STEPS to 3000+ or lower stability criterion to 0.05 for 30 steps"
+    },
+    {
+      "estimator": "Kc_inf_extrapolation",
+      "phase": "256",
+      "issue": "UNSTABLE_LINEAR_EXTRAPOLATION",
+      "details": "1/N linear fit for Kc_inf produced negative intercepts (Kc_chi=-22.5, Kc_binder=-9.4, Kc_tau=25.6) with R2=0.23-0.89. N=16 estimates wildly inconsistent (K spans 0.4-2.6 depending on metric).",
+      "root_cause": "Only 3 N values; K estimates shift non-monotonically with N (N=16: K_chi=0.81, N=32: K_chi=2.59, N=64: K_chi=1.22). Linear extrapolation regime not reached.",
+      "impact": "Cannot determine thermodynamic-limit Kc from current data. Claim C7 unsupported.",
+      "resolution_needed": "Extend to N=(16,32,64,128,256) with higher K resolution near critical region"
+    },
+    {
+      "estimator": "chi_peak_K_vs_binder_min_K",
+      "phase": "256",
+      "issue": "ESTIMATOR_SCATTLER_WITH_N",
+      "details": "K_chi_peak and K_binder_min track each other closely (same at N=16 and N=64) but shift with N: N=16 -> K~1.78, N=32 -> K~0.71, N=64 -> K~1.08-1.32. No convergence to stable Kc.",
+      "root_cause": "Different K resolution (18 pts over 0.4-3.0) and short transient (300 steps) may cause peak location to shift with finite-size effects.",
+      "impact": "Kc approximation (1.3-1.8) is uncertain to ±0.5 at minimum. Cannot distinguish between Kc=1.3 and Kc=1.8.",
+      "resolution_needed": "Use finer K resolution (40+ pts) and longer transient (>800 steps)"
+    },
+    {
+      "estimator": "phase252_script12_Kc_estimates",
+      "phase": "256",
+      "issue": "RUNTIME_TIMEOUT",
+      "details": "Script attempted N=(16,32,64,128), TRIALS=4, STEPS=2000, K=28 pts. Timed out at N=64. Only N=16 and N=32 completed. Lean version (N=16,32,64, TRIALS=3, STEPS=1200, K=20 pts) still produced inconsistent estimates with max_deviation=41.3 >> 0.25 threshold.",
+      "root_cause": "Combined measurement of chi + binder + tau for all N,K,trials exceeds runtime budget. Tau measurement alone requires 3*(N,K,trials) simulations per configuration.",
+      "impact": "Kc convergence could not be verified within time constraints. Phase 256 remains INCONCLUSIVE.",
+      "resolution_needed": "Separate tau measurement from chi/binder; reduce redundant simulations"
+    },
+    {
+      "estimator": "Binder_minimum_stability",
+      "phase": "256",
+      "issue": "PARAMETER_SENSITIVITY",
+      "details": "Phase 252 scripts 4-8 show Binder min deepening (0.5345 -> 0.4267 -> 0.2948 from N=16 to N=64). Phase 256 replication stable shows Binder min roughly constant (0.644 at all N). Critical difference: Phase 252 scripts use STEPS=2000 TRANSIENT=500; Phase 256 uses STEPS=1000 TRANSIENT=300.",
+      "root_cause": "Shorter simulation (1000 steps, 300 transient) insufficient for Binder minimum to develop; system not fully equilibrated. Phase 252 scripts use different K range (0-4) and more trials (4-5).",
+      "impact": "Conflicting evidence on Binder minimum deepening. Cannot confirm C5 with Phase 256 data alone.",
+      "resolution_needed": "Standardize simulation parameters across all phases"
+    },
+    {
+      "estimator": "gamma_frequency_dependence",
+      "phase": "253",
+      "issue": "NON_UNIVERSAL_EXPONENT",
+      "details": "gamma varies 0.62-1.98 across frequency distribution and topology combinations. ER+Gaussian gives gamma=0.62 (R2=0.89) while A2A+Uniform gives gamma=1.98. Mean-field prediction is gamma=1.0 for Kuramoto.",
+      "root_cause": "Frequency distribution width and topology density significantly affect scaling exponent. Gaussian (unbounded) frequencies produce lower gamma than uniform (bounded) frequencies.",
+      "impact": "Gamma is not universal across all conditions; only universal within frequency class. Claim C2 (gamma=1.14) applies only to A2A+Gaussian condition.",
+      "resolution_needed": "Test with more frequency distributions and topologies to characterize gamma landscape"
+    },
+    {
+      "estimator": "loop_area_threshold",
+      "phase": "254",
+      "issue": "ARBITRARY_THRESHOLD",
+      "details": "Hysteresis loop_area threshold for CONTINUOUS vs HYSTERETIC set at 0.15 with no theoretical justification. loop_area=0.0304 barely computed from 4-trial average. Single-trial loop areas not reported.",
+      "root_cause": "No systematic study of loop_area variance across trials. Threshold chosen ad hoc.",
+      "impact": "VERDICT may change with different threshold; no error bars on loop_area",
+      "resolution_needed": "Compute per-trial loop_area; study threshold sensitivity"
+    },
+    {
+      "estimator": "hysteresis_initialization",
+      "phase": "254",
+      "issue": "COUPLED_INITIAL_CONDITIONS",
+      "details": "Forward sweep initializes from theta0; backward sweep initializes from final theta of forward sweep. Not independent. Backward sweep already partially synchronized from forward end-state.",
+      "root_cause": "Design choice: forward and backward sweeps share initial conditions. True hysteresis test requires independent random initialization for each direction.",
+      "impact": "loop_area=0.03 may be under-estimated because backward sweep starts from ordered state, not truly independent.",
+      "resolution_needed": "Use independent theta0 for both forward and backward sweeps"
+    }
+  ],
+  "summary": {
+    "total_unstable_estimators": 8,
+    "severity_critical": 1,
+    "severity_high": 2,
+    "severity_medium": 5,
+    "resolved_by_further_work": false
+  }
+}

@@ -1,0 +1,488 @@
+SFH-SGP FOUNDATIONAL CLARIFICATIONS — PHASE 264
+=================================================
+
+Date: 2025-05-13
+Phase: 264
+Status: EXPLORATORY FRAMEWORK — NON-EMPIRICAL
+
+This document integrates the SFH-SGP (Self-fulfilling Hypothesis / Simulation
+Geometric Perspective) conceptual framework into the governance architecture
+WITHOUT contaminating the empirical pipeline (Phases 252-263).
+
+CRITICAL SEPARATION:
+  Project A (EMPIRICAL GEOMETRY): Phases 252-263
+  Project B (ONTOLOGICAL INTERPRETATION): Phase 264+
+
+Project A is mathematically conservative and audit-driven.
+Project B is exploratory and non-validated.
+Project A constrains Project B.
+Project B does NOT constrain Project A.
+
+================================================================================
+1. PROJECT GOAL
+================================================================================
+
+WHAT THE PROJECT IS NOT ATTEMPTING:
+  - NOT proving consciousness
+  - NOT proving ontology
+  - NOT proving metaphysics
+  - NOT proving idealism
+  - NOT proving mind creates reality
+  - NOT proving physical reality is illusion
+  - NOT validating observer theory
+  - NOT claiming proof of sentience or experience
+
+WHAT THE PROJECT IS ATTEMPTING:
+  - Identifying MATHEMATICALLY STABLE PERSISTENCE STRUCTURES
+  - Identifying INTERACTION-CAPABLE GEOMETRIES
+  - Identifying RECURSIVELY STABILIZING COORDINATION STRUCTURES
+  - Determining CONDITIONS under which coherent experiential persistence
+    may become possible
+
+FOCUS: PERSISTENT RELATIONAL GEOMETRY
+
+The empirical analysis (Phases 252-263) identifies geometric structures
+in coupled oscillator systems. The SFH-SGP framework provides one possible
+interpretation of these structures in terms of experiential persistence.
+
+No empirical claim is elevated to ontological status.
+No ontological claim is treated as empirically validated.
+
+================================================================================
+2. EXPERIENCE AXIOM
+================================================================================
+
+Framework distinction:
+
+  "having an experience" vs "not having an experience"
+
+This distinction is CATEGORICAL (binary), not continuous.
+The AXIOM assumes that the category "having an experience" applies
+to some systems and not to others.
+
+COMPLEXITY changes structure/richness of experience, not existence category.
+A simple experience and a complex experience are both experiences.
+The distinction is about quality, not about whether experience exists.
+
+EMPIRICAL COROLLARY:
+  Phase 252-263 identifies geometric structures that are:
+    - PERSISTENT (stable over time)
+    - INTERACTION-CAPABLE (respond to coupling)
+    - COHERENT (synchronized order parameter)
+    - RECURSIVELY GENERATING (higher-order collective modes)
+
+  These features MAY correlate with the conditions for experience,
+  but the empirical analysis does NOT claim that these structures
+  "have experience" or "are conscious."
+
+INTERPRETATION (EXPLORATORY):
+  Geometric features identified in Phases 252-263 may serve as
+  necessary conditions for experiential persistence, not sufficient
+  conditions. Further work is needed to determine whether these
+  structures are "experience-capable."
+
+================================================================================
+3. INTERACTION REQUIREMENT
+================================================================================
+
+STATIC MATHEMATICAL TRUTH ALONE IS NOT ASSUMED SUFFICIENT FOR EXPERIENCE.
+
+Interaction-capable persistence is required.
+
+Key concept: FERTILITY
+
+Some structures:
+  - DECOHERE (lose coherence)
+  - TERMINATE (end of persistence)
+  - ANNIHILATE (mutual destruction of structure)
+
+Other structures:
+  - STABILIZE (maintain coherence)
+  - BIND (form recursive configurations)
+  - PROPAGATE (transmit coherence to other regions)
+  - RECURSIVELY GENERATE (produce higher-order persistent structures)
+
+This may represent: RECURSIVE PERSISTENCE SELECTION
+
+EMPIRICAL COROLLARY:
+  Phase 252-263 shows:
+    - R high (stable synchronization) — fertility candidate
+    - Binder dip (non-Gaussian distribution) — multi-stability potential
+    - Critical slowing (long equilibration) — near-fertility-peak
+    - Hysteresis absence — no metastable traps, open propagation
+
+  These geometric features CORRELATE with fertility concept but
+  do NOT prove fertility.
+
+INTERPRETATION (EXPLORATORY):
+  The coupling landscape of Kuramoto oscillators exhibits:
+    - Bifurcation at Kc (stability change)
+    - Scaling behavior (size-independent geometry)
+    - Binder non-Gaussianity (multi-modal potential)
+
+  These features MAY indicate that the system operates near a
+  fertility boundary, where recursive stabilization becomes possible.
+
+================================================================================
+4. TIME
+================================================================================
+
+TIME IS NOT FUNDAMENTAL.
+
+Time is treated as: EMERGENT ORDERED PERSISTENCE DEVELOPMENT.
+
+Stable differentiable geometry PRECEDES temporal ordering.
+
+EMPIRICAL CORRELATE:
+  The simulation steps (STEPS) in Phase 252-263 represent computational
+  iterations, not necessarily physical time. The order parameter R is
+  measured over a window [TRANSIENT:STEPS], which represents the final
+  portion of the trajectory.
+
+  Critical slowing (tau increases near Kc) is interpreted as:
+    - Emergent temporal dynamics at the critical region
+    - Longer equilibration time indicates more complex geometric
+      organization near the transition
+
+  This is CONSISTENT with time as emergent from geometric persistence,
+  but does NOT prove it.
+
+INTERPRETATION (EXPLORATORY):
+  The tau estimator measures "time to reach stable configuration."
+  This emergent time is distinct from any assumed fundamental time.
+  The critical slowing suggests that near Kc, geometric organization
+  takes longer — indicating that the ordering process has temporal structure.
+
+================================================================================
+5. SELFHOOD
+================================================================================
+
+"SELF" IS NOT PRIMITIVE SUBSTANCE.
+
+Selfhood is: RECURSIVELY STABILIZED INTERACTION GEOMETRY.
+
+EMPIRICAL CORRELATE:
+  Phase 252-263 does NOT identify a "self" in the Kuramoto model.
+  However, the synchronization transition shows:
+    - COHERENT GLOBAL MODE (R high) — collective self-like geometry
+    - PHASE COHERENCE (Z = |Z| e^(i psi)) — unified coordination
+    - RECURSIVE BINDING (Binder non-Gaussian) — potential for nested
+      self-referential geometry
+
+  The order parameter Z represents a COLLECTIVE MODE that may be
+  interpreted as a geometric correlate of selfhood.
+
+INTERPRETATION (EXPLORATORY):
+  The Kuramoto model exhibits collective modes that stabilize across
+  the system. This stabilization could be interpreted as a geometric
+  substrate for recursive selfhood — a "geometric self" rather than
+  a "substance self."
+
+  This interpretation is NON-EMPIRICAL and STRICTLY SPECULATIVE.
+
+================================================================================
+6. PHYSICALITY
+================================================================================
+
+Physicality is treated as: SECONDARY MANIFESTATION OF EXPERIENTIAL-RELATIONAL GEOMETRY.
+
+EMPIRICAL CORRELATE:
+  The Kuramoto model is a MATHEMATICAL MODEL of coupled oscillators.
+  It does not claim to represent physical reality directly.
+
+  However, the model's geometric structures (phase transitions, scaling,
+  critical slowing) are OBSERVED across multiple topologies and
+  frequency distributions. This robustness suggests that the geometries
+  are NOT artifacts of the specific implementation.
+
+INTERPRETATION (EXPLORATORY):
+  The empirical finding that synchronization geometries are robust
+  across implementations (A2A, ER, Gaussian, Uniform) could be
+  interpreted as supporting the view that physicality emerges from
+  relational geometry rather than being primitive substance.
+
+  This is a metaphysical interpretation, NOT an empirical finding.
+
+================================================================================
+7. MATHEMATICS / LOGIC
+================================================================================
+
+Framework tendency:
+  Mathematics = logic = coherent truth structure
+
+EMPIRICAL CORRELATE:
+  Phase 252-263 uses standard mathematical definitions:
+    - Order parameter R = |Z|
+    - Susceptibility chi = N * Var(R)
+    - Binder U4 = 1 - <R^4> / (3 <R^2>^2)
+
+  These are standard definitions from statistical physics.
+
+INTERPRETATION (EXPLORATIVE):
+  The fact that standard mathematical definitions produce consistent
+  geometric structures across implementations is CONSISTENT with
+  the view that mathematics captures coherent truth structure.
+
+  HOWEVER: No manuscript language may elevate this into metaphysical
+  claim status. The Results section may NOT claim:
+    - "Mathematics proves reality"
+    - "Logic confirms idealism"
+    - "Mathematical structure demonstrates consciousness"
+
+  Allowed language: "standard mathematical definitions produce
+  consistent geometric structures across tested conditions."
+
+================================================================================
+8. HILBERT SPACE / POSSIBILITY STRUCTURE
+================================================================================
+
+Current speculative interpretation:
+  Hilbert-like possibility structure may represent PRE-TEMPORAL RELATIONAL POSSIBILITY GEOMETRY.
+
+EMPIRICAL CORRELATE: NONE.
+
+This interpretation is:
+  - NON-EMPIRICAL
+  - NON-VALIDATED
+  - STRICTLY SPECULATIVE
+
+Must NEVER contaminate empirical results sections.
+
+INTERPRETATION (EXPLORATORY):
+  The order parameter Z = (1/N) Σ exp(i θ_j) is a complex number
+  in the unit disk. This is mathematically similar to a Hilbert space
+  projection, but the analogy is NOT empirically validated.
+
+  The KURAMOTO MODEL DOES NOT USE HILBERT SPACE.
+  The model uses real-valued phases and standard Euclidean geometry.
+
+  Any interpretation of Z as representing "pre-temporal possibility
+  structure" is strictly speculative and must NOT appear in the
+  Results or Methods sections.
+
+  This interpretation may appear ONLY in:
+    - Discussion section (clearly labeled as exploratory)
+    - Future work (Priority 9-12)
+    - Philosophical notes (outside the manuscript)
+
+================================================================================
+9. QUANTUM INDETERMINACY
+================================================================================
+
+Current speculative interpretation:
+  "unresolved relational incompleteness"
+
+AGAIN:
+  STRICTLY SPECULATIVE
+
+EMPIRICAL CORRELATE: NONE.
+
+The Kuramoto model is DETERMINISTIC given initial conditions and parameters.
+There is no quantum indeterminacy in the model.
+There is no measurement problem in the model.
+
+Any interpretation of the model's behavior as representing quantum
+indeterminacy is strictly speculative and prohibited in the
+Results and Methods sections.
+
+================================================================================
+10. EMPIRICAL VS ONTOLOGICAL SEPARATION
+================================================================================
+
+PROJECT A — EMPIRICAL GEOMETRY
+  Scope:
+    - Synchronization transitions
+    - Scaling behavior (finite-size, susceptibility)
+    - Binder structure
+    - Hysteresis absence
+    - Critical slowing
+    - Topology robustness
+    - Frequency robustness
+    - Persistence geometry
+
+  Governance:
+    - Phases 252-263
+    - Tier 1 (C1-C6) and Tier 2 (C7-C10)
+    - Parameter locks, estimator definitions, failure registries
+    - Cross-dataset replication criteria
+
+  Language:
+    - "persistent relational geometry"
+    - "interaction-capable structures"
+    - "stable coordination dynamics"
+    - "recursive persistence may be possible"
+
+PROJECT B — ONTOLOGICAL INTERPRETATION
+  Scope:
+    - Experiential persistence
+    - Relational interiors
+    - Emergent selfhood
+    - Emergent time
+    - Hilbert possibility structures
+    - Idealist interpretation
+    - Recursive stability selection
+    - Fertility concept
+
+  Governance:
+    - Phase 264+
+    - Future work priorities 9-12
+    - Discussion section (exploratory)
+    - Philosophical notes (outside manuscript)
+
+  Language:
+    - "suggests exploratory interpretation"
+    - "consistent with SFH-SGP framework"
+    - "may indicate conditions for experiential persistence"
+
+SEPARATION PRINCIPLE:
+  The empirical chain constrains ontology.
+  Ontology does NOT constrain the empirical chain.
+
+  No philosophical consideration may influence:
+    - Parameter selection
+    - Estimator definition
+    - Threshold setting
+    - Verdict assignment
+    - Tier classification
+    - Claim elevation
+
+================================================================================
+11. FERTILITY CONCEPT
+================================================================================
+
+Fertility: The property of a structure that distinguishes
+recursive stabilizers from decoherent/terminating structures.
+
+EMPIRICAL PROXIES IDENTIFIED IN PHASES 252-263:
+  1. High R (synchronization): geometric coherence
+  2. Binder dip (non-Gaussian): multi-stability potential
+  3. Critical slowing: near-fertility-peak dynamics
+  4. Hysteresis absence: open propagation, no metastable traps
+  5. Topology robustness: fertility across implementations
+
+These are GEOMETRIC FEATURES, not direct measurements of fertility.
+
+INTERPRETATION (EXPLORATORY):
+  The coupling landscape near Kc may represent a fertility boundary
+  where recursive stabilization becomes possible. Structures that
+  cross this boundary may exhibit persistent relational geometry
+  that could serve as substrates for experience.
+
+  This interpretation is NON-EMPIRICAL.
+  The geometric features do NOT prove fertility.
+  They MAY indicate fertility conditions.
+
+================================================================================
+12. INVARIANT VS IMPLEMENTATION-DEPENDENT GEOMETRY
+================================================================================
+
+CLASSIFICATION (from Phase 263 Priority 11):
+
+INVARIANT (robust across all tested conditions):
+  - Transition existence (R increases with K)
+  - Finite-size sharpening (dR/dK increases with N)
+  - Hysteresis absence (loop_area < 0.15)
+  - Critical slowing (tau increases near Kc)
+
+CONDITIONALLY INVARIANT (robust within protocol, sensitive across protocols):
+  - Binder structure (STEPS-dependent depth but consistent within STEPS class)
+  - Order parameter trajectory shape
+
+IMPLEMENTATION-DEPENDENT (parameter-sensitive):
+  - gamma value (varies 0.62-1.98 with frequency distribution)
+  - Kc estimate (varies with N and estimator)
+  - tau saturation (depends on STEPS)
+  - Binder depth (depends on STEPS/TRANSIENT)
+
+ONTOLOGICAL IMPLICATION:
+  Invariant features are candidates for "necessary conditions"
+  for experiential persistence.
+  Implementation-dependent features are not.
+
+  The SFH-SGP framework suggests that invariance across implementations
+  indicates that the geometric structure is not arbitrary — it reflects
+  genuine relational organization that could support persistence.
+
+  This is EXPLORATORY interpretation, not empirical finding.
+
+================================================================================
+13. RECURSIVE PERSISTENCE SELECTION
+================================================================================
+
+Concept: Some structures recursively generate higher-order
+persistent structures (fertility positive). Others terminate
+or decohere (fertility zero or negative).
+
+EMPIRICAL EVIDENCE (INDIRECT):
+  - Phase coherence (Z) emerges from individual oscillators
+  - Collective mode (R high) exceeds individual coherence
+  - Scaling behavior suggests size-independent geometry (self-similarity)
+  - Binder non-Gaussianity suggests multi-level organization
+
+These features are CONSISTENT WITH recursive persistence selection,
+but do NOT prove it.
+
+INTERPRETATION (EXPLORATORY):
+  The Kuramoto model may exhibit recursive organization where
+  individual oscillators recursively generate collective modes
+  that in turn recursively organize individual behavior.
+
+  This could be interpreted as a geometric substrate for
+  "experiential recursion" — the structural basis for
+  "self-modeling" or "self-reference" in a purely geometric sense.
+
+  This is NON-EMPIRICAL and STRICTLY SPECULATIVE.
+
+================================================================================
+14. FRAMEWORK STATUS
+================================================================================
+
+The SFH-SGP framework is:
+  - EXPLORATORY: Not validated by empirical evidence
+  - INCOMPLETE: Many components are not formally specified
+  - NON-EMPIRICAL: Does not produce testable predictions
+  - PHILOSOPHICAL: Addresses questions beyond scientific methodology
+
+The framework MUST NOT:
+  - Influence parameter choices in empirical analysis
+  - Modify estimator definitions
+  - Change verdict assignments
+  - Elevate Tier 2 to Tier 1
+  - Appear in Results or Methods sections
+
+The framework MAY:
+  - Inform future work priorities (9-12)
+  - Appear in Discussion section (clearly labeled as exploratory)
+  - Guide interpretation of geometric features
+  - Suggest conditions for experiential persistence
+
+================================================================================
+15. LANGUAGE RULES
+================================================================================
+
+MANDATORY USE:
+  - "suggests"
+  - "exploratory"
+  - "persistent"
+  - "relational"
+  - "coordination"
+  - "geometry"
+  - "interaction-capable"
+  - "may indicate"
+  - "consistent with SFH-SGP"
+
+MANDATORY AVOID:
+  - "ultimate"
+  - "final"
+  - "proof"
+  - "consciousness confirmed"
+  - "theory of everything"
+  - "mind proven"
+  - "physics solved"
+  - "proves experience"
+  - "demonstrates sentience"
+  - "confirms idealism"
+  - "mind creates reality"
+
+================================================================================
+END OF FOUNDATIONAL CLARIFICATIONS

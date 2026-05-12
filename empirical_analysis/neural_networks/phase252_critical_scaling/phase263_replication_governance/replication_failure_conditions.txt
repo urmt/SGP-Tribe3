@@ -1,0 +1,238 @@
+REPLICATION FAILURE CONDITIONS — PHASE 263
+============================================
+
+Purpose: Define exactly what constitutes a failed replication,
+         what triggers tier downgrades, and what forces audit suspension.
+
+All conditions are enforced at the dataset level.
+
+================================================================================
+1. CONDITIONS THAT INVALIDATE A REPLICATION
+================================================================================
+
+A replication is INVALIDATED (not just failed) if any of the
+following occur. Invalidated datasets are archived but not used
+in the manuscript.
+
+INV1: Critical physics violation
+  - R(K) exceeds 1.0 anywhere (unphysical)
+  - R(K) is negative anywhere (unphysical)
+  - K takes negative values
+  - N takes non-integer or non-positive values
+  - Timestep dt <= 0
+
+INV2: Preprocessing contamination
+  - Kuramoto fitting applied before order parameter computation
+  - Frequency data filtered or smoothed before simulation
+  - Oscillators removed based on synchronization level
+  - R normalized to target range [0,1] before analysis
+
+INV3: Missing audit chain
+  - Figures not SHA256-hashed
+  - Scripts not archived
+  - No metadata record
+  - Audit trace incomplete
+
+INV4: Metadata fraud
+  - Claimed N, K, STEPS values that do not match outputs
+  - Fabricated trial data
+  - Modified figures after computation
+
+================================================================================
+2. CONDITIONS THAT DOWNGRADE TIER 1 CLAIMS
+================================================================================
+
+A Tier 1 claim (C1-C6) is DOWNGRADED to Tier 2 or removed
+if a replication dataset produces the following outcomes:
+
+TIER DOWNGRADE TRIGGERS:
+
+C1 (Transition exists):
+  - FAIL on F1 criterion in the replication dataset
+  - Action: C1 becomes Tier 2; "transition exists" language only
+    if F1 shows increase but does not reach R > 0.7
+
+C2 (No hysteresis):
+  - FAIL on F3 criterion (loop_area > 0.25)
+  - Action: C2 is REMOVED; hysteresis must be investigated in future work
+
+C3 (Finite-size sharpening):
+  - FAIL on F2 AND replication shows FLATTER transition at larger N
+  - Action: C3 is REMOVED; "sharpening" claim not supported by replication
+
+C4 (Critical slowing):
+  - FAIL on F6 AND tau flat or decreasing with K
+  - Action: C4 is REMOVED; critical slowing not confirmed
+
+C5 (Topology robustness):
+  - FAIL on F7 AND alternative topology shows NO transition
+  - Action: C5 is REMOVED; topology limitation must be stated
+
+C6 (Binder structure):
+  - FAIL on F4 AND U4 = 0.67 (Gaussian) across entire K range
+  - Action: C6 is REMOVED; Binder structure not observed
+
+TIER DOWNGRADE PROCESS:
+  - Downgrade requires FAIL on the corresponding criterion
+  - INCONCLUSIVE on a criterion does NOT trigger downgrade
+  - Downgrade is dataset-specific (Phase 252-256 claims remain valid
+    for the original dataset; replication dataset gets its own verdict)
+  - Each dataset is assessed independently
+
+================================================================================
+3. CONDITIONS THAT DOWNGRADE TIER 2 CLAIMS
+================================================================================
+
+A Tier 2 claim (C7-C10) is DOWNGRADED or REMOVED if:
+
+C7 (gamma ~ 1.1):
+  - FAIL on F5 criterion (chi_peak does not increase with N)
+  - OR gamma computed is < 0.3 or > 3.0
+  - Action: C7 removed; gamma is dataset-specific, not universal
+
+C8 (data collapse):
+  - Kc or nu cannot be estimated from replication data
+  - Action: C8 remains Tier 2; "approximate" language only
+
+C9 (Kc ~ 1.4):
+  - K estimates shift by more than 1.0 across N in replication
+  - Action: C9 remains Tier 2 but confidence reduced
+  - Three-estimator convergence failed in replication (like Phase 256)
+
+C10 (gamma varies by frequency):
+  - Both frequency distributions produce same gamma (diff < 0.3)
+  - Action: C10 removed; gamma does not vary as observed
+
+================================================================================
+4. CONDITIONS THAT FORCE AUDIT SUSPENSION
+================================================================================
+
+Audit is SUSPENDED if any of the following occur.
+Suspended audits are frozen and reviewed by the audit council
+before resuming.
+
+SUSP1: Systematic bias detected
+  - RNG seed produces systematically better results than seed 42
+  - Multiple seeds produce inconsistent verdicts (e.g., seed 0: PASS,
+    seed 100: FAIL on same criterion)
+  - Implies results are seed-dependent artifacts
+
+SUSP2: Parameter drift detected
+  - Dataset uses different STEPS than admitted dataset
+  - Metadata shows K range shifted after initial run
+  - Implies post-hoc parameter tuning
+
+SUSP3: Cross-dataset conflict
+  - Two or more datasets produce contradictory verdicts on F1
+  - One dataset: strong transition; another: no transition
+  - Both datasets pass admission rules
+  - Requires audit council review
+
+SUSP4: Failure cascade
+  - More than 2 FAIL verdicts across all structures
+  - Implies fundamental difference between datasets
+  - Requires investigation before proceeding
+
+SUSP5: Figure tampering
+  - SHA256 hash mismatch on any figure
+  - Figure modified after initial computation
+  - Triggers full audit review
+
+AUDIT SUSPENSION PROCESS:
+  1. Identify triggering condition
+  2. Freeze all manuscript writing pending review
+  3. Document triggering condition in suspension_report.txt
+  4. Form audit council (at minimum: lead analyst + 1 independent reviewer)
+  5. Council reviews evidence and determines:
+     - RESUME: condition was false positive or fixable
+     - CORRECT: condition is real but correctable
+     - TERMINATE: condition is fundamental and unrecoverable
+  6. Council decision is documented and archived
+  7. Manuscript proceeds only after RESUME or CORRECT decision
+
+================================================================================
+5. REPLICATION VERDICT FAILURE MAP
+================================================================================
+
+Per-structure failure conditions:
+
+F1 (Transition):
+  - FAIL if: R_max - R_min < 0.1 across K range
+  - FAIL if: R does not increase monotonically
+  - FAIL if: R_max < 0.5 at maximum K
+
+F2 (Sharpening):
+  - FAIL if: dR/dK is flat or decreasing with N
+  - FAIL if: largest N shows flatter transition than smallest N
+
+F3 (Hysteresis):
+  - FAIL if: loop_area > 0.25
+  - FAIL if: gap > 0.25 at any K
+  - FAIL if: backward sweep consistently above forward sweep
+
+F4 (Binder):
+  - FAIL if: U4 ≈ 0.67 everywhere (no structure)
+  - FAIL if: U4 > 0.67 anywhere (supergaussian)
+  - FAIL if: U4 monotonically decreases with K (no recovery)
+
+F5 (Chi scaling):
+  - FAIL if: chi_peak does not increase with N
+  - FAIL if: gamma < 0.3 or gamma > 3.0
+  - FAIL if: chi(K) has no peak
+
+F6 (Critical slowing):
+  - FAIL if: tau flat or decreasing with K
+  - FAIL if: peak_ratio < 1.5
+  - FAIL if: tau saturates and no peak identifiable
+
+F7 (Topology):
+  - FAIL if: alternative topology shows no transition
+  - FAIL if: R(K) shape fundamentally different between topologies
+
+F8 (Frequency):
+  - FAIL if: one frequency distribution shows no transition
+  - FAIL if: gamma < 0.3 or gamma > 3.0 for any distribution
+
+================================================================================
+6. FAILURE REPORTING REQUIREMENTS
+================================================================================
+
+Every FAIL verdict requires a failure_report.txt in the dataset
+directory containing:
+
+1. Criterion that failed
+2. Measured values that triggered FAIL
+3. Threshold values that defined FAIL
+4. Figures showing the failure
+5. Hypothesis for why failure occurred
+6. Whether failure is likely due to:
+   a. Genuine physical difference (new physics)
+   b. Methodological difference (parameter issue)
+   c. Implementation error (bug)
+   d. Audit error (false positive)
+7. Recommended action (continue, modify, terminate)
+
+FAILURE REPORTS ARE MANDATORY.
+A dataset with FAIL verdicts but no failure_report.txt is
+flagged as SUSPENDED.
+
+================================================================================
+7. FAILURE ESCALATION THRESHOLDS
+================================================================================
+
+2 FAIL verdicts:
+  - Dataset receives INCONCLUSIVE overall verdict
+  - Phase 252-256 claims remain unchanged
+  - Future work triggered for the specific failing structures
+
+4 FAIL verdicts:
+  - Dataset receives FAIL overall verdict
+  - Phase 252-256 claims are reviewed for generalization
+  - Cross-dataset conflict may trigger SUSP3
+
+6+ FAIL verdicts:
+  - SUSP4 triggered: audit suspension
+  - Full audit council review required
+
+================================================================================
+END OF FAILURE CONDITIONS

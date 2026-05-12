@@ -1,0 +1,49 @@
+{
+  "phase": 252,
+  "topology": "ScaleFree",
+  "verdict": "TRUE_CRITICAL_PHASE_TRANSITION",
+  "confidence": "HIGH",
+  "evidence": {
+    "n_sizes": 6,
+    "best_model": "fsc",
+    "best_r2": 0.9913652103620907,
+    "binder_crossing": 0.03154518983296702,
+    "has_chi_div": true,
+    "has_binder_crossing": true,
+    "has_scaling": true,
+    "nu": 0.29481441758431726,
+    "K_inf": 0.18171703566204372
+  },
+  "best_scaling": {
+    "model": "fsc",
+    "params": {
+      "K_inf": 0.18171703566204372,
+      "a": -9.999999999999662,
+      "nu": 0.29481441758431726,
+      "r2": 0.9913652103620907,
+      "aic": -63.251569035409915,
+      "bic": -63.87629062772575
+    },
+    "r2": 0.9913652103620907
+  },
+  "binder_crossing": 0.03154518983296702,
+  "parameters": {
+    "sizes": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "K_range": [
+      0.0,
+      0.18
+    ],
+    "N_K": 15,
+    "STEPS": 800,
+    "dt": 0.05,
+    "threshold": 0.25,
+    "metric_window": 300
+  }
+}

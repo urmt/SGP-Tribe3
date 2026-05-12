@@ -1,0 +1,232 @@
+CROSS-DATASET REPLICATION — ADMISSION RULES
+=============================================
+
+Purpose: Define the minimum requirements for any external dataset
+         to enter the replication pipeline, without modifying the
+         validated Phase 252-262 framework.
+
+All rules are mandatory. No exceptions.
+
+================================================================================
+1. MINIMUM SAMPLING REQUIREMENTS
+================================================================================
+
+1.1 System size coverage:
+    - MUST test at least N >= 16
+    - MUST test at least 3 distinct N values
+    - Recommended: N = (16, 32, 64, 128) or comparable range
+    - No single-N replication is sufficient for finite-size claims
+
+1.2 Coupling parameter coverage:
+    - MUST scan K from 0 to at least 3.0
+    - MUST use at least 15 K values (not 2 or 3 points)
+    - Resolution must be sufficient to identify R(K) shape
+    - Gap: K points must not cluster exclusively near or far from critical region
+
+1.3 Trial count:
+    - MUST run at least 4 independent trials per (N, K) configuration
+    - Single-trial results are INSUFFICIENT for Binder and chi estimators
+    - Exception: exploratory discovery runs (clearly labeled as such)
+
+1.4 Time series length:
+    - MUST run at least STEPS >= 500 simulation steps per trial
+    - Transient must be clearly identified and discarded from analysis
+    - STEPS < 500 requires explicit justification and is flagged as preliminary
+
+1.5 Order parameter measurement:
+    - MUST measure R = |Z| as defined in Phase 262 methods_main.txt
+    - R must be computed as mean over the last window (TRANSIENT:STEPS)
+    - Alternative order parameters (S, m2, correlation matrices) are NOT
+      permitted as primary evidence
+
+================================================================================
+2. REQUIRED METADATA
+================================================================================
+
+2.1 Dataset identification:
+    - Unique dataset ID (e.g., ds000114 or derived from source)
+    - Source institution / collection
+    - Collection date
+    - Collection environment (species, preparation, recording method)
+
+2.2 Simulation metadata:
+    - RNG seed value(s) used
+    - RNG algorithm (must match numpy default_rng behavior)
+    - Integrator used (Euler, RK4, etc.)
+    - Simulation timestep dt
+    - Number of oscillators N per configuration
+    - K range and number of K points
+    - STEPS and TRANSIENT values
+    - Number of trials per configuration
+    - Total simulation wall-clock time
+
+2.3 Network topology:
+    - Topology type (all-to-all, ER, scale-free, small-world, custom)
+    - If ER: probability p
+    - If scale-free: degree distribution parameters
+    - If small-world: rewiring probability
+    - If custom: explicit adjacency matrix or generation rule
+
+2.4 Frequency distribution:
+    - Distribution type (Gaussian, Uniform, Cauchy, empirical, etc.)
+    - Distribution parameters (mean, variance, bounds)
+    - Source of frequency data (random draw vs measured)
+
+2.5 Preprocessing pipeline:
+    - All preprocessing steps applied before simulation
+    - Filtering, normalization, or detrending applied
+    - Any phase alignment or synchronization correction applied
+    - MUST NOT include Kuramoto fitting or order parameter preprocessing
+
+================================================================================
+3. ALLOWED TOPOLOGY STRUCTURES
+================================================================================
+
+3.1 Permitted topologies:
+    - All-to-all (mean-field)
+    - Erdős-Rényi random graph (any p)
+    - Scale-free (Barabási-Albert preferential attachment)
+    - Small-world (Watts-Strogatz)
+    - Custom empirical networks (with documented source)
+
+3.2 Topology requirements:
+    - Connectivity must be verified (no isolated nodes)
+    - Average degree must be reported
+    - Network must be static during simulation (no rewiring)
+    - If empirical network: source must be cited
+
+3.3 Forbidden topologies:
+    - Dynamic or evolving networks
+    - Weighted networks (unweighted only)
+    - Multiplex or multilayer networks
+    - Directed networks (undirected only)
+
+================================================================================
+4. PROHIBITED PREPROCESSING
+================================================================================
+
+4.1 Forbidden order parameter transformations:
+    - Hilbert transform of R(t) before analysis
+    - FFT or spectral decomposition of phase trajectories
+    - Correlation matrix eigenvalue analysis
+    - Any form of principal component analysis on phases
+
+4.2 Forbidden data cleaning:
+    - Removing or filtering oscillators based on R values
+    - Adjusting initial phases to "improve" synchronization
+    - Normalizing R to a target range before comparison
+    - Applying any Kuramoto-derived filter to frequency data
+
+4.3 Forbidden parameter tuning:
+    - Adjusting K range, N, or STEPS to match Phase 252-256 results
+    - Retuning RNG seed to reproduce specific outcomes
+    - Selective omission of configurations that fail replication criteria
+
+4.4 Forbidden smoothing:
+    - Moving average or Savitzky-Golay smoothing of R(K) curves
+    - Gaussian kernel smoothing of Binder or chi curves
+    - Any interpolation that modifies the raw data shape
+
+================================================================================
+5. EXCLUSION CRITERIA
+================================================================================
+
+5.1 Automatic exclusions:
+    - N < 16
+    - Fewer than 3 N values
+    - Fewer than 15 K points
+    - STEPS < 500
+    - Single trial per configuration
+    - Order parameter not computed as R = |Z|
+    - Missing metadata for any required field in Section 2
+
+5.2 Conditional exclusions:
+    - If tau saturation detected: flag as INCONCLUSIVE
+    - If K estimates shift by more than 1.0 across N values: flag as INCONCLUSIVE
+    - If Binder behavior contradicts Phase 252 AND Phase 256 simultaneously:
+      flag as FAIL with explicit documentation
+    - If gamma varies by more than 1.0 across frequency distributions: flag
+      as INCONCLUSIVE (expected behavior — not a failure)
+
+5.3 Exclusion review:
+    - All exclusions must be documented in replication_report.txt
+    - Exclusions must state the specific criterion violated
+    - No excluded datasets are deleted — they remain in the archive
+
+================================================================================
+6. REPRODUCIBILITY REQUIREMENTS
+================================================================================
+
+6.1 Code availability:
+    - Analysis scripts must be archived with dataset
+    - Scripts must use frozen estimator definitions from Phase 262
+    - No custom estimators permitted
+
+6.2 Environment documentation:
+    - Python version and numpy version must be reported
+    - Any platform-specific random number behavior must be flagged
+    - Random seed series (multiple seeds) must be documented
+
+6.3 Figure output:
+    - All figures must match the naming convention from Phase 252-256
+    - Figure format: PNG, minimum 800x600 resolution
+    - Figures must include axis labels, legends, and parameter values
+
+6.4 Audit chain:
+    - Every figure must be added to figure_manifest.csv with:
+      dataset_id, script_name, figure_name, hash, phase_used, tier, limitations
+    - SHA256 hash of every output file must be computed and recorded
+    - Audit chain must trace figure -> script -> dataset -> manuscript section
+
+6.5 Independent verification:
+    - Dataset must be independently verified by a second analyst
+    - Verification checklist: metadata completeness, figure presence,
+      hash verification, exclusion criteria review
+    - Verification report must be archived alongside dataset
+
+================================================================================
+7. DATASET NAMING AND VERSIONING
+================================================================================
+
+7.1 Naming convention:
+    - Format: ds{NNNNN}_{topology}_{frequency}_{Nrange}_{seed}
+    - Example: ds000114_A2A_Gaussian_N16-128_seed42
+    - Example: ds000115_ER025_Uniform_N16-64_seed0-100-1000
+
+7.2 Version control:
+    - Each dataset gets a version number (v1, v2, v3)
+    - Minor changes (metadata fixes) increment patch version
+    - Significant changes (new N range, new topology) increment major version
+    - Version history must be maintained in dataset_changelog.txt
+
+7.3 Archive location:
+    - All datasets stored in /phase263_replication_governance/datasets/
+    - Each dataset in its own subdirectory: ds{NNNNN}/
+    - Subdirectory contains: raw data, analysis scripts, outputs, audit chain
+
+================================================================================
+8. ADMISSION DECISION TREE
+================================================================================
+
+Step 1: Check metadata completeness (Section 2)
+    -> Missing required field: REJECT, document missing field
+
+Step 2: Check sampling requirements (Section 1)
+    -> N < 16 or < 3 N values: REJECT
+    -> K < 15 points or K range < 0-3.0: REJECT
+    -> STEPS < 500: REJECT
+    -> Single trial: REJECT
+
+Step 3: Check preprocessing (Section 4)
+    -> Forbidden preprocessing detected: REJECT, document violation
+
+Step 4: Check topology (Section 3)
+    -> Forbidden topology: REJECT
+
+Step 5: Pass all checks -> ADMIT TO REPLICATION PIPELINE
+    -> Assign dataset ID
+    -> Create audit directory
+    -> Begin replication analysis
+
+================================================================================
+END OF ADMISSION RULES

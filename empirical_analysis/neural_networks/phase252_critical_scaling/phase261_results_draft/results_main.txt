@@ -1,0 +1,349 @@
+RESULTS — PHASE 261 DRAFT
+==========================
+
+All claims bounded by manuscript_claim_boundaries.json (Phase 259).
+All figures documented in figure_manifest.csv (Phase 259).
+All evidence traced in audit_traceability_map.txt (Phase 259).
+Tier 2 findings isolated per tier2_isolation_log.txt.
+
+================================================================================
+3.1 TRANSITION GEOMETRY
+================================================================================
+
+CLAIM SCOPE:
+The Kuramoto model on an all-to-all network exhibits a phase transition in the
+order parameter R as coupling K increases from 0 to 6. The order parameter
+transitions from approximately 0.08 to approximately 0.98.
+
+SUPPORTING EVIDENCE:
+  Figure: R_vs_K.png (phase252_minimal_transition_test.py)
+    System: N=128, all-to-all, Gaussian frequencies (sigma=1)
+    K range: 0 to 6, 40 equally spaced points
+    Single simulation at each K value
+    Observations:
+      K = 0.000 -> R = 0.0788
+      K = 1.538 -> R = 0.2319
+      K = 1.692 -> R = 0.3891
+      K = 1.846 -> R = 0.6148
+      K = 2.000 -> R = 0.6847
+      K = 2.615 -> R = 0.8652
+      K = 4.000 -> R = 0.9588
+      K = 6.000 -> R = 0.9833
+
+  Figure: finite_size_transition.png (phase252_finite_size_test.py)
+    System: N = (16, 32, 64, 128), all-to-all, Gaussian frequencies
+    K range: 0 to 4, 30 equally spaced points
+    Single simulation per (N, K) configuration
+    Observations:
+      N = 16: broad transition, R ranges from approximately 0.23 to 0.98
+      N = 32: intermediate sharpening
+      N = 64: sharp step near K = 1.5 to 2.0
+      N = 128: steepest transition, R jumps from approximately 0.15
+              to approximately 0.83 between K = 1.52 and K = 2.07
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1)
+
+LIMITATIONS:
+  - N = 128 only for the primary R vs K characterization (R_vs_K.png)
+  - All-to-all topology only; no replication on sparse or structured networks
+  - Single frequency distribution (Gaussian, sigma = 1) tested
+  - K range 0 to 6 may not fully characterize the transition
+  - No independent order parameter used; R is the sole observable
+  - Single trial per configuration (R_vs_K.png); no error bars
+
+REFERENCED CLAIM: C1 (Tier 1)
+MANUSCRIPT LANGUAGE: "exhibits a phase transition", "order parameter R
+  increases with K", "disordered and synchronized phases observed"
+FORBIDDEN: "universal critical point", "precisely characterized Kc",
+  "order parameter discontinuity", "transition verified across all topologies"
+
+================================================================================
+3.2 FINITE-SIZE SHARPENING
+================================================================================
+
+CLAIM SCOPE:
+The width of the transition region in the order parameter R decreases
+systematically as the number of oscillators N increases from 16 to 128.
+
+SUPPORTING EVIDENCE:
+  Figure: finite_size_transition.png (phase252_finite_size_test.py)
+    System: N = (16, 32, 64, 128), all-to-all, Gaussian frequencies
+    Single simulation per (N, K) configuration
+    Observation: The slope dR/dK in the region K = 1.5 to 2.0 increases
+      monotonically with N.
+
+  Figure: phase252_script8_order_parameter.png (phase252_script8.py)
+    System: N = (16, 32, 64), all-to-all, Gaussian frequencies, K = 0 to 4
+    4 trials per (N, K) configuration
+    Mean order parameter computed from last 500 of 2000 steps
+    Observation: Transition sharpens with N in mean of 4 independent trials
+
+  Figure: binder_test_order_parameter.png (phase252_binder_test.py)
+    System: N = (16, 32, 64), all-to-all, Gaussian frequencies
+    5 trials per (N, K) configuration
+    Observation: Consistent sharpening across independent trials
+
+CONFIDENCE LEVEL: MEDIUM-HIGH (Tier 1)
+
+LIMITATIONS:
+  - N values limited to 16, 32, 64, 128; no N > 128 tested
+  - No formal finite-size scaling analysis applied to the sharpening width
+  - Order parameter R is the only metric used to quantify sharpness
+  - Sharpening not converted to a quantitative width estimate (e.g., full-width
+    at half-maximum)
+
+REFERENCED CLAIM: C3 (Tier 1)
+MANUSCRIPT LANGUAGE: "transition region sharpens with increasing N",
+  "finite-size effects visible", "consistent with continuous phase transition"
+FORBIDDEN: "universal finite-size scaling law established",
+  "critical exponent precisely determined", "thermodynamic limit behavior confirmed"
+
+================================================================================
+3.3 BINDER CUMULANT STRUCTURE
+================================================================================
+
+CLAIM SCOPE:
+The Binder cumulant U4 shows non-trivial structural features near the
+critical coupling. Values below the Gaussian limit of approximately 0.67
+are observed in the critical region.
+
+SUPPORTING EVIDENCE:
+  Figure: binder_test_crossing.png (phase252_binder_test.py)
+    System: N = (16, 32, 64), all-to-all, Gaussian frequencies, K = 0 to 4
+    5 trials per (N, K) configuration
+    U4 computed as 1 - <R^4> / (3 <R^2>^2) per configuration
+    Observations:
+      N = 16: U4 range 0.491 to 0.667, minimum at K approximately 1.39
+      N = 32: U4 range 0.535 to 0.667, minimum at K approximately 1.57
+      N = 64: U4 range 0.565 to 0.666, minimum at K approximately 1.74
+
+  Figure: phase252_script8_binder.png (phase252_script8.py)
+    System: N = (16, 32, 64), all-to-all, Gaussian frequencies
+    4 trials per configuration
+    U4 minimum visible across all N values
+
+  Figure: phase256_replication_binder_N16.png, _N32.png, _N64.png
+    System: N = (16, 32, 64), all-to-all, Gaussian frequencies
+    4 trials per configuration, STEPS = 1000, TRANSIENT = 300
+    Observations:
+      N = 16: Binder min approximately 0.644 at K approximately 1.78
+      N = 32: Binder min approximately 0.635 at K approximately 0.71
+      N = 64: Binder min approximately 0.644 at K approximately 0.86
+    NOTE: These values are approximately 0.65 across all N, and do NOT
+      show systematic deepening. This conflicts with the behavior observed
+      in phase252_binder_test.py and phase252_script8.py, where U4
+      minimum reached approximately 0.29 to 0.49.
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1, with parameter sensitivity caveat)
+
+LIMITATIONS:
+  - Binder minimum depth is sensitive to simulation parameters (STEPS, TRANSIENT,
+    number of trials)
+  - Conflicting observations between Phase 252 scripts (STEPS=2000) and
+    Phase 256 replication (STEPS=1000)
+  - Short simulation (STEPS=1000, TRANSIENT=300) may not capture full
+    Binder minimum development
+  - Binder minimum location shifts with N, not converging to a stable Kc estimate
+  - No standardized protocol for Binder measurement established
+
+REFERENCED CLAIM: C6 (Tier 1)
+MANUSCRIPT LANGUAGE: "Binder cumulant drops below 0.66 near critical region",
+  "non-Gaussian order parameter distribution suggested",
+  "structure consistent with phase transition"
+FORBIDDEN: "Binder minimum deepens systematically with N",
+  "U4 accurately characterizes critical point", "bimodal distribution confirmed"
+
+================================================================================
+3.4 HYSTERESIS ANALYSIS
+================================================================================
+
+CLAIM SCOPE:
+Forward (K: 0 to 4) and backward (K: 4 to 0) coupling sweeps produce
+nearly overlapping order parameter curves. The computed loop area is
+approximately 0.03, below the chosen threshold of 0.15.
+
+SUPPORTING EVIDENCE:
+  Figure: phase254_script10_hysteresis.png (phase254_script10.py)
+    System: N = 64, all-to-all, Gaussian frequencies
+    4 trials per direction
+    Forward sweep: K = 0 to 4 in 32 steps
+    Backward sweep: K = 4 to 0 in 32 steps
+    Initial theta for backward sweep taken from final theta of forward sweep
+    Observation: Forward and backward curves nearly overlap
+    Computed loop_area = 0.030444
+
+  Figure: phase254_script10_gap.png (phase254_script10.py)
+    Absolute difference between forward and backward R values
+    Maximum gap = 0.033809
+    Mean gap = 0.007470
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1)
+
+LIMITATIONS:
+  - Only N = 64 tested
+  - Backward sweep initialized from forward sweep end-state; not an
+    independent random initialization
+  - Loop area threshold of 0.15 has no theoretical justification; set ad hoc
+  - 4-trial average computed; single-trial loop areas not reported
+  - No metastability analysis performed; no waiting-time measurements
+  - Loop area may be a lower bound due to initialization coupling
+
+REFERENCED CLAIM: C2 (Tier 1)
+MANUSCRIPT LANGUAGE: "forward and backward sweeps produce nearly overlapping
+  curves", "loop area approximately 0.03", "no discontinuous jump in
+  order parameter observed"
+FORBIDDEN: "hysteresis definitively ruled out", "second-order confirmed
+  with certainty", "no metastable states exist"
+
+================================================================================
+3.5 CRITICAL SLOWING
+================================================================================
+
+CLAIM SCOPE:
+The relaxation time to reach equilibrium increases near the critical coupling.
+A peak ratio of approximately 5.9 is observed between the peak relaxation
+time and the baseline.
+
+SUPPORTING EVIDENCE:
+  Figure: phase255_script11_critical_slowing.png (phase255_script11.py)
+    System: N = 64, all-to-all, Gaussian frequencies
+    K range: 0.2 to 3.5, 28 equally spaced points, 4 trials
+    Initial condition: random phases at each trial
+    Relaxation time tau defined as first timestep where R(t) reaches
+      90% of final equilibrium value (mean of last 300 steps)
+    Observations:
+      K_peak = 1.4222
+      tau_peak = 14.225
+      baseline_tau = 2.415
+      peak_ratio = 5.8903
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1)
+
+LIMITATIONS:
+  - Only N = 64 tested
+  - tau defined by 90% threshold, not by autocorrelation time or
+    integrated relaxation time
+  - 4 trials may be insufficient for robust tau estimation
+  - K_peak = 1.42 is higher than Kc estimates from chi and Binder (approximately 1.3)
+  - No independent verification of diverging correlation length
+  - tau measured from single trajectory per trial; no ensemble averaging of
+    relaxation curves
+
+REFERENCED CLAIM: C4 (Tier 1)
+MANUSCRIPT LANGUAGE: "relaxation time increases approximately 6-fold near
+  critical region", "suggests critical slowing behavior",
+  "consistent with continuous phase transition"
+FORBIDDEN: "critical slowing confirmed with rigorous tau measurement",
+  "diverging correlation length demonstrated"
+
+================================================================================
+3.6 TOPOLOGY ROBUSTNESS
+================================================================================
+
+CLAIM SCOPE:
+The phase transition survives perturbation to Erdhos-Renyi random graph
+topology. The order parameter R shows similar transition behavior on
+both all-to-all and ER networks.
+
+SUPPORTING EVIDENCE:
+  Figure: phase253_script9_universality.png (phase253_script9.py)
+    System: N = (16, 32, 64), A2A and ER (p = 0.25), Gaussian and Uniform
+    4 conditions tested: A2A/Gaussian, A2A/Uniform, ER/Gaussian, ER/Uniform
+    4 trials per (N, K) configuration
+    Observations:
+      ER + Gaussian: transition observed; gamma = 0.6206 (R2 = 0.8906)
+      ER + Uniform: transition observed; gamma = 1.8578 (R2 = 0.9817)
+      A2A + Gaussian: transition observed; gamma = 0.8779 (R2 = 0.9949)
+      A2A + Uniform: transition observed; gamma = 1.9772 (R2 = 0.9697)
+    Conclusion: Phase transition confirmed in all 4 conditions
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1)
+
+LIMITATIONS:
+  - Only one ER probability tested (p = 0.25)
+  - Only 4 conditions tested in total
+  - Scale-free and small-world topologies not included in Phase 253
+    (these were in Phase 252 initial topology sweep which used incorrect
+    K range and produced inconclusive verdicts)
+  - No quantitative comparison of transition sharpness or Kc across topologies
+  - Gamma varies significantly across conditions (0.62 to 1.98), indicating
+    that the scaling exponent is not universal across topologies
+
+REFERENCED CLAIM: C5 (Tier 1)
+MANUSCRIPT LANGUAGE: "transition confirmed in all tested conditions",
+  "survives topology perturbation", "not an artifact of all-to-all connectivity"
+FORBIDDEN: "universal critical behavior proven", "topology-independent
+  critical exponents", "all-to-all is representative of arbitrary networks"
+
+================================================================================
+3.7 FREQUENCY DISTRIBUTION ROBUSTNESS
+================================================================================
+
+CLAIM SCOPE:
+The phase transition survives changes in the natural frequency distribution.
+Gaussian and Uniform distributions both produce synchronization transitions.
+
+SUPPORTING EVIDENCE:
+  Figure: phase253_script9_universality.png (phase253_script9.py)
+    Same data as Section 3.6
+    Observations:
+      Gaussian frequencies (sigma = 1): transition at lower K, broader region
+      Uniform frequencies (-1 to 1): transition at higher K, sharper region
+    Gamma is lower for Gaussian (approximately 0.6 to 0.9) and higher
+      for Uniform (approximately 1.9 to 2.0)
+    This variation suggests that the scaling exponent depends on
+      frequency distribution properties.
+
+CONFIDENCE LEVEL: MEDIUM (Tier 1)
+
+LIMITATIONS:
+  - Only Gaussian and Uniform distributions tested
+  - Both distributions are symmetric and zero-mean
+  - Skewed, multimodal, or heavy-tailed distributions not tested
+  - Gamma variation indicates non-universal exponent; cannot claim
+    frequency-independent critical behavior
+  - Critical coupling Kc shifts with frequency distribution width
+
+REFERENCED CLAIM: C5 (Tier 1) and C10 (Tier 2)
+MANUSCRIPT LANGUAGE: "transition survives frequency distribution changes",
+  "consistent behavior observed across tested distributions"
+FORBIDDEN: "universal critical behavior across all frequencies",
+  "frequency-independent exponents"
+
+================================================================================
+TIER 2 FINDINGS — ISOLATED SECTION (NOT FOR RESULTS CORE)
+================================================================================
+
+The following findings are presented for completeness and transparency.
+They are NOT to be used as primary claims in the Results section.
+See tier2_isolation_log.txt for explicit boundaries.
+
+T2-A: Susceptibility scaling (chi_peak ~ N^gamma, gamma approximately 1.1)
+  Evidence: phase252_script6_fss.png, phase252_script7_fss.png
+  Gamma = 1.1416 from log-log fit (R2 = 0.985) for A2A + Gaussian only
+  NOTE: Gamma varies 0.62 to 1.98 across frequency/topology conditions
+  See: tier2_findings.txt T2-1, T2-6
+
+T2-B: Data collapse (approximate, nu = 2.0 assumed)
+  Evidence: phase252_script8_data_collapse.png
+  Kc = 1.33 assumed; no optimization; no error bars
+  See: tier2_findings.txt T2-2
+
+T2-C: Kc approximately 1.4 (estimator-dependent)
+  Evidence: phase256_replication_*.png, phase256_script12_*.png
+  K_chi_peak: N=16->1.78, N=32->0.71, N=64->1.32
+  Three-estimator convergence FAILED (max_deviation >> 0.25)
+  See: tier2_findings.txt T2-3, T2-9
+
+T2-D: Binder minimum deepening (conflicting data)
+  Evidence: phase252_script7_binder_min_scaling.png, phase252_script8_binder_min_scaling.png
+  Conflicting with: phase256_replication_binder_*.png (stable ~0.64)
+  See: tier2_findings.txt T2-4
+
+T2-E: tau estimator saturation
+  Evidence: phase256_replication_tau_*.png
+  tau_peak = 50 (max) for all N; unreliable Kc from tau
+  See: tier2_findings.txt T2-5
+
+All Tier 2 findings require further verification before elevation
+to primary claims. See future_work_priorities.txt (Phase 259).

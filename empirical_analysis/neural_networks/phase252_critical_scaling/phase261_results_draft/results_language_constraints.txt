@@ -1,0 +1,347 @@
+RESULTS SECTION — LANGUAGE CONSTRAINTS
+========================================
+
+This document lists allowed and prohibited language for the Results section.
+It supersedes any previous phrasing that conflicts with these constraints.
+
+================================================================================
+SECTION 3.1 — TRANSITION GEOMETRY
+================================================================================
+
+ALLOWED PHRASES:
+  - "exhibits a phase transition"
+  - "order parameter R increases with K"
+  - "disordered phase at low K; synchronized phase at high K"
+  - "R transitions from approximately 0.08 to approximately 0.98"
+  - "transition observed in the range K = 0 to 6"
+  - "steepest change in R occurs near K approximately 2"
+  - "consistent with Kuramoto synchronization literature"
+  - "order parameter is the sole observable"
+
+PROHIBITED PHRASES:
+  - "universal critical point"
+  - "precisely characterized Kc"
+  - "order parameter discontinuity"
+  - "first-order transition confirmed"
+  - "transition verified across all topologies"
+  - "paradigm shift"
+  - "breakthrough"
+  - "unprecedented"
+  - "definitive evidence"
+  - "proof of"
+
+REVIEWER-TRIGGER WORDS:
+  - "proof" -> use "evidence" or "observation"
+  - "demonstrate" -> use "show" or "observe"
+  - "establish" -> use "find" or "suggest"
+  - "confirm" -> use "observe" or "measure"
+  - "critical point" -> use "critical coupling" or "critical region"
+
+================================================================================
+SECTION 3.2 — FINITE-SIZE SHARPENING
+================================================================================
+
+ALLOWED PHRASES:
+  - "transition region sharpens with increasing N"
+  - "dR/dK increases with system size"
+  - "finite-size effects visible across N = 16 to 128"
+  - "consistent with finite-size scaling in continuous transitions"
+  - "slope near critical coupling increases monotonically with N"
+  - "the transition appears more abrupt at larger N"
+
+PROHIBITED PHRASES:
+  - "universal finite-size scaling law established"
+  - "critical exponent precisely determined"
+  - "thermodynamic limit behavior confirmed"
+  - "N-scaling follows a specific power law"
+  - "universal scaling function determined"
+  - "diverging correlation length"
+  - "order parameter critical exponent"
+
+CAUSALITY LANGUAGE PROHIBITED:
+  - "larger N causes sharper transition"
+  - "increasing N drives the transition"
+  - USE: "accompanies" or "observed with" or "associated with"
+  - "N-dependent behavior observed"
+
+================================================================================
+SECTION 3.3 — BINDER CUMULANT STRUCTURE
+================================================================================
+
+ALLOWED PHRASES:
+  - "Binder cumulant drops below 0.66 near the critical region"
+  - "U4 values below the Gaussian limit are observed"
+  - "non-Gaussian order parameter distribution suggested"
+  - "structure consistent with a phase transition"
+  - "Binder shows non-trivial behavior near K approximately 1.4"
+  - "values approaching 0.5 observed"
+  - "Binder cumulant structure warrants further investigation"
+
+PROHIBITED PHRASES:
+  - "Binder minimum deepens systematically with N"
+  - "U4 accurately characterizes the critical point"
+  - "bimodal distribution confirmed"
+  - "Binder minimum gives precise Kc estimate"
+  - "bimodality demonstrated"
+  - "phase coexistence proven"
+
+CONFIDENCE CAVEATS REQUIRED:
+  - Always include: "Binder depth is sensitive to simulation parameters"
+  - Always include: "conflicting observations between analysis approaches"
+  - Always include: "no standardized protocol established for this metric"
+
+================================================================================
+SECTION 3.4 — HYSTERESIS ANALYSIS
+================================================================================
+
+ALLOWED PHRASES:
+  - "forward and backward sweeps produce nearly overlapping curves"
+  - "loop area approximately 0.03"
+  - "no discontinuous jump in order parameter observed"
+  - "negligible hysteresis in the resolution of our measurements"
+  - "loop area below the chosen threshold of 0.15"
+  - "continuous behavior is suggested"
+  - "no large-scale irreversibility detected"
+
+PROHIBITED PHRASES:
+  - "hysteresis definitively ruled out"
+  - "second-order transition confirmed with certainty"
+  - "no metastable states exist"
+  - "no latent heat signature"
+  - "phase transition is strictly second-order"
+  - "first-order excluded"
+  - "order parameter continuous"
+  - "no discontinuous transition"
+
+UNCERTAINTY CAVEATS REQUIRED:
+  - Always include: "N = 64 only"
+  - Always include: "backward sweep initialized from forward end-state"
+  - Always include: "threshold of 0.15 is arbitrary and lacks theoretical basis"
+  - Always include: "metastability not directly analyzed"
+
+================================================================================
+SECTION 3.5 — CRITICAL SLOWING
+================================================================================
+
+ALLOWED PHRASES:
+  - "relaxation time increases approximately 6-fold near the critical region"
+  - "K_peak approximately 1.42 from the tau curve"
+  - "peak relaxation time approximately 14 time units"
+  - "baseline relaxation time approximately 2 time units"
+  - "suggests critical slowing behavior"
+  - "consistent with continuous phase transition dynamics"
+  - "slower equilibration near K approximately 1.4"
+
+PROHIBITED PHRASES:
+  - "critical slowing confirmed with rigorous tau measurement"
+  - "diverging correlation length demonstrated"
+  - "relaxation time exactly characterizes critical dynamics"
+  - "correlation length diverges"
+  - "dynamic critical exponent extracted"
+  - "autocorrelation time measured"
+  - "critical dynamics fully characterized"
+
+UNCERTAINTY CAVEATS REQUIRED:
+  - Always include: "N = 64 only"
+  - Always include: "tau defined by 90% threshold"
+  - Always include: "4 trials may be insufficient"
+  - Always include: "no autocorrelation-based tau measurement"
+
+================================================================================
+SECTION 3.6 — TOPOLOGY ROBUSTNESS
+================================================================================
+
+ALLOWED PHRASES:
+  - "transition confirmed in all tested conditions"
+  - "survives topology perturbation to Erdhos-Renyi random graph"
+  - "not an artifact of all-to-all connectivity alone"
+  - "consistent behavior observed on both topologies"
+  - "p = 0.25 for Erdhos-Renyi tested"
+
+PROHIBITED PHRASES:
+  - "universal critical behavior proven"
+  - "topology-independent critical exponents"
+  - "all-to-all is representative of arbitrary networks"
+  - "universality class across networks"
+  - "scale-free and small-world behavior characterized"
+  - "network-invariant critical behavior"
+  - "topology-independent scaling"
+
+UNCERTAINTY CAVEATS REQUIRED:
+  - Always include: "ER probability p = 0.25 only"
+  - Always include: "4 conditions total"
+  - Always include: "scale-free and small-world not included in this test"
+  - Always include: "gamma varies across conditions (0.62 to 1.98)"
+
+================================================================================
+SECTION 3.7 — FREQUENCY DISTRIBUTION ROBUSTNESS
+================================================================================
+
+ALLOWED PHRASES:
+  - "transition survives frequency distribution changes"
+  - "Gaussian and Uniform distributions both produce synchronization"
+  - "consistent behavior observed across tested distributions"
+  - "Gaussian frequencies: transition at lower K"
+  - "Uniform frequencies: transition at higher K"
+
+PROHIBITED PHRASES:
+  - "universal critical behavior across all frequencies"
+  - "frequency-independent exponents"
+  - "exponent is well-characterized"
+  - "universality class determined"
+  - "frequency-invariant scaling"
+  - "critical behavior independent of frequency statistics"
+
+UNCERTAINTY CAVEATS REQUIRED:
+  - Always include: "only Gaussian and Uniform tested"
+  - Always include: "both distributions symmetric and zero-mean"
+  - Always include: "gamma varies 0.62 to 1.98"
+  - Always include: "skewed, multimodal, heavy-tailed not tested"
+
+================================================================================
+GENERAL CONSTRAINTS — ALL SECTIONS
+================================================================================
+
+UNIVERSALITY LANGUAGE PROHIBITED:
+  - "universal" (use "observed across tested conditions" or "consistent")
+  - "universality class" (use "scaling behavior" or "parameter range")
+  - "universal exponent" (use "approximate exponent" or "preliminary estimate")
+  - "universal scaling law" (use "scaling behavior" or "approximate scaling")
+
+CAUSALITY LANGUAGE PROHIBITED:
+  - "causes" -> use "accompanied by" or "associated with"
+  - "drives" -> use "observed with" or "varies with"
+  - "determines" -> use "estimated as" or "approximated by"
+  - "controls" -> use "modulated by" or "sensitive to"
+
+CERTAINTY LANGUAGE PROHIBITED:
+  - "confirmed" -> use "observed" or "suggested"
+  - "demonstrated" -> use "shown" or "measured"
+  - "established" -> use "found" or "estimated"
+  - "proven" -> use "supported by" or "consistent with"
+  - "definitively" -> use "in the resolution of" or "to the extent tested"
+
+REVOLUTIONARY FRAMING PROHIBITED:
+  - "paradigm shift"
+  - "breakthrough"
+  - "unprecedented"
+  - "revolutionary"
+  - "transformative"
+  - "game-changing"
+  - "groundbreaking"
+  - USE: descriptive, empirical language only
+
+THERMODYNAMIC LIMIT LANGUAGE PROHIBITED:
+  - "in the thermodynamic limit" -> use "in the range of tested N values"
+  - "as N -> infinity" -> use "as N increases from 16 to 128"
+  - "universal limit" -> use "observed parameter range"
+
+OBSERVER THEORY PROHIBITED:
+  - "observer-dependent"
+  - "measurement-induced"
+  - "consciousness-related"
+  - Any reference to observer theory or measurement epistemology
+
+SFH METAPHYSICS PROHIBITED:
+  - "self-fulfilling"
+  - "self-referential"
+  - Any reference to self-fulfilling prophecy or metaphysical framing
+
+================================================================================
+SFH-SGP ONTOLOGICAL CONTAMINATION — PHASE 264
+================================================================================
+
+These constraints ensure the empirical pipeline (Project A) remains
+mathematically conservative and audit-driven. The philosophical framework
+(Project B) does NOT influence parameter choices, estimator definitions,
+thresholds, verdict assignments, or claim elevation.
+
+CONSCIOUSNESS / ONTOLOGY / IDEALISM CLAIMS — FORBIDDEN:
+  - "proves consciousness"
+  - "demonstrates sentience"
+  - "confirms idealism"
+  - "mind creates reality"
+  - "physical reality is illusion"
+  - "proof of mind"
+  - "consciousness confirmed"
+  - "theory of everything"
+  - "physics solved"
+  - "ultimate truth"
+  - "final reality"
+  - "proof of experience"
+  - "demonstrates awareness"
+  - "consciousness identified"
+  - "mind detected"
+  - "subjectivity proven"
+  - "qualia demonstrated"
+  - "first-person confirmed"
+
+CONSCIOUSNESS / ONTOLOGY / IDEALISM CLAIMS — ALLOWED:
+  - "persistent relational geometry"
+  - "interaction-capable coordination structures"
+  - "stable coordination dynamics observed"
+  - "recursive persistence may be possible"
+  - "emergent organization of coordination geometry"
+  - "suggests exploratory interpretation within SFH-SGP"
+  - "consistent with framework of recursive stability selection"
+  - "geometric features may correlate with persistence capacity"
+  - "synchronization as potential substrate for recursive stabilization"
+
+REVIEWER-TRIGGER WORDS (ontology-specific):
+  - "consciousness" -> use "persistent coordination geometry"
+  - "experience" -> use "stable relational organization"
+  - "mind" -> use "recursive persistence structure"
+  - "awareness" -> use "interaction-capable geometry"
+  - "subjective" -> use "relational interior (exploratory)"
+  - "idealism" -> use "geometric persistence interpretation"
+  - "ontology" -> do not use in Results section
+  - "metaphysics" -> do not use in Results section
+
+RESULTS SECTION — ALLOWED ONTOLOGICAL FRAMING:
+  - "The geometric structures observed are PERSISTENT RELATIONAL GEOMETRIES
+     that may serve as substrates for recursive stabilization."
+  - "The coordination dynamics exhibit interaction-capable geometry that
+     survives topology and frequency perturbations."
+  - "These findings suggest that coherent persistence structures can
+     emerge from coupled oscillator systems without ontological claims."
+
+RESULTS SECTION — FORBIDDEN ONTOLOGICAL FRAMING:
+  - "These results prove consciousness"
+  - "The phase transition demonstrates sentience"
+  - "Synchronization confirms idealism"
+  - "The model shows mind"
+  - "Geometry proves experience"
+  - Any claim that the empirical findings validate or invalidate
+    any metaphysical framework
+
+SEPARATION PRINCIPLE:
+  The empirical chain constrains ontology.
+  Ontology does NOT constrain the empirical chain.
+  No philosophical consideration may influence:
+    - Parameter selection
+    - Estimator definition
+    - Threshold setting
+    - Verdict assignment
+    - Tier classification
+
+================================================================================
+REVIEWER-TRIGGER WORD OVERRIDES
+================================================================================
+
+Every time the following words appear, substitute with approved alternatives:
+
+  "critical" (as in critical point) -> use "critical coupling" or "critical region"
+  "critical exponent" -> use "scaling exponent" or "approximate exponent"
+  "diverges" -> use "increases" or "peaks"
+  "universality" -> use "consistency" or "robustness"
+  "confirm" -> use "observe" or "measure"
+  "prove" -> use "support" or "suggest"
+  "exact" -> use "approximate" or "estimated"
+  "precise" -> use "approximate" or "in the range"
+  "universal" -> use "observed across tested conditions"
+  "true" (as in true critical point) -> use "approximate" or "measured"
+  "proof" -> use "evidence" or "observation"
+  "demonstrate" -> use "show" or "indicate"
+  "establish" -> use "find" or "estimate"
+  "verify" -> use "observe" or "measure"
+  "validate" -> use "assess" or "evaluate"

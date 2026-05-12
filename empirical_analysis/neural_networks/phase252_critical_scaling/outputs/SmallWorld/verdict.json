@@ -1,0 +1,13 @@
+{
+  "topology": "SmallWorld",
+  "verdict": "TOPOLOGY_DEPENDENT",
+  "confidence": "LOW",
+  "score": 5.65,
+  "binder_evidence": 0.1,
+  "scaling_score": 0.066,
+  "dni_evidence": 0.0,
+  "fss_evidence": 0.0,
+  "best_model": "log",
+  "best_r2": 0.0947,
+  "kstar_N": {}
+}

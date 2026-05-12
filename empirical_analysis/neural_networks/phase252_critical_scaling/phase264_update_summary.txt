@@ -1,0 +1,159 @@
+PHASE 264 UPDATE SUMMARY
+=========================
+
+Date: 2025-05-13
+Status: FILE GENERATION COMPLETE — STOP
+
+================================================================================
+OBJECTIVE
+================================================================================
+
+Integrate SFH-SGP conceptual framework into governance architecture
+WITHOUT contaminating the empirical pipeline (Phases 252-263).
+
+CRITICAL CONSTRAINT: Project A (empirical) constrains Project B (ontological).
+Project B does NOT constrain Project A.
+
+================================================================================
+FILES UPDATED
+================================================================================
+
+1. phase259_manuscript_foundation/future_work_priorities.txt
+   - Added: Priority 9 (persistence geometry formalization)
+   - Added: Priority 10 (recursive stability selection)
+   - Added: Priority 11 (invariant vs implementation-dependent geometry)
+   - Added: Priority 12 (interaction fertility analysis)
+   - Added: Ontological separation reminder
+   - Added: Phase 264 addition note
+
+2. phase259_manuscript_foundation/manuscript_claim_boundaries.json
+   - Added: ontological_prohibitions array to each claim (C1-C10)
+   - Added: exploratory_allowed array to each claim
+   - Added: global_ontological_constraints section
+   - Added: project_a_empirical and project_b_ontological sections
+   - Added: forbidden_ontological_language list
+   - Added: allowed_ontological_language list
+   - Added: separation_principle statement
+
+3. phase261_results_draft/results_language_constraints.txt
+   - Added: SFH-SGP Ontological Contamination section (Phase 264)
+   - Added: Consciousness/Idealism forbidden language (17 phrases)
+   - Added: Consciousness/Idealism allowed language (9 phrases)
+   - Added: Reviewer-trigger words (ontology-specific)
+   - Added: Results section allowed/forbidden ontological framing
+   - Added: Separation principle
+
+4. phase262_methods_governance/methods_forbidden_shortcuts.txt
+   - Added: Category 8 (Ontological Contamination, F8.1-F8.8)
+   - F8.1: No parameters based on ontological considerations
+   - F8.2: No estimator modifications based on philosophy
+   - F8.3: No threshold adjustments for ontological claims
+   - F8.4: No verdict assignment based on ontological preference
+   - F8.5: No Tier elevation for SFH-SGP alignment
+   - F8.6: No consciousness/idealism language in methods
+   - F8.7: No Hilbert space/quantum language in methods
+   - F8.8: No "validates SFH-SGP" claims
+   - Updated enforcement section for Category 8
+
+================================================================================
+NEW FILE CREATED
+================================================================================
+
+5. phase264_foundational_clarifications.txt (NEW)
+   - 15 sections covering all 10 SFH-SGP clarifications plus additional integration
+   - Section 1: Project goal (what project is/isn't attempting)
+   - Section 2: Experience axiom (categorical distinction)
+   - Section 3: Interaction requirement (fertility concept)
+   - Section 4: Time (emergent from geometric persistence)
+   - Section 5: Selfhood (recursively stabilized interaction geometry)
+   - Section 6: Physicality (secondary manifestation)
+   - Section 7: Mathematics/Logic (coherent truth structure)
+   - Section 8: Hilbert Space/Possibility Structure (strictly speculative)
+   - Section 9: Quantum Indeterminacy (strictly speculative)
+   - Section 10: Empirical vs Ontological Separation
+   - Section 11: Fertility Concept (empirical proxies identified)
+   - Section 12: Invariant vs Implementation-Dependent Geometry
+   - Section 13: Recursive Persistence Selection
+   - Section 14: Framework Status (exploratory, incomplete, non-empirical)
+   - Section 15: Language Rules (mandatory use/avoid)
+
+================================================================================
+VERIFICATION
+================================================================================
+
+NO CHANGES to:
+  - Phase 252-256 scripts
+  - Phase 257 audit package
+  - Phase 258 verification hashes
+  - Phase 259 manuscript foundation (except future_work_priorities.txt and manuscript_claim_boundaries.json)
+  - Phase 261 results draft (except results_language_constraints.txt)
+  - Phase 262 methods governance (except methods_forbidden_shortcuts.txt)
+  - Phase 263 replication governance
+
+NO CHANGES to:
+  - Tier 1/2 classifications
+  - Parameter locks
+  - Estimator definitions
+  - Threshold values
+  - Verdict assignments
+  - Audit chain
+
+NO NEW:
+  - Simulations
+  - Figures
+  - Claims
+  - Estimators
+  - Parameters
+
+================================================================================
+ONTOLOGICAL CONTAMINATION PREVENTION
+================================================================================
+
+Category 8 (F8.1-F8.8) added to methods_forbidden_shortcuts.txt:
+  - F8.1: No parameters based on ontological considerations
+  - F8.2: No estimator modifications based on philosophy
+  - F8.3: No threshold adjustments for ontological claims
+  - F8.4: No verdict assignment based on ontological preference
+  - F8.5: No Tier elevation for SFH-SGP alignment
+  - F8.6: No consciousness/idealism language in methods
+  - F8.7: No Hilbert space/quantum language in methods
+  - F8.8: No "validates SFH-SGP" claims
+
+All 8 shortcuts enforce separation between Project A and Project B.
+
+================================================================================
+FUTURE WORK PRIORITIES 9-12 STATUS
+================================================================================
+
+Priority 9: Persistence geometry formalization
+  - NON-EMPIRICAL (analytical/interpretive)
+  - NO new simulations or figures
+  - Does NOT affect Tier 1/2 status
+
+Priority 10: Recursive stability selection
+  - CONNECTS to Priority 1 (metastability geometry)
+  - May require NEW simulations (dependent on Priority 1 completion)
+  - Does NOT affect current Tier 1/2 status
+
+Priority 11: Invariant vs implementation-dependent geometry
+  - NON-EMPIRICAL (classification from existing data)
+  - NO new simulations or figures
+  - Informs generalization claims
+
+Priority 12: Interaction fertility analysis
+  - NON-EMPIRICAL (qualitative mapping)
+  - NO new simulations or figures
+  - Maps geometric features to fertility proxies
+
+================================================================================
+PHASE 264 COMPLETE
+================================================================================
+
+Phase 264 objective achieved:
+  - SFH-SGP framework integrated into governance
+  - Empirical pipeline (Project A) remains unchanged
+  - Ontological framework (Project B) clearly separated
+  - Contamination prevention enforced at methods level
+  - All required files updated or created
+
+STOP — No further action until next directive.

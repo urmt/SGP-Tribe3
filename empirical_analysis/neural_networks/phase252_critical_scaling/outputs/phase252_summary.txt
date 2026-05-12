@@ -1,0 +1,38 @@
+PHASE 252 — CROSS-TOPOLOGY SYNTHESIS
+============================================================
+
+Topologies tested: 4
+
+  [AllToAll]
+    Verdict: TOPOLOGY_DEPENDENT
+    Confidence: LOW
+    Score: 6.98/100
+    Best model: log (R2=0.1422)
+    Binder: 0.1, Scaling: 0.1, DNI: 0.0, FSS: 0.0
+    K*(N): {}
+
+  [SmallWorld]
+    Verdict: TOPOLOGY_DEPENDENT
+    Confidence: LOW
+    Score: 5.65/100
+    Best model: log (R2=0.0947)
+    Binder: 0.1, Scaling: 0.066, DNI: 0.0, FSS: 0.0
+    K*(N): {}
+
+  [ScaleFree]
+    Verdict: TOPOLOGY_DEPENDENT
+    Confidence: LOW
+    Score: 10.53/100
+    Best model: power_law (R2=0.269)
+    Binder: 0.1, Scaling: 0.188, DNI: 0.0, FSS: 0.0
+    K*(N): {}
+
+  [LorenzSync]
+    Verdict: TOPOLOGY_DEPENDENT
+    Confidence: LOW
+    Score: 3.0/100
+    Best model: none (R2=0.0)
+    Binder: 0.1, Scaling: 0.0, DNI: 0.0, FSS: 0.0
+    K*(N): {}
+
+Overall winner: AllToAll (score=0)

@@ -1,0 +1,181 @@
+{
+  "depth_summary": {
+    "1": {
+      "mean_abs_curv_F": 0.0,
+      "std_abs_curv_F": 0.0,
+      "mean_abs_curv_DET": 0.0,
+      "std_abs_curv_DET": 0.0,
+      "max_abs_curv_F": 0.0,
+      "max_abs_curv_DET": 0.0,
+      "n_paths": 3
+    },
+    "2": {
+      "mean_abs_curv_F": 9.876543209876531e-06,
+      "std_abs_curv_F": 2.7935082713542585e-05,
+      "mean_abs_curv_DET": 0.002886002886002887,
+      "std_abs_curv_DET": 0.008162848844866353,
+      "max_abs_curv_F": 8.888888888888878e-05,
+      "max_abs_curv_DET": 0.025974025974025983,
+      "n_paths": 9,
+      "growth_ratio_F": 9876543.209876532,
+      "growth_ratio_DET": 2886002886.002887
+    },
+    "3": {
+      "mean_abs_curv_F": 0.0004979423868312757,
+      "std_abs_curv_F": 0.0014542844229312238,
+      "mean_abs_curv_DET": 0.0682552053533741,
+      "std_abs_curv_DET": 0.16506588317666043,
+      "max_abs_curv_F": 0.006955555555555555,
+      "max_abs_curv_DET": 0.6630669546436285,
+      "n_paths": 27,
+      "growth_ratio_F": 50.416661561979744,
+      "growth_ratio_DET": 23.650428646749244
+    },
+    "4": {
+      "mean_abs_curv_F": 0.007180521262002744,
+      "std_abs_curv_F": 0.02692260724878988,
+      "mean_abs_curv_DET": 0.1931681361996972,
+      "std_abs_curv_DET": 0.2854221099535966,
+      "max_abs_curv_F": 0.20182222222222224,
+      "max_abs_curv_DET": 0.84744469870328,
+      "n_paths": 81,
+      "growth_ratio_F": 14.420385645971184,
+      "growth_ratio_DET": 2.8300865142341576
+    },
+    "5": {
+      "mean_abs_curv_F": 0.05918500228623686,
+      "std_abs_curv_F": 0.19149926087122163,
+      "mean_abs_curv_DET": 0.29678407417199665,
+      "std_abs_curv_DET": 0.3302302911921201,
+      "max_abs_curv_F": 0.9966666666666667,
+      "max_abs_curv_DET": 0.8564026646928201,
+      "n_paths": 243,
+      "growth_ratio_F": 8.242438134844674,
+      "growth_ratio_DET": 1.5364028457759975
+    },
+    "6": {
+      "mean_abs_curv_F": 0.16599844535893918,
+      "std_abs_curv_F": 0.3260356591258813,
+      "mean_abs_curv_DET": 0.3380231575787475,
+      "std_abs_curv_DET": 0.34040741429745147,
+      "max_abs_curv_F": 0.9966666666666667,
+      "max_abs_curv_DET": 0.8564026646928201,
+      "n_paths": 729,
+      "growth_ratio_F": 2.804738344915743,
+      "growth_ratio_DET": 1.1389531548169005
+    },
+    "7": {
+      "mean_abs_curv_F": 0.3081993293705228,
+      "std_abs_curv_F": 0.4158717890311479,
+      "mean_abs_curv_DET": 0.3222783775463113,
+      "std_abs_curv_DET": 0.34116257158332125,
+      "max_abs_curv_F": 0.9966666666666667,
+      "max_abs_curv_DET": 0.8564026646928201,
+      "n_paths": 2187,
+      "growth_ratio_F": 1.8566398540796292,
+      "growth_ratio_DET": 0.9534210018444619
+    },
+    "8": {
+      "mean_abs_curv_F": 0.4584223238327491,
+      "std_abs_curv_F": 0.4542934776971821,
+      "mean_abs_curv_DET": 0.27355327832062454,
+      "std_abs_curv_DET": 0.33336381134776943,
+      "max_abs_curv_F": 0.9966666666666667,
+      "max_abs_curv_DET": 0.8564026646928201,
+      "n_paths": 6561,
+      "growth_ratio_F": 1.4874215487994724,
+      "growth_ratio_DET": 0.8488105233819674
+    }
+  },
+  "critical_depth": 2,
+  "max_curvature_paths": {
+    "depth_1": {
+      "path": [
+        "tanh"
+      ],
+      "curvature_F": 0.0,
+      "curvature_DET": 0.0
+    },
+    "depth_2": {
+      "path": [
+        "softplus",
+        "tanh"
+      ],
+      "curvature_F": 8.888888888888878e-05,
+      "curvature_DET": 0.025974025974025983
+    },
+    "depth_3": {
+      "path": [
+        "softplus",
+        "softplus",
+        "tanh"
+      ],
+      "curvature_F": 0.006955555555555555,
+      "curvature_DET": 0.6630669546436285
+    },
+    "depth_4": {
+      "path": [
+        "softplus",
+        "softplus",
+        "tanh",
+        "softplus"
+      ],
+      "curvature_F": 0.0258,
+      "curvature_DET": 0.84744469870328
+    },
+    "depth_5": {
+      "path": [
+        "tanh",
+        "softplus",
+        "tanh",
+        "softplus",
+        "softplus"
+      ],
+      "curvature_F": 0.026688888888888887,
+      "curvature_DET": 0.8564026646928201
+    },
+    "depth_6": {
+      "path": [
+        "tanh",
+        "relu",
+        "softplus",
+        "tanh",
+        "softplus",
+        "softplus"
+      ],
+      "curvature_F": 0.026688888888888887,
+      "curvature_DET": 0.8564026646928201
+    },
+    "depth_7": {
+      "path": [
+        "tanh",
+        "relu",
+        "relu",
+        "softplus",
+        "tanh",
+        "softplus",
+        "softplus"
+      ],
+      "curvature_F": 0.026688888888888887,
+      "curvature_DET": 0.8564026646928201
+    },
+    "depth_8": {
+      "path": [
+        "tanh",
+        "relu",
+        "relu",
+        "relu",
+        "softplus",
+        "tanh",
+        "softplus",
+        "softplus"
+      ],
+      "curvature_F": 0.026688888888888887,
+      "curvature_DET": 0.8564026646928201
+    }
+  },
+  "base_metrics": {
+    "F": 0.0033333333333333335,
+    "DET": 1.0
+  }
+}

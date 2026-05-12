@@ -1,0 +1,13 @@
+{
+  "topology": "AllToAll",
+  "verdict": "TOPOLOGY_DEPENDENT",
+  "confidence": "LOW",
+  "score": 6.98,
+  "binder_evidence": 0.1,
+  "scaling_score": 0.1,
+  "dni_evidence": 0.0,
+  "fss_evidence": 0.0,
+  "best_model": "log",
+  "best_r2": 0.1422,
+  "kstar_N": {}
+}

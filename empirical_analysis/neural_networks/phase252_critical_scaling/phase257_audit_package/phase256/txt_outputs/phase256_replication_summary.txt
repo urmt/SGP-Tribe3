@@ -1,0 +1,12 @@
+N=16
+  chi_peak=0.0173 K_chi_peak=1.7765
+  binder_min=0.6442 K_binder_min=1.7765
+  tau_peak=50.0000 K_tau_peak=0.4000
+N=32
+  chi_peak=0.0323 K_chi_peak=0.7059
+  binder_min=0.6346 K_binder_min=0.7059
+  tau_peak=50.0000 K_tau_peak=0.5529
+N=64
+  chi_peak=0.1147 K_chi_peak=1.3176
+  binder_min=0.6441 K_binder_min=0.8588
+  tau_peak=50.0000 K_tau_peak=0.7059

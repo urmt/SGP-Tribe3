@@ -1,0 +1,15 @@
+PHASE 252 VERDICT
+==================================================
+Topology: ScaleFree
+Verdict: TRUE_CRITICAL_PHASE_TRANSITION
+Confidence: HIGH
+Best model: fsc (R²=0.9914)
+  K_inf: 0.181717
+  a: -10.000000
+  nu: 0.294814
+  r2: 0.991365
+  aic: -63.251569
+  bic: -63.876291
+Binder crossing: 0.03154518983296702
+N sizes: 6
+Chi divergence: True

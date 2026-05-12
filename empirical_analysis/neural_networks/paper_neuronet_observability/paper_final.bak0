@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\setstretch{1.2}
+
+\title{\textbf{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}}
+
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Representation analysis methods often assume that geometric or statistical properties of neural activations reflect intrinsic structure relevant to model performance. However, the role of the observation operator in shaping these measurements is rarely examined. In this work, we formalize representation analysis as an operator-dependent observable $\Phi(S, O)$ and investigate recurrence-based metrics—Fertility ($F$) and Determinism (DET)—as probes of neural geometry. Across multilayer perceptrons trained on MNIST, we find that $F$ strongly correlates with classification accuracy (Pearson $r \approx -0.99$). However, controlled intervention and perturbation experiments demonstrate that these metrics are non-causal: manipulating recurrence structure does not affect performance. Further, operator composition induces nonlinear, path-dependent distortions in $\Phi$, and these geometric effects persist in randomly initialized networks with similar functional form. These findings show that recurrence-based observables capture structured, operator-induced geometry that correlates with performance but is largely determined by architecture rather than learned function. We conclude that care must be taken when interpreting representation metrics, as strong correlations may arise from structural artifacts rather than causal mechanisms.
+\end{abstract}
+
+\section{Introduction}
+
+Understanding internal representations of neural networks is a central challenge in computational neuroscience and machine learning. A wide range of techniques—including representational similarity analysis (RSA), centered kernel alignment (CKA), and manifold geometry methods—attempt to quantify structure in neural activations and relate it to performance.
+
+A common implicit assumption is that such measurements reflect intrinsic properties of the representation itself. However, all representation analyses depend on a choice of observation operator (e.g., distance metric, kernel, transformation). This raises a fundamental question:
+
+\textit{To what extent are observed representation properties intrinsic, and to what extent are they induced by the measurement operator?}
+
+In this work, we formalize representation analysis as an operator-dependent observable $\Phi(S, O)$, where $S$ is a system (e.g., a neural network) and $O$ is an observation operator. We investigate recurrence-based observables as a concrete case, focusing on two metrics:
+
+\begin{itemize}
+    \item \textbf{Fertility ($F$)}: recurrence density (global similarity structure)
+    \item \textbf{Determinism (DET)}: proportion of structured recurrence (trajectory coherence)
+\end{itemize}
+
+We make four key contributions:
+
+\begin{enumerate}
+    \item We show that recurrence metrics strongly correlate with model performance.
+    \item We demonstrate that this relationship is non-causal via direct intervention and perturbation.
+    \item We show that operator composition induces nonlinear, path-dependent geometry in observable space.
+    \item We demonstrate that this geometry is largely architecture-driven by comparing trained and random networks.
+\end{enumerate}
+
+Together, these results indicate that recurrence-based observables provide a structured but non-causal geometric description of neural representations.
+
+\section{Methods}
+
+\subsection{Recurrence Construction}
+
+Given activations $\{x_i\}_{i=1}^N$ and an observation operator $O$, we define the recurrence matrix:
+
+\begin{equation}
+R_{ij} = \mathbb{1}(\|O(x_i) - O(x_j)\| < \epsilon)
+\end{equation}
+
+where $\epsilon$ is a threshold parameter.
+
+\subsection{Fertility ($F$)}
+
+We define Fertility as the normalized recurrence density:
+
+\begin{equation}
+F = \frac{1}{N^2} \sum_{i,j} R_{ij}
+\end{equation}
+
+This measures the global similarity structure of the representation.
+
+\subsection{Determinism (DET)}
+
+DET is computed following standard recurrence quantification analysis:
+
+\begin{equation}
+DET = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell} \ell P(\ell)}
+\end{equation}
+
+where $P(\ell)$ is the distribution of diagonal line lengths.
+
+\subsection{Experimental Setup}
+
+We trained multilayer perceptrons on MNIST for up to 20 epochs. Activations were extracted from hidden layers and analyzed using recurrence metrics.
+
+Parameters:
+\begin{itemize}
+    \item $\epsilon \in [10^{-4}, 10^{-1}]$ (log-spaced)
+    \item $N = 2000$ samples
+\end{itemize}
+
+All results are averaged over multiple random seeds.
+
+\section{Results}
+
+\subsection{Correlation with Accuracy}
+
+Fertility exhibits a strong inverse correlation with accuracy:
+
+\begin{equation}
+r(F, \text{accuracy}) \approx -0.99
+\end{equation}
+
+(Figure 1)
+
+\subsection{Non-Causality of Recurrence Metrics}
+
+We tested causality through two approaches:
+
+\paragraph{Loss Intervention}
+Modifying the loss function to encourage or suppress recurrence had no effect on accuracy.
+
+\paragraph{Representation Perturbation}
+Large changes in recurrence structure (e.g., smoothing, noise) did not affect performance.
+
+(Figure 2)
+
+\textbf{Conclusion:} Recurrence metrics are not causal drivers of performance.
+
+\subsection{Operator-Dependent Geometry}
+
+Composing nonlinear operators induces non-additive effects:
+
+\begin{equation}
+\Phi(O_1 \circ O_2) \neq \Phi(O_1) + \Phi(O_2)
+\end{equation}
+
+These effects grow with composition depth, showing curvature and path dependence.
+
+(Figure 3)
+
+\subsection{Architecture vs Learning}
+
+We compared trained networks to randomly initialized networks.
+
+Key finding:
+\begin{itemize}
+    \item Both exhibit similar geometric scaling with depth
+    \item Trained networks show slightly larger magnitude
+\end{itemize}
+
+(Figure 4)
+
+\textbf{Conclusion:} Observable geometry is largely determined by architecture, with only modest learned modulation.
+
+\section{Discussion}
+
+\subsection{What Recurrence Metrics Measure}
+
+Recurrence metrics capture operator-induced geometric structure rather than intrinsic functional properties.
+
+\subsection{Why They Correlate with Accuracy}
+
+Both recurrence structure and performance depend on representation organization, leading to correlation without causation.
+
+\subsection{Implications}
+
+These findings suggest that:
+
+\begin{itemize}
+    \item Representation metrics must be interpreted with caution
+    \item Strong correlations do not imply causal mechanisms
+    \item Operator dependence is a fundamental property of representation analysis
+\end{itemize}
+
+\section{Limitations}
+
+\begin{itemize}
+    \item Experiments limited to MNIST and MLPs
+    \item No comparison to alternative metrics (e.g., CKA)
+    \item Limited number of random seeds
+\end{itemize}
+
+\section{Conclusion}
+
+We demonstrate that recurrence-based observables define a structured, operator-dependent geometry of neural representations that strongly correlates with performance but is non-causal and largely architecture-driven. These results highlight the importance of distinguishing between descriptive and mechanistic representation metrics.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}

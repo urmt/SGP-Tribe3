@@ -127,28 +127,23 @@ def compute_dynamical_chi(trajectory):
     n_t = len(v)
     n_d = trajectory.shape[1]
     
-    # Covariance matrices
-    cov_vx = np.zeros((n_d, n_d))
-    cov_xx = np.zeros((n_d, n_d))
+    # --- Normalize (critical) ---
+    x_std = np.std(x_trim, axis=0, keepdims=True) + 1e-8
+    v_std = np.std(v, axis=0, keepdims=True) + 1e-8
     
-    for t in range(n_t):
-        v_t = v[t].reshape(-1, 1)
-        x_t = x_trim[t].reshape(-1, 1)
-        cov_vx += v_t @ x_t.T
-        cov_xx += x_t @ x_t.T
+    x_norm = x_trim / x_std
+    v_norm = v / v_std
     
-    cov_vx /= n_t
-    cov_xx /= n_t
+    # --- Recompute covariances on normalized data ---
+    cov_vx = (v_norm.T @ x_norm) / n_t
+    cov_xx = (x_norm.T @ x_norm) / n_t
     
-    # Regularize
-    eps = 1e-6 * np.trace(cov_xx) / n_d
+    # --- Stronger regularization ---
+    eps = 1e-4
     cov_xx_reg = cov_xx + eps * np.eye(n_d)
     
-    # Jacobian
-    try:
-        J = cov_vx @ np.linalg.inv(cov_xx_reg)
-    except:
-        J = cov_vx @ np.linalg.pinv(cov_xx_reg)
+    # --- Stable inverse ---
+    J = cov_vx @ np.linalg.pinv(cov_xx_reg)
     
     # Antisymmetric component
     A = (J - J.T) / 2
@@ -158,23 +153,95 @@ def compute_dynamical_chi(trajectory):
     
     return chi
 
-# Compute χ for each node
-chi_nodes = []
-for node_idx in range(n_nodes):
-    np.random.seed(42 + node_idx)
-    
-    # Create 3D trajectory for this node
-    base = trajectories[:, node_idx]
-    noise1 = np.random.randn(len(base)) * 0.3
-    noise2 = np.random.randn(len(base)) * 0.2
-    traj_3d = np.column_stack([base, base * 0.7 + noise1, base * 0.4 + noise2])
-    
-    chi = compute_dynamical_chi(traj_3d)
-    chi_nodes.append(chi)
+def compute_interaction_chi(X):
+    """
+    Interaction-based χ:
+    Measures structure in node-node interaction space.
+    """
 
-chi_nodes = np.array(chi_nodes)
-chi_nodes = chi_nodes / chi_nodes.max()  # Normalize
-print(f"  χ (torsion) computed: range [{chi_nodes.min():.4f}, {chi_nodes.max():.4f}]")
+    # covariance structure
+    C = np.cov(X.T)
+
+    # eigen spectrum
+    eigvals = np.linalg.eigvalsh(C)
+
+    # normalize
+    eigvals = eigvals / (eigvals.sum() + 1e-8)
+
+    # entropy of interactions
+    entropy = -np.sum(eigvals * np.log(eigvals + 1e-8))
+
+    return entropy
+
+def compute_node_interaction_chi(X):
+    """
+    Node-specific interaction entropy.
+    """
+
+    n_nodes = X.shape[1]
+    chi_nodes = []
+
+    for i in range(n_nodes):
+        xi = X[:, i]
+
+        # interaction with all other nodes
+        interactions = []
+
+        for j in range(n_nodes):
+            if i == j:
+                continue
+            xj = X[:, j]
+            interactions.append(np.corrcoef(xi, xj)[0,1])
+
+        interactions = np.array(interactions)
+
+        # convert to distribution
+        p = np.abs(interactions)
+        p = p / (p.sum() + 1e-8)
+
+        entropy = -np.sum(p * np.log(p + 1e-8))
+        chi_nodes.append(entropy)
+
+    return np.array(chi_nodes)
+
+def compute_node_structured_chi(X):
+    """
+    Node-specific structured interaction:
+    weights correlations by relative ordering.
+    """
+
+    n_nodes = X.shape[1]
+    chi_nodes = []
+
+    for i in range(n_nodes):
+        xi = X[:, i]
+
+        interactions = []
+
+        for j in range(n_nodes):
+            if i == j:
+                continue
+            xj = X[:, j]
+            r = np.corrcoef(xi, xj)[0,1]
+            interactions.append(r)
+
+        interactions = np.array(interactions)
+
+        # preserve sign structure
+        pos = interactions[interactions > 0]
+        neg = -interactions[interactions < 0]
+
+        p_pos = pos / (pos.sum() + 1e-8) if len(pos) > 0 else np.array([0])
+        p_neg = neg / (neg.sum() + 1e-8) if len(neg) > 0 else np.array([0])
+
+        H_pos = -np.sum(p_pos * np.log(p_pos + 1e-8))
+        H_neg = -np.sum(p_neg * np.log(p_neg + 1e-8))
+
+        chi_nodes.append(H_pos - H_neg)
+
+    return np.array(chi_nodes)
+
+chi_nodes = compute_node_structured_chi(trajectories)
 
 # ============================================================================
 # PART 5: EXPAND TO SCHAEFER-400
@@ -345,9 +412,46 @@ for name, coef in zip(['CDI', 'chi', 'l2_norm', 'variance', 'random'], ridge.coe
     print(f"    {name:<12}: {coef:>+8.4f}")
 
 # ============================================================================
-# PART 10: SPIN PERMUTATION
+# NODE PERMUTATION TEST (PARCEL LEVEL) - CRITICAL CONTROL
 # ============================================================================
-print("\n[PART 10] Spatial spin permutation...")
+print("\n[NODE PERMUTATION TEST] Testing if node-to-parcel mapping creates correlation...")
+
+def expand_chi_to_parcels(chi_nodes):
+    """Expand node-level chi to parcels using same pipeline logic."""
+    chi_parcels = np.zeros(len(parcel_node))
+    for i, node_idx in enumerate(parcel_node):
+        chi_parcels[i] = chi_nodes[node_idx] + np.random.normal(0, 0.02)
+    return chi_parcels
+
+# Use EXISTING chi_nodes (already computed, DO NOT recompute)
+# REAL χ at parcel level
+chi_parcels_real = expand_chi_to_parcels(chi_nodes)
+
+from scipy import stats
+r_real, p_real = stats.pearsonr(chi_parcels_real, gradient)
+
+print("\n=== NODE PERMUTATION TEST (PARCEL LEVEL) ===")
+print(f"REAL_CHI            {r_real:.4f}   p={p_real:.2e}")
+
+perm_rs = []
+
+for _ in range(100):
+    chi_nodes_permuted = np.random.permutation(chi_nodes)
+    chi_parcels_perm = expand_chi_to_parcels(chi_nodes_permuted)
+    r_perm, _ = stats.pearsonr(chi_parcels_perm, gradient)
+    perm_rs.append(r_perm)
+
+perm_rs = np.array(perm_rs)
+
+print(f"PERMUTED_CHI        {r_perm:.4f}")
+print(f"MEAN_PERM           {perm_rs.mean():.4f}")
+print(f"STD_PERM            {perm_rs.std():.4f}")
+
+z_score = (r_real - perm_rs.mean()) / (perm_rs.std() + 1e-8)
+emp_p = np.mean(np.abs(perm_rs) >= abs(r_real))
+
+print(f"Z_SCORE             {z_score:.4f}")
+print(f"EMP_P               {emp_p:.4e}")
 
 def spin_perm(data, networks, n_perms=1000):
     """Spatial spin permutation test."""
@@ -370,6 +474,149 @@ p_spin_cdi = np.mean(np.abs(null_dist_cdi) >= abs(correlations['CDI']['pearson_r
 
 print(f"  χ spin: z = {z_chi:.2f}, p = {p_spin_chi:.4f}")
 print(f"  CDI spin: z = {z_cdi:.2f}, p = {p_spin_cdi:.4f}")
+
+# ============================================================================
+# PART 11: GENERATE FIGURES
+# ============================================================================
+
+print("\n[PART 10.5] Null validation (node-level)...")
+
+# --- Build node-level gradient ---
+node_gradient = np.zeros(n_nodes)
+
+for i in range(n_nodes):
+    mask = (parcel_node == i)
+    node_gradient[i] = np.mean(gradient[mask])
+
+# --- χ computation (self-contained) ---
+def compute_chi(base):
+    taus = [1, 2, 3]
+    chi_vals = []
+    weights = []
+    
+    for tau in taus:
+        if len(base) < 3 * tau:
+            continue
+        
+        x1 = base[:-2*tau]
+        x2 = base[tau:-tau]
+        x3 = base[2*tau:]
+        
+        traj = np.column_stack([x1, x2, x3])
+        
+        # Center
+        x = traj - np.mean(traj, axis=0)
+        
+        # Velocity
+        v = np.diff(traj, axis=0)
+        x_trim = x[:-1]
+        
+        if len(v) < 5:
+            continue
+        
+        # Normalize (critical)
+        x_std = np.std(x_trim, axis=0, keepdims=True) + 1e-8
+        v_std = np.std(v, axis=0, keepdims=True) + 1e-8
+        
+        x_norm = x_trim / x_std
+        v_norm = v / v_std
+        
+        # Covariances
+        cov_vx = (v_norm.T @ x_norm) / len(v)
+        cov_xx = (x_norm.T @ x_norm) / len(v)
+        
+        # Regularization
+        cov_xx += 1e-4 * np.eye(3)
+        
+        # Stable inverse
+        J = cov_vx @ np.linalg.pinv(cov_xx)
+        
+        # Antisymmetric part
+        A = (J - J.T) / 2
+        
+        # Torsion = Frobenius norm
+        chi_tau = np.linalg.norm(A, 'fro')
+        
+        chi_vals.append(chi_tau)
+        
+        # Signal weight
+        segment = base[2*tau:] - base[:-2*tau]
+        weights.append(np.var(segment))
+    
+    if len(chi_vals) == 0:
+        return 0.0
+    
+    weights = np.array(weights)
+    
+    if np.sum(weights) < 1e-8:
+        return np.mean(chi_vals)
+    
+    weights = weights / np.sum(weights)
+    return np.sum(np.array(chi_vals) * weights)
+
+# --- Real χ (node-level) ---
+chi_real = np.zeros(n_nodes)
+
+for i in range(n_nodes):
+    base = trajectories[:, i]
+    chi_real[i] = compute_chi(base)
+
+# --- Null conditions ---
+chi_phase = np.zeros(n_nodes)
+chi_shuffle = np.zeros(n_nodes)
+chi_gauss_node = np.zeros(n_nodes)
+chi_gauss_white = np.zeros(n_nodes)
+chi_node_scramble = np.zeros(n_nodes)
+
+# Node-scramble setup
+bases_all = [trajectories[:, i].copy() for i in range(n_nodes)]
+np.random.shuffle(bases_all)
+
+for i in range(n_nodes):
+    base = trajectories[:, i]
+    
+    # ---- PHASE RANDOMIZATION ----
+    fft = np.fft.fft(base)
+    phases = np.exp(1j * np.random.uniform(0, 2*np.pi, len(fft)))
+    fft_rand = np.abs(fft) * phases
+    base_phase = np.real(np.fft.ifft(fft_rand))
+    chi_phase[i] = compute_chi(base_phase)
+    
+    # ---- TEMPORAL SHUFFLE ----
+    base_shuff = np.random.permutation(base)
+    chi_shuffle[i] = compute_chi(base_shuff)
+    
+    # ---- GAUSSIAN (NODE-SPECIFIC) ----
+    base_gauss = np.random.normal(np.mean(base), np.std(base), size=len(base))
+    chi_gauss_node[i] = compute_chi(base_gauss)
+    
+    # ---- GAUSSIAN (WHITENED) ----
+    base_white = np.random.normal(0, 1, size=len(base))
+    chi_gauss_white[i] = compute_chi(base_white)
+    
+    # ---- NODE SCRAMBLE ----
+    base_scramble = bases_all[i]
+    chi_node_scramble[i] = compute_chi(base_scramble)
+
+# --- Correlations (NODE LEVEL ONLY) ---
+def corr(x, y):
+    return stats.pearsonr(x, y)
+
+r_real, p_real = corr(chi_real, node_gradient)
+r_phase, p_phase = corr(chi_phase, node_gradient)
+r_shuffle, p_shuffle = corr(chi_shuffle, node_gradient)
+r_gnode, p_gnode = corr(chi_gauss_node, node_gradient)
+r_gwhite, p_gwhite = corr(chi_gauss_white, node_gradient)
+r_scramble, p_scramble = corr(chi_node_scramble, node_gradient)
+
+# --- OUTPUT (STRICT FORMAT) ---
+print("\n=== NULL VALIDATION (NODE LEVEL) ===")
+print(f"REAL               {r_real:.4f}   p={p_real:.2e}")
+print(f"PHASE              {r_phase:.4f}   p={p_phase:.2e}")
+print(f"SHUFFLE            {r_shuffle:.4f}   p={p_shuffle:.2e}")
+print(f"GAUSS_NODE         {r_gnode:.4f}   p={p_gnode:.2e}")
+print(f"GAUSS_WHITE        {r_gwhite:.4f}   p={p_gwhite:.2e}")
+print(f"NODE_SCRAMBLE      {r_scramble:.4f}   p={p_scramble:.2e}")
 
 # ============================================================================
 # PART 11: GENERATE FIGURES

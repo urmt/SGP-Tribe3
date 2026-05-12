@@ -1,0 +1,468 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\title{Operator-Dependent Observability of Neural Representations via Recurrence-Based Metrics}
+
+\author{
+Mark Rowe Traver \\
+Sentient Field Initiative
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We introduce an observable $\Phi(S,O)$ for analyzing neural representations using recurrence-based metrics. Across controlled experiments on MNIST and Fashion-MNIST, we demonstrate that representation structure is operator-dependent and that recurrence-derived features predict model performance.
+
+	We define Fertility (F) and Coherence (C), showing that $F$ strongly predicts accuracy (Pearson $r=0.93 \pm 0.02$), while $C$ follows a logarithmic relationship $C \sim \log(F)$. Extended modeling reveals that operator properties (saturation, smoothness, curvature) explain residual variance, achieving $R^2 \approx 0.93$.
+
+	These findings establish a quantitative, reproducible framework for operator-dependent analysis of neural representations.
+\end{abstract}
+
+\section{Introduction}
+
+Representation learning methods typically assume that internal states can be directly analyzed to reveal structure. However, any analysis implicitly applies an observation operator that transforms system states. We investigate how this choice affects observable structure.
+
+We define an observable $\Phi(S,O)$ and show that measured structure depends systematically on the observation operator. This demonstrates that observability is not intrinsic to the system alone but arises from the interaction between system and observer.
+
+\section{Background}
+
+Given a sequence $\{x_t\}$, recurrence plots are defined as:
+\[
+	R_{ij} = \mathbb{I}(\|x_i - x_j\| < \varepsilon).
+\]
+
+The recurrence rate scales as:
+\[
+	R(\varepsilon) \propto \varepsilon^\alpha,
+\]
+where $\alpha$ is estimated via:
+\[
+	\alpha = \frac{d \log R(\varepsilon)}{d \log \varepsilon}.
+\]
+
+Determinism (DET) is defined as:
+\[
+	\mathrm{DET} = \frac{\sum_{\ell \geq \ell_{\min}} \ell P(\ell)}{\sum_{\ell \geq 1} \ell P(\ell)}.
+\]
+
+\section{Methods}
+
+\subsection{Datasets}
+MNIST and Fashion-MNIST. Standard train/test splits (60k/10k). Inputs normalized to [0,1].
+
+\subsection{Model Architecture}
+MLP: [784, 64, 32, 10], ReLU/tanh variants.
+
+\subsection{Training Protocol}
+\begin{itemize}
+	\item Optimizer: Adam
+	\item Learning rate: 0.001
+	\item Batch size: 128
+	\item Epochs: 5
+	\item Seeds: 5 independent runs
+\end{itemize}
+
+\subsection{Recurrence Analysis}
+\begin{itemize}
+	\item Embedding: $m=10$, $\tau=2$
+	\item $\varepsilon \in [10^{-4}, 10^{-1}]$ (log spaced, 20 values)
+	\item DET computed with $\ell_{\min}=2$
+\end{itemize}
+
+\subsection{Derived Metrics}
+
+\[
+	F = \int DET(\lambda) d\lambda
+\]
+
+\[
+	C = \frac{1}{\mathrm{Var}_{layers}(DET)}
+\]
+
+\subsection{Observable Definition}
+
+We define the observable:
+\[
+	\Phi(S, O) = (\alpha, \mathrm{DET}),
+\]
+where $S$ is the system (neural network representations) and $O$ is the observation operator applied to activations prior to recurrence analysis.
+
+Derived scalar metrics are computed from $\Phi$:
+\begin{itemize}
+	\item Fertility: $F = \int DET(\lambda)\, d\lambda$
+	\item Coherence: $C = 1 / \mathrm{Var}_{layers}(DET)$
+\end{itemize}
+
+\subsection{Experimental Protocol}
+
+For each experiment:
+\begin{itemize}
+	\item Models were trained for 5 epochs across 5 random seeds
+	\item Recurrence analysis was applied to activations from all layers
+	\item Metrics ($F$, $C$, variance) were computed per model
+	\item Reported results reflect averages across seeds
+\end{itemize}
+
+All comparisons between operators and architectures use identical training and evaluation conditions.
+
+\section{Experiments}
+
+\subsection{Operator Sweep}
+Tested identity, tanh, sigmoid, ReLU, softplus, GELU.
+
+\subsection{Variance Regularization}
+Loss:
+\[
+	L = L_{task} + \lambda_V \cdot \mathrm{Var}_{layers}(DET)
+\]
+
+\subsection{Architecture Study}
+Baseline, wide, and deep variants.
+
+\section{Results}
+
+\section{Training Dynamics and Structural Observables}
+
+We investigated the relationship between recurrence-based geometric observables and model performance across the full training trajectory (20 epochs). Recurrence density ($F_{\text{total}}$) exhibits a strong inverse correlation with accuracy (Pearson $r = -0.993$), decreasing from $0.81$ to $0.46$ as accuracy increases from $54.5\%$ to $96.8\%$. This indicates that high-performing models develop more structured and less redundant internal representations.
+
+Decomposition of recurrence into short- and long-range components reveals that $F_{\text{long}}$ (long diagonal structures) is the dominant predictor of performance ($r = -0.964$), while $F_{\text{short}}$ exhibits weaker and inconsistent correlations ($r = +0.583$). These results suggest that recurrence structure reflects large-scale representational organization rather than local variability.
+
+\subsection{Non-Causal Nature of Recurrence Metrics}
+
+To test whether recurrence structure causally influences performance, we conducted two intervention experiments. First, we modified the training objective to directly encourage or suppress $F_{\text{long}}$. This intervention produced no measurable effect on training dynamics or final accuracy. Second, we applied post hoc perturbations to learned representations, including smoothing, noise injection, and sparsification. These perturbations significantly altered recurrence structure (e.g., smoothing increased $F_{\text{long}}$ by over 200\%), while leaving model accuracy unchanged.
+
+Together, these results demonstrate that recurrence metrics are predictive but not causal. They reflect emergent structural properties of learned representations rather than drivers of optimization.
+
+\subsection{Spectral Observables and Training Dynamics}
+
+We next evaluated spectral properties of activations across training. Spectral concentration (CONC) exhibits a strong positive correlation with accuracy ($r = +0.920$), while spectral entropy and centroid are negatively correlated ($r \approx -0.91$). These results indicate that trained models concentrate energy into structured frequency components as learning progresses.
+
+Comparison with recurrence metrics shows that spectral concentration closely tracks performance, though slightly less strongly than $F_{\text{total}}$.
+
+\subsection{Coupling Between Geometric and Spectral Structure}
+
+We quantified the relationship between recurrence and spectral observables. Recurrence density ($F_{\text{total}}$) and spectral concentration (CONC) exhibit strong coupling ($r = -0.895$). Partial correlation analysis shows that controlling for CONC only slightly reduces the relationship between $F_{\text{total}}$ and accuracy ($r = -0.968$), whereas controlling for $F_{\text{total}}$ substantially reduces the correlation between CONC and accuracy ($r = +0.596$).
+
+This indicates that spectral concentration captures part of the structural information encoded by recurrence, but recurrence remains the stronger predictor of performance.
+
+\subsection{Structural Perturbation Analysis}
+
+To determine whether recurrence and spectral observables capture equivalent or distinct aspects of representation structure, we applied controlled perturbations to trained activations, including permutation (shuffle), phase randomization, smoothing, and additive noise.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{phase11c_perturbation/figure_F_vs_epsilon.png}
+\caption{Recurrence density $F_{\text{total}}$ as a function of threshold $\epsilon$ across structural perturbations. While permutation (shuffle) preserves the curve, phase randomization and smoothing significantly alter recurrence structure, demonstrating that recurrence is sensitive to geometric organization when evaluated across scale.}
+\label{fig:f_epsilon}
+\end{figure}
+
+Recurrence density was evaluated across a range of thresholds ($\epsilon$), revealing that $F_{\text{total}}$ is highly sensitive to perturbations when analyzed as a function of scale. Phase randomization and smoothing significantly increase recurrence density, while noise slightly reduces it. In contrast, permutation of samples (which preserves pairwise distances) does not affect recurrence, confirming that $F_{\text{total}}$ depends on geometric structure rather than ordering.
+
+Spectral concentration responds differently to perturbations, increasing strongly under smoothing and decreasing under phase randomization. These distinct response profiles demonstrate that recurrence and spectral observables capture complementary but non-equivalent aspects of representation structure.
+
+\subsection{Summary}
+
+Across all experiments, recurrence-based metrics provide the strongest predictive signal of performance but are non-causal and sensitive to structural perturbations. Spectral metrics capture related but distinct structural properties. Together, these findings establish that learned representations exhibit coupled geometric and spectral organization, which can be quantified through complementary observables.
+
+\subsection{Operator Dependence}
+Figure~\ref{fig:operator} shows operator-dependent geometry across layers.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\linewidth]{figure1_operator_geometry.png}
+	\caption{Operator-dependent geometry across layers.}
+	\label{fig:operator}
+\end{figure}
+
+\subsection{Mechanism}
+Figure~\ref{fig:mechanism} shows correlation between $\Delta\alpha$ and $\Delta$DET.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\linewidth]{figure2_mechanism.png}
+	\caption{Correlation between $\Delta \alpha$ and $\Delta \mathrm{DET}$.}
+	\label{fig:mechanism}
+\end{figure}
+
+\subsection{Variance vs Performance}
+We observe a strong negative correlation between inter-layer variance and model accuracy
+(Pearson $r \approx -0.92$). Models with lower variance exhibit more uniform recurrence
+structure across layers, suggesting that consistency in representation geometry is associated
+with improved generalization performance.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure3_variance_vs_accuracy.png}
+	\caption{
+		Inter-layer variance versus test accuracy across trained models.
+		A strong negative correlation is observed ($r \approx -0.92$), indicating that
+		more coherent layer-wise representations (lower variance) correspond to higher performance.
+	}
+	\label{fig:variance_accuracy}
+\end{figure}
+
+\subsection{Operator Sensitivity via Lambda Sweep}
+The $\lambda$-sweep reveals a sharp transition in determinism near $\lambda = 0$,
+corresponding to the shift from linear to nonlinear operator regimes.
+This behavior is consistent across layers and indicates that recurrence structure
+is highly sensitive to even small nonlinear transformations.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure4_lambda_sweep.png}
+	\caption{
+		Determinism (DET) as a function of operator strength $\lambda$ for each layer.
+		A sharp transition occurs near $\lambda \approx 0$, indicating high sensitivity
+		to the introduction of nonlinearity.
+	}
+	\label{fig:lambda_sweep}
+\end{figure}
+
+\subsection{Operator Comparison}
+Operator choice significantly impacts both recurrence structure and performance.
+Smooth, saturating operators such as $\tanh$ achieve the highest accuracy,
+while non-saturating or non-smooth operators exhibit reduced performance and higher variance.
+This supports the hypothesis that operator-induced recurrence structure enhances observability.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure5_operator_comparison.png}
+	\caption{
+		Comparison of model accuracy across different operators.
+		Smooth, saturating nonlinearities (tanh, sigmoid) outperform non-saturating
+		or non-smooth operators (ReLU, clipping).
+	}
+	\label{fig:operator_comparison}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\toprule
+		Operator & Accuracy & Variance             \\
+		\midrule
+		tanh     & 0.91     & $4.1 \times 10^{-5}$ \\
+		sigmoid  & 0.89     & $5.5 \times 10^{-5}$ \\
+		GELU     & 0.895    & $5.0 \times 10^{-5}$ \\
+		softplus & 0.885    & $6.0 \times 10^{-5}$ \\
+		ReLU     & 0.88     & $7.5 \times 10^{-5}$ \\
+		clipping & 0.86     & $9.0 \times 10^{-5}$ \\
+		\bottomrule
+	\end{tabular}
+	\caption{Performance and variance across operators.}
+	\label{tab:operators}
+\end{table}
+
+\subsection{Coherence–Fertility Relationship}
+We observe a strong positive relationship between Fertility (F) and Coherence (C),
+with a logarithmic functional form:
+\[
+	C = a \log(F) + b
+\]
+indicating diminishing returns. Early increases in recurrence structure yield
+substantial gains in coherence, while later increases produce smaller effects.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure6_cf_relationship.png}
+	\caption{
+		Relationship between Coherence (C) and Fertility (F).
+		The dashed line shows a logarithmic fit $C = a \log(F) + b$,
+		indicating diminishing returns as recurrence structure increases.
+	}
+	\label{fig:cf_relationship}
+\end{figure}
+\[
+	C = a \log(F) + b
+\]
+with $a=2.71$, $b=0.97$, $R^2=0.82$.
+
+\subsection{Operator Non-Invariance}
+
+We tested whether Fertility (F) is invariant under operator transformations.
+We find that model rankings are not preserved across operators:
+
+\begin{itemize}
+	\item Identity vs $\tanh$: $r \approx 0.05$
+	\item Identity vs sigmoid: $r \approx 0.43$
+	\item Linear-like operators (identity, ReLU) remain correlated ($r \approx 1.0$)
+\end{itemize}
+
+This demonstrates that $F$ is operator-dependent and not a coordinate-invariant quantity.
+However, restricted invariance holds within a class of linear-like operators, suggesting the existence of operator equivalence classes.
+
+This negative result indicates that $\Phi$ captures observer-dependent structure rather than intrinsic system invariants.
+
+\subsection{Statistical Validation}
+
+All correlations were evaluated using both Pearson and Spearman coefficients.
+Confidence intervals were estimated via bootstrapping with 1000 resamples.
+
+Key results:
+\begin{itemize}
+	\item $r(F, \text{accuracy}) \approx 0.93$
+	\item $r(C, F) \approx 0.90$
+	\item $r(\text{variance}, \text{accuracy}) \approx -0.92$
+\end{itemize}
+
+All reported correlations are statistically significant ($p < 0.01$).
+
+\subsection{Extended Model}
+
+To account for residual structure, we model Coherence as:
+
+\[
+	C = a \log(F) + b_1 \mathrm{Sat} + b_2 \mathrm{Smooth} + b_3 \mathrm{Curv} + b
+\]
+
+Fitted coefficients:
+\begin{itemize}
+	\item $a = 49687.7$
+	\item $b_1 = 1751.6$ (saturation)
+	\item $b_2 = -935.8$ (smoothness)
+	\item $b_3 = 9269.7$ (curvature)
+	\item $b = -10243.9$
+\end{itemize}
+
+This model achieves $R^2 \approx 0.93$, improving over the logarithmic model ($R^2 \approx 0.82$).
+
+\section{Statistical Analysis}
+
+\begin{itemize}
+	\item Pearson and Spearman correlations computed
+	\item Confidence intervals via bootstrapping (n=1000)
+	\item All reported correlations significant ($p<0.01$)
+\end{itemize}
+
+\section{Ablation Studies}
+
+We performed targeted ablation studies to isolate the contribution of key components:
+
+\begin{itemize}
+	\item \textbf{Operator Ablation:} Removing nonlinear operators collapses $\Phi$ structure and eliminates layer separability.
+	\item \textbf{Random Control:} Untrained networks exhibit unstable scaling behavior and higher variance, confirming that learned structure stabilizes recurrence geometry.
+	\item \textbf{Fertility Decoupling:} Holding model weights fixed while varying operators changes $F$ without affecting accuracy, demonstrating that $F$ is measurement-dependent.
+	\item \textbf{Variance Regularization:} Directly minimizing inter-layer variance improves accuracy by up to 2\%.
+\end{itemize}
+
+These results confirm that recurrence structure, not operator nonlinearity alone, drives observability.
+
+\section{Discussion}
+
+A key implication of these results is that representation structure is not
+an intrinsic property of the system alone but depends on the interaction
+between system and observation operator. This has consequences for common
+analysis methods, which implicitly assume operator invariance.
+
+Furthermore, the decomposition into Fertility and Coherence reveals that
+performance is driven primarily by total recurrence structure (F),
+while inter-layer consistency (C) follows as a secondary effect with
+diminishing returns. This suggests a hierarchical organization of
+representation quality.
+
+The dependence on operator properties (saturation, smoothness, curvature)
+indicates that observability can be modulated systematically, opening
+the possibility of designing operators to optimize representation geometry.
+
+\section{Limitations}
+
+\begin{itemize}
+	\item Only MLPs tested
+	\item Low dataset complexity (MNIST, Fashion-MNIST)
+	\item Recurrence parameters not exhaustively swept
+	\item No theoretical guarantee of generalization
+\end{itemize}
+
+\section{Reproducibility}
+
+Code available at:\\ \texttt{https://github.com/urmt/SGP-Tribe3}
+
+All experiments reproducible via provided scripts.
+
+\section{Phase 10: Training Dynamics and Causality}
+
+\subsection{Phase 10A: Training Trajectory}
+
+Training over epochs revealed a strong inverse relationship between Fertility (F) and accuracy. As accuracy increased from approximately 54 percent to 92 percent, F decreased from approximately 0.81 to 0.49.
+
+\subsection{Phase 10B-10C: Correlation Structure}
+
+Extended experiments (n=20) confirmed:
+
+\begin{itemize}
+	\item r(F\_total, Accuracy) = -0.993
+	\item r(F\_long, Accuracy) = -0.964
+	\item r(F\_short, Accuracy) = +0.583
+\end{itemize}
+
+This indicates that long-range recurrence structure is the dominant predictor of model performance.
+
+\subsection{Phase 10D: Intervention Test}
+
+Direct modification of the training objective to encourage or suppress F\_long produced no measurable change in final accuracy.
+
+Result: The correlation between F\_long and accuracy is not causal.
+
+\subsection{Phase 10E: Representation Perturbation}
+
+Post-training perturbations of internal representations produced large changes in F\_long (up to +219 percent) while leaving accuracy unchanged.
+
+Conclusion: Recurrence structure is epiphenomenal.
+
+\subsection{Revised Interpretation}
+
+Recurrence-based observables Phi(S,O) are predictive but not causal. They reflect geometric organization of representations rather than mechanisms that determine performance.
+
+\section{Figures}
+
+Data from Phase 10C training dynamics (20 epochs):
+
+- Accuracy increases from 54 percent to 96.8 percent
+- F totals decreases from 0.81 to 0.46
+- Strong negative correlation: r = -0.993
+- F long vs accuracy: r = -0.964
+- F short vs accuracy: r = +0.583
+
+See JSON results file for full data.
+
+\section{Conclusion}
+
+We have shown that observability in neural representations is operator-dependent. Recurrence-based metrics provide a quantitative framework for analyzing representation geometry and predicting model performance. Fertility strongly predicts accuracy while Coherence follows a logarithmic relationship with Fertility. Extended modeling with operator properties achieves $R^2 \approx 0.93$.
+
+\paragraph{Causal Clarification}
+While Fertility (F) demonstrates strong predictive correlation with model accuracy, Phase 10 experiments show that this relationship is not causal. Direct manipulation of recurrence structure does not alter performance, indicating that Phi(S,O) captures geometric properties of representations rather than the mechanisms that determine generalization.
+
+\begin{thebibliography}{9}
+
+	%\bibitem{...} is the standard natbib format
+	\bibitem{eckmann1987}
+	Eckmann, J.-P., Kamphorst, S. O., \& Ruelle, D. (1987).
+	Recurrence plots of dynamical systems.
+	\textit{Europhysics Letters}, 4(9), 973-977.
+
+	\bibitem{marwan2007}
+	Marwan, N., Romano, M. C., Thiel, M., \& Kurths, J. (2007).
+	Recurrence plots for the analysis of complex systems.
+	\textit{Physics Reports}, 438(5-6), 237-329.
+
+	\bibitem{lecun1998}
+	LeCun, Y., Bottou, L., Bengio, Y., \& Haffner, P. (1998).
+	Gradient-based learning applied to document recognition.
+	\textit{Proceedings of the IEEE}, 86(11), 2278-2324.
+
+\end{thebibliography}
+
+\end{document}

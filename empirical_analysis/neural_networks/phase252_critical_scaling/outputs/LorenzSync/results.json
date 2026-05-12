@@ -1,0 +1,19 @@
+{
+  "topology": "LorenzSync",
+  "verdict": {
+    "verdict": "TOPOLOGY_DEPENDENT",
+    "confidence": "LOW",
+    "score": 3.0,
+    "binder_evidence": 0.1,
+    "scaling_score": 0.0,
+    "dni_evidence": 0.0,
+    "fss_evidence": 0.0,
+    "best_model": "none",
+    "best_r2": 0.0,
+    "kstar_N": {}
+  },
+  "kstar_N": {},
+  "n_rows": 120,
+  "n_N": 6,
+  "n_K": 20
+}

@@ -1,0 +1,137 @@
+PHASE 261 — TIER 2 ISOLATION LOG
+==================================
+
+Generated: 2025-05-13
+Purpose: Document how Tier 2 claims (C7–C10) are handled in the manuscript.
+
+================================================================================
+TIER 2 CLAIMS SUMMARY
+================================================================================
+
+Claim C7 (gamma ~ 1.1 for A2A + Gaussian):
+  - Evidence: chi_peak scaling from Phase 252 scripts 6–8; N=16,32,64; 4 trials
+  - Status: INCONCLUSIVE — gamma varies 0.62 to 1.98 across conditions; 3-point
+    log-log fit has no extrapolation power; no error bars on exponent
+  - Tier 1 boundary: "finite-size sharpening observed" (C3) — YES
+  - Tier 1 boundary: "Binder structural dip observed" (C6) — YES
+  - Excluded: "critical exponent determined", "scaling law established"
+
+Claim C8 (data collapse with Kc=1.33, nu=2):
+  - Evidence: phase252_script8_data_collapse.png; nu fixed from literature;
+    Kc fixed from peak stabilization; no optimization; no collapse quality metric
+  - Status: INCONCLUSIVE — Kc and nu not estimated from data; no RMS deviation;
+    no formal FSS analysis performed
+  - Tier 1 boundary: "transition sharpens with N" (C3) — YES
+  - Tier 1 boundary: "Binder structure near critical region" (C6) — YES
+  - Excluded: "nu estimated", "collapse optimized", "FSS confirmed"
+
+Claim C9 (Kc ~ 1.4 from three-estimator convergence):
+  - Evidence: phase256_script12_*.png; K_R: 0.4–1.78; K_chi: 1.07–1.54;
+    K_tau: SATURATED (50.0 max); convergence FAILED (max_deviation=41.3)
+  - Status: INCONCLUSIVE — tau saturation prevents reliable K_tau; K shifts with
+    N; linear extrapolation gives negative Kc_inf; three-estimator average invalid
+  - Tier 1 boundary: "transition observed in range K ~ 0 to 6" (C1) — YES
+  - Tier 1 boundary: "steepest change near K ~ 2" (C1) — YES
+  - Excluded: "Kc precisely characterized", "thermodynamic limit Kc",
+    "convergence confirmed"
+
+Claim C10 (gamma varies by frequency class):
+  - Evidence: phase253_script9_universality.png; 4 conditions; Gaussian gamma~0.62;
+    Uniform gamma~1.98; gamma not universal
+  - Status: INCONCLUSIVE — only 4 conditions tested; only Gaussian and Uniform;
+    ER at p=0.25 only; scale-free and small-world not included
+  - Tier 1 boundary: "transition survives frequency distribution changes" (C5) — YES
+  - Excluded: "frequency-invariant exponents", "universal critical behavior"
+
+================================================================================
+ISOLATION MECHANISM
+================================================================================
+
+The Results section places Tier 2 claims in a dedicated subsection (Section 3.8)
+clearly labeled as preliminary estimates from limited conditions.
+
+Mechanism:
+  1. All Tier 1 claims (C1–C6) are presented in Sections 3.1–3.7
+  2. Section 3.8 "Preliminary Scaling Observations" covers C7–C10
+  3. Every Tier 2 statement includes inline limitations (from results_limitations_inline.txt)
+  4. No Tier 2 claim is used to support or strengthen any Tier 1 claim
+  5. No Tier 2 conclusion is drawn that extends beyond the tested conditions
+
+No cross-contamination:
+  - C7 (gamma) does not support C3 (sharpening) as a causal mechanism
+  - C8 (data collapse) does not support C1 (transition existence) as a characterization
+  - C9 (Kc estimate) does not support C4 (critical slowing) as a precise Kc
+  - C10 (frequency robustness) does not support C5 (topology robustness) as a generalization
+
+Each Tier 2 claim is written as a standalone observation with its own caveats.
+No Tier 2 claim makes it into the Abstract, Introduction, or Summary sections.
+
+================================================================================
+TIER 1 BOUNDARY ENFORCEMENT
+================================================================================
+
+The following Tier 1 claims are ONLY supported by Tier 1 evidence:
+
+C1 (Transition exists): R_vs_K.png, finite_size_transition.png
+  - No Tier 2 evidence used
+  - Language: "transition observed", "order parameter increases with K"
+  - No mention of Kc, critical exponents, or thermodynamic limit
+
+C2 (Continuous): phase254_script10_hysteresis.png
+  - No Tier 2 evidence used
+  - Language: "no discontinuous behavior observed", "loop area below threshold"
+  - No claim of "second-order confirmed" — only "no hysteresis detected"
+
+C3 (Finite-size sharpening): finite_size_transition.png, binder_test_order_parameter.png
+  - No Tier 2 evidence used
+  - Language: "transition sharpens with N", "qualitative sharpening observed"
+  - No quantitative width, no exponent, no FSS form
+
+C4 (Critical slowing): phase255_script11_critical_slowing.png
+  - No Tier 2 evidence used
+  - Language: "relaxation time increases near critical region"
+  - No claim of correlation length divergence or dynamic exponent
+
+C5 (Topology + frequency robustness): phase253_script9_universality.png
+  - No Tier 2 evidence used
+  - Language: "transition survives perturbation", "consistent behavior observed"
+  - No claim of universal exponents or topology-independent scaling
+
+C6 (Binder structural dip): binder_test_crossing.png, phase256_replication_binder_*.png
+  - No Tier 2 evidence used
+  - Language: "Binder cumulant drops below 0.66 near critical region"
+  - No claim of Binder minimum deepening or precise Kc from Binder
+
+================================================================================
+HANDLING OF PHASE 256 CONFLICTS
+================================================================================
+
+Phase 256 replication produced conflicting Binder results vs Phase 252 scripts:
+  - Phase 252 (STEPS=2000): Binder min → 0.5345 (N=128)
+  - Phase 256 (STEPS=1000): Binder min stable at ~0.644 (N=64)
+  - Resolution: Both sets are Tier 1; conflict is acknowledged as
+    "Binder depth is sensitive to simulation parameters"
+  - No resolution attempted; both are reported as-is
+
+Phase 256 tau saturation:
+  - tau_peak = 50.0 (max) for all N=16, 32, 64
+  - K_tau estimates not used anywhere in the manuscript
+  - tau-based claims entirely excluded from Results
+
+Phase 256 Kc extrapolation:
+  - Linear extrapolation gives negative Kc_inf for some estimators
+  - Convergence failed (max_deviation >> 0.25)
+  - Kc estimates from Phase 256 are Tier 2 only and placed in Section 3.8
+
+================================================================================
+FUTURE WORK INTEGRATION
+================================================================================
+
+Tier 2 claims are cross-referenced to future_work_priorities.txt:
+  - C7 (gamma): Priority P2 — "Refine susceptibility exponent measurement"
+  - C8 (data collapse): Priority P1 — "Formal finite-size scaling analysis"
+  - C9 (Kc convergence): Priority P1 — "Extend simulation time to resolve tau saturation"
+  - C10 (frequency robustness): Priority P3 — "Test heavy-tailed and bimodal distributions"
+
+No Tier 2 claim is framed as a known result.
+All are framed as open questions requiring further investigation.

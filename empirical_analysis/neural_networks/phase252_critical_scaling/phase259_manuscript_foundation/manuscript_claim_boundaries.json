@@ -1,0 +1,423 @@
+{
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Kuramoto model exhibits a phase transition from disordered (R ~ 0) to synchronized (R ~ 0.97) states as coupling K increases.",
+      "tier": 1,
+      "allowed_language": [
+        "exhibits a phase transition",
+        "order parameter R increases with K",
+        "disordered and synchronized phases observed",
+        "R rises from approximately 0.08 to approximately 0.98",
+        "transition observed across K range 0 to 6"
+      ],
+      "forbidden_language": [
+        "universal critical point",
+        "precisely characterized Kc",
+        "order parameter discontinuity",
+        "first-order transition confirmed",
+        "transition verified across all topologies"
+      ],
+      "supporting_phases": ["252-1", "252-2"],
+      "known_limitations": [
+        "Only N=128 for R vs K verification",
+        "Only all-to-all topology tested",
+        "K range 0-6 may not capture full transition",
+        "Single frequency distribution (Gaussian)"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C2",
+      "claim": "The transition is continuous (second-order), with negligible hysteresis between forward and backward coupling sweeps.",
+      "tier": 1,
+      "allowed_language": [
+        "forward and backward sweeps produce nearly overlapping curves",
+        "loop area approximately 0.03",
+        "transition is continuous to the resolution of our measurements",
+        "no discontinuous jump in order parameter",
+        "negligible hysteresis observed"
+      ],
+      "forbidden_language": [
+        "hysteresis definitively ruled out",
+        "no metastable states exist",
+        "second-order confirmed with certainty",
+        "no latent heat signature",
+        "phase transition is strictly second-order"
+      ],
+      "supporting_phases": ["254"],
+      "known_limitations": [
+        "Only N=64 tested",
+        "Backward sweep initialized from forward end-state (not independent)",
+        "4-trial average; no single-trial loop area variance reported",
+        "Threshold of 0.15 is arbitrary with no theoretical basis"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C3",
+      "claim": "Finite-size sharpening is observed: the transition region narrows as N increases from 16 to 128.",
+      "tier": 1,
+      "allowed_language": [
+        "transition region sharpens with increasing N",
+        "finite-size effects visible across N values",
+        "N=128 shows steepest transition",
+        "consistent with continuous phase transition finite-size scaling"
+      ],
+      "forbidden_language": [
+        "universal finite-size scaling law established",
+        "critical exponent precisely determined",
+        "thermodynamic limit behavior confirmed",
+        "N-scaling follows any specific form"
+      ],
+      "supporting_phases": ["252-2", "252-4", "252-5"],
+      "known_limitations": [
+        "Only N = 16, 32, 64, 128 tested",
+        "No N > 128 tested",
+        "Finite-size scaling form not independently verified"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C4",
+      "claim": "Critical slowing is observed: relaxation time increases near the critical coupling.",
+      "tier": 1,
+      "allowed_language": [
+        "relaxation time increases approximately 6-fold near critical region",
+        "K_peak approximately 1.42",
+        "relaxation time peaks at K approximately 1.4",
+        "suggests critical slowing",
+        "consistent with continuous phase transition"
+      ],
+      "forbidden_language": [
+        "critical slowing confirmed with rigorous tau measurement",
+        "diverging correlation length demonstrated",
+        "relaxation time exactly characterizes critical dynamics"
+      ],
+      "supporting_phases": ["255"],
+      "known_limitations": [
+        "Only N=64 tested",
+        "tau defined via 90% threshold, not autocorrelation time",
+        "4 trials insufficient for robust tau estimation",
+        "K_peak=1.42 slightly higher than other estimator Kc values"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C5",
+      "claim": "The critical behavior is robust across topology (all-to-all and Erdős-Rényi) and frequency distribution (Gaussian and Uniform).",
+      "tier": 1,
+      "allowed_language": [
+        "transition confirmed in all tested conditions",
+        "survives topology and frequency perturbations",
+        "not an artifact of all-to-all connectivity alone",
+        "consistent behavior observed across conditions"
+      ],
+      "forbidden_language": [
+        "universal critical behavior proven",
+        "topology-independent critical exponents",
+        "all-to-all is representative of arbitrary networks",
+        "universality class fully characterized"
+      ],
+      "supporting_phases": ["253"],
+      "known_limitations": [
+        "Only p=0.25 for ER topology",
+        "Only Gaussian and Uniform frequencies tested",
+        "Only 4 conditions total tested",
+        "Scale-free and small-world not in Phase 253"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C6",
+      "claim": "Binder cumulant shows non-trivial structure near the critical region, with values below the Gaussian limit (~0.67).",
+      "tier": 1,
+      "allowed_language": [
+        "Binder cumulant drops below 0.66 near critical region",
+        "indicates non-Gaussian order parameter distribution",
+        "structure consistent with phase transition",
+        "U4 values approaching 0.5 observed"
+      ],
+      "forbidden_language": [
+        "Binder minimum deepens systematically with N",
+        "U4 accurately characterizes critical point",
+        "bimodal distribution confirmed",
+        "Binder minimum gives precise Kc estimate"
+      ],
+      "supporting_phases": ["252-4", "252-7"],
+      "known_limitations": [
+        "Binder minimum depth is parameter-sensitive",
+        "Conflicting data between Phase 252 scripts and Phase 256 replication",
+        "Different simulation parameters produce different Binder depths",
+        "No standardized protocol for Binder measurement"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C7",
+      "claim": "Susceptibility peak grows approximately as N^gamma with gamma approximately 1.",
+      "tier": 2,
+      "allowed_language": [
+        "preliminary estimate suggests gamma approximately 1.1",
+        "chi_peak increases with system size",
+        "approximately consistent with N^1 scaling",
+        "mean-field-like scaling behavior observed"
+      ],
+      "forbidden_language": [
+        "gamma = 1.14 is established",
+        "critical exponent precisely determined",
+        "gamma is universal across all conditions",
+        "scaling law verified with high confidence"
+      ],
+      "supporting_phases": ["252-6", "252-7"],
+      "known_limitations": [
+        "gamma varies 0.62 to 1.98 across frequency/topology conditions",
+        "Only 3 N values used for fit",
+        "R2=0.985 from 3-point log-log fit",
+        "No error bars on gamma estimate"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C8",
+      "claim": "Finite-size scaling data collapse is approximately achieved under mean-field ansatz.",
+      "tier": 2,
+      "allowed_language": [
+        "data approximately collapse under assumed scaling form",
+        "consistent with mean-field scaling ansatz",
+        "approximate collapse observed with nu=2 (assumed)"
+      ],
+      "forbidden_language": [
+        "nu estimated as 2.0",
+        "data collapse optimized",
+        "scaling function F(x) determined",
+        "FSS confirmed with systematic error analysis"
+      ],
+      "supporting_phases": ["252-8"],
+      "known_limitations": [
+        "nu = 2.0 assumed from literature, not independently estimated",
+        "No optimization of collapse attempted",
+        "No error bars on collapse quality",
+        "Only one nu value tested"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C9",
+      "claim": "Critical coupling Kc is approximately 1.4 across estimators, with uncertainty of approximately 0.5.",
+      "tier": 2,
+      "allowed_language": [
+        "Kc approximately 1.4 from chi, Binder, and tau estimators",
+        "finite-size effects and estimator choice introduce uncertainty",
+        "Kc in approximate range 1.3 to 1.8 across measurements"
+      ],
+      "forbidden_language": [
+        "thermodynamic-limit Kc precisely determined",
+        "Kc = 1.33 established",
+        "three-estimator convergence confirmed",
+        "Kc independent of system size"
+      ],
+      "supporting_phases": ["252-8", "254", "255", "256"],
+      "known_limitations": [
+        "Three-estimator convergence FAILED (max deviation >> 0.25)",
+        "tau estimator saturated at max in Phase 256",
+        "K estimates shift with N (N=16: K=0.4-1.78, N=64: K=0.86-1.32)",
+        "1/N extrapolation gave unreliable Kc estimates (negative values)"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Scaling exponent gamma varies with frequency distribution and topology.",
+      "tier": 2,
+      "allowed_language": [
+        "gamma sensitive to frequency distribution",
+        "Gaussian frequencies produce gamma approximately 0.6-0.9",
+        "Uniform frequencies produce gamma approximately 1.9-2.0",
+        "suggests non-universal critical behavior"
+      ],
+      "forbidden_language": [
+        "gamma is topology-independent",
+        "exponent is well-characterized",
+        "scaling class determined",
+        "gamma uniquely identifies universality class"
+      ],
+      "supporting_phases": ["253"],
+      "known_limitations": [
+        "Only 4 conditions tested",
+        "Only Gaussian and Uniform tested",
+        "No systematic parameter sweep of frequency distributions"
+      ],
+      "ontological_prohibitions": [
+        "DO NOT claim this demonstrates consciousness",
+        "DO NOT claim this proves idealism",
+        "DO NOT claim this confirms sentience or experience",
+        "DO NOT claim this validates any metaphysical framework",
+        "DO NOT use 'proof of mind' or 'consciousness confirmed' language",
+        "DO NOT claim mind creates physical reality",
+        "DO NOT claim physical reality is illusory"
+      ],
+      "exploratory_allowed": [
+        "suggests persistent relational geometry",
+        "interaction-capable coordination dynamics observed",
+        "stable coordination structures identified",
+        "recursive persistence may be possible under these conditions",
+        "emergent organization of coordination geometry"
+      ]
+    }
+  ],
+  "global_ontological_constraints": {
+    "description": "All claims C1-C10 are empirically grounded and MUST NOT be elevated to ontological status. The following constraints apply to all claims and all manuscript sections.",
+    "project_a_empirical": {
+      "focus": "synchronization geometry, scaling behavior, critical dynamics",
+      "allowed_language": ["persistent", "relational", "coordination", "geometry", "interaction-capable", "stable"],
+      "claims": ["C1 through C10"]
+    },
+    "project_b_ontological": {
+      "focus": "experiential persistence, recursive stability, fertility, emergent selfhood",
+      "status": "EXPLORATORY",
+      "location": "Future work and Discussion only",
+      "must_not_affect": ["empirical methods", "estimator definitions", "parameter choices", "verdict assignments", "Tier classifications"]
+    },
+    "forbidden_ontological_language": [
+      "proves consciousness",
+      "demonstrates sentience",
+      "confirms idealism",
+      "mind creates reality",
+      "physical reality is illusion",
+      "proof of mind",
+      "consciousness confirmed",
+      "theory of everything",
+      "physics solved",
+      "ultimate truth",
+      "final reality"
+    ],
+    "allowed_ontological_language": [
+      "persistent relational geometry",
+      "interaction-capable structures",
+      "stable coordination dynamics",
+      "recursive persistence",
+      "emergent organization",
+      "suggests exploratory interpretation",
+      "consistent with SFH-SGP framework"
+    ],
+    "separation_principle": "The empirical chain (Project A) constrains ontology (Project B). Ontology does NOT constrain the empirical chain. No philosophical consideration may influence parameter selection, estimator definition, threshold setting, or claim classification."
+  }
+}

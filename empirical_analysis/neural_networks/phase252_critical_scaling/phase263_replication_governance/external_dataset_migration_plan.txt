@@ -1,0 +1,308 @@
+EXTERNAL DATASET MIGRATION PLAN — PHASE 263
+============================================
+
+Purpose: Prepare the pipeline structure for incoming external datasets,
+         using ds000114 as the reference example. This document defines
+         the directory schema, expected outputs, audit inheritance,
+         and manuscript update policy for cross-dataset replication.
+
+Reference dataset: ds000114 (placeholder — substitute actual dataset ID)
+
+================================================================================
+1. DIRECTORY SCHEMA
+================================================================================
+
+All datasets are stored under:
+  /home/student/sgp-tribe3/empirical_analysis/neural_networks/phase252_critical_scaling/phase263_replication_governance/datasets/
+
+Each dataset gets the following directory structure:
+
+datasets/
+  ds000114/
+    README.txt                    # Dataset description, source, collection details
+    metadata.json                 # All required metadata (Section 2 of admission rules)
+    raw/
+      frequency_data.csv          # Raw natural frequencies (if measured)
+      adjacency_matrix.npy         # Network topology (if custom)
+      initial_conditions.csv       # Initial theta values (if non-random)
+    analysis/
+      ds000114_analysis.py         # Main analysis script (frozen estimators)
+      ds000114_R_vs_K.py           # R(K) curves
+      ds000114_finite_size.py      # Finite-size sharpening test
+      ds000114_hysteresis.py       # Hysteresis test
+      ds000114_binder.py           # Binder cumulant
+      ds000114_susceptibility.py   # Susceptibility and chi scaling
+      ds000114_slowing.py          # Critical slowing
+      ds000114_topology.py         # Topology robustness (if applicable)
+      ds000114_frequency.py        # Frequency robustness (if applicable)
+    outputs/
+      ds000114_R_vs_K_N16.png
+      ds000114_R_vs_K_N32.png
+      ds000114_R_vs_K_N64.png
+      ds000114_finite_size.png
+      ds000114_hysteresis.png
+      ds000114_binder_N16.png
+      ds000114_binder_N32.png
+      ds000114_binder_N64.png
+      ds000114_susceptibility.png
+      ds000114_chi_scaling.png
+      ds000114_critical_slowing.png
+      ds000114_tau.png
+      [additional figures as needed]
+    audit/
+      SHA256_hashes.txt            # SHA256 for all output files
+      audit_trace.txt             # Script -> figure -> claim -> verdict
+      replication_report.txt      # Overall verdict (SR/PR/IR/FR)
+      failure_report.txt          # If any FAIL verdicts
+      verification_checklist.txt   # Second analyst verification
+    figures/
+      [all figures from outputs/ archived here]
+    manuscript/
+      ds000114_summary.txt         # One-paragraph summary for manuscript
+      ds000114_figure_list.txt     # Which figures go in manuscript
+      ds000114_claim_alignment.txt # How ds000114 claims align with Phase 252-262
+      ds000114_language.txt        # Approved language for this dataset
+
+================================================================================
+2. MIGRATION STEPS
+================================================================================
+
+STEP 1: Dataset admission
+  - Verify metadata completeness (dataset_admission_rules.txt Section 2)
+  - Check sampling requirements (Section 1)
+  - Verify no prohibited preprocessing (Section 4)
+  - Run admission decision tree
+  - Assign dataset ID: ds{NNNNN}
+  - Create directory structure
+  - Archive README and metadata
+
+STEP 2: Analysis script development
+  - Use frozen estimator definitions from parameter_lock_registry.json
+  - Scripts must use identical R, chi, Binder, tau definitions
+  - Scripts must use numpy default_rng(seed) with documented seed
+  - No custom estimators; no alternative order parameters
+  - Archive all scripts in analysis/ subdirectory
+
+STEP 3: Figure generation
+  - Generate all figures using Phase 252-256 naming convention
+  - Figure names: {dataset_id}_{structure}_{N}.png
+  - Minimum resolution: 800x600 PNG
+  - All figures archived in outputs/ and figures/
+  - SHA256 hashes computed for all figures
+
+STEP 4: Cross-dataset stability evaluation
+  - Apply cross_dataset_stability_criteria.txt for each structure (F1-F8)
+  - Record PASS / INCONCLUSIVE / FAIL for each criterion
+  - Compute overall verdict: SR / PR / IR / FR
+  - Document verdict in replication_report.txt
+
+STEP 5: Failure analysis (if any FAIL)
+  - Complete failure_report.txt for each FAIL criterion
+  - Classify failure: genuine physical, methodological, implementation, audit
+  - Determine if tier downgrade applies (replication_failure_conditions.txt)
+  - Determine if audit suspension applies
+
+STEP 6: Audit chain completion
+  - Complete audit_trace.txt: script -> figure -> claim -> verdict
+  - Independent second analyst verification
+  - Complete verification_checklist.txt
+
+STEP 7: Manuscript integration
+  - Write ds000114_summary.txt (one paragraph)
+  - Update figure_manifest.csv with ds000114 entries
+  - Generate ds000114_claim_alignment.txt
+  - Generate ds000114_language.txt (approved language for this dataset)
+
+STEP 8: Phase 263 governance archive
+  - Update phase263_master_log.txt with dataset entry
+  - Archive migration_completion_report.txt
+  - Ensure all files are SHA256-verified
+
+================================================================================
+3. EXPECTED OUTPUTS FOR ds000114
+================================================================================
+
+Primary outputs (required for any dataset):
+  1. R_vs_K curves for all N values (at least N=16,32,64)
+  2. Finite-size sharpening figure (R vs K overlaid for all N)
+  3. Hysteresis forward/backward sweep figure + loop_area value
+  4. Binder U4(K) curves for all N
+  5. Susceptibility chi(K) curves for all N
+  6. Chi peak scaling figure (chi_peak vs N, log-log fit)
+  7. Critical slowing tau(K) figure + peak_ratio
+
+Secondary outputs (if applicable):
+  8. Topology comparison (A2A vs alternative)
+  9. Frequency comparison (if multiple distributions tested)
+
+Expected format:
+  - All figures: PNG, 800x600 minimum, labeled axes
+  - All figures: SHA256-hashed
+  - Summary table: K_c estimates (if obtainable), gamma (if obtainable),
+    loop_area, peak_ratio, overall verdict
+
+Expected verdict range: SR to FR
+  - SR: geometric structures fully reproduced
+  - PR: transition confirmed, partial structure agreement
+  - IR: transition observed, structures inconclusive
+  - FR: transition geometry differs from Phase 252-256
+
+================================================================================
+4. AUDIT INHERITANCE CHAIN
+================================================================================
+
+Each dataset inherits audit structure from Phase 252-262:
+
+Phase 252-256: Single-dataset analysis (seed 42, A2A + ER, Gaussian + Uniform)
+  -> phase257_audit_package/ (verdicts for all figures)
+  -> phase258_filesystem_verification.txt (SHA256 hashes)
+  -> phase259_manuscript_foundation/ (claim governance, tier structure)
+
+Phase 263+: Cross-dataset replication
+  -> Each dataset: ds{NNNNN}/audit/audit_trace.txt
+  -> phase263_master_log.txt (aggregated verdicts across datasets)
+  -> phase263_replication_governance/dataset_admission_rules.txt
+  -> phase263_replication_governance/cross_dataset_stability_criteria.txt
+  -> phase263_replication_governance/replication_failure_conditions.txt
+
+Audit inheritance rules:
+  - Phase 252-256 claims remain valid for their original datasets
+  - Replication datasets are assessed independently
+  - No replication dataset can "overrule" Phase 252-256 claims
+  - Cross-dataset patterns (multiple SR verdicts) strengthen generalization
+  - Cross-dataset conflicts (SR vs FR) trigger audit council review
+
+Governance inheritance:
+  - parameter_lock_registry.json applies to ALL datasets
+  - results_language_constraints.txt (Phase 261) applies to ALL datasets
+  - results_limitations_inline.txt (Phase 261) applies to ALL datasets
+  - Forbidden shortcuts (Phase 262) apply to ALL datasets
+
+Tier inheritance:
+  - Tier 1 claims (C1-C6) are strengthened by SR verdicts from multiple datasets
+  - Tier 1 claims are NOT invalidated by a single FR verdict
+  - Tier 2 claims (C7-C10) are more fragile — each dataset may produce
+    different gamma values; C7 and C10 are dataset-specific
+
+================================================================================
+5. MANUSCRIPT UPDATE POLICY
+================================================================================
+
+Adding a new dataset to the manuscript requires:
+
+5.1 Dataset summary paragraph:
+    One paragraph per dataset summarizing:
+    - Dataset source and characteristics
+    - Key parameters (N, K range, topology, frequency)
+    - Verdict (SR/PR/IR/FR)
+    - Agreement or disagreement with Phase 252-256
+
+5.2 Figure integration:
+    - New figures from replication dataset are added to manuscript
+    - Phase 252-256 figures remain as primary evidence
+    - Replication figures are presented as secondary evidence
+    - Label all replication figures as "(Replication: ds{NNNNN})"
+
+5.3 Claim strengthening:
+    - SR verdict from replication dataset: "This behavior is also observed
+      in an independent dataset (ds{NNNNN})."
+    - PR verdict: "A partial replication confirms the transition geometry
+      in an independent environment."
+    - IR verdict: "The transition is confirmed in an independent dataset;
+      further characterization is needed."
+    - FR verdict: "A replication attempt produced different transition
+      geometry, warranting further investigation."
+
+5.4 Claim downgrade:
+    - Downgrade only if 2+ datasets produce FAIL on same criterion
+    - Downgrade requires audit council review
+    - Downgrade document is archived in phase263_replication_governance/
+
+5.5 New claims from replication:
+    - Replication may reveal NEW geometric structures not in Phase 252-256
+    - NEW claims must follow Phase 261 governance (tier assignment,
+      language constraints, limitations)
+    - NEW claims are Tier 2 unless independently verified
+    - NEW claims cannot contradict existing Tier 1 claims without
+      strong evidence and audit council approval
+
+5.6 Cross-dataset generalization:
+    - Generalization requires at least 3 datasets with SR or PR verdict
+    - Generalization language: "Across multiple independent datasets,
+      the transition geometry is consistent with..."
+    - Generalization does NOT claim universality
+    - Generalization does NOT claim universal critical exponent
+    - Generalization is limited to structural features (sharpening,
+      Binder dip, hysteresis absence) that survive independent conditions
+
+================================================================================
+6. ds000114 REFERENCE MIGRATION TEMPLATE
+================================================================================
+
+The following template applies to ds000114 (substitute actual values):
+
+Dataset: ds000114
+Source: [institution/collection]
+Collection date: [YYYY-MM-DD]
+N values: [16, 32, 64] or equivalent
+K range: [0 to 4.0] or equivalent
+Topology: [A2A / ER(p=X) / SF / SW / custom]
+Frequency: [Gaussian(sigma=X) / Uniform / other]
+RNG seeds: [42, plus replication series if used]
+STEPS: [minimum 500, recommended 1000+]
+TRANSIENT: [reported value]
+Trials: [4 minimum]
+
+Admission decision: [ADMIT / REJECT]
+If REJECT: [criterion violated, correction required]
+
+Replication verdict: [SR / PR / IR / FR]
+F1 (Transition): [PASS/INCONCLUSIVE/FAIL]
+F2 (Sharpening): [PASS/INCONCLUSIVE/FAIL]
+F3 (Hysteresis): [PASS/INCONCLUSIVE/FAIL]
+F4 (Binder): [PASS/INCONCLUSIVE/FAIL]
+F5 (Chi scaling): [PASS/INCONCLUSIVE/FAIL]
+F6 (Critical slowing): [PASS/INCONCLUSIVE/FAIL]
+F7 (Topology): [PASS/INCONCLUSIVE/FAIL] or [N/A]
+F8 (Frequency): [PASS/INCONCLUSIVE/FAIL] or [N/A]
+
+Tier impact:
+  - C1 impact: [strengthened/no change/requires review]
+  - C2 impact: [strengthened/no change/requires review]
+  - C3 impact: [strengthened/no change/requires review]
+  - C4 impact: [strengthened/no change/requires review]
+  - C5 impact: [strengthened/no change/requires review]
+  - C6 impact: [strengthened/no change/requires review]
+  - C7 impact: [dataset-specific / no change]
+  - C8 impact: [dataset-specific / no change]
+  - C9 impact: [dataset-specific / no change]
+  - C10 impact: [dataset-specific / no change]
+
+Manuscript section: [which section(s) this dataset contributes to]
+
+Next steps: [continue / future_work / audit_suspension]
+
+================================================================================
+7. GOVERNANCE FILES MAINTAINED ACROSS MIGRATIONS
+================================================================================
+
+phase263_master_log.txt
+  - One line per dataset: ds{NNNNN}, verdict, date, analyst
+  - Updated after each migration completion
+  - SHA256-hashed after each update
+
+phase263_replication_governance/
+  - dataset_admission_rules.txt (frozen)
+  - cross_dataset_stability_criteria.txt (frozen)
+  - parameter_lock_registry.json (frozen)
+  - replication_failure_conditions.txt (frozen)
+  - external_dataset_migration_plan.txt (this file)
+  - ds000114_migration_completion_report.txt (per dataset)
+
+datasets/
+  - ds000114/ (per dataset — see Section 1)
+  - ds000115/ (if applicable)
+  - ...
+
+================================================================================
+END OF MIGRATION PLAN

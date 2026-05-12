@@ -3,29 +3,29 @@ STATISTICAL SUMMARY: CDI vs Dynamical χ
 ======================================================================
 
 CORRELATIONS WITH CORTICAL GRADIENT:
+  chi_torsion     r = -0.4210  p = 1.29e-18 ***
   std             r = -0.2854  p = 6.23e-09 ***
   variance        r = -0.2572  p = 1.83e-07 ***
   l2_norm         r = +0.2044  p = 3.82e-05 ***
-  chi_torsion     r = -0.1833  p = 2.27e-04 ***
   CDI             r = +0.1036  p = 3.84e-02 *
   random          r = -0.0753  p = 1.33e-01 
 
 PARTIAL CORRELATIONS:
   CDI ~ G | norm:    r = 0.0780, p = 1.20e-01
-  χ ~ G | norm:      r = -0.2967, p = 1.43e-09
-  χ ~ G | variance: r = -0.2194, p = 9.51e-06
+  χ ~ G | norm:      r = -0.4423, p = 1.36e-20
+  χ ~ G | variance: r = -0.4506, p = 2.12e-21
 
 SPIN PERMUTATION:
-  χ spin:  z = -3.60, p = 0.0000
+  χ spin:  z = -8.47, p = 0.0000
   CDI spin: z = 1.95, p = 0.0390
 
 RIDGE REGRESSION:
-  R² = 0.2439
-    CDI         :  +0.2060
-    χ           :  -1.4677
-    L2 Norm     :  +1.5079
-    Variance    :  -1.3334
-    Random      :  -0.1998
+  R² = 0.3309
+    CDI         :  +0.2090
+    χ           :  -1.7924
+    L2 Norm     :  +1.0130
+    Variance    :  -1.2187
+    Random      :  -0.2329
 
 KEY FINDINGS:
   1. CDI = Composite Dispersion Index (||x|| * Var * Std)

@@ -1,0 +1,70 @@
+{
+  "trained": {
+    "1": {
+      "mean_abs_delta_F": 0.0,
+      "mean_abs_delta_DET": 0.9966666666666666
+    },
+    "2": {
+      "mean_abs_delta_F": 0.0004913580246913581,
+      "mean_abs_delta_DET": 2.0681779053084646
+    },
+    "3": {
+      "mean_abs_delta_F": 0.0076,
+      "mean_abs_delta_DET": 3.2113652533186983
+    },
+    "4": {
+      "mean_abs_delta_F": 0.07648971193415637,
+      "mean_abs_delta_DET": 4.303961802089858
+    },
+    "5": {
+      "mean_abs_delta_F": 0.21242459990855053,
+      "mean_abs_delta_DET": 5.312134300984983
+    },
+    "6": {
+      "mean_abs_delta_F": 0.3787538180155464,
+      "mean_abs_delta_DET": 6.262823951834437
+    },
+    "7": {
+      "mean_abs_delta_F": 0.5386152110958696,
+      "mean_abs_delta_DET": 7.191202594724133
+    },
+    "8": {
+      "mean_abs_delta_F": 0.6719217836034479,
+      "mean_abs_delta_DET": 8.12004164877995
+    }
+  },
+  "random": {
+    "1": {
+      "mean_abs_delta_F": 0.0,
+      "mean_abs_delta_DET": 0.9834643274853802
+    },
+    "2": {
+      "mean_abs_delta_F": 0.0001629629629629629,
+      "mean_abs_delta_DET": 1.991658963142913
+    },
+    "3": {
+      "mean_abs_delta_F": 0.0030584362139917695,
+      "mean_abs_delta_DET": 3.103675077803058
+    },
+    "4": {
+      "mean_abs_delta_F": 0.04355500685871056,
+      "mean_abs_delta_DET": 4.206559928187481
+    },
+    "5": {
+      "mean_abs_delta_F": 0.15327864654778234,
+      "mean_abs_delta_DET": 5.218268739654384
+    },
+    "6": {
+      "mean_abs_delta_F": 0.3077792409693644,
+      "mean_abs_delta_DET": 6.148526642323502
+    },
+    "7": {
+      "mean_abs_delta_F": 0.46960090433368895,
+      "mean_abs_delta_DET": 7.035909947585665
+    },
+    "8": {
+      "mean_abs_delta_F": 0.6133456282070823,
+      "mean_abs_delta_DET": 7.91310648601791
+    }
+  }
+}

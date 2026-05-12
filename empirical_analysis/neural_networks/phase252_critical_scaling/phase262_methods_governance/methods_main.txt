@@ -1,0 +1,333 @@
+METHODS — PHASE 262 GOVERNANCE DRAFT
+======================================
+
+This document describes the methods used in Phases 252-256, serving as an
+audit document for the manuscript. All methods are frozen; no new analysis
+is introduced. Each method maps to verified artifacts and documented claims.
+
+================================================================================
+KURAMOTO MODEL DEFINITION
+================================================================================
+
+The coupled phase oscillator model is defined by:
+
+  dθ_i/dt = ω_i - (K/N) Σ_j sin(θ_i - θ_j)
+
+Where:
+  - θ_i(t): phase of oscillator i at time t
+  - ω_i: natural frequency of oscillator i, drawn from a specified distribution
+  - K: global coupling constant (coupling strength)
+  - N: number of oscillators
+
+This is the standard mean-field Kuramoto model with all-to-all coupling.
+
+All scripts use numpy default_rng(42) for random number generation.
+All initial phases are uniformly distributed in [0, 2π).
+All natural frequencies are drawn from N(0, 1) (Gaussian) unless otherwise
+specified.
+
+IMPLEMENTATION (example from phase252_minimal_transition_test.py):
+  rng = np.random.default_rng(42)
+  omega = rng.standard_normal(N)
+  theta = rng.uniform(0, 2*np.pi, N)
+  dtheta = omega - (K/N) * np.sum(np.sin(theta - theta.reshape(N,1)), axis=1)
+
+No other coupling forms are used.
+
+================================================================================
+ORDER PARAMETER DEFINITION
+================================================================================
+
+The complex order parameter is:
+
+  Z = (1/N) Σ_j exp(i θ_j)
+
+The magnitude R = |Z| measures phase synchronization:
+
+  R = |Z| = sqrt( (1/N) Σ_j cos θ_j )^2 + ( (1/N) Σ_j sin θ_j )^2
+
+R ranges from 0 (fully disordered) to 1 (fully synchronized).
+
+All order parameter measurements use the FINAL WINDOW approach:
+  R = mean( R_t for t in [TRANSIENT, STEPS] )
+
+Standard windowing: mean over last 20% of simulation steps.
+
+R IS THE SOLE ORDER PARAMETER USED.
+  - No correlation matrices
+  - No Hilbert transforms
+  - No Fourier decomposition of trajectories
+  - No alternative order parameters (e.g., S, Q, m2)
+
+IMPLEMENTATION (from phase252_minimal_transition_test.py):
+  theta_histories.append(theta.copy())
+  # After simulation:
+  Rs = np.array([np.abs(np.mean(np.exp(1j * th))) for th in theta_histories])
+  R_mean = Rs[TRANSIENT:].mean()  # mean of last window
+
+================================================================================
+FINITE-SIZE PROTOCOL
+================================================================================
+
+System sizes tested:
+  - N = 16, 32, 64, 128 (Phase 252 scripts 1-8)
+  - N = 16, 32, 64 (Phase 256 replication)
+
+K values tested:
+  - K range: 0 to 6 (phase252_minimal_transition_test.py: 40 pts)
+  - K range: 0 to 4 (phase252_finite_size_test.py: 30 pts)
+  - K range: 0.4 to 3.0 (Phase 256 replication: 18 pts)
+  - K range: 0 to 4 (Phase 253: 30 pts)
+  - K range: 0 to 4 (Phase 254: 32 pts)
+  - K range: 0.2 to 3.5 (Phase 255: 28 pts)
+
+Trials per (N, K) configuration:
+  - 4 trials (Phase 252-255)
+  - 4 trials (Phase 256 replication)
+  - Single trial (phase252_minimal_transition_test.py)
+
+Simulation steps:
+  - STEPS = 2000 (Phase 252 scripts 4-8)
+  - STEPS = 1000 (Phase 256 replication)
+  - STEPS = 2000 (Phase 254 hysteresis)
+  - STEPS = 2000 (Phase 255 critical slowing)
+  - STEPS = 1500 (Phase 253 universality)
+
+Transient periods:
+  - TRANSIENT = 500 (Phase 252 scripts 4-8)
+  - TRANSIENT = 300 (Phase 256 replication)
+  - TRANSIENT = 500 (Phase 254)
+  - TRANSIENT = 500 (Phase 255)
+  - TRANSIENT = 300 (Phase 253)
+
+The protocol is NOT standardized across phases. Different phases use different
+K resolutions, STEPS, TRANSIENT values, and trial counts.
+
+All finite-size results are QUALITATIVE only. No quantitative finite-size
+scaling form is fitted or verified.
+
+================================================================================
+SUSCEPTIBILITY ESTIMATOR
+================================================================================
+
+Definition:
+  chi(K, N) = N * Var( R_trial for trial in [1, TRIALS] )
+
+chi measures the fluctuation of the order parameter across independent trials
+at fixed (K, N).
+
+NOT temporal variance. NOT the derivative dR/dK.
+
+chi is the FLUCTUATOR-based susceptibility:
+  - Compute R_mean for each trial: R_j = mean(R_t for t in [TRANSIENT, STEPS])
+  - chi = N * variance( R_j for j in [1, TRIALS] )
+
+TRIALS = 4 for all susceptibility measurements.
+
+LIMITATION: chi from 4 trial variance is a LOWER BOUND on the true susceptibility
+because trial-to-trial variance is typically smaller than temporal variance near
+criticality.
+
+LIMITATION: chi is not normalized by k_B T (not equilibrium statistical mechanics;
+it's a dynamic fluctuation measure).
+
+chi_peak identification:
+  - No automated peak-finding algorithm used
+  - chi_peak is the MAXIMUM chi value across all K values
+  - Visual inspection of chi(K) curves used to confirm peaks
+
+chi ~ N^gamma scaling:
+  - gamma computed via log-log regression: log(chi_peak) = gamma * log(N) + const
+  - Fit performed on N = 16, 32, 64 (3 points only)
+  - No error bars on gamma; no confidence intervals
+  - R2 reported for regression quality
+
+================================================================================
+BINDER ESTIMATOR
+================================================================================
+
+Definition:
+  U4(K, N) = 1 - <R^4> / (3 <R^2>^2)
+
+Where <> denotes ensemble average over trials.
+
+For a Gaussian distribution of order parameter, U4 = 2/3 ≈ 0.67.
+Non-Gaussian distributions produce U4 < 0.67.
+
+Binder cumulant is computed from trial MEANS (not temporal):
+  - For each trial j: R_j = mean( R_t for t in [TRANSIENT, STEPS] )
+  - Compute <R>, <R^2>, <R^4> over TRIALS trials
+  - U4 = 1 - <R^4> / (3 <R^2>^2)
+
+LIMITATION: Requires minimum 4 trials for meaningful moments.
+LIMITATION: Very sensitive to simulation length (STEPS, TRANSIENT).
+LIMITATION: No standardized protocol. Different phases report Binder differently.
+
+Binder parameter sensitivity:
+  - Phase 252 scripts 4-8 (STEPS=2000): Binder min → 0.29 (N=64)
+  - Phase 256 replication (STEPS=1000): Binder min stable at ~0.64 (N=64)
+  - Simulation length affects Binder minimum depth
+  - No protocol standardization; results are parameter-dependent
+
+Binder minimum is NOT used to estimate Kc in the manuscript.
+Binder is reported only as a structural observation.
+
+================================================================================
+HYSTERESIS PROTOCOL
+================================================================================
+
+Forward sweep:
+  1. Initialize theta ~ Uniform[0, 2π]
+  2. Run from K=K_max to K_min in decrements
+  3. Record R at each K value after simulation
+
+Backward sweep:
+  1. Initialize from final theta state of forward sweep
+  2. Run from K=K_min to K_max in increments
+  3. Record R at each K value
+
+Loop area computation:
+  - Trapezoidal integration of forward curve R_f(K) and backward curve R_b(K)
+  - loop_area = Σ |R_f(K_i) - R_b(K_i)| * ΔK  (signed area between curves)
+  - Reported as absolute value
+
+VERDICT thresholds:
+  - CONTINUOUS: loop_area < 0.15
+  - HYSTERETIC: loop_area ≥ 0.15
+
+CRITICAL LIMITATIONS (from phase257_failed_or_unstable_estimators.json):
+  - Backward sweep initialized from forward end-state (NOT independent)
+  - Threshold 0.15 is arbitrary with no theoretical basis
+  - Only N = 64 tested
+  - 4-trial average; no single-trial loop area variance reported
+  - loop_area may be UNDERESTIMATED because backward sweep starts ordered
+
+Verdict from Phase 254: loop_area = 0.0304, max_gap = 0.0338 → CONTINUOUS_TRANSITION
+
+================================================================================
+CRITICAL SLOWING PROTOCOL
+================================================================================
+
+Relaxation time tau(K) measurement:
+  1. Initialize from random theta (Uniform[0, 2π])
+  2. Run simulation at fixed K for STEPS steps
+  3. Record R_t at each time step t
+  4. Find first t where R_t ≥ 0.90 * R_final (R_final = mean of last 50 steps)
+  5. tau(K) = t
+
+Stability criterion:
+  - R_final: mean of last 50 steps
+  - Tau is capped at max_tau = 50 (parameter)
+  - If stability not reached within STEPS, tau = 50
+
+Peak identification:
+  - tau_peak: maximum tau(K) across all K values
+  - K_tau_peak: K value at which tau is maximum
+
+VERDICT: CRITICAL_SLOWING_CONFIRMED if:
+  - tau_peak / tau_baseline > 2.0
+  - Where tau_baseline = mean(tau for K far from critical)
+
+CRITICAL LIMITATION: tau via 90% threshold is NOT the autocorrelation time.
+True critical slowing requires measurement of autocorrelation function.
+
+CRITICAL LIMITATION: Tau stability criterion (50-step |R_t - R_final| < 0.02)
+is NOT MET within STEPS=1000 for all N in Phase 256.
+tau_peak = 50.0 (SATURATED) for all N = 16, 32, 64.
+
+tau-based Kc estimates are NOT USED in the manuscript (C9 is Tier 2).
+
+================================================================================
+UNIVERSALITY PERTURBATION PROTOCOL
+================================================================================
+
+Topology perturbations:
+  - All-to-all (A2A): standard Kuramoto mean-field
+  - Erdős-Rényi random graph (ER): p=0.25 probability of edge between any pair
+    of oscillators. K is scaled by average degree: K_ER = K / (p * (N-1))
+    OR K is used directly (different scripts use different conventions).
+
+Phase 253 uses K direct (not scaled). Phase 252 original uses K direct.
+
+Topology implementation:
+  - A2A: all-to-all coupling via mean-field term -(K/N) Σ sin(θ_i - θ_j)
+  - ER: coupling matrix A_ij where A_ij ~ Bernoulli(p). Coupling:
+    dθ_i/dt = ω_i - (K/N) Σ_j A_ij sin(θ_i - θ_j)
+
+Frequency distribution perturbations:
+  - Gaussian: ω ~ N(0, 1) (standard normal)
+  - Uniform: ω ~ U(-sqrt(3), sqrt(3)) (zero-mean, unit variance)
+
+Four conditions tested in Phase 253:
+  1. A2A + Gaussian (baseline)
+  2. A2A + Uniform
+  3. ER + Gaussian
+  4. ER + Uniform
+
+LIMITATIONS:
+  - Only p=0.25 tested for ER
+  - Only 4 conditions total
+  - Scale-free and small-world networks NOT tested
+  - No systematic topology parameter sweep
+
+Claim language: "transition survives perturbation"
+Forbidden: "universal critical behavior", "topology-independent exponents"
+
+================================================================================
+REPLICATION STABILITY PROTOCOL
+================================================================================
+
+Phase 256 is the replication attempt of Phase 252 core results.
+
+Protocol:
+  1. Run same models with same estimators but different simulation parameters
+  2. Compare results between Phase 252 and Phase 256
+  3. Identify conflicts in Binder depth, tau saturation, Kc estimates
+
+Replication parameters (Phase 256):
+  - N = 16, 32, 64
+  - TRIALS = 4
+  - STEPS = 1000 (reduced from 2000)
+  - TRANSIENT = 300 (reduced from 500)
+  - K range: 0.4 to 3.0, 18 points
+
+Replication outcomes:
+  - Order parameter: consistent with Phase 252
+  - Susceptibility: peaks present but less pronounced (lower chi values)
+  - Binder: CONFLICT — no deepening with N; stable at ~0.644
+  - Tau: SATURATED at 50.0 for all N
+
+Replication conclusion: PARTIAL AGREEMENT
+  - C1 (transition exists): CONFIRMED
+  - C3 (finite-size sharpening): CONFIRMED
+  - C6 (Binder deepening): NOT CONFIRMED
+  - C4 (critical slowing): INCONCLUSIVE (tau saturated)
+  - C9 (Kc convergence): FAILED
+
+No further replication attempted. All conflicts are reported as-is.
+
+================================================================================
+AUDIT CHAIN STRUCTURE
+================================================================================
+
+Every figure in the manuscript traces to:
+  Script -> Outputs -> Phase 257 audit -> Phase 258 verification -> Phase 259 claim
+
+Example chain:
+  R_vs_K.png
+    -> phase252_minimal_transition_test.py
+    -> SHA256 verified in phase258_filesystem_verification.txt
+    -> Supporting C1 (Tier 1)
+    -> Results Section 3.1
+
+Full audit chain for all artifacts is documented in:
+  phase259_manuscript_foundation/audit_traceability_map.txt
+
+Failed estimators are documented in:
+  phase257_audit_package/phase257_failed_or_unstable_estimators.json
+
+Claim boundaries and tier assignments are in:
+  phase259_manuscript_foundation/manuscript_claim_boundaries.json
+
+No method is introduced in this document that does not appear in the above
+three files. All methods are frozen. No new analysis, results, or claims.

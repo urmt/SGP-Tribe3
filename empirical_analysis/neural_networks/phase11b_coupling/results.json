@@ -1,0 +1,17 @@
+{
+  "n_epochs": 20,
+  "correlations": {
+    "F_vs_CONC": -0.8947542511956201,
+    "F_vs_entropy": 0.890152070935302,
+    "F_vs_centroid": 0.8878363464989659,
+    "F_vs_flatness": 0.7642761791225051,
+    "F_vs_accuracy": -0.9925828626215796,
+    "CONC_vs_accuracy": 0.9204790321693558
+  },
+  "partial_correlations": {
+    "F_acc_given_CONC": -0.9683042279669011,
+    "CONC_acc_given_F": 0.5961023377587098,
+    "F_acc_given_entropy": -0.9678966374161712,
+    "entropy_acc_given_F": -0.5408967386171906
+  }
+}
