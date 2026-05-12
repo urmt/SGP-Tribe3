@@ -1,0 +1,279 @@
+================================================================================
+PHASE 262 — METHODS FAILURE REGISTRY
+================================================================================
+Documented failure modes from Phases 252-259.
+FAILURES ARE NOT SUPPRESSED — they are reported as required.
+
+================================================================================
+1. TAU SATURATION FAILURE
+================================================================================
+
+Phase: 256
+Script: phase256_script12.py, phase256_replication_stable.py
+Description: 
+  tau_relaxation hits maximum value (50.0) for all N=(16,32,64).
+  The 50-step stability criterion (abs(R_t - R_final) < 0.02) is not
+  satisfied within STEPS=1000.
+  
+Root Cause:
+  Relaxation time to reach 0.02 stability band exceeds 1000 steps for all
+  N and K values. K=0.4 to 3.0 range may not provide enough time for
+  equilibration in disordered phase.
+  
+Impact:
+  - K_tau_peak cannot be reliably identified
+  - All tau_peak values are identical (50.0) regardless of K
+  - Kc convergence test COMPROMISED
+  - K_peak=1.4222 from Phase 255 is the ONLY tau-based Kc estimate
+  
+Resolution Status: NOT RESOLVED in current phases.
+  Would require: Increase STEPS to 3000+ OR lower stability criterion
+  to 0.05 for 30 steps.
+
+Manuscript Treatment: Report tau saturation as limitation.
+  Do NOT claim tau-based Kc estimate is reliable.
+
+================================================================================
+2. Kc CONVERGENCE FAILURE
+================================================================================
+
+Phase: 256
+Script: phase256_script12.py (attempted), phase256_replication_stable.py
+Description:
+  1/N linear extrapolation for Kc_inf produced negative intercepts:
+  - Kc_chi = -22.5
+  - Kc_binder = -9.4
+  - Kc_tau = 25.6
+  
+  R2 values: 0.23-0.89 (poor fits)
+  
+  N=16 K estimates span 0.40-1.78 (large scatter)
+  
+Root Cause:
+  - Only 3 N values (16,32,64); insufficient for linear extrapolation
+  - K estimates shift non-monotonically with N
+  - Linear extrapolation regime not reached with current N range
+  
+Impact:
+  - Cannot determine thermodynamic-limit Kc from current data
+  - Claim C7 (three estimators converge) is UNSUPPORTED
+  - Kc uncertainty is at least ±0.5
+
+Resolution Status: NOT RESOLVED in current phases.
+  Would require: Extend to N=(16,32,64,128,256) with higher K resolution
+  near critical region.
+
+Manuscript Treatment: Report Kc convergence as FAILED.
+  Do NOT claim three-estimator convergence.
+  State Kc ~1.3-1.8 with large uncertainty.
+
+================================================================================
+3. ESTIMATOR SCATTER WITH N
+================================================================================
+
+Phase: 256, Phase 252
+Description:
+  K_chi_peak and K_binder_min track each other closely (same at N=16 and
+  N=64) but shift with N:
+  - N=16: K ~ 1.78
+  - N=32: K ~ 0.71 (anomalous drop)
+  - N=64: K ~ 1.08-1.32
+  
+Root Cause:
+  - Only 3 N values
+  - Different K resolution (18 pts over 0.4-3.0)
+  - Short transient (300-500 steps) may cause peak location to shift
+
+Impact:
+  - Kc approximation (1.3-1.8) is uncertain to ±0.5 at minimum
+  - Cannot distinguish between Kc=1.3 and Kc=1.8
+
+Resolution Status: PARTIALLY DOCUMENTED.
+  Phase 252 scripts (STEPS=2000) vs Phase 256 (STEPS=1000) show different
+  Binder minima but this has not been systematically resolved.
+
+Manuscript Treatment: Report Kc uncertainty.
+  Do NOT claim precise Kc value.
+
+================================================================================
+4. BINDER PARAMETER SENSITIVITY
+================================================================================
+
+Phase: 252 scripts 4-8 vs Phase 256 replication stable
+Description:
+  - Phase 252 scripts: Binder min = 0.5345 (N=16) -> 0.4267 (N=32) -> 0.2948 (N=64)
+  - Phase 256 replication stable: Binder min = 0.644 at all N (no deepening)
+
+Root Cause:
+  - Phase 252 scripts: STEPS=2000, TRANSIENT=500, K=0-4
+  - Phase 256: STEPS=1000, TRANSIENT=300, K=0-4
+  - Shorter simulation insufficient for Binder minimum to develop fully
+
+Impact:
+  - Conflicting evidence on Binder minimum deepening
+  - Cannot confirm Claim C5 with Phase 256 data alone
+  - Parameter standardization needed for replication
+
+Resolution Status: DOCUMENTED but NOT RESOLVED.
+  All phases using short simulations (STEPS<1500) may produce unreliable
+  Binder minimum estimates.
+
+Manuscript Treatment: Report parameter sensitivity.
+  State that Binder minimum deepening requires STEPS>=2000 for verification.
+
+================================================================================
+5. GAMMA NON-UNIVERSALITY
+================================================================================
+
+Phase: 253
+Description:
+  gamma (susceptibility scaling exponent) varies 0.62-1.98 across conditions:
+  - ER + Gaussian: gamma = 0.62 (R2=0.89)
+  - ER + Uniform: gamma = 0.88
+  - A2A + Gaussian: gamma = 1.14 (R2=0.985) [mean-field prediction]
+  - A2A + Uniform: gamma = 1.98
+  
+  Mean-field prediction: gamma = 1.0
+
+Root Cause:
+  - Frequency distribution width affects scaling exponent
+  - Gaussian (unbounded) produces lower gamma than Uniform (bounded)
+  - Topology density affects scaling
+
+Impact:
+  - gamma is NOT universal across all conditions
+  - Claim C2 (gamma=1.14) applies only to A2A+Gaussian condition
+  - Cannot claim universal critical exponent
+
+Resolution Status: DOCUMENTED.
+  Further testing with more frequency distributions and topologies needed.
+
+Manuscript Treatment: Classify as TIER 2 claim.
+  State that gamma=1.14 observed for A2A+Gaussian only.
+  Do NOT claim universal gamma.
+
+================================================================================
+6. HYSTERESIS COUPLED INITIALIZATION
+================================================================================
+
+Phase: 254
+Description:
+  Forward and backward sweeps are NOT independent:
+  - Forward sweep: K from 0 to 4, initialize from random theta0
+  - Backward sweep: K from 4 to 0, initialize from FINAL FORWARD STATE
+  
+  The backward sweep already partially synchronized from forward end-state.
+
+Root Cause:
+  - Design choice: both sweeps share initial conditions
+  - True hysteresis test requires independent random initialization
+
+Impact:
+  - loop_area = 0.03 may be UNDER-ESTIMATED
+  - Cannot definitively claim non-hysteretic behavior
+
+Resolution Status: DOCUMENTED but NOT RESOLVED.
+  Would require: Use independent theta0 for both forward and backward sweeps.
+
+Manuscript Treatment: Report coupled initialization as limitation.
+  Do NOT claim definitive non-hysteretic behavior.
+  State loop_area=0.03 as preliminary estimate.
+
+================================================================================
+7. LOOP_AREA ARBITRARY THRESHOLD
+================================================================================
+
+Phase: 254
+Description:
+  - Threshold for CONTINUOUS vs HYSTERETIC set at 0.15 (arbitrary)
+  - loop_area = 0.0304 barely computed from 4-trial average
+  - Single-trial loop areas NOT reported
+  - No systematic study of loop_area variance across trials
+
+Root Cause:
+  - No theoretical justification for 0.15 threshold
+  - Insufficient trials for error estimation
+
+Impact:
+  - VERDICT may change with different threshold
+  - No error bars on loop_area
+  - Cannot determine statistical significance
+
+Resolution Status: NOT RESOLVED.
+  Would require: Compute per-trial loop_area; study threshold sensitivity.
+
+Manuscript Treatment: Report threshold as arbitrary.
+  Do NOT overstate confidence in CONTINUOUS verdict.
+
+================================================================================
+8. RUNTIME TIMEOUT / COMPROMISES
+================================================================================
+
+Phase: 256
+Description:
+  - Script attempted N=(16,32,64,128), TRIALS=4, STEPS=2000, K=28 pts
+  - Timed out at N=64
+  - Lean version (N=16,32,64, TRIALS=3, STEPS=1200, K=20 pts) still produced
+    inconsistent estimates with max_deviation = 41.3 >> 0.25 threshold
+
+Root Cause:
+  - Combined measurement of chi + binder + tau exceeds runtime budget
+  - Tau measurement alone requires 3*(N,K,trials) simulations per configuration
+
+Impact:
+  - Kc convergence could not be verified within time constraints
+  - Phase 256 remains INCONCLUSIVE
+
+Resolution Status: NOT RESOLVED.
+  Would require: Separate tau measurement from chi/binder; reduce redundant
+  simulations; extend runtime budget.
+
+Manuscript Treatment: Report Phase 256 as INCONCLUSIVE.
+  Do NOT claim Kc convergence is verified.
+
+================================================================================
+9. FINITE-SIZE LIMITATIONS
+================================================================================
+
+Phases: All 252-259
+Description:
+  - Only 3-4 N values tested (16,32,64,128)
+  - N=128 only in Phase 252-2
+  - 3-point scaling fits (N=16,32,64) are unreliable
+  - Thermodynamic limit (N->infinity) not reached
+
+Impact:
+  - Cannot determine true critical exponents
+  - Cannot confirm universality class
+  - Kc extrapolation unstable
+
+Manuscript Treatment: Report finite-size limitations.
+  State that N=128 is maximum tested.
+  Do NOT claim results apply to thermodynamic limit.
+
+================================================================================
+FAILURE SUMMARY TABLE
+================================================================================
+
+| Failure Mode          | Phase | Severity | Resolution Status | Manuscript Treatment      |
+|-----------------------|-------|----------|-------------------|--------------------------|
+| tau saturation        | 256   | CRITICAL | NOT RESOLVED      | Report as limitation     |
+| Kc convergence        | 256   | CRITICAL | NOT RESOLVED      | Report as FAILED        |
+| estimator scatter     | 252/6 | HIGH     | PARTIALLY DOC.    | Report uncertainty      |
+| Binder sensitivity    | 252/6 | HIGH     | DOCUMENTED        | Report sensitivity      |
+| gamma non-universality| 253   | MEDIUM   | DOCUMENTED        | TIER 2 classification   |
+| hysteresis coupled    | 254   | MEDIUM   | DOCUMENTED        | Report as limitation    |
+| loop_area threshold   | 254   | MEDIUM   | NOT RESOLVED      | Report as arbitrary      |
+| runtime timeout       | 256   | HIGH     | NOT RESOLVED      | Report as INCONCLUSIVE   |
+| finite-size limits    | ALL   | MEDIUM   | INHERENT          | Report limitations      |
+
+Total failures: 9
+Critical/High: 5
+Medium: 4
+Resolved: 0
+
+================================================================================
+END OF FAILURE REGISTRY
+================================================================================
+Generated: Phase 262, LEP-Compliant
+Reference: phase257_failed_or_unstable_estimators.json (governing failure doc)

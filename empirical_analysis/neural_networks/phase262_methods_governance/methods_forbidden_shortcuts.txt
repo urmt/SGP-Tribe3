@@ -1,0 +1,171 @@
+================================================================================
+PHASE 262 — METHODS FORBIDDEN SHORTCUTS
+================================================================================
+Explicit prohibitions for manuscript preparation.
+Based on LEP governance and audit_chain_v2.md.
+
+================================================================================
+GOVERNING PRINCIPLE
+================================================================================
+
+The METHODS section is an AUDIT DOCUMENT, not a technical manual.
+If a method failed to produce robust data in Phase 256, it MUST be
+reported as a failure in methods_failure_registry.txt.
+
+DO NOT perform "nearby improvements" or general code cleanup.
+Stay within the bounds of the specified phases.
+
+================================================================================
+EXPLICIT PROHIBITIONS
+================================================================================
+
+1. HIDDEN RERUNS
+================================================================================
+PROHIBITED:
+  - Re-running phase252-256 scripts with modified parameters without
+    explicit documentation
+  - Generating new figures that differ from phase258 verified outputs
+  - "Tweaking" random seeds to improve results
+
+REQUIRED:
+  - All outputs must match phase258_filesystem_verification.txt hashes
+  - Any deviation from verified outputs must be documented as new phase
+  - New runs must be labeled as Phase XXX (not Phase 252-256)
+
+ENFORCEMENT:
+  - phase258 verified SHA256 hashes for 319 artifacts
+  - Do not regenerate artifacts with different parameters
+
+================================================================================
+2. PARAMETER RETUNING
+================================================================================
+PROHIBITED:
+  - Adjusting K range, N values, STEPS, TRANSIENT, or TRIALS to
+    improve fit quality
+  - Changing tau stability criterion (0.02) or threshold (0.1) to
+    avoid saturation
+  - Modifying hysteresis threshold (0.15) to change verdict
+
+REQUIRED:
+  - Report all parameters as documented in methods_parameter_registry.csv
+  - Any parameter change requires new phase and new documentation
+  - Do not retroactively claim different parameters were used
+
+ENFORCEMENT:
+  - methods_parameter_registry.csv is the authoritative parameter list
+  - phase257_claim_registry.json shows confidence levels based on
+    current parameters
+
+================================================================================
+3. POST-HOC ESTIMATOR REPLACEMENT
+================================================================================
+PROHIBITED:
+  - Replacing tau estimator with autocorrelation-based tau
+  - Using different Binder moment definitions (<m^4> vs <m>^4)
+  - Substituting susceptibility variance formula
+
+REQUIRED:
+  - Use estimators as implemented in phase252-256 scripts
+  - tau: 50-step stability criterion with 0.02 band (as documented)
+  - Binder: 1 - <m^4>/(3*<m^2>^2) (as documented)
+  - Susceptibility: N * Var(R) (as documented)
+
+ENFORCEMENT:
+  - phase252_script8.py, phase255_script11.py, phase256_script12.py
+    are the authoritative implementations
+
+================================================================================
+4. FIGURE SELECTION BIAS
+================================================================================
+PROHIBITED:
+  - Selecting only favorable trials (e.g., Phase 252 scripts over
+    Phase 256 replication)
+  - Omitting failed estimator runs from figures
+  - Showing only conditions with gamma ~ 1.14 (excluding gamma=0.62-1.98)
+
+REQUIRED:
+  - Report all trials/run configurations
+  - Show both Phase 252 (Binder min deepening) and Phase 256
+    (Binder min stable) results
+  - Include all 4 frequency/topology combinations from Phase 253
+
+ENFORCEMENT:
+  - audit_traceability_map.txt shows conflicts that MUST be reported
+  - phase257_claim_registry.json documents confidence for each claim
+  - Phase 256 INCONCLUSIVE verdict must appear in manuscript
+
+================================================================================
+5. CLAIM UPGRADING
+================================================================================
+PROHIBITED:
+  - Promoting TIER 2 claims to TIER 1
+  - Upgrading "medium confidence" to "high confidence" without new evidence
+  - Claiming Kc convergence when Phase 256 showed max_deviation=41.3 >> 0.25
+
+REQUIRED:
+  - TIER 1: Only claims verified in audit_chain_v2.md
+  - TIER 2: Artifact-sensitive claims with documented limitations
+  - Do not claim universal critical exponent (gamma varies 0.62-1.98)
+
+ENFORCEMENT:
+  - audit_chain_v2.md TIER 1 assertions are the only primary claims
+  - phase257_claim_registry.json shows risk_of_overstatement for each claim
+
+================================================================================
+6. FAILURE SUPPRESSION
+================================================================================
+PROHIBITED:
+  - Not documenting tau saturation in Phase 256
+  - Omitting Kc convergence failure
+  - Hiding estimator scatter with N
+  - Minimizing parameter sensitivity conflicts
+
+REQUIRED:
+  - methods_failure_registry.txt documents all 9 failure modes
+  - Critical/High severity failures: tau saturation, Kc convergence
+  - Medium severity: Binder sensitivity, gamma non-universality,
+    hysteresis coupled, loop_area threshold, runtime timeout
+
+ENFORCEMENT:
+  - phase257_failed_or_unstable_estimators.json is the governing
+    failure document
+  - All failures must appear in methods_failure_registry.txt
+
+================================================================================
+7. SPECULATION BEYOND EVIDENCE
+================================================================================
+PROHIBITED:
+  - Claiming findings generalize to EEG or neural data beyond
+    CHB-MIT validation
+  - Inferring consciousness or SFH properties from synchronization
+  - Extrapolating Kuramoto results to biological neural networks
+
+REQUIRED:
+  - Kuramoto model claims bounded to synthetic phase oscillator networks
+  - CHB-MIT claims bounded to EEG recordings (Phases 112-194)
+  - No metaphysical claims about brain function or consciousness
+
+ENFORCEMENT:
+  - Phase 199 constraint registry governs prohibited claims
+  - No SFH, consciousness, or observer theory claims permitted
+
+================================================================================
+SUMMARY OF FORBIDDEN SHORTCUTS
+================================================================================
+
+| Shortcut Type        | Enforcement                   | Penalty if Violated          |
+|----------------------|-------------------------------|------------------------------|
+| Hidden reruns        | phase258 SHA256 verification   | Artifact not manuscript-ready |
+| Parameter retuning   | methods_parameter_registry.csv | Claim confidence downgraded   |
+| Estimator replacement| phase252-256 implementations  | TIER 2 only                   |
+| Figure selection     | audit_traceability_map.txt     | INCONCLUSIVE verdict          |
+| Claim upgrading      | audit_chain_v2.md tiers        | TIER 2 only                   |
+| Failure suppression  | phase257_failures.json         | Manuscript rejection          |
+| Speculation          | Phase 199 constraints         | LEP violation                 |
+
+================================================================================
+END OF FORBIDDEN SHORTCUTS
+================================================================================
+Generated: Phase 262, LEP-Compliant
+Reference: audit_chain_v2.md, phase257_failed_or_unstable_estimators.json,
+           audit_traceability_map.txt

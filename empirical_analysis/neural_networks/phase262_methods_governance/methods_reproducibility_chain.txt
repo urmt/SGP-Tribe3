@@ -1,0 +1,222 @@
+================================================================================
+PHASE 262 — METHODS REPRODUCIBILITY CHAIN
+================================================================================
+Mapping: script -> outputs -> audit verdict -> manuscript section
+
+REFERENCE: phase259_manuscript_foundation/audit_traceability_map.txt (governing)
+
+================================================================================
+PHASE 252 SCRIPTS
+================================================================================
+
+phase252_minimal_transition_test.py
+  -> outputs: R_vs_K.png, phase252_summary.txt
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Model Specification; Results / Phase Transition
+  -> claim: C1 (Kuramoto exhibits phase transition)
+
+phase252_finite_size_test.py
+  -> outputs: finite_size_transition.png, phase252_finite_size_summary.txt
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Finite-Size Analysis; Results / N-dependence
+  -> claim: C3 (finite-size sharpening)
+
+phase252_susceptibility_test.py
+  -> outputs: susceptibility_curves.png, order_parameter_curves.png
+  -> audit verdict: VERIFIED_PRESENT
+  -> manuscript section: Methods / Susceptibility; Results / Fluctuations
+  -> claim: C8 (susceptibility peak)
+
+phase252_binder_test.py
+  -> outputs: binder_test_crossing.png, phase252_binder_summary.txt
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Binder Cumulant; Results / Critical Point
+  -> claim: C6 (Binder dip at criticality)
+
+phase252_script4.py
+  -> outputs: phase252_script4_order_parameter.png, phase252_script4_susceptibility.png
+  -> audit verdict: VERIFIED_PRESENT
+  -> manuscript section: Methods / Order Parameter; Results / N=16/32/64
+  -> claim: C3 (finite-size sharpening)
+
+phase252_script5.py
+  -> outputs: phase252_script5_order_parameter.png, phase252_script5_susceptibility.png
+  -> audit verdict: VERIFIED_PRESENT
+  -> manuscript section: Methods / Order Parameter; Results / N=16/32/64
+  -> claim: C3 (finite-size sharpening)
+
+phase252_script6.py
+  -> outputs: phase252_script6_fss.png, phase252_script6_chi_peak.png
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Finite-Size Scaling; Results / gamma=1.14
+  -> claim: C2 (susceptibility scaling) [TIER 2 - gamma varies with frequency]
+
+phase252_script7.py
+  -> outputs: phase252_script7_fss.png, phase252_script7_binder.png
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Binder Scaling; Results / Critical Behavior
+  -> claim: C5 (Binder minimum deepening) [CAUTION: conflicting data Phase 256]
+
+phase252_script8.py
+  -> outputs: phase252_script8_susceptibility.png, phase252_script8_order_parameter.png,
+               phase252_script8_fss.png, phase252_script8_data_collapse.png,
+               phase252_script8_binder.png, phase252_script8_binder_min_scaling.png
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Data Collapse; Results / Critical Point
+  -> claim: C1, C3, C6, C8 (comprehensive finite-size analysis)
+
+phase252.py
+  -> status: SUPERSEDED by phase252_script8.py
+  -> DO NOT USE for manuscript
+
+================================================================================
+PHASE 253 SCRIPTS
+================================================================================
+
+phase253_script9.py
+  -> outputs: phase253_script9_universality.png, phase253_summary.txt
+  -> audit verdict: PASS (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Universality Testing; Results / Universality
+  -> claim: C5 (universality across topology/frequency) [TIER 2 - gamma non-universal]
+  -> WARNING: gamma varies 0.62-1.98; only A2A+Gaussian gives gamma=1.14
+
+================================================================================
+PHASE 254 SCRIPTS
+================================================================================
+
+phase254_script10.py
+  -> outputs: phase254_script10_hysteresis.png, phase254_script10_gap.png,
+               phase254_summary.txt
+  -> audit verdict: PASS (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Hysteresis Analysis; Results / Continuous Transition
+  -> claim: C2 (continuous phase transition)
+  -> LIMITATION: Coupled initialization; loop_area threshold arbitrary
+
+================================================================================
+PHASE 255 SCRIPTS
+================================================================================
+
+phase255_script11.py
+  -> outputs: phase255_script11_critical_slowing.png, phase255_summary.txt
+  -> audit verdict: CRITICAL_SLOWING_CONFIRMED (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Critical Slowing; Results / K_peak=1.42
+  -> claim: C4 (critical slowing, relaxation increases 5.89x)
+  -> WARNING: tau saturation (tau=50.0 max) limits Kc identification
+
+================================================================================
+PHASE 256 SCRIPTS
+================================================================================
+
+phase256_replication_stable.py
+  -> outputs: phase256_replication_*.png (order, chi, binder for N=16/32/64),
+               phase256_replication_summary.txt
+  -> audit verdict: VERIFIED_PRESENT (phase258_filesystem_verification.txt)
+  -> manuscript section: Methods / Replication; Appendix / Replication Results
+  -> claim: replication stability for R(K) and chi peak
+  -> CONFLICT: Binder min ~0.644 (not deepening) vs Phase 252 scripts
+
+phase256_script12.py
+  -> outputs: phase256_script12_ktau.png, phase256_script12_kchi.png,
+               phase256_script12_kbinder.png, phase256_script12_combined.png,
+               phase256_script12_summary.txt
+  -> audit verdict: INCONCLUSIVE (phase258_filesystem_verification.txt)
+  -> manuscript section: Appendix / Kc Convergence Attempt
+  -> claim: NONE (VERDICT: CRITICAL_ESTIMATORS_INCONSISTENT)
+  -> FAILURES: tau saturated, Kc convergence failed, max_deviation=41.3 >> 0.25
+
+================================================================================
+PHASE 257 SCRIPTS (AUDIT)
+================================================================================
+
+[Audit scripts - not for manuscript direct use]
+
+phase257_master_summary.txt
+  -> audit verdict: MASTER_SUMMARY
+  -> manuscript reference: Governing audit document
+
+phase257_claim_registry.json
+  -> audit verdict: CLAIM_REGISTRY
+  -> manuscript reference: Claim status and confidence levels
+
+phase257_failed_or_unstable_estimators.json
+  -> audit verdict: FAILURE_REGISTRY
+  -> manuscript reference: TIER 2 claims; limitations reported
+
+================================================================================
+PHASE 258 SCRIPTS (VERIFICATION)
+================================================================================
+
+phase258_filesystem_verification.txt
+  -> audit verdict: SHA256_HASHES_COMPUTED for 319 artifacts
+  -> manuscript reference: Artifact provenance confirmed
+  -> status: VERIFIED_PRESENT for all claimed outputs
+
+================================================================================
+VERDICT SUMMARY
+================================================================================
+
+VERIFIED_PRESENT (use in manuscript):
+  - phase252_minimal_transition_test.py -> R_vs_K.png
+  - phase252_finite_size_test.py -> finite_size_transition.png
+  - phase252_binder_test.py -> binder_test_crossing.png
+  - All phase252_script4-8.py outputs
+  - phase253_script9.py -> phase253_script9_universality.png
+  - phase254_script10.py -> phase254_script10_*.png
+  - phase255_script11.py -> phase255_script11_critical_slowing.png
+  - phase256_replication_stable.py -> replication outputs
+
+PASS (use with limitations):
+  - phase254_script10.py: Report coupled initialization limitation
+
+INCONCLUSIVE (do not claim):
+  - phase256_script12.py: Do not claim Kc convergence
+  - phase256_replication_stable.py: Report Binder conflict
+
+NOT VERIFIED (do not use):
+  - Universal gamma claims
+  - Precise Kc values from extrapolation
+  - Binder deepening (conflicting data)
+
+================================================================================
+MANUSCRIPT SECTION ASSIGNMENTS
+================================================================================
+
+Methods / Model Specification:
+  - phase252_minimal_transition_test.py (Kuramoto definition)
+  - phase252_finite_size_test.py (finite-size protocol)
+
+Methods / Order Parameter:
+  - phase252_script4.py, phase252_script5.py, phase252_script8.py
+
+Methods / Susceptibility:
+  - phase252_susceptibility_test.py, phase252_script6.py
+
+Methods / Binder Cumulant:
+  - phase252_binder_test.py, phase252_script8.py
+  - CAUTION: Report parameter sensitivity
+
+Methods / Hysteresis:
+  - phase254_script10.py
+  - LIMITATION: Report coupled initialization
+
+Methods / Critical Slowing:
+  - phase255_script11.py
+  - LIMITATION: Report tau saturation
+
+Methods / Universality:
+  - phase253_script9.py
+  - TIER 2: Report gamma non-universality
+
+Methods / Replication:
+  - phase256_replication_stable.py
+  - CAUTION: Report Binder conflict
+
+Appendix / Kc Convergence:
+  - phase256_script12.py
+  - VERDICT: INCONCLUSIVE (do not claim convergence)
+
+================================================================================
+END OF REPRODUCIBILITY CHAIN
+================================================================================
+Generated: Phase 262, LEP-Compliant
+Reference: audit_traceability_map.txt (governing)

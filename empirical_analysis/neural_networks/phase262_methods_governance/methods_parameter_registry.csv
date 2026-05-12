@@ -1,0 +1,27 @@
+parameter,value,phase_used,frozen_or_variable,known_limitations
+N (system size),16/32/64/128,252-259,frozen,Only 4 values; N=128 only in Phase 252-2
+coupling_K_range,0-4 or 0-6,252-259,variable,K=0-4 dominant; K=0-6 only in Phase 252-1
+K_resolution,18-40 points,252-259,variable,Phase 256 used 28 pts; Phase 253 used 20 pts
+dt (time step),0.01 or 0.05,252-259,frozen,Both values used; not systematically tested
+STEPS (time steps),300-2000,252-259,frozen,Critical: Binder sensitive to STEPS (2000 vs 1000 produces different results)
+TRANSIENT (equilibration),300-500,252-259,frozen,Phase 252 scripts: TRANSIENT=500; Phase 256: TRANSIENT=300
+TRIALS (independent runs),3-5,252-259,frozen,Phase 255-256 used 3-4 trials; may be insufficient for robust tau estimation
+omega_mean,0,252-259,frozen,Gaussian mu=0; uniform U[-2,2] mean=0
+omega_sigma,1.0,252-259,frozen,Gaussian sigma=1.0
+omega_distribution,Gaussian or Uniform,253,variable,gamma varies 0.62-1.98 with distribution; NOT universal
+topology_type,All-to-all (dominant),252-259,frozen,A2A used in all major phases; ER (p=0.25) only in Phase 253
+network_probability,p=0.25,253,frozen,Only one ER probability tested
+random_seed,R=42 or unspecified,252-259,variable,Phase 256 replication uses R=42; earlier phases may differ
+order_parameter_threshold,0.1 (90% criterion),255,frozen,Alternative: autocorrelation-based tau not used
+stability_band,0.02,256,frozen,tau stability criterion; may be too tight for STEPS=1000
+hysteresis_threshold,0.15 (loop_area),254,frozen,ARBITRARY - no theoretical justification; loop_area=0.03 barely computed
+initial_theta,random uniform [0,2pi],252-259,frozen,Standard initialization
+hysteresis_init_coupling,forward end-state,254,frozen,FAILURE: backward sweep NOT independent (coupled initialization)
+susceptibility_window,full STEPS,252-259,frozen,Time-window variance; alternative: trial variance not systematically tested
+binder_moments,<m^2>, <m^4>,252-259,frozen,Computed from time series; STEPS affects accuracy
+chi_peak_smoothing,none,252-259,frozen,Raw peak location; not smoothed or interpolated
+Kc_infinity_extrapolation,1/N linear fit,256,frozen,FAILED: negative intercepts; N too small (only 3 values)
+critical_exponent_nu,2.0 (assumed),252-259,frozen,NOT estimated; assumed from Ising universality
+critical_exponent_gamma,1.14 (A2A+Gaussian),252-6,frozen*,NON-UNIVERSAL: varies 0.62-1.98 with frequency distribution
+peak_ratio_threshold,5.0x baseline,255,frozen,peak_ratio=5.89 measured; arbitrary threshold
+tau_saturation_max,50.0,256,frozen,FAILURE: tau hits max for all N; relaxation exceeds STEPS=1000
