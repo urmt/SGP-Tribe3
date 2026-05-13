@@ -1,0 +1,7 @@
+# Introduction
+
+The organization of neural activity in high-dimensional state spaces is a fundamental concern in understanding complex information processing. Biological neural circuits and artificial neural networks operate within constrained manifolds, where the effective dimensionality is significantly lower than the ambient space. Identifying organizational invariants across these systems provides critical insights into the geometric constraints governing neural information transformation.
+
+Recent advances in manifold learning and fMRI encoding models have enabled the characterization of neural activity at multiscale depths. However, the precise functional form describing how effective dimensionality grows with neighborhood scale $k$ remains poorly constrained, often relying on power-law assumptions that may fail at large scales.
+
+In this study, we investigate the multiscale dimensionality profile, $D(k)$, defined via the participation ratio of covariance matrices in local neighborhoods. We hypothesized that neural manifolds are governed by growth-saturation dynamics. We test this through a comprehensive audit of functional forms, evaluating model identifiability, topological sensitivity, and cross-domain invariance in biological (SGP-parcellated fMRI predictions) and artificial (Transformer model activation) neural systems. Our results establish a robust sigmoid organizational signature and identify the sigmoid inflection point, $k_0$, as a candidate geometric invariant.
