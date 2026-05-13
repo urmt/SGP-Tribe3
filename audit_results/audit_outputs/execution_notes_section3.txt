@@ -1,0 +1,5 @@
+Section 3: Null Model Destruction
+Exact filepath: audit_outputs/null_model_results.csv
+Sample size: 500 points
+Runtime: 3.10s
+Status: Success

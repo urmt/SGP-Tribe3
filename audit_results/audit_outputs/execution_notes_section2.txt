@@ -1,0 +1,5 @@
+Section 2: Parameter Identifiability
+Exact filepath: audit_outputs/identifiability_metrics.json
+Sample size: 500 points, 1000 bootstrap, 1000 random init
+Runtime: 14.45s
+Status: Success

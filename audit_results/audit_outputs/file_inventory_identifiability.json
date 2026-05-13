@@ -1,0 +1,24 @@
+{
+  "D_k_raw_profile_datasets": [
+    "./sgp-tribe3/empirical_analysis/neural_networks/nn_dk_vectors.csv",
+    "./sgp-tribe3/empirical_analysis/neural_networks/universal_scaling_results.csv"
+  ],
+  "sigmoid_fitting_scripts": [
+    "./sgp-tribe3/empirical_analysis/neural_networks/nn_scaling.py",
+    "./sgp-tribe3/experiments/paper5_residual_structure/analyze_residuals.py"
+  ],
+  "analyze_residuals_script": "./sgp-tribe3/experiments/paper5_residual_structure/analyze_residuals.py",
+  "model_comparison_utilities": [
+    "./sgp-tribe3/experiments/paper5_residual_structure/analyze_residuals.py"
+  ],
+  "raw_data_npz": "./sgp-tribe3/reproducibility/raw_data.npz",
+  "transformer_layer_outputs": [
+    "./sgp-tribe3/empirical_analysis/neural_networks/nn_scaling_layer_results.csv"
+  ],
+  "existing_figure_directories": [
+    "./sgp-tribe3/results/figures",
+    "./sgp-tribe3/figures",
+    "./sgp-tribe3/results/full_battery_1000/figures",
+    "./sgp-tribe3/paper5_build/figures"
+  ]
+}
