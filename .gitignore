@@ -88,3 +88,6 @@ figures/*.pdf
 
 # Python
 *.pyc
+draft_manuscript/
+latex_build/
+submission_package/
